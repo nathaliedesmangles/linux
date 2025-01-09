@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>420-ZG4-MO Système d’exploitation Linux :: My New Hugo Site</title>
+    <link>https://example.org/index.html</link>
+    <description>Pondération : 2-2-2&#xA;Description du cours :&#xA;Linux est le système d’exploitation qui constitue la colonne vertébrale des entreprises les plus puissantes et les plus innovantes au monde. Dès lors, l’étudiante ou l’étudiant sera initié aux principes de base des systèmes d’exploitation libre (Linux) et à l’installation et l’exploitation d’une distribution libre de Linux (p. ex. Fedora, Ubuntu, AlmaLinux, OpenSource).</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
