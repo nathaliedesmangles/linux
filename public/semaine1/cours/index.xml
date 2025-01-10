@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qu&#39;est-ce que Linux ? :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine1/cours/index.html</link>
+    <description>Qu’est-ce qu’un système d’exploitation? Un système d’exploitation (SE) est un logiciel essentiel qui agit comme un intermédiaire entre l’utilisateur et le matériel de l’ordinateur. Il gère les ressources matérielles et logicielles de l’ordinateur et fournit des services communs pour les programmes informatiques. Voici quelques-unes de ses principales fonctions:&#xA;Gestion des ressources matérielles: Le système d’exploitation contrôle et coordonne l’utilisation du processeur, de la mémoire, des périphériques de stockage, et des périphériques d’entrée/sortie comme le clavier, la souris et l’écran.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine1/cours/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

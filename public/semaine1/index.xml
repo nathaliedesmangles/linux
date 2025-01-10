@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction à Linux :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine1/index.html</link>
+    <description>Plan de la leçon Présentation du cours (plan de cours).&#xA;Pondération. Objectifs. Contexte d’apprentissage et méthodes pédagogiques. Evaluations formatives. Évaluations sommatives. Politiques institutionnelles (absences, retards, plagiat, etc.). Règlements en classe et hors classe. Théorie :&#xA;Généralités sur le système d’exploitation Linux. Atelier :&#xA;Installation de Linux sur une machine virtuelle.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qu&#39;est-ce que Linux ?</title>
+      <link>https://example.org/semaine1/cours/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine1/cours/index.html</guid>
+      <description>Qu’est-ce qu’un système d’exploitation? Un système d’exploitation (SE) est un logiciel essentiel qui agit comme un intermédiaire entre l’utilisateur et le matériel de l’ordinateur. Il gère les ressources matérielles et logicielles de l’ordinateur et fournit des services communs pour les programmes informatiques. Voici quelques-unes de ses principales fonctions:&#xA;Gestion des ressources matérielles: Le système d’exploitation contrôle et coordonne l’utilisation du processeur, de la mémoire, des périphériques de stockage, et des périphériques d’entrée/sortie comme le clavier, la souris et l’écran.</description>
+    </item>
+    <item>
+      <title>ATELIER #1: Installation de Linux sur une VM</title>
+      <link>https://example.org/semaine1/atelier/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine1/atelier/index.html</guid>
+      <description>Objectifs L’atelier a pour but de vous guider à travers le processus d’installation de Linux sur une machine virtuelle (VM). Cela permet d’expérimenter avec Linux sans affecter le système d’exploitation principal de l’ordinateur.&#xA;Prérequis pour l’atelier Avoir Windows 10 ou 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Vous trouverez le fichier executable de VMWare sur le Moodle du cours 3.Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Vous trouverez l’image sur le site suivant https://almalinux.org/get-almalinux/ Note&#xD;Choisir AlmaLinux OS 9.5 DVD ISO</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine1/atelier/index.html</link>
+    <description>Objectifs L’atelier a pour but de vous guider à travers le processus d’installation de Linux sur une machine virtuelle (VM). Cela permet d’expérimenter avec Linux sans affecter le système d’exploitation principal de l’ordinateur.&#xA;Prérequis pour l’atelier Avoir Windows 10 ou 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Vous trouverez le fichier executable de VMWare sur le Moodle du cours 3.Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Vous trouverez l’image sur le site suivant https://almalinux.org/get-almalinux/ Note&#xD;Choisir AlmaLinux OS 9.5 DVD ISO</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine1/atelier/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

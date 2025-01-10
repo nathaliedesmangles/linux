@@ -4,6 +4,33 @@
     <loc>https://example.org/index.html</loc>
   </url>
   <url>
+    <loc>https://example.org/semaine1/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine1/cours/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine1/atelier/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine2/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine2/cours/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine2/atelier/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine3/cours/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine3/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine3/atelier/index.html</loc>
+  </url>
+  <url>
     <loc>https://example.org/categories/index.html</loc>
   </url>
   <url>

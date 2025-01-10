@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Qu’est-ce qu’un système d’exploitation? Un système d’exploitation (SE) est un logiciel essentiel qui agit comme un intermédiaire entre l’utilisateur et le matériel de l’ordinateur. Il gère les ressources matérielles et logicielles de l’ordinateur et fournit des services communs pour les programmes informatiques. Voici quelques-unes de ses principales fonctions:
+Gestion des ressources matérielles: Le système d’exploitation contrôle et coordonne l’utilisation du processeur, de la mémoire, des périphériques de stockage, et des périphériques d’entrée/sortie comme le clavier, la souris et l’écran.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Qu&#39;est-ce que Linux ? :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Qu’est-ce qu’un système d’exploitation? Un système d’exploitation (SE) est un logiciel essentiel qui agit comme un intermédiaire entre l’utilisateur et le matériel de l’ordinateur. Il gère les ressources matérielles et logicielles de l’ordinateur et fournit des services communs pour les programmes informatiques. Voici quelques-unes de ses principales fonctions:
+Gestion des ressources matérielles: Le système d’exploitation contrôle et coordonne l’utilisation du processeur, de la mémoire, des périphériques de stockage, et des périphériques d’entrée/sortie comme le clavier, la souris et l’écran.">
+    <meta property="og:url" content="https://example.org/semaine1/cours/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Qu&#39;est-ce que Linux ? :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Qu’est-ce qu’un système d’exploitation? Un système d’exploitation (SE) est un logiciel essentiel qui agit comme un intermédiaire entre l’utilisateur et le matériel de l’ordinateur. Il gère les ressources matérielles et logicielles de l’ordinateur et fournit des services communs pour les programmes informatiques. Voici quelques-unes de ses principales fonctions:
+Gestion des ressources matérielles: Le système d’exploitation contrôle et coordonne l’utilisation du processeur, de la mémoire, des périphériques de stockage, et des périphériques d’entrée/sortie comme le clavier, la souris et l’écran.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Qu&#39;est-ce que Linux ? :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Qu’est-ce qu’un système d’exploitation? Un système d’exploitation (SE) est un logiciel essentiel qui agit comme un intermédiaire entre l’utilisateur et le matériel de l’ordinateur. Il gère les ressources matérielles et logicielles de l’ordinateur et fournit des services communs pour les programmes informatiques. Voici quelques-unes de ses principales fonctions:
+Gestion des ressources matérielles: Le système d’exploitation contrôle et coordonne l’utilisation du processeur, de la mémoire, des périphériques de stockage, et des périphériques d’entrée/sortie comme le clavier, la souris et l’écran.">
+    <meta itemprop="wordCount" content="905">
+    <title>Qu&#39;est-ce que Linux ? :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine1/cours/index.xml" rel="alternate" type="application/rss+xml" title="Qu&#39;est-ce que Linux ? :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1736478022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736478022" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1736478022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736478022" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1736478022" rel="stylesheet">
+    <link href="/css/theme.min.css?1736478022" rel="stylesheet">
+    <link href="/css/format-html.min.css?1736478022" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine1/cours/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#quest-ce-quun-système-dexploitation">Qu&rsquo;est-ce qu&rsquo;un système d&rsquo;exploitation?</a></li>
+    <li><a href="#exemples-de-systèmes-dexploitation">Exemples de systèmes d&rsquo;exploitation</a></li>
+    <li><a href="#pourquoi-est-ce-important">Pourquoi est-ce important?</a></li>
+    <li><a href="#quest-ce-que-linux-">Qu’est-ce que Linux ?</a>
+      <ul>
+        <li><a href="#un-peu-dhistoire">Un peu d&rsquo;histoire</a></li>
+        <li><a href="#caractéristiques-principales">Caractéristiques principales</a></li>
+        <li><a href="#distributions-linux">Distributions Linux</a></li>
+        <li><a href="#utilisations-de-linux">Utilisations de Linux</a></li>
+        <li><a href="#répartition-des-se-chez-les-développeurs">Répartition des SE chez les développeurs</a></li>
+        <li><a href="#part-de-marché-des-se-pour-les-serveurs">Part de marché des SE pour les serveurs</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine1/index.html"><span itemprop="name">Introduction à Linux</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Qu&#39;est-ce que Linux ?</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine1/index.html" title="Introduction à Linux (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine1/atelier/index.html" title="ATELIER #1: Installation de Linux sur une VM (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine1" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="quest-ce-que-linux-">Qu&#39;est-ce que Linux ?</h1>
+
+<h2 id="quest-ce-quun-système-dexploitation">Qu&rsquo;est-ce qu&rsquo;un système d&rsquo;exploitation?</h2>
+<p>Un système d&rsquo;exploitation (SE) est un logiciel essentiel qui agit comme un intermédiaire entre l&rsquo;utilisateur et le matériel de l&rsquo;ordinateur. Il gère les ressources matérielles et logicielles de l&rsquo;ordinateur et fournit des services communs pour les programmes informatiques. Voici quelques-unes de ses principales fonctions:</p>
+<ol>
+<li>
+<p><strong>Gestion des ressources matérielles</strong>: Le système d&rsquo;exploitation contrôle et coordonne l&rsquo;utilisation du processeur, de la mémoire, des périphériques de stockage, et des périphériques d&rsquo;entrée/sortie comme le clavier, la souris et l&rsquo;écran.</p>
+</li>
+<li>
+<p><strong>Gestion des fichiers</strong>: Il organise les données en fichiers et dossiers, permettant aux utilisateurs de stocker, récupérer et manipuler des informations de manière efficace.</p>
+</li>
+<li>
+<p><strong>Gestion des processus</strong>: Le système d&rsquo;exploitation gère l&rsquo;exécution des programmes, en allouant du temps processeur et en assurant que les tâches s&rsquo;exécutent sans conflit.</p>
+</li>
+<li>
+<p><strong>Interface utilisateur</strong>: Il fournit une interface utilisateur, qui peut être en ligne de commande (CLI) ou graphique (GUI), permettant aux utilisateurs d&rsquo;interagir facilement avec l&rsquo;ordinateur.</p>
+</li>
+<li>
+<p><strong>Sécurité et gestion des utilisateurs</strong>: Le système d&rsquo;exploitation protège les données et les ressources de l&rsquo;ordinateur contre les accès non autorisés et permet la gestion des comptes utilisateurs.</p>
+</li>
+</ol>
+<h2 id="exemples-de-systèmes-dexploitation">Exemples de systèmes d&rsquo;exploitation</h2>
+<ul>
+<li><strong>Windows</strong>: Développé par Microsoft, c&rsquo;est l&rsquo;un des systèmes d&rsquo;exploitation les plus utilisés dans le monde.</li>
+<li><strong>macOS</strong>: Développé par Apple, il est utilisé sur les ordinateurs Mac.</li>
+<li><strong>Linux</strong>: Un système d&rsquo;exploitation open-source utilisé principalement par les développeurs et les serveurs.</li>
+<li><strong>Android</strong>: Utilisé principalement sur les smartphones et les tablettes.</li>
+<li><strong>iOS</strong>: Le système d&rsquo;exploitation d&rsquo;Apple pour ses appareils mobiles comme l&rsquo;iPhone et l&rsquo;iPad.</li>
+</ul>
+<h2 id="pourquoi-est-ce-important">Pourquoi est-ce important?</h2>
+<p>Le système d&rsquo;exploitation est crucial car il permet à l&rsquo;utilisateur d&rsquo;exploiter pleinement les capacités de l&rsquo;ordinateur sans avoir à gérer directement les complexités matérielles. Il offre une plateforme stable et sécurisée pour exécuter des applications et effectuer des tâches quotidiennes.</p>
+<h2 id="quest-ce-que-linux-">Qu’est-ce que Linux ?</h2>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Définition
+  </summary>
+  <div class="box-content">
+<p>Linux est un <strong>système d&rsquo;exploitation</strong> puissant et flexible qui offre de nombreux avantages, notamment en termes de sécurité, de stabilité, et de personnalisation.</p>
+  </div>
+</details>
+<p>Que ce soit pour un usage personnel, professionnel, ou pour des serveurs, Linux est une option solide et fiable.</p>
+<h3 id="un-peu-dhistoire">Un peu d&rsquo;histoire</h3>
+<ul>
+<li><strong>1991</strong> : Créé par <em><strong>Linus Torvalds</strong></em> et est basé sur le système <em><strong>Unix</strong></em>.</li>
+<li><strong>1992</strong> : Le noyau Linux a été re-licencié sous la licence publique générale GNU GPL (<em>GNU’s Not Unix General Public Licence</em>), ce qui a renforcé son statut de logiciel libre.</li>
+<li><strong>1994</strong> : La version 1.0 du noyau Linux a été publiée, marquant une étape importante dans son développement.</li>
+</ul>
+<p>Depuis sa création, Linux est devenu l&rsquo;un des systèmes d&rsquo;exploitation les plus populaires, notamment pour les serveurs, les superordinateurs, et les appareils embarqués.</p>
+<h3 id="caractéristiques-principales">Caractéristiques principales</h3>
+<ol>
+<li><strong>Open Source</strong> : Le code source de Linux est disponible gratuitement, permettant aux utilisateurs de le modifier et de le distribuer.</li>
+<li><strong>Sécurité</strong> : Linux est réputé pour sa robustesse et sa sécurité. Les mises à jour régulières et la communauté active contribuent à maintenir un haut niveau de sécurité.</li>
+<li><strong>Stabilité</strong> : Linux est connu pour sa stabilité et sa capacité à fonctionner pendant de longues périodes sans nécessiter de redémarrage.</li>
+<li><strong>Personnalisation</strong> : Les utilisateurs peuvent personnaliser leur environnement Linux selon leurs besoins, grâce à une multitude de distributions et d&rsquo;outils disponibles.</li>
+</ol>
+<h3 id="distributions-linux">Distributions Linux</h3>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Définition
+  </summary>
+  <div class="box-content">
+<p>Une <strong>distribution Linux</strong> est une version de Linux qui inclut le noyau Linux ainsi que divers logiciels et outils.</p>
+  </div>
+</details>
+<p>Voici quelques-unes des distributions les plus populaires :</p>
+<ul>
+<li><strong>Ubuntu</strong> : Connue pour sa convivialité et son support communautaire.<br>
+<a href="https://ubuntu.com/" rel="external" target="_blank">Site d&rsquo;Ubuntu</a></li>
+<li><strong>Fedora</strong> : Souvent utilisée par les développeurs et les administrateurs système.<br>
+<a href="https://fedoraproject.org/" rel="external" target="_blank">Site de Fedora</a></li>
+<li><strong>Red Hat</strong> : L&rsquo;une des premières distributions commerciales de Linux. Elle est particulièrement populaire dans les environnements d&rsquo;entreprise.<br>
+<a href="https://www.redhat.com/fr" rel="external" target="_blank">Site de Red Hat</a></li>
+<li><strong>Debian</strong> : Réputée pour sa stabilité et sa large collection de logiciels.<br>
+<a href="https://www.debian.org/index.fr.html" rel="external" target="_blank">site de Debian</a></li>
+<li><strong>Arch Linux</strong> : Appréciée par les utilisateurs avancés pour sa flexibilité et sa simplicité.<br>
+<a href="https://archlinux.org/" rel="external" target="_blank">Site d&rsquo;Arch Linux</a></li>
+</ul>
+<h3 id="utilisations-de-linux">Utilisations de Linux</h3>
+<ul>
+<li><strong>Serveurs</strong> : Linux est largement utilisé pour les serveurs web, les serveurs de bases de données, et les serveurs de fichiers en raison de sa fiabilité et de sa sécurité.</li>
+<li><strong>Superordinateurs</strong> : La majorité des superordinateurs dans le monde fonctionnent sous Linux.</li>
+<li><strong>Appareils embarqués</strong> : De nombreux appareils, tels que les routeurs, les téléviseurs intelligents, et les smartphones (via Android), utilisent Linux.</li>
+<li><strong>Postes de travail</strong> : Bien que moins courant que Windows ou macOS, Linux est utilisé par de nombreux développeurs et professionnels de l&rsquo;informatique pour ses capacités de personnalisation et ses outils puissants.</li>
+</ul>
+<h3 id="répartition-des-se-chez-les-développeurs">Répartition des SE chez les développeurs</h3>
+<p><a href="#R-image-b1d52210bc2f5daf3a1dd7958736f0bb" class="lightbox-link"><img alt="Répartition SE 2018-2023" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine1/cours/repartition2018_2023.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b1d52210bc2f5daf3a1dd7958736f0bb"><img alt="Répartition SE 2018-2023" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine1/cours/repartition2018_2023.png"></a></p>
+<p><a href="https://www.statista.com/statistics/869211/worldwide-software-development-operating-system/" rel="external" target="_blank">Répartition des systèmes d&rsquo;exploitation pour le développement de logiciels dans le monde de 2018 à 2023</a></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Avantages</th>
+          <th style="text-align: left">Inconvénients</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Très souvent le même environnement que la machine de production (surtout pour la portion serveur d’une application)</td>
+          <td style="text-align: left">Accès très limité aux outils Microsoft : pas de Visual Studio, seulement VS Code et un support minimal pour C#</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Très facile d’installer des nouveaux outils de développement :<!-- raw HTML omitted --> <code>$ dnf install nodejs</code><!-- raw HTML omitted --> <code>$ dnf install nodejs</code></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Une bonne console (ligne de commande) est souvent un bon dépanneur pour un développeur (p.ex. les messages d’erreur sont souvent plus explicites à la ligne de commande que dans l’IDE)</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Plus facile d’automatiser des tâches de compilation et de tests</td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Systèmes plus légers qui laissent la place aux outils de développement (p.ex. mon Linux prend moins de 1Go de mémoire, alors le reste est pour les outils, VM, etc.). Dans le cours Android p.ex., l’environnement de développement prend 15Go de mémoire (pour l’IDE + deux émulateurs de téléphone).</td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="part-de-marché-des-se-pour-les-serveurs">Part de marché des SE pour les serveurs</h3>
+<p><a href="#R-image-35d6073781a0bcdc2218ddd60444fed5" class="lightbox-link"><img alt="Part de marché SE 2023" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine1/cours/repartition_serveurs.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-35d6073781a0bcdc2218ddd60444fed5"><img alt="Part de marché SE 2023" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine1/cours/repartition_serveurs.png"></a></p>
+<p><a href="https://www.fortunebusinessinsights.com/server-operating-system-market-106601" rel="external" target="_blank">Part de marché des systèmes d&rsquo;exploitation pour les serveurs</a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1736478022";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.min.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1736478022" defer></script>
+        <script src="/js/search.js?1736478022" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine1/cours/index.html"><a class="padding" href="/semaine1/cours/index.html">Qu&#39;est-ce que Linux ?</a></li>
+            <li class="" data-nav-id="/semaine1/atelier/index.html"><a class="padding" href="/semaine1/atelier/index.html">ATELIER #1: Installation de Linux sur une VM</a></li></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Introduction à Linux (suite)</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Système de fichiers, SHELL et commandes de base</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine1/cours/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1736478022" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1736478022" defer></script>
+    <script src="/js/theme.js?1736478022" defer></script>
+  </body>
+</html>

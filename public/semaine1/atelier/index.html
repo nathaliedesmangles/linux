@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Objectifs L’atelier a pour but de vous guider à travers le processus d’installation de Linux sur une machine virtuelle (VM). Cela permet d’expérimenter avec Linux sans affecter le système d’exploitation principal de l’ordinateur.
+Prérequis pour l’atelier Avoir Windows 10 ou 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Vous trouverez le fichier executable de VMWare sur le Moodle du cours 3.Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Vous trouverez l’image sur le site suivant https://almalinux.org/get-almalinux/ NoteChoisir AlmaLinux OS 9.5 DVD ISO">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Objectifs L’atelier a pour but de vous guider à travers le processus d’installation de Linux sur une machine virtuelle (VM). Cela permet d’expérimenter avec Linux sans affecter le système d’exploitation principal de l’ordinateur.
+Prérequis pour l’atelier Avoir Windows 10 ou 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Vous trouverez le fichier executable de VMWare sur le Moodle du cours 3.Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Vous trouverez l’image sur le site suivant https://almalinux.org/get-almalinux/ NoteChoisir AlmaLinux OS 9.5 DVD ISO">
+    <meta property="og:url" content="https://example.org/semaine1/atelier/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Objectifs L’atelier a pour but de vous guider à travers le processus d’installation de Linux sur une machine virtuelle (VM). Cela permet d’expérimenter avec Linux sans affecter le système d’exploitation principal de l’ordinateur.
+Prérequis pour l’atelier Avoir Windows 10 ou 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Vous trouverez le fichier executable de VMWare sur le Moodle du cours 3.Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Vous trouverez l’image sur le site suivant https://almalinux.org/get-almalinux/ NoteChoisir AlmaLinux OS 9.5 DVD ISO">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Objectifs L’atelier a pour but de vous guider à travers le processus d’installation de Linux sur une machine virtuelle (VM). Cela permet d’expérimenter avec Linux sans affecter le système d’exploitation principal de l’ordinateur.
+Prérequis pour l’atelier Avoir Windows 10 ou 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Vous trouverez le fichier executable de VMWare sur le Moodle du cours 3.Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Vous trouverez l’image sur le site suivant https://almalinux.org/get-almalinux/ NoteChoisir AlmaLinux OS 9.5 DVD ISO">
+    <meta itemprop="wordCount" content="203">
+    <title>ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine1/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1736478022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736478022" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1736478022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736478022" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1736478022" rel="stylesheet">
+    <link href="/css/theme.min.css?1736478022" rel="stylesheet">
+    <link href="/css/format-html.min.css?1736478022" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine1/atelier/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#objectifs">Objectifs</a></li>
+    <li><a href="#prérequis-pour-latelier">Prérequis pour l’atelier</a></li>
+    <li><a href="#rappels-cours-ze5-virtualisation">Rappels (Cours ZE5 Virtualisation)</a></li>
+    <li><a href="#à-faire">À faire</a>
+      <ul>
+        <li><a href="#étape-1-installation-de-windows">Étape 1: Installation de Windows</a></li>
+        <li><a href="#étape-2-installation-de-vmware">Étape 2: Installation de VMWare</a></li>
+        <li><a href="#étape-3-installation-dalmalinux">Étape 3: Installation d&rsquo;Almalinux</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine1/index.html"><span itemprop="name">Introduction à Linux</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ATELIER #1: Installation de Linux sur une VM</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine1/cours/index.html" title="Qu&#39;est-ce que Linux ? (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine2/index.html" title="Introduction à Linux (suite) (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine1" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="atelier-1-installation-de-linux-sur-une-vm">ATELIER #1: Installation de Linux sur une VM</h1>
+
+<h2 id="objectifs">Objectifs</h2>
+<p>L&rsquo;atelier a pour but de vous guider à travers le processus d&rsquo;installation de Linux sur une machine virtuelle (VM). Cela permet d&rsquo;expérimenter avec Linux sans affecter le système d&rsquo;exploitation principal de l&rsquo;ordinateur.</p>
+<h2 id="prérequis-pour-latelier">Prérequis pour l’atelier</h2>
+<ol>
+<li>Avoir Windows 10 ou 11 installé sur votre disque SSD (sur une seule partition).</li>
+<li>Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17.
+<ul>
+<li>Vous trouverez le fichier executable de VMWare sur le Moodle du cours
+3.Télécharger la dernière version d&rsquo;Almalinux (janvier 2025 c&rsquo;est la version 9.5).</li>
+<li>Vous trouverez l&rsquo;image sur le site suivant <a href="https://almalinux.org/get-almalinux/" rel="external" target="_blank">https://almalinux.org/get-almalinux/</a></li>
+</ul>
+</li>
+</ol>
+
+<details open class=" box cstyle notices note">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-circle"></i> 
+    Note
+  </summary>
+  <div class="box-content">
+<p>Choisir <strong>AlmaLinux OS 9.5 DVD ISO</strong></p>
+  </div>
+</details>
+<h2 id="rappels-cours-ze5-virtualisation">Rappels (Cours ZE5 Virtualisation)</h2>
+<ul>
+<li>VMWare permet d’installer différents systèmes d’exploitation sur une même machine.</li>
+<li>Le nombre de <strong>machines virtuelles</strong> que l’on peut installer dépend de la puissance en terme de CPU et de mémoire de la machine hôte.</li>
+<li>La <strong>machine hôte</strong> est celle qui héberge les machines virtuelles aussi appelées <strong>les invités</strong>.</li>
+<li>La machine hôte peut être Windows ou Linux et les invités peuvent être une grande variété de systèmes d’exploitation.</li>
+</ul>
+<h2 id="à-faire">À faire</h2>
+<h3 id="étape-1-installation-de-windows">Étape 1: Installation de Windows</h3>
+<p>[Guide d&rsquo;installation de Windows](Lien à venir)</p>
+<h3 id="étape-2-installation-de-vmware">Étape 2: Installation de VMWare</h3>
+<p>[Guide d&rsquo;installation de VMWare](Lien à venir)</p>
+<h3 id="étape-3-installation-dalmalinux">Étape 3: Installation d&rsquo;Almalinux</h3>
+<p>[Guide d&rsquo;installation d&rsquo;Almalinux](Lien à venir)</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1736478022";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.min.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1736478022" defer></script>
+        <script src="/js/search.js?1736478022" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu">
+            <li class="" data-nav-id="/semaine1/cours/index.html"><a class="padding" href="/semaine1/cours/index.html">Qu&#39;est-ce que Linux ?</a></li>
+            <li class="active " data-nav-id="/semaine1/atelier/index.html"><a class="padding" href="/semaine1/atelier/index.html">ATELIER #1: Installation de Linux sur une VM</a></li></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Introduction à Linux (suite)</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Système de fichiers, SHELL et commandes de base</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine1/atelier/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1736478022" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1736478022" defer></script>
+    <script src="/js/theme.js?1736478022" defer></script>
+  </body>
+</html>

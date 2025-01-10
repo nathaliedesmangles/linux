@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shell et la ligne de commande :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine2/cours/index.html</link>
+    <description>Qu’est-ce que le SHELL? Le terme “Shell” désigne un programme qui interprète les commandes que vous tapez et les exécute. Il existe plusieurs types de shells, comme le Bourne Shell (sh), le C Shell (csh), le Korn Shell (ksh), et bien d’autres.&#xA;La ligne de commande Ligne de commande: La ligne de commande est l’interface où vous tapez vos commandes. Elle est souvent représentée par un symbole $ ou # pour les utilisateurs root (administrateur). Lorsque vous êtes prêt à exécuter une commande, appuyez sur la touche Entrée. Tapez chaque commande sur une ligne séparée. Le résultat de la commande est affiché avant l’invite du shell suivante. Exemple:</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine2/cours/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine. Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.
+La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis. Comprendre cette structure est crucial pour tout utilisateur ou administrateur de système Linux.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Système de fichiers et le shell BASH :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine. Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.
+La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis. Comprendre cette structure est crucial pour tout utilisateur ou administrateur de système Linux.">
+    <meta property="og:url" content="https://example.org/semaine3/cours/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Système de fichiers et le shell BASH :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine. Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.
+La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis. Comprendre cette structure est crucial pour tout utilisateur ou administrateur de système Linux.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Système de fichiers et le shell BASH :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine. Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.
+La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis. Comprendre cette structure est crucial pour tout utilisateur ou administrateur de système Linux.">
+    <meta itemprop="wordCount" content="995">
+    <title>Système de fichiers et le shell BASH :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine3/cours/index.xml" rel="alternate" type="application/rss+xml" title="Système de fichiers et le shell BASH :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1736478022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736478022" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1736478022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736478022" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1736478022" rel="stylesheet">
+    <link href="/css/theme.min.css?1736478022" rel="stylesheet">
+    <link href="/css/format-html.min.css?1736478022" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine3/cours/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#répertoires-principaux">Répertoires principaux</a></li>
+    <li><a href="#le-shell-bash">Le shell BASH</a></li>
+    <li><a href="#structure-de-base-dune-commande">Structure de base d&rsquo;une commande</a>
+      <ul>
+        <li><a href="#les-chemins-absolu-et-relatifs">Les chemins absolu et relatifs</a></li>
+        <li><a href="#les-commandes-de-navigation-dans-larborescence-des-fichiers">Les commandes de navigation dans l&rsquo;arborescence des fichiers</a></li>
+        <li><a href="#commandes-de-gestion-des-fichiers-et-répertoires">Commandes de gestion des fichiers et répertoires</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine3/index.html"><span itemprop="name">Système de fichiers, SHELL et commandes de base</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Système de fichiers et le shell BASH</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine3/index.html" title="Système de fichiers, SHELL et commandes de base (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine3/atelier/index.html" title="ATELIER #3: Les commandes Linux de base (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine3" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="système-de-fichiers-et-le-shell-bash">Système de fichiers et le shell BASH</h1>
+
+<p><a href="#R-image-cf68942b442e925371a461158c0db4b5" class="lightbox-link"><img alt="Arborescence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine3/cours/filesystem.png?width=100vw" style=" height: auto; width: 100vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cf68942b442e925371a461158c0db4b5"><img alt="Arborescence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine3/cours/filesystem.png?width=100vw"></a></p>
+<p>La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d&rsquo;un arbre inversé, où la racine (root) est représentée par <code>/</code>.
+Tous les fichiers et répertoires sont situés sous cette racine. Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.</p>
+<p>La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis. Comprendre cette structure est crucial pour tout utilisateur ou administrateur de système Linux.</p>
+<h2 id="répertoires-principaux">Répertoires principaux</h2>
+<ol>
+<li>
+<p><strong>/</strong> (Racine)</p>
+<ul>
+<li>Le point de départ de l&rsquo;arborescence du système de fichiers. Tous les autres répertoires et fichiers sont situés sous ce répertoire.</li>
+</ul>
+</li>
+<li>
+<p><strong>/bin</strong></p>
+<ul>
+<li>Contient les binaires essentiels nécessaires au démarrage du système et à l&rsquo;exécution des commandes de base, comme <code>ls</code>, <code>cp</code>, <code>mv</code>, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>/boot</strong></p>
+<ul>
+<li>Contient les fichiers nécessaires au démarrage du système, y compris le noyau Linux et les fichiers de configuration du chargeur de démarrage (bootloader).</li>
+</ul>
+</li>
+<li>
+<p><strong>/dev</strong></p>
+<ul>
+<li>Contient les fichiers de périphériques. Chaque périphérique matériel (comme les disques durs, les clés USB, etc.) est représenté par un fichier dans ce répertoire.</li>
+</ul>
+</li>
+<li>
+<p><strong>/etc</strong></p>
+<ul>
+<li>Contient les fichiers de configuration du système. Par exemple, les fichiers de configuration des services, des utilisateurs, des réseaux, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>/home</strong></p>
+<ul>
+<li>Contient les répertoires personnels des utilisateurs. Chaque utilisateur a son propre répertoire sous <code>/home</code>, par exemple <code>/home/utilisateur</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>/lib</strong></p>
+<ul>
+<li>Contient les bibliothèques partagées nécessaires pour les binaires situés dans <code>/bin</code> et <code>/sbin</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>/media</strong></p>
+<ul>
+<li>Point de montage pour les périphériques amovibles comme les CD-ROM, les clés USB, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>/mnt</strong></p>
+<ul>
+<li>Utilisé pour monter temporairement des systèmes de fichiers. Par exemple, pour monter un disque dur externe.</li>
+</ul>
+</li>
+<li>
+<p><strong>/opt</strong></p>
+<ul>
+<li>Contient les logiciels optionnels et les paquets additionnels qui ne sont pas inclus dans la distribution standard.</li>
+</ul>
+</li>
+<li>
+<p><strong>/proc</strong></p>
+<ul>
+<li>Système de fichiers virtuel qui contient des informations sur les processus en cours et le système. Par exemple, <code>/proc/cpuinfo</code> contient des informations sur le processeur.</li>
+</ul>
+</li>
+<li>
+<p><strong>/root</strong></p>
+<ul>
+<li>Répertoire personnel de l&rsquo;utilisateur root (administrateur du système).</li>
+</ul>
+</li>
+<li>
+<p><strong>/run</strong></p>
+<ul>
+<li>Contient des informations sur l&rsquo;état du système depuis le dernier démarrage. Utilisé pour stocker des fichiers temporaires nécessaires au fonctionnement du système.</li>
+</ul>
+</li>
+<li>
+<p><strong>/sbin</strong></p>
+<ul>
+<li>Contient les binaires essentiels pour l&rsquo;administration du système, comme <code>fdisk</code>, <code>ifconfig</code>, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>/srv</strong></p>
+<ul>
+<li>Contient les données spécifiques aux services fournis par le système. Par exemple, les fichiers de données pour un serveur web peuvent être stockés ici.</li>
+</ul>
+</li>
+<li>
+<p><strong>/tmp</strong></p>
+<ul>
+<li>Contient les fichiers temporaires créés par les utilisateurs et les applications. Ce répertoire est souvent vidé au redémarrage du système.</li>
+</ul>
+</li>
+<li>
+<p><strong>/usr</strong></p>
+<ul>
+<li>Contient les applications et les fichiers utilisés par les utilisateurs. Sous-répertoires importants :
+<ul>
+<li><strong>/usr/bin</strong> : Contient les binaires des applications utilisateur.</li>
+<li><strong>/usr/lib</strong> : Contient les bibliothèques partagées pour les applications utilisateur.</li>
+<li><strong>/usr/local</strong> : Contient les logiciels installés localement par l&rsquo;administrateur du système.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>/var</strong></p>
+<ul>
+<li>Contient les fichiers variables, tels que les journaux système, les fichiers de spool, et les fichiers temporaires des applications. Par exemple, <code>/var/log</code> contient les fichiers journaux.</li>
+</ul>
+</li>
+</ol>
+<h2 id="le-shell-bash">Le shell BASH</h2>
+<p>BASH, qui signifie &ldquo;<em>Bourne Again SHell</em>&rdquo;, est une version améliorée du <em>Bourne Shell</em>. Il a été développé pour offrir plus de fonctionnalités et une meilleure compatibilité avec les scripts existants. Voici quelques différences clés :</p>
+<pre><code>- **Compatibilité** : BASH est compatible avec les scripts du Bourne Shell, mais il offre également des fonctionnalités supplémentaires.
+
+- **Fonctionnalités : BASH inclut des fonctionnalités avancées comme l'édition de ligne de commande, l'historique des commandes, et le complétion automatique des noms de fichiers et des commandes.
+
+- **Portabilité** : BASH est disponible sur de nombreux systèmes d'exploitation, y compris Linux, macOS, et Windows (via WSL).
+</code></pre>
+<h2 id="structure-de-base-dune-commande">Structure de base d&rsquo;une commande</h2>
+<p>Une commande dans le shell suit généralement cette structure :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>commande [options] [arguments]</code></pre></div>
+<ul>
+<li><strong>commande</strong> : Le programme ou l&rsquo;outil que vous souhaitez exécuter.</li>
+<li><strong>options</strong> : Des paramètres supplémentaires qui modifient le comportement de la commande.</li>
+<li><strong>arguments</strong> : Les cibles sur lesquelles la commande doit agir (fichiers, répertoires, etc.).</li>
+</ul>
+<h3 id="les-chemins-absolu-et-relatifs">Les chemins absolu et relatifs</h3>
+<h4 id="chemin-absolu">Chemin absolu</h4>
+<p>Un chemin absolu est un chemin complet qui commence à la racine du système de fichiers. Il indique l&rsquo;emplacement exact d&rsquo;un fichier ou d&rsquo;un répertoire, peu importe où vous vous trouvez dans le système de fichiers. Par exemple :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>/home/utilisateur/Documents/fichier.txt</code></pre></div>
+<p>Dans cet exemple, le chemin commence par <code>/</code>, qui est la racine du système de fichiers, et suit l&rsquo;arborescence jusqu&rsquo;au fichier <code>fichier.txt</code>.</p>
+<h4 id="chemin-relatif">Chemin relatif</h4>
+<p>Un chemin relatif, quant à lui, est un chemin qui est <strong>relatif à votre répertoire de travail actuel</strong>. Il ne commence pas par <code>/</code>. Par exemple, si vous êtes dans le répertoire <code>/home/utilisateur</code>, et que vous voulez accéder à <code>fichier.txt</code> dans le sous-répertoire <code>Documents</code>, vous pouvez utiliser :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>Documents/fichier.txt</code></pre></div>
+<p>Ou, si vous voulez remonter d&rsquo;un niveau dans l&rsquo;arborescence, vous pouvez utiliser <code>..</code> pour représenter le répertoire parent. Par exemple, si vous êtes dans <code>/home/utilisateur/Documents</code> et que vous voulez accéder à un fichier dans <code>/home/utilisateur</code>, vous pouvez utiliser :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>../fichier.txt</code></pre></div>
+<p><strong>En résumé</strong></p>
+<ul>
+<li><strong>Chemin absolu</strong> : Commence à la racine <code>/</code> et donne l&rsquo;emplacement complet.</li>
+<li><strong>Chemin relatif</strong> : Dépend de votre répertoire de travail actuel et ne commence pas par <code>/</code>.</li>
+</ul>
+<h3 id="les-commandes-de-navigation-dans-larborescence-des-fichiers">Les commandes de navigation dans l&rsquo;arborescence des fichiers</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Exemple</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>pwd</code></td>
+          <td style="text-align: left">Affiche le chemin absolu du répertoire courant</td>
+          <td style="text-align: left"><code>pwd</code> -&gt; <code>/home/utilisateur</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>cd</code></td>
+          <td style="text-align: left">Change le répertoire courant</td>
+          <td style="text-align: left"><code>cd Documents</code> -&gt; Change au répertoire <code>Documents</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ls</code></td>
+          <td style="text-align: left">Liste les fichiers et répertoires</td>
+          <td style="text-align: left"><code>ls</code> -&gt; Affiche les fichiers et répertoires dans le répertoire courant</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>cd ..</code></td>
+          <td style="text-align: left">Remonte d&rsquo;un niveau dans l&rsquo;arborescence des répertoires</td>
+          <td style="text-align: left"><code>cd ..</code> -&gt; Remonte au répertoire parent</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>cd ~</code></td>
+          <td style="text-align: left">Va au répertoire personnel de l&rsquo;utilisateur</td>
+          <td style="text-align: left"><code>cd ~</code> -&gt; Change au répertoire personnel, par exemple <code>/home/utilisateur</code></td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="exemples-dutilisation">Exemples d&rsquo;utilisation</h4>
+<h3 id="commandes-de-gestion-des-fichiers-et-répertoires">Commandes de gestion des fichiers et répertoires</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Exemple</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>cp</code></td>
+          <td style="text-align: left">Copie des fichiers ou répertoires</td>
+          <td style="text-align: left"><code>cp fichier.txt /destination</code> -&gt; Copie <code>fichier.txt</code> vers <code>/destination</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>mv</code></td>
+          <td style="text-align: left">Déplace ou renomme des fichiers ou répertoires</td>
+          <td style="text-align: left"><code>mv fichier.txt nouveau_nom.txt</code> -&gt; Renomme <code>fichier.txt</code> en <code>nouveau_nom.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>rm</code></td>
+          <td style="text-align: left">Supprime des fichiers</td>
+          <td style="text-align: left"><code>rm fichier.txt</code> -&gt; Supprime <code>fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>mkdir</code></td>
+          <td style="text-align: left">Crée un nouveau répertoire</td>
+          <td style="text-align: left"><code>mkdir nouveau_dossier</code> -&gt; Crée un répertoire nommé <code>nouveau_dossier</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>rmdir</code></td>
+          <td style="text-align: left">Supprime un répertoire vide</td>
+          <td style="text-align: left"><code>rmdir dossier_vide</code> -&gt; Supprime le répertoire <code>dossier_vide</code> s&rsquo;il est vide</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="exemples-dutilisation-1">Exemples d&rsquo;utilisation</h4>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1736478022";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.min.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1736478022" defer></script>
+        <script src="/js/search.js?1736478022" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Introduction à Linux (suite)</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Système de fichiers, SHELL et commandes de base</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine3/cours/index.html"><a class="padding" href="/semaine3/cours/index.html">Système de fichiers et le shell BASH</a></li>
+            <li class="" data-nav-id="/semaine3/atelier/index.html"><a class="padding" href="/semaine3/atelier/index.html">ATELIER #3: Les commandes Linux de base</a></li></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine3/cours/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1736478022" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1736478022" defer></script>
+    <script src="/js/theme.js?1736478022" defer></script>
+  </body>
+</html>

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Qu’est-ce que le SHELL? Le terme “Shell” désigne un programme qui interprète les commandes que vous tapez et les exécute. Il existe plusieurs types de shells, comme le Bourne Shell (sh), le C Shell (csh), le Korn Shell (ksh), et bien d’autres.
+La ligne de commande Ligne de commande: La ligne de commande est l’interface où vous tapez vos commandes. Elle est souvent représentée par un symbole $ ou # pour les utilisateurs root (administrateur). Lorsque vous êtes prêt à exécuter une commande, appuyez sur la touche Entrée. Tapez chaque commande sur une ligne séparée. Le résultat de la commande est affiché avant l’invite du shell suivante. Exemple:">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Shell et la ligne de commande :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Qu’est-ce que le SHELL? Le terme “Shell” désigne un programme qui interprète les commandes que vous tapez et les exécute. Il existe plusieurs types de shells, comme le Bourne Shell (sh), le C Shell (csh), le Korn Shell (ksh), et bien d’autres.
+La ligne de commande Ligne de commande: La ligne de commande est l’interface où vous tapez vos commandes. Elle est souvent représentée par un symbole $ ou # pour les utilisateurs root (administrateur). Lorsque vous êtes prêt à exécuter une commande, appuyez sur la touche Entrée. Tapez chaque commande sur une ligne séparée. Le résultat de la commande est affiché avant l’invite du shell suivante. Exemple:">
+    <meta property="og:url" content="https://example.org/semaine2/cours/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Shell et la ligne de commande :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Qu’est-ce que le SHELL? Le terme “Shell” désigne un programme qui interprète les commandes que vous tapez et les exécute. Il existe plusieurs types de shells, comme le Bourne Shell (sh), le C Shell (csh), le Korn Shell (ksh), et bien d’autres.
+La ligne de commande Ligne de commande: La ligne de commande est l’interface où vous tapez vos commandes. Elle est souvent représentée par un symbole $ ou # pour les utilisateurs root (administrateur). Lorsque vous êtes prêt à exécuter une commande, appuyez sur la touche Entrée. Tapez chaque commande sur une ligne séparée. Le résultat de la commande est affiché avant l’invite du shell suivante. Exemple:">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Shell et la ligne de commande :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Qu’est-ce que le SHELL? Le terme “Shell” désigne un programme qui interprète les commandes que vous tapez et les exécute. Il existe plusieurs types de shells, comme le Bourne Shell (sh), le C Shell (csh), le Korn Shell (ksh), et bien d’autres.
+La ligne de commande Ligne de commande: La ligne de commande est l’interface où vous tapez vos commandes. Elle est souvent représentée par un symbole $ ou # pour les utilisateurs root (administrateur). Lorsque vous êtes prêt à exécuter une commande, appuyez sur la touche Entrée. Tapez chaque commande sur une ligne séparée. Le résultat de la commande est affiché avant l’invite du shell suivante. Exemple:">
+    <meta itemprop="wordCount" content="1786">
+    <title>Shell et la ligne de commande :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine2/cours/index.xml" rel="alternate" type="application/rss+xml" title="Shell et la ligne de commande :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1736478022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736478022" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1736478022" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736478022" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1736478022" rel="stylesheet">
+    <link href="/css/theme.min.css?1736478022" rel="stylesheet">
+    <link href="/css/format-html.min.css?1736478022" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine2/cours/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#quest-ce-que-le-shell">Qu&rsquo;est-ce que le SHELL?</a></li>
+    <li><a href="#la-ligne-de-commande">La ligne de commande</a></li>
+    <li><a href="#commandes-simples">Commandes simples</a>
+      <ul>
+        <li><a href="#exemples">Exemples</a></li>
+      </ul>
+    </li>
+    <li><a href="#la-touche-tab-pour-auto-compléter-une-commande-et-le-nom-dun-fichier">La touche <code>tab</code> pour auto-compléter une commande et le nom d&rsquo;un fichier</a></li>
+    <li><a href="#la-commande-man">La commande man</a>
+      <ul>
+        <li><a href="#utilisation-de-la-commande-man">Utilisation de la commande <code>man</code></a></li>
+        <li><a href="#structure-dune-page-de-manuel">Structure d&rsquo;une page de manuel</a></li>
+        <li><a href="#options-utiles">Options utiles</a></li>
+        <li><a href="#exemple">Exemple</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine2/index.html"><span itemprop="name">Introduction à Linux (suite)</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Shell et la ligne de commande</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine2/index.html" title="Introduction à Linux (suite) (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine2/atelier/index.html" title="ATELIER #2: WSL, Ubuntu et des commandes Linux simples (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine2" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="shell-et-la-ligne-de-commande">Shell et la ligne de commande</h1>
+
+<h2 id="quest-ce-que-le-shell">Qu&rsquo;est-ce que le SHELL?</h2>
+<p>Le terme &ldquo;Shell&rdquo; désigne un programme qui interprète les commandes que vous tapez et les exécute. Il existe plusieurs types de shells, comme le <em><strong>Bourne Shell (sh)</strong></em>, le <em><strong>C Shell (csh)</strong></em>, le <em><strong>Korn Shell (ksh)</strong></em>, et bien d&rsquo;autres.</p>
+<h2 id="la-ligne-de-commande">La ligne de commande</h2>
+<ol>
+<li><strong>Ligne de commande</strong>:
+<ul>
+<li>La ligne de commande est l&rsquo;interface où vous tapez vos commandes. Elle est souvent représentée par un symbole <code>$</code> ou <code>#</code> pour les utilisateurs root (administrateur).</li>
+<li>Lorsque vous êtes prêt à exécuter une commande, appuyez sur la touche Entrée. Tapez chaque commande sur une ligne séparée. Le résultat de la commande est affiché avant l’invite du shell suivante.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Exemple</strong>:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>[user@host]$ whoami
+</span></span><span style="display:flex;"><span>user
+</span></span><span style="display:flex;"><span>[user@host]$ </span></span></code></pre></div>
+<h2 id="commandes-simples">Commandes simples</h2>
+<p>Ces commandes simples sont essentielles pour naviguer et gérer efficacement un système Linux à l&rsquo;aide du shell Bash. La maîtrise de ces commandes vous permettra d&rsquo;effectuer des tâches courantes de manière plus efficace et de mieux comprendre le fonctionnement de votre système.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Commande</strong></th>
+          <th style="text-align: left"><strong>Description</strong></th>
+          <th style="text-align: left"><strong>Options</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>date</code></td>
+          <td style="text-align: left">Affiche la date et l&rsquo;heure du système.</td>
+          <td style="text-align: left"><code>+FORMAT</code> pour formater la sortie.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>passwd</code></td>
+          <td style="text-align: left">Change le mot de passe utilisateur.</td>
+          <td style="text-align: left"><code>-l</code> pour verrouiller un compte.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>file</code></td>
+          <td style="text-align: left">Détermine le type de fichier.   Un fichier ASCII sera lisible/compréhensible</td>
+          <td style="text-align: left"><code>-i</code> pour afficher le type MIME.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>cat</code></td>
+          <td style="text-align: left">Affiche le contenu d&rsquo;un fichier.</td>
+          <td style="text-align: left"><code>-n</code> pour numéroter les lignes.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>less</code></td>
+          <td style="text-align: left">Affiche le contenu d&rsquo;un fichier page par page.</td>
+          <td style="text-align: left"><code>-N</code> pour numéroter les lignes.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>head</code></td>
+          <td style="text-align: left">Affiche par défaut, les <strong>10</strong> premières lignes d&rsquo;un fichier.</td>
+          <td style="text-align: left"><code>-n</code> pour spécifier le nombre de lignes.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>tail</code></td>
+          <td style="text-align: left">Affiche par défaut, les <strong>10</strong> dernières lignes d&rsquo;un fichier.</td>
+          <td style="text-align: left"><code>-n</code> pour spécifier le nombre de lignes.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>wc</code></td>
+          <td style="text-align: left">Compte les lignes, mots et caractères.</td>
+          <td style="text-align: left"><code>-l</code> pour les lignes, <code>-w</code> pour les mots.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ls</code></td>
+          <td style="text-align: left">Liste les fichiers et répertoires.</td>
+          <td style="text-align: left"><code>-l</code> pour un format détaillé.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>history</code></td>
+          <td style="text-align: left">Affiche l&rsquo;historique des commandes.</td>
+          <td style="text-align: left"><code>-c</code> pour effacer l&rsquo;historique. Le point d’exclamation (!) rappelle les commandes précédentes sans avoir à les retaper. La commande <strong><code>!nombre</code></strong> rappelle la commande correspondant au nombre spécifié. La commande <strong><code>!string</code></strong> rappelle la commande la plus récente qui commence par la chaîne spécifiée.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="exemples">Exemples</h3>
+<h4 id="1-commande-date-pour-la-date-et-lheure-courantes">1. Commande <code>date</code> pour la date et l&rsquo;heure courantes</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>%a</code></td>
+          <td style="text-align: left">Nom abrégé du jour de la semaine (par exemple, Mon)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%A</code></td>
+          <td style="text-align: left">Nom complet du jour de la semaine (par exemple, Monday)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%b</code></td>
+          <td style="text-align: left">Nom abrégé du mois (par exemple, Jan)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%B</code></td>
+          <td style="text-align: left">Nom complet du mois (par exemple, January)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%c</code></td>
+          <td style="text-align: left">Date et heure locale (par exemple, Thu Mar 3 23:05:25 2005)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%d</code></td>
+          <td style="text-align: left">Jour du mois (01 à 31)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%H</code></td>
+          <td style="text-align: left">Heure (00 à 23)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%I</code></td>
+          <td style="text-align: left">Heure (01 à 12)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%j</code></td>
+          <td style="text-align: left">Jour de l&rsquo;année (001 à 366)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%m</code></td>
+          <td style="text-align: left">Mois (01 à 12)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%M</code></td>
+          <td style="text-align: left">Minutes (00 à 59)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%p</code></td>
+          <td style="text-align: left">AM ou PM</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%S</code></td>
+          <td style="text-align: left">Secondes (00 à 60)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%U</code></td>
+          <td style="text-align: left">Numéro de la semaine de l&rsquo;année, avec le dimanche comme premier jour de la semaine (00 à 53)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%w</code></td>
+          <td style="text-align: left">Jour de la semaine (0 à 6, avec dimanche = 0)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%y</code></td>
+          <td style="text-align: left">Année sans le siècle (00 à 99)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%Y</code></td>
+          <td style="text-align: left">Année avec le siècle (par exemple, 2025)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>%Z</code></td>
+          <td style="text-align: left">Fuseau horaire (par exemple, EST)</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Quelques exemples:</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:~$ date
+</span></span><span style="display:flex;"><span>Thu Jan  <span style="color:#ae81ff">9</span> 20:42:36 EST <span style="color:#ae81ff">2025</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ date <span style="color:#e6db74">&#34;+%Y-%m-%d %H:%M:%S&#34;</span>
+</span></span><span style="display:flex;"><span>2025-01-09 20:42:46
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ date +%r
+</span></span><span style="display:flex;"><span>08:44:38 PM
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ date +%R
+</span></span><span style="display:flex;"><span>20:44
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ date +%x
+</span></span><span style="display:flex;"><span>01/09/25
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ date +%X
+</span></span><span style="display:flex;"><span>20:44:00
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ date +%h
+</span></span><span style="display:flex;"><span>Jan</span></span></code></pre></div>
+<h4 id="2-commande--pour-changer-le-mot-de-passe-de-lutilisateur">2. commande `` pour changer le mot de passe de l&rsquo;utilisateur</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>nathalie@Yoda ~<span style="color:#f92672">]</span>$ passwd
+</span></span><span style="display:flex;"><span>Changing password <span style="color:#66d9ef">for</span> user nathalie.
+</span></span><span style="display:flex;"><span>Current password: ancien_mot_de_passe
+</span></span><span style="display:flex;"><span>New password: nouveau_mot_de_passe
+</span></span><span style="display:flex;"><span>Retype new password: nouveau_mot_de_passe
+</span></span><span style="display:flex;"><span>passwd: all authentication tokens updated successfully.</span></span></code></pre></div>
+<h4 id="3-commande-file-pour-obtenir-le-type-dun-fichier">3. Commande <code>file</code> pour obtenir le type d&rsquo;un fichier</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:~$ file /etc/services
+</span></span><span style="display:flex;"><span>/etc/services: ASCII text
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ file /home
+</span></span><span style="display:flex;"><span>/home: directory</span></span></code></pre></div>
+<h4 id="4-commande-cat-pour-afficher-le-contenu-dun-fichier">4. Commande <code>cat</code> pour afficher le contenu d&rsquo;un fichier</h4>
+<p><strong>Un fichier à la fois</strong>:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:~$ cat /etc/services
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Network services, Internet style</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Updated from https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml .</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># New ports will be added on request if they have been officially assigned</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># by IANA and used in the real-world or are needed by a debian package.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If you need a huge list of used numbers please install the nmap package.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tcpmux          1/tcp                           <span style="color:#75715e"># TCP port service multiplexer</span>
+</span></span><span style="display:flex;"><span>echo            7/tcp
+</span></span><span style="display:flex;"><span>echo            7/udp
+</span></span><span style="display:flex;"><span>discard         9/tcp           sink null
+</span></span><span style="display:flex;"><span>discard         9/udp           sink null
+</span></span><span style="display:flex;"><span>systat          11/tcp          users
+</span></span><span style="display:flex;"><span>daytime         13/tcp
+</span></span><span style="display:flex;"><span>daytime         13/udp
+</span></span><span style="display:flex;"><span>netstat         15/tcp</span></span></code></pre></div>
+<p><strong>Deux fichiers à la fois</strong>:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:~$ cat fichier1 fichier2
+</span></span><span style="display:flex;"><span>Hello World!!
+</span></span><span style="display:flex;"><span>Introduction aux commandes Linux.</span></span></code></pre></div>
+<h4 id="5-commande-less-pour-afficher-le-contenu-dun-fichier-page-par-page">5. Commande <code>less</code> pour afficher le contenu d&rsquo;un fichier page par page</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:~$ less /etc/services
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Network services, Internet style</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Updated from https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml .</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># New ports will be added on request if they have been officially assigned</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># by IANA and used in the real-world or are needed by a debian package.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If you need a huge list of used numbers please install the nmap package.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tcpmux          1/tcp                           <span style="color:#75715e"># TCP port service multiplexer</span>
+</span></span><span style="display:flex;"><span>echo            7/tcp
+</span></span><span style="display:flex;"><span>echo            7/udp
+</span></span><span style="display:flex;"><span>discard         9/tcp           sink null
+</span></span><span style="display:flex;"><span>discard         9/udp           sink null
+</span></span><span style="display:flex;"><span>systat          11/tcp          users
+</span></span><span style="display:flex;"><span>daytime         13/tcp
+</span></span><span style="display:flex;"><span>daytime         13/udp
+</span></span><span style="display:flex;"><span>netstat         15/tcp
+</span></span><span style="display:flex;"><span>qotd            17/tcp          quote
+</span></span><span style="display:flex;"><span>chargen         19/tcp          ttytst source
+</span></span><span style="display:flex;"><span>chargen         19/udp          ttytst source
+</span></span><span style="display:flex;"><span>ftp-data        20/tcp
+</span></span><span style="display:flex;"><span>ftp             21/tcp
+</span></span><span style="display:flex;"><span>fsp             21/udp          fspd
+</span></span><span style="display:flex;"><span>ssh             22/tcp                          <span style="color:#75715e"># SSH Remote Login Protocol</span>
+</span></span><span style="display:flex;"><span>telnet          23/tcp
+</span></span><span style="display:flex;"><span>smtp            25/tcp          mail
+</span></span><span style="display:flex;"><span>time            37/tcp          timserver
+</span></span><span style="display:flex;"><span>time            37/udp          timserver
+</span></span><span style="display:flex;"><span>whois           43/tcp          nicname
+</span></span><span style="display:flex;"><span>tacacs          49/tcp                          <span style="color:#75715e"># Login Host Protocol (TACACS)</span>
+</span></span><span style="display:flex;"><span>tacacs          49/udp
+</span></span><span style="display:flex;"><span>domain          53/tcp                          <span style="color:#75715e"># Domain Name Server</span>
+</span></span><span style="display:flex;"><span>domain          53/udp
+</span></span><span style="display:flex;"><span>bootps          67/udp
+</span></span><span style="display:flex;"><span>bootpc          68/udp
+</span></span><span style="display:flex;"><span>tftp            69/udp
+</span></span><span style="display:flex;"><span>/etc/services</span></span></code></pre></div>
+<p><strong>NB</strong>: Pour revenir à la ligne de commande, taper la lettre &lsquo;q&rsquo;</p>
+<h4 id="6-commande-head-pour-afficher-les-premières-lignes-dun-fichier">6. Commande <code>head</code> pour afficher les premières lignes d&rsquo;un fichier</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:~$ head /etc/services
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Network services, Internet style</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Updated from https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml .</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># New ports will be added on request if they have been officially assigned</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># by IANA and used in the real-world or are needed by a debian package.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If you need a huge list of used numbers please install the nmap package.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tcpmux          1/tcp                           <span style="color:#75715e"># TCP port service multiplexer</span>
+</span></span><span style="display:flex;"><span>echo            7/tcp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ head -n <span style="color:#ae81ff">5</span> /etc/services
+</span></span><span style="display:flex;"><span>Network services, Internet style
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Updated from https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml .</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># New ports will be added on request if they have been officially assigned</span></span></span></code></pre></div>
+<h4 id="7-commande-tail-pour-afficher-les-dernières-lignes-dun-fichier">7. Commande <code>tail</code> pour afficher les dernières lignes d&rsquo;un fichier</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:~$ tail /etc/services
+</span></span><span style="display:flex;"><span>sgi-cad         17004/tcp                       <span style="color:#75715e"># Cluster Admin daemon</span>
+</span></span><span style="display:flex;"><span>binkp           24554/tcp                       <span style="color:#75715e"># binkp fidonet protocol</span>
+</span></span><span style="display:flex;"><span>asp             27374/tcp                       <span style="color:#75715e"># Address Search Protocol</span>
+</span></span><span style="display:flex;"><span>asp             27374/udp
+</span></span><span style="display:flex;"><span>csync2          30865/tcp                       <span style="color:#75715e"># cluster synchronization tool</span>
+</span></span><span style="display:flex;"><span>dircproxy       57000/tcp                       <span style="color:#75715e"># Detachable IRC Proxy</span>
+</span></span><span style="display:flex;"><span>tfido           60177/tcp                       <span style="color:#75715e"># fidonet EMSI over telnet</span>
+</span></span><span style="display:flex;"><span>fido            60179/tcp                       <span style="color:#75715e"># fidonet EMSI over TCP</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Local services</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ tail -n <span style="color:#ae81ff">5</span> /etc/services
+</span></span><span style="display:flex;"><span>dircproxy       57000/tcp                       <span style="color:#75715e"># Detachable IRC Proxy</span>
+</span></span><span style="display:flex;"><span>tfido           60177/tcp                       <span style="color:#75715e"># fidonet EMSI over telnet</span>
+</span></span><span style="display:flex;"><span>fido            60179/tcp                       <span style="color:#75715e"># fidonet EMSI over TCP</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Local services</span></span></span></code></pre></div>
+<h4 id="8-commande-wc-pour-obtenir-le-nombre-de-lignes-de-mots-et-la-taille-en-octets-dans-un-fichier">8. Commande <code>wc</code> pour obtenir le nombre de <strong>lignes</strong>, de <strong>mots</strong> et la <strong>taille</strong> en octets dans un fichier</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:~$ wc /etc/services
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">361</span>  <span style="color:#ae81ff">1773</span> <span style="color:#ae81ff">12813</span> /etc/services
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ wc -l /etc/services
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">361</span> /etc/services
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ wc -w /etc/services
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1773</span> /etc/services
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ wc -c /etc/services
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">12813</span> /etc/services</span></span></code></pre></div>
+<h4 id="9-commande-ls-pour-lister-les-détails-dun-fichier">9. Commande <code>ls</code> pour lister les détails d&rsquo;un fichier</h4>
+<p>En premier, allons dans le répertoire /etc à l&rsquo;aide de la commande <code>cd</code></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:~$ cd /etc</span></span></code></pre></div>
+<p>Utilisons la commande <code>ls</code></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:/etc$ ls
+</span></span><span style="display:flex;"><span>PackageKit              cron.weekly     groff          locale.conf          nsswitch.conf  rmt                supercat
+</span></span><span style="display:flex;"><span>X11                     cron.yearly     group          locale.gen           opt            rpc                sysctl.conf
+</span></span><span style="display:flex;"><span>adduser.conf            crontab         group-         localtime            os-release     rsyslog.conf       sysctl.d
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nathalie@Yoda:/etc$ ls -l
+</span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">340</span>
+</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#ae81ff">1</span> root root       <span style="color:#ae81ff">4096</span> Apr <span style="color:#ae81ff">23</span>  <span style="color:#ae81ff">2024</span> PackageKit
+</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#ae81ff">1</span> root root       <span style="color:#ae81ff">4096</span> Apr <span style="color:#ae81ff">23</span>  <span style="color:#ae81ff">2024</span> X11
+</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#ae81ff">1</span> root root       <span style="color:#ae81ff">3444</span> Jul  <span style="color:#ae81ff">5</span>  <span style="color:#ae81ff">2023</span> adduser.conf
+</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#ae81ff">1</span> root root       <span style="color:#ae81ff">4096</span> Apr <span style="color:#ae81ff">23</span>  <span style="color:#ae81ff">2024</span> alternatives
+</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#ae81ff">1</span> root root       <span style="color:#ae81ff">4096</span> Apr <span style="color:#ae81ff">23</span>  <span style="color:#ae81ff">2024</span> apparmor</span></span></code></pre></div>
+<h4 id="10-commande-history-pour-afficher-les-commandes-effectuées-précédemment">10. Commande <code>history</code> pour afficher les commandes effectuées précédemment</h4>
+<p>Pour revenir au dossier personnel</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:/etc$ cd ~</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:~$ history
+</span></span><span style="display:flex;"><span> exit
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">2</span>  date
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">3</span>  date +Y%
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">4</span>  date -%m
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">5</span>  date help
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">6</span>  man date
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">7</span>  date -d
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">8</span>  exit
+</span></span><span style="display:flex;"><span>    <span style="color:#ae81ff">9</span>  date <span style="color:#e6db74">&#34;+%Y-%m-%d %H:%M:%S&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">10</span>  date
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">11</span>  date %r
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">12</span>  date +%R
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">13</span>  date +%x
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">14</span>  date +%Y
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">15</span>  date +%m
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">16</span>  date +%s
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">17</span>  date +%M
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">18</span>  date +%d
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">19</span>  date +%D
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">20</span>  date +%h
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">21</span>  date +%r
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">22</span>  date +%X
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">23</span>  date +%S
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">24</span>  file etc/services
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">25</span>  ls
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">26</span>  file /etc/services
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">27</span>  cat /etc/services
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">28</span>  less /etc/services
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">29</span>  file /home
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">30</span>  less /etc/services
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">31</span>  head /etc/services
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">32</span>  head -n <span style="color:#ae81ff">5</span> /etc/services
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">33</span>  tail /etc/services
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">34</span>  tail -n <span style="color:#ae81ff">5</span> /etc/services
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">35</span>  wc /etc/services
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">36</span>  wc -l /etc/services
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">37</span>  wc -c /etc/services
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">38</span>  wc -w /etc/services
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">39</span>  ls
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">40</span>  ls -l
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">41</span>  cd /etc
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">42</span>  ls
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">43</span>  ls -l
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">44</span>  cd ..
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">45</span>  cd ~
+</span></span><span style="display:flex;"><span>   <span style="color:#ae81ff">46</span>  history</span></span></code></pre></div>
+<h2 id="la-touche-tab-pour-auto-compléter-une-commande-et-le-nom-dun-fichier">La touche <code>tab</code> pour auto-compléter une commande et le nom d&rsquo;un fichier</h2>
+<p>| <code>Tab</code>        | Tapez <code>cat /etc/ser</code> puis appuyez sur <code>Tab</code> pour auto-compléter le nom du fichier. |</p>
+<ul>
+<li><strong>Description</strong> : Permet de compléter rapidement les commandes et les noms de fichiers après avoir entré un nombre de caractères suffisant pour réduire les possibilités à une seule. Si les caractères saisis ne sont pas uniques, appuyez deux fois sur la touche de tabulation pour afficher toutes les commandes correspondantes.
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>user@host ~<span style="color:#f92672">]</span>$ pas Tab+Tab
+</span></span><span style="display:flex;"><span>passwd       paste        pasuspender
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>user@host ~<span style="color:#f92672">]</span>$ pass Tab
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>user@host ~<span style="color:#f92672">]</span>$ passwd 
+</span></span><span style="display:flex;"><span>Changing password <span style="color:#66d9ef">for</span> user user.
+</span></span><span style="display:flex;"><span>Current password: </span></span></code></pre></div>
+</li>
+<li><strong>Exemple</strong> :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>user@host ~<span style="color:#f92672">]</span>$ ls /etc/pas1Tab
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>user@host ~<span style="color:#f92672">]</span>$ ls /etc/passwd2Tab
+</span></span><span style="display:flex;"><span>passwd   passwd-</span></span></code></pre></div>
+</li>
+<li><strong>Résultat</strong> :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>passwd
+</span></span><span style="display:flex;"><span>passwd-</span></span></code></pre></div>
+</li>
+</ul>
+<ol start="10">
+<li><strong>history</strong></li>
+</ol>
+<ul>
+<li><strong>Description</strong> : Affiche la liste des commandes précédemment exécutées, précédées d’un numéro de commande.
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>user@host ~<span style="color:#f92672">]</span>$ history
+</span></span><span style="display:flex;"><span>...output omitted...
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">23</span>  clear
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">24</span>  who
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">25</span>  pwd
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">26</span>  ls /etc
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">27</span>  uptime
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">28</span>  ls -l
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">29</span>  date
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">30</span>  history</span></span></code></pre></div>
+</li>
+<li><strong>Exemple</strong> :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>user@host ~<span style="color:#f92672">]</span>$ !ls
+</span></span><span style="display:flex;"><span>ls -l
+</span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>drwxr-xr-x. <span style="color:#ae81ff">2</span> user user <span style="color:#ae81ff">6</span> Mar <span style="color:#ae81ff">29</span> 21:16 Desktop
+</span></span><span style="display:flex;"><span>...output omitted...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>user@host ~<span style="color:#f92672">]</span>$ !26
+</span></span><span style="display:flex;"><span>ls /etc
+</span></span><span style="display:flex;"><span>abrt                     hosts                     pulse
+</span></span><span style="display:flex;"><span>adjtime                  hosts.allow               purple
+</span></span><span style="display:flex;"><span>aliases                  hosts.deny                qemu-ga
+</span></span><span style="display:flex;"><span>...output omitted...</span></span></code></pre></div>
+</li>
+<li><strong>Résultat</strong> :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>ls -l
+</span></span><span style="display:flex;"><span>total 0
+</span></span><span style="display:flex;"><span>drwxr-xr-x. 2 user user 6 Mar 29 21:16 Desktop
+</span></span><span style="display:flex;"><span>ls /etc
+</span></span><span style="display:flex;"><span>abrt                     hosts                     pulse
+</span></span><span style="display:flex;"><span>adjtime                  hosts.allow               purple
+</span></span><span style="display:flex;"><span>aliases                  hosts.deny                qemu-ga</span></span></code></pre></div>
+</li>
+</ul>
+<p>====</p>
+<h2 id="la-commande-man">La commande man</h2>
+<p>La commande <code>man</code> (abréviation de &ldquo;manual&rdquo;) est utilisée pour afficher le manuel d&rsquo;utilisation des commandes et programmes sous Linux. Elle fournit des informations détaillées sur la syntaxe, les options et les exemples d&rsquo;utilisation des commandes.</p>
+<h3 id="utilisation-de-la-commande-man">Utilisation de la commande <code>man</code></h3>
+<p>Pour utiliser la commande <code>man</code>, il suffit de taper <code>man</code> suivi du nom de la commande ou du programme dont vous souhaitez consulter le manuel. Par exemple :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>man ls</span></span></code></pre></div>
+<p>Cela affichera le manuel de la commande <code>ls</code>.</p>
+<h3 id="structure-dune-page-de-manuel">Structure d&rsquo;une page de manuel</h3>
+<p>Une page de manuel typique contient plusieurs sections, telles que :</p>
+<ul>
+<li><strong>NAME</strong> : Le nom de la commande et une brève description.</li>
+<li><strong>SYNOPSIS</strong> : La syntaxe de la commande.</li>
+<li><strong>DESCRIPTION</strong> : Une description détaillée de la commande et de ses options.</li>
+<li><strong>OPTIONS</strong> : Les options disponibles pour la commande.</li>
+<li><strong>EXAMPLES</strong> : Des exemples d&rsquo;utilisation.</li>
+<li><strong>SEE ALSO</strong> : Des références à d&rsquo;autres commandes ou documents pertinents.</li>
+</ul>
+<h3 id="options-utiles">Options utiles</h3>
+<ul>
+<li><code>man -k keyword</code> : Recherche des pages de manuel contenant le mot-clé spécifié.</li>
+<li><code>man -f command</code> : Affiche une brève description de la commande (équivalent à <code>whatis command</code>).</li>
+</ul>
+<h3 id="exemple">Exemple</h3>
+<p>Pour afficher le manuel de la commande <code>cat</code>, vous pouvez utiliser :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>man cat</span></span></code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1736478022";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.min.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1736478022" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1736478022" defer></script>
+        <script src="/js/search.js?1736478022" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Introduction à Linux (suite)</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine2/cours/index.html"><a class="padding" href="/semaine2/cours/index.html">Shell et la ligne de commande</a></li>
+            <li class="" data-nav-id="/semaine2/atelier/index.html"><a class="padding" href="/semaine2/atelier/index.html">ATELIER #2: WSL, Ubuntu et des commandes Linux simples</a></li></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Système de fichiers, SHELL et commandes de base</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine2/cours/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1736478022" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1736478022" defer></script>
+    <script src="/js/theme.js?1736478022" defer></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Système de fichiers, SHELL et commandes de base :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine3/index.html</link>
+    <description>Plan de la leçon Théorie :&#xA;Structure du système de fichiers Linux Commandes de navigation de base (ls, cd, pwd, etc.) Commandes de gestion des fichiers (cp, mv, rm, mkdir, etc.) Atelier :&#xA;Manipulation des fichiers et des répertoires</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Système de fichiers et le shell BASH</title>
+      <link>https://example.org/semaine3/cours/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine3/cours/index.html</guid>
+      <description>La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine. Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.&#xA;La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis. Comprendre cette structure est crucial pour tout utilisateur ou administrateur de système Linux.</description>
+    </item>
+    <item>
+      <title>ATELIER #3: Les commandes Linux de base</title>
+      <link>https://example.org/semaine3/atelier/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine3/atelier/index.html</guid>
+      <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les commandes de base pour la gestion des fichiers sous Linux en utilisant la distribution Linux de votre choix. Les exercices pratiques permettront de renforcer la compréhension et l’utilisation de ces commandes.&#xA;Format de la remise Attention&#xD;Pour chacune des étapes et questions vous devrez prendre une capture d’écran de vos commandes et résultats. ATTENTION: On doit pouvoir voir votre non d’utilisateur. Ne travaillez donc pas avec l’utilisateur root.</description>
+    </item>
+  </channel>
+</rss>

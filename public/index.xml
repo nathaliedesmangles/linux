@@ -1,11 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>420-ZG4-MO Système d’exploitation Linux :: My New Hugo Site</title>
+    <title>420-ZG4-MO Système d’exploitation Linux :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/index.html</link>
     <description>Pondération : 2-2-2&#xA;Description du cours :&#xA;Linux est le système d’exploitation qui constitue la colonne vertébrale des entreprises les plus puissantes et les plus innovantes au monde. Dès lors, l’étudiante ou l’étudiant sera initié aux principes de base des systèmes d’exploitation libre (Linux) et à l’installation et l’exploitation d’une distribution libre de Linux (p. ex. Fedora, Ubuntu, AlmaLinux, OpenSource).</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction à Linux</title>
+      <link>https://example.org/semaine1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine1/index.html</guid>
+      <description>Plan de la leçon Présentation du cours (plan de cours).&#xA;Pondération. Objectifs. Contexte d’apprentissage et méthodes pédagogiques. Evaluations formatives. Évaluations sommatives. Politiques institutionnelles (absences, retards, plagiat, etc.). Règlements en classe et hors classe. Théorie :&#xA;Généralités sur le système d’exploitation Linux. Atelier :&#xA;Installation de Linux sur une machine virtuelle.</description>
+    </item>
+    <item>
+      <title>Introduction à Linux (suite)</title>
+      <link>https://example.org/semaine2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine2/index.html</guid>
+      <description>Plan de la leçon Théorie :&#xA;Qu’est-ce que le Shell ? La ligne de commandes Quelques commandes simples Atelier :&#xA;Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples</description>
+    </item>
+    <item>
+      <title>Système de fichiers, SHELL et commandes de base</title>
+      <link>https://example.org/semaine3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine3/index.html</guid>
+      <description>Plan de la leçon Théorie :&#xA;Structure du système de fichiers Linux Commandes de navigation de base (ls, cd, pwd, etc.) Commandes de gestion des fichiers (cp, mv, rm, mkdir, etc.) Atelier :&#xA;Manipulation des fichiers et des répertoires</description>
+    </item>
   </channel>
 </rss>
