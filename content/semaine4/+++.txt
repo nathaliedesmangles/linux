@@ -1,4 +1,0 @@
-+++
-title = "Processus de démarrage et bash"
-weight = 41
-+++

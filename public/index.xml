@@ -22,11 +22,18 @@
       <description>Plan de la leçon Théorie :&#xA;Qu’est-ce que le Shell ? La ligne de commandes Quelques commandes simples Atelier :&#xA;Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples</description>
     </item>
     <item>
-      <title>Système de fichiers, SHELL et commandes de base</title>
+      <title>Système de fichiers, shell et commandes de base</title>
       <link>https://example.org/semaine3/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine3/index.html</guid>
-      <description>Plan de la leçon Théorie :&#xA;Structure du système de fichiers Linux Commandes de navigation de base (ls, cd, pwd, etc.) Commandes de gestion des fichiers (cp, mv, rm, mkdir, etc.) Atelier :&#xA;Manipulation des fichiers et des répertoires</description>
+      <description>Plan de la leçon Théorie :&#xA;Structure du système de fichiers Linux Commandes de navigation de base (ls, cd, pwd, etc.) Commandes de gestion des fichiers (cp, mv, rm, mkdir, etc.) Atelier :&#xA;Arborescence du système de fichiers Manipulation des fichiers et des répertoires</description>
+    </item>
+    <item>
+      <title>Processus de démarrage et le shell bash</title>
+      <link>https://example.org/semaine4/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine4/index.html</guid>
+      <description>Plan de la leçon Théorie : Atelier :</description>
     </item>
   </channel>
 </rss>

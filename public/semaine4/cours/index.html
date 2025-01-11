@@ -5,30 +5,30 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Plan de la leçon Théorie :
-Qu’est-ce que le Shell ? La ligne de commandes Quelques commandes simples Atelier :
-Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples">
+    <meta name="description" content="Le BIOS Le shell BASH BASH, qui signifie “Bourne Again SHell”, est une version améliorée du Bourne Shell. Il a été développé pour offrir plus de fonctionnalités et une meilleure compatibilité avec les scripts existants. Voici quelques différences clés :
+Compatibilité : BASH est compatible avec les scripts du Bourne Shell, mais il offre également des fonctionnalités supplémentaires.
+Fonctionnalités : BASH inclut des fonctionnalités avancées comme l’édition de ligne de commande, l’historique des commandes, et le complétion automatique des noms de fichiers et des commandes.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Introduction à Linux (suite) :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Plan de la leçon Théorie :
-Qu’est-ce que le Shell ? La ligne de commandes Quelques commandes simples Atelier :
-Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples">
-    <meta property="og:url" content="https://example.org/semaine2/index.html">
+    <meta name="twitter:title" content="Processus de démarrage et BASH :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Le BIOS Le shell BASH BASH, qui signifie “Bourne Again SHell”, est une version améliorée du Bourne Shell. Il a été développé pour offrir plus de fonctionnalités et une meilleure compatibilité avec les scripts existants. Voici quelques différences clés :
+Compatibilité : BASH est compatible avec les scripts du Bourne Shell, mais il offre également des fonctionnalités supplémentaires.
+Fonctionnalités : BASH inclut des fonctionnalités avancées comme l’édition de ligne de commande, l’historique des commandes, et le complétion automatique des noms de fichiers et des commandes.">
+    <meta property="og:url" content="https://example.org/semaine4/cours/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
-    <meta property="og:title" content="Introduction à Linux (suite) :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Plan de la leçon Théorie :
-Qu’est-ce que le Shell ? La ligne de commandes Quelques commandes simples Atelier :
-Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples">
+    <meta property="og:title" content="Processus de démarrage et BASH :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Le BIOS Le shell BASH BASH, qui signifie “Bourne Again SHell”, est une version améliorée du Bourne Shell. Il a été développé pour offrir plus de fonctionnalités et une meilleure compatibilité avec les scripts existants. Voici quelques différences clés :
+Compatibilité : BASH est compatible avec les scripts du Bourne Shell, mais il offre également des fonctionnalités supplémentaires.
+Fonctionnalités : BASH inclut des fonctionnalités avancées comme l’édition de ligne de commande, l’historique des commandes, et le complétion automatique des noms de fichiers et des commandes.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
-    <meta itemprop="name" content="Introduction à Linux (suite) :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Plan de la leçon Théorie :
-Qu’est-ce que le Shell ? La ligne de commandes Quelques commandes simples Atelier :
-Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples">
-    <meta itemprop="wordCount" content="31">
-    <title>Introduction à Linux (suite) :: 420-ZG4-MO LINUX</title>
-    <link href="/semaine2/index.xml" rel="alternate" type="application/rss+xml" title="Introduction à Linux (suite) :: 420-ZG4-MO LINUX">
+    <meta itemprop="name" content="Processus de démarrage et BASH :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Le BIOS Le shell BASH BASH, qui signifie “Bourne Again SHell”, est une version améliorée du Bourne Shell. Il a été développé pour offrir plus de fonctionnalités et une meilleure compatibilité avec les scripts existants. Voici quelques différences clés :
+Compatibilité : BASH est compatible avec les scripts du Bourne Shell, mais il offre également des fonctionnalités supplémentaires.
+Fonctionnalités : BASH inclut des fonctionnalités avancées comme l’édition de ligne de commande, l’historique des commandes, et le complétion automatique des noms de fichiers et des commandes.">
+    <meta itemprop="wordCount" content="103">
+    <title>Processus de démarrage et BASH :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine4/cours/index.xml" rel="alternate" type="application/rss+xml" title="Processus de démarrage et BASH :: 420-ZG4-MO LINUX">
     <link href="/css/fontawesome-all.min.css?1736564313" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736564313" rel="stylesheet"></noscript>
     <link href="/css/auto-complete.css?1736564313" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736564313" rel="stylesheet"></noscript>
     <link href="/css/perfect-scrollbar.min.css?1736564313" rel="stylesheet">
@@ -36,8 +36,8 @@ Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples">
     <link href="/css/format-html.min.css?1736564313" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.relBasePath='..';
-      window.relearn.relBaseUri='..';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='https:\/\/example.org';
       window.relearn.min = `.min`;
       window.relearn.disableAnchorCopy=false;
@@ -82,7 +82,7 @@ Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples">
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/semaine2/index.html">
+  <body class="mobile-support html" data-url="/semaine4/cours/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -96,7 +96,8 @@ Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#plan-de-la-leçon">Plan de la leçon</a></li>
+    <li><a href="#le-bios">Le BIOS</a></li>
+    <li><a href="#le-shell-bash">Le shell BASH</a></li>
   </ul>
 </nav>
                 </div>
@@ -105,12 +106,13 @@ Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples">
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Introduction à Linux (suite)</span><meta itemprop="position" content="2"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine4/index.html"><span itemprop="name">Processus de démarrage et le shell bash</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Processus de démarrage et BASH</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine1/atelier/index.html" title="ATELIER #1: Installation de Linux sur une VM (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/index.html" title="Processus de démarrage et le shell bash (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine2/cours/index.html" title="Introduction au shell et la ligne de commande (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/atelier/index.html" title="ATELIER #4: Le processus de démarrage et le BASH (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -124,30 +126,26 @@ Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples">
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable semaine2" tabindex="-1">
+      <main id="R-body-inner" class="highlightable semaine4" tabindex="-1">
         <div class="flex-block-wrapper">
 <article class="default">
   <header class="headline">
   </header>
 
-<h1 id="introduction-à-linux-suite">Introduction à Linux (suite)</h1>
+<h1 id="processus-de-démarrage-et-bash">Processus de démarrage et BASH</h1>
 
-<h2 id="plan-de-la-leçon">Plan de la leçon</h2>
+<h2 id="le-bios">Le BIOS</h2>
+<h2 id="le-shell-bash">Le shell BASH</h2>
+<p><em><strong>BASH</strong></em>, qui signifie &ldquo;<em>Bourne Again SHell</em>&rdquo;, est une version améliorée du <em>Bourne Shell</em>. Il a été développé pour offrir plus de fonctionnalités et une meilleure compatibilité avec les scripts existants. Voici quelques différences clés :</p>
 <ul>
 <li>
-<p><strong>Théorie :</strong></p>
-<ul>
-<li>Qu&rsquo;est-ce que le Shell ?</li>
-<li>La ligne de commandes</li>
-<li>Quelques commandes simples</li>
-</ul>
+<p><strong>Compatibilité</strong> : BASH est compatible avec les scripts du Bourne Shell, mais il offre également des fonctionnalités supplémentaires.</p>
 </li>
 <li>
-<p><strong>Atelier :</strong></p>
-<ul>
-<li>Installation de WSL et Ubuntu</li>
-<li>Exercices pratiques sur les commandes simples</li>
-</ul>
+<p><strong>Fonctionnalités</strong> : BASH inclut des fonctionnalités avancées comme l&rsquo;édition de ligne de commande, l&rsquo;historique des commandes, et le complétion automatique des noms de fichiers et des commandes.</p>
+</li>
+<li>
+<p><strong>Portabilité</strong> : BASH est disponible sur de nombreux systèmes d&rsquo;exploitation, y compris Linux, macOS, et Windows (via WSL).</p>
 </li>
 </ul>
 
@@ -196,11 +194,11 @@ Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples">
         <div id="R-shortcutmenu-home" class="R-sidebarmenu">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
-            <li class="active parent " data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Introduction à Linux (suite)</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu">
-            <li class="" data-nav-id="/semaine2/cours/index.html"><a class="padding" href="/semaine2/cours/index.html">Introduction au shell et la ligne de commande</a></li>
-            <li class="" data-nav-id="/semaine2/atelier/index.html"><a class="padding" href="/semaine2/atelier/index.html">ATELIER #2: WSL, Ubuntu et des commandes Linux simples</a></li></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Introduction à Linux (suite)</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Système de fichiers, shell et commandes de base</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Processus de démarrage et le shell bash</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Processus de démarrage et le shell bash</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine4/cours/index.html"><a class="padding" href="/semaine4/cours/index.html">Processus de démarrage et BASH</a></li>
+            <li class="" data-nav-id="/semaine4/atelier/index.html"><a class="padding" href="/semaine4/atelier/index.html">ATELIER #4: Le processus de démarrage et le BASH</a></li></ul></li>
           </ul>
         </div>
     
@@ -216,7 +214,7 @@ Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples">
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine2/index.html" lang="en-us" selected></option>
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine4/cours/index.html" lang="en-us" selected></option>
                     </select>
                   </div>
                   <div class="clear"></div>

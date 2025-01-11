@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Système de fichiers et le shell BASH :: 420-ZG4-MO LINUX</title>
+    <title>Système de fichiers, les commandes de base :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine3/cours/index.html</link>
-    <description>La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine. Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.&#xA;La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis. Comprendre cette structure est crucial pour tout utilisateur ou administrateur de système Linux.</description>
+    <description>La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine.&#xA;Attention&#xD;Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine3/cours/index.xml" rel="self" type="application/rss+xml" />

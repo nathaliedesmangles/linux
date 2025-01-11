@@ -22,13 +22,22 @@
     <loc>https://example.org/semaine2/atelier/index.html</loc>
   </url>
   <url>
-    <loc>https://example.org/semaine3/cours/index.html</loc>
-  </url>
-  <url>
     <loc>https://example.org/semaine3/index.html</loc>
   </url>
   <url>
+    <loc>https://example.org/semaine3/cours/index.html</loc>
+  </url>
+  <url>
     <loc>https://example.org/semaine3/atelier/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine4/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine4/cours/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine4/atelier/index.html</loc>
   </url>
   <url>
     <loc>https://example.org/categories/index.html</loc>

@@ -1,0 +1,219 @@
+---
+title: "Atelier 3 - Premières commandes"
+description: "linux"
+date: 2020-01-31T11:00:10-05:00
+draft: true
+---
+## Attention:
+Avant de commencer chaque exercice, assurez vous que vous travaillez dans votre répertoire personnel et ne vous  déplacez pas que lorsque demandé. 
+
+## Exercice1 : Explorer l’arborescence Linux
+
+1.	Afficher le chemin de votre répertoire courant. 
+
+2.	Allez dans le répertoire <code class="gr">/usr/share/doc</code>, puis vérifiez le chemin de votre répertoire courant.
+
+3.	Remontez dans le répertoire parent (utilisez un chemin relatif).
+
+4.	Allez dans votre répertoire personnel à l’aide d’un chemin relatif
+
+5. Listez les fichiers présents du répertoire courant.
+
+6.	Toujours en étant dans votre dossier personnel, listez les fichiers du répertoire <code class="gr">/usr</code> 
+
+## Exercice2: Commandes de base
+
+Sur votre machine Alma, avec votre utilisateur standard, allez sur votre cours
+sur Moodle, dans la semaine 3. On vous demande de télécharger ce fichier.
+
+![HTTP](../../images/atelier3-1.png?height=50&classes=border,shadow,inline)
+
+Sur cette capture, cliquez sur fichier1. 
+
+![HTTP](../../images/atelier3-2.png?height=200&classes=border,shadow,inline)
+
+Sur cette fenêtre, faites un clic droit et choisissez Enregistrez-sous.
+
+![HTTP](../../images/atelier3-3.png?height=200&classes=border,shadow,inline)
+
+Le fichier va être enregistré par défaut dans le dossier Téléchargements.
+
+![HTTP](../../images/atelier3-4.png?height=300&classes=border,shadow,inline)
+
+Fermez la fenêtre.
+
+<!-- et cliquez sur le bouton Activités sur le bureau.
+
+![HTTP](../../images/atelier3-5.png?height=300&classes=border,shadow,inline)
+
+Cliquez sur l’icône Fichiers.
+
+![HTTP](../../images/atelier3-6.png?height=300&classes=border,shadow,inline)
+
+-->
+Allez maintenant sur votre terminal. Placez-vous dans votre répertoire personnel et déplacez-vous seulement si c'est demandé. 
+
+
+1. Créez un répertoire <code class="gr">Atelier2</code> dans le répertoire courant. (en utilisant un chemin relatif)
+
+2. Copiez le fichier téléchargé <code class="gr">fichier1.txt</code> dans le répertoire <code class="gr">Atelier2</code>. (en utilisant un chemin relatif)
+
+3. Créez un autre répertoire nommé <code class="gr">Rep2</code>. (en utilisant un chemin relatif)
+
+4. Déplacez <code class="gr">Atelier2</code> dans <code class="gr">Rep2</code>. (en utilisant un chemin relatif)
+
+5. Déplacez-vous dans <code class="gr">Atelier2</code>. (en utilisant un chemin relatif)
+
+6. Avec <code class="gr">vim</code>, ouvrez le fichier <code class="gr">fichier1.txt</code> et écrivez quelque chose dans le fichier. Quittez et sauvegardez.
+
+7. Affichez le contenu du fichier à l’aide de la commande <code class="gr">cat</code>. (en utilisant un chemin relatif)
+
+8. Créez un autre fichier nommé <code class="gr">fichier2.txt</code> dans <code class="gr">Atelier2</code>. (en utilisant un chemin relatif)
+
+9. Avec une seule commande <code class="gr">cat</code> affichez le contenu de <code class="gr">fichier1.txt</code> et </code>fichier2.txt</code>. (en utilisant un chemin relatif)
+
+10. Revenez dans votre répertoire personnel. (en utilisant un chemin relatif)
+
+11. Supprimez le répertoire <code class="gr">Rep2</code>. (en utilisant un chemin relatif)
+
+12. Dans quel répertoire vous trouvez-vous?
+
+13. Essayez de créer un dossier avec le nom <code class="gr">rep3</code> dans le dossier <code class="gr">/root</code> (en utilisant un chemin absolu). Avez-vous réussi ? Si non, dites pourquoi. 
+
+14. Affichez le contenu du répertoire <code class="gr">/etc</code> en utilisant l’option <code class="gr">-l</code> .
+
+15. Par quels caractères, les lignes affichées débutent ? Quelle est leur signification ?
+
+16. Qu’est-ce qui distingue le répertoire <code class="gr">/proc</code> des autres répertoires de l’arborescence linux ?
+
+17. Qu’est ce qui distingue le répertoire <code class="gr">/bin</code> et <code class="gr">/sbin</code> ?
+
+18. Quel est le répertoire qui est utilisé pour charger le noyau du système d’exploitation au démarrage ?
+
+19. Dans Linux, tout est fichier. Si on connecte une clé usb à une machine linux, dans quel répertoire de l’arborescence, on va trouver la référence à cette clé ?
+
+20. Si installe un serveur web apache sur une machine linux, dans quel répertoire de l’arborescence le dossier contenant les fichiers de configuration du serveur se trouvera-t-il ? 
+
+<!--
+## Shells
+
+Quels sont les shells disponibles sur votre VM?
+
+## Manipulation de fichiers
+
+La commande <code class="gr">touch</code> permet de créer un fichier. Exemple :
+
+<pre>
+$ touch tutu.txt
+</pre>
+
+Cette commande crée le fichier tutu.txt.
+
+Créez un répertoire Atelier2 dans le répertoire courant.
+
+Créer un fichier fichier1.txt dans le répertoire courant. Copiez le dans le
+répertoire Atelier2.
+
+Créez un autre répertoire nommé Rep2.
+
+Déplacez Atelier2 dans Rep2.
+
+Déplacez vous dans Atelier2.
+
+Avec vim, ouvrez le fichier fichier1.txt et écrivez quelque chose dans le
+fichier. Quittez et sauvegardez.
+
+Affichez le contenu du fichier à l'aide de la commande <code class="gr">cat</code>.
+
+Revenez dans votre répertoire personnel en tapant simplement <code
+class="gr">cd</code>.
+
+Supprimez le répertoire Rep2.
+
+Dans quel répertoire vous trouvez-vous?
+
+## Aide des commandes
+
+Au cours de ce laboratoire, vous allez vous entraîner à rechercher des informations à l'aide des options et arguments de man.
+
+Résultats
+
+Vous devez pouvoir utiliser le système manuel Linux man et trouver des informations utiles par la recherche et la navigation.
+
+1. Sur votre VM, copiez le fichier <code class="gr">/etc/services</code> vers votre répertoire personnel<code class="gr">/home/e1234567/services</code>.
+
+2. Affichez la page de manuel <code class="gr">gedit</code>. Affichez les options permettant de modifier un fichier spécifique en utilisant gedit à partir de la ligne de commande.
+
+    Utilisez l’une des options de la page de manuel <code class="gr">gedit</code> pour ouvrir le fichier <code class="gr">/home/e1234567/services</code> en utilisant <code class="gr">gedit</code> avec le curseur à la fin du fichier.
+
+    2.1 Affichez la page de manuel gedit.
+
+    2.2 Dans la page de manuel <code class="gr">gedit</code>, découvrez les options permettant de modifier un fichier spécifique à partir de la ligne de commande.
+
+     Appuyez sur q pour quitter la page de manuel.
+
+    2.3 Utilisez la commande <code class="gr">gedit +</code> pour ouvrir le fichier <code class="gr">/home/e1234567/services</code>. Le numéro de ligne manquant à côté de l'option <code class="gr">+</code> ouvre un fichier passé en tant qu'argument avec le curseur à la fin de la dernière ligne.
+
+     Confirmez que le fichier est ouvert avec le curseur à la fin du fichier de la dernière ligne du fichier. Appuyez sur <code class="gr">Ctrl+q</code> pour fermer l'application. 
+
+3. Lisez la page de manuel <code class="gr">su(1)</code>.
+
+   Quand <code class="gr">user</code> est omis, la commande <code class="gr">su</code> suppose que l'utilisateur est root. Si la commande <code class="gr">su</code> est suivie d'un tiret unique <code class="gr">(-)</code>, il commence un shell de connexion enfant. Sans le tiret simple, un shell enfant sans connexion est créé, correspondant à l'environnement actuel de l'utilisateur.
+
+    <b>Note</b>
+
+    <mark>Notez que les options séparées par des virgules sur une seule ligne, telles que -, -l et --login, affichent le même comportement.</mark>
+
+    Appuyez sur <code class="gr">q</code> pour quitter la page de manuel.
+
+4. La commande <code class="gr">man</code> dispose également de ses propres pages de manuel.
+
+    Appuyez sur <code class="gr">q</code> pour quitter la page de manuel.
+
+5. Toutes les pages de manuel sont situées dans <code class="gr">/usr/share/man</code>. Localisez les pages binaires, source et de manuel situées dans le répertoire <code class="gr">/usr/share/man</code> à l'aide de la commande <code class="gr">whereis</code>.
+
+6. Tapez la commande <code class="gr">sudo mandb -c</code> pour générer un index des recherches par mot-clé.
+
+7. Utilisez la commande <code class="gr">man -k zip</code> pour lister des informations détaillées sur une archive Zip.
+
+8. Utilisez la commande <code class="gr">man -k boot</code> pour lister la page de manuel contenant une liste des paramètres qui peuvent être transmis au noyau lors du démarrage.
+
+9. Utilisez <code class="gr">man -k ext4</code> pour recherche la commande utilisée pour ajuster les paramètres du système de fichiers ext4.
+
+
+<!--
+La commande <code class="gr">ls -l</code> permet de voir la taille des
+fichiers. Lorsqu'ils sont de grande taille, il peut être difficile de lire
+cette information qui est exprimée en octets.
+
+En cherchant dans sl'aide de la commande <code class="gr">ls</code>, trouvez
+comment afficher cette information de façon à ce qu'elle soit facile à lire
+pour un être humain.
+
+Testez à l'aide de la commande suivante :
+
+<pre>
+$ ls -l /etc/services
+</pre>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="linux">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Atelier 3 - Premières commandes :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="linux">
+    <meta property="og:url" content="http://localhost:1313/semaine3/atelier/_index---dorsaf-v2025/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Atelier 3 - Premières commandes :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="linux">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Système de fichiers, SHELL et commandes de base">
+    <meta property="article:published_time" content="2020-01-31T11:00:10-05:00">
+    <meta property="article:modified_time" content="2020-01-31T11:00:10-05:00">
+    <meta itemprop="name" content="Atelier 3 - Premières commandes :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="linux">
+    <meta itemprop="datePublished" content="2020-01-31T11:00:10-05:00">
+    <meta itemprop="dateModified" content="2020-01-31T11:00:10-05:00">
+    <meta itemprop="wordCount" content="448">
+    <title>Atelier 3 - Premières commandes :: 420-ZG4-MO LINUX</title>
+    <link href="/css/fontawesome-all.min.css?1736557213" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736557213" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1736557213" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736557213" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1736557213" rel="stylesheet">
+    <link href="/css/theme.css?1736557213" rel="stylesheet">
+    <link href="/css/format-html.css?1736557213" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.min = ``;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine3/atelier/_index---dorsaf-v2025/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#attention">Attention:</a></li>
+    <li><a href="#exercice1--explorer-larborescence-linux">Exercice1 : Explorer l’arborescence Linux</a></li>
+    <li><a href="#exercice2-commandes-de-base">Exercice2: Commandes de base</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine3/index.html"><span itemprop="name">Système de fichiers, SHELL et commandes de base</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine3/atelier/index.html"><span itemprop="name">ATELIER #3: Les commandes Linux de base</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Atelier 3 - Premières commandes</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine3/atelier/index.html" title="ATELIER #3: Les commandes Linux de base (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/index.html" title="Processus de démarrage et le shell bash (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine3" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="atelier-3---premières-commandes">Atelier 3 - Premières commandes</h1>
+
+<h2 id="attention">Attention:</h2>
+<p>Avant de commencer chaque exercice, assurez vous que vous travaillez dans votre répertoire personnel et ne vous  déplacez pas que lorsque demandé.</p>
+<h2 id="exercice1--explorer-larborescence-linux">Exercice1 : Explorer l’arborescence Linux</h2>
+<ol>
+<li>
+<p>Afficher le chemin de votre répertoire courant.</p>
+</li>
+<li>
+<p>Allez dans le répertoire <!-- raw HTML omitted -->/usr/share/doc<!-- raw HTML omitted -->, puis vérifiez le chemin de votre répertoire courant.</p>
+</li>
+<li>
+<p>Remontez dans le répertoire parent (utilisez un chemin relatif).</p>
+</li>
+<li>
+<p>Allez dans votre répertoire personnel à l’aide d’un chemin relatif</p>
+</li>
+<li>
+<p>Listez les fichiers présents du répertoire courant.</p>
+</li>
+<li>
+<p>Toujours en étant dans votre dossier personnel, listez les fichiers du répertoire <!-- raw HTML omitted -->/usr<!-- raw HTML omitted --></p>
+</li>
+</ol>
+<h2 id="exercice2-commandes-de-base">Exercice2: Commandes de base</h2>
+<p>Sur votre machine Alma, avec votre utilisateur standard, allez sur votre cours
+sur Moodle, dans la semaine 3. On vous demande de télécharger ce fichier.</p>
+<p><a href="#R-image-e0201c94ecd074dc26119d3591523201" class="lightbox-link"><img alt="HTTP" class="border inline lazy lightbox shadow figure-image" loading="lazy" src="../../images/atelier3-1.png?height=50&classes=border,shadow,inline" style=" height: 50; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e0201c94ecd074dc26119d3591523201"><img alt="HTTP" class="border inline lazy lightbox shadow lightbox-image" loading="lazy" src="../../images/atelier3-1.png?height=50&classes=border,shadow,inline"></a></p>
+<p>Sur cette capture, cliquez sur fichier1.</p>
+<p><a href="#R-image-5a838baaddc22f67207292da14ed3767" class="lightbox-link"><img alt="HTTP" class="border inline lazy lightbox shadow figure-image" loading="lazy" src="../../images/atelier3-2.png?height=200&classes=border,shadow,inline" style=" height: 200; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5a838baaddc22f67207292da14ed3767"><img alt="HTTP" class="border inline lazy lightbox shadow lightbox-image" loading="lazy" src="../../images/atelier3-2.png?height=200&classes=border,shadow,inline"></a></p>
+<p>Sur cette fenêtre, faites un clic droit et choisissez Enregistrez-sous.</p>
+<p><a href="#R-image-ebcb2fa625b19f9c4825db2a41ae847b" class="lightbox-link"><img alt="HTTP" class="border inline lazy lightbox shadow figure-image" loading="lazy" src="../../images/atelier3-3.png?height=200&classes=border,shadow,inline" style=" height: 200; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ebcb2fa625b19f9c4825db2a41ae847b"><img alt="HTTP" class="border inline lazy lightbox shadow lightbox-image" loading="lazy" src="../../images/atelier3-3.png?height=200&classes=border,shadow,inline"></a></p>
+<p>Le fichier va être enregistré par défaut dans le dossier Téléchargements.</p>
+<p><a href="#R-image-6e187e56e5700aff0779d9c2f4c5df99" class="lightbox-link"><img alt="HTTP" class="border inline lazy lightbox shadow figure-image" loading="lazy" src="../../images/atelier3-4.png?height=300&classes=border,shadow,inline" style=" height: 300; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6e187e56e5700aff0779d9c2f4c5df99"><img alt="HTTP" class="border inline lazy lightbox shadow lightbox-image" loading="lazy" src="../../images/atelier3-4.png?height=300&classes=border,shadow,inline"></a></p>
+<p>Fermez la fenêtre.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Allez maintenant sur votre terminal. Placez-vous dans votre répertoire personnel et déplacez-vous seulement si c&rsquo;est demandé.</p>
+<ol>
+<li>
+<p>Créez un répertoire <!-- raw HTML omitted -->Atelier2<!-- raw HTML omitted --> dans le répertoire courant. (en utilisant un chemin relatif)</p>
+</li>
+<li>
+<p>Copiez le fichier téléchargé <!-- raw HTML omitted -->fichier1.txt<!-- raw HTML omitted --> dans le répertoire <!-- raw HTML omitted -->Atelier2<!-- raw HTML omitted -->. (en utilisant un chemin relatif)</p>
+</li>
+<li>
+<p>Créez un autre répertoire nommé <!-- raw HTML omitted -->Rep2<!-- raw HTML omitted -->. (en utilisant un chemin relatif)</p>
+</li>
+<li>
+<p>Déplacez <!-- raw HTML omitted -->Atelier2<!-- raw HTML omitted --> dans <!-- raw HTML omitted -->Rep2<!-- raw HTML omitted -->. (en utilisant un chemin relatif)</p>
+</li>
+<li>
+<p>Déplacez-vous dans <!-- raw HTML omitted -->Atelier2<!-- raw HTML omitted -->. (en utilisant un chemin relatif)</p>
+</li>
+<li>
+<p>Avec <!-- raw HTML omitted -->vim<!-- raw HTML omitted -->, ouvrez le fichier <!-- raw HTML omitted -->fichier1.txt<!-- raw HTML omitted --> et écrivez quelque chose dans le fichier. Quittez et sauvegardez.</p>
+</li>
+<li>
+<p>Affichez le contenu du fichier à l’aide de la commande <!-- raw HTML omitted -->cat<!-- raw HTML omitted -->. (en utilisant un chemin relatif)</p>
+</li>
+<li>
+<p>Créez un autre fichier nommé <!-- raw HTML omitted -->fichier2.txt<!-- raw HTML omitted --> dans <!-- raw HTML omitted -->Atelier2<!-- raw HTML omitted -->. (en utilisant un chemin relatif)</p>
+</li>
+<li>
+<p>Avec une seule commande <!-- raw HTML omitted -->cat<!-- raw HTML omitted --> affichez le contenu de <!-- raw HTML omitted -->fichier1.txt<!-- raw HTML omitted --> et <!-- raw HTML omitted -->fichier2.txt<!-- raw HTML omitted -->. (en utilisant un chemin relatif)</p>
+</li>
+<li>
+<p>Revenez dans votre répertoire personnel. (en utilisant un chemin relatif)</p>
+</li>
+<li>
+<p>Supprimez le répertoire <!-- raw HTML omitted -->Rep2<!-- raw HTML omitted -->. (en utilisant un chemin relatif)</p>
+</li>
+<li>
+<p>Dans quel répertoire vous trouvez-vous?</p>
+</li>
+<li>
+<p>Essayez de créer un dossier avec le nom <!-- raw HTML omitted -->rep3<!-- raw HTML omitted --> dans le dossier <!-- raw HTML omitted -->/root<!-- raw HTML omitted --> (en utilisant un chemin absolu). Avez-vous réussi ? Si non, dites pourquoi.</p>
+</li>
+<li>
+<p>Affichez le contenu du répertoire <!-- raw HTML omitted -->/etc<!-- raw HTML omitted --> en utilisant l’option <!-- raw HTML omitted -->-l<!-- raw HTML omitted --> .</p>
+</li>
+<li>
+<p>Par quels caractères, les lignes affichées débutent ? Quelle est leur signification ?</p>
+</li>
+<li>
+<p>Qu’est-ce qui distingue le répertoire <!-- raw HTML omitted -->/proc<!-- raw HTML omitted --> des autres répertoires de l’arborescence linux ?</p>
+</li>
+<li>
+<p>Qu’est ce qui distingue le répertoire <!-- raw HTML omitted -->/bin<!-- raw HTML omitted --> et <!-- raw HTML omitted -->/sbin<!-- raw HTML omitted --> ?</p>
+</li>
+<li>
+<p>Quel est le répertoire qui est utilisé pour charger le noyau du système d’exploitation au démarrage ?</p>
+</li>
+<li>
+<p>Dans Linux, tout est fichier. Si on connecte une clé usb à une machine linux, dans quel répertoire de l’arborescence, on va trouver la référence à cette clé ?</p>
+</li>
+<li>
+<p>Si installe un serveur web apache sur une machine linux, dans quel répertoire de l’arborescence le dossier contenant les fichiers de configuration du serveur se trouvera-t-il ?</p>
+</li>
+</ol>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1736557213";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1736557213" defer></script>
+        <script src="/js/lunr/lunr.min.js?1736557213" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1736557213" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1736557213" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1736557213" defer></script>
+        <script src="/js/search.js?1736557213" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Introduction à Linux (suite)</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Système de fichiers, SHELL et commandes de base</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu">
+            <li class="" data-nav-id="/semaine3/cours/index.html"><a class="padding" href="/semaine3/cours/index.html">Système de fichiers, le shell et commandes de base</a></li>
+            <li class="parent alwaysopen " data-nav-id="/semaine3/atelier/index.html"><a class="padding" href="/semaine3/atelier/index.html">ATELIER #3: Les commandes Linux de base</a><ul id="R-subsections-0bf5523161c048219c29316cbd8b4738" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine3/atelier/_index---dorsaf-v2025/index.html"><a class="padding" href="/semaine3/atelier/_index---dorsaf-v2025/index.html">Atelier 3 - Premières commandes</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Processus de démarrage et le shell bash</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine3/atelier/_index---dorsaf-v2025/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1736557213" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1736557213" defer></script>
+    <script src="/js/theme.js?1736557213" defer></script>
+  </body>
+</html>

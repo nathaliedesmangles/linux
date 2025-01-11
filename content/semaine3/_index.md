@@ -1,7 +1,7 @@
 +++
 chapter = true
 pre = "<b>Semaine 3. </b>"
-title = "Système de fichiers, SHELL et commandes de base"
+title = "Système de fichiers, shell et commandes de base"
 weight = 30
 +++
 
@@ -14,4 +14,5 @@ weight = 30
 
 
 - **Atelier :**
+  - Arborescence du système de fichiers
   - Manipulation des fichiers et des répertoires

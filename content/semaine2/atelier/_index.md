@@ -11,7 +11,7 @@ Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilis
 ## Format de la remise
 
 {{% notice style=warning title=Attention %}}
-Pour chacune des étapes des **parties 2 et 3** vous devrez prendre une **capture d'écran de vos commandes et résultats**. **ATTENTION**: On doit pouvoir voir votre non d'utilisateur. Ne travaillez donc **pas** avec l'utilisateur `root`.
+Pour chacune des étapes des **parties 2 et 3** vous devrez prendre une **capture d'écran de vos commandes et résultats**. **ATTENTION**: On doit pouvoir voir votre nom d'utilisateur. Ne travaillez donc **pas** avec l'utilisateur `root`.
 {{% /notice %}}
 
 # Atelier
@@ -71,10 +71,8 @@ Une fois installé, vous pouvez soit lancer l'application directement depuis le 
 
 3. **Commande `date`**
    - Afficher la date et l'heure actuelles du système.
-   - Prendre une capture d'écran du résultat et nommez-la `3.png`.
    - Afficher l’heure actuelle sur une horloge de douze heures (par exemple, 11:42:11 AM). 
-     Conseil : la chaîne de format qui affiche cette sortie est %r.
-   - Prendre une capture d'écran du résultat et nommez-la `4.png`.
+   - Prendre une capture d'écran du résultat et nommez-la `3.png`.
 
 4. **Commande `file`**
    - Quel est le type du fichier /etc/services ? 
@@ -102,6 +100,6 @@ Une fois installé, vous pouvez soit lancer l'application directement depuis le 
    - Prendre une capture d'écran du résultat et nommez-la `9.png`.
 
 10. **Commande `history`**
-   - Utiliser l’historique du shell pour exécuter à nouveau la commande date +%r.
+   - Utiliser l’historique du shell pour exécuter à nouveau la commande effectuée pour la question #3 (heure sur 12h)
    - Prendre une capture d'écran du résultat et nommez-la `10.png`.
 

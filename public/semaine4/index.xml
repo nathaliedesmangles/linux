@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Processus de démarrage et le shell bash :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine4/index.html</link>
+    <description>Plan de la leçon Théorie : Atelier :</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Processus de démarrage et BASH</title>
+      <link>https://example.org/semaine4/cours/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine4/cours/index.html</guid>
+      <description>Le BIOS Le shell BASH BASH, qui signifie “Bourne Again SHell”, est une version améliorée du Bourne Shell. Il a été développé pour offrir plus de fonctionnalités et une meilleure compatibilité avec les scripts existants. Voici quelques différences clés :&#xA;Compatibilité : BASH est compatible avec les scripts du Bourne Shell, mais il offre également des fonctionnalités supplémentaires.&#xA;Fonctionnalités : BASH inclut des fonctionnalités avancées comme l’édition de ligne de commande, l’historique des commandes, et le complétion automatique des noms de fichiers et des commandes.</description>
+    </item>
+    <item>
+      <title>ATELIER #4: Le processus de démarrage et le BASH</title>
+      <link>https://example.org/semaine4/atelier/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine4/atelier/index.html</guid>
+      <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec&#xA;Atelier</description>
+    </item>
+  </channel>
+</rss>

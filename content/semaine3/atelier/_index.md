@@ -1,104 +1,86 @@
 +++
-title = "ATELIER #3: Les commandes Linux de base"
+title = "ATELIER #3: Le système de fichiers et les commandes de base"
 weight = 32
 +++
 
 ## Objectif de l'atelier
 
-Cet atelier a pour but de vous familiariser avec les commandes de base pour la gestion des fichiers sous Linux en utilisant la distribution Linux de votre choix. 
-Les exercices pratiques permettront de renforcer la compréhension et l'utilisation de ces commandes.
-
-## Format de la remise
-
-{{% notice style=warning title=Attention %}}
-Pour chacune des étapes et questions vous devrez prendre une **capture d'écran de vos commandes et résultats**. **ATTENTION**: On doit pouvoir voir votre non d'utilisateur. Ne travaillez donc **pas** avec l'utilisateur `root`.
-{{% /notice %}}
+Cet atelier a pour but de vous familiariser avec les commandes de base pour la gestion des fichiers sous Linux en utilisant la distribution **AlmaLinux** sur votre VM. 
+Ces exercices pratiques permettront de renforcer la compréhension et l'utilisation de ces commandes.
 
 # Atelier
 
-## Exercice #1: Navigation dans la structure de fichiers de Linux
+## Attention:
 
-1. **Commande `date`**
-   - Afficher la date et l'heure actuelles du système.**
-   - Prenez une capture d'écran du résultat et nommez-la `1.png`.
-
-2. **Commande `ls`**
-   - Listez les fichiers et répertoires dans le répertoire courant en utilisant la commande.
-   - Prenez une capture d'écran du résultat et nommez-la `2.png`.
-
-3. **Commande `pwd`**
-   - Affichez le chemin du répertoire courant en utilisant la commande.
-   - Prenez une capture d'écran du résultat et nommez-la `3.png`.
-
-4. **Commande `cd`**
-   - Changez de répertoire pour le répertoire "home" en utilisant la commande.
-   - Prenez une capture d'écran du résultat et nommez-la `4.png`.
-
-5. **Commande `ls -l`**
-   - Listez les fichiers et répertoires avec des détails supplémentaires en utilisant la commande.
-   - Prenez une capture d'écran du résultat et nommez-la `5.png`.
-
-
-## Exercice #2: Création, suppression et déplacement de fichiers et répertoires
+Avant de commencer chaque exercice, assurez vous que vous travaillez dans votre répertoire personnel et ne vous déplacez pas que lorsque demandé.
 
 {{% notice style=warning title=Attention %}}
-Avant de commencer, assurez vous d'être dans votre répertoire personnel.
-{{% /notice %}}
+1. À moins d'indication contraire, utiliser TOUJOURS des chemins relatifs.
+2. Les questions qui demandent des réponses textuelles, écrivez-les dans un fichier afin de pouvoir les vérifier avec la solution qui vous sera fournie ultérieurement.
+{{% /notice %}} 
+
+## Exercice 1 : Explorer l’arborescence Linux
+
+1. Afficher le chemin de votre répertoire courant. 
+2. Allez dans le répertoire `/usr/share/doc`, puis vérifiez le chemin de votre répertoire courant.
+3. Remontez dans le répertoire parent.
+4. Allez dans votre répertoire personnel.
+5. Listez les fichiers présents du répertoire courant.
+6. Toujours en étant dans votre dossier personnel, listez les fichiers du répertoire `/usr`
 
 
-6. **Commande `mkdir`**
-   - Créez deux nouveaux répertoires nommés "test" et "atelier3" en utilisant la commande.
-   - Prenez une capture d'écran du résultat et nommez-la `6.png`.
+## Exercice 2: Commandes de base
 
-7. **Commande `rmdir`**
-   - Supprimez le répertoire "test" en utilisant la commande.
-   - Prenez une capture d'écran du résultat et nommez-la `7.png`.
+### Préparation
 
-8. **Commande `cd`**
-    - Changez de répertoire pour le répertoire "atelier" en utilisant la commande.
-    - Prenez une capture d'écran du résultat et nommez-la `8.png`.
+Sur votre machine Almalinux, avec votre utilisateur standard, allez sur votre cours sur Moodle, dans la semaine 3. On vous demande de télécharger ce fichier.
 
-9. **Commande `touch`**
-    - Créez un nouveau fichier nommé "fichier.txt" en utilisant la commande.
-    - Prenez une capture d'écran du résultat et nommez-la `9.png`.
+![HTTP](atelier3-1.png?height=50)
 
-10. **Commande `echo`**
-    - Ajoutez du texte au fichier "fichier.txt" en utilisant la commande.
-    - Prenez une capture d'écran du résultat et nommez-la `10.png`.
+1. Cliquez sur fichier1. 
 
-11. **Commande `cat`**
-    - Affichez le contenu du fichier "fichier.txt" en utilisant la commande.
-    - Prenez une capture d'écran du résultat et nommez-la `11.png`.
+![HTTP](atelier3-2.png?height=200)
 
-12. **Commande `mv`**
-    - Déplacez le fichier "fichier.txt" vers un nouveau répertoire nommé "documents" en utilisant la commande:
-    - Prenez une capture d'écran du résultat et nommez-la `12.png`.
+2. Sur la fenêtre qui s'ouvre, faites un clic droit et choisissez Enregistrez-sous.
 
-13. **Commande `rm`**
-    - Supprimez le fichier "fichier.txt" en utilisant la commande.
-    - Prenez une capture d'écran du résultat et nommez-la `13.png`.
+![HTTP](atelier3-3.png?height=200)
 
-{{% notice style=note %}}
-**NB** : pour les questions **#14** à **#18**, utiliser le texte disponible [ici](fichier2.txt). 
-Copiez collez le texte dans un fichier texte nommé "fichier2.txt".
-{{% /notice %}}
+- Le fichier va être enregistré par défaut dans le dossier **Téléchargements**.
 
-14. **Commande `mv`**
-     - Déplacez le fichier dans votre répertoire atelier2.
-     - Prenez une capture d'écran du résultat et nommez-la `14.png`.
+![HTTP](atelier3-4.png?height=300)
 
-15. **Commande `less`**
-     - Affichez le contenu d'un fichier page par page, jusqu'à la dernière page.
-     - Prenez une capture d'écran du résultat et nommez-la `15.png`.
+3. Fermer la fenêtre.
 
-16. **Commande `head`.**
-     - Affichez les premières lignes du fichier.
-     - Prenez une capture d'écran du résultat et nommez-la `16.png`.
+4. Cliquez sur le bouton Activités sur le bureau.
 
-17. **Commande `tail`.**
-     - Affichez les dernières lignes du fichier.
-     - Prenez une capture d'écran du résultat et nommez-la `17.png`.
+![HTTP](atelier3-5.png?height=300)
 
-18. **Commande `history`**
-    - Affichez l'historique des commandes précédemment exécutées en utilisant la commande
-    - Prenez une capture d'écran du résultat et nommez-la `18.png`.
+5. Cliquer sur l’icône **Fichiers**.
+
+![HTTP](atelier3-6.png?height=300)
+
+### Commandes
+
+Allez maintenant sur votre terminal. Placez-vous dans votre répertoire personnel et déplacez-vous seulement si c'est demandé. 
+
+1. Créer un répertoire `Atelier2` dans le répertoire courant.
+2. Copier le fichier téléchargé `fichier1.txt` dans le répertoire `Atelier2`.
+3. Créer un autre répertoire nommé `Rep2`.
+4. Déplacer `Atelier2` dans `Rep2`.
+5. Déplacez-vous dans `Atelier2`.
+6. Via l'interface d'Almalinux, ouvrir le fichier `fichier1.txt` et écrivez votre nom complet dans le fichier. Enregistrer la modification et fermer le fichier.
+7. Afficher le contenu du fichier à l’aide de la commande `cat`.
+8. Créer un autre fichier nommé `fichier2.txt` dans `Atelier2`. 
+9. Avec une seule commande `cat` afficher le contenu de `fichier1.txt` et `fichier2.txt`.
+10. Revenir dans votre répertoire personnel.
+11. Supprimer le répertoire `Rep2`.
+12. Dans quel répertoire vous trouvez-vous? Utiliser une commande pour voir le répertoire courant.
+13. Créer un dossier avec le nom `Rep3` dans le dossier `/root`(**en utilisant un chemin absolu**). Avez-vous réussi ? Si non, pourquoi ? 
+14. Afficher le contenu du répertoire `/etc` en utilisant l’option `-l`.
+15. Par quels caractères, les lignes affichées débutent ? Quelles est leur signification ?
+16. Qu’est-ce qui distingue le répertoire `/proc` des autres répertoires de l’arborescence linux ? 
+17. Qu’est ce qui distingue le répertoire <code class="gr">/bin</code> et <code class="gr">/sbin</code> ?
+18. Quel est le répertoire qui est utilisé pour charger le noyau du système d’exploitation au démarrage ? 
+19. Dans Linux, tout est fichier. Si on connecte une clé usb à une machine linux, dans quel répertoire de l’arborescence, on va trouver la référence à cette clé ?
+20. Si on installe un serveur web apache sur une machine linux, dans quel répertoire de l’arborescence le dossier contenant les fichiers de configuration du serveur se trouvera-t-il ?
+

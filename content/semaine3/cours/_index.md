@@ -1,14 +1,30 @@
 +++
-title = "Système de fichiers et le shell BASH"
-weight = 22
+title = "Système de fichiers, les commandes de base"
+weight = 31
 +++
 
 ![Arborescence](filesystem.png?width=100vw)
 
 La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d'un arbre inversé, où la racine (root) est représentée par `/`. 
-Tous les fichiers et répertoires sont situés sous cette racine. Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.
+Tous les fichiers et répertoires sont situés sous cette racine. 
 
-La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis. Comprendre cette structure est crucial pour tout utilisateur ou administrateur de système Linux.
+{{% notice style=warning title=Attention %}}
+Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.
+**Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis**. 
+{{% /notice %}}
+
+La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation. 
+
+## Tout est fichier
+
+Sous Linux, TOUT les éléments visibles dans l’arborescence du système de fichiers sont des fichiers.
+
+- Un fichier est un fichier
+- Un répertoire est un fichier
+- Une clé USB est un fichier
+- Une partition est un fichier
+- Un disque dur est un fichier
+- etc.
 
 ## Répertoires principaux
 
@@ -28,7 +44,12 @@ La structure du système de fichiers Linux est conçue pour être logique et org
    - Contient les fichiers de configuration du système. Par exemple, les fichiers de configuration des services, des utilisateurs, des réseaux, etc.
 
 6. **/home**
-   - Contient les répertoires personnels des utilisateurs. Chaque utilisateur a son propre répertoire sous `/home`, par exemple `/home/utilisateur`.
+   - Contient les répertoires personnels des utilisateurs. Chaque utilisateur a son propre répertoire sous `/home`, par exemple `/home/nathalie`.
+```bash
+nathalie@Yoda:~$ cd /home
+nathalie@Yoda:/home$ ls
+nathalie
+```
 
 7. **/lib**
    - Contient les bibliothèques partagées nécessaires pour les binaires situés dans `/bin` et `/sbin`.
@@ -69,26 +90,6 @@ La structure du système de fichiers Linux est conçue pour être logique et org
 18. **/var**
     - Contient les fichiers variables, tels que les journaux système, les fichiers de spool, et les fichiers temporaires des applications. Par exemple, `/var/log` contient les fichiers journaux.
 
-## Le shell BASH
-
-BASH, qui signifie "*Bourne Again SHell*", est une version améliorée du *Bourne Shell*. Il a été développé pour offrir plus de fonctionnalités et une meilleure compatibilité avec les scripts existants. Voici quelques différences clés :
-
-	- **Compatibilité** : BASH est compatible avec les scripts du Bourne Shell, mais il offre également des fonctionnalités supplémentaires.
-
-	- **Fonctionnalités : BASH inclut des fonctionnalités avancées comme l'édition de ligne de commande, l'historique des commandes, et le complétion automatique des noms de fichiers et des commandes.
-
-	- **Portabilité** : BASH est disponible sur de nombreux systèmes d'exploitation, y compris Linux, macOS, et Windows (via WSL).
-
-## Structure de base d'une commande
-
-Une commande dans le shell suit généralement cette structure :
-```
-commande [options] [arguments]
-```
-- **commande** : Le programme ou l'outil que vous souhaitez exécuter.
-- **options** : Des paramètres supplémentaires qui modifient le comportement de la commande.
-- **arguments** : Les cibles sur lesquelles la commande doit agir (fichiers, répertoires, etc.).
-
 ### Les chemins absolu et relatifs
 
 #### Chemin absolu
@@ -117,26 +118,86 @@ Ou, si vous voulez remonter d'un niveau dans l'arborescence, vous pouvez utilise
 
 ### Les commandes de navigation dans l'arborescence des fichiers
 
-| Commande | Description | Exemple |
-|----------|-------------|---------|
-| `pwd`    | Affiche le chemin absolu du répertoire courant | `pwd` -> `/home/utilisateur` |
-| `cd`     | Change le répertoire courant | `cd Documents` -> Change au répertoire `Documents` |
-| `ls`     | Liste les fichiers et répertoires | `ls` -> Affiche les fichiers et répertoires dans le répertoire courant |
-| `cd ..`  | Remonte d'un niveau dans l'arborescence des répertoires | `cd ..` -> Remonte au répertoire parent |
-| `cd ~`   | Va au répertoire personnel de l'utilisateur | `cd ~` -> Change au répertoire personnel, par exemple `/home/utilisateur` |
+| Commande | Description |
+|----------|-------------|
+| `pwd`    | Affiche le chemin absolu du répertoire courant |
+| `cd`     | Change le répertoire courant | 
+| `cd ..`  | Remonte d'un niveau dans l'arborescence des répertoires. `cd ../.. ` remonte de deux niveaux, etc. |
+| `cd ~`   | Va au répertoire personnel de l'utilisateur | 
 
 #### Exemples d'utilisation
 
+```bash
+nathalie@Yoda:~$ pwd
+/home/nathalie
 
+nathalie@Yoda:~$ cd ..
+nathalie@Yoda:/home$
+
+nathalie@Yoda:~$ cd /etc
+nathalie@Yoda:/etc$
+
+nathalie@Yoda:/etc$ cd ~
+nathalie@Yoda:~$
+
+```
 
 ### Commandes de gestion des fichiers et répertoires
 
-| Commande | Description | Exemple |
-|----------|-------------|---------|
-| `cp`     | Copie des fichiers ou répertoires | `cp fichier.txt /destination` -> Copie `fichier.txt` vers `/destination` |
-| `mv`     | Déplace ou renomme des fichiers ou répertoires | `mv fichier.txt nouveau_nom.txt` -> Renomme `fichier.txt` en `nouveau_nom.txt` |
-| `rm`     | Supprime des fichiers | `rm fichier.txt` -> Supprime `fichier.txt` |
-| `mkdir`  | Crée un nouveau répertoire | `mkdir nouveau_dossier` -> Crée un répertoire nommé `nouveau_dossier` |
-| `rmdir`  | Supprime un répertoire vide | `rmdir dossier_vide` -> Supprime le répertoire `dossier_vide` s'il est vide |
+| Commande | Description |
+|----------|-------------|
+| `touch`  | Crée un fichier vide. |
+| `cp`     | Copie des fichiers ou répertoires. |
+| `mv`     | Déplace ou renomme des fichiers ou répertoires. |
+| `rm`     | Supprime des fichiers. L'option `-r` permet de supprimer récursivement un dossier et tout ce qu'il contient. |
+| `mkdir`  | Crée un nouveau répertoire. |
+| `rmdir`  | Supprime uniquement un répertoire s'il est **vide**. |
+
+{{% notice style=warning title=Attention %}}
+- Vous ne pouvez pas supprimer un répertoire qui contient des fichiers, y compris des fichiers masqués ou système. Si vous tentez de le faire, le message suivant s’affiche :
+`The directory is not empty`
+- Vous ne pouvez pas utiliser la commande **`rmdir`** pour supprimer le répertoire actif. Si vous tentez de supprimer le répertoire actif, le message d’erreur suivant s’affiche :
+`The process can't access the file because it is being used by another process.`
+Si vous recevez ce message d’erreur, vous devez passer à un autre répertoire (et non à un sous-répertoire du répertoire actif), puis réessayer.
+{{% /notice %}} 
 
 #### Exemples d'utilisation
+
+```bash
+nathalie@Yoda:~$ touch fichier.txt
+nathalie@Yoda:~$ ls
+fichier.txt
+
+nathalie@Yoda:~$ mkdir repertoire
+nathalie@Yoda:~$ ls
+fichier.txt  repertoire
+
+nathalie@Yoda:~$ cp fichier.txt copie_fichier.txt
+nathalie@Yoda:~$ ls
+copie_fichier.txt  fichier.txt  repertoire
+
+nathalie@Yoda:~$ mv copie_fichier.txt fichier2.txt
+nathalie@Yoda:~$ ls
+fichier.txt  fichier2.txt  repertoire
+
+nathalie@Yoda:~$ mv fichier2.txt repertoire
+nathalie@Yoda:~$ ls
+fichier.txt  repertoire
+
+nathalie@Yoda:~$ cd repertoire
+nathalie@Yoda:~/repertoire$ ls
+fichier2.txt
+
+nathalie@Yoda:~/repertoire$ rm fichier2.txt
+nathalie@Yoda:~/repertoire$ ls
+
+nathalie@Yoda:~/repertoire$ cd ..
+nathalie@Yoda:~$ ls
+fichier.txt  repertoire
+
+nathalie@Yoda:~$ rmdir repertoire
+nathalie@Yoda:~$ ls
+fichier.txt
+```
+
+[^1]: Nous étudierons comment gérer les droits des différents utilisateurs plus tard dans ce cours.

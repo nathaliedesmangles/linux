@@ -28,16 +28,26 @@ Choisir **AlmaLinux OS 9.5 DVD ISO**
 - La **machine hôte** est celle qui héberge les machines virtuelles aussi appelées **les invités**.
 - La machine hôte peut être Windows ou Linux et les invités peuvent être une grande variété de systèmes d’exploitation.
 
-## À faire
+## Format de la remise
+
+{{% notice style=warning title=Attention %}}
+Pour chacune des étapes et questions vous devrez prendre une **capture d'écran de vos installations. Pour plus de détails, voir les guides**.
+{{% /notice %}}
+
+# Atelier
 
 ### Étape 1: Installation de Windows
 
 [Guide d'installation de Windows](Lien à venir)
 
-### Étape 2: Installation de VMWare
+### Étape 2: Installation de VMWare sur la machine hôte (votre SSD Windows)
 
-[Guide d'installation de VMWare](Lien à venir)
+[Installation de VMWare](Lien à venir)
 
-### Étape 3: Installation d'Almalinux
+### Étape 3: Création d'une machine virtuelle dans VMWare
+
+[Vidéo par Dell](www.dell.com/support/contents/fr-ca/videos/videoplayer/création-d’une-machine-virtuelle-dans-vmware-workstation-pro/1700108455885340472)
+
+### Étape 4: Installation d'Almalinux sur la VM
 
 [Guide d'installation d'Almalinux](Lien à venir)

@@ -1,5 +1,5 @@
 +++
-title = "Shell et la ligne de commande"
+title = "Introduction au shell et la ligne de commande"
 weight = 21
 +++
 
@@ -9,15 +9,32 @@ Le terme "Shell" désigne un programme qui interprète les commandes que vous ta
 
 ## La ligne de commande
 
-1. **Ligne de commande**:
-   - La ligne de commande est l'interface où vous tapez vos commandes. Elle est souvent représentée par un symbole `$` ou `#` pour les utilisateurs root (administrateur).
-   - Lorsque vous êtes prêt à exécuter une commande, appuyez sur la touche Entrée. Tapez chaque commande sur une ligne séparée. Le résultat de la commande est affiché avant l’invite du shell suivante.
+Une commande dans le shell suit généralement cette structure :
+```
+commande [options] [arguments]
+```
+- **commande** : Le programme ou l'outil que vous souhaitez exécuter.
+- **options** : Des paramètres supplémentaires qui modifient le comportement de la commande.
+- **arguments** : Les cibles sur lesquelles la commande doit agir (fichiers, répertoires, etc.).
+
+
+- La ligne de commande est l'interface où vous tapez vos commandes. Elle est souvent représentée par un symbole `$` ou `#` pour les utilisateurs root (administrateur).
+	- `$` signifie que vous êtes un utilisateur standard
+	- `#` signifie que vous êtes le super-utilisateur `root` (administrateur du système).
+	- `~` signifie le répertoire personnel, les symboles `$` et `#` seront précédés du symbole tilde: `~$` ou `~#`.
+- Lorsque vous êtes prêt à exécuter une commande, appuyez sur la touche Entrée. Tapez chaque commande sur une ligne séparée. Le résultat de la commande est affiché avant l’invite du shell suivante.
 
 **Exemple**:
 ```plaintext
-[user@host]$ whoami
-user
-[user@host]$ 
+nathalie@Yoda:~$ whoami
+nathalie
+nathalie@Yoda:~$ 
+```
+
+Pour exécuter une commande avec des privilèges de super-utilisateur (`root`) la précède de `sudo`:
+
+```bash
+nathalie@Yoda:~$ sudo ls /root
 ```
 
 ## Commandes simples
@@ -34,9 +51,10 @@ Ces commandes simples sont essentielles pour naviguer et gérer efficacement un 
 | `less`       | Affiche le contenu d'un fichier page par page. | `-N` pour numéroter les lignes. |
 | `head`       | Affiche par défaut, les **10** premières lignes d'un fichier. | `-n` pour spécifier le nombre de lignes. |
 | `tail`       | Affiche par défaut, les **10** dernières lignes d'un fichier. | `-n` pour spécifier le nombre de lignes. |
-| `wc`         | Compte les lignes, mots et caractères. | `-l` pour les lignes, `-w` pour les mots. |
+| `wc`         | Compte les lignes, mots et donne la taille du fichier en octets. | `-l` pour les lignes, `-w` pour les mots et `-c` pour la taille. |
 | `ls`         | Liste les fichiers et répertoires. | `-l` pour un format détaillé. |
 | `history`    | Affiche l'historique des commandes. | `-c` pour effacer l'historique. Le point d’exclamation (!) rappelle les commandes précédentes sans avoir à les retaper. La commande **`!nombre`** rappelle la commande correspondant au nombre spécifié. La commande **`!string`** rappelle la commande la plus récente qui commence par la chaîne spécifiée.|
+
 
 ### Exemples
 
@@ -88,10 +106,10 @@ nathalie@Yoda:~$ date +%h
 Jan
 ```
 
-#### 2. commande `` pour changer le mot de passe de l'utilisateur
+#### 2. commande `passwd` pour changer le mot de passe de l'utilisateur
 
 ```bash
-[nathalie@Yoda ~]$ passwd
+nathalie@Yoda ~$ passwd
 Changing password for user nathalie.
 Current password: ancien_mot_de_passe
 New password: nouveau_mot_de_passe
@@ -141,6 +159,39 @@ Hello World!!
 Introduction aux commandes Linux.
 ```
 
+**Déterminer les shells installés et utilisé**
+
+Vous pouvez voir la liste des Shells présents dans votre distribution avec la commande `cat` et celui utilisé avec la commande `echo`:
+```bash
+nathalie@Yoda:~$ cat /etc/shells
+# /etc/shells: valid login shells
+/bin/sh
+/usr/bin/sh
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/rbash
+/usr/bin/dash
+/usr/bin/tmux
+```
+Vous pouvez voir le shell que vous utilisez (**$SHELL** doit être écrit en respectant la casse):
+```bash
+nathalie@Yoda:~$ echo $SHELL
+/bin/bash
+```
+- Le shell qui vous est attribué est défini dans le fichier `/etc/passwd`..
+- Pour visualiser ce fichier SANS risquer de la modifier, utilisez la commande `cat`.
+```bash
+nathalie@Yoda:~$ cat /etc/passwd
+landscape:x:104:105::/var/lib/landscape:/usr/sbin/nologin
+polkitd:x:990:990:User for polkitd:/:/usr/sbin/nologin
+nathalie:x:1000:1000:,,,:/home/nathalie:/bin/bash
+nathalie@Yoda:~$
+```
+
+- Trouvez la ligne commençant par votre nom d'utilisateur. La dernière partie correspond à votre shell par défaut. Dans mon cas `/bin/bash`.
+- Bash est le shell le plus utilisé. Nous en reparlerons plus tard.
+
 #### 5. Commande `less` pour afficher le contenu d'un fichier page par page
 
 ```bash
@@ -183,7 +234,10 @@ bootpc          68/udp
 tftp            69/udp
 /etc/services
 ```
-**NB**: Pour revenir à la ligne de commande, taper la lettre 'q'
+
+>[!TIP]
+**NB**: Pour revenir à la ligne de commande, taper la lettre `q`.
+
 
 #### 6. Commande `head` pour afficher les premières lignes d'un fichier
 
@@ -250,7 +304,7 @@ nathalie@Yoda:~$ wc -c /etc/services
 ```
 #### 9. Commande `ls` pour lister les détails d'un fichier
 
-En premier, allons dans le répertoire /etc à l'aide de la commande `cd`
+En premier, allons dans le répertoire `/etc` à l'aide de la commande `cd`[^1]
 ```bash
 nathalie@Yoda:~$ cd /etc
 ```
@@ -260,7 +314,9 @@ nathalie@Yoda:/etc$ ls
 PackageKit              cron.weekly     groff          locale.conf          nsswitch.conf  rmt                supercat
 X11                     cron.yearly     group          locale.gen           opt            rpc                sysctl.conf
 adduser.conf            crontab         group-         localtime            os-release     rsyslog.conf       sysctl.d
-
+```
+Pour afficher la liste de tous les attributs d’un fichier on utilise l'option `-l` :
+```bash
 nathalie@Yoda:/etc$ ls -l
 total 340
 drwxr-xr-x 1 root root       4096 Apr 23  2024 PackageKit
@@ -269,6 +325,18 @@ drwxr-xr-x 1 root root       4096 Apr 23  2024 X11
 drwxr-xr-x 1 root root       4096 Apr 23  2024 alternatives
 drwxr-xr-x 1 root root       4096 Apr 23  2024 apparmor
 ```
+
+**Quelques explications**:
+
+- La **première colonne**: `-rwxr-xr-x` par exemple représente le type de fichier et les droits d’accès (abordés en détail dans un prochain cours) qui lui sont associés.
+	- Les 3 premiers sont les plus fréquents, les suivants sont des fichiers spéciaux qui seront principalement manipulés par l'utilisateur `root`.
+- La **deuxième colonne** : ce qu’elle représente dépend du type de fichier:
+	- **Répertoire**: indique le nombre de sous-répertoires (+2 pour . et ..).
+	- **Fichier**: nombre de lien physiques (vu plus loin dans ce cours).
+- Les **troisième et quatrième colonnes** représentent l’utilisateur propriétaire du fichier et le groupe propriétaire du fichier.
+- La **cinquième colonne** indique la taille du fichier (notez qu’un répertoire a une taille qui correspond à la taille du fichier répertoire sur le disque).
+- La **sixième colonne** indique la date de dernière modification.
+- La **septième colonne** est le nom du fichier.
 
 #### 10. Commande `history` pour afficher les commandes effectuées précédemment
 
@@ -325,73 +393,63 @@ nathalie@Yoda:~$ history
    44  cd ..
    45  cd ~
    46  history
-````
+```
+**Rappel d'une commande précédente par son numéro dans l'historique (#34) à l'aide de la commande `!nombre`**
+```bash
+nathalie@Yoda:~$ !34
+tail -n 5 /etc/services
+dircproxy       57000/tcp                       # Detachable IRC Proxy
+tfido           60177/tcp                       # fidonet EMSI over telnet
+fido            60179/tcp                       # fidonet EMSI over TCP
+
+# Local services
+```
+
+**Rappel d'une commande précédente par une partie de son nom, à l'aide de la commande `!string`**. Dans l'exemple ci-dessous, c'est la commande **#29** et non la **#26** qui sera exécutée.
+```bash
+nathalie@Yoda:~$ !fi
+file /home
+/home: directory
+```
+
+**Effacer l'historique**
+```bash
+nathalie@Yoda:~$ history -c
+nathalie@Yoda:~$ history
+    1  history
+nathalie@Yoda:~$
+```
+
+>[!TIP]
+La commande `clear` permet d'effacer l'écran du terminal.
 
 ## La touche `tab` pour auto-compléter une commande et le nom d'un fichier
 
-| `Tab`        | Tapez `cat /etc/ser` puis appuyez sur `Tab` pour auto-compléter le nom du fichier. |
+- La touche `Tab` du clavier, permet de compléter rapidement les commandes et les noms de fichiers après avoir entré un nombre de caractères suffisant pour réduire les possibilités à une seule. 
+- Si les caractères saisis ne sont pas uniques, appuyez deux fois sur la touche de tabulation pour afficher toutes les commandes correspondantes.
 
-   - **Description** : Permet de compléter rapidement les commandes et les noms de fichiers après avoir entré un nombre de caractères suffisant pour réduire les possibilités à une seule. Si les caractères saisis ne sont pas uniques, appuyez deux fois sur la touche de tabulation pour afficher toutes les commandes correspondantes.
-     ```bash
-     [user@host ~]$ pas Tab+Tab
-     passwd       paste        pasuspender
-     [user@host ~]$ pass Tab
-     [user@host ~]$ passwd 
-     Changing password for user user.
-     Current password: 
-     ```
-   - **Exemple** :
-     ```bash
-     [user@host ~]$ ls /etc/pas1Tab
-     [user@host ~]$ ls /etc/passwd2Tab
-     passwd   passwd-
-     ```
-   - **Résultat** :
-     ```plaintext
-     passwd
-     passwd-
-     ```
+Exemple: Tapez `cat /etc/ser` puis appuyez sur la touche `Tab` pour auto-compléter le nom du fichier.
 
-10. **history**
-   - **Description** : Affiche la liste des commandes précédemment exécutées, précédées d’un numéro de commande. 
-     ```bash
-     [user@host ~]$ history
-     ...output omitted...
-     23  clear
-     24  who
-     25  pwd
-     26  ls /etc
-     27  uptime
-     28  ls -l
-     29  date
-     30  history
-     ```
-   - **Exemple** :
-     ```bash
-     [user@host ~]$ !ls
-     ls -l
-     total 0
-     drwxr-xr-x. 2 user user 6 Mar 29 21:16 Desktop
-     ...output omitted...
-     [user@host ~]$ !26
-     ls /etc
-     abrt                     hosts                     pulse
-     adjtime                  hosts.allow               purple
-     aliases                  hosts.deny                qemu-ga
-     ...output omitted...
-     ```
-   - **Résultat** :
-     ```plaintext
-     ls -l
-     total 0
-     drwxr-xr-x. 2 user user 6 Mar 29 21:16 Desktop
-     ls /etc
-     abrt                     hosts                     pulse
-     adjtime                  hosts.allow               purple
-     aliases                  hosts.deny                qemu-ga
-     ```
-====
 
+```bash
+nathalie@Yoda ~$ pas Tab+Tab
+passwd       paste        pasuspender
+nathalie@Yoda ~$ pass Tab
+nathalie@Yoda ~$ passwd 
+Changing password for user nathalie.
+Current password: 
+```
+- **Exemple** :
+```bash
+nathalie@Yoda ~$ ls /etc/pas1Tab
+nathalie@Yoda ~$ ls /etc/passwd2Tab
+passwd   passwd-
+```
+- **Résultat** :
+```plaintext
+passwd
+passwd-
+```
 
 ## La commande man
 
@@ -430,3 +488,5 @@ Pour afficher le manuel de la commande `cat`, vous pouvez utiliser :
 ```bash
 man cat
 ```
+
+[^1]: Nous étudierons cette commande la semaine prochaine.
