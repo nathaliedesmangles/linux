@@ -8,18 +8,18 @@
     <language>en-us</language>
     <atom:link href="https://example.org/semaine4/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Processus de démarrage et BASH</title>
+      <title>Processus de démarrage et le shell BASH</title>
       <link>https://example.org/semaine4/cours/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine4/cours/index.html</guid>
-      <description>Le BIOS Le shell BASH BASH, qui signifie “Bourne Again SHell”, est une version améliorée du Bourne Shell. Il a été développé pour offrir plus de fonctionnalités et une meilleure compatibilité avec les scripts existants. Voici quelques différences clés :&#xA;Compatibilité : BASH est compatible avec les scripts du Bourne Shell, mais il offre également des fonctionnalités supplémentaires.&#xA;Fonctionnalités : BASH inclut des fonctionnalités avancées comme l’édition de ligne de commande, l’historique des commandes, et le complétion automatique des noms de fichiers et des commandes.</description>
+      <description>La séquence de démarrage de Linux Le processus de démarrage de Linux est une série d’étapes qui se déroulent depuis l’allumage de l’ordinateur jusqu’à l’affichage de l’invite de commande ou de l’interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.&#xA;1. Le BIOS/UEFI Le BIOS (Basic Input/Output System) ou l’UEFI (Unified Extensible Firmware Interface) est le premier programme qui s’exécute lorsque vous allumez votre ordinateur. Il initialise le matériel et recherche un périphérique de démarrage, tel qu’un disque dur ou une clé USB, contenant un chargeur de démarrage.</description>
     </item>
     <item>
       <title>ATELIER #4: Le processus de démarrage et le BASH</title>
       <link>https://example.org/semaine4/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine4/atelier/index.html</guid>
-      <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec&#xA;Atelier</description>
+      <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les cibles et les niveaux d’exécution sous Linux.&#xA;Atelier Exercice 1 : Changer de cible Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:&#xA;Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique : sudo systemctl isolate &lt;cible&gt;&#xD;Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Exercice 2 : Définir la cible par défaut Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.</description>
     </item>
   </channel>
 </rss>

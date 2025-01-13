@@ -5,31 +5,35 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Objectif de l’atelier Cet atelier a pour but de vous familiariser avec
-Atelier">
+    <meta name="description" content="Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les cibles et les niveaux d’exécution sous Linux.
+Atelier Exercice 1 : Changer de cible Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:
+Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique : sudo systemctl isolate &lt;cible&gt;Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Exercice 2 : Définir la cible par défaut Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="ATELIER #4: Le processus de démarrage et le BASH :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Objectif de l’atelier Cet atelier a pour but de vous familiariser avec
-Atelier">
+    <meta name="twitter:description" content="Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les cibles et les niveaux d’exécution sous Linux.
+Atelier Exercice 1 : Changer de cible Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:
+Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique : sudo systemctl isolate &lt;cible&gt;Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Exercice 2 : Définir la cible par défaut Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.">
     <meta property="og:url" content="https://example.org/semaine4/atelier/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="ATELIER #4: Le processus de démarrage et le BASH :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Objectif de l’atelier Cet atelier a pour but de vous familiariser avec
-Atelier">
+    <meta property="og:description" content="Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les cibles et les niveaux d’exécution sous Linux.
+Atelier Exercice 1 : Changer de cible Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:
+Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique : sudo systemctl isolate &lt;cible&gt;Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Exercice 2 : Définir la cible par défaut Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="ATELIER #4: Le processus de démarrage et le BASH :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Objectif de l’atelier Cet atelier a pour but de vous familiariser avec
-Atelier">
-    <meta itemprop="wordCount" content="13">
+    <meta itemprop="description" content="Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les cibles et les niveaux d’exécution sous Linux.
+Atelier Exercice 1 : Changer de cible Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:
+Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique : sudo systemctl isolate &lt;cible&gt;Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Exercice 2 : Définir la cible par défaut Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.">
+    <meta itemprop="wordCount" content="281">
     <title>ATELIER #4: Le processus de démarrage et le BASH :: 420-ZG4-MO LINUX</title>
     <link href="/semaine4/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #4: Le processus de démarrage et le BASH :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1736798282" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736798282" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1736798282" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736798282" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1736798282" rel="stylesheet">
-    <link href="/css/theme.min.css?1736798282" rel="stylesheet">
-    <link href="/css/format-html.min.css?1736798282" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1736807130" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736807130" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1736807130" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736807130" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1736807130" rel="stylesheet">
+    <link href="/css/theme.min.css?1736807130" rel="stylesheet">
+    <link href="/css/format-html.min.css?1736807130" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -94,6 +98,14 @@ Atelier">
   <ul>
     <li><a href="#objectif-de-latelier">Objectif de l&rsquo;atelier</a></li>
   </ul>
+
+  <ul>
+    <li><a href="#exercice-1--changer-de-cible">Exercice 1 : Changer de cible</a></li>
+    <li><a href="#exercice-2--définir-la-cible-par-défaut">Exercice 2 : Définir la cible par défaut</a></li>
+    <li><a href="#exercice-3--activer-et-désactiver-des-services">Exercice 3 : Activer et désactiver des services</a></li>
+    <li><a href="#exercice-4--vérifier-létat-des-cibles">Exercice 4 : Vérifier l&rsquo;état des cibles</a></li>
+    <li><a href="#exercice-5--redémarrer-et-arrêter-le-système">Exercice 5 : Redémarrer et arrêter le système</a></li>
+  </ul>
 </nav>
                 </div>
               </div>
@@ -105,7 +117,7 @@ Atelier">
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ATELIER #4: Le processus de démarrage et le BASH</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/cours/index.html" title="Processus de démarrage et BASH (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/cours/index.html" title="Processus de démarrage et le shell BASH (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
             </div>
@@ -130,8 +142,54 @@ Atelier">
 <h1 id="atelier-4-le-processus-de-démarrage-et-le-bash">ATELIER #4: Le processus de démarrage et le BASH</h1>
 
 <h2 id="objectif-de-latelier">Objectif de l&rsquo;atelier</h2>
-<p>Cet atelier a pour but de vous familiariser avec</p>
+<p>Cet atelier a pour but de vous familiariser avec les cibles et les niveaux d&rsquo;exécution sous Linux.</p>
 <h1 id="atelier">Atelier</h1>
+<h2 id="exercice-1--changer-de-cible">Exercice 1 : Changer de cible</h2>
+<p>Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:</p>
+<ul>
+<li>Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl isolate &lt;cible&gt;</span></span></code></pre></div>
+</li>
+<li>Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique.</li>
+</ul>
+<h2 id="exercice-2--définir-la-cible-par-défaut">Exercice 2 : Définir la cible par défaut</h2>
+<p>Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.</p>
+<ul>
+<li>Utiliser la commande suivante pour définir la cible par défaut :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl set-default &lt;cible&gt;</span></span></code></pre></div>
+</li>
+<li>Redémarrer votre système pour vérifier que le mode graphique est bien la cible par défaut.</li>
+</ul>
+<h2 id="exercice-3--activer-et-désactiver-des-services">Exercice 3 : Activer et désactiver des services</h2>
+<p>Dans cet exercice, on vous demande d&rsquo;activer et désactiver des services au démarrage.</p>
+<ul>
+<li>Utiliser la commande suivante pour activer un service au démarrage (par exemple, <code>httpd</code> pour le serveur web Apache) :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable &lt;service&gt;</span></span></code></pre></div>
+</li>
+<li>Utiliser la commande suivante pour désactiver un service au démarrage :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl disable &lt;service&gt;</span></span></code></pre></div>
+</li>
+</ul>
+<h2 id="exercice-4--vérifier-létat-des-cibles">Exercice 4 : Vérifier l&rsquo;état des cibles</h2>
+<p>Dans cet exercice, vous devrez vérifier l&rsquo;état actuel des cibles et des services.</p>
+<ul>
+<li>Utiliser la commande suivante pour vérifier l&rsquo;état actuel de la cible :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl &lt;completer&gt;</span></span></code></pre></div>
+</li>
+<li>Utiliser la commande suivante pour vérifier l&rsquo;état d&rsquo;un service spécifique (par exemple, <code>httpd</code>) :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl status &lt;service&gt;</span></span></code></pre></div>
+</li>
+</ul>
+<h2 id="exercice-5--redémarrer-et-arrêter-le-système">Exercice 5 : Redémarrer et arrêter le système</h2>
+<p>Cet exercice vous demande de redémarrer et d&rsquo;arrêter le système en utilisant systemd.</p>
+<ul>
+<li>Utiliser la commande suivante pour redémarrer le système :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl &lt;cible&gt;</span></span></code></pre></div>
+</li>
+<li>Utiliser la commande suivante pour arrêter le système :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl &lt;cible&gt;</span></span></code></pre></div>
+</li>
+</ul>
 
   <footer class="footline">
   </footer>
@@ -148,7 +206,7 @@ Atelier">
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1736798282";
+          window.index_js_url="/searchindex.en.js?1736807130";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -161,12 +219,12 @@ Atelier">
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1736798282" defer></script>
-        <script src="/js/lunr/lunr.min.js?1736798282" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1736798282" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1736798282" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1736798282" defer></script>
-        <script src="/js/search.js?1736798282" defer></script>
+        <script src="/js/auto-complete.js?1736807130" defer></script>
+        <script src="/js/lunr/lunr.min.js?1736807130" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1736807130" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1736807130" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1736807130" defer></script>
+        <script src="/js/search.js?1736807130" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -181,7 +239,7 @@ Atelier">
             <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Introduction à Linux (suite)</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Système de fichiers, shell et commandes de base</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Processus de démarrage et le shell bash</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu">
-            <li class="" data-nav-id="/semaine4/cours/index.html"><a class="padding" href="/semaine4/cours/index.html">Processus de démarrage et BASH</a></li>
+            <li class="" data-nav-id="/semaine4/cours/index.html"><a class="padding" href="/semaine4/cours/index.html">Processus de démarrage et le shell BASH</a></li>
             <li class="active " data-nav-id="/semaine4/atelier/index.html"><a class="padding" href="/semaine4/atelier/index.html">ATELIER #4: Le processus de démarrage et le BASH</a></li></ul></li>
           </ul>
         </div>
@@ -236,8 +294,8 @@ Atelier">
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1736798282" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1736798282" defer></script>
-    <script src="/js/theme.js?1736798282" defer></script>
+    <script src="/js/clipboard.min.js?1736807130" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1736807130" defer></script>
+    <script src="/js/theme.js?1736807130" defer></script>
   </body>
 </html>

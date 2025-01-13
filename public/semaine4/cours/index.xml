@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Processus de démarrage et BASH :: 420-ZG4-MO LINUX</title>
+    <title>Processus de démarrage et le shell BASH :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine4/cours/index.html</link>
-    <description>Le BIOS Le shell BASH BASH, qui signifie “Bourne Again SHell”, est une version améliorée du Bourne Shell. Il a été développé pour offrir plus de fonctionnalités et une meilleure compatibilité avec les scripts existants. Voici quelques différences clés :&#xA;Compatibilité : BASH est compatible avec les scripts du Bourne Shell, mais il offre également des fonctionnalités supplémentaires.&#xA;Fonctionnalités : BASH inclut des fonctionnalités avancées comme l’édition de ligne de commande, l’historique des commandes, et le complétion automatique des noms de fichiers et des commandes.</description>
+    <description>La séquence de démarrage de Linux Le processus de démarrage de Linux est une série d’étapes qui se déroulent depuis l’allumage de l’ordinateur jusqu’à l’affichage de l’invite de commande ou de l’interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.&#xA;1. Le BIOS/UEFI Le BIOS (Basic Input/Output System) ou l’UEFI (Unified Extensible Firmware Interface) est le premier programme qui s’exécute lorsque vous allumez votre ordinateur. Il initialise le matériel et recherche un périphérique de démarrage, tel qu’un disque dur ou une clé USB, contenant un chargeur de démarrage.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine4/cours/index.xml" rel="self" type="application/rss+xml" />

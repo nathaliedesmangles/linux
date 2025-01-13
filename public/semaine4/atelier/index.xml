@@ -3,7 +3,7 @@
   <channel>
     <title>ATELIER #4: Le processus de démarrage et le BASH :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine4/atelier/index.html</link>
-    <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec&#xA;Atelier</description>
+    <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les cibles et les niveaux d’exécution sous Linux.&#xA;Atelier Exercice 1 : Changer de cible Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:&#xA;Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique : sudo systemctl isolate &lt;cible&gt;&#xD;Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Exercice 2 : Définir la cible par défaut Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine4/atelier/index.xml" rel="self" type="application/rss+xml" />
