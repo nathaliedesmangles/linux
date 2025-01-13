@@ -22,14 +22,14 @@ Prérequis pour l’atelier Avoir Windows 10 ou 11 installé sur votre disque SS
     <meta itemprop="name" content="ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX">
     <meta itemprop="description" content="Objectifs L’atelier a pour but de vous guider à travers le processus d’installation de Linux sur une machine virtuelle (VM). Cela permet d’expérimenter avec Linux sans affecter le système d’exploitation principal de l’ordinateur.
 Prérequis pour l’atelier Avoir Windows 10 ou 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Vous trouverez le fichier executable de VMWare sur le Moodle du cours 3.Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Vous trouverez l’image sur le site suivant https://almalinux.org/get-almalinux/ NoteChoisir AlmaLinux OS 9.5 DVD ISO">
-    <meta itemprop="wordCount" content="249">
+    <meta itemprop="wordCount" content="273">
     <title>ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX</title>
     <link href="/semaine1/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1736564313" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736564313" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1736564313" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736564313" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1736564313" rel="stylesheet">
-    <link href="/css/theme.min.css?1736564313" rel="stylesheet">
-    <link href="/css/format-html.min.css?1736564313" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1736797469" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736797469" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1736797469" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736797469" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1736797469" rel="stylesheet">
+    <link href="/css/theme.min.css?1736797469" rel="stylesheet">
+    <link href="/css/format-html.min.css?1736797469" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -101,10 +101,9 @@ Prérequis pour l’atelier Avoir Windows 10 ou 11 installé sur votre disque SS
   <ul>
     <li>
       <ul>
-        <li><a href="#étape-1-installation-de-windows">Étape 1: Installation de Windows</a></li>
+        <li><a href="#étape-1-réinstallation-de-windows">Étape 1: Réinstallation de Windows</a></li>
         <li><a href="#étape-2-installation-de-vmware-sur-la-machine-hôte-votre-ssd-windows">Étape 2: Installation de VMWare sur la machine hôte (votre SSD Windows)</a></li>
-        <li><a href="#étape-3-création-dune-machine-virtuelle-dans-vmware">Étape 3: Création d&rsquo;une machine virtuelle dans VMWare</a></li>
-        <li><a href="#étape-4-installation-dalmalinux-sur-la-vm">Étape 4: Installation d&rsquo;Almalinux sur la VM</a></li>
+        <li><a href="#étape-3-création-dune-vm-et-installation-dalmalinux">Étape 3: Création d&rsquo;une VM et installation d&rsquo;Almalinux</a></li>
       </ul>
     </li>
   </ul>
@@ -169,7 +168,7 @@ Prérequis pour l’atelier Avoir Windows 10 ou 11 installé sur votre disque SS
 <h2 id="rappels-cours-ze5-virtualisation">Rappels (Cours ZE5 Virtualisation)</h2>
 <ul>
 <li>VMWare permet d’installer différents systèmes d’exploitation sur une même machine.</li>
-<li>Le nombre de <strong>machines virtuelles</strong> que l’on peut installer dépend de la puissance en terme de CPU et de mémoire de la machine hôte.</li>
+<li>Le nombre de <strong>machines virtuelles</strong> (VM) que l’on peut installer dépend de la puissance en terme de CPU et de mémoire de la machine hôte.</li>
 <li>La <strong>machine hôte</strong> est celle qui héberge les machines virtuelles aussi appelées <strong>les invités</strong>.</li>
 <li>La machine hôte peut être Windows ou Linux et les invités peuvent être une grande variété de systèmes d’exploitation.</li>
 </ul>
@@ -181,18 +180,23 @@ Prérequis pour l’atelier Avoir Windows 10 ou 11 installé sur votre disque SS
     Attention
   </summary>
   <div class="box-content">
-<p>Pour chacune des étapes et questions vous devrez prendre une <strong>capture d&rsquo;écran de vos installations. Pour plus de détails, voir les guides</strong>.</p>
+<p>Vous devrez prendre des <strong>captures d&rsquo;écran de vos installations. Pour plus de détails, voir les documents ci-dessous:</strong>.</p>
   </div>
 </details>
 <h1 id="atelier">Atelier</h1>
-<h3 id="étape-1-installation-de-windows">Étape 1: Installation de Windows</h3>
-<p>[Guide d&rsquo;installation de Windows](Lien à venir)</p>
+<h3 id="étape-1-réinstallation-de-windows">Étape 1: Réinstallation de Windows</h3>
+<p>Utiliser la procédure obtenue dans le cours 420-ZC5-MO de la session d&rsquo;automne.</p>
 <h3 id="étape-2-installation-de-vmware-sur-la-machine-hôte-votre-ssd-windows">Étape 2: Installation de VMWare sur la machine hôte (votre SSD Windows)</h3>
-<p>[Installation de VMWare](Lien à venir)</p>
-<h3 id="étape-3-création-dune-machine-virtuelle-dans-vmware">Étape 3: Création d&rsquo;une machine virtuelle dans VMWare</h3>
-<p><a href="www.dell.com/support/contents/fr-ca/videos/videoplayer/cr%C3%A9ation-d%E2%80%99une-machine-virtuelle-dans-vmware-workstation-pro/1700108455885340472">Vidéo par Dell</a></p>
-<h3 id="étape-4-installation-dalmalinux-sur-la-vm">Étape 4: Installation d&rsquo;Almalinux sur la VM</h3>
-<p>[Guide d&rsquo;installation d&rsquo;Almalinux](Lien à venir)</p>
+<ul>
+<li>Télécharger le fichier d&rsquo;installation (.exe) de VMWare qui se trouve sur Moodle dans le dossier de l&rsquo;atelier 1.</li>
+</ul>
+<p><a href="/semaine1/atelier/Installation%20de%20VMware%20Workstation%2017%20Pro.pdf">Guide - Installation de VMWare</a></p>
+<h3 id="étape-3-création-dune-vm-et-installation-dalmalinux">Étape 3: Création d&rsquo;une VM et installation d&rsquo;Almalinux</h3>
+<p><a href="https://almalinux.org/get-almalinux/" rel="external" target="_blank">Télécharger le fichier <strong>AlmaLinux OS 9.5 DVD ISO</strong></a></p>
+<p>Vous obtiendrez le fichier <em><strong>AlmaLinux-9.5-x86_64-dvd.iso</strong></em></p>
+<p><a href="/semaine1/atelier/Creation%20VM%20Almalinux.pdf">Guide - Création d&rsquo;une VM Almalinux</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
   <footer class="footline">
   </footer>
@@ -209,7 +213,7 @@ Prérequis pour l’atelier Avoir Windows 10 ou 11 installé sur votre disque SS
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1736564313";
+          window.index_js_url="/searchindex.en.js?1736797469";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -222,12 +226,12 @@ Prérequis pour l’atelier Avoir Windows 10 ou 11 installé sur votre disque SS
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1736564313" defer></script>
-        <script src="/js/lunr/lunr.min.js?1736564313" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1736564313" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1736564313" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1736564313" defer></script>
-        <script src="/js/search.js?1736564313" defer></script>
+        <script src="/js/auto-complete.js?1736797469" defer></script>
+        <script src="/js/lunr/lunr.min.js?1736797469" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1736797469" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1736797469" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1736797469" defer></script>
+        <script src="/js/search.js?1736797469" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -297,8 +301,8 @@ Prérequis pour l’atelier Avoir Windows 10 ou 11 installé sur votre disque SS
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1736564313" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1736564313" defer></script>
-    <script src="/js/theme.js?1736564313" defer></script>
+    <script src="/js/clipboard.min.js?1736797469" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1736797469" defer></script>
+    <script src="/js/theme.js?1736797469" defer></script>
   </body>
 </html>

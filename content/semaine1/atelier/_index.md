@@ -24,30 +24,36 @@ Choisir **AlmaLinux OS 9.5 DVD ISO**
 ## Rappels (Cours ZE5 Virtualisation)
 
 - VMWare permet d’installer différents systèmes d’exploitation sur une même machine.
-- Le nombre de **machines virtuelles** que l’on peut installer dépend de la puissance en terme de CPU et de mémoire de la machine hôte.
+- Le nombre de **machines virtuelles** (VM) que l’on peut installer dépend de la puissance en terme de CPU et de mémoire de la machine hôte.
 - La **machine hôte** est celle qui héberge les machines virtuelles aussi appelées **les invités**.
 - La machine hôte peut être Windows ou Linux et les invités peuvent être une grande variété de systèmes d’exploitation.
 
 ## Format de la remise
 
 {{% notice style=warning title=Attention %}}
-Pour chacune des étapes et questions vous devrez prendre une **capture d'écran de vos installations. Pour plus de détails, voir les guides**.
+Vous devrez prendre des **captures d'écran de vos installations. Pour plus de détails, voir les documents ci-dessous:**.
 {{% /notice %}}
 
 # Atelier
 
-### Étape 1: Installation de Windows
+### Étape 1: Réinstallation de Windows
 
-[Guide d'installation de Windows](Lien à venir)
+Utiliser la procédure obtenue dans le cours 420-ZC5-MO de la session d'automne.
 
 ### Étape 2: Installation de VMWare sur la machine hôte (votre SSD Windows)
 
-[Installation de VMWare](Lien à venir)
+- Télécharger le fichier d'installation (.exe) de VMWare qui se trouve sur Moodle dans le dossier de l'atelier 1.
 
-### Étape 3: Création d'une machine virtuelle dans VMWare
+[Guide - Installation de VMWare](Installation%20de%20VMware%20Workstation%2017%20Pro.pdf)
 
+### Étape 3: Création d'une VM et installation d'Almalinux
+
+[Télécharger le fichier **AlmaLinux OS 9.5 DVD ISO**](https://almalinux.org/get-almalinux/)
+
+Vous obtiendrez le fichier ***AlmaLinux-9.5-x86_64-dvd.iso***
+
+[Guide - Création d'une VM Almalinux](Creation%20VM%20Almalinux.pdf)
+<!--
 [Vidéo par Dell](www.dell.com/support/contents/fr-ca/videos/videoplayer/création-d’une-machine-virtuelle-dans-vmware-workstation-pro/1700108455885340472)
+-->
 
-### Étape 4: Installation d'Almalinux sur la VM
-
-[Guide d'installation d'Almalinux](Lien à venir)
