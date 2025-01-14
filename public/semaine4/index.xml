@@ -3,7 +3,7 @@
   <channel>
     <title>Processus de démarrage et le shell bash :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine4/index.html</link>
-    <description>Plan de la leçon Théorie : Atelier :</description>
+    <description>Plan de la leçon Théorie :&#xA;La séquence de démarrage de Linux. Les cibles (niveaux d’exécution). Le shell d’urgence. Atelier :&#xA;Exercices pratiques sur les cibles.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine4/index.xml" rel="self" type="application/rss+xml" />
@@ -19,7 +19,7 @@
       <link>https://example.org/semaine4/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine4/atelier/index.html</guid>
-      <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les cibles et les niveaux d’exécution sous Linux.&#xA;Atelier Exercice 1 : Changer de cible Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:&#xA;Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique : sudo systemctl isolate &lt;cible&gt;&#xD;Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Exercice 2 : Définir la cible par défaut Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.</description>
+      <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les cibles (niveaux d’exécution) sous Linux.&#xA;Atelier Exercice 1 : Changer de cible Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:&#xA;Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique : systemctl isolate &lt;cible&gt;&#xD;Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Exercice 2 : Définir la cible par défaut Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.</description>
     </item>
   </channel>
 </rss>

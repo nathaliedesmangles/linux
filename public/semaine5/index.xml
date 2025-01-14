@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Processus de démarrage et le shell bash :: 420-ZG4-MO LINUX</title>
+    <link>http://localhost:1313/semaine5/index.html</link>
+    <description>Plan de la leçon Théorie :&#xA;La séquence de démarrage de Linux. Les cibles (niveaux d’exécution). Le shell d’urgence. Atelier :&#xA;Exercices pratiques sur les cibles.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/semaine5/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
