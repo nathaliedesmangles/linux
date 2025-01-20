@@ -1,19 +1,19 @@
 +++
 chapter = true
 pre = "<b>Semaine 2. </b>"
-title = "Introduction à Linux (suite)"
+title = "Système de fichiers, Shell, commandes de base"
 weight = 20
 +++
 
 ## Plan de la leçon
 
 - **Théorie :**
-  - Qu'est-ce que le Shell ?
+  - Le système de fichiers de Linux.
+  - Le Shell Bash.
   - La ligne de commandes
-  - Quelques commandes simples
+  - Les commandes de base
 
 
 - **Atelier :**
-  - Installation de WSL et Ubuntu
-  - Exercices pratiques sur les commandes simples
+  - Utilisation des commandes de base
 

@@ -1,469 +1,405 @@
 +++
-title = "Introduction au shell et la ligne de commande"
+title = "Système de fichiers, Shell et commandes de base"
 weight = 21
 +++
 
+![Arborescence](filesystem.png?width=100vw)
+
+La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d'un arbre inversé, où la racine (root) est représentée par `/`. 
+Tous les fichiers et répertoires sont situés sous cette racine. 
+
+La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation. 
+
+Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.
+
+## Tout est fichier
+
+Sous Linux, TOUT les éléments visibles dans l’arborescence du système de fichiers sont des fichiers.
+
+- Un fichier est un fichier
+- Un répertoire est un fichier
+- Une clé USB est un fichier
+- Une partition est un fichier
+- Un disque dur est un fichier
+- etc.
+
+## Répertoires principaux
+
+> [!Important]
+> **Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis**. 
+
+1. **/** (Racine)
+   - Le point de départ de l'arborescence du système de fichiers. Tous les autres répertoires et fichiers sont situés sous ce répertoire.
+2. **/bin**
+   - Contient les binaires essentiels nécessaires au démarrage du système et à l'exécution des commandes de base, comme `ls`, `cp`, `mv`, etc.
+3. **/boot**
+   - Contient les fichiers nécessaires au démarrage du système, y compris le noyau Linux et les fichiers de configuration du chargeur de démarrage (bootloader).
+4. **/dev**
+   - Contient les fichiers de périphériques. Chaque périphérique matériel (comme les disques durs, les clés USB, etc.) est représenté par un fichier dans ce répertoire.
+5. **/etc**
+   - Contient les fichiers de configuration du système. Par exemple, les fichiers de configuration des services, des utilisateurs, des réseaux, etc.
+6. **/home**
+   - Contient les répertoires personnels des utilisateurs. Chaque utilisateur a son propre répertoire sous `/home`, par exemple `/home/ndesmangles`.
+7. **/lib**
+   - Contient les bibliothèques partagées nécessaires pour les binaires situés dans `/bin` et `/sbin`.
+8. **/media**
+   - Point de montage pour les périphériques amovibles comme les CD-ROM, les clés USB, etc.
+9. **/mnt**
+   - Utilisé pour monter temporairement des systèmes de fichiers. Par exemple, pour monter un disque dur externe.
+10. **/opt**
+    - Contient les logiciels optionnels et les paquets additionnels qui ne sont pas inclus dans la distribution standard.
+11. **/proc**
+    - Système de fichiers virtuel qui contient des informations sur les processus en cours et le système. Par exemple, `/proc/cpuinfo` contient des informations sur le processeur.
+12. **/root**
+    - Répertoire personnel de l'utilisateur root (administrateur du système).
+13. **/run**
+    - Contient des informations sur l'état du système depuis le dernier démarrage. Utilisé pour stocker des fichiers temporaires nécessaires au fonctionnement du système.
+14. **/sbin**
+    - Contient les binaires essentiels pour l'administration du système, comme `fdisk`, `ifconfig`, etc.
+15. **/srv**
+    - Contient les données spécifiques aux services fournis par le système. Par exemple, les fichiers de données pour un serveur web peuvent être stockés ici.
+16. **/tmp**
+    - Contient les fichiers temporaires créés par les utilisateurs et les applications. Ce répertoire est souvent vidé au redémarrage du système.
+17. **/usr**
+    - Contient les applications et les fichiers utilisés par les utilisateurs. Sous-répertoires importants :
+      - **/usr/bin** : Contient les binaires des applications utilisateur.
+      - **/usr/lib** : Contient les bibliothèques partagées pour les applications utilisateur.
+      - **/usr/local** : Contient les logiciels installés localement par l'administrateur du système.
+18. **/var**
+    - Contient les fichiers variables, tels que les journaux système, les fichiers de spool, et les fichiers temporaires des applications. Par exemple, `/var/log` contient les fichiers journaux.
+
+## Les chemins absolu et relatif
+
+### Chemin absolu
+
+Un chemin absolu est un chemin complet qui commence à la racine du système de fichiers. Il indique l'emplacement exact d'un fichier ou d'un répertoire, peu importe où vous vous trouvez dans le système de fichiers. Par exemple :
+```
+/home/utilisateur/Documents/fichier.txt
+```
+Dans cet exemple, le chemin commence par `/`, qui est la racine du système de fichiers, et suit l'arborescence jusqu'au fichier `fichier.txt`.
+
+### Chemin relatif
+
+Un chemin relatif, quant à lui, est un chemin qui est **relatif à votre répertoire de travail actuel**. Il ne commence pas par `/`. Par exemple, si vous êtes dans le répertoire `/home/utilisateur`, et que vous voulez accéder à `fichier.txt` dans le sous-répertoire `Documents`, vous pouvez utiliser :
+```
+Documents/fichier.txt
+```
+Ou, si vous voulez remonter d'un niveau dans l'arborescence, vous pouvez utiliser `..` pour représenter le répertoire parent. Par exemple, si vous êtes dans `/home/utilisateur/Documents` et que vous voulez accéder à un fichier dans `/home/utilisateur`, vous pouvez utiliser :
+```
+../fichier.txt
+```
+
+**En résumé**
+
+- **Chemin absolu** : Commence à la racine `/` et donne l'emplacement complet.
+- **Chemin relatif** : Dépend de votre répertoire de travail actuel et ne commence pas par `/`.
+
+---
+
 ## Qu'est-ce que le SHELL?
 
-Le terme "Shell" désigne un programme qui interprète les commandes que vous tapez et les exécute. Il existe plusieurs types de shells, comme le ***Bourne Shell (sh)***, le ***C Shell (csh)***, le ***Korn Shell (ksh)***, et bien d'autres.
+Le terme ***Shell*** désigne un programme qui interprète les commandes que vous tapez et les exécute. Il existe plusieurs types de shells, comme le ***Bourne Shell (sh)***, le ***C Shell (csh)***, le ***Korn Shell (ksh)***, et bien d'autres.
 
-## La ligne de commande
+### Le shell *Bash*
+
+***Bash*** (*Bourne Again Shell*) est le shell par défaut sur de nombreuses distributions Linux. Il agit comme une interface entre l’utilisateur et le système d’exploitation, permettant d’exécuter des commandes, des scripts, et d’automatiser des tâches.
+
+#### Fonctionnalités clés de Bash
+
+- **Historique des commandes** : Bash conserve un historique des commandes entrées, ce qui permet de les réutiliser facilement.
+- **Redirection** : Les flux d’entrée et de sortie peuvent être redirigés pour enregistrer des résultats ou chaîner des commandes.
+- **Variables** : Bash prend en charge les variables, qui peuvent stocker des données pour une utilisation ultérieure.
+- **Alias** : Vous pouvez créer des alias pour simplifier des commandes longues ou fréquemment utilisées.
+
+### La ligne de commande
+
+La ligne de commande est l'interface où vous tapez vos commandes. Elle est souvent représentée par un symbole `$` ou `#`:
+- `$` signifie que vous êtes un utilisateur standard
+- `#` signifie que vous êtes le super-utilisateur `root` (administrateur du système).
+- `~` signifie le répertoire personnel, les symboles `$` et `#` seront précédés du symbole tilde: `~$` ou `~#`.
 
 Une commande dans le shell suit généralement cette structure :
+
 ```
 commande [options] [arguments]
 ```
+
 - **commande** : Le programme ou l'outil que vous souhaitez exécuter.
 - **options** : Des paramètres supplémentaires qui modifient le comportement de la commande.
 - **arguments** : Les cibles sur lesquelles la commande doit agir (fichiers, répertoires, etc.).
 
+Lorsque vous êtes prêt à exécuter une commande, appuyez sur la touche Entrée. Tapez chaque commande sur une ligne séparée. Le résultat de la commande est affiché avant l’invite du shell suivante.
 
-- La ligne de commande est l'interface où vous tapez vos commandes. Elle est souvent représentée par un symbole `$` ou `#` pour les utilisateurs root (administrateur).
-	- `$` signifie que vous êtes un utilisateur standard
-	- `#` signifie que vous êtes le super-utilisateur `root` (administrateur du système).
-	- `~` signifie le répertoire personnel, les symboles `$` et `#` seront précédés du symbole tilde: `~$` ou `~#`.
-- Lorsque vous êtes prêt à exécuter une commande, appuyez sur la touche Entrée. Tapez chaque commande sur une ligne séparée. Le résultat de la commande est affiché avant l’invite du shell suivante.
-
-**Exemple**:
-```plaintext
-nathalie@Yoda:~$ whoami
-nathalie
-nathalie@Yoda:~$ 
+**Exemple de commande sans option** :
+```bash
+[ndesmangles@localhost ~]$ whoami
+ndesmangles
+[ndesmangles@localhost ~]$
 ```
 
-Pour exécuter une commande avec des privilèges de super-utilisateur (`root`) la précède de `sudo`:
+**Exemple de commande avec une option** :
+```bash
+[ndesmangles@localhost ~]$ date -R
+Fri, 17 Jan 2025 20:19:50 -0500
+[ndesmangles@localhost ~]$
+```
+
+Pour exécuter une commande avec des privilèges de **super-utilisateur (`root`)**, on la précède de `sudo`:
 
 ```bash
-nathalie@Yoda:~$ sudo ls /root
+[ndesmangles@localhost ~]$ sudo ls /root
 ```
 
-## Commandes simples
+## Commandes de base en *Bash*
 
-Ces commandes simples sont essentielles pour naviguer et gérer efficacement un système Linux à l'aide du shell Bash. La maîtrise de ces commandes vous permettra d'effectuer des tâches courantes de manière plus efficace et de mieux comprendre le fonctionnement de votre système.
+Bash propose une variété de commandes puissantes pour interagir avec le système. Ces commandes de base sont essentielles pour naviguer, gérer des fichiers, et interagir avec votre système sous Bash.
 
+---
 
-| **Commande** | **Description** | **Options** |
-|--------------|-----------------|-------------|
-| `date`       | Affiche la date et l'heure du système. | `+FORMAT` pour formater la sortie. |
-| `passwd`     | Change le mot de passe utilisateur. | `-l` pour verrouiller un compte. |
-| `file`       | Détermine le type de fichier.   Un fichier ASCII sera lisible/compréhensible | `-i` pour afficher le type MIME. |
-| `cat`        | Affiche le contenu d'un fichier. | `-n` pour numéroter les lignes. |
-| `less`       | Affiche le contenu d'un fichier page par page. | `-N` pour numéroter les lignes. |
-| `head`       | Affiche par défaut, les **10** premières lignes d'un fichier. | `-n` pour spécifier le nombre de lignes. |
-| `tail`       | Affiche par défaut, les **10** dernières lignes d'un fichier. | `-n` pour spécifier le nombre de lignes. |
-| `wc`         | Compte les lignes, mots et donne la taille du fichier en octets. | `-l` pour les lignes, `-w` pour les mots et `-c` pour la taille. |
-| `ls`         | Liste les fichiers et répertoires. | `-l` pour un format détaillé. |
-| `history`    | Affiche l'historique des commandes. | `-c` pour effacer l'historique. Le point d’exclamation (!) rappelle les commandes précédentes sans avoir à les retaper. La commande **`!nombre`** rappelle la commande correspondant au nombre spécifié. La commande **`!string`** rappelle la commande la plus récente qui commence par la chaîne spécifiée.|
+## Navigation dans le système de fichiers
 
+| **Commande** | **Description** |
+|--------------|-----------------|
+| `pwd`        | Affiche le chemin absolu du répertoire courant.    |
+| `cd`         | Change le répertoire courant.                      |
+| `ls`         | Affiche le contenu d'un répertoire.                |
 
-### Exemples
+1. **`pwd` (Print Working Directory)** :
+     ```bash
+     [ndesmangles@localhost ~]$ pwd
+     /home/ndesmangles			# Le répertoire personnel dans home
+     [ndesmangles@localhost ~]$ 
+     ```
 
-#### 1. Commande `date` pour la date et l'heure courantes
+2. **`cd` (Change Directory)** :
+     ```bash
+     [ndesmangles@localhost ~]$ cd /etc
+     [ndesmangles@localhost etc]$	# Notez le changement du répertoire courant (etc)
+     ```
+   - Remonter d'un niveau.
+     ```bash
+     [ndesmangles@localhost etc]$ cd ..
+     [ndesmangles@localhost /]$ 	# Notez le positionnement à la racine /
+     ```
+   - Revenir dans le répertoire `etc`
+     ```bash
+     [ndesmangles@localhost /]$ cd etc
+     [ndesmangles@localhost etc]$ 
+     ```
+   - Remonter de deux niveaux.
+     ```bash
+     [ndesmangles@localhost etc]$ cd ../..
+     [ndesmangles@localhost /]$ 	# Notez le retour à la racine /
+     ```
+   - Revenir à notre répertoire personnel
+     ```bash
+     [ndesmangles@localhost etc]$ cd ~
+     [ndesmangles@localhost ~]$ 	# Notez le retour au répertoire personnel ~
+     ```
 
-| Option | Description |
-|--------|-------------|
-| `%a`   | Nom abrégé du jour de la semaine (par exemple, Mon) |
-| `%A`   | Nom complet du jour de la semaine (par exemple, Monday) |
-| `%b`   | Nom abrégé du mois (par exemple, Jan) |
-| `%B`   | Nom complet du mois (par exemple, January) |
-| `%c`   | Date et heure locale (par exemple, Thu Mar 3 23:05:25 2005) |
-| `%d`   | Jour du mois (01 à 31) |
-| `%H`   | Heure (00 à 23) |
-| `%I`   | Heure (01 à 12) |
-| `%j`   | Jour de l'année (001 à 366) |
-| `%m`   | Mois (01 à 12) |
-| `%M`   | Minutes (00 à 59) |
-| `%p`   | AM ou PM |
-| `%S`   | Secondes (00 à 60) |
-| `%U`   | Numéro de la semaine de l'année, avec le dimanche comme premier jour de la semaine (00 à 53) |
-| `%w`   | Jour de la semaine (0 à 6, avec dimanche = 0) |
-| `%y`   | Année sans le siècle (00 à 99) |
-| `%Y`   | Année avec le siècle (par exemple, 2025) |
-| `%Z`   | Fuseau horaire (par exemple, EST) |
+3. **`ls` (List)** :
+   - Options utiles :
+     - `-l` : Affiche des détails comme les permissions[^1], la taille, etc.
+     - `-a` : Montre les fichiers cachés.
 
-**Quelques exemples:**
+     ```bash
+     [ndesmangles@localhost /]$ ls
+     afs  bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+     [ndesmangles@localhost /]$ ls -l
+     total 24
+     dr-xr-xr-x.   2 root root    6  2 oct 17:00 afs
+     lrwxrwxrwx.   1 root root    7  2 oct 17:00 bin -> usr/bin
+     dr-xr-xr-x.   5 root root 4096 11 jan 23:06 boot
+     ```
+**Quelques explications** :
 
-```bash
-nathalie@Yoda:~$ date
-Thu Jan  9 20:42:36 EST 2025
+1. **Première colonne**: -rwxr-xr-x par exemple représente le type de fichier et les droits d’accès (abordés en détail dans un prochain cours) qui lui sont associés.
+2. **Deuxième colonne** : ce qu’elle représente dépend du type de fichier:
+   - **Répertoire** : indique le nombre de sous-répertoires (+2 pour . et ..).
+   - **Fichier** : nombre de lien physiques (vu plus loin dans ce cours).
+3. **Troisième et quatrième colonnes** représentent l’utilisateur propriétaire du fichier et le groupe propriétaire du fichier.
+4. **Cinquième colonne** indique la taille du fichier (notez qu’un répertoire a une taille qui correspond à la taille du fichier répertoire sur le disque).
+5. **Sixième colonne** indique la date de dernière modification.
+6. **Septième colonne** est le nom du fichier.
 
-nathalie@Yoda:~$ date "+%Y-%m-%d %H:%M:%S"
-2025-01-09 20:42:46
+---
 
-nathalie@Yoda:~$ date +%r
-08:44:38 PM
+## Manipulation de fichiers et répertoires
 
-nathalie@Yoda:~$ date +%R
-20:44
-
-nathalie@Yoda:~$ date +%x
-01/09/25
-
-nathalie@Yoda:~$ date +%X
-20:44:00
-
-nathalie@Yoda:~$ date +%h
-Jan
-```
-
-#### 2. commande `passwd` pour changer le mot de passe de l'utilisateur
-
-```bash
-nathalie@Yoda ~$ passwd
-Changing password for user nathalie.
-Current password: ancien_mot_de_passe
-New password: nouveau_mot_de_passe
-Retype new password: nouveau_mot_de_passe
-passwd: all authentication tokens updated successfully.
-```
-
-#### 3. Commande `file` pour obtenir le type d'un fichier
- 
-```bash
-nathalie@Yoda:~$ file /etc/services
-/etc/services: ASCII text
-
-nathalie@Yoda:~$ file /home
-/home: directory
-```
-
-#### 4. Commande `cat` pour afficher le contenu d'un fichier
-
-**Un fichier à la fois**:
-```bash
-nathalie@Yoda:~$ cat /etc/services
-# Network services, Internet style
-#
-# Updated from https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml .
-#
-# New ports will be added on request if they have been officially assigned
-# by IANA and used in the real-world or are needed by a debian package.
-# If you need a huge list of used numbers please install the nmap package.
-
-tcpmux          1/tcp                           # TCP port service multiplexer
-echo            7/tcp
-echo            7/udp
-discard         9/tcp           sink null
-discard         9/udp           sink null
-systat          11/tcp          users
-daytime         13/tcp
-daytime         13/udp
-netstat         15/tcp
-
-```
-
-**Deux fichiers à la fois**:
-```bash
-nathalie@Yoda:~$ cat fichier1 fichier2
-Hello World!!
-Introduction aux commandes Linux.
-```
-
-**Déterminer les shells installés et utilisé**
-
-Vous pouvez voir la liste des Shells présents dans votre distribution avec la commande `cat` et celui utilisé avec la commande `echo`:
-```bash
-nathalie@Yoda:~$ cat /etc/shells
-# /etc/shells: valid login shells
-/bin/sh
-/usr/bin/sh
-/bin/bash
-/usr/bin/bash
-/bin/rbash
-/usr/bin/rbash
-/usr/bin/dash
-/usr/bin/tmux
-```
-Vous pouvez voir le shell que vous utilisez (**$SHELL** doit être écrit en respectant la casse):
-```bash
-nathalie@Yoda:~$ echo $SHELL
-/bin/bash
-```
-- Le shell qui vous est attribué est défini dans le fichier `/etc/passwd`..
-- Pour visualiser ce fichier SANS risquer de la modifier, utilisez la commande `cat`.
-```bash
-nathalie@Yoda:~$ cat /etc/passwd
-landscape:x:104:105::/var/lib/landscape:/usr/sbin/nologin
-polkitd:x:990:990:User for polkitd:/:/usr/sbin/nologin
-nathalie:x:1000:1000:,,,:/home/nathalie:/bin/bash
-nathalie@Yoda:~$
-```
-
-- Trouvez la ligne commençant par votre nom d'utilisateur. La dernière partie correspond à votre shell par défaut. Dans mon cas `/bin/bash`.
-- Bash est le shell le plus utilisé. Nous en reparlerons plus tard.
-
-#### 5. Commande `less` pour afficher le contenu d'un fichier page par page
-
-```bash
-nathalie@Yoda:~$ less /etc/services
-# Network services, Internet style
-#
-# Updated from https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml .
-#
-# New ports will be added on request if they have been officially assigned
-# by IANA and used in the real-world or are needed by a debian package.
-# If you need a huge list of used numbers please install the nmap package.
-
-tcpmux          1/tcp                           # TCP port service multiplexer
-echo            7/tcp
-echo            7/udp
-discard         9/tcp           sink null
-discard         9/udp           sink null
-systat          11/tcp          users
-daytime         13/tcp
-daytime         13/udp
-netstat         15/tcp
-qotd            17/tcp          quote
-chargen         19/tcp          ttytst source
-chargen         19/udp          ttytst source
-ftp-data        20/tcp
-ftp             21/tcp
-fsp             21/udp          fspd
-ssh             22/tcp                          # SSH Remote Login Protocol
-telnet          23/tcp
-smtp            25/tcp          mail
-time            37/tcp          timserver
-time            37/udp          timserver
-whois           43/tcp          nicname
-tacacs          49/tcp                          # Login Host Protocol (TACACS)
-tacacs          49/udp
-domain          53/tcp                          # Domain Name Server
-domain          53/udp
-bootps          67/udp
-bootpc          68/udp
-tftp            69/udp
-/etc/services
-```
-
->[!TIP]
-**NB**: Pour revenir à la ligne de commande, taper la lettre `q`.
+| **Commande** | **Description** |
+|--------------|-----------------|
+| `touch`      | Crée un fichier vide ou met à jour la date de modification d’un fichier existant.   |
+| `mkdir`      | Crée un nouveau répertoire.                                                         |
+| `rm`         | Supprime des fichiers. Pour supprimer des répertoires, utilisez `-r` (récursif).    |
+| `rmdir`      | Supprime un répertoire vide.                                                        |
+| `cp`         | Copie des fichiers ou des répertoires.                                              |
+| `mv`         | Déplace ou renomme des fichiers et des répertoires.                                 |
 
 
-#### 6. Commande `head` pour afficher les premières lignes d'un fichier
+1. **`touch`** :
+     ```bash
+     [ndesmangles@localhost ~]$ touch nouveau_fichier.txt
+     ```
 
-```bash
-nathalie@Yoda:~$ head /etc/services
-# Network services, Internet style
-#
-# Updated from https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml .
-#
-# New ports will be added on request if they have been officially assigned
-# by IANA and used in the real-world or are needed by a debian package.
-# If you need a huge list of used numbers please install the nmap package.
+2. **`mkdir` (Make Directory)** :
+     ```bash
+     [ndesmangles@localhost ~]$ mkdir nouveau_repertoire
+     ```
 
-tcpmux          1/tcp                           # TCP port service multiplexer
-echo            7/tcp
+3. **`rm` (Remove)** :
+     ```bash
+     [ndesmangles@localhost ~]$ rm fichier.txt
+     [ndesmangles@localhost ~]$ rm -r dossier_a_supprimer
+     ```
 
-nathalie@Yoda:~$ head -n 5 /etc/services
-Network services, Internet style
-#
-# Updated from https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml .
-#
-# New ports will be added on request if they have been officially assigned
+4. **`rmdir` (Remove Directory)** :
+     ```bash
+     [ndesmangles@localhost ~]$ rmdir dossier_vide
+     [ndesmangles@localhost ~]$ rmdir dossier_pas_vide   # Affiche une erreur
+     ```
 
-```
+5. **`cp` (Copy)** :
+     ```bash
+     [ndesmangles@localhost ~]$ cp fichier_source.txt fichier_destination.txt
+     [ndesmangles@localhost ~]$ cp -r dossier_source dossier_destination
+     ```
 
-#### 7. Commande `tail` pour afficher les dernières lignes d'un fichier
+6. **`mv` (Move)** :
+     ```bash
+     [ndesmangles@localhost ~]$ mv ancien_nom.txt nouveau_nom.txt
+     [ndesmangles@localhost ~]$ mv fichier.txt /nouveau/chemin/
+     ```
 
-```bash
-nathalie@Yoda:~$ tail /etc/services
-sgi-cad         17004/tcp                       # Cluster Admin daemon
-binkp           24554/tcp                       # binkp fidonet protocol
-asp             27374/tcp                       # Address Search Protocol
-asp             27374/udp
-csync2          30865/tcp                       # cluster synchronization tool
-dircproxy       57000/tcp                       # Detachable IRC Proxy
-tfido           60177/tcp                       # fidonet EMSI over telnet
-fido            60179/tcp                       # fidonet EMSI over TCP
+---
 
-# Local services
+## Affichage et lecture de fichiers
 
-nathalie@Yoda:~$ tail -n 5 /etc/services
-dircproxy       57000/tcp                       # Detachable IRC Proxy
-tfido           60177/tcp                       # fidonet EMSI over telnet
-fido            60179/tcp                       # fidonet EMSI over TCP
+| **Commande** | **Description** |
+|--------------|-----------------|
+| `cat`        | Affiche le contenu complet d'un fichier.   |
+| `less`       | Permet de lire un fichier page par page.   |
+| `head`       | Affiche les premières lignes d'un fichier. 10 lignes par défaut. |
+| `tail`       | Affiche les dernières lignes d'un fichier. 10 lignes par défaut.  |
 
-# Local services
-```
 
-#### 8. Commande `wc` pour obtenir le nombre de **lignes**, de **mots** et la **taille** en octets dans un fichier
+1. **`cat`** :
+     ```bash
+     [ndesmangles@localhost ~]$ cat fichier.txt
+     [ndesmangles@localhost ~]$ cat fichier1 fichier2
+     Hello World!!
+     Introduction aux commandes Linux.
+     [ndesmangles@localhost ~]$ cat /etc/shells		# Affiche les Shells installés sur la machine.
+     ```
 
-```bash
-nathalie@Yoda:~$ wc /etc/services
-361  1773 12813 /etc/services
+2. **`less`** :
+   - Contrôles :
+     - `Espace` : Page suivante
+     - `q` : Quitter
+     ```bash
+     [ndesmangles@localhost ~]$ less fichier.txt
+     ```
 
-nathalie@Yoda:~$ wc -l /etc/services
-361 /etc/services
+3. **`head`** :
+     ```bash
+     [ndesmangles@localhost ~]$ head fichier.txt       # Affiche les 10 premières lignes
+     [ndesmangles@localhost ~]$ head -n 5 fichier.txt  # Affiche les 5 premières lignes
+     ```
 
-nathalie@Yoda:~$ wc -w /etc/services
-1773 /etc/services
+4. **`tail`** :
+     ```bash
+     [ndesmangles@localhost ~]$ tail fichier.txt       # Affiche les 10 dernières lignes
+     [ndesmangles@localhost ~]$ tail -n 5 fichier.txt  # Affiche les 5 dernières lignes
+     ```
+---
 
-nathalie@Yoda:~$ wc -c /etc/services
-12813 /etc/services
+## Informations système et historique
 
-```
-#### 9. Commande `ls` pour lister les détails d'un fichier
+| **Commande** | **Description** |
+|--------------|-----------------|
+| `date`       | Affiche la date et l'heure actuelles.        |
+| `history`    | Liste les commandes précédemment exécutées.  |
 
-En premier, allons dans le répertoire `/etc` à l'aide de la commande `cd`[^1]
-```bash
-nathalie@Yoda:~$ cd /etc
-```
-Utilisons la commande `ls`
-```bash
-nathalie@Yoda:/etc$ ls
-PackageKit              cron.weekly     groff          locale.conf          nsswitch.conf  rmt                supercat
-X11                     cron.yearly     group          locale.gen           opt            rpc                sysctl.conf
-adduser.conf            crontab         group-         localtime            os-release     rsyslog.conf       sysctl.d
-```
-Pour afficher la liste de tous les attributs d’un fichier on utilise l'option `-l` :
-```bash
-nathalie@Yoda:/etc$ ls -l
-total 340
-drwxr-xr-x 1 root root       4096 Apr 23  2024 PackageKit
-drwxr-xr-x 1 root root       4096 Apr 23  2024 X11
--rw-r--r-- 1 root root       3444 Jul  5  2023 adduser.conf
-drwxr-xr-x 1 root root       4096 Apr 23  2024 alternatives
-drwxr-xr-x 1 root root       4096 Apr 23  2024 apparmor
-```
 
-**Quelques explications**:
+1. **`date`** :
+   - Options utiles :
+     - `+` : Pour spécifier un format personnalisé.
+   - Formats: 
+     - %Y : Année complète (ex. 2025).
+     - %m : Mois (01-12).
+     - %d : Jour (01-31).
+     - %H : Heure (00-23).
+     - %M : Minutes (00-59).
+     - %S : Secondes (00-59).
+     ```bash
+     [ndesmangles@localhost ~]$ date
+     Thu Jan  9 20:42:36 EST 2025
+     [ndesmangles@localhost ~]$ date "+%Y-%m-%d %H:%M:%S"
+     2025-01-09 20:42:43
+     ```
 
-- La **première colonne**: `-rwxr-xr-x` par exemple représente le type de fichier et les droits d’accès (abordés en détail dans un prochain cours) qui lui sont associés.
-	- Les 3 premiers sont les plus fréquents, les suivants sont des fichiers spéciaux qui seront principalement manipulés par l'utilisateur `root`.
-- La **deuxième colonne** : ce qu’elle représente dépend du type de fichier:
-	- **Répertoire**: indique le nombre de sous-répertoires (+2 pour . et ..).
-	- **Fichier**: nombre de lien physiques (vu plus loin dans ce cours).
-- Les **troisième et quatrième colonnes** représentent l’utilisateur propriétaire du fichier et le groupe propriétaire du fichier.
-- La **cinquième colonne** indique la taille du fichier (notez qu’un répertoire a une taille qui correspond à la taille du fichier répertoire sur le disque).
-- La **sixième colonne** indique la date de dernière modification.
-- La **septième colonne** est le nom du fichier.
+2. **`history`** :
+   - Options utiles :
+     - `n` : Pour spécifier le nombre de commandes précédentes à afficher.
+     - `!` : Pour exécuter une commande spécifique de l'historique, par son numéro.
+     - `c` : Pour effacer l'historique de la session.
+     ```bash
+     [ndesmangles@localhost ~]$ history		# Affiche l'historique complet de la session.
+     1  date -R
+     2  pwd
+     3  cd /etc
+     4  cd ..
+     5  cd etc
+     6  cd ../..
+     7  ls
+     8  ls -a
+     9  ls -l
+     10  date
+     11  date "+%Y-%m-%d %H:%M:%S"
+     12  cd ~
+     13  history
+     [ndesmangles@localhost ~]$ history 5	# Affiche les 5 dernières commandes effectuées.
+     10  date
+     11  date "+%Y-%m-%d %H:%M:%S"
+     12  cd ~
+     13  history
+     14  history 5
+     [ndesmangles@localhost ~]$ !11		# Exécute la commande #11 dans l'historique
+     date "+%Y-%m-%d %H:%M:%S"
+     2025-01-09 20:47:03
+     [ndesmangles@localhost ~]$ !da		# Exécute la commande la plus récente, dont le nom commence par 'da'.  
+     date "+%Y-%m-%d %H:%M:%S"			  
+     2025-01-18 20:48:22	 
+     [ndesmangles@localhost ~]$ history -c	# Efface l'historique.
+     [ndesmangles@localhost ~]$ history
+     1  history
+     ```
 
-#### 10. Commande `history` pour afficher les commandes effectuées précédemment
-
-Pour revenir au dossier personnel
-```bash
-nathalie@Yoda:/etc$ cd ~
-```
-
-```bash
-nathalie@Yoda:~$ history
- exit
-    2  date
-    3  date +Y%
-    4  date -%m
-    5  date help
-    6  man date
-    7  date -d
-    8  exit
-    9  date "+%Y-%m-%d %H:%M:%S"
-   10  date
-   11  date %r
-   12  date +%R
-   13  date +%x
-   14  date +%Y
-   15  date +%m
-   16  date +%s
-   17  date +%M
-   18  date +%d
-   19  date +%D
-   20  date +%h
-   21  date +%r
-   22  date +%X
-   23  date +%S
-   24  file etc/services
-   25  ls
-   26  file /etc/services
-   27  cat /etc/services
-   28  less /etc/services
-   29  file /home
-   30  less /etc/services
-   31  head /etc/services
-   32  head -n 5 /etc/services
-   33  tail /etc/services
-   34  tail -n 5 /etc/services
-   35  wc /etc/services
-   36  wc -l /etc/services
-   37  wc -c /etc/services
-   38  wc -w /etc/services
-   39  ls
-   40  ls -l
-   41  cd /etc
-   42  ls
-   43  ls -l
-   44  cd ..
-   45  cd ~
-   46  history
-```
-**Rappel d'une commande précédente par son numéro dans l'historique (#34) à l'aide de la commande `!nombre`**
-```bash
-nathalie@Yoda:~$ !34
-tail -n 5 /etc/services
-dircproxy       57000/tcp                       # Detachable IRC Proxy
-tfido           60177/tcp                       # fidonet EMSI over telnet
-fido            60179/tcp                       # fidonet EMSI over TCP
-
-# Local services
-```
-
-**Rappel d'une commande précédente par une partie de son nom, à l'aide de la commande `!string`**. Dans l'exemple ci-dessous, c'est la commande **#29** et non la **#26** qui sera exécutée.
-```bash
-nathalie@Yoda:~$ !fi
-file /home
-/home: directory
-```
-
-**Effacer l'historique**
-```bash
-nathalie@Yoda:~$ history -c
-nathalie@Yoda:~$ history
-    1  history
-nathalie@Yoda:~$
-```
-
->[!TIP]
+>[!TIP] Bon à savoir
 La commande `clear` permet d'effacer l'écran du terminal.
+---
 
-## La touche `tab` pour auto-compléter une commande et le nom d'un fichier
+## Commandes utiles
 
-- La touche `Tab` du clavier, permet de compléter rapidement les commandes et les noms de fichiers après avoir entré un nombre de caractères suffisant pour réduire les possibilités à une seule. 
-- Si les caractères saisis ne sont pas uniques, appuyez deux fois sur la touche de tabulation pour afficher toutes les commandes correspondantes.
+| **Commande** | **Description** |
+|--------------|-----------------|
+| `echo`       | Affiche un message ou une variable dans le terminal. |
+| `man`        | Affiche le manuel d’aide pour une commande.          |
 
-Exemple: Tapez `cat /etc/ser` puis appuyez sur la touche `Tab` pour auto-compléter le nom du fichier.
 
+1. **`echo`** :
+     ```bash
+     [ndesmangles@localhost ~]$ echo "Bonjour, monde!"
+     Bonjour, monde!     
+     [ndesmangles@localhost ~]$ echo $SHELL
+     /bin/bash
+     ```
+   >[!Note]
+   **$SHELL** doit être écrit en respectant la casse.
 
-```bash
-nathalie@Yoda ~$ pas Tab+Tab
-passwd       paste        pasuspender
-nathalie@Yoda ~$ pass Tab
-nathalie@Yoda ~$ passwd 
-Changing password for user nathalie.
-Current password: 
-```
-- **Exemple** :
-```bash
-nathalie@Yoda ~$ ls /etc/pas1Tab
-nathalie@Yoda ~$ ls /etc/passwd2Tab
-passwd   passwd-
-```
-- **Résultat** :
-```plaintext
-passwd
-passwd-
-```
-
-## La commande man
-
-La commande `man` (abréviation de "manual") est utilisée pour afficher le manuel d'utilisation des commandes et programmes sous Linux. Elle fournit des informations détaillées sur la syntaxe, les options et les exemples d'utilisation des commandes.
-
-### Utilisation de la commande `man`
-
-Pour utiliser la commande `man`, il suffit de taper `man` suivi du nom de la commande ou du programme dont vous souhaitez consulter le manuel. Par exemple :
-
-```bash
-man ls
-```
-
-Cela affichera le manuel de la commande `ls`.
+2. **`man` (Manual)** :
+     ```bash
+     [ndesmangles@localhost ~]$ man ls		# Affiche le manuel de la commande `ls`.
+     ```
 
 ### Structure d'une page de manuel
 
@@ -481,12 +417,18 @@ Une page de manuel typique contient plusieurs sections, telles que :
 - `man -k keyword` : Recherche des pages de manuel contenant le mot-clé spécifié.
 - `man -f command` : Affiche une brève description de la commande (équivalent à `whatis command`).
 
-### Exemple
+## Autocompletion d'une commande *Bash* 
 
-Pour afficher le manuel de la commande `cat`, vous pouvez utiliser :
+- La touche `Tab` du clavier, permet de compléter rapidement les commandes et les noms de fichiers après avoir entré un nombre de caractères suffisant pour réduire les possibilités à une seule. 
+- Si les caractères saisis ne sont pas uniques, appuyez deux fois sur la touche de tabulation pour afficher toutes les commandes correspondantes.
 
 ```bash
-man cat
+[ndesmangles@localhost ~]$ cat /etc/serTab	# `cat /etc/ser` suivi de la touche `Tab` complète le nom du fichier.
+[ndesmangles@localhost ~]$ cat /etc/services
+[ndesmangles@localhost ~]$ passTabTab		# `pass` suivi de 2 fois la touche `Tab` propose les commande dont le nom commence par `pass`.
+passt       passt.avx2  passwd      
+[ndesmangles@localhost ~]$ pass
 ```
 
-[^1]: Nous étudierons cette commande la semaine prochaine.
+
+[^1]: Nous étudierons comment gérer les droits des différents utilisateurs plus tard dans ce cours.
