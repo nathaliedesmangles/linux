@@ -26,7 +26,7 @@ Sous Linux, TOUT les éléments visibles dans l’arborescence du système de fi
 ## Répertoires principaux
 
 {{% notice style="warning" title="Important" %}}
-**Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis**. 
+Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis. 
 {{% /notice %}}
 
 1. **/** (Racine)
@@ -325,12 +325,12 @@ Bash propose une variété de commandes puissantes pour interagir avec le systè
    - Options utiles :
      - `+` : Pour spécifier un format personnalisé.
    - Formats: 
-     - %Y : Année complète (ex. 2025).
-     - %m : Mois (01-12).
-     - %d : Jour (01-31).
-     - %H : Heure (00-23).
-     - %M : Minutes (00-59).
-     - %S : Secondes (00-59).
+     - `%Y` : Année complète (ex. 2025).
+     - `%m` : Mois (01-12).
+     - `%d` : Jour (01-31).
+     - `%H` : Heure (00-23).
+     - `%M` : Minutes (00-59).
+     - `%S` : Secondes (00-59).
      ```bash
      [ndesmangles@localhost ~]$ date
      Thu Jan  9 20:42:36 EST 2025
@@ -396,8 +396,11 @@ La commande `clear` permet d'effacer l'écran du terminal.
      [ndesmangles@localhost ~]$ echo $SHELL
      /bin/bash
      ```
-   >[!Note]
-   **$SHELL** doit être écrit en respectant la casse.
+
+    {{% notice style="note" title="Note" %}}
+    **$SHELL** doit être écrit en respectant la casse.
+    {{% /notice %}}
+
 
 2. **`man` (Manual)** :
      ```bash
