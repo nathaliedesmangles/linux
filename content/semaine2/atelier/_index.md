@@ -12,23 +12,20 @@ weight = 22
 
 ## Format de la remise sur Moodle
 
-> [!Warning] Attention
+{{% notice style="warning" title="Attention" %}}
 - Pour chaque exercice, vous devrez prendre une **capture d'écran**. Sur les captures, on doit pouvoir voir :
   1. Votre nom d'utilisateur (Ne travaillez donc **pas** avec l'utilisateur `root`, ni la commande `sudo`).
   2. La ligne de commande et la commande.
   3. Le résultat de la commande. Si le résultat fait plus de 10 lignes, capturer juste les 10 premières lignes.
   4. Nommer les fichiers image, tel qu'indiqué pour chaque question.
   5. Remettre toutes vos images dans **1 seul fichier compressé (ex:.zip)**. 
-	>[!Note] 
-	> Tout autre format ne sera pas corrigé.
+	**Tout autre format ne sera pas corrigé**.
 - Pour l'exercice #3, quelques questions devront ètre répondues dans un fichier texte à remettre sur Moodle en plus du .zip.
+{{% /notice %}}
+
 ---
 
 # Atelier
-
-> [!Warning] Attention
-> 1. Avant de commencer chaque exercice, assurez vous que vous travaillez dans votre répertoire personnel et ne vous déplacez pas que lorsque demandé.
-> 2. À moins d'indication contraire, utiliser **TOUJOURS des chemins relatifs**.
 
 ### Préparation
 
@@ -58,7 +55,12 @@ Sur votre machine Almalinux, avec votre utilisateur standard, allez sur votre co
 
 ![HTTP](atelier3-6.png?height=300)
 
-Allez maintenant sur votre terminal. Placez-vous dans votre répertoire personnel et déplacez-vous seulement si c'est demandé. 
+{{% notice style="warning" title="Attention" %}}
+1. Avant de commencer chaque exercice, assurez vous que vous travaillez dans votre répertoire personnel et ne vous déplacez pas que lorsque demandé.
+2. À moins d'indication contraire, utiliser **TOUJOURS des chemins relatifs**.
+{{% /notice %}}
+
+Allez maintenant sur votre terminal. Placez-vous dans votre répertoire personnel. 
 
 ## Exercice 1 : Explorer l’arborescence Linux
 
@@ -98,9 +100,10 @@ Allez maintenant sur votre terminal. Placez-vous dans votre répertoire personne
 
 ## Exercice 3: Commandes de base
 
-> [!CAUTION] Important
-> Utilisez pas l'interface graphique d'Almalinux QUE LORSQUE demandé (#6). Autrement, utilisez uniquement des commandes pour répondre aux questions.
-> Après chaque question (**sauf #6, #12a, #15 à #20), n'oubliez pas de prendre une capture d'écran et de la nommer `3-X.png` où `X` est le numéro de la question.
+{{% notice style="caution" title="Important" %}}
+- Utilisez pas l'interface graphique d'Almalinux QUE LORSQUE demandé (#6). Autrement, utilisez uniquement des commandes pour répondre aux questions.
+- Après chaque question (**sauf #6, #12a, #15 à #20), n'oubliez pas de prendre une capture d'écran et de la nommer `3-X.png` où `X` est le numéro de la question.
+{{% /notice %}}
 
 1. Créer un répertoire `Atelier2` dans le répertoire courant.
 2. Copier le fichier téléchargé `fichier.txt` dans le répertoire `Atelier2`.

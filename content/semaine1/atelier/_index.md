@@ -23,7 +23,7 @@ L'atelier a pour but de vous guider à travers le processus d'installation de Li
 
 ## Format de la remise
 
-{{% notice style=warning title=Attention %}}
+{{% notice style="warning" title="Attention" %}}
 Vous devrez prendre des **captures d'écran de vos installations. Pour plus de détails, voir les documents ci-dessous:**.
 {{% /notice %}}
 
@@ -33,8 +33,10 @@ Vous devrez prendre des **captures d'écran de vos installations. Pour plus de d
 
 Utiliser la procédure obtenue dans le cours 420-ZC5-MO de la session d'automne.
 
-> [!Warning] Attention
+{{% notice style="warning" title="Attention" %}}
 Vous devez installer **Windows 11** et sur **une seule partition**.
+{{% /notice %}}
+
 
 ### Étape 2: Téléchargement et installation de VMWare sur la machine hôte (votre SSD Windows)
 

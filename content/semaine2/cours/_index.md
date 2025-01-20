@@ -25,8 +25,9 @@ Sous Linux, TOUT les éléments visibles dans l’arborescence du système de fi
 
 ## Répertoires principaux
 
-> [!Important]
-> **Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis**. 
+{{% notice style="warning" title="Important" %}}
+**Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis**. 
+{{% /notice %}}
 
 1. **/** (Racine)
    - Le point de départ de l'arborescence du système de fichiers. Tous les autres répertoires et fichiers sont situés sous ce répertoire.
@@ -374,8 +375,10 @@ Bash propose une variété de commandes puissantes pour interagir avec le systè
      1  history
      ```
 
->[!TIP] Bon à savoir
+{{% notice style="tip" title="Bon à savoir" %}}
 La commande `clear` permet d'effacer l'écran du terminal.
+{{% /notice %}}
+
 ---
 
 ## Commandes utiles
