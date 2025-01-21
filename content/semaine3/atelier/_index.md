@@ -39,7 +39,7 @@ weight = 32
 
 ## Exercice 5: Expansion de variables et d'accolades
 
-1. Créer une variable (variable_etc) contenant la liste des fichiers du répertoire /etc et l'afficher. 
+1. Créer une variable `variable_etc` contenant la liste des fichiers du répertoire `/etc` et l'afficher. 
 - Son contenu est-il facile à lire ?
 - Que se passe-t-il si vous exécutez `ls` suivi du nom de votre variable ? Pourquoi ?
 2. Sachant que beaucoup de fichiers de configuration se terminent par `.conf`, les trouver et stocker leur nom dans une variable.
