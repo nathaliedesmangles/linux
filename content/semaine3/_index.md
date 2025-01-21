@@ -3,7 +3,6 @@ chapter = true
 pre = "<b>Semaine 3. </b>"
 title = "Processus de démarrage, variables et FOR"
 weight = 30
-draft = true
 +++
 
 ## Plan de la leçon
