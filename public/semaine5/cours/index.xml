@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Les processus de Linux :: 420-ZG4-MO LINUX</title>
+    <link>http://localhost:1313/semaine5/cours/index.html</link>
+    <description>Un processus est une instance d’un programme en cours d’exécution. Sous Linux, les processus jouent un rôle central dans la gestion des tâches et des ressources.&#xA;Dans cette leçon nous voyons comment Linux gère les processus, ainsi que les commandes essentielles pour les superviser et les contrôler.&#xA;Qu’est-ce qu’un processus ? Un processus est une entité active qui exécute des instructions d’un programme. Il inclut :&#xA;Code exécutable : Les instructions du programme. Espace mémoire : Contient les variables, les données, et la pile d’exécution. Identifiant unique (PID) : Chaque processus a un PID unique pour l’identifier. Les processus peuvent être classés en deux catégories principales :</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/semaine5/cours/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

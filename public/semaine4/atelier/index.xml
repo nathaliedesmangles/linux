@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ATELIER #4: Le processus de démarrage et le BASH :: 420-ZG4-MO LINUX</title>
+    <title>ATELIER #4: Redirection, E/S, pipeline et filtres :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine4/atelier/index.html</link>
-    <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les cibles (niveaux d’exécution) sous Linux.&#xA;Atelier Exercice 1 : Changer de cible Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:&#xA;Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique : systemctl isolate &lt;cible&gt;&#xD;Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Exercice 2 : Définir la cible par défaut Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.</description>
+    <description>Objectif de l’atelier Se familiariser avec les entrées/sorties et la redirection des commandes. Combinaison de commandes. Filtrage de données. Atelier Exercice 1 : E/S Exercice 2: Redirection Exercice 3: Filtrage (grep, sed, cut, find, etc.) Exercice 4: While Exercice 5: Expansion d’accolade et commande find, grep Exercice2 : Caractères génériques et commande find Allez dans le répertoire /etc. Ne vous déplacez pas pour le reste de cet exercice.&#xA;En utilisant la commande find, cherchez les fichiers dont le nom commence par la lettre r à partir du répertoire courant.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine4/atelier/index.xml" rel="self" type="application/rss+xml" />

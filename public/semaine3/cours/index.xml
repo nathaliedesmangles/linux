@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Système de fichiers, les commandes de base :: 420-ZG4-MO LINUX</title>
+    <title>Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine3/cours/index.html</link>
-    <description>La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine.&#xA;Attention&#xD;Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis.</description>
+    <description>Séquence de démarrage de Linux Le processus de démarrage de Linux est une série d’étapes qui se déroulent depuis l’allumage de l’ordinateur jusqu’à l’affichage de l’invite de commande ou de l’interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.&#xA;Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière ordonnée pour préparer la machine et le système d’exploitation à fonctionner. Voici les étapes principales :</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine3/cours/index.xml" rel="self" type="application/rss+xml" />

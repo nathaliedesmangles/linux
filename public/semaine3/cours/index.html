@@ -5,31 +5,31 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine.
-AttentionComprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis.">
+    <meta name="description" content="Séquence de démarrage de Linux Le processus de démarrage de Linux est une série d’étapes qui se déroulent depuis l’allumage de l’ordinateur jusqu’à l’affichage de l’invite de commande ou de l’interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.
+Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière ordonnée pour préparer la machine et le système d’exploitation à fonctionner. Voici les étapes principales :">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Système de fichiers, les commandes de base :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine.
-AttentionComprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis.">
+    <meta name="twitter:title" content="Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Séquence de démarrage de Linux Le processus de démarrage de Linux est une série d’étapes qui se déroulent depuis l’allumage de l’ordinateur jusqu’à l’affichage de l’invite de commande ou de l’interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.
+Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière ordonnée pour préparer la machine et le système d’exploitation à fonctionner. Voici les étapes principales :">
     <meta property="og:url" content="https://example.org/semaine3/cours/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
-    <meta property="og:title" content="Système de fichiers, les commandes de base :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine.
-AttentionComprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis.">
+    <meta property="og:title" content="Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Séquence de démarrage de Linux Le processus de démarrage de Linux est une série d’étapes qui se déroulent depuis l’allumage de l’ordinateur jusqu’à l’affichage de l’invite de commande ou de l’interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.
+Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière ordonnée pour préparer la machine et le système d’exploitation à fonctionner. Voici les étapes principales :">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
-    <meta itemprop="name" content="Système de fichiers, les commandes de base :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine.
-AttentionComprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis.">
-    <meta itemprop="wordCount" content="998">
-    <title>Système de fichiers, les commandes de base :: 420-ZG4-MO LINUX</title>
-    <link href="/semaine3/cours/index.xml" rel="alternate" type="application/rss+xml" title="Système de fichiers, les commandes de base :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1736881200" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736881200" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1736881200" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736881200" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1736881200" rel="stylesheet">
-    <link href="/css/theme.min.css?1736881200" rel="stylesheet">
-    <link href="/css/format-html.min.css?1736881200" rel="stylesheet" id="R-format-style">
+    <meta itemprop="name" content="Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Séquence de démarrage de Linux Le processus de démarrage de Linux est une série d’étapes qui se déroulent depuis l’allumage de l’ordinateur jusqu’à l’affichage de l’invite de commande ou de l’interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.
+Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière ordonnée pour préparer la machine et le système d’exploitation à fonctionner. Voici les étapes principales :">
+    <meta itemprop="wordCount" content="2366">
+    <title>Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine3/cours/index.xml" rel="alternate" type="application/rss+xml" title="Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1737427541" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737427541" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1737427541" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737427541" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1737427541" rel="stylesheet">
+    <link href="/css/theme.min.css?1737427541" rel="stylesheet">
+    <link href="/css/format-html.min.css?1737427541" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -92,14 +92,73 @@ AttentionComprendre cette structure est essentiel pour naviguer et gérer effic
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#tout-est-fichier">Tout est fichier</a></li>
-    <li><a href="#répertoires-principaux">Répertoires principaux</a>
+    <li><a href="#séquence-de-démarrage-de-linux">Séquence de démarrage de Linux</a></li>
+    <li><a href="#étape-1--biosuefi">Étape 1 : BIOS/UEFI</a>
       <ul>
-        <li><a href="#les-chemins-absolu-et-relatifs">Les chemins absolu et relatifs</a></li>
-        <li><a href="#les-commandes-de-navigation-dans-larborescence-des-fichiers">Les commandes de navigation dans l&rsquo;arborescence des fichiers</a></li>
-        <li><a href="#commandes-de-gestion-des-fichiers-et-répertoires">Commandes de gestion des fichiers et répertoires</a></li>
+        <li><a href="#rôle-du-biosuefi">Rôle du BIOS/UEFI</a></li>
+        <li><a href="#modes-de-démarrage">Modes de démarrage</a></li>
       </ul>
     </li>
+    <li><a href="#étape-2--bootloader-grub">Étape 2 : <em>Bootloader</em> (<em>GRUB</em>)</a>
+      <ul>
+        <li><a href="#rôle-de-grub">Rôle de GRUB</a></li>
+      </ul>
+    </li>
+    <li><a href="#étape-3--le-noyau-linux-kernel">Étape 3 : Le noyau Linux (<em>Kernel</em>)</a>
+      <ul>
+        <li><a href="#fonctionnalités-du-noyau-au-démarrage">Fonctionnalités du noyau au démarrage</a></li>
+      </ul>
+    </li>
+    <li><a href="#étape-4--init-et-systemd">Étape 4 : <em>Init</em> et <em>Systemd</em></a>
+      <ul>
+        <li><a href="#gestionnaires-dinitialisation">Gestionnaires d’initialisation</a></li>
+        <li><a href="#rôle-de-linit-pid-1">Rôle de l’init (PID 1)</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-les-cibles--niveaux-dexécution-runlevels">5. Les cibles / niveaux d&rsquo;exécution (<em>Runlevels</em>)</a>
+      <ul>
+        <li><a href="#différence-entre-emergencytarget-et-rescuetarget">Différence entre <em>emergency.target</em> et <em>rescue.target</em></a></li>
+      </ul>
+    </li>
+    <li><a href="#commandes-liées-aux-cibles-systemd-ou-init">Commandes liées aux cibles <em>Systemd</em> ou <em>init</em>.</a>
+      <ul>
+        <li><a href="#pour-lister-les-processus-sexécutant-sur-une-machine">Pour lister les processus s’exécutant sur une machine</a></li>
+        <li><a href="#pour-connaître-le-niveau-dexécution-actuel">Pour connaître le niveau d’exécution actuel</a></li>
+        <li><a href="#pour-se-placer-temporairement-dans-un-niveau-dexécution">Pour se placer temporairement dans un niveau d’exécution</a></li>
+        <li><a href="#pour-voir-quel-est-le-niveau-dexécution-par-défaut">Pour voir quel est le niveau d’exécution par défaut</a></li>
+        <li><a href="#pour-modifier-le-niveau-par-défaut">Pour modifier le niveau par défaut</a></li>
+        <li><a href="#pour-se-rendre-directement-au-niveau-dexécution-par-défaut">Pour se rendre directement au niveau d’exécution par défaut</a></li>
+      </ul>
+    </li>
+    <li><a href="#les-variables-utilisateur-en-bash">Les variables utilisateur en <em>Bash</em></a>
+      <ul>
+        <li><a href="#nomenclature-assignation-et-affichage-des-variables">Nomenclature, assignation et affichage des variables</a></li>
+        <li><a href="#stocker-le-résultat-dune-commande-dans-une-variable">Stocker le résultat d’une commande dans une variable</a></li>
+      </ul>
+    </li>
+    <li><a href="#expansion-des-variables-en-bash">Expansion des variables en <em>Bash</em></a></li>
+    <li><a href="#stocker-le-résultat-dune-commande-dans-une-variable-1">Stocker le résultat d&rsquo;une commande dans une variable</a></li>
+    <li><a href="#expansion-de-noms-de-fichiers--et-">Expansion de noms de fichiers (* et ?)</a></li>
+    <li><a href="#expansion-daccolades">Expansion d’accolades</a></li>
+    <li><a href="#protéger-contre-lexpansion">Protéger contre l’expansion</a></li>
+    <li><a href="#commandes-spéciales-et-expansions">Commandes spéciales et expansions</a>
+      <ul>
+        <li><a href="#exemple--recherche-avec-find">Exemple : Recherche avec <code>find</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#bonnes-pratiques-avec-les-variables">Bonnes pratiques avec les variables</a></li>
+    <li><a href="#itération-sur-les-résultats-de-commandes">Itération sur les résultats de commandes</a>
+      <ul>
+        <li><a href="#structure-générale">Structure générale</a></li>
+        <li><a href="#exemple-1--parcourir-une-liste-statique">Exemple 1 : Parcourir une liste statique</a></li>
+        <li><a href="#exemple-2--parcourir-des-fichiers-dun-répertoire">Exemple 2 : Parcourir des fichiers d’un répertoire</a></li>
+        <li><a href="#exemple-3--générer-une-liste-avec-une-séquence">Exemple 3 : Générer une liste avec une séquence</a></li>
+        <li><a href="#exemple-4--ajouter-des-pas-dans-une-séquence">Exemple 4 : Ajouter des pas dans une séquence</a></li>
+        <li><a href="#exemple-5--lire-des-entrées-à-partir-dune-commande">Exemple 5 : Lire des entrées à partir d’une commande</a></li>
+        <li><a href="#utiliser-des-guillemets-pour-protéger-les-valeurs">Utiliser des guillemets pour protéger les valeurs</a></li>
+      </ul>
+    </li>
+    <li><a href="#bonnes-pratiques-avec-la-boucle-for">Bonnes pratiques avec la boucle <em>for</em></a></li>
   </ul>
 </nav>
                 </div>
@@ -108,13 +167,13 @@ AttentionComprendre cette structure est essentiel pour naviguer et gérer effic
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine3/index.html"><span itemprop="name">Système de fichiers, shell et commandes de base</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Système de fichiers, les commandes de base</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Processus de démarrage, variables et FOR</span><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Processus de démarrage, cibles, variables et boucle For</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine3/index.html" title="Système de fichiers, shell et commandes de base (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/index.html" title="420-ZG4-MO Système d’exploitation Linux (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine3/atelier/index.html" title="ATELIER #3: Le système de fichiers et les commandes de base (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine3/atelier/index.html" title="ATELIER #3: Cibles et variables utilisateurs et for (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -134,242 +193,410 @@ AttentionComprendre cette structure est essentiel pour naviguer et gérer effic
   <header class="headline">
   </header>
 
-<h1 id="système-de-fichiers-les-commandes-de-base">Système de fichiers, les commandes de base</h1>
+<h1 id="processus-de-démarrage-cibles-variables-et-boucle-for">Processus de démarrage, cibles, variables et boucle For</h1>
 
-<p><a href="#R-image-24f7a9562adfc42d627a851fa8b49242" class="lightbox-link"><img alt="Arborescence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine3/cours/filesystem.png?width=100vw" style=" height: auto; width: 100vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-24f7a9562adfc42d627a851fa8b49242"><img alt="Arborescence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine3/cours/filesystem.png?width=100vw"></a></p>
-<p>La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d&rsquo;un arbre inversé, où la racine (root) est représentée par <code>/</code>.
-Tous les fichiers et répertoires sont situés sous cette racine.</p>
+<h2 id="séquence-de-démarrage-de-linux">Séquence de démarrage de Linux</h2>
+<p>Le processus de démarrage de Linux est une série d&rsquo;étapes qui se déroulent depuis l&rsquo;allumage de l&rsquo;ordinateur jusqu&rsquo;à l&rsquo;affichage de l&rsquo;invite de commande ou de l&rsquo;interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.</p>
+<p>Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière ordonnée pour préparer la machine et le système d’exploitation à fonctionner. Voici les étapes principales :</p>
+<ol>
+<li><strong>BIOS/UEFI</strong> : Initialise le matériel et recherche un périphérique amorçable.</li>
+<li><strong>Bootloader (GRUB)</strong> : Charge le noyau Linux et transfère le contrôle au système d’exploitation.</li>
+<li><strong>Noyau Linux</strong> : Configure le matériel, monte le système de fichiers racine, et démarre le processus d’initialisation.</li>
+<li><strong>Init/Systemd</strong> : Gère le lancement des services et des processus utilisateur.</li>
+</ol>
+<p><a href="#R-image-63ba87559597bf2a3fd441d51429171e" class="lightbox-link"><img alt="Schema séquence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-63ba87559597bf2a3fd441d51429171e"><img alt="Schema séquence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg"></a></p>
+<hr>
+<h2 id="étape-1--biosuefi">Étape 1 : BIOS/UEFI</h2>
+<h3 id="rôle-du-biosuefi">Rôle du BIOS/UEFI</h3>
+<ul>
+<li>Le BIOS (<em>Basic Input/Output System</em>) ou l’UEFI (<em>Unified Extensible Firmware Interface</em>) est le premier programme exécuté lorsqu’une machine est allumée.</li>
+<li>Il effectue des tests matériels (POST) et localise le <em>bootloader</em> sur un disque amorçable, et charge le MBR en mémoire</li>
+<li>Le BIOS transfère alors le contrôle au code du <em>Master Boot Record</em> (<strong>MBR</strong>). Le MBR se trouve dans le premier secteur du disque dur (secteur 0), c’est-à-dire les premiers 512 octets de l’espace de stockage.</li>
+<li>Le MBR contient un programme minimal d’amorçage (bootloader primaire) qui localise et charge le <em><strong>bootloader</strong></em> secondaire (ex. GRUB ou LILO) depuis une partition active.</li>
+</ul>
+<h3 id="modes-de-démarrage">Modes de démarrage</h3>
+<ul>
+<li><strong>Legacy (BIOS)</strong> : Mode traditionnel compatible avec les anciens systèmes.</li>
+<li><strong>UEFI</strong> : Plus moderne, prend en charge des fonctionnalités avancées comme le <em>Secure Boot</em>.</li>
+</ul>
 
-<details open class=" box cstyle notices warning">
-  <summary class="box-label" tabindex="-1">
-    <i class="fa-fw fas fa-exclamation-triangle"></i> 
-    Attention
+<details class=" box cstyle notices orange expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    BIOS ou UEFI ?
   </summary>
   <div class="box-content">
-<p>Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.
-<strong>Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis</strong>.</p>
+<ul>
+<li>Avec l’essor de l’UEFI, le MBR est remplacé par le schéma GPT (<em><strong>GUID Partition Table</strong></em>), qui offre plus de flexibilité (gestion de disques de grande taille et partitions multiples).</li>
+<li>Les systèmes UEFI n’utilisent pas de <em>MBR</em> classique mais démarrent directement via un fichier exécutable dans une partition EFI (ESP).</li>
+<li>Le MBR est une étape initiale critique dans les systèmes <em><strong>BIOS/MBR</strong></em>, mais il est remplacé dans les environnements modernes utilisant UEFI.</li>
+</ul>
   </div>
 </details>
-<p>La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation.</p>
-<h2 id="tout-est-fichier">Tout est fichier</h2>
-<p>Sous Linux, TOUT les éléments visibles dans l’arborescence du système de fichiers sont des fichiers.</p>
+<hr>
+<h2 id="étape-2--bootloader-grub">Étape 2 : <em>Bootloader</em> (<em>GRUB</em>)</h2>
+<h3 id="rôle-de-grub">Rôle de GRUB</h3>
 <ul>
-<li>Un fichier est un fichier</li>
-<li>Un répertoire est un fichier</li>
-<li>Une clé USB est un fichier</li>
-<li>Une partition est un fichier</li>
-<li>Un disque dur est un fichier</li>
-<li>etc.</li>
+<li>Le <em><strong>bootloader</strong></em> (<strong>GRUB</strong> : <em>GRand Unified Bootloader</em>) est responsable de charger le noyau Linux en mémoire.</li>
+<li>Il peut proposer plusieurs options de démarrage, comme des versions différentes du noyau ou un mode de récupération.</li>
 </ul>
-<h2 id="répertoires-principaux">Répertoires principaux</h2>
+<hr>
+<h2 id="étape-3--le-noyau-linux-kernel">Étape 3 : Le noyau Linux (<em>Kernel</em>)</h2>
+<h3 id="fonctionnalités-du-noyau-au-démarrage">Fonctionnalités du noyau au démarrage</h3>
+<ol>
+<li><strong>Détection matérielle</strong> : Identifie et initialise les composants matériels.</li>
+<li><strong>Chargement des modules</strong> : Ajoute des pilotes pour des périphériques spécifiques.</li>
+<li><strong>Montage du système de fichiers racine</strong> : Prépare l’environnement pour le reste du système.</li>
+<li><strong>Lancement du processus d’initialisation</strong> : Appelle le gestionnaire d’initialisation (PID 1).</li>
+</ol>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Définition
+  </summary>
+  <div class="box-content">
+<ul>
+<li><em><strong>PID</strong></em> : <em>Processus ID</em> est l&rsquo;identifiant d&rsquo;un processus.</li>
+</ul>
+  </div>
+</details>
+<hr>
+<h2 id="étape-4--init-et-systemd">Étape 4 : <em>Init</em> et <em>Systemd</em></h2>
+<h3 id="gestionnaires-dinitialisation">Gestionnaires d’initialisation</h3>
+<ul>
+<li><strong>SysVinit</strong> : Ancien gestionnaire basé sur des scripts shell.</li>
+<li><strong>Systemd</strong> : Gestionnaire moderne basé sur des unités (units) qui remplacent les scripts traditionnels.</li>
+</ul>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Information
+  </summary>
+  <div class="box-content">
+<ul>
+<li>Dans ce cours, on se limitera au commandes de <code>systemd</code>.</li>
+</ul>
+  </div>
+</details>
+<h3 id="rôle-de-linit-pid-1">Rôle de l’init (PID 1)</h3>
+<ul>
+<li>L’init est le premier processus utilisateur démarré par le noyau.</li>
+<li>Il gère le lancement des services essentiels et assure la transition vers un état prêt pour les utilisateurs.</li>
+<li>Les services sont des processus en arrière-plan qui effectuent des tâches spécifiques (ex. serveur SSH, journalisation).</li>
+<li>Quand tous les services sont lancés, le programme init affiche l’écran de connexion, qui vous demande votre nom d’utilisateur et votre mot de passe.</li>
+</ul>
+<h2 id="5-les-cibles--niveaux-dexécution-runlevels">5. Les cibles / niveaux d&rsquo;exécution (<em>Runlevels</em>)</h2>
+<ul>
+<li>Les cibles (niveaux d&rsquo;exécution) définissent l&rsquo;état du système et les services qui doivent être exécutés.</li>
+<li>Dans le passé, les modes de fonctionnement étaient connus sous le nom de <strong>niveaux d&rsquo;exécution</strong>, chacun permettant l&rsquo;accès à un ensemble spécifique de services. Le concept de niveaux d&rsquo;exécution a été remplacé par celui de <strong>cibles</strong> (<em>target</em>).</li>
+<li>L&rsquo;ensemble des services associés aux anciens niveaux d&rsquo;exécution ont été conservés dans le système de cibles de <code>systemd</code>, afin de maintenir la compatibilité avec les scripts et les configurations existantes.</li>
+</ul>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Information
+  </summary>
+  <div class="box-content">
+<ul>
+<li>Les distributions modernes comme Fedora, Ubuntu et Almalinux utilisent donc <code>Systemd</code>.</li>
+</ul>
+  </div>
+</details>
+<p>Voici les cibles les plus courantes et leur correspondance:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Niveau d&rsquo;exécution</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left"><em>Target</em> Systemd</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">0</td>
+          <td style="text-align: left">Arrêt du système.</td>
+          <td style="text-align: left">poweroff.target</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Mode monoutilisateur (maintenance).</td>
+          <td style="text-align: left">rescue.target ou emergency.target</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">Multi-utilisateur (texte)</td>
+          <td style="text-align: left">multi-user.target</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">5</td>
+          <td style="text-align: left">Multi-utilisateur (graphique)</td>
+          <td style="text-align: left">graphical.target</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">6</td>
+          <td style="text-align: left">Redémarrage</td>
+          <td style="text-align: left">reboot.target</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="différence-entre-emergencytarget-et-rescuetarget">Différence entre <em>emergency.target</em> et <em>rescue.target</em></h3>
+<ul>
+<li><code>emergency.target</code> : Le mode le plus minimal, aucun système de fichiers supplémentaire n’est monté, pas de réseau, pas de services. C’est vraiment pour les urgences critiques.</li>
+<li><code>rescue.target</code> : Similaire au mode monoutilisateur (niveau d’exécution 1). Il monte certains systèmes de fichiers et démarre un ensemble limité de services, mais pas de services réseau.</li>
+</ul>
+<h2 id="commandes-liées-aux-cibles-systemd-ou-init">Commandes liées aux cibles <em>Systemd</em> ou <em>init</em>.</h2>
+
+<details open class=" box cstyle notices note">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-circle"></i> 
+    Note
+  </summary>
+  <div class="box-content">
+<ul>
+<li>Les commandes <code>systemctl</code> qui modifient l’état du système ou des services touchent des fichiers et des processus sous contrôle strict, souvent localisés dans des répertoires comme <code>/etc/systemd/system</code> ou <code>/lib/systemd/system</code>. Ces zones sont protégées pour éviter des modifications accidentelles ou malveillantes.</li>
+<li>Dans la plupart des cas, vous devez avoir des privilèges <code>sudo</code> ou être connecté en tant qu&rsquo;utilisateur root pour utiliser la commande <code>systemctl</code>, car elle est conçue pour gérer des services, des cibles (<em>targets</em>), et d&rsquo;autres composants système qui nécessitent des autorisations élevées.</li>
+</ul>
+  </div>
+</details>
+<h3 id="pour-lister-les-processus-sexécutant-sur-une-machine">Pour lister les processus s’exécutant sur une machine</h3>
+<p><strong>Avec <code>ps</code></strong> :</p>
+<ul>
+<li>Affiche tous les processus s&rsquo;exécutant sur la machine.</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ps -ef
+</span></span><span style="display:flex;"><span>UID          PID    PPID  C STIME TTY          TIME CMD
+</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">2</span> 16:18 ?        00:00:01 /usr/lib/systemd/systemd --s</span></span></code></pre></div>
+<h3 id="pour-connaître-le-niveau-dexécution-actuel">Pour connaître le niveau d’exécution actuel</h3>
 <ol>
 <li>
-<p><strong>/</strong> (Racine)</p>
-<ul>
-<li>Le point de départ de l&rsquo;arborescence du système de fichiers. Tous les autres répertoires et fichiers sont situés sous ce répertoire.</li>
-</ul>
+<p><strong>Avec <code>Systemd</code></strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ systemctl get-default
+</span></span><span style="display:flex;"><span>graphical.target</span></span></code></pre></div>
 </li>
 <li>
-<p><strong>/bin</strong></p>
+<p><strong>Avec <code>runlevel</code> (SysVinit)</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ runlevel
+</span></span><span style="display:flex;"><span>N <span style="color:#ae81ff">5</span></span></span></code></pre></div>
 <ul>
-<li>Contient les binaires essentiels nécessaires au démarrage du système et à l&rsquo;exécution des commandes de base, comme <code>ls</code>, <code>cp</code>, <code>mv</code>, etc.</li>
-</ul>
-</li>
-<li>
-<p><strong>/boot</strong></p>
-<ul>
-<li>Contient les fichiers nécessaires au démarrage du système, y compris le noyau Linux et les fichiers de configuration du chargeur de démarrage (bootloader).</li>
-</ul>
-</li>
-<li>
-<p><strong>/dev</strong></p>
-<ul>
-<li>Contient les fichiers de périphériques. Chaque périphérique matériel (comme les disques durs, les clés USB, etc.) est représenté par un fichier dans ce répertoire.</li>
-</ul>
-</li>
-<li>
-<p><strong>/etc</strong></p>
-<ul>
-<li>Contient les fichiers de configuration du système. Par exemple, les fichiers de configuration des services, des utilisateurs, des réseaux, etc.</li>
-</ul>
-</li>
-<li>
-<p><strong>/home</strong></p>
-<ul>
-<li>Contient les répertoires personnels des utilisateurs. Chaque utilisateur a son propre répertoire sous <code>/home</code>, par exemple <code>/home/nathalie</code>.</li>
+<li>Cette commande affiche deux valeurs : le précédent et l’actuel niveau d’exécution. Ici, <code>N</code> indique qu&rsquo;il n&rsquo;y avait pas de niveau précédent (au démarrage), et <code>5</code> est le niveau actuel.</li>
 </ul>
 </li>
 </ol>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:~$ cd /home
-</span></span><span style="display:flex;"><span>nathalie@Yoda:/home$ ls
-</span></span><span style="display:flex;"><span>nathalie</span></span></code></pre></div>
-<ol start="7">
+<hr>
+<h3 id="pour-se-placer-temporairement-dans-un-niveau-dexécution">Pour se placer temporairement dans un niveau d’exécution</h3>
+<ol>
 <li>
-<p><strong>/lib</strong></p>
+<p><strong>Avec <code>systemctl isolate reboot</code> :</strong></p>
 <ul>
-<li>Contient les bibliothèques partagées nécessaires pour les binaires situés dans <code>/bin</code> et <code>/sbin</code>.</li>
+<li>Cette commande met immédiatement le système en état de redémarrage. Elle isole le <em>target</em> associé à l’action de redémarrage (souvent <strong>reboot.target</strong>).</li>
+<li><strong>Effet</strong> : Redémarrage immédiat, tous les services et processus actifs sont arrêtés proprement.</li>
 </ul>
 </li>
 <li>
-<p><strong>/media</strong></p>
+<p><strong>Avec <code>systemctl isolate poweroff</code> :</strong></p>
 <ul>
-<li>Point de montage pour les périphériques amovibles comme les CD-ROM, les clés USB, etc.</li>
-</ul>
-</li>
-<li>
-<p><strong>/mnt</strong></p>
-<ul>
-<li>Utilisé pour monter temporairement des systèmes de fichiers. Par exemple, pour monter un disque dur externe.</li>
-</ul>
-</li>
-<li>
-<p><strong>/opt</strong></p>
-<ul>
-<li>Contient les logiciels optionnels et les paquets additionnels qui ne sont pas inclus dans la distribution standard.</li>
-</ul>
-</li>
-<li>
-<p><strong>/proc</strong></p>
-<ul>
-<li>Système de fichiers virtuel qui contient des informations sur les processus en cours et le système. Par exemple, <code>/proc/cpuinfo</code> contient des informations sur le processeur.</li>
-</ul>
-</li>
-<li>
-<p><strong>/root</strong></p>
-<ul>
-<li>Répertoire personnel de l&rsquo;utilisateur root (administrateur du système).</li>
-</ul>
-</li>
-<li>
-<p><strong>/run</strong></p>
-<ul>
-<li>Contient des informations sur l&rsquo;état du système depuis le dernier démarrage. Utilisé pour stocker des fichiers temporaires nécessaires au fonctionnement du système.</li>
-</ul>
-</li>
-<li>
-<p><strong>/sbin</strong></p>
-<ul>
-<li>Contient les binaires essentiels pour l&rsquo;administration du système, comme <code>fdisk</code>, <code>ifconfig</code>, etc.</li>
-</ul>
-</li>
-<li>
-<p><strong>/srv</strong></p>
-<ul>
-<li>Contient les données spécifiques aux services fournis par le système. Par exemple, les fichiers de données pour un serveur web peuvent être stockés ici.</li>
-</ul>
-</li>
-<li>
-<p><strong>/tmp</strong></p>
-<ul>
-<li>Contient les fichiers temporaires créés par les utilisateurs et les applications. Ce répertoire est souvent vidé au redémarrage du système.</li>
-</ul>
-</li>
-<li>
-<p><strong>/usr</strong></p>
-<ul>
-<li>Contient les applications et les fichiers utilisés par les utilisateurs. Sous-répertoires importants :
-<ul>
-<li><strong>/usr/bin</strong> : Contient les binaires des applications utilisateur.</li>
-<li><strong>/usr/lib</strong> : Contient les bibliothèques partagées pour les applications utilisateur.</li>
-<li><strong>/usr/local</strong> : Contient les logiciels installés localement par l&rsquo;administrateur du système.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>/var</strong></p>
-<ul>
-<li>Contient les fichiers variables, tels que les journaux système, les fichiers de spool, et les fichiers temporaires des applications. Par exemple, <code>/var/log</code> contient les fichiers journaux.</li>
+<li>Cette commande met immédiatement le système hors tension (extinction complète). Elle isole le <em>target</em> associé à l’arrêt (<strong>poweroff.target</strong>).</li>
+<li><strong>Effet</strong> : Extinction immédiate, tous les services et processus actifs sont arrêtés proprement.</li>
 </ul>
 </li>
 </ol>
-<h3 id="les-chemins-absolu-et-relatifs">Les chemins absolu et relatifs</h3>
-<h4 id="chemin-absolu">Chemin absolu</h4>
-<p>Un chemin absolu est un chemin complet qui commence à la racine du système de fichiers. Il indique l&rsquo;emplacement exact d&rsquo;un fichier ou d&rsquo;un répertoire, peu importe où vous vous trouvez dans le système de fichiers. Par exemple :</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>/home/utilisateur/Documents/fichier.txt</code></pre></div>
-<p>Dans cet exemple, le chemin commence par <code>/</code>, qui est la racine du système de fichiers, et suit l&rsquo;arborescence jusqu&rsquo;au fichier <code>fichier.txt</code>.</p>
-<h4 id="chemin-relatif">Chemin relatif</h4>
-<p>Un chemin relatif, quant à lui, est un chemin qui est <strong>relatif à votre répertoire de travail actuel</strong>. Il ne commence pas par <code>/</code>. Par exemple, si vous êtes dans le répertoire <code>/home/utilisateur</code>, et que vous voulez accéder à <code>fichier.txt</code> dans le sous-répertoire <code>Documents</code>, vous pouvez utiliser :</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>Documents/fichier.txt</code></pre></div>
-<p>Ou, si vous voulez remonter d&rsquo;un niveau dans l&rsquo;arborescence, vous pouvez utiliser <code>..</code> pour représenter le répertoire parent. Par exemple, si vous êtes dans <code>/home/utilisateur/Documents</code> et que vous voulez accéder à un fichier dans <code>/home/utilisateur</code>, vous pouvez utiliser :</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>../fichier.txt</code></pre></div>
-<p><strong>En résumé</strong></p>
+<hr>
+<h3 id="pour-voir-quel-est-le-niveau-dexécution-par-défaut">Pour voir quel est le niveau d’exécution par défaut</h3>
+<ol>
+<li>
+<p><strong>Avec Systemd</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ systemctl get-default		<span style="color:#75715e"># Renvoie le *target* par défaut.</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Avec <code>runlevel</code> (SysVinit)</strong> :</p>
 <ul>
-<li><strong>Chemin absolu</strong> : Commence à la racine <code>/</code> et donne l&rsquo;emplacement complet.</li>
-<li><strong>Chemin relatif</strong> : Dépend de votre répertoire de travail actuel et ne commence pas par <code>/</code>.</li>
+<li>Vous pouvez également utiliser <code>runlevel</code> comme décrit précédemment.</li>
 </ul>
-<h3 id="les-commandes-de-navigation-dans-larborescence-des-fichiers">Les commandes de navigation dans l&rsquo;arborescence des fichiers</h3>
+</li>
+</ol>
+<hr>
+<h3 id="pour-modifier-le-niveau-par-défaut">Pour modifier le niveau par défaut</h3>
+<ol>
+<li>
+<p><strong>Avec Systemd</strong> :</p>
+<ul>
+<li>Changez le <em>target</em> par défaut avec :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ sudo systemctl set-default multi-user.target	<span style="color:#75715e"># Niveau d’exécution 3 (mode texte multi-utilisateur).</span></span></span></code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Avec SysVinit</strong> :</p>
+<ul>
+<li>Modifiez le fichier <code>/etc/inittab</code> (pour les systèmes utilisant encore SysVinit) :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ id:5:initdefault:		<span style="color:#75715e"># Définit le niveau 5 (mode graphique) comme niveau d’exécution par défaut.</span></span></span></code></pre></div>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="pour-se-rendre-directement-au-niveau-dexécution-par-défaut">Pour se rendre directement au niveau d’exécution par défaut</h3>
+<ul>
+<li>Utilisez la commande suivante pour forcer le système à se placer dans le niveau d’exécution ou <em>target</em> par défaut :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ sudo systemctl isolate default.target</span></span></code></pre></div>
+</li>
+</ul>
+<hr>
+<p><strong>Question</strong>: Suite aux commandes suivantes, que se passe-t-il ?</p>
+<ol>
+<li>
+<p><strong><code>[ndesmangles@localhost ~]$ init 0</code> :</strong>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Réponse
+  </summary>
+  <div class="box-content">
+<ul>
+<li>Envoie le système au niveau d’exécution 0, qui correspond à l’<strong>extinction</strong>.</li>
+<li><strong>Effet</strong> : Éteint immédiatement la machine, tout comme la commande <code>systemctl poweroff</code>.</li>
+</ul>
+  </div>
+</details></p>
+</li>
+<li>
+<p><strong><code>[ndesmangles@localhost ~]$ init 6</code> :</strong>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Réponse
+  </summary>
+  <div class="box-content">
+<ul>
+<li>Envoie le système au niveau d’exécution 6, qui correspond au <strong>redémarrage</strong>.</li>
+<li><strong>Effet</strong> : Redémarre immédiatement la machine, tout comme la commande <code>systemctl reboot</code>.</li>
+</ul>
+  </div>
+</details></p>
+</li>
+</ol>
+<hr>
+<h2 id="les-variables-utilisateur-en-bash">Les variables utilisateur en <em>Bash</em></h2>
+<h3 id="nomenclature-assignation-et-affichage-des-variables">Nomenclature, assignation et affichage des variables</h3>
+<ol>
+<li>Lors de la création d&rsquo;une variable, <strong>toujours</strong> utiliser des noms descriptifs.
+Exemple:  <code>nombre_utilisateurs</code> au lieu de <code>nombre</code>.</li>
+</ol>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Attention
+  </summary>
+  <div class="box-content">
+<ul>
+<li>Les caractères spéciaux ou espaces dans les noms peuvent causer des erreurs.</li>
+</ul>
+  </div>
+</details>
+<ol start="2">
+<li>
+<p>Les noms sont sensible à la casse.
+Exemple: <code>VAR1</code> ≠ <code>var1</code></p>
+</li>
+<li>
+<p>Pas besoin de déclaration explicite, pour affecter une valeur on utilise <code>=</code> <strong>sans espace</strong> autour de <code>=</code>.
+Exemple:</p>
+</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ma_variable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Bonjour, Linux!&#34;</span></span></span></code></pre></div>
+<ol start="4">
+<li>Pour afficher la valeur d&rsquo;une variable, on utilise le symbole <code>$</code> devant le nom.
+Exemple:</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ echo $ma_variable</span></span></code></pre></div>
+<ol start="5">
+<li>Pour supprimer une variable, on utilise <code>unset</code> suivi du nom de la variable (<strong>sans <code>$</code></strong>).
+Exemple:</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ unset ma_variable</span></span></code></pre></div>
+<h3 id="stocker-le-résultat-dune-commande-dans-une-variable">Stocker le résultat d’une commande dans une variable</h3>
+<p>En Bash, vous pouvez capturer la sortie d’une commande dans une variable en utilisant la syntaxe <code>$(...)</code>.</p>
+<p><strong>Exemple 1</strong> : Stocker la date courante</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ date_courante<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +%Y-%m-%d<span style="color:#66d9ef">)</span>	<span style="color:#75715e"># La date sera stockée dans date_courante aaaa-mm-jj</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ echo $date_courante			<span style="color:#75715e"># Affiche la valeur de date_courante</span>
+</span></span><span style="display:flex;"><span>2025-01-09</span></span></code></pre></div>
+<p><strong>Exemple 2</strong> : Compter et stocker le nombre de fichiers dans le répertoire courant</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$  nombre_fichiers<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ls | wc -l<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$  echo $nombre_fichiers
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">8</span></span></span></code></pre></div>
+<ul>
+<li><strong><code>ls</code></strong> : Liste les fichiers et répertoires dans le répertoire courant.</li>
+<li><strong><code>wc -l</code></strong> : Compte le nombre de lignes de la sortie de <code>ls</code>, correspondant au nombre d&rsquo;entrées.[^1]</li>
+</ul>
+<h2 id="expansion-des-variables-en-bash">Expansion des variables en <em>Bash</em></h2>
+<p>L&rsquo;expansion des variables consiste à remplacer le nom d&rsquo;une variable par sa valeur lors de l&rsquo;exécution d&rsquo;une commande, permettant ainsi d&rsquo;utiliser dynamiquement des données dans des scripts ou des commandes.</p>
+<p><strong>Exemple 1:</strong> Remplacement de la variable par sa valeur</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ fichiers<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;toto titi tutu&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ls -l $fichiers</span></span></code></pre></div>
+<p>Commande exécutée :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ls -l toto titi tutu</span></span></code></pre></div>
+<p><strong>Exemple 2:</strong> Une variable peut inclure des options :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ fichiers<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-l toto titi tutu&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ls $fichiers</span></span></code></pre></div>
+<p>Commande équivalente :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ls -l toto titi tutu</span></span></code></pre></div>
+<h2 id="stocker-le-résultat-dune-commande-dans-une-variable-1">Stocker le résultat d&rsquo;une commande dans une variable</h2>
+<p>Stocker le résultat d&rsquo;une commande dans une variable consiste à capturer la sortie d&rsquo;une commande en utilisant la syntaxe <code>$(commande)</code> afin de la réutiliser ultérieurement dans un script ou une commande.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ fichiers<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ls<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ls <span style="color:#e6db74">&#34;</span>$fichiers<span style="color:#e6db74">&#34;</span>  <span style="color:#75715e"># Toujours utiliser des guillemets pour gérer les espaces.</span></span></span></code></pre></div>
+<h2 id="expansion-de-noms-de-fichiers--et-">Expansion de noms de fichiers (* et ?)</h2>
+<p>Dans <em>Bash</em> on peut utiliser des <strong>caractères génériques</strong> pour étendre des motifs en liste de fichiers existants.</p>
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Caractère</th>
           <th style="text-align: left">Description</th>
+          <th style="text-align: left">Exemple</th>
+          <th style="text-align: left">Résultat</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left"><code>pwd</code></td>
-          <td style="text-align: left">Affiche le chemin absolu du répertoire courant</td>
+          <td style="text-align: left"><code>*</code></td>
+          <td style="text-align: left">Remplace une chaîne de longueur variable</td>
+          <td style="text-align: left"><code>ls *.txt</code></td>
+          <td style="text-align: left">Fichiers comme <code>toto.txt</code>, <code>titi.txt</code></td>
       </tr>
       <tr>
-          <td style="text-align: left"><code>cd</code></td>
-          <td style="text-align: left">Change le répertoire courant</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>cd ..</code></td>
-          <td style="text-align: left">Remonte d&rsquo;un niveau dans l&rsquo;arborescence des répertoires. <code>cd ../.. </code> remonte de deux niveaux, etc.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>cd ~</code></td>
-          <td style="text-align: left">Va au répertoire personnel de l&rsquo;utilisateur</td>
+          <td style="text-align: left"><code>?</code></td>
+          <td style="text-align: left">Remplace un seul caractère</td>
+          <td style="text-align: left"><code>ls t?t?.txt</code></td>
+          <td style="text-align: left">Fichiers comme <code>toto.txt</code>, <code>titi.txt</code></td>
       </tr>
   </tbody>
 </table>
-<h4 id="exemples-dutilisation">Exemples d&rsquo;utilisation</h4>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:~$ pwd
-</span></span><span style="display:flex;"><span>/home/nathalie
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ cd ..
-</span></span><span style="display:flex;"><span>nathalie@Yoda:/home$
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ cd /etc
-</span></span><span style="display:flex;"><span>nathalie@Yoda:/etc$
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>nathalie@Yoda:/etc$ cd ~
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$</span></span></code></pre></div>
-<h3 id="commandes-de-gestion-des-fichiers-et-répertoires">Commandes de gestion des fichiers et répertoires</h3>
+<h2 id="expansion-daccolades">Expansion d’accolades</h2>
+<p>L&rsquo;expansion d&rsquo;accolades en Bash permet de générer rapidement des séries de chaînes ou de motifs en factorisant des éléments variables, comme dans <code>{a,b,c}</code> pour produire <code>a</code>, <code>b</code>, <code>c</code>, ou <code>{1..5}</code> pour générer <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>.</p>
 <table>
   <thead>
       <tr>
+          <th style="text-align: left">But</th>
           <th style="text-align: left">Commande</th>
-          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Résultat</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left"><code>touch</code></td>
-          <td style="text-align: left">Crée un fichier vide.</td>
+          <td style="text-align: left">Générer des variations</td>
+          <td style="text-align: left"><code>touch patat{a,e,i,o,u,y}</code></td>
+          <td style="text-align: left"><code>patata</code>, <code>patate</code>, &hellip;</td>
       </tr>
       <tr>
-          <td style="text-align: left"><code>cp</code></td>
-          <td style="text-align: left">Copie des fichiers ou répertoires.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>mv</code></td>
-          <td style="text-align: left">Déplace ou renomme des fichiers ou répertoires.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>rm</code></td>
-          <td style="text-align: left">Supprime des fichiers. L&rsquo;option <code>-r</code> permet de supprimer récursivement un dossier et tout ce qu&rsquo;il contient.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>mkdir</code></td>
-          <td style="text-align: left">Crée un nouveau répertoire.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>rmdir</code></td>
-          <td style="text-align: left">Supprime uniquement un répertoire s&rsquo;il est <strong>vide</strong>.</td>
+          <td style="text-align: left">Générer une séquence</td>
+          <td style="text-align: left"><code>touch test{1..12}.txt</code></td>
+          <td style="text-align: left"><code>test1.txt</code>, <code>test2.txt</code>, &hellip;</td>
       </tr>
   </tbody>
 </table>
@@ -381,49 +608,165 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
   </summary>
   <div class="box-content">
 <ul>
-<li>Vous ne pouvez pas supprimer un répertoire qui contient des fichiers, y compris des fichiers masqués ou système. Si vous tentez de le faire, le message suivant s’affiche :
-<code>The directory is not empty</code></li>
-<li>Vous ne pouvez pas utiliser la commande <strong><code>rmdir</code></strong> pour supprimer le répertoire actif. Si vous tentez de supprimer le répertoire actif, le message d’erreur suivant s’affiche :
-<code>The process can't access the file because it is being used by another process.</code>
-Si vous recevez ce message d’erreur, vous devez passer à un autre répertoire (et non à un sous-répertoire du répertoire actif), puis réessayer.</li>
+<li>Pas d’espace dans les accolades</li>
 </ul>
   </div>
 </details>
-<h4 id="exemples-dutilisation-1">Exemples d&rsquo;utilisation</h4>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:~$ touch fichier.txt
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ ls
-</span></span><span style="display:flex;"><span>fichier.txt
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ mkdir repertoire
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ ls
-</span></span><span style="display:flex;"><span>fichier.txt  repertoire
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ cp fichier.txt copie_fichier.txt
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ ls
-</span></span><span style="display:flex;"><span>copie_fichier.txt  fichier.txt  repertoire
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ mv copie_fichier.txt fichier2.txt
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ ls
-</span></span><span style="display:flex;"><span>fichier.txt  fichier2.txt  repertoire
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ mv fichier2.txt repertoire
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ ls
-</span></span><span style="display:flex;"><span>fichier.txt  repertoire
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ cd repertoire
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~/repertoire$ ls
-</span></span><span style="display:flex;"><span>fichier2.txt
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~/repertoire$ rm fichier2.txt
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~/repertoire$ ls
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~/repertoire$ cd ..
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ ls
-</span></span><span style="display:flex;"><span>fichier.txt  repertoire
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ rmdir repertoire
-</span></span><span style="display:flex;"><span>nathalie@Yoda:~$ ls
-</span></span><span style="display:flex;"><span>fichier.txt</span></span></code></pre></div>
+<h2 id="protéger-contre-lexpansion">Protéger contre l’expansion</h2>
+<p>Protéger contre l’expansion en Bash consiste à empêcher l’interprétation des caractères spéciaux, des variables ou des commandes en utilisant des guillemets simples, doubles ou le caractère d’échappement <code>\</code>.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Méthode</th>
+          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Effet</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Échappement <code>\</code></td>
+          <td style="text-align: left"><code>echo Je veux afficher \* et \$x</code></td>
+          <td style="text-align: left">Affiche <code>*</code> et <code>$x</code> sans expansion.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Guillemets simples <code>'</code></td>
+          <td style="text-align: left"><code>echo 'Voici * et $x'</code></td>
+          <td style="text-align: left">Aucun remplacement, affiche littéralement.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Guillemets doubles <code>&quot;</code></td>
+          <td style="text-align: left"><code>echo &quot;Valeur : $x&quot;</code></td>
+          <td style="text-align: left">Permet l’expansion des variables.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="commandes-spéciales-et-expansions">Commandes spéciales et expansions</h2>
+<p>Certaines commandes comme <code>find</code>[^1] nécessitent une attention particulière concernant l&rsquo;expansion.</p>
+<h3 id="exemple--recherche-avec-find">Exemple : Recherche avec <code>find</code></h3>
+<p>Pour rechercher tous les fichiers <code>.txt</code> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -name <span style="color:#e6db74">&#34;*.txt&#34;</span></span></span></code></pre></div>
+<p>Ici, les guillemets protègent <code>*.txt</code> pour empêcher Bash d’expandre le motif avant de passer à <code>find</code>. Cela garantit que <code>find</code> traite correctement le motif.</p>
+<hr>
+<h2 id="bonnes-pratiques-avec-les-variables">Bonnes pratiques avec les variables</h2>
+<ol>
+<li>
+<p><strong>Toujours utiliser des guillemets pour éviter les problèmes avec les espaces ou caractères spéciaux :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls <span style="color:#e6db74">&#34;</span>$fichiers<span style="color:#e6db74">&#34;</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Protégez les motifs pour les commandes comme <code>find</code>:</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -name <span style="color:#e6db74">&#34;*.txt&#34;</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Utilisez les accolades pour générer des séquences et factoriser vos commandes :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch fichier<span style="color:#f92672">{</span>1..10<span style="color:#f92672">}</span>.txt</span></span></code></pre></div>
+</li>
+</ol>
+<h2 id="itération-sur-les-résultats-de-commandes">Itération sur les résultats de commandes</h2>
+<p>La boucle <code>for</code> est un élément fondamental qui permet de répéter une action pour chaque élément d&rsquo;une liste ou d&rsquo;un ensemble de valeurs. Elle est particulièrement utile pour automatiser des tâches répétitives.</p>
+<h3 id="structure-générale">Structure générale</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> variable in liste
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    commande1
+</span></span><span style="display:flex;"><span>    commande2
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+<ul>
+<li><strong><code>variable</code></strong> : Une variable temporaire qui prend successivement chaque valeur de la liste.</li>
+<li><strong><code>liste</code></strong> : Un ensemble de valeurs, qui peut être défini explicitement ou généré dynamiquement.</li>
+<li>Les commandes entre <code>do</code> et <code>done</code> sont exécutées pour chaque valeur de la liste.</li>
+</ul>
+<hr>
+<h3 id="exemple-1--parcourir-une-liste-statique">Exemple 1 : Parcourir une liste statique</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> animal in chat chien oiseau
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Je suis un </span>$animal<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+<p><strong>Sortie :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>Je suis un chat
+Je suis un chien
+Je suis un oiseau</code></pre></div>
+<hr>
+<h3 id="exemple-2--parcourir-des-fichiers-dun-répertoire">Exemple 2 : Parcourir des fichiers d’un répertoire</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> fichier in *.txt
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Traitement de </span>$fichier<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+<ul>
+<li>Ici, <code>*.txt</code> est un motif de fichier.</li>
+<li>Bash remplace <code>*.txt</code> par la liste des fichiers correspondants dans le répertoire courant.</li>
+</ul>
+<p><strong>Sortie :</strong> (si le répertoire contient <code>file1.txt</code> et <code>file2.txt</code>)</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>Traitement de file1.txt
+Traitement de file2.txt</code></pre></div>
+<hr>
+<h3 id="exemple-3--générer-une-liste-avec-une-séquence">Exemple 3 : Générer une liste avec une séquence</h3>
+<p>Vous pouvez utiliser une séquence avec <code>{debut..fin}</code> pour générer des nombres ou des caractères :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1..5<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Nombre : </span>$i<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+<p><strong>Sortie :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>Nombre : 1
+Nombre : 2
+Nombre : 3
+Nombre : 4
+Nombre : 5</code></pre></div>
+<hr>
+<h3 id="exemple-4--ajouter-des-pas-dans-une-séquence">Exemple 4 : Ajouter des pas dans une séquence</h3>
+<p>Pour parcourir une séquence avec un pas spécifique, utilisez <code>{debut..fin..pas}</code> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1..10..2<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Nombre impair : </span>$i<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+<p><strong>Sortie :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>Nombre impair : 1
+Nombre impair : 3
+Nombre impair : 5
+Nombre impair : 7
+Nombre impair : 9</code></pre></div>
+<hr>
+<h3 id="exemple-5--lire-des-entrées-à-partir-dune-commande">Exemple 5 : Lire des entrées à partir d’une commande</h3>
+<p>Vous pouvez parcourir les fichiers dans un répertoire pour lister les utilisateurs disposant d&rsquo;un répertoire personnel sur le système :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> user in <span style="color:#66d9ef">$(</span>ls /home<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Utilisateur avec un répertoire : </span>$user<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+<p><strong>Explication</strong> :</p>
+<ul>
+<li><code>ls /home</code> liste les répertoires dans <code>/home</code>, où chaque répertoire correspond généralement à un utilisateur ayant un compte sur le système.</li>
+<li>La boucle <code>for</code> parcourt chaque nom de répertoire et l&rsquo;associe à la variable <code>user</code>.</li>
+<li>La commande <code>echo</code> affiche ensuite le nom de chaque utilisateur.</li>
+</ul>
+<hr>
+<h3 id="utiliser-des-guillemets-pour-protéger-les-valeurs">Utiliser des guillemets pour protéger les valeurs</h3>
+<p>Si les éléments de la liste contiennent des espaces, utilisez des guillemets pour éviter des erreurs :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> fichier in <span style="color:#e6db74">&#34;Fichier 1.txt&#34;</span> <span style="color:#e6db74">&#34;Fichier 2.txt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Traitement de </span>$fichier<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+<hr>
+<h2 id="bonnes-pratiques-avec-la-boucle-for">Bonnes pratiques avec la boucle <em>for</em></h2>
+<ol>
+<li>
+<p><strong>Liste explicite</strong> : Utilisez une liste statique ou une séquence simple :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1..10<span style="color:#f92672">}</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Motifs et fichiers</strong> : Parcourez les fichiers d’un répertoire avec des motifs :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> fichier in *.txt</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Commandes dynamiques</strong> : Créez une liste à partir du résultat d&rsquo;une commande :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> utilisateur in <span style="color:#66d9ef">$(</span>who | awk <span style="color:#e6db74">&#39;{print $1}&#39;</span><span style="color:#66d9ef">)</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Guillemets</strong> : Protégez les éléments avec des espaces :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> fichier in <span style="color:#e6db74">&#34;file 1&#34;</span> <span style="color:#e6db74">&#34;file 2&#34;</span></span></span></code></pre></div>
+</li>
+</ol>
+<p>[^1] Nous verrons cette commande plus en détails au prochain cours.</p>
 
   <footer class="footline">
   </footer>
@@ -440,7 +783,7 @@ Si vous recevez ce message d’erreur, vous devez passer à un autre répertoire
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1736881200";
+          window.index_js_url="/searchindex.en.js?1737427541";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -453,12 +796,12 @@ Si vous recevez ce message d’erreur, vous devez passer à un autre répertoire
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.min.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1736881200" defer></script>
-        <script src="/js/search.js?1736881200" defer></script>
+        <script src="/js/auto-complete.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.min.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1737427541" defer></script>
+        <script src="/js/search.js?1737427541" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -470,11 +813,11 @@ Si vous recevez ce message d’erreur, vous devez passer à un autre répertoire
         <div id="R-shortcutmenu-home" class="R-sidebarmenu">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Introduction à Linux (suite)</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
-            <li class="parent " data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Système de fichiers, shell et commandes de base</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu">
-            <li class="active " data-nav-id="/semaine3/cours/index.html"><a class="padding" href="/semaine3/cours/index.html">Système de fichiers, les commandes de base</a></li>
-            <li class="" data-nav-id="/semaine3/atelier/index.html"><a class="padding" href="/semaine3/atelier/index.html">ATELIER #3: Le système de fichiers et les commandes de base</a></li></ul></li>
-            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Processus de démarrage et le shell bash</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>E/S, redirection et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>VIM et les fichiers de configuration</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>???</a></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
           </ul>
         </div>
     
@@ -528,8 +871,8 @@ Si vous recevez ce message d’erreur, vous devez passer à un autre répertoire
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1736881200" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1736881200" defer></script>
-    <script src="/js/theme.js?1736881200" defer></script>
+    <script src="/js/clipboard.min.js?1737427541" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1737427541" defer></script>
+    <script src="/js/theme.js?1737427541" defer></script>
   </body>
 </html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WSL installation et manipulation (Ubuntu, VS Code) :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine14/index.html</link>
+    <description>Plan de la leçon **Théorie/Test :&#xA;Validation de l’atelier #10 Atelier :&#xA;Installation de WSL et Ubuntu et VS Code</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine14/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ATELIER #2: WSL, Ubuntu et des commandes Linux simples</title>
+      <link>https://example.org/semaine14/atelier/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine14/atelier/index.html</guid>
+      <description>Objectifs de l’atelier Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux.&#xA;Format de la remise Attention&#xD;Pour chacune des étapes des parties 2 et 3 vous devrez prendre une capture d’écran de vos commandes et résultats. ATTENTION: On doit pouvoir voir votre nom d’utilisateur. Ne travaillez donc pas avec l’utilisateur root.&#xA;Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les fonctionnalités Windows</description>
+    </item>
+    <item>
+      <title>WSL installation et manipulation (Ubuntu, VS Code)</title>
+      <link>https://example.org/semaine14/cours/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine14/cours/index.html</guid>
+      <description>+++ title = “Installation et manipulation de WSL avec Ubuntu et VS Code” weight = 141 +++&#xA;Le Windows Subsystem for Linux (WSL) est une fonctionnalité de Windows qui permet d’exécuter un environnement Linux directement sur un système Windows sans avoir besoin d’une machine virtuelle.&#xA;Nous allons voir comment installer et utiliser WSL avec Ubuntu et Visual Studio Code (VS Code).&#xA;Prérequis Un PC sous Windows 10 (version 2004 ou ultérieure) ou Windows 11. Accès à une connexion Internet. 1. Activation de WSL Activer les fonctionnalités Windows :</description>
+    </item>
+  </channel>
+</rss>

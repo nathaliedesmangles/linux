@@ -5,35 +5,31 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les cibles (niveaux d’exécution) sous Linux.
-Atelier Exercice 1 : Changer de cible Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:
-Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique : systemctl isolate &lt;cible&gt;Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Exercice 2 : Définir la cible par défaut Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.">
+    <meta name="description" content="Objectif de l’atelier Se familiariser avec les entrées/sorties et la redirection des commandes. Combinaison de commandes. Filtrage de données. Atelier Exercice 1 : E/S Exercice 2: Redirection Exercice 3: Filtrage (grep, sed, cut, find, etc.) Exercice 4: While Exercice 5: Expansion d’accolade et commande find, grep Exercice2 : Caractères génériques et commande find Allez dans le répertoire /etc. Ne vous déplacez pas pour le reste de cet exercice.
+En utilisant la commande find, cherchez les fichiers dont le nom commence par la lettre r à partir du répertoire courant.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="ATELIER #4: Le processus de démarrage et le BASH :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les cibles (niveaux d’exécution) sous Linux.
-Atelier Exercice 1 : Changer de cible Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:
-Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique : systemctl isolate &lt;cible&gt;Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Exercice 2 : Définir la cible par défaut Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.">
+    <meta name="twitter:title" content="ATELIER #4: Redirection, E/S, pipeline et filtres :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Objectif de l’atelier Se familiariser avec les entrées/sorties et la redirection des commandes. Combinaison de commandes. Filtrage de données. Atelier Exercice 1 : E/S Exercice 2: Redirection Exercice 3: Filtrage (grep, sed, cut, find, etc.) Exercice 4: While Exercice 5: Expansion d’accolade et commande find, grep Exercice2 : Caractères génériques et commande find Allez dans le répertoire /etc. Ne vous déplacez pas pour le reste de cet exercice.
+En utilisant la commande find, cherchez les fichiers dont le nom commence par la lettre r à partir du répertoire courant.">
     <meta property="og:url" content="https://example.org/semaine4/atelier/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
-    <meta property="og:title" content="ATELIER #4: Le processus de démarrage et le BASH :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les cibles (niveaux d’exécution) sous Linux.
-Atelier Exercice 1 : Changer de cible Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:
-Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique : systemctl isolate &lt;cible&gt;Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Exercice 2 : Définir la cible par défaut Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.">
+    <meta property="og:title" content="ATELIER #4: Redirection, E/S, pipeline et filtres :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Objectif de l’atelier Se familiariser avec les entrées/sorties et la redirection des commandes. Combinaison de commandes. Filtrage de données. Atelier Exercice 1 : E/S Exercice 2: Redirection Exercice 3: Filtrage (grep, sed, cut, find, etc.) Exercice 4: While Exercice 5: Expansion d’accolade et commande find, grep Exercice2 : Caractères génériques et commande find Allez dans le répertoire /etc. Ne vous déplacez pas pour le reste de cet exercice.
+En utilisant la commande find, cherchez les fichiers dont le nom commence par la lettre r à partir du répertoire courant.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
-    <meta itemprop="name" content="ATELIER #4: Le processus de démarrage et le BASH :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les cibles (niveaux d’exécution) sous Linux.
-Atelier Exercice 1 : Changer de cible Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:
-Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique : systemctl isolate &lt;cible&gt;Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Exercice 2 : Définir la cible par défaut Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.">
-    <meta itemprop="wordCount" content="271">
-    <title>ATELIER #4: Le processus de démarrage et le BASH :: 420-ZG4-MO LINUX</title>
-    <link href="/semaine4/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #4: Le processus de démarrage et le BASH :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1736881200" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736881200" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1736881200" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736881200" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1736881200" rel="stylesheet">
-    <link href="/css/theme.min.css?1736881200" rel="stylesheet">
-    <link href="/css/format-html.min.css?1736881200" rel="stylesheet" id="R-format-style">
+    <meta itemprop="name" content="ATELIER #4: Redirection, E/S, pipeline et filtres :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Objectif de l’atelier Se familiariser avec les entrées/sorties et la redirection des commandes. Combinaison de commandes. Filtrage de données. Atelier Exercice 1 : E/S Exercice 2: Redirection Exercice 3: Filtrage (grep, sed, cut, find, etc.) Exercice 4: While Exercice 5: Expansion d’accolade et commande find, grep Exercice2 : Caractères génériques et commande find Allez dans le répertoire /etc. Ne vous déplacez pas pour le reste de cet exercice.
+En utilisant la commande find, cherchez les fichiers dont le nom commence par la lettre r à partir du répertoire courant.">
+    <meta itemprop="wordCount" content="121">
+    <title>ATELIER #4: Redirection, E/S, pipeline et filtres :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine4/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #4: Redirection, E/S, pipeline et filtres :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1737427541" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737427541" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1737427541" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737427541" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1737427541" rel="stylesheet">
+    <link href="/css/theme.min.css?1737427541" rel="stylesheet">
+    <link href="/css/format-html.min.css?1737427541" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -100,11 +96,11 @@ Utiliser la commande suivante pour passer en mode multi-utilisateur sans interfa
   </ul>
 
   <ul>
-    <li><a href="#exercice-1--changer-de-cible">Exercice 1 : Changer de cible</a></li>
-    <li><a href="#exercice-2--définir-la-cible-par-défaut">Exercice 2 : Définir la cible par défaut</a></li>
-    <li><a href="#exercice-3--activer-et-désactiver-des-services">Exercice 3 : Activer et désactiver des services</a></li>
-    <li><a href="#exercice-4--vérifier-létat-des-cibles">Exercice 4 : Vérifier l&rsquo;état des cibles</a></li>
-    <li><a href="#exercice-5--redémarrer-et-arrêter-le-système">Exercice 5 : Redémarrer et arrêter le système</a></li>
+    <li><a href="#exercice-1--es">Exercice 1 : E/S</a></li>
+    <li><a href="#exercice-2-redirection">Exercice 2: Redirection</a></li>
+    <li><a href="#exercice-3-filtrage-grep-sed-cut-find-etc">Exercice 3: Filtrage (grep, sed, cut, find, etc.)</a></li>
+    <li><a href="#exercice-4-while">Exercice 4: While</a></li>
+    <li><a href="#exercice-5-expansion-daccolade-et-commande-find-grep">Exercice 5: Expansion d’accolade et commande find, grep</a></li>
   </ul>
 </nav>
                 </div>
@@ -113,13 +109,13 @@ Utiliser la commande suivante pour passer en mode multi-utilisateur sans interfa
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine4/index.html"><span itemprop="name">Processus de démarrage et le shell bash</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ATELIER #4: Le processus de démarrage et le BASH</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine4/index.html"><span itemprop="name">E/S, redirection et filtrage de commandes et While</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ATELIER #4: Redirection, E/S, pipeline et filtres</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/cours/index.html" title="Processus de démarrage et le shell BASH (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/cours/index.html" title="Entrées/Sorties, redirection, filtres et Pipeline des commandes (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine8/index.html" title="VIM et les fichiers de configuration (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -139,57 +135,27 @@ Utiliser la commande suivante pour passer en mode multi-utilisateur sans interfa
   <header class="headline">
   </header>
 
-<h1 id="atelier-4-le-processus-de-démarrage-et-le-bash">ATELIER #4: Le processus de démarrage et le BASH</h1>
+<h1 id="atelier-4-redirection-es-pipeline-et-filtres">ATELIER #4: Redirection, E/S, pipeline et filtres</h1>
 
 <h2 id="objectif-de-latelier">Objectif de l&rsquo;atelier</h2>
-<p>Cet atelier a pour but de vous familiariser avec les cibles (niveaux d&rsquo;exécution) sous Linux.</p>
+<ul>
+<li>Se familiariser avec les entrées/sorties et la redirection des commandes.</li>
+<li>Combinaison de commandes.</li>
+<li>Filtrage de données.</li>
+</ul>
+<hr>
 <h1 id="atelier">Atelier</h1>
-<h2 id="exercice-1--changer-de-cible">Exercice 1 : Changer de cible</h2>
-<p>Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:</p>
-<ul>
-<li>Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl isolate &lt;cible&gt;</span></span></code></pre></div>
-</li>
-<li>Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique.</li>
-</ul>
-<h2 id="exercice-2--définir-la-cible-par-défaut">Exercice 2 : Définir la cible par défaut</h2>
-<p>Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.</p>
-<ul>
-<li>Utiliser la commande suivante pour définir la cible par défaut :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl set-default &lt;cible&gt;</span></span></code></pre></div>
-</li>
-<li>Redémarrer votre système pour vérifier que le mode graphique est bien la cible par défaut.</li>
-</ul>
-<h2 id="exercice-3--activer-et-désactiver-des-services">Exercice 3 : Activer et désactiver des services</h2>
-<p>Dans cet exercice, on vous demande d&rsquo;activer et désactiver des services au démarrage.</p>
-<ul>
-<li>Utiliser la commande suivante pour activer un service au démarrage (par exemple, <code>httpd</code> pour le serveur web Apache) :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl enable &lt;service&gt;</span></span></code></pre></div>
-</li>
-<li>Utiliser la commande suivante pour désactiver un service au démarrage :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl disable &lt;service&gt;</span></span></code></pre></div>
-</li>
-</ul>
-<h2 id="exercice-4--vérifier-létat-des-cibles">Exercice 4 : Vérifier l&rsquo;état des cibles</h2>
-<p>Dans cet exercice, vous devrez vérifier l&rsquo;état actuel des cibles et des services.</p>
-<ul>
-<li>Utiliser la commande suivante pour vérifier l&rsquo;état actuel de la cible :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl &lt;completer&gt;</span></span></code></pre></div>
-</li>
-<li>Utiliser la commande suivante pour vérifier l&rsquo;état d&rsquo;un service spécifique (par exemple, <code>httpd</code>) :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl status &lt;service&gt;</span></span></code></pre></div>
-</li>
-</ul>
-<h2 id="exercice-5--redémarrer-et-arrêter-le-système">Exercice 5 : Redémarrer et arrêter le système</h2>
-<p>Cet exercice vous demande de redémarrer et d&rsquo;arrêter le système en utilisant systemd.</p>
-<ul>
-<li>Utiliser la commande suivante pour redémarrer le système :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl &lt;cible&gt;</span></span></code></pre></div>
-</li>
-<li>Utiliser la commande suivante pour arrêter le système :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl &lt;cible&gt;</span></span></code></pre></div>
-</li>
-</ul>
+<h2 id="exercice-1--es">Exercice 1 : E/S</h2>
+<h2 id="exercice-2-redirection">Exercice 2: Redirection</h2>
+<h2 id="exercice-3-filtrage-grep-sed-cut-find-etc">Exercice 3: Filtrage (grep, sed, cut, find, etc.)</h2>
+<h2 id="exercice-4-while">Exercice 4: While</h2>
+<hr>
+<h2 id="exercice-5-expansion-daccolade-et-commande-find-grep">Exercice 5: Expansion d’accolade et commande find, grep</h2>
+<p>Exercice2 : Caractères génériques et commande find
+Allez dans le répertoire /etc. Ne vous déplacez pas pour le reste de cet exercice.</p>
+<p>En utilisant la commande find, cherchez les fichiers dont le nom commence par la lettre r à partir du répertoire courant.</p>
+<p>Cherchez tous les fichiers dont le nom contient la chaîne de caractères rc à partir du répertoire courant.</p>
+<p>Affichez tous les fichiers dont le nom comporte trois caractères sur tout le système.</p>
 
   <footer class="footline">
   </footer>
@@ -206,7 +172,7 @@ Utiliser la commande suivante pour passer en mode multi-utilisateur sans interfa
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1736881200";
+          window.index_js_url="/searchindex.en.js?1737427541";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -219,12 +185,12 @@ Utiliser la commande suivante pour passer en mode multi-utilisateur sans interfa
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.min.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1736881200" defer></script>
-        <script src="/js/search.js?1736881200" defer></script>
+        <script src="/js/auto-complete.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.min.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1737427541" defer></script>
+        <script src="/js/search.js?1737427541" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -236,11 +202,13 @@ Utiliser la commande suivante pour passer en mode multi-utilisateur sans interfa
         <div id="R-shortcutmenu-home" class="R-sidebarmenu">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Introduction à Linux (suite)</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Système de fichiers, shell et commandes de base</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
-            <li class="parent " data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Processus de démarrage et le shell bash</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu">
-            <li class="" data-nav-id="/semaine4/cours/index.html"><a class="padding" href="/semaine4/cours/index.html">Processus de démarrage et le shell BASH</a></li>
-            <li class="active " data-nav-id="/semaine4/atelier/index.html"><a class="padding" href="/semaine4/atelier/index.html">ATELIER #4: Le processus de démarrage et le BASH</a></li></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>E/S, redirection et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu">
+            <li class="" data-nav-id="/semaine4/cours/index.html"><a class="padding" href="/semaine4/cours/index.html">Entrées/Sorties, redirection, filtres et Pipeline des commandes</a></li>
+            <li class="active " data-nav-id="/semaine4/atelier/index.html"><a class="padding" href="/semaine4/atelier/index.html">ATELIER #4: Redirection, E/S, pipeline et filtres</a></li></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>VIM et les fichiers de configuration</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>???</a></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
           </ul>
         </div>
     
@@ -294,8 +262,8 @@ Utiliser la commande suivante pour passer en mode multi-utilisateur sans interfa
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1736881200" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1736881200" defer></script>
-    <script src="/js/theme.js?1736881200" defer></script>
+    <script src="/js/clipboard.min.js?1737427541" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1737427541" defer></script>
+    <script src="/js/theme.js?1737427541" defer></script>
   </body>
 </html>

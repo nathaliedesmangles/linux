@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ATELIER #2: WSL, Ubuntu et des commandes Linux simples :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine14/atelier/index.html</link>
+    <description>Objectifs de l’atelier Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux.&#xA;Format de la remise Attention&#xD;Pour chacune des étapes des parties 2 et 3 vous devrez prendre une capture d’écran de vos commandes et résultats. ATTENTION: On doit pouvoir voir votre nom d’utilisateur. Ne travaillez donc pas avec l’utilisateur root.&#xA;Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les fonctionnalités Windows</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine14/atelier/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

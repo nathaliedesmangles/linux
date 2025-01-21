@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Système de fichiers, shell et commandes de base :: 420-ZG4-MO LINUX</title>
-    <link>https://example.org/semaine3/index.html</link>
-    <description>Plan de la leçon Théorie :&#xA;Structure du système de fichiers Linux Commandes de navigation de base (ls, cd, pwd, etc.) Commandes de gestion des fichiers (cp, mv, rm, mkdir, etc.) Atelier :&#xA;Arborescence du système de fichiers Manipulation des fichiers et des répertoires</description>
+    <title>Processus de démarrage, variables et FOR :: 420-ZG4-MO LINUX</title>
+    <link>http://localhost:1313/semaine3/index.html</link>
+    <description>Plan de la leçon Théorie :&#xA;La séquence de démarrage de Linux. Les cibles (niveaux d’exécution). Les variables utilisateur. Itération avec la boucle FOR. Atelier :&#xA;Gestion des cibles. Création et utilisation de variables. Utilisation de la boucle FOR.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://example.org/semaine3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/semaine3/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Système de fichiers, les commandes de base</title>
-      <link>https://example.org/semaine3/cours/index.html</link>
+      <title>Processus de démarrage, cibles, variables et boucle For</title>
+      <link>http://localhost:1313/semaine3/cours/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/semaine3/cours/index.html</guid>
-      <description>La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine.&#xA;Attention&#xD;Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux. Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis.</description>
+      <guid>http://localhost:1313/semaine3/cours/index.html</guid>
+      <description>Séquence de démarrage de Linux Le processus de démarrage de Linux est une série d’étapes qui se déroulent depuis l’allumage de l’ordinateur jusqu’à l’affichage de l’invite de commande ou de l’interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.&#xA;Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière ordonnée pour préparer la machine et le système d’exploitation à fonctionner. Voici les étapes principales :</description>
     </item>
     <item>
-      <title>ATELIER #3: Le système de fichiers et les commandes de base</title>
-      <link>https://example.org/semaine3/atelier/index.html</link>
+      <title>ATELIER #3: Cibles et variables utilisateurs et for</title>
+      <link>http://localhost:1313/semaine3/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/semaine3/atelier/index.html</guid>
-      <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec les commandes de base pour la gestion des fichiers sous Linux en utilisant la distribution AlmaLinux sur votre VM. Ces exercices pratiques permettront de renforcer la compréhension et l’utilisation de ces commandes.&#xA;Atelier Attention: Avant de commencer chaque exercice, assurez vous que vous travaillez dans votre répertoire personnel et ne vous déplacez pas que lorsque demandé.&#xA;Attention&#xD;À moins d’indication contraire, utiliser TOUJOURS des chemins relatifs. Les questions qui demandent des réponses textuelles, écrivez-les dans un fichier afin de pouvoir les vérifier avec la solution qui vous sera fournie ultérieurement. Exercice 1 : Explorer l’arborescence Linux Afficher le chemin de votre répertoire courant. Allez dans le répertoire /usr/share/doc, puis vérifiez le chemin de votre répertoire courant. Remontez dans le répertoire parent. Allez dans votre répertoire personnel. Listez les fichiers présents du répertoire courant. Toujours en étant dans votre dossier personnel, listez les fichiers du répertoire /usr Exercice 2: Commandes de base Préparation Sur votre machine Almalinux, avec votre utilisateur standard, allez sur votre cours sur Moodle, dans la semaine 3. On vous demande de télécharger ce fichier.</description>
+      <guid>http://localhost:1313/semaine3/atelier/index.html</guid>
+      <description>Objectifs de l’atelier Se familiariser avec les cibles (niveaux d’exécution). Comprendre les bases des variables utilisateur en Bash. Apprendre à manipuler et utiliser des variables pour stocker des résultats de commandes. Atelier Exercice 1 : Manipuler les cibles (niveaux d’exécution) Utiliser la commande systemctl pour passer en mode multi-utilisateur sans interface graphique Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Définir le mode multi-utilisateur avec interface graphique comme cible par défaut. Redémarrer votre système pour vérifier que le mode graphique est bien la cible par défaut. Exercice 2 : Création et affichage de variables Déclarez une variable nom avec votre prénom. Affichez la valeur de la variable. Essayez d’accéder à la variable sans $. Notez la différence. Exercice 3 : Capturer une date formatée Stockez la date actuelle dans une variable date_actuelle avec le format AAAA/MM/JJ hh:mm:ss. Affichez la date formatée. Exercice 4 : Supprimer une variable Déclarez une variable temporaire. Supprimez la variable avec unset. Essayez d’afficher la variable supprimée. Exercice 5: Expansion de variables et d’accolades Créer une variable (variable_etc) contenant la liste des fichiers du répertoire /etc et l’afficher. Son contenu est-il facile à lire ? Que se passe-t-il si vous exécutez ls suivi du nom de votre variable ? Pourquoi ? Sachant que beaucoup de fichiers de configuration se terminent par .conf, les trouver et stocker leur nom dans une variable. Que se passe-t-il si vous exécutez ls suivi du nom de votre variable? Seriez-vous capable d’afficher la taille de chacun des fichiers de configuration ? La commande du -sh &lt;fichier&gt; permet d’afficher la taille de fichier. Créer un répertoire dans lequel vous créerez les fichiers suivants à l’aide de la commande touch en utilisant la syntaxe permettant de factoriser une commande: test1.txt, test2.txt, test3.txt, test1.doc, test2.doc, test3.doc, test1.tot, test2.tot, test3.tot Grâce aux caractères génériques, n’afficher que les fichiers .txt qui commencent par test (plusieurs possibilités existent, essayez de les trouver). a. Tous les fichiers .txt et .tot`. b. Tous les fichiers test1 Exercice 6: Expansion d’accolade et boucle for En faisant cet exercice, vérifiez pour cette question le résultat de vos commandes en utilisant la commande tree. La figure ci-dessous montre un exemple d’utilisation de cette commande. Assurez-vous d’être revenu dans votre répertoire personnel À l’aide d’une seule commande et en utilisant l’expansion d’accolade, créez l’arborescence des dossiers suivante :</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Vim est un éditeur de texte puissant et flexible, souvent utilisé par les programmeurs et les administrateurs système. Il est basé sur un autre éditeur de texte appelé Vi, mais offre de nombreuses fonctionnalités supplémentaires.
+Vim peut sembler intimidant au début, mais avec de la pratique, il devient un outil extrêmement puissant pour l’édition de texte.
+Installation de Vim Pour installer Vim, vous pouvez utiliser le gestionnaire de paquets de votre système d’exploitation. Par exemple :">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="L&#39;éditeur Vim et les fichiers de configuration :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Vim est un éditeur de texte puissant et flexible, souvent utilisé par les programmeurs et les administrateurs système. Il est basé sur un autre éditeur de texte appelé Vi, mais offre de nombreuses fonctionnalités supplémentaires.
+Vim peut sembler intimidant au début, mais avec de la pratique, il devient un outil extrêmement puissant pour l’édition de texte.
+Installation de Vim Pour installer Vim, vous pouvez utiliser le gestionnaire de paquets de votre système d’exploitation. Par exemple :">
+    <meta property="og:url" content="http://localhost:1313/semaine9/cours/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="L&#39;éditeur Vim et les fichiers de configuration :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Vim est un éditeur de texte puissant et flexible, souvent utilisé par les programmeurs et les administrateurs système. Il est basé sur un autre éditeur de texte appelé Vi, mais offre de nombreuses fonctionnalités supplémentaires.
+Vim peut sembler intimidant au début, mais avec de la pratique, il devient un outil extrêmement puissant pour l’édition de texte.
+Installation de Vim Pour installer Vim, vous pouvez utiliser le gestionnaire de paquets de votre système d’exploitation. Par exemple :">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="L&#39;éditeur Vim et les fichiers de configuration :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Vim est un éditeur de texte puissant et flexible, souvent utilisé par les programmeurs et les administrateurs système. Il est basé sur un autre éditeur de texte appelé Vi, mais offre de nombreuses fonctionnalités supplémentaires.
+Vim peut sembler intimidant au début, mais avec de la pratique, il devient un outil extrêmement puissant pour l’édition de texte.
+Installation de Vim Pour installer Vim, vous pouvez utiliser le gestionnaire de paquets de votre système d’exploitation. Par exemple :">
+    <meta itemprop="wordCount" content="819">
+    <title>L&#39;éditeur Vim et les fichiers de configuration :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine9/cours/index.xml" rel="alternate" type="application/rss+xml" title="L&#39;éditeur Vim et les fichiers de configuration :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1737132936" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737132936" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1737132936" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737132936" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1737132936" rel="stylesheet">
+    <link href="/css/theme.css?1737132936" rel="stylesheet">
+    <link href="/css/format-html.css?1737132936" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.min = ``;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine9/cours/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#installation-de-vim">Installation de Vim</a></li>
+    <li><a href="#modes-de-vim">Modes de Vim</a>
+      <ul>
+        <li><a href="#passer-dun-mode-à-lautre">Passer d&rsquo;un mode à l&rsquo;autre</a></li>
+      </ul>
+    </li>
+    <li><a href="#commandes-de-base">Commandes de base</a>
+      <ul>
+        <li><a href="#navigation">Navigation</a></li>
+        <li><a href="#édition">Édition</a></li>
+        <li><a href="#sauvegarde-et-sortie">Sauvegarde et sortie</a></li>
+      </ul>
+    </li>
+    <li><a href="#exemple-pratique">Exemple pratique</a></li>
+    <li><a href="#les-fichiers-de-configuration-dans-linux">Les fichiers de configuration dans Linux</a>
+      <ul>
+        <li><a href="#emplacement-des-fichiers-de-configuration">Emplacement des fichiers de configuration</a></li>
+        <li><a href="#syntaxe-des-fichiers-de-configuration">Syntaxe des fichiers de configuration</a></li>
+        <li><a href="#modifier-les-fichiers-de-configuration">Modifier les fichiers de configuration</a></li>
+        <li><a href="#exemple-pratique--modifier-le-fichier-etchosts">Exemple pratique : Modifier le fichier <code>/etc/hosts</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine9/index.html"><span itemprop="name">Semaine9s</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">L&#39;éditeur Vim et les fichiers de configuration</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine9/index.html" title="Semaine9s (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine9" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="léditeur-vim-et-les-fichiers-de-configuration">L&#39;éditeur Vim et les fichiers de configuration</h1>
+
+<p>Vim est un éditeur de texte puissant et flexible, souvent utilisé par les programmeurs et les administrateurs système. Il est basé sur un autre éditeur de texte appelé Vi, mais offre de nombreuses fonctionnalités supplémentaires.</p>
+<p>Vim peut sembler intimidant au début, mais avec de la pratique, il devient un outil extrêmement puissant pour l&rsquo;édition de texte.</p>
+<h2 id="installation-de-vim">Installation de Vim</h2>
+<p>Pour installer Vim, vous pouvez utiliser le gestionnaire de paquets de votre système d&rsquo;exploitation. Par exemple :</p>
+<ul>
+<li>
+<p>Sur Ubuntu/Debian :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install vim</span></span></code></pre></div>
+</li>
+<li>
+<p>Sur Fedora :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install vim</span></span></code></pre></div>
+</li>
+<li>
+<p>Sur macOS avec Homebrew :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install vim</span></span></code></pre></div>
+</li>
+</ul>
+<h2 id="modes-de-vim">Modes de Vim</h2>
+<p>Vim fonctionne en différents modes, chacun ayant un comportement spécifique. Les trois modes principaux sont :</p>
+<ol>
+<li><strong>Mode Normal</strong> : Le mode par défaut pour naviguer et manipuler du texte.</li>
+<li><strong>Mode Insertion</strong> : Utilisé pour insérer du texte.</li>
+<li><strong>Mode Commande</strong> : Utilisé pour exécuter des commandes.</li>
+</ol>
+<h3 id="passer-dun-mode-à-lautre">Passer d&rsquo;un mode à l&rsquo;autre</h3>
+<ul>
+<li>Pour passer en mode Insertion depuis le mode Normal, appuyez sur <code>i</code>.</li>
+<li>Pour revenir en mode Normal depuis le mode Insertion, appuyez sur <code>Esc</code>.</li>
+<li>Pour entrer en mode Commande depuis le mode Normal, appuyez sur <code>:</code>.</li>
+</ul>
+<h2 id="commandes-de-base">Commandes de base</h2>
+<p>Voici quelques commandes de base pour vous aider à démarrer avec Vim :</p>
+<h3 id="navigation">Navigation</h3>
+<ul>
+<li><code>h</code>, <code>j</code>, <code>k</code>, <code>l</code> : Déplacer le curseur à gauche, en bas, en haut et à droite.</li>
+<li><code>w</code> : Aller au début du mot suivant.</li>
+<li><code>b</code> : Aller au début du mot précédent.</li>
+<li><code>0</code> : Aller au début de la ligne.</li>
+<li><code>$</code> : Aller à la fin de la ligne.</li>
+</ul>
+<h3 id="édition">Édition</h3>
+<ul>
+<li><code>i</code> : Passer en mode Insertion avant le curseur.</li>
+<li><code>a</code> : Passer en mode Insertion après le curseur.</li>
+<li><code>x</code> : Supprimer le caractère sous le curseur.</li>
+<li><code>dd</code> : Supprimer la ligne courante.</li>
+<li><code>yy</code> : Copier la ligne courante.</li>
+<li><code>p</code> : Coller après le curseur.</li>
+</ul>
+<h3 id="sauvegarde-et-sortie">Sauvegarde et sortie</h3>
+<ul>
+<li><code>:w</code> : Sauvegarder le fichier.</li>
+<li><code>:q</code> : Quitter Vim.</li>
+<li><code>:wq</code> : Sauvegarder et quitter Vim.</li>
+<li><code>:q!</code> : Quitter sans sauvegarder.</li>
+</ul>
+<h2 id="exemple-pratique">Exemple pratique</h2>
+<p>Imaginons que vous souhaitiez créer un fichier texte simple avec Vim. Voici les étapes à suivre :</p>
+<ol>
+<li>Ouvrez Vim en tapant <code>vim</code> dans votre terminal.</li>
+<li>Passez en mode Insertion en appuyant sur <code>i</code>.</li>
+<li>Tapez votre texte, par exemple :
+<div class="highlight wrap-code"><pre tabindex="0"><code>Bonjour, ceci est un fichier texte créé avec Vim.</code></pre></div>
+</li>
+<li>Revenez en mode Normal en appuyant sur <code>Esc</code>.</li>
+<li>Sauvegardez le fichier en tapant <code>:w nom_du_fichier.txt</code> et appuyez sur <code>Enter</code>.</li>
+<li>Quittez Vim en tapant <code>:q</code> et appuyez sur <code>Enter</code>.</li>
+</ol>
+<h2 id="les-fichiers-de-configuration-dans-linux">Les fichiers de configuration dans Linux</h2>
+<p>Les fichiers de configuration sont essentiels pour le fonctionnement des systèmes Linux. Ils permettent de définir les paramètres et les comportements des applications et des services. Comprendre comment les utiliser et les modifier est crucial pour tout utilisateur de Linux.</p>
+<h3 id="emplacement-des-fichiers-de-configuration">Emplacement des fichiers de configuration</h3>
+<p>Les fichiers de configuration se trouvent généralement dans le répertoire <code>/etc</code>. Cependant, certains fichiers de configuration spécifiques à l&rsquo;utilisateur peuvent se trouver dans le répertoire personnel de l&rsquo;utilisateur, souvent précédés d&rsquo;un point (<code>.</code>), ce qui les rend cachés.</p>
+<h4 id="exemples-de-fichiers-de-configuration">Exemples de fichiers de configuration</h4>
+<ul>
+<li><code>/etc/passwd</code> : Contient les informations sur les utilisateurs du système.</li>
+<li><code>/etc/fstab</code> : Contient les informations sur les systèmes de fichiers montés au démarrage.</li>
+<li><code>~/.bashrc</code> : Contient les configurations spécifiques à l&rsquo;utilisateur pour le shell Bash.</li>
+</ul>
+<h3 id="syntaxe-des-fichiers-de-configuration">Syntaxe des fichiers de configuration</h3>
+<p>La syntaxe des fichiers de configuration peut varier, mais ils sont souvent basés sur des paires clé-valeur ou des sections. Voici quelques exemples :</p>
+<h4 id="fichier-de-configuration-simple">Fichier de configuration simple</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#75715e"># Ceci est un commentaire</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clé1</span><span style="color:#f92672">=</span><span style="color:#e6db74">valeur1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clé2</span><span style="color:#f92672">=</span><span style="color:#e6db74">valeur2</span></span></span></code></pre></div>
+<h4 id="fichier-de-configuration-avec-sections">Fichier de configuration avec sections</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#66d9ef">[section1]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clé1</span><span style="color:#f92672">=</span><span style="color:#e6db74">valeur1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[section2]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">clé2</span><span style="color:#f92672">=</span><span style="color:#e6db74">valeur2</span></span></span></code></pre></div>
+<h3 id="modifier-les-fichiers-de-configuration">Modifier les fichiers de configuration</h3>
+<p>Pour modifier un fichier de configuration, vous pouvez utiliser un éditeur de texte comme <code>nano</code>, <code>vim</code> ou <code>gedit</code>. Voici comment modifier un fichier de configuration avec <code>nano</code> :</p>
+<ol>
+<li>Ouvrez le terminal.</li>
+<li>Tapez <code>sudo nano /etc/nom_du_fichier</code> pour ouvrir le fichier avec les privilèges administratifs.</li>
+<li>Faites les modifications nécessaires.</li>
+<li>Appuyez sur <code>Ctrl+O</code> pour sauvegarder le fichier, puis <code>Ctrl+X</code> pour quitter.</li>
+</ol>
+<h4 id="modifier-les-fichiers-de-configuration-avec-vim">Modifier les fichiers de configuration avec Vim</h4>
+<p>Pour modifier un fichier de configuration avec Vim, suivez ces étapes :</p>
+<ol>
+<li>Ouvrez le terminal.</li>
+<li>Tapez <code>sudo vim /etc/nom_du_fichier</code> pour ouvrir le fichier avec les privilèges administratifs.</li>
+<li>Passez en mode Insertion en appuyant sur <code>i</code>.</li>
+<li>Faites les modifications nécessaires.</li>
+<li>Revenez en mode Normal en appuyant sur <code>Esc</code>.</li>
+<li>Sauvegardez et quittez en tapant <code>:wq</code> et appuyez sur <code>Enter</code>.</li>
+</ol>
+<h3 id="exemple-pratique--modifier-le-fichier-etchosts">Exemple pratique : Modifier le fichier <code>/etc/hosts</code></h3>
+<p>Le fichier <code>/etc/hosts</code> est utilisé pour associer des adresses IP à des noms de domaine. Voici comment le modifier :</p>
+<h4 id="avec-nano">Avec Nano</h4>
+<ol>
+<li>Ouvrez le terminal.</li>
+<li>Tapez <code>sudo nano /etc/hosts</code>.</li>
+<li>Ajoutez une nouvelle ligne avec l&rsquo;adresse IP et le nom de domaine, par exemple :
+<div class="highlight wrap-code"><pre tabindex="0"><code>127.0.0.1   monsite.local</code></pre></div>
+</li>
+<li>Sauvegardez et quittez en appuyant sur <code>Ctrl+O</code>, puis <code>Ctrl+X</code>.</li>
+</ol>
+<h4 id="avec-vim">Avec Vim</h4>
+<ol>
+<li>Ouvrez le terminal.</li>
+<li>Tapez <code>sudo vim /etc/hosts</code>.</li>
+<li>Passez en mode Insertion en appuyant sur <code>i</code>.</li>
+<li>Ajoutez une nouvelle ligne avec l&rsquo;adresse IP et le nom de domaine, par exemple :
+<div class="highlight wrap-code"><pre tabindex="0"><code>127.0.0.1   monsite.local</code></pre></div>
+</li>
+<li>Revenez en mode Normal en appuyant sur <code>Esc</code>.</li>
+<li>Sauvegardez et quittez en tapant <code>:wq</code> et appuyez sur <code>Enter</code>.</li>
+</ol>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1737132936";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1737132936" defer></script>
+        <script src="/js/lunr/lunr.min.js?1737132936" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1737132936" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1737132936" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1737132936" defer></script>
+        <script src="/js/search.js?1737132936" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Introduction à Linux (suite)</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Système de fichiers, shell et commandes de base</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Processus de démarrage et le shell bash</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Shell bash (suite)</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html">Semaine9s</a><ul id="R-subsections-1f01a70d85857b8ac721c011c139e3af" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine9/cours/index.html"><a class="padding" href="/semaine9/cours/index.html">L&#39;éditeur Vim et les fichiers de configuration</a></li></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine9/cours/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1737132936" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1737132936" defer></script>
+    <script src="/js/theme.js?1737132936" defer></script>
+  </body>
+</html>

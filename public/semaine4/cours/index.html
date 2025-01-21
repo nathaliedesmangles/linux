@@ -5,31 +5,31 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="La séquence de démarrage de Linux Le processus de démarrage de Linux est une série d’étapes qui se déroulent depuis l’allumage de l’ordinateur jusqu’à l’affichage de l’invite de commande ou de l’interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.
-1. Le BIOS/UEFI Le BIOS (Basic Input/Output System) ou l’UEFI (Unified Extensible Firmware Interface) est le premier programme qui s’exécute lorsque vous allumez votre ordinateur. Il initialise le matériel et recherche un périphérique de démarrage, tel qu’un disque dur ou une clé USB, contenant un chargeur de démarrage.">
+    <meta name="description" content="7. Utilisation spécifique avec find Pour éviter une expansion prématurée par Bash, protégez les motifs :
+find / -name &#34;*.txt&#34;Bonnes pratiques avec les variables Utilisez des guillemets pour gérer les espaces : ls &#34;$fichiers&#34;Protégez les motifs pour find : find / -name &#34;*.txt&#34;Utilisez des accolades pour automatiser : touch fichier{1..10}.txt====== Les entrées et sorties des commandes, la redirection des commandes, les filtres et les pipelines de commandes permettent de manipuler et de traiter des données de manière puissante et flexible, en utilisant des commandes simples mais très efficaces.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Processus de démarrage et le shell BASH :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="La séquence de démarrage de Linux Le processus de démarrage de Linux est une série d’étapes qui se déroulent depuis l’allumage de l’ordinateur jusqu’à l’affichage de l’invite de commande ou de l’interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.
-1. Le BIOS/UEFI Le BIOS (Basic Input/Output System) ou l’UEFI (Unified Extensible Firmware Interface) est le premier programme qui s’exécute lorsque vous allumez votre ordinateur. Il initialise le matériel et recherche un périphérique de démarrage, tel qu’un disque dur ou une clé USB, contenant un chargeur de démarrage.">
+    <meta name="twitter:title" content="Entrées/Sorties, redirection, filtres et Pipeline des commandes :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="7. Utilisation spécifique avec find Pour éviter une expansion prématurée par Bash, protégez les motifs :
+find / -name &#34;*.txt&#34;Bonnes pratiques avec les variables Utilisez des guillemets pour gérer les espaces : ls &#34;$fichiers&#34;Protégez les motifs pour find : find / -name &#34;*.txt&#34;Utilisez des accolades pour automatiser : touch fichier{1..10}.txt====== Les entrées et sorties des commandes, la redirection des commandes, les filtres et les pipelines de commandes permettent de manipuler et de traiter des données de manière puissante et flexible, en utilisant des commandes simples mais très efficaces.">
     <meta property="og:url" content="https://example.org/semaine4/cours/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
-    <meta property="og:title" content="Processus de démarrage et le shell BASH :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="La séquence de démarrage de Linux Le processus de démarrage de Linux est une série d’étapes qui se déroulent depuis l’allumage de l’ordinateur jusqu’à l’affichage de l’invite de commande ou de l’interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.
-1. Le BIOS/UEFI Le BIOS (Basic Input/Output System) ou l’UEFI (Unified Extensible Firmware Interface) est le premier programme qui s’exécute lorsque vous allumez votre ordinateur. Il initialise le matériel et recherche un périphérique de démarrage, tel qu’un disque dur ou une clé USB, contenant un chargeur de démarrage.">
+    <meta property="og:title" content="Entrées/Sorties, redirection, filtres et Pipeline des commandes :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="7. Utilisation spécifique avec find Pour éviter une expansion prématurée par Bash, protégez les motifs :
+find / -name &#34;*.txt&#34;Bonnes pratiques avec les variables Utilisez des guillemets pour gérer les espaces : ls &#34;$fichiers&#34;Protégez les motifs pour find : find / -name &#34;*.txt&#34;Utilisez des accolades pour automatiser : touch fichier{1..10}.txt====== Les entrées et sorties des commandes, la redirection des commandes, les filtres et les pipelines de commandes permettent de manipuler et de traiter des données de manière puissante et flexible, en utilisant des commandes simples mais très efficaces.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
-    <meta itemprop="name" content="Processus de démarrage et le shell BASH :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="La séquence de démarrage de Linux Le processus de démarrage de Linux est une série d’étapes qui se déroulent depuis l’allumage de l’ordinateur jusqu’à l’affichage de l’invite de commande ou de l’interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.
-1. Le BIOS/UEFI Le BIOS (Basic Input/Output System) ou l’UEFI (Unified Extensible Firmware Interface) est le premier programme qui s’exécute lorsque vous allumez votre ordinateur. Il initialise le matériel et recherche un périphérique de démarrage, tel qu’un disque dur ou une clé USB, contenant un chargeur de démarrage.">
-    <meta itemprop="wordCount" content="1230">
-    <title>Processus de démarrage et le shell BASH :: 420-ZG4-MO LINUX</title>
-    <link href="/semaine4/cours/index.xml" rel="alternate" type="application/rss+xml" title="Processus de démarrage et le shell BASH :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1736881200" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736881200" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1736881200" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736881200" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1736881200" rel="stylesheet">
-    <link href="/css/theme.min.css?1736881200" rel="stylesheet">
-    <link href="/css/format-html.min.css?1736881200" rel="stylesheet" id="R-format-style">
+    <meta itemprop="name" content="Entrées/Sorties, redirection, filtres et Pipeline des commandes :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="7. Utilisation spécifique avec find Pour éviter une expansion prématurée par Bash, protégez les motifs :
+find / -name &#34;*.txt&#34;Bonnes pratiques avec les variables Utilisez des guillemets pour gérer les espaces : ls &#34;$fichiers&#34;Protégez les motifs pour find : find / -name &#34;*.txt&#34;Utilisez des accolades pour automatiser : touch fichier{1..10}.txt====== Les entrées et sorties des commandes, la redirection des commandes, les filtres et les pipelines de commandes permettent de manipuler et de traiter des données de manière puissante et flexible, en utilisant des commandes simples mais très efficaces.">
+    <meta itemprop="wordCount" content="1813">
+    <title>Entrées/Sorties, redirection, filtres et Pipeline des commandes :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine4/cours/index.xml" rel="alternate" type="application/rss+xml" title="Entrées/Sorties, redirection, filtres et Pipeline des commandes :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1737427541" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737427541" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1737427541" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737427541" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1737427541" rel="stylesheet">
+    <link href="/css/theme.min.css?1737427541" rel="stylesheet">
+    <link href="/css/format-html.min.css?1737427541" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -92,19 +92,23 @@
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#la-séquence-de-démarrage-de-linux">La séquence de démarrage de Linux</a></li>
-    <li><a href="#1-le-biosuefi">1. Le BIOS/UEFI</a></li>
-    <li><a href="#2-le-chargeur-de-démarrage-bootloader">2. Le chargeur de démarrage (<em>Bootloader</em>)</a></li>
-    <li><a href="#3-le-noyau-linux">3. Le noyau Linux</a></li>
-    <li><a href="#4-le-processus-dinitialisation-du-système">4. Le processus d&rsquo;initialisation du système</a></li>
-    <li><a href="#5-les-cibles--niveaux-dexécution-runlevels">5. Les cibles / niveaux d&rsquo;exécution (<em>Runlevels</em>)</a>
+    <li>
       <ul>
-        <li><a href="#le-shell-durgence">Le shell d&rsquo;urgence</a></li>
-        <li><a href="#les-commandes-pour-la-gestion-des-cibles">Les commandes pour la gestion des cibles</a></li>
-        <li><a href="#utilisation-de-systemd">Utilisation de <code>systemd</code></a></li>
+        <li><a href="#7-utilisation-spécifique-avec-find">7. Utilisation spécifique avec <code>find</code></a></li>
       </ul>
     </li>
-    <li><a href="#le-shell-bash">Le shell BASH</a></li>
+    <li><a href="#bonnes-pratiques-avec-les-variables">Bonnes pratiques avec les variables</a></li>
+    <li><a href="#les-entrées-et-sorties-des-commandes">Les entrées et sorties des commandes</a>
+      <ul>
+        <li><a href="#la-redirection-des-entrées-et-sorties">La redirection des entrées et sorties</a></li>
+      </ul>
+    </li>
+    <li><a href="#les-filtres-de-commandes">Les filtres de commandes</a>
+      <ul>
+        <li><a href="#les-commandes-de-filtrage-courantes-ajouter-find">Les commandes de filtrage courantes AJOUTER FIND</a></li>
+        <li><a href="#combinaison-de-plusieurs-filtres-à-laide-de-">Combinaison de plusieurs filtres à l&rsquo;aide de <code>|</code></a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
                 </div>
@@ -113,13 +117,13 @@
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine4/index.html"><span itemprop="name">Processus de démarrage et le shell bash</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Processus de démarrage et le shell BASH</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine4/index.html"><span itemprop="name">E/S, redirection et filtrage de commandes et While</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Entrées/Sorties, redirection, filtres et Pipeline des commandes</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/index.html" title="Processus de démarrage et le shell bash (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/index.html" title="E/S, redirection et filtrage de commandes et While (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/atelier/index.html" title="ATELIER #4: Le processus de démarrage et le BASH (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/atelier/index.html" title="ATELIER #4: Redirection, E/S, pipeline et filtres (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -139,118 +143,65 @@
   <header class="headline">
   </header>
 
-<h1 id="processus-de-démarrage-et-le-shell-bash">Processus de démarrage et le shell BASH</h1>
+<h1 id="entréessorties-redirection-filtres-et-pipeline-des-commandes">Entrées/Sorties, redirection, filtres et Pipeline des commandes</h1>
 
-<h2 id="la-séquence-de-démarrage-de-linux">La séquence de démarrage de Linux</h2>
-<p>Le processus de démarrage de Linux est une série d&rsquo;étapes qui se déroulent depuis l&rsquo;allumage de l&rsquo;ordinateur jusqu&rsquo;à l&rsquo;affichage de l&rsquo;invite de commande ou de l&rsquo;interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.</p>
-<p><a href="#R-image-10a09c45e30212184eadb59f0b9a1755" class="lightbox-link"><img alt="Schema séquence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine4/cours/boot_process.jpeg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-10a09c45e30212184eadb59f0b9a1755"><img alt="Schema séquence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine4/cours/boot_process.jpeg"></a></p>
-<h2 id="1-le-biosuefi">1. Le BIOS/UEFI</h2>
-<p>Le <strong>BIOS</strong> (<em>Basic Input/Output System</em>) ou l&rsquo;UEFI (<em>Unified Extensible Firmware Interface</em>) est le premier programme qui s&rsquo;exécute lorsque vous allumez votre ordinateur. Il initialise le matériel et recherche un périphérique de démarrage, tel qu&rsquo;un disque dur ou une clé USB, contenant un chargeur de démarrage.</p>
-<h2 id="2-le-chargeur-de-démarrage-bootloader">2. Le chargeur de démarrage (<em>Bootloader</em>)</h2>
-<p>Le <strong>MBR</strong> (<em>Master Boot Record</em>) est une petite section (512 octets) située sur le 1er secteur d&rsquo;un disque dur. Il est essentiel pour que l&rsquo;ordinateur sache comment démarrer et accéder aux différentes partitions du disque. Il contient des informations cruciales pour le démarrage de l&rsquo;ordinateur, notamment :</p>
+<hr>
+<h3 id="7-utilisation-spécifique-avec-find">7. Utilisation spécifique avec <code>find</code></h3>
+<p>Pour éviter une expansion prématurée par Bash, protégez les motifs :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -name <span style="color:#e6db74">&#34;*.txt&#34;</span></span></span></code></pre></div>
+<h2 id="bonnes-pratiques-avec-les-variables">Bonnes pratiques avec les variables</h2>
+<ol>
+<li><strong>Utilisez des guillemets</strong> pour gérer les espaces :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls <span style="color:#e6db74">&#34;</span>$fichiers<span style="color:#e6db74">&#34;</span></span></span></code></pre></div>
+</li>
+<li><strong>Protégez les motifs pour <code>find</code> :</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -name <span style="color:#e6db74">&#34;*.txt&#34;</span></span></span></code></pre></div>
+</li>
+<li><strong>Utilisez des accolades pour automatiser :</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch fichier<span style="color:#f92672">{</span>1..10<span style="color:#f92672">}</span>.txt</span></span></code></pre></div>
+</li>
+</ol>
+<p>======
+Les entrées et sorties des commandes, la redirection des commandes, les filtres et les pipelines de commandes permettent de manipuler et de traiter des données de manière puissante et flexible, en utilisant des commandes simples mais très efficaces.</p>
+<h2 id="les-entrées-et-sorties-des-commandes">Les entrées et sorties des commandes</h2>
+<p>Dans le système d&rsquo;exploitation Linux, les commandes interagissent avec trois flux de données principaux :</p>
 <ul>
-<li><strong>Table de partition</strong> : Indique comment le disque est divisé en partitions.</li>
-<li><strong>Code de démarrage</strong> : Un petit programme qui charge le système d&rsquo;exploitation ou un chargeur de démarrage plus avancé.</li>
+<li>
+<p><strong>Entrée standard</strong> (<em>stdin</em>) : Il s&rsquo;agit du flux de données d&rsquo;entrée par défaut pour les commandes. Par défaut, stdin est lié au clavier, ce qui signifie que les commandes lisent les données saisies par l&rsquo;utilisateur. Cependant, <code>stdin</code> peut être redirigé pour lire des données à partir de fichiers ou d&rsquo;autres commandes.</p>
+</li>
+<li>
+<p><strong>Sortie standard</strong> (<em>stdout</em>, numérotée <em><strong>1</strong></em>) : Il s&rsquo;agit du flux de données de sortie par défaut pour les commandes. Par défaut, <code>stdout</code> est lié à l&rsquo;écran, ce qui signifie que les commandes affichent leurs résultats à l&rsquo;écran. Cependant, <code>stdout</code> peut être redirigé pour écrire des données dans des fichiers ou les transmettre à d&rsquo;autres commandes.</p>
+</li>
+<li>
+<p><strong>Erreurs standard</strong> (<em>stderr</em>, numérotée <em><strong>2</strong></em>) : Il s&rsquo;agit du flux de données de sortie pour les messages d&rsquo;erreur. Par défaut, <code>stderr</code> est également lié à l&rsquo;écran, ce qui signifie que les messages d&rsquo;erreur sont affichés à l&rsquo;écran. Comme <code>stdout</code>, <code>stderr</code> peut être redirigé pour écrire des messages d&rsquo;erreur dans des fichiers ou les transmettre à d&rsquo;autres commandes.</p>
+</li>
 </ul>
-<p>Le <strong>chargeur de démarrage</strong> est un programme qui charge le noyau Linux en mémoire et transfère le contrôle à celui-ci. Les chargeurs de démarrage les plus courants sont <strong>GRUB</strong> (<em>GRand Unified Bootloader</em>) et <strong>LILO</strong> (<em>LInux LOader</em>).</p>
-<ul>
-<li><strong>GRUB</strong> est le chargeur de démarrage le plus utilisé. Il permet de sélectionner différents noyaux ou systèmes d&rsquo;exploitation à démarrer. Le fichier de configuration de GRUB est généralement situé dans <code>/boot/grub/grub.cfg</code>.</li>
-<li><strong>LILO</strong> est un chargeur de démarrage plus ancien et moins utilisé que GRUB. Il est configuré via le fichier <code>/etc/lilo.conf</code>.</li>
-</ul>
-<h2 id="3-le-noyau-linux">3. Le noyau Linux</h2>
-<p>Le noyau Linux est le cœur du système d&rsquo;exploitation. Il initialise le matériel, monte le système de fichiers racine et lance le processus initial (<code>init</code> ou <code>systemd</code> selon la distribution).</p>
-<ul>
-<li><strong>Initialisation du matériel</strong>: Le noyau détecte et initialise tous les périphériques matériels, tels que les disques durs, les cartes réseau et les périphériques USB.</li>
-<li><strong>Montage du système de fichiers racine</strong>: Le noyau monte le système de fichiers racine, généralement situé sur le disque dur, pour accéder aux fichiers nécessaires au démarrage.</li>
-</ul>
-<h2 id="4-le-processus-dinitialisation-du-système">4. Le processus d&rsquo;initialisation du système</h2>
-<p>Le processus d&rsquo;initialisation est le premier processus lancé par le noyau et a toujours le PID (Process ID) 1. Il est responsable de démarrer tous les autres processus du système.</p>
-<ul>
-<li><em><strong>SysVinit</strong></em> est un système d&rsquo;initialisation traditionnel utilisé par de nombreuses distributions Linux. Il utilise des scripts d&rsquo;initialisation situés dans <code>/etc/init.d/</code> pour démarrer les services.</li>
-<li><em><strong>Systemd</strong></em> est un système d&rsquo;initialisation moderne et largement adopté. Il utilise des unités de service (service units) définies dans des fichiers <code>.service</code> pour gérer les services. Les fichiers de configuration de <code>systemd</code> sont situés dans <code>/etc/systemd/system/</code>.</li>
-</ul>
+<h3 id="la-redirection-des-entrées-et-sorties">La redirection des entrées et sorties</h3>
+<p>L&rsquo;utilisation de <code>stdin</code>, <code>stdout</code> et <code>stderr</code> est essentielle pour manipuler les flux de données dans Linux.</p>
+<h4 id="redirection-de-stdin-entrée-standard">Redirection de <code>stdin</code> (Entrée standard)</h4>
+<p>Par défaut, <code>stdin</code> (<strong>&lt;</strong>) lit les données saisies par l&rsquo;utilisateur via le clavier.</p>
 
-<details class=" box cstyle notices red expand" name="notice-toggle">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    Système d&rsquo;initialisation-Ubuntu vs Almalinux
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Info
   </summary>
   <div class="box-content">
-<ul>
-<li><strong>Ubuntu</strong> et <strong>AlmaLinux</strong> utilisent tous les deux <code>systemd</code> comme système d&rsquo;initialisation par défaut (Ubuntu depuis la version 15.04).</li>
-<li>Avec <strong>Ubuntu</strong> la commande <code>runlevel</code> est maintenue pour des raisons de compatibilité, mais elle peut ne pas toujours fonctionner correctement et afficher &ldquo;unknown&rdquo;.</li>
-<li>Avec <strong>AlmaLinux</strong> les anciennes commandes d&rsquo;initialisation comme <code>init</code> sont maintenues pour des raisons de compatibilités. <code>Systemd</code> inclut un lien symbolique vers <code>systemctl</code> pour les commandes <code>init</code>, ce qui permet aux utilisateurs de continuer à utiliser les commandes traditionnelles.</li>
-</ul>
+<p>Nous ne verrons pas la redirection à l’aide de <code>&lt;</code>.</p>
   </div>
 </details>
-<h2 id="5-les-cibles--niveaux-dexécution-runlevels">5. Les cibles / niveaux d&rsquo;exécution (<em>Runlevels</em>)</h2>
-<p>Dans le passé, sous Linux, les modes de fonctionnement étaient connus sous le nom de <strong>niveaux d&rsquo;exécution</strong>, chacun permettant l&rsquo;accès à un ensemble spécifique de services.
-Cependant, avec l&rsquo;introduction de <code>systemd</code> dans les distributions Linux modernes, le concept de niveaux d&rsquo;exécution a été remplacé par celui de <strong>cibles</strong> (<em>target</em>).</p>
-<p>Néanmoins, l&rsquo;ensemble des services associés aux anciens niveaux d&rsquo;exécution ont été conservés dans le système de cibles de <code>systemd</code>, afin d&rsquo;assurer une transition plus facile et de maintenir la compatibilité avec les scripts et les configurations existantes.</p>
-<p>Les cibles (niveaux d&rsquo;exécution) définissent l&rsquo;état du système et les services qui doivent être exécutés. Les plus courants sont :</p>
-<table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Cible</th>
-          <th style="text-align: left">Niveau</th>
-          <th style="text-align: left">Utilité</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">poweroff.target</td>
-          <td style="text-align: left">0</td>
-          <td style="text-align: left">Arrêt du système</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">rescue.target</td>
-          <td style="text-align: left">1</td>
-          <td style="text-align: left">Mode mono-utilisateur (maintenance)</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">multi-user.target</td>
-          <td style="text-align: left">3</td>
-          <td style="text-align: left">Mode multi-utilisateur sans interface graphique</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">graphical.target</td>
-          <td style="text-align: left">5</td>
-          <td style="text-align: left">Mode multi-utilisateur avec interface graphique</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">reboot.target</td>
-          <td style="text-align: left">6</td>
-          <td style="text-align: left">Redémarrage du système</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">emergency</td>
-          <td style="text-align: left">&ndash;</td>
-          <td style="text-align: left">Shell d&rsquo;urgence</td>
-      </tr>
-  </tbody>
-</table>
-<h3 id="le-shell-durgence">Le shell d&rsquo;urgence</h3>
-<p>Le shell d&rsquo;urgence (ou &ldquo;emergency shell&rdquo;) est un environnement minimaliste de ligne de commande utilisé pour la récupération et la maintenance du système lorsque le démarrage normal échoue. Il est souvent invoqué lorsque le système rencontre des problèmes critiques, tels que des erreurs de montage du système de fichiers ou des problèmes de configuration.</p>
-<h4 id="caractéristiques-du-shell-durgence">Caractéristiques du Shell d&rsquo;urgence</h4>
-<p><strong>Accès minimal</strong> : Le shell d&rsquo;urgence offre un accès limité aux commandes et aux utilitaires, mais il permet d&rsquo;effectuer des tâches de dépannage essentielles.</p>
-<p><strong>Mode lecture-écriture</strong> : Le système de fichiers racine est généralement monté en mode lecture-écriture, permettant de modifier les fichiers de configuration et de réparer les erreurs.</p>
-<p><strong>Pas de services</strong> : La plupart des services et des démons ne sont pas démarrés, ce qui réduit les interférences et permet de se concentrer sur la résolution des problèmes.</p>
-<h3 id="les-commandes-pour-la-gestion-des-cibles">Les commandes pour la gestion des cibles</h3>
-<h4 id="lister-les-processus-sexécutant-sur-une-machine">Lister les processus s’exécutant sur une machine</h4>
-<p>La commande <code>ps</code> affiche tous les processus s&rsquo;exécutant sur une machine.</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ps -ef
-</span></span><span style="display:flex;"><span>UID          PID    PPID  C STIME TTY          TIME CMD
-</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">2</span> 16:18 ?        00:00:01 /usr/lib/systemd/systemd --s
-</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">2</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span> 16:18 ?        00:00:00 <span style="color:#f92672">[</span>kthreadd<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">3</span>       <span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">0</span> 16:18 ?        00:00:00 <span style="color:#f92672">[</span>pool_workqueue_<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">4</span>       <span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">0</span> 16:18 ?        00:00:00 <span style="color:#f92672">[</span>kworker/R-rcu_g<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">5</span>       <span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">0</span> 16:18 ?        00:00:00 <span style="color:#f92672">[</span>kworker/R-rcu_p<span style="color:#f92672">]</span></span></span></code></pre></div>
-<h4 id="utilisation-de-runlevel">Utilisation de <code>runlevel</code></h4>
-<p>La commande <code>runlevel</code> affiche le niveau d&rsquo;exécution actuel.</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ runlevel
-</span></span><span style="display:flex;"><span>N <span style="color:#ae81ff">5</span></span></span></code></pre></div>
-<p>Cela signifie que le système est actuellement en niveau d&rsquo;exécution 5 (mode graphique).</p>
+<p>Cependant, vous pouvez rediriger <code>stdin</code> pour lire des données à partir d&rsquo;un fichier ou d&rsquo;une autre commande, en récupérant la sortie standard d’une autre commande grâce au pipeline (vu plus bas).</p>
+<h4 id="redirection-de-stdout-sortie-standard">Redirection de <code>stdout</code> (Sortie standard)</h4>
+<p>Par défaut, <code>stdout</code> (<strong>&gt;</strong> et <strong>&raquo;</strong>) affiche les résultats des commandes à l&rsquo;écran. Vous pouvez rediriger <code>stdout</code> pour écrire les résultats dans un fichier ou les transmettre à une autre commande.</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>commande &gt; fichier.txt</code></pre></div>
+<p>Cette commande enregistre la sortie de <code>commande</code> dans <code>sortie.txt</code>, écrasant le contenu existant du fichier.</p>
+<p><strong>Exemples</strong> :</p>
+<p>La commande <code>find / -name services</code> retourne à l&rsquo;écran (<code>stdout</code>) les noms des fichiers ou des répertoires nommés &ldquo;services&rdquo; à partir de la racine du système de fichiers (/).</p>
+<p>Si on souhaite , on peut rediriger la sortie standard (<code>stdout</code>) vers un fichier (ex: resultat.txt):</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -name services &gt; resultat.txt</span></span></code></pre></div>
+<p>Ou</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -name services 1&gt; resultat.txt</span></span></code></pre></div>
+<p>Ces commandes envoient le résultat dans un fichier au lieu de l’envoyer à l’écran.</p>
 
 <details open class=" box cstyle notices important">
   <summary class="box-label" tabindex="-1">
@@ -258,73 +209,272 @@ Cependant, avec l&rsquo;introduction de <code>systemd</code> dans les distributi
     Important
   </summary>
   <div class="box-content">
-<p>Avec Ubuntu, au lieu d&rsquo;utiliser la commande <code>runlevel</code>, utiliser <code>systemctl get-default</code></p>
+<p>Avec <code>&gt;</code> ou <code>1&gt;</code>, le contenu du fichier sera <strong>écrasé</strong>.</p>
   </div>
 </details>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nathalie@Yoda:~$ systemctl get-default
-</span></span><span style="display:flex;"><span>graphical.target</span></span></code></pre></div>
-<h4 id="utilisation-de-init">Utilisation de <code>init</code></h4>
-<p>La commande <code>init</code> change le niveau d&rsquo;exécution du système.</p>
+<p>Pour ne pas écraser le contenu existant, il faut utiliser <code>&gt;&gt;</code> comme dans l&rsquo;exemple ci-dessous:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -name services &gt;&gt; resultat.txt</span></span></code></pre></div>
+<p>Cette commande ajoute le résultat à la fin du fichier <code>resultat.txt</code> sans écraser le contenu existant.</p>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Info
+  </summary>
+  <div class="box-content">
+<p>La mention <em><strong>Permission denied</strong></em> est un message d&rsquo;erreur indiquant qu&rsquo;il faut avoir les droits d&rsquo;accès sur les fichiers ou répertoires.</p>
+  </div>
+</details>
+<h4 id="redirection-de-stderr-erreurs-standard">Redirection de <code>stderr</code> (Erreurs standard)</h4>
+<p>Par défaut, <code>stderr</code> affiche les messages d&rsquo;erreur à l&rsquo;écran. Vous pouvez rediriger <code>stderr</code> pour écrire les messages d&rsquo;erreur dans un fichier ou les transmettre à une autre commande.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -name services 2&gt; erreurs.txt</span></span></code></pre></div>
+<p>Cette commande envoie les messages d&rsquo;erreur dans le fichier <code>erreurs.txt</code>.</p>
+<p>Il est possible de rediriger la sortie standard et la sortie d’erreur standard.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name services &gt; resultats.txt 2&gt;/dev/null</span></span></code></pre></div>
+<p>Il est aussi possible de rediriger la sortie d’erreur standard vers la sortie standard (<code>&amp;1</code>) et d’envoyer le tout dans un fichier:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name services &gt; resultats.txt 2&gt;&amp;<span style="color:#ae81ff">1</span></span></span></code></pre></div>
 <ul>
-<li>Pour passer au niveau d&rsquo;exécution 3 (mode multi-utilisateur sans interface graphique) :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ init <span style="color:#ae81ff">3</span></span></span></code></pre></div>
-</li>
-<li>Pour passer au niveau d&rsquo;exécution 5 (mode multi-utilisateur avec interface graphique) :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ init <span style="color:#ae81ff">5</span></span></span></code></pre></div>
-</li>
-<li>Pour redémarrer le système (niveau d&rsquo;exécution 6) :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ init <span style="color:#ae81ff">6</span></span></span></code></pre></div>
-</li>
+<li><strong><code>2&gt;&amp;1</code></strong> : Cette syntaxe redirige <code>stderr</code> vers la même destination que <code>stdout</code>.</li>
 </ul>
-<h3 id="utilisation-de-systemd">Utilisation de <code>systemd</code></h3>
-<p>Avec <code>systemd</code>, les cibles remplacent les niveaux d&rsquo;exécution traditionnels. Voici quelques exemples de commandes <code>systemctl</code> pour gérer les cibles :</p>
+<p>Il est possible de se débarrasser des erreurs en redirigeant la sortie d’erreur standard.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name services 2&gt;/dev/null</span></span></code></pre></div>
+<p><code>/dev/null</code> agit comme un trou noir dans lequel tout ce qu’on envoie disparait.</p>
 <ul>
-<li>
-<p><strong>Changer de cible</strong> :</p>
+<li><strong><code>&amp;&gt;</code></strong> : Ce symbole redirige à la fois <code>stdout</code> et <code>stderr</code> vers un fichier spécifié.</li>
+</ul>
+<p>L&rsquo;utilisation des symboles <code>&amp;&gt;</code> et <code>2&gt;&amp;1</code> permet de rediriger à la fois les sorties standard et les erreurs standard.</p>
+<p>Vous pouvez rediriger à la fois <code>stdout</code> et <code>stderr</code> vers un fichier ou une autre commande.</p>
+<hr>
+<div class="highlight wrap-code"><pre tabindex="0"><code>commande &gt; sortie.txt 2&gt; erreurs.txt</code></pre></div>
+<p>Cette commande enregistre la sortie de <code>commande</code> dans <code>sortie.txt</code> et les messages d&rsquo;erreur dans <code>erreurs.txt</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>commande &amp;&gt; tout.txt</code></pre></div>
+<p>Cette commande enregistre à la fois la sortie et les messages d&rsquo;erreur de <code>commande</code> dans <code>tout.txt</code>.</p>
+<h4 id="redirection-combinée">Redirection combinée</h4>
+<p>La redirection combinée permet de rediriger simultanément les sorties standard (<code>stdout</code>) et les erreurs standard (<code>stderr</code>) vers un fichier ou une autre commande. Cela est particulièrement utile pour capturer toutes les sorties d&rsquo;une commande, y compris les messages d&rsquo;erreur, dans un seul fichier.</p>
+<p><strong>Exemple 1 : Utilisation de <code>&amp;&gt;</code></strong></p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>commande &amp;&gt; tout.txt</code></pre></div>
+<p>Cette commande redirige à la fois la sortie standard et les erreurs standard de <code>commande</code> vers le fichier <code>tout.txt</code>.</p>
+<p><strong>Exemple 2 : Utilisation de <code>2&gt;&amp;1</code></strong></p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>commande &gt; sortie.txt 2&gt;&amp;1</code></pre></div>
+<p>Cette commande redirige la sortie standard de <code>commande</code> vers le fichier <code>sortie.txt</code> et redirige les erreurs standard vers la même destination que la sortie standard.</p>
+<p><strong>Exemple 3 : Redirection combinée avec append</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>commande &gt;&gt; sortie.txt 2&gt;&amp;1</code></pre></div>
+<p>Cette commande ajoute la sortie standard et les erreurs standard de <code>commande</code> à la fin du fichier <code>sortie.txt</code> sans écraser le contenu existant.</p>
+<h4 id="utilisation-des-pipelines">Utilisation des Pipelines</h4>
+<p>Les pipelines permettent de rediriger la sortie d&rsquo;une commande (<code>stdout</code>) comme entrée (<code>stdin</code>) d&rsquo;une autre commande en utilisant le symbole <code>|</code> (se prononce pipe).</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>commande1 | commande2</code></pre></div>
+<p>Cette commande utilise la sortie de <code>commande1</code> comme entrée pour <code>commande2</code>.</p>
+<p><strong>Exemple</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -l | grep <span style="color:#e6db74">&#34;.txt&#34;</span> | sort</span></span></code></pre></div>
+<p>Cette commande liste les fichiers du répertoire courant, filtre ceux qui ont l&rsquo;extension <code>.txt</code>, puis trie les résultats.</p>
+<h4 id="redirection-combinée-avec-un-pipeline">Redirection combinée avec un pipeline</h4>
+<div class="highlight wrap-code"><pre tabindex="0"><code>commande1 | commande2 &gt; sortie.txt 2&gt;&amp;1</code></pre></div>
+<p>Cette commande utilise un pipeline pour rediriger la sortie de <code>commande1</code> vers <code>commande2</code>, puis redirige la sortie standard et les erreurs standard de <code>commande2</code> vers le fichier <code>sortie.txt</code>.</p>
+<h2 id="les-filtres-de-commandes">Les filtres de commandes</h2>
+<p>Les filtres sont des commandes qui prennent des données en entrée, les transforment et produisent des données en sortie. Ils sont utilisés pour manipuler et traiter des données de manière précise et efficace. Les filtres sont souvent utilisés dans des pipelines pour créer des chaînes de traitement de données complexes.</p>
+<p>Les filtres jouent un rôle crucial dans le traitement des données sous Linux. Ils permettent de :</p>
 <ul>
-<li>Pour passer en mode multi-utilisateur sans interface graphique :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ systemctl isolate multi-user.target</span></span></code></pre></div>
-</li>
-<li>Pour passer en mode multi-utilisateur avec interface graphique :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ systemctl isolate graphical.target</span></span></code></pre></div>
-</li>
+<li><strong>Filtrer</strong> : Sélectionner uniquement les données pertinentes en fonction de critères spécifiques.</li>
+<li><strong>Transformer</strong> : Modifier les données pour les adapter à un format ou à une structure souhaitée.</li>
+<li><strong>Analyser</strong> : Extraire des informations utiles à partir des données brutes.</li>
+<li><strong>Combiner</strong> : Fusionner les données provenant de différentes sources pour obtenir un résultat cohérent.</li>
 </ul>
-</li>
-<li>
-<p><strong>Définir la cible par défaut</strong> :</p>
+<h3 id="les-commandes-de-filtrage-courantes-ajouter-find">Les commandes de filtrage courantes AJOUTER FIND</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Description de l&rsquo;option</th>
+          <th style="text-align: left">Exemple</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>grep</code></td>
+          <td style="text-align: left">Recherche de motifs dans les fichiers.</td>
+          <td style="text-align: left"><code>-i</code></td>
+          <td style="text-align: left">Ignore la casse (majuscule/minuscule)</td>
+          <td style="text-align: left"><code>grep -i &quot;motif&quot; fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>-r</code></td>
+          <td style="text-align: left">Recherche récursive dans les répertoires</td>
+          <td style="text-align: left"><code>grep -r &quot;motif&quot; /chemin/du/repertoire</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>-v</code></td>
+          <td style="text-align: left">Inverse la recherche, affichant les lignes qui ne correspondent pas au motif</td>
+          <td style="text-align: left"><code>grep -v &quot;motif&quot; fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>-n</code></td>
+          <td style="text-align: left">Affiche les numéros de ligne des correspondances</td>
+          <td style="text-align: left"><code>grep -n &quot;motif&quot; fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>sed</code></td>
+          <td style="text-align: left">Édition de flux de texte.</td>
+          <td style="text-align: left"><code>-e</code></td>
+          <td style="text-align: left">Permet de spécifier plusieurs commandes</td>
+          <td style="text-align: left"><code>sed -e 's/ancien/nouveau/' -e 's/vieux/neuf/' fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>-i</code></td>
+          <td style="text-align: left">Modifie les fichiers en place</td>
+          <td style="text-align: left"><code>sed -i 's/ancien/nouveau/g' fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>cut</code></td>
+          <td style="text-align: left">Extraction de sections de lignes.</td>
+          <td style="text-align: left"><code>-d</code></td>
+          <td style="text-align: left">Spécifie le délimiteur</td>
+          <td style="text-align: left"><code>cut -d ',' -f 1,3 fichier.csv</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>-f</code></td>
+          <td style="text-align: left">Spécifie les champs à extraire</td>
+          <td style="text-align: left"><code>cut -f 1,3 fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>sort</code></td>
+          <td style="text-align: left">Tri des lignes.</td>
+          <td style="text-align: left"><code>-r</code></td>
+          <td style="text-align: left">Trie dans l&rsquo;ordre inverse</td>
+          <td style="text-align: left"><code>sort -r fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>-n</code></td>
+          <td style="text-align: left">Trie numériquement</td>
+          <td style="text-align: left"><code>sort -n fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>-k</code></td>
+          <td style="text-align: left">Trie selon une clé spécifique</td>
+          <td style="text-align: left"><code>sort -k 2 fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>uniq</code></td>
+          <td style="text-align: left">Suppression des doublons.</td>
+          <td style="text-align: left"><code>-c</code></td>
+          <td style="text-align: left">Affiche le nombre de fois que chaque ligne apparaît</td>
+          <td style="text-align: left"><code>uniq -c fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>-d</code></td>
+          <td style="text-align: left">Affiche uniquement les lignes en double</td>
+          <td style="text-align: left"><code>uniq -d fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>wc</code></td>
+          <td style="text-align: left">Comptage des lignes, mots et caractères.</td>
+          <td style="text-align: left"><code>-l</code></td>
+          <td style="text-align: left">Compte les lignes</td>
+          <td style="text-align: left"><code>wc -l fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>-w</code></td>
+          <td style="text-align: left">Compte les mots</td>
+          <td style="text-align: left"><code>wc -w fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>-c</code></td>
+          <td style="text-align: left">Compte les caractères</td>
+          <td style="text-align: left"><code>wc -c fichier.txt</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>tr</code></td>
+          <td style="text-align: left">Traduction ou suppression de caractères.</td>
+          <td style="text-align: left"><code>-d</code></td>
+          <td style="text-align: left">Supprime les caractères spécifiés</td>
+          <td style="text-align: left">`echo &ldquo;texte&rdquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"><code>-s</code></td>
+          <td style="text-align: left">Remplace les séquences de caractères répétés par un seul caractère</td>
+          <td style="text-align: left">`echo &ldquo;aaabbbccc&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="commande-grep">Commande <code>grep</code></h4>
 <ul>
-<li>Pour définir le mode multi-utilisateur avec interface graphique comme cible par défaut :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ systemctl set-default graphical.target</span></span></code></pre></div>
-</li>
-<li>Pour définir le mode multi-utilisateur sans interface graphique comme cible par défaut :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ systemctl set-default multi-user.target</span></span></code></pre></div>
-</li>
+<li><code>grep</code> (<em>Global Regular Expression Print</em>) est utilisée pour rechercher des motifs dans des fichiers.</li>
 </ul>
-</li>
-<li>
-<p><strong>Vérifier la cible actuelle</strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ systemctl get-default
-</span></span><span style="display:flex;"><span>graphical.target</span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Redémarrer et arrêter le système</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grep <span style="color:#e6db74">&#34;motif&#34;</span> fichier.txt</span></span></code></pre></div>
+<p>Cette commande recherche le mot &ldquo;motif&rdquo; dans <code>fichier.txt</code>.</p>
+<h4 id="commande-sed">Commande <code>sed</code></h4>
 <ul>
-<li>Pour redémarrer le système :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ systemctl reboot</span></span></code></pre></div>
-</li>
-<li>Pour arrêter le système :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ systemctl poweroff</span></span></code></pre></div>
-</li>
+<li><code>sed</code> (<em>Stream Editor</em>) est un éditeur de texte en ligne de commande qui permet de modifier des fichiers de manière non interactive.</li>
 </ul>
-</li>
-</ul>
-<h2 id="le-shell-bash">Le shell BASH</h2>
-<p><em><strong>BASH</strong></em>, qui signifie <em>Bourne Again SHell</em>, est une version améliorée du <em>Bourne Shell</em>. Il a été développé pour offrir plus de fonctionnalités et une meilleure compatibilité avec les scripts existants. Voici quelques différences clés :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sed <span style="color:#e6db74">&#39;s/ancien/nouveau/g&#39;</span> fichier.txt</span></span></code></pre></div>
+<p>Cette commande remplace toutes les occurrences de &ldquo;ancien&rdquo; par &ldquo;nouveau&rdquo; dans <code>fichier.txt</code>.</p>
+<h4 id="commande-cut">Commande <code>cut</code></h4>
 <ul>
-<li><strong>Compatibilité</strong> : BASH est compatible avec les scripts du <em>Bourne Shell</em>, mais il offre également des fonctionnalités supplémentaires.</li>
-<li><strong>Fonctionnalités</strong> : BASH inclut des fonctionnalités avancées comme l&rsquo;édition de ligne de commande, l&rsquo;historique des commandes, et le complétion automatique des noms de fichiers et des commandes.</li>
-<li><strong>Portabilité</strong> : BASH est disponible sur de nombreux systèmes d&rsquo;exploitation, y compris Linux, macOS, et Windows (via WSL).</li>
+<li><code>cut</code> est utilisée pour extraire des sections de chaque ligne d&rsquo;un fichier.</li>
 </ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cut -d <span style="color:#e6db74">&#39;,&#39;</span> -f 1,3 fichier.csv</span></span></code></pre></div>
+<p>Cette commande extrait les champs 1 et 3 des lignes du fichier <code>fichier.csv</code>, en utilisant la virgule comme délimiteur.</p>
+<h4 id="commande-sort">Commande <code>sort</code></h4>
+<ul>
+<li><code>sort</code> est utilisée pour trier les lignes d&rsquo;un fichier texte ou d&rsquo;une entrée standard.</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sort fichier.txt</span></span></code></pre></div>
+<p>Cette commande trie les lignes de <code>fichier.txt</code>.</p>
+<h4 id="commande-uniq">Commande <code>uniq</code></h4>
+<ul>
+<li><code>uniq</code> est utilisée pour supprimer les lignes en double dans un fichier trié.</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sort fichier.txt | uniq</span></span></code></pre></div>
+<p>Cette commande trie les lignes de <code>fichier.txt</code> et supprime les doublons.</p>
+<h4 id="commande-wc">Commande <code>wc</code></h4>
+<p><strong>Rappel de la semaine 2</strong> : <code>wc</code> (Word Count) est utilisée pour compter les lignes, les mots et les caractères dans un fichier.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wc -l fichier.txt</span></span></code></pre></div>
+<p>Cette commande affiche le nombre de lignes dans <code>fichier.txt</code>.</p>
+<h4 id="commande-tr">Commande <code>tr</code></h4>
+<ul>
+<li><code>tr</code> (Translate) est utilisée pour traduire ou supprimer des caractères.</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;texte&#34;</span> | tr <span style="color:#e6db74">&#39;a-z&#39;</span> <span style="color:#e6db74">&#39;A-Z&#39;</span></span></span></code></pre></div>
+<p>Cette commande convertit les lettres minuscules en majuscules dans le texte &ldquo;texte&rdquo;.</p>
+<h3 id="combinaison-de-plusieurs-filtres-à-laide-de-">Combinaison de plusieurs filtres à l&rsquo;aide de <code>|</code></h3>
+<p><strong>Exemple 1 : Compter les lignes contenant un motif spécifique</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grep <span style="color:#e6db74">&#34;motif&#34;</span> fichier.txt | wc -l</span></span></code></pre></div>
+<p>Cette commande recherche &ldquo;motif&rdquo; dans <code>fichier.txt</code> et compte le nombre de lignes correspondantes.</p>
+<p><strong>Exemple 2 : Afficher les 10 plus grands fichiers</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -l | sort -k <span style="color:#ae81ff">5</span> -n | tail -n <span style="color:#ae81ff">10</span></span></span></code></pre></div>
+<p>Cette commande liste les fichiers du répertoire courant, trie les résultats par taille (colonne 5) et affiche les 10 plus grands fichiers.</p>
+<p><strong>Exemple 3 : Trouver les fichiers modifiés récemment</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -type f -mtime -7 | xargs ls -l</span></span></code></pre></div>
+<p>Cette commande trouve les fichiers modifiés au cours des 7 derniers jours et affiche leurs détails.</p>
+<p><strong>Exemple 4 : Extraire et trier des champs spécifiques d&rsquo;un fichier CSV</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cut -d <span style="color:#e6db74">&#39;,&#39;</span> -f <span style="color:#ae81ff">2</span> fichier.csv | sort | uniq</span></span></code></pre></div>
+<p>Cette commande extrait le deuxième champ de chaque ligne de <code>fichier.csv</code>, trie les résultats et affiche les lignes uniques.</p>
+<p><strong>Exemple 5 : Remplacer un mot dans plusieurs fichiers</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grep -rl <span style="color:#e6db74">&#34;ancien&#34;</span> . | xargs sed -i <span style="color:#e6db74">&#39;s/ancien/nouveau/g&#39;</span></span></span></code></pre></div>
+<p>Cette commande recherche tous les fichiers contenant &ldquo;ancien&rdquo; dans le répertoire courant et remplace &ldquo;ancien&rdquo; par &ldquo;nouveau&rdquo; dans ces fichiers.</p>
 
   <footer class="footline">
   </footer>
@@ -341,7 +491,7 @@ Cependant, avec l&rsquo;introduction de <code>systemd</code> dans les distributi
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1736881200";
+          window.index_js_url="/searchindex.en.js?1737427541";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -354,12 +504,12 @@ Cependant, avec l&rsquo;introduction de <code>systemd</code> dans les distributi
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.min.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1736881200" defer></script>
-        <script src="/js/search.js?1736881200" defer></script>
+        <script src="/js/auto-complete.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.min.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1737427541" defer></script>
+        <script src="/js/search.js?1737427541" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -371,11 +521,13 @@ Cependant, avec l&rsquo;introduction de <code>systemd</code> dans les distributi
         <div id="R-shortcutmenu-home" class="R-sidebarmenu">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Introduction à Linux (suite)</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Système de fichiers, shell et commandes de base</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
-            <li class="parent " data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Processus de démarrage et le shell bash</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu">
-            <li class="active " data-nav-id="/semaine4/cours/index.html"><a class="padding" href="/semaine4/cours/index.html">Processus de démarrage et le shell BASH</a></li>
-            <li class="" data-nav-id="/semaine4/atelier/index.html"><a class="padding" href="/semaine4/atelier/index.html">ATELIER #4: Le processus de démarrage et le BASH</a></li></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>E/S, redirection et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine4/cours/index.html"><a class="padding" href="/semaine4/cours/index.html">Entrées/Sorties, redirection, filtres et Pipeline des commandes</a></li>
+            <li class="" data-nav-id="/semaine4/atelier/index.html"><a class="padding" href="/semaine4/atelier/index.html">ATELIER #4: Redirection, E/S, pipeline et filtres</a></li></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>VIM et les fichiers de configuration</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>???</a></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
           </ul>
         </div>
     
@@ -429,8 +581,8 @@ Cependant, avec l&rsquo;introduction de <code>systemd</code> dans les distributi
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1736881200" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1736881200" defer></script>
-    <script src="/js/theme.js?1736881200" defer></script>
+    <script src="/js/clipboard.min.js?1737427541" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1737427541" defer></script>
+    <script src="/js/theme.js?1737427541" defer></script>
   </body>
 </html>

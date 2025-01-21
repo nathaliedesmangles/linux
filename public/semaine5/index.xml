@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Processus de démarrage et le shell bash :: 420-ZG4-MO LINUX</title>
+    <title>Les processus Linux :: 420-ZG4-MO LINUX</title>
     <link>http://localhost:1313/semaine5/index.html</link>
-    <description>Plan de la leçon Théorie :&#xA;La séquence de démarrage de Linux. Les cibles (niveaux d’exécution). Le shell d’urgence. Atelier :&#xA;Exercices pratiques sur les cibles.</description>
+    <description>Plan de la leçon Théorie : Atelier :</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/semaine5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Les processus de Linux</title>
+      <link>http://localhost:1313/semaine5/cours/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/semaine5/cours/index.html</guid>
+      <description>Un processus est une instance d’un programme en cours d’exécution. Sous Linux, les processus jouent un rôle central dans la gestion des tâches et des ressources.&#xA;Dans cette leçon nous voyons comment Linux gère les processus, ainsi que les commandes essentielles pour les superviser et les contrôler.&#xA;Qu’est-ce qu’un processus ? Un processus est une entité active qui exécute des instructions d’un programme. Il inclut :&#xA;Code exécutable : Les instructions du programme. Espace mémoire : Contient les variables, les données, et la pile d’exécution. Identifiant unique (PID) : Chaque processus a un PID unique pour l’identifier. Les processus peuvent être classés en deux catégories principales :</description>
+    </item>
+    <item>
+      <title>ATELIER #5: Gestion des processus Linux</title>
+      <link>http://localhost:1313/semaine5/atelier/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/semaine5/atelier/index.html</guid>
+      <description>Objectifs de l’atelier Comprendre les processus sous Linux. Apprendre à lister, gérer et contrôler les processus. Manipuler les processus en premier plan et en arrière-plan. Atelier Dans cet atelier, vous apprendrez à manipuler les processus sous Linux en utilisant des commandes de base. Nous allons explorer les différents types de processus, ainsi que les commandes essentielles pour les superviser et les contrôler. Cet atelier est conçu pour être pratique et interactif.</description>
+    </item>
   </channel>
 </rss>

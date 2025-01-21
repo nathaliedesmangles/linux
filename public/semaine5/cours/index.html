@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Un processus est une instance d’un programme en cours d’exécution. Sous Linux, les processus jouent un rôle central dans la gestion des tâches et des ressources.
+Dans cette leçon nous voyons comment Linux gère les processus, ainsi que les commandes essentielles pour les superviser et les contrôler.
+Qu’est-ce qu’un processus ? Un processus est une entité active qui exécute des instructions d’un programme. Il inclut :
+Code exécutable : Les instructions du programme. Espace mémoire : Contient les variables, les données, et la pile d’exécution. Identifiant unique (PID) : Chaque processus a un PID unique pour l’identifier. Les processus peuvent être classés en deux catégories principales :">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Les processus de Linux :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Un processus est une instance d’un programme en cours d’exécution. Sous Linux, les processus jouent un rôle central dans la gestion des tâches et des ressources.
+Dans cette leçon nous voyons comment Linux gère les processus, ainsi que les commandes essentielles pour les superviser et les contrôler.
+Qu’est-ce qu’un processus ? Un processus est une entité active qui exécute des instructions d’un programme. Il inclut :
+Code exécutable : Les instructions du programme. Espace mémoire : Contient les variables, les données, et la pile d’exécution. Identifiant unique (PID) : Chaque processus a un PID unique pour l’identifier. Les processus peuvent être classés en deux catégories principales :">
+    <meta property="og:url" content="http://localhost:1313/semaine5/cours/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Les processus de Linux :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Un processus est une instance d’un programme en cours d’exécution. Sous Linux, les processus jouent un rôle central dans la gestion des tâches et des ressources.
+Dans cette leçon nous voyons comment Linux gère les processus, ainsi que les commandes essentielles pour les superviser et les contrôler.
+Qu’est-ce qu’un processus ? Un processus est une entité active qui exécute des instructions d’un programme. Il inclut :
+Code exécutable : Les instructions du programme. Espace mémoire : Contient les variables, les données, et la pile d’exécution. Identifiant unique (PID) : Chaque processus a un PID unique pour l’identifier. Les processus peuvent être classés en deux catégories principales :">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Les processus de Linux :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Un processus est une instance d’un programme en cours d’exécution. Sous Linux, les processus jouent un rôle central dans la gestion des tâches et des ressources.
+Dans cette leçon nous voyons comment Linux gère les processus, ainsi que les commandes essentielles pour les superviser et les contrôler.
+Qu’est-ce qu’un processus ? Un processus est une entité active qui exécute des instructions d’un programme. Il inclut :
+Code exécutable : Les instructions du programme. Espace mémoire : Contient les variables, les données, et la pile d’exécution. Identifiant unique (PID) : Chaque processus a un PID unique pour l’identifier. Les processus peuvent être classés en deux catégories principales :">
+    <meta itemprop="wordCount" content="330">
+    <title>Les processus de Linux :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine5/cours/index.xml" rel="alternate" type="application/rss+xml" title="Les processus de Linux :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1737415252" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737415252" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1737415252" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737415252" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1737415252" rel="stylesheet">
+    <link href="/css/theme.css?1737415252" rel="stylesheet">
+    <link href="/css/format-html.css?1737415252" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.min = ``;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine5/cours/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#quest-ce-quun-processus-">Qu&rsquo;est-ce qu&rsquo;un processus ?</a></li>
+    <li><a href="#types-de-processus">Types de processus</a></li>
+    <li><a href="#gestion-des-processus">Gestion des processus</a>
+      <ul>
+        <li><a href="#commandes-de-base-pour-superviser-les-processus">Commandes de base pour superviser les processus</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine5/index.html"><span itemprop="name">Les processus Linux</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Les processus de Linux</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine5/index.html" title="Les processus Linux (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine5/atelier/index.html" title="ATELIER #5: Gestion des processus Linux (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine5" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="les-processus-de-linux">Les processus de Linux</h1>
+
+<p>Un processus est une instance d&rsquo;un programme en cours d&rsquo;exécution. Sous Linux, les processus jouent un rôle central dans la gestion des tâches et des ressources.</p>
+<p>Dans cette leçon nous voyons comment Linux gère les processus, ainsi que les commandes essentielles pour les superviser et les contrôler.</p>
+<hr>
+<h2 id="quest-ce-quun-processus-">Qu&rsquo;est-ce qu&rsquo;un processus ?</h2>
+<p>Un processus est une entité active qui exécute des instructions d&rsquo;un programme. Il inclut :</p>
+<ul>
+<li><strong>Code exécutable</strong> : Les instructions du programme.</li>
+<li><strong>Espace mémoire</strong> : Contient les variables, les données, et la pile d&rsquo;exécution.</li>
+<li><strong>Identifiant unique (PID)</strong> : Chaque processus a un PID unique pour l&rsquo;identifier.</li>
+</ul>
+<p>Les processus peuvent être classés en deux catégories principales :</p>
+<ul>
+<li><strong>Processus parents</strong> : Ceux qui initient d&rsquo;autres processus.</li>
+<li><strong>Processus enfants</strong> : Créés par un processus parent.</li>
+</ul>
+<hr>
+<h2 id="types-de-processus">Types de processus</h2>
+<ol>
+<li>
+<p><strong>Processus en premier plan (foreground)</strong> :</p>
+<ul>
+<li>Exécutés directement dans le terminal et occupent l&rsquo;entrée/sortie standard.</li>
+<li>Exemple :
+<div class="highlight wrap-code"><pre tabindex="0"><code>nano fichier.txt</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Processus en arrière-plan (background)</strong> :</p>
+<ul>
+<li>Exécutés sans bloquer le terminal.</li>
+<li>Exemple :
+<div class="highlight wrap-code"><pre tabindex="0"><code>./script.sh &amp;</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Démons</strong> :</p>
+<ul>
+<li>Processus s&rsquo;exécutant en tâche de fond pour des services système (comme <code>sshd</code>).</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="gestion-des-processus">Gestion des processus</h2>
+<h3 id="commandes-de-base-pour-superviser-les-processus">Commandes de base pour superviser les processus</h3>
+<ol>
+<li>
+<p><strong><code>ps</code> (Process Status)</strong> :</p>
+<ul>
+<li>Affiche des informations sur les processus en cours.</li>
+<li>Exemple :
+<div class="highlight wrap-code"><pre tabindex="0"><code>ps
+ps aux  # Affiche tous les processus avec des détails</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>top</code></strong> :</p>
+<ul>
+<li>Affiche une vue interactive des processus en temps réel.</li>
+<li>Contrôles :
+<ul>
+<li><code>q</code> : Quitter</li>
+<li><code>h</code> : Aide</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>htop</code></strong> :</p>
+<ul>
+<li>Une alternative à <code>top</code> avec une interface plus conviviale.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>jobs</code></strong> :</p>
+<ul>
+<li>Liste les processus en arrière-plan du terminal actuel.</li>
+<li>Exemple :
+<div class="highlight wrap-code"><pre tabindex="0"><code>jobs</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>kill</code></strong> :</p>
+<ul>
+<li>Termine un processus en utilisant son PID.</li>
+<li>Exemple :
+<div class="highlight wrap-code"><pre tabindex="0"><code>kill 1234  # Termine le processus avec le PID 1234
+kill -9 1234  # Forcer l’arrêt</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>bg</code> (Background)</strong> :</p>
+<ul>
+<li>Reprend un processus arrêté en arrière-plan.</li>
+<li>Exemple :
+<div class="highlight wrap-code"><pre tabindex="0"><code>bg %1</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>fg</code> (Foreground)</strong> :</p>
+<ul>
+<li>Reprend un processus en premier plan.</li>
+<li>Exemple :
+<div class="highlight wrap-code"><pre tabindex="0"><code>fg %1</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>nice</code> et <code>renice</code></strong> :</p>
+<ul>
+<li>Modifient la priorité d&rsquo;un processus.</li>
+<li>Exemple :
+<div class="highlight wrap-code"><pre tabindex="0"><code>nice -n 10 ./script.sh
+renice 5 -p 1234  # Change la priorité du PID 1234</code></pre></div>
+</li>
+</ul>
+</li>
+</ol>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1737415252";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1737415252" defer></script>
+        <script src="/js/lunr/lunr.min.js?1737415252" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1737415252" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1737415252" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1737415252" defer></script>
+        <script src="/js/search.js?1737415252" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>E/S, redirection et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine5/cours/index.html"><a class="padding" href="/semaine5/cours/index.html">Les processus de Linux</a></li>
+            <li class="" data-nav-id="/semaine5/atelier/index.html"><a class="padding" href="/semaine5/atelier/index.html">ATELIER #5: Gestion des processus Linux</a></li></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>VIM et les fichiers de configuration</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>???</a></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine5/cours/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1737415252" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1737415252" defer></script>
+    <script src="/js/theme.js?1737415252" defer></script>
+  </body>
+</html>

@@ -15,25 +15,39 @@
       <description>Plan de la leçon Présentation du cours (plan de cours).&#xA;Pondération. Objectifs. Contexte d’apprentissage et méthodes pédagogiques. Evaluations formatives. Évaluations sommatives. Politiques institutionnelles (absences, retards, plagiat, etc.). Règlements en classe et hors classe. Théorie :&#xA;Généralités sur le système d’exploitation Linux. Atelier :&#xA;Installation de Linux sur une machine virtuelle.</description>
     </item>
     <item>
-      <title>Introduction à Linux (suite)</title>
+      <title>Système de fichiers, Shell, commandes de base</title>
       <link>https://example.org/semaine2/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine2/index.html</guid>
-      <description>Plan de la leçon Théorie :&#xA;Qu’est-ce que le Shell ? La ligne de commandes Quelques commandes simples Atelier :&#xA;Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples</description>
+      <description>Plan de la leçon Théorie :&#xA;Le système de fichiers de Linux. Le Shell Bash. La ligne de commandes Les commandes de base Atelier :&#xA;Utilisation des commandes de base</description>
     </item>
     <item>
-      <title>Système de fichiers, shell et commandes de base</title>
-      <link>https://example.org/semaine3/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/semaine3/index.html</guid>
-      <description>Plan de la leçon Théorie :&#xA;Structure du système de fichiers Linux Commandes de navigation de base (ls, cd, pwd, etc.) Commandes de gestion des fichiers (cp, mv, rm, mkdir, etc.) Atelier :&#xA;Arborescence du système de fichiers Manipulation des fichiers et des répertoires</description>
-    </item>
-    <item>
-      <title>Processus de démarrage et le shell bash</title>
+      <title>E/S, redirection et filtrage de commandes et While</title>
       <link>https://example.org/semaine4/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine4/index.html</guid>
-      <description>Plan de la leçon Théorie :&#xA;La séquence de démarrage de Linux. Les cibles (niveaux d’exécution). Le shell d’urgence. Atelier :&#xA;Exercices pratiques sur les cibles.</description>
+      <description>Plan de la leçon Théorie :&#xA;grep, set, more, cut, sort, find. Les entrées et sorties des commandes. La redirection des entrées et sorties. Les Pipelines. Les commandes de filtrage courantes. La boucle while. Atelier :&#xA;Redirection des entrées et sorties. Utilisation de pipelines. Utilisation des commandes de filtrage. Itération avec While.</description>
+    </item>
+    <item>
+      <title>VIM et les fichiers de configuration</title>
+      <link>https://example.org/semaine8/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine8/index.html</guid>
+      <description>Plan de la leçon Théorie : Atelier :.&#xA;Exercices patiques sur Création</description>
+    </item>
+    <item>
+      <title>???</title>
+      <link>https://example.org/semaine9/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine9/index.html</guid>
+      <description>Plan de la leçon Théorie : Atelier :.</description>
+    </item>
+    <item>
+      <title>WSL installation et manipulation (Ubuntu, VS Code)</title>
+      <link>https://example.org/semaine14/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine14/index.html</guid>
+      <description>Plan de la leçon **Théorie/Test :&#xA;Validation de l’atelier #10 Atelier :&#xA;Installation de WSL et Ubuntu et VS Code</description>
     </item>
   </channel>
 </rss>

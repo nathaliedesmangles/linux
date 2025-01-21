@@ -1,17 +1,22 @@
 +++
 chapter = true
 pre = "<b>Semaine 4. </b>"
-title = "Processus de démarrage et le shell bash"
+title = "E/S, redirection et filtrage de commandes et While"
 weight = 40
 +++
 
 ## Plan de la leçon
 
 - **Théorie :**
-  - La séquence de démarrage de Linux.
-  - Les cibles (niveaux d'exécution).
-  - Le shell d'urgence.
-
+  - grep, set, more, cut, sort, find.
+  - Les entrées et sorties des commandes.
+  - La redirection des entrées et sorties.
+  - Les Pipelines.
+  - Les commandes de filtrage courantes.
+  - La boucle while.
 
 - **Atelier :**
-  - Exercices pratiques sur les cibles.
+  - Redirection des entrées et sorties.
+  - Utilisation de pipelines.
+  - Utilisation des commandes de filtrage.
+  - Itération avec While.

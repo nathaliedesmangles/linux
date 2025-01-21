@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ATELIER #5: Gestion des processus Linux :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine5/atelier/index.html</link>
+    <description>Objectifs de l’atelier Comprendre les processus sous Linux. Apprendre à lister, gérer et contrôler les processus. Manipuler les processus en premier plan et en arrière-plan. Atelier Dans cet atelier, vous apprendrez à manipuler les processus sous Linux en utilisant des commandes de base. Nous allons explorer les différents types de processus, ainsi que les commandes essentielles pour les superviser et les contrôler. Cet atelier est conçu pour être pratique et interactif.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine5/atelier/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

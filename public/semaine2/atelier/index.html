@@ -5,35 +5,27 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Objectifs de l’atelier Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux.
-Format de la remise AttentionPour chacune des étapes des parties 2 et 3 vous devrez prendre une capture d’écran de vos commandes et résultats. ATTENTION: On doit pouvoir voir votre nom d’utilisateur. Ne travaillez donc pas avec l’utilisateur root.
-Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les fonctionnalités Windows">
+    <meta name="description" content="Objectifs de l’atelier Se familiariser avec la ligne de commandes. Naviguer dans l’arborescence Linux à l’aide de commandes. Gerer des fichiers et répertoires à l’aide de commandes. Format de la remise sur Moodle AttentionPour chaque exercice, vous devrez prendre une capture d’écran. Sur les captures, on doit pouvoir voir : Votre nom d’utilisateur (Ne travaillez donc pas avec l’utilisateur root, ni la commande sudo). La ligne de commande et la commande. Le résultat de la commande. Si le résultat fait plus de 10 lignes, capturer juste les 10 premières lignes. Nommer les fichiers image, tel qu’indiqué pour chaque question. Remettre toutes vos images dans 1 seul fichier compressé (ex:.zip). Tout autre format ne sera pas corrigé. Pour l’exercice #3, quelques questions devront ètre répondues dans un fichier texte à remettre sur Moodle en plus du .zip. Atelier Préparation Sur votre machine Almalinux, avec votre utilisateur standard, allez sur votre cours sur Moodle, dans la semaine 2. On vous demande de télécharger le fichier fichier.txt. Vous en aurez besoin pour l’exercice #3.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="ATELIER #2: WSL, Ubuntu et des commandes Linux simples :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Objectifs de l’atelier Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux.
-Format de la remise AttentionPour chacune des étapes des parties 2 et 3 vous devrez prendre une capture d’écran de vos commandes et résultats. ATTENTION: On doit pouvoir voir votre nom d’utilisateur. Ne travaillez donc pas avec l’utilisateur root.
-Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les fonctionnalités Windows">
+    <meta name="twitter:title" content="ATELIER #2: Commandes Linux de base :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Objectifs de l’atelier Se familiariser avec la ligne de commandes. Naviguer dans l’arborescence Linux à l’aide de commandes. Gerer des fichiers et répertoires à l’aide de commandes. Format de la remise sur Moodle AttentionPour chaque exercice, vous devrez prendre une capture d’écran. Sur les captures, on doit pouvoir voir : Votre nom d’utilisateur (Ne travaillez donc pas avec l’utilisateur root, ni la commande sudo). La ligne de commande et la commande. Le résultat de la commande. Si le résultat fait plus de 10 lignes, capturer juste les 10 premières lignes. Nommer les fichiers image, tel qu’indiqué pour chaque question. Remettre toutes vos images dans 1 seul fichier compressé (ex:.zip). Tout autre format ne sera pas corrigé. Pour l’exercice #3, quelques questions devront ètre répondues dans un fichier texte à remettre sur Moodle en plus du .zip. Atelier Préparation Sur votre machine Almalinux, avec votre utilisateur standard, allez sur votre cours sur Moodle, dans la semaine 2. On vous demande de télécharger le fichier fichier.txt. Vous en aurez besoin pour l’exercice #3.">
     <meta property="og:url" content="https://example.org/semaine2/atelier/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
-    <meta property="og:title" content="ATELIER #2: WSL, Ubuntu et des commandes Linux simples :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Objectifs de l’atelier Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux.
-Format de la remise AttentionPour chacune des étapes des parties 2 et 3 vous devrez prendre une capture d’écran de vos commandes et résultats. ATTENTION: On doit pouvoir voir votre nom d’utilisateur. Ne travaillez donc pas avec l’utilisateur root.
-Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les fonctionnalités Windows">
+    <meta property="og:title" content="ATELIER #2: Commandes Linux de base :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Objectifs de l’atelier Se familiariser avec la ligne de commandes. Naviguer dans l’arborescence Linux à l’aide de commandes. Gerer des fichiers et répertoires à l’aide de commandes. Format de la remise sur Moodle AttentionPour chaque exercice, vous devrez prendre une capture d’écran. Sur les captures, on doit pouvoir voir : Votre nom d’utilisateur (Ne travaillez donc pas avec l’utilisateur root, ni la commande sudo). La ligne de commande et la commande. Le résultat de la commande. Si le résultat fait plus de 10 lignes, capturer juste les 10 premières lignes. Nommer les fichiers image, tel qu’indiqué pour chaque question. Remettre toutes vos images dans 1 seul fichier compressé (ex:.zip). Tout autre format ne sera pas corrigé. Pour l’exercice #3, quelques questions devront ètre répondues dans un fichier texte à remettre sur Moodle en plus du .zip. Atelier Préparation Sur votre machine Almalinux, avec votre utilisateur standard, allez sur votre cours sur Moodle, dans la semaine 2. On vous demande de télécharger le fichier fichier.txt. Vous en aurez besoin pour l’exercice #3.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
-    <meta itemprop="name" content="ATELIER #2: WSL, Ubuntu et des commandes Linux simples :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Objectifs de l’atelier Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux.
-Format de la remise AttentionPour chacune des étapes des parties 2 et 3 vous devrez prendre une capture d’écran de vos commandes et résultats. ATTENTION: On doit pouvoir voir votre nom d’utilisateur. Ne travaillez donc pas avec l’utilisateur root.
-Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les fonctionnalités Windows">
-    <meta itemprop="wordCount" content="484">
-    <title>ATELIER #2: WSL, Ubuntu et des commandes Linux simples :: 420-ZG4-MO LINUX</title>
-    <link href="/semaine2/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #2: WSL, Ubuntu et des commandes Linux simples :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1736881200" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1736881200" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1736881200" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1736881200" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1736881200" rel="stylesheet">
-    <link href="/css/theme.min.css?1736881200" rel="stylesheet">
-    <link href="/css/format-html.min.css?1736881200" rel="stylesheet" id="R-format-style">
+    <meta itemprop="name" content="ATELIER #2: Commandes Linux de base :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Objectifs de l’atelier Se familiariser avec la ligne de commandes. Naviguer dans l’arborescence Linux à l’aide de commandes. Gerer des fichiers et répertoires à l’aide de commandes. Format de la remise sur Moodle AttentionPour chaque exercice, vous devrez prendre une capture d’écran. Sur les captures, on doit pouvoir voir : Votre nom d’utilisateur (Ne travaillez donc pas avec l’utilisateur root, ni la commande sudo). La ligne de commande et la commande. Le résultat de la commande. Si le résultat fait plus de 10 lignes, capturer juste les 10 premières lignes. Nommer les fichiers image, tel qu’indiqué pour chaque question. Remettre toutes vos images dans 1 seul fichier compressé (ex:.zip). Tout autre format ne sera pas corrigé. Pour l’exercice #3, quelques questions devront ètre répondues dans un fichier texte à remettre sur Moodle en plus du .zip. Atelier Préparation Sur votre machine Almalinux, avec votre utilisateur standard, allez sur votre cours sur Moodle, dans la semaine 2. On vous demande de télécharger le fichier fichier.txt. Vous en aurez besoin pour l’exercice #3.">
+    <meta itemprop="wordCount" content="807">
+    <title>ATELIER #2: Commandes Linux de base :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine2/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #2: Commandes Linux de base :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1737427541" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737427541" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1737427541" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737427541" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1737427541" rel="stylesheet">
+    <link href="/css/theme.min.css?1737427541" rel="stylesheet">
+    <link href="/css/format-html.min.css?1737427541" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -97,16 +89,18 @@ Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les
 <nav class="TableOfContents">
   <ul>
     <li><a href="#objectifs-de-latelier">Objectifs de l&rsquo;atelier</a></li>
-    <li><a href="#format-de-la-remise">Format de la remise</a></li>
+    <li><a href="#format-de-la-remise-sur-moodle">Format de la remise sur Moodle</a></li>
   </ul>
 
   <ul>
-    <li><a href="#partie-1-installations-wsl-windows-subsystem-for-linux">Partie 1: Installations WSL (<em>Windows Subsystem for Linux</em>)</a></li>
-    <li><a href="#partie-2-installation-dubuntu">Partie 2: Installation d&rsquo;Ubuntu</a>
+    <li>
       <ul>
-        <li><a href="#partie-3-commandes-linux-simples">Partie 3: Commandes Linux simples</a></li>
+        <li><a href="#préparation">Préparation</a></li>
       </ul>
     </li>
+    <li><a href="#exercice-1--explorer-larborescence-linux">Exercice 1 : Explorer l’arborescence Linux</a></li>
+    <li><a href="#exercice-2-commandes-linux-simples">Exercice 2: Commandes Linux simples</a></li>
+    <li><a href="#exercice-3-commandes-de-base">Exercice 3: Commandes de base</a></li>
   </ul>
 </nav>
                 </div>
@@ -115,13 +109,13 @@ Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine2/index.html"><span itemprop="name">Introduction à Linux (suite)</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ATELIER #2: WSL, Ubuntu et des commandes Linux simples</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine2/index.html"><span itemprop="name">Système de fichiers, Shell, commandes de base</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ATELIER #2: Commandes Linux de base</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine2/cours/index.html" title="Introduction au shell et la ligne de commande (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine2/cours/index.html" title="Système de fichiers, Shell et commandes de base (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine3/index.html" title="Système de fichiers, shell et commandes de base (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/index.html" title="E/S, redirection et filtrage de commandes et While (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -141,11 +135,15 @@ Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les
   <header class="headline">
   </header>
 
-<h1 id="atelier-2-wsl-ubuntu-et-des-commandes-linux-simples">ATELIER #2: WSL, Ubuntu et des commandes Linux simples</h1>
+<h1 id="atelier-2-commandes-linux-de-base">ATELIER #2: Commandes Linux de base</h1>
 
 <h2 id="objectifs-de-latelier">Objectifs de l&rsquo;atelier</h2>
-<p>Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux.</p>
-<h2 id="format-de-la-remise">Format de la remise</h2>
+<ul>
+<li>Se familiariser avec la ligne de commandes.</li>
+<li>Naviguer dans l&rsquo;arborescence Linux à l&rsquo;aide de commandes.</li>
+<li>Gerer des fichiers et répertoires à l&rsquo;aide de commandes.</li>
+</ul>
+<h2 id="format-de-la-remise-sur-moodle">Format de la remise sur Moodle</h2>
 
 <details open class=" box cstyle notices warning">
   <summary class="box-label" tabindex="-1">
@@ -153,124 +151,162 @@ Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les
     Attention
   </summary>
   <div class="box-content">
-<p>Pour chacune des étapes des <strong>parties 2 et 3</strong> vous devrez prendre une <strong>capture d&rsquo;écran de vos commandes et résultats</strong>. <strong>ATTENTION</strong>: On doit pouvoir voir votre nom d&rsquo;utilisateur. Ne travaillez donc <strong>pas</strong> avec l&rsquo;utilisateur <code>root</code>.</p>
+<ul>
+<li>Pour chaque exercice, vous devrez prendre une <strong>capture d&rsquo;écran</strong>. Sur les captures, on doit pouvoir voir :
+<ol>
+<li>Votre nom d&rsquo;utilisateur (Ne travaillez donc <strong>pas</strong> avec l&rsquo;utilisateur <code>root</code>, ni la commande <code>sudo</code>).</li>
+<li>La ligne de commande et la commande.</li>
+<li>Le résultat de la commande. Si le résultat fait plus de 10 lignes, capturer juste les 10 premières lignes.</li>
+<li>Nommer les fichiers image, tel qu&rsquo;indiqué pour chaque question.</li>
+<li>Remettre toutes vos images dans <strong>1 seul fichier compressé (ex:.zip)</strong>.
+<strong>Tout autre format ne sera pas corrigé</strong>.</li>
+</ol>
+</li>
+<li>Pour l&rsquo;exercice #3, quelques questions devront ètre répondues dans un fichier texte à remettre sur Moodle en plus du .zip.</li>
+</ul>
   </div>
 </details>
+<hr>
 <h1 id="atelier">Atelier</h1>
-<h2 id="partie-1-installations-wsl-windows-subsystem-for-linux">Partie 1: Installations WSL (<em>Windows Subsystem for Linux</em>)</h2>
+<h3 id="préparation">Préparation</h3>
+<p>Sur votre machine Almalinux, avec votre utilisateur standard, allez sur votre cours sur Moodle, dans la semaine 2. On vous demande de télécharger le fichier <strong>fichier.txt</strong>. Vous en aurez besoin pour l&rsquo;exercice #3.</p>
+<p><a href="#R-image-5cefe5de7ce9cdb2421a3cfedd74626e" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-1.png?height=50" style=" height: 50; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5cefe5de7ce9cdb2421a3cfedd74626e"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-1.png?height=50"></a></p>
 <ol>
-<li>Rechercher les fonctionnalités Windows</li>
+<li>Cliquez sur fichier1.</li>
 </ol>
-<p><a href="#R-image-b0e337614654d7b432923972f5ee4946" class="lightbox-link"><img alt="Recherche fonctionnalités" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/recherche-fonctionnalites.png?width=25vw" style=" height: auto; width: 25vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b0e337614654d7b432923972f5ee4946"><img alt="Recherche fonctionnalités" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/recherche-fonctionnalites.png?width=25vw"></a></p>
+<p><a href="#R-image-5a802d30479117d641760a8874b03fb2" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-2.png?height=200" style=" height: 200; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5a802d30479117d641760a8874b03fb2"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-2.png?height=200"></a></p>
 <ol start="2">
-<li>Dans la liste, cocher <strong>Sous-Système Windows pour Linux</strong></li>
+<li>Sur la fenêtre qui s&rsquo;ouvre, faites un clic droit et choisissez Enregistrez-sous.</li>
 </ol>
-<p><a href="#R-image-a3dcdeb112aee29a08fcef637e6a862c" class="lightbox-link"><img alt="Activer fonctionnalités" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/activer-fonctionnalite.png?width=25vw" style=" height: auto; width: 25vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a3dcdeb112aee29a08fcef637e6a862c"><img alt="Activer fonctionnalités" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/activer-fonctionnalite.png?width=25vw"></a></p>
-<ol start="3">
-<li>Redémarrer</li>
-</ol>
-<p>Une fois redémarré, vous pouvez installer la distribution Ubuntu depuis le Microsoft Store.</p>
-<h2 id="partie-2-installation-dubuntu">Partie 2: Installation d&rsquo;Ubuntu</h2>
-<p>WSL prend en charge une variété de distributions Linux, y compris la dernière version LTS d&rsquo;Ubuntu.</p>
-<p>Il existe plusieurs façons d&rsquo;installer des distributions sur WSL, nous nous concentrons ici sur la méthode via l&rsquo;application dans Microsoft Store et les commandes WSL exécutées dans le terminal. Le résultat est le même quelle que soit la méthode.</p>
-<p><strong>Application dans Microsoft Store</strong></p>
-<ol>
-<li>Ouvrir Microsoft Store et trouver la dernière version d&rsquo;Ubuntu.</li>
-</ol>
-<p><a href="#R-image-27f47e2eb48b991aecdd413abb80bae1" class="lightbox-link"><img alt="Résultats de recherche pour Ubuntu 24.04 LTS dans la barre de recherche Windows." class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/search-ubuntu-windows.png?width=40vw" style=" height: auto; width: 40vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-27f47e2eb48b991aecdd413abb80bae1"><img alt="Résultats de recherche pour Ubuntu 24.04 LTS dans la barre de recherche Windows." class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/search-ubuntu-windows.png?width=40vw"></a></p>
-<ol start="2">
-<li>Cliquez sur <strong>Free/Gratuit</strong>, puis sur <strong>Get/Obtenir</strong>.</li>
-</ol>
-<p><a href="#R-image-1e7adbc6ae75235fecb96026166e833d" class="lightbox-link"><img alt="Page d&rsquo;installation pour Ubuntu 24.04 LTS dans le Microsoft Store." class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/choose-distribution.png?width=40vw" style=" height: auto; width: 40vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1e7adbc6ae75235fecb96026166e833d"><img alt="Page d&rsquo;installation pour Ubuntu 24.04 LTS dans le Microsoft Store." class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/choose-distribution.png?width=40vw"></a></p>
+<p><a href="#R-image-ca52f1f08d7333efe2de842d0cae366d" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-3.png?height=200" style=" height: 200; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ca52f1f08d7333efe2de842d0cae366d"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-3.png?height=200"></a></p>
+<ul>
+<li>Le fichier va être enregistré par défaut dans le dossier <strong>Téléchargements</strong>.</li>
+</ul>
+<p><a href="#R-image-6b0fbc65051039eb57160e58c5528be1" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-4.png?height=300" style=" height: 300; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6b0fbc65051039eb57160e58c5528be1"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-4.png?height=300"></a></p>
 <ol start="3">
 <li>
-<p>Patienter durant l’installation. Ubuntu sera alors installé sur votre machine.</p>
+<p>Fermer la fenêtre.</p>
 </li>
 <li>
-<p>Avant de commencer, s’assurer qu’Ubuntu est à jour:</p>
+<p>Cliquez sur le bouton Activités sur le bureau.</p>
 </li>
 </ol>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>$ sudo apt update</span></span></code></pre></div>
-<ul>
-<li>Prenez une capture d&rsquo;écran de la fenêtre de la commande avec le résultat et nommez-la <code>1.png</code>.</li>
-</ul>
-<p><strong>NOTE</strong>: La commande <code>sudo</code> permet d’exécuter une commande en tant qu’administrateur du système.</p>
-<p>Une fois installé, vous pouvez soit lancer l&rsquo;application directement depuis le Microsoft Store, soit rechercher Ubuntu dans votre barre de recherche Windows.</p>
-<ul>
-<li>Prenez une capture d&rsquo;écran de la fenêtre de terminal Ubuntu et nommez-la <code>2.png</code>.</li>
-</ul>
-<hr>
-<p><strong>References</strong>:</p>
-<ol>
-<li><a href="https://documentation.ubuntu.com/wsl/en/latest/guides/install-ubuntu-wsl2/" rel="external" target="_blank">Site Ubuntu WSL</a></li>
-<li><a href="https://youtu.be/HrAsmXy1-78?si=VyvuNbkGmthsnLAI" rel="external" target="_blank">Vidéo YouTube</a></li>
+<p><a href="#R-image-792cc70e472d02d2779e4c3217d83042" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-5.png?height=300" style=" height: 300; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-792cc70e472d02d2779e4c3217d83042"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-5.png?height=300"></a></p>
+<ol start="5">
+<li>Cliquer sur l’icône <strong>Fichiers</strong>.</li>
 </ol>
-<hr>
-<h3 id="partie-3-commandes-linux-simples">Partie 3: Commandes Linux simples</h3>
-<ol start="3">
+<p><a href="#R-image-9929031897907fc043531d620016669b" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-6.png?height=300" style=" height: 300; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9929031897907fc043531d620016669b"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-6.png?height=300"></a></p>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Attention
+  </summary>
+  <div class="box-content">
+<ol>
+<li>Avant de commencer chaque exercice, assurez vous que vous travaillez dans votre répertoire personnel et ne vous déplacez pas que lorsque demandé.</li>
+<li>À moins d&rsquo;indication contraire, utiliser <strong>TOUJOURS des chemins relatifs</strong>.</li>
+</ol>
+  </div>
+</details>
+<p>Allez maintenant sur votre terminal. Placez-vous dans votre répertoire personnel.</p>
+<h2 id="exercice-1--explorer-larborescence-linux">Exercice 1 : Explorer l’arborescence Linux</h2>
+<ol>
+<li>Afficher le chemin de votre répertoire courant. Prendre une capture d&rsquo;écran et nommez-la <code>1-1.png</code>.</li>
+<li>Allez dans le répertoire <code>/usr/share/doc</code>, puis vérifiez le chemin de votre répertoire courant. Prendre une capture d&rsquo;écran et nommez-la <code>1-2.png</code>.</li>
+<li>Remontez dans le répertoire parent. Prendre une capture d&rsquo;écran et nommez-la <code>1-3.png</code>.</li>
+<li>Allez dans votre répertoire personnel. Prendre une capture d&rsquo;écran et nommez-la <code>1-4.png</code>.</li>
+<li>Listez les fichiers présents du répertoire courant. Prendre une capture d&rsquo;écran et nommez-la <code>1-5.png</code>.</li>
+<li>Toujours en étant dans votre dossier personnel, listez les fichiers du répertoire <code>/usr</code>. Prendre une capture d&rsquo;écran et nommez-la <code>1-6.png</code>.</li>
+</ol>
+<h2 id="exercice-2-commandes-linux-simples">Exercice 2: Commandes Linux simples</h2>
+<ol>
 <li>
 <p><strong>Commande <code>date</code></strong></p>
 <ul>
 <li>Afficher la date et l&rsquo;heure actuelles du système.</li>
 <li>Afficher l’heure actuelle sur une horloge de douze heures (par exemple, 11:42:11 AM).</li>
-<li>Prendre une capture d&rsquo;écran du résultat et nommez-la <code>3.png</code>.</li>
-</ul>
-</li>
-<li>
-<p><strong>Commande <code>file</code></strong></p>
-<ul>
-<li>Quel est le type du fichier /etc/services ?</li>
-<li>Prendre une capture d&rsquo;écran du résultat et nommez-la <code>4.png</code>.</li>
-<li>Est-il lisible par des humains ? Répondre dans un fichier texte nommé <strong>&ldquo;question4.txt&rdquo;</strong> <strong>en justifiant</strong> votre réponse.</li>
-</ul>
-</li>
-<li>
-<p><strong>Commande <code>wc</code></strong></p>
-<ul>
-<li>Afficher la taille du fichier /etc/services.</li>
-<li>Prendre une capture d&rsquo;écran du résultat et nommez-la <code>5.png</code>.</li>
+<li>Prendre une capture d&rsquo;écran et nommez-la <code>2-1.png</code>.</li>
 </ul>
 </li>
 <li>
 <p><strong>Commande <code>head</code></strong></p>
 <ul>
 <li>Affichez les 10 premières lignes du fichier /etc/services</li>
-<li>Prendre une capture d&rsquo;écran du résultat et nommez-la <code>6.png</code>.</li>
+<li>Prendre une capture d&rsquo;écran et nommez-la <code>2-2.png</code>.</li>
 </ul>
 </li>
 <li>
 <p><strong>Commande <code>tail</code></strong></p>
 <ul>
 <li>Affichez les 10 dernières lignes du fichier /etc/services.</li>
-<li>Prendre une capture d&rsquo;écran du résultat et nommez-la <code>7.png</code>.</li>
+<li>Prendre une capture d&rsquo;écran et nommez-la <code>2-3.png</code>.</li>
 </ul>
 </li>
 <li>
 <p><strong>Commande <code>tail</code> et la flèche vers le haut</strong></p>
 <ul>
 <li>Répéter la commande précédente avec exactement trois frappes de touches.</li>
-<li>Prendre une capture d&rsquo;écran du résultat et nommez-la <code>8.png</code>.</li>
+<li>Prendre une capture d&rsquo;écran et nommez-la <code>2-4.png</code>.</li>
 </ul>
 </li>
 <li>
 <p><strong>Commande <code>tail</code> et les flèches vers le haut et vers la gauche</strong></p>
 <ul>
 <li>Répéter la commande précédente, mais afficher les 20 dernières lignes du fichier.</li>
-<li>Prendre une capture d&rsquo;écran du résultat et nommez-la <code>9.png</code>.</li>
+<li>Prendre une capture d&rsquo;écran et nommez-la <code>2-5.png</code>.</li>
 </ul>
 </li>
 <li>
 <p><strong>Commande <code>history</code></strong></p>
-</li>
-</ol>
 <ul>
 <li>Utiliser l’historique du shell pour exécuter à nouveau la commande effectuée pour la question #3 (heure sur 12h)</li>
-<li>Prendre une capture d&rsquo;écran du résultat et nommez-la <code>10.png</code>.</li>
+<li>Prendre une capture d&rsquo;écran et nommez-la <code>2-6.png</code>.</li>
 </ul>
+</li>
+</ol>
+<h2 id="exercice-3-commandes-de-base">Exercice 3: Commandes de base</h2>
+
+<details open class=" box cstyle notices caution">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-hand"></i> 
+    Important
+  </summary>
+  <div class="box-content">
+<ul>
+<li>Utilisez pas l&rsquo;interface graphique d&rsquo;Almalinux QUE LORSQUE demandé (#6). Autrement, utilisez uniquement des commandes pour répondre aux questions.</li>
+<li>Après chaque question (**sauf #6, #12a, #15 à #20), n&rsquo;oubliez pas de prendre une capture d&rsquo;écran et de la nommer <code>3-X.png</code> où <code>X</code> est le numéro de la question.</li>
+</ul>
+  </div>
+</details>
+<ol>
+<li>Créer un répertoire <code>Atelier2</code> dans le répertoire courant.</li>
+<li>Copier le fichier téléchargé <code>fichier.txt</code> dans le répertoire <code>Atelier2</code>.</li>
+<li>Créer un autre répertoire nommé <code>Rep2</code>.</li>
+<li>Déplacer <code>Atelier2</code> dans <code>Rep2</code>.</li>
+<li>Déplacez-vous dans <code>Atelier2</code>.</li>
+<li>Via l&rsquo;interface d&rsquo;Almalinux, ouvrir le fichier <code>fichier.txt</code> et écrivez votre nom complet dans le fichier. Enregistrer la modification et fermer le fichier.</li>
+<li>Afficher le contenu du fichier à l’aide de la commande <code>cat</code>.</li>
+<li>Créer un autre fichier nommé <code>fichier2.txt</code> dans <code>Atelier2</code>.</li>
+<li>Avec une seule commande <code>cat</code> afficher le contenu de <code>fichier.txt</code> et <code>fichier2.txt</code>.</li>
+<li>Revenir dans votre répertoire personnel.</li>
+<li>Supprimer le répertoire <code>Rep2</code>.</li>
+<li>a) Dans quel répertoire vous trouvez-vous? b) Utiliser une commande pour voir le répertoire courant.</li>
+<li>Créer un dossier avec le nom <code>Rep3</code> dans le dossier <code>/root</code>(<strong>en utilisant un chemin absolu</strong>). Avez-vous réussi ? Si non, pourquoi ?</li>
+<li>Afficher le contenu du répertoire <code>/etc</code> en utilisant l’option <code>-l</code>.</li>
+<li>Par quels caractères, les lignes affichées débutent ? Quelles est leur signification ?</li>
+<li>Qu’est-ce qui distingue le répertoire <code>/proc</code> des autres répertoires de l’arborescence linux ?</li>
+<li>Qu’est ce qui distingue le répertoire <code>/bin</code> et <code>/sbin</code> ?</li>
+<li>Quel est le répertoire qui est utilisé pour charger le noyau du système d’exploitation au démarrage ?</li>
+<li>Dans Linux, tout est fichier. Si on connecte une clé usb à une machine linux, dans quel répertoire de l’arborescence, on va trouver la référence à cette clé ?</li>
+<li>Si on installe un serveur web apache sur une machine linux, dans quel répertoire de l’arborescence le dossier contenant les fichiers de configuration du serveur se trouvera-t-il ?</li>
+</ol>
 
   <footer class="footline">
   </footer>
@@ -287,7 +323,7 @@ Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1736881200";
+          window.index_js_url="/searchindex.en.js?1737427541";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -300,12 +336,12 @@ Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.min.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1736881200" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1736881200" defer></script>
-        <script src="/js/search.js?1736881200" defer></script>
+        <script src="/js/auto-complete.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.min.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1737427541" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1737427541" defer></script>
+        <script src="/js/search.js?1737427541" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -317,11 +353,13 @@ Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les
         <div id="R-shortcutmenu-home" class="R-sidebarmenu">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
-            <li class="parent " data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Introduction à Linux (suite)</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu">
-            <li class="" data-nav-id="/semaine2/cours/index.html"><a class="padding" href="/semaine2/cours/index.html">Introduction au shell et la ligne de commande</a></li>
-            <li class="active " data-nav-id="/semaine2/atelier/index.html"><a class="padding" href="/semaine2/atelier/index.html">ATELIER #2: WSL, Ubuntu et des commandes Linux simples</a></li></ul></li>
-            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Système de fichiers, shell et commandes de base</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Processus de démarrage et le shell bash</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu">
+            <li class="" data-nav-id="/semaine2/cours/index.html"><a class="padding" href="/semaine2/cours/index.html">Système de fichiers, Shell et commandes de base</a></li>
+            <li class="active " data-nav-id="/semaine2/atelier/index.html"><a class="padding" href="/semaine2/atelier/index.html">ATELIER #2: Commandes Linux de base</a></li></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>E/S, redirection et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>VIM et les fichiers de configuration</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>???</a></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
           </ul>
         </div>
     
@@ -375,8 +413,8 @@ Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1736881200" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1736881200" defer></script>
-    <script src="/js/theme.js?1736881200" defer></script>
+    <script src="/js/clipboard.min.js?1737427541" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1737427541" defer></script>
+    <script src="/js/theme.js?1737427541" defer></script>
   </body>
 </html>

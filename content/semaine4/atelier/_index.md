@@ -1,70 +1,37 @@
 +++
-title = "ATELIER #4: Le processus de démarrage et le BASH"
+title = "ATELIER #4: Redirection, E/S, pipeline et filtres"
 weight = 42
 +++
 
 ## Objectif de l'atelier
 
-Cet atelier a pour but de vous familiariser avec les cibles (niveaux d'exécution) sous Linux. 
+- Se familiariser avec les entrées/sorties et la redirection des commandes.
+- Combinaison de commandes.
+- Filtrage de données.
 
+---
 
 # Atelier
 
-## Exercice 1 : Changer de cible
+## Exercice 1 : E/S
 
-Dans cet exercice, vous allez passer du mode graphique au mode multi-utilisateur sans interface graphique:
 
-   - Utiliser la commande suivante pour passer en mode multi-utilisateur sans interface graphique :
-     ```bash
-     systemctl isolate <cible>
-     ```
-   - Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique.
+## Exercice 2: Redirection
 
-## Exercice 2 : Définir la cible par défaut
 
-Dans cet exercice, vous allez définir le mode multi-utilisateur avec interface graphique comme cible par défaut.
+## Exercice 3: Filtrage (grep, sed, cut, find, etc.)
 
-   - Utiliser la commande suivante pour définir la cible par défaut :
-     ```bash
-     systemctl set-default <cible>
-     ```
-   - Redémarrer votre système pour vérifier que le mode graphique est bien la cible par défaut.
+## Exercice 4: While
 
-## Exercice 3 : Activer et désactiver des services
+---
 
-Dans cet exercice, on vous demande d'activer et désactiver des services au démarrage.
+## Exercice 5: Expansion d’accolade et commande find, grep
 
-   - Utiliser la commande suivante pour activer un service au démarrage (par exemple, `httpd` pour le serveur web Apache) :
-     ```bash
-     systemctl enable <service>
-     ```
-   - Utiliser la commande suivante pour désactiver un service au démarrage :
-     ```bash
-     systemctl disable <service>
-     ```
+Exercice2 : Caractères génériques et commande find
+Allez dans le répertoire /etc. Ne vous déplacez pas pour le reste de cet exercice.
 
-## Exercice 4 : Vérifier l'état des cibles
+En utilisant la commande find, cherchez les fichiers dont le nom commence par la lettre r à partir du répertoire courant.
 
-Dans cet exercice, vous devrez vérifier l'état actuel des cibles et des services.
+Cherchez tous les fichiers dont le nom contient la chaîne de caractères rc à partir du répertoire courant.
 
-   - Utiliser la commande suivante pour vérifier l'état actuel de la cible :
-     ```bash
-     systemctl <completer>
-     ```
-   - Utiliser la commande suivante pour vérifier l'état d'un service spécifique (par exemple, `httpd`) :
-     ```bash
-     systemctl status <service>
-     ```
-
-## Exercice 5 : Redémarrer et arrêter le système
-
-Cet exercice vous demande de redémarrer et d'arrêter le système en utilisant systemd.
-
-   - Utiliser la commande suivante pour redémarrer le système :
-     ```bash
-     systemctl <cible>
-     ```
-   - Utiliser la commande suivante pour arrêter le système :
-     ```bash
-     systemctl <cible>
-     ```
+Affichez tous les fichiers dont le nom comporte trois caractères sur tout le système.

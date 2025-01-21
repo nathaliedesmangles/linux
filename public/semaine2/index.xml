@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Introduction à Linux (suite) :: 420-ZG4-MO LINUX</title>
+    <title>Système de fichiers, Shell, commandes de base :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine2/index.html</link>
-    <description>Plan de la leçon Théorie :&#xA;Qu’est-ce que le Shell ? La ligne de commandes Quelques commandes simples Atelier :&#xA;Installation de WSL et Ubuntu Exercices pratiques sur les commandes simples</description>
+    <description>Plan de la leçon Théorie :&#xA;Le système de fichiers de Linux. Le Shell Bash. La ligne de commandes Les commandes de base Atelier :&#xA;Utilisation des commandes de base</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine2/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Introduction au shell et la ligne de commande</title>
+      <title>Système de fichiers, Shell et commandes de base</title>
       <link>https://example.org/semaine2/cours/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine2/cours/index.html</guid>
-      <description>Qu’est-ce que le SHELL? Le terme “Shell” désigne un programme qui interprète les commandes que vous tapez et les exécute. Il existe plusieurs types de shells, comme le Bourne Shell (sh), le C Shell (csh), le Korn Shell (ksh), et bien d’autres.&#xA;La ligne de commande Une commande dans le shell suit généralement cette structure :&#xA;commande [options] [arguments]&#xD;commande : Le programme ou l’outil que vous souhaitez exécuter.&#xA;options : Des paramètres supplémentaires qui modifient le comportement de la commande.</description>
+      <description>La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine.&#xA;La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation.&#xA;Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.</description>
     </item>
     <item>
-      <title>ATELIER #2: WSL, Ubuntu et des commandes Linux simples</title>
+      <title>ATELIER #2: Commandes Linux de base</title>
       <link>https://example.org/semaine2/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine2/atelier/index.html</guid>
-      <description>Objectifs de l’atelier Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux.&#xA;Format de la remise Attention&#xD;Pour chacune des étapes des parties 2 et 3 vous devrez prendre une capture d’écran de vos commandes et résultats. ATTENTION: On doit pouvoir voir votre nom d’utilisateur. Ne travaillez donc pas avec l’utilisateur root.&#xA;Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les fonctionnalités Windows</description>
+      <description>Objectifs de l’atelier Se familiariser avec la ligne de commandes. Naviguer dans l’arborescence Linux à l’aide de commandes. Gerer des fichiers et répertoires à l’aide de commandes. Format de la remise sur Moodle Attention&#xD;Pour chaque exercice, vous devrez prendre une capture d’écran. Sur les captures, on doit pouvoir voir : Votre nom d’utilisateur (Ne travaillez donc pas avec l’utilisateur root, ni la commande sudo). La ligne de commande et la commande. Le résultat de la commande. Si le résultat fait plus de 10 lignes, capturer juste les 10 premières lignes. Nommer les fichiers image, tel qu’indiqué pour chaque question. Remettre toutes vos images dans 1 seul fichier compressé (ex:.zip). Tout autre format ne sera pas corrigé. Pour l’exercice #3, quelques questions devront ètre répondues dans un fichier texte à remettre sur Moodle en plus du .zip. Atelier Préparation Sur votre machine Almalinux, avec votre utilisateur standard, allez sur votre cours sur Moodle, dans la semaine 2. On vous demande de télécharger le fichier fichier.txt. Vous en aurez besoin pour l’exercice #3.</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>L&#39;éditeur Vim et les fichiers de configuration :: 420-ZG4-MO LINUX</title>
+    <link>http://localhost:1313/semaine9/cours/index.html</link>
+    <description>Vim est un éditeur de texte puissant et flexible, souvent utilisé par les programmeurs et les administrateurs système. Il est basé sur un autre éditeur de texte appelé Vi, mais offre de nombreuses fonctionnalités supplémentaires.&#xA;Vim peut sembler intimidant au début, mais avec de la pratique, il devient un outil extrêmement puissant pour l’édition de texte.&#xA;Installation de Vim Pour installer Vim, vous pouvez utiliser le gestionnaire de paquets de votre système d’exploitation. Par exemple :</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/semaine9/cours/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
