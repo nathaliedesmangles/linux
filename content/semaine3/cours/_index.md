@@ -1,203 +1,519 @@
 +++
-title = "Système de fichiers, les commandes de base"
+title = "Processus de démarrage, cibles, variables et boucle For"
 weight = 31
+draft = true
 +++
 
-![Arborescence](filesystem.png?width=100vw)
+## Séquence de démarrage de Linux
 
-La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d'un arbre inversé, où la racine (root) est représentée par `/`. 
-Tous les fichiers et répertoires sont situés sous cette racine. 
+Le processus de démarrage de Linux est une série d'étapes qui se déroulent depuis l'allumage de l'ordinateur jusqu'à l'affichage de l'invite de commande ou de l'interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage. 
 
-{{% notice style=warning title=Attention %}}
-Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.
-**Chaque répertoire a un rôle spécifique et contient des types de fichiers bien définis**. 
+Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière ordonnée pour préparer la machine et le système d’exploitation à fonctionner. Voici les étapes principales :
+
+1. **BIOS/UEFI** : Initialise le matériel et recherche un périphérique amorçable.
+2. **Bootloader (GRUB)** : Charge le noyau Linux et transfère le contrôle au système d’exploitation.
+3. **Noyau Linux** : Configure le matériel, monte le système de fichiers racine, et démarre le processus d’initialisation.
+4. **Init/Systemd** : Gère le lancement des services et des processus utilisateur.
+
+![Schema séquence](boot_process.jpeg)
+
+---
+
+## Étape 1 : BIOS/UEFI
+
+### Rôle du BIOS/UEFI
+
+- Le BIOS (*Basic Input/Output System*) ou l’UEFI (*Unified Extensible Firmware Interface*) est le premier programme exécuté lorsqu’une machine est allumée.
+- Il effectue des tests matériels (POST) et localise le *bootloader* sur un disque amorçable, et charge le MBR en mémoire
+- Le BIOS transfère alors le contrôle au code du *Master Boot Record* (**MBR**). Le MBR se trouve dans le premier secteur du disque dur (secteur 0), c’est-à-dire les premiers 512 octets de l’espace de stockage.
+- Le MBR contient un programme minimal d’amorçage (bootloader primaire) qui localise et charge le ***bootloader*** secondaire (ex. GRUB ou LILO) depuis une partition active.
+
+### Modes de démarrage
+
+- **Legacy (BIOS)** : Mode traditionnel compatible avec les anciens systèmes.
+- **UEFI** : Plus moderne, prend en charge des fonctionnalités avancées comme le *Secure Boot*.
+
+{{% notice style="orange" title="BIOS ou UEFI ?" groupid="notice-toggle" expanded="false" %}}
+- Avec l’essor de l’UEFI, le MBR est remplacé par le schéma GPT (***GUID Partition Table***), qui offre plus de flexibilité (gestion de disques de grande taille et partitions multiples).
+- Les systèmes UEFI n’utilisent pas de *MBR* classique mais démarrent directement via un fichier exécutable dans une partition EFI (ESP).
+- Le MBR est une étape initiale critique dans les systèmes ***BIOS/MBR***, mais il est remplacé dans les environnements modernes utilisant UEFI.
 {{% /notice %}}
 
-La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation. 
+---
 
-## Tout est fichier
+## Étape 2 : *Bootloader* (*GRUB*)
 
-Sous Linux, TOUT les éléments visibles dans l’arborescence du système de fichiers sont des fichiers.
+### Rôle de GRUB
 
-- Un fichier est un fichier
-- Un répertoire est un fichier
-- Une clé USB est un fichier
-- Une partition est un fichier
-- Un disque dur est un fichier
-- etc.
+- Le ***bootloader*** (**GRUB** : *GRand Unified Bootloader*) est responsable de charger le noyau Linux en mémoire.
+- Il peut proposer plusieurs options de démarrage, comme des versions différentes du noyau ou un mode de récupération.
 
-## Répertoires principaux
+---
 
-1. **/** (Racine)
-   - Le point de départ de l'arborescence du système de fichiers. Tous les autres répertoires et fichiers sont situés sous ce répertoire.
+## Étape 3 : Le noyau Linux (*Kernel*)
 
-2. **/bin**
-   - Contient les binaires essentiels nécessaires au démarrage du système et à l'exécution des commandes de base, comme `ls`, `cp`, `mv`, etc.
+### Fonctionnalités du noyau au démarrage
 
-3. **/boot**
-   - Contient les fichiers nécessaires au démarrage du système, y compris le noyau Linux et les fichiers de configuration du chargeur de démarrage (bootloader).
+1. **Détection matérielle** : Identifie et initialise les composants matériels.
+2. **Chargement des modules** : Ajoute des pilotes pour des périphériques spécifiques.
+3. **Montage du système de fichiers racine** : Prépare l’environnement pour le reste du système.
+4. **Lancement du processus d’initialisation** : Appelle le gestionnaire d’initialisation (PID 1).
 
-4. **/dev**
-   - Contient les fichiers de périphériques. Chaque périphérique matériel (comme les disques durs, les clés USB, etc.) est représenté par un fichier dans ce répertoire.
+{{% notice style="info" title="Définition" %}}
+- ***PID*** : *Processus ID* est l'identifiant d'un processus.
+{{% /notice %}}
 
-5. **/etc**
-   - Contient les fichiers de configuration du système. Par exemple, les fichiers de configuration des services, des utilisateurs, des réseaux, etc.
+---
 
-6. **/home**
-   - Contient les répertoires personnels des utilisateurs. Chaque utilisateur a son propre répertoire sous `/home`, par exemple `/home/nathalie`.
+## Étape 4 : *Init* et *Systemd*
+
+### Gestionnaires d’initialisation
+
+- **SysVinit** : Ancien gestionnaire basé sur des scripts shell.
+- **Systemd** : Gestionnaire moderne basé sur des unités (units) qui remplacent les scripts traditionnels.
+
+{{% notice style="info" title="Information" %}}
+- Dans ce cours, on se limitera au commandes de `systemd`.
+{{% /notice %}}
+
+### Rôle de l’init (PID 1)
+
+- L’init est le premier processus utilisateur démarré par le noyau.
+- Il gère le lancement des services essentiels et assure la transition vers un état prêt pour les utilisateurs.
+- Les services sont des processus en arrière-plan qui effectuent des tâches spécifiques (ex. serveur SSH, journalisation).
+- Quand tous les services sont lancés, le programme init affiche l’écran de connexion, qui vous demande votre nom d’utilisateur et votre mot de passe.
+
+## 5. Les cibles / niveaux d'exécution (*Runlevels*)
+
+- Les cibles (niveaux d'exécution) définissent l'état du système et les services qui doivent être exécutés.
+- Dans le passé, les modes de fonctionnement étaient connus sous le nom de **niveaux d'exécution**, chacun permettant l'accès à un ensemble spécifique de services. Le concept de niveaux d'exécution a été remplacé par celui de **cibles** (*target*). 
+- L'ensemble des services associés aux anciens niveaux d'exécution ont été conservés dans le système de cibles de `systemd`, afin de maintenir la compatibilité avec les scripts et les configurations existantes.
+
+{{% notice style="info" title="Information" %}}
+- Les distributions modernes comme Fedora, Ubuntu et Almalinux utilisent donc `Systemd`.
+{{% /notice %}}
+
+Voici les cibles les plus courantes et leur correspondance:
+
+| Niveau d'exécution  | Description                        | *Target* Systemd                  |
+|---------------------|------------------------------------|-----------------------------------|
+| 0                   | Arrêt du système.                  | poweroff.target                   |
+| 1                   | Mode monoutilisateur (maintenance).| rescue.target ou emergency.target |
+| 3                   | Multi-utilisateur (texte)          | multi-user.target                 |
+| 5                   | Multi-utilisateur (graphique)      | graphical.target                  |
+| 6                   | Redémarrage                        | reboot.target                     |
+
+### Différence entre *emergency.target* et *rescue.target*
+
+- `emergency.target` : Le mode le plus minimal, aucun système de fichiers supplémentaire n’est monté, pas de réseau, pas de services. C’est vraiment pour les urgences critiques.
+- `rescue.target` : Similaire au mode monoutilisateur (niveau d’exécution 1). Il monte certains systèmes de fichiers et démarre un ensemble limité de services, mais pas de services réseau.
+
+## Commandes liées aux cibles *Systemd* ou *init*.
+
+{{% notice style="note" title="Note" %}}
+- Les commandes `systemctl` qui modifient l’état du système ou des services touchent des fichiers et des processus sous contrôle strict, souvent localisés dans des répertoires comme `/etc/systemd/system` ou `/lib/systemd/system`. Ces zones sont protégées pour éviter des modifications accidentelles ou malveillantes.
+- Dans la plupart des cas, vous devez avoir des privilèges `sudo` ou être connecté en tant qu'utilisateur root pour utiliser la commande `systemctl`, car elle est conçue pour gérer des services, des cibles (*targets*), et d'autres composants système qui nécessitent des autorisations élevées.
+{{% /notice %}}
+
+
+### Pour lister les processus s’exécutant sur une machine
+
+**Avec `ps`** : 
+- Affiche tous les processus s'exécutant sur la machine.
 ```bash
-nathalie@Yoda:~$ cd /home
-nathalie@Yoda:/home$ ls
-nathalie
+[ndesmangles@localhost ~]$ ps -ef
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  2 16:18 ?        00:00:01 /usr/lib/systemd/systemd --s
+
+```
+### Pour connaître le niveau d’exécution actuel
+
+1. **Avec `Systemd`** :
+   ```bash
+   [ndesmangles@localhost ~]$ systemctl get-default
+   graphical.target
+   ```
+
+2. **Avec `runlevel` (SysVinit)** :
+   ```bash
+   [ndesmangles@localhost ~]$ runlevel
+   N 5
+   ```
+   - Cette commande affiche deux valeurs : le précédent et l’actuel niveau d’exécution. Ici, `N` indique qu'il n'y avait pas de niveau précédent (au démarrage), et `5` est le niveau actuel.
+
+---
+
+### Pour se placer temporairement dans un niveau d’exécution
+
+1. **Avec `systemctl isolate reboot` :**
+   - Cette commande met immédiatement le système en état de redémarrage. Elle isole le *target* associé à l’action de redémarrage (souvent **reboot.target**).
+   - **Effet** : Redémarrage immédiat, tous les services et processus actifs sont arrêtés proprement.
+
+2. **Avec `systemctl isolate poweroff` :**
+   - Cette commande met immédiatement le système hors tension (extinction complète). Elle isole le *target* associé à l’arrêt (**poweroff.target**).
+   - **Effet** : Extinction immédiate, tous les services et processus actifs sont arrêtés proprement.
+
+---
+
+### Pour voir quel est le niveau d’exécution par défaut
+
+1. **Avec Systemd** :
+   ```bash
+   [ndesmangles@localhost ~]$ systemctl get-default		# Renvoie le *target* par défaut.
+   ```
+
+2. **Avec `runlevel` (SysVinit)** :
+   - Vous pouvez également utiliser `runlevel` comme décrit précédemment.
+---
+
+### Pour modifier le niveau par défaut
+
+1. **Avec Systemd** :
+   - Changez le *target* par défaut avec :
+     ```bash
+     [ndesmangles@localhost ~]$ sudo systemctl set-default multi-user.target	# Niveau d’exécution 3 (mode texte multi-utilisateur).
+     ```
+
+2. **Avec SysVinit** :
+   - Modifiez le fichier `/etc/inittab` (pour les systèmes utilisant encore SysVinit) :
+     ```bash
+     [ndesmangles@localhost ~]$ id:5:initdefault:		# Définit le niveau 5 (mode graphique) comme niveau d’exécution par défaut.
+     ```
+---
+
+### Pour se rendre directement au niveau d’exécution par défaut
+
+- Utilisez la commande suivante pour forcer le système à se placer dans le niveau d’exécution ou *target* par défaut :
+  ```bash
+  [ndesmangles@localhost ~]$ sudo systemctl isolate default.target
+  ```
+---
+
+**Question**: Suite aux commandes suivantes, que se passe-t-il ?
+
+1. **`[ndesmangles@localhost ~]$ init 0` :**
+{{% notice style="green" title="Réponse" groupid="notice-toggle" expanded="false" %}}
+   - Envoie le système au niveau d’exécution 0, qui correspond à l’**extinction**.
+   - **Effet** : Éteint immédiatement la machine, tout comme la commande `systemctl poweroff`.
+{{% /notice %}}
+
+
+2. **`[ndesmangles@localhost ~]$ init 6` :**
+{{% notice style="green" title="Réponse" groupid="notice-toggle" expanded="false" %}}
+   - Envoie le système au niveau d’exécution 6, qui correspond au **redémarrage**.
+   - **Effet** : Redémarre immédiatement la machine, tout comme la commande `systemctl reboot`.
+{{% /notice %}}
+
+---
+
+## Les variables utilisateur en *Bash*
+
+### Nomenclature, assignation et affichage des variables
+
+1. Lors de la création d'une variable, **toujours** utiliser des noms descriptifs. 
+Exemple:  `nombre_utilisateurs` au lieu de `nombre`.
+
+{{% notice style="warning" title="Attention"  %}}
+- Les caractères spéciaux ou espaces dans les noms peuvent causer des erreurs.
+{{% /notice %}}
+
+2. Les noms sont sensible à la casse.
+Exemple: `VAR1` ≠ `var1` 
+
+3. Pas besoin de déclaration explicite, pour affecter une valeur on utilise `=` **sans espace** autour de `=`.
+Exemple:
+```bash
+[ndesmangles@localhost ~]$ ma_variable="Bonjour, Linux!"
 ```
 
-7. **/lib**
-   - Contient les bibliothèques partagées nécessaires pour les binaires situés dans `/bin` et `/sbin`.
-
-8. **/media**
-   - Point de montage pour les périphériques amovibles comme les CD-ROM, les clés USB, etc.
-
-9. **/mnt**
-   - Utilisé pour monter temporairement des systèmes de fichiers. Par exemple, pour monter un disque dur externe.
-
-10. **/opt**
-    - Contient les logiciels optionnels et les paquets additionnels qui ne sont pas inclus dans la distribution standard.
-
-11. **/proc**
-    - Système de fichiers virtuel qui contient des informations sur les processus en cours et le système. Par exemple, `/proc/cpuinfo` contient des informations sur le processeur.
-
-12. **/root**
-    - Répertoire personnel de l'utilisateur root (administrateur du système).
-
-13. **/run**
-    - Contient des informations sur l'état du système depuis le dernier démarrage. Utilisé pour stocker des fichiers temporaires nécessaires au fonctionnement du système.
-
-14. **/sbin**
-    - Contient les binaires essentiels pour l'administration du système, comme `fdisk`, `ifconfig`, etc.
-
-15. **/srv**
-    - Contient les données spécifiques aux services fournis par le système. Par exemple, les fichiers de données pour un serveur web peuvent être stockés ici.
-
-16. **/tmp**
-    - Contient les fichiers temporaires créés par les utilisateurs et les applications. Ce répertoire est souvent vidé au redémarrage du système.
-
-17. **/usr**
-    - Contient les applications et les fichiers utilisés par les utilisateurs. Sous-répertoires importants :
-      - **/usr/bin** : Contient les binaires des applications utilisateur.
-      - **/usr/lib** : Contient les bibliothèques partagées pour les applications utilisateur.
-      - **/usr/local** : Contient les logiciels installés localement par l'administrateur du système.
-
-18. **/var**
-    - Contient les fichiers variables, tels que les journaux système, les fichiers de spool, et les fichiers temporaires des applications. Par exemple, `/var/log` contient les fichiers journaux.
-
-### Les chemins absolu et relatifs
-
-#### Chemin absolu
-
-Un chemin absolu est un chemin complet qui commence à la racine du système de fichiers. Il indique l'emplacement exact d'un fichier ou d'un répertoire, peu importe où vous vous trouvez dans le système de fichiers. Par exemple :
-```
-/home/utilisateur/Documents/fichier.txt
-```
-Dans cet exemple, le chemin commence par `/`, qui est la racine du système de fichiers, et suit l'arborescence jusqu'au fichier `fichier.txt`.
-
-#### Chemin relatif
-
-Un chemin relatif, quant à lui, est un chemin qui est **relatif à votre répertoire de travail actuel**. Il ne commence pas par `/`. Par exemple, si vous êtes dans le répertoire `/home/utilisateur`, et que vous voulez accéder à `fichier.txt` dans le sous-répertoire `Documents`, vous pouvez utiliser :
-```
-Documents/fichier.txt
-```
-Ou, si vous voulez remonter d'un niveau dans l'arborescence, vous pouvez utiliser `..` pour représenter le répertoire parent. Par exemple, si vous êtes dans `/home/utilisateur/Documents` et que vous voulez accéder à un fichier dans `/home/utilisateur`, vous pouvez utiliser :
-```
-../fichier.txt
+4. Pour afficher la valeur d'une variable, on utilise le symbole `$` devant le nom.
+Exemple: 
+```bash
+[ndesmangles@localhost ~]$ echo $ma_variable
 ```
 
-**En résumé**
+5. Pour supprimer une variable, on utilise `unset` suivi du nom de la variable (**sans `$`**).
+Exemple: 
+```bash
+[ndesmangles@localhost ~]$ unset ma_variable
+```
 
-- **Chemin absolu** : Commence à la racine `/` et donne l'emplacement complet.
-- **Chemin relatif** : Dépend de votre répertoire de travail actuel et ne commence pas par `/`.
+### Stocker le résultat d’une commande dans une variable
 
-### Les commandes de navigation dans l'arborescence des fichiers
+En Bash, vous pouvez capturer la sortie d’une commande dans une variable en utilisant la syntaxe `$(...)`. 
 
-| Commande | Description |
-|----------|-------------|
-| `pwd`    | Affiche le chemin absolu du répertoire courant |
-| `cd`     | Change le répertoire courant | 
-| `cd ..`  | Remonte d'un niveau dans l'arborescence des répertoires. `cd ../.. ` remonte de deux niveaux, etc. |
-| `cd ~`   | Va au répertoire personnel de l'utilisateur | 
+**Exemple 1** : Stocker la date courante
+```bash
+[ndesmangles@localhost ~]$ date_courante=$(date +%Y-%m-%d)	# La date sera stockée dans date_courante aaaa-mm-jj
+[ndesmangles@localhost ~]$ echo $date_courante			# Affiche la valeur de date_courante
+2025-01-09
+```
 
-#### Exemples d'utilisation
+**Exemple 2** : Compter et stocker le nombre de fichiers dans le répertoire courant
+```bash
+[ndesmangles@localhost ~]$  nombre_fichiers=$(ls | wc -l)
+[ndesmangles@localhost ~]$  echo $nombre_fichiers
+8
+```
+- **`ls`** : Liste les fichiers et répertoires dans le répertoire courant.
+- **`wc -l`** : Compte le nombre de lignes de la sortie de `ls`, correspondant au nombre d'entrées.[^1]
+
+
+## Expansion des variables en *Bash*
+
+L'expansion des variables consiste à remplacer le nom d'une variable par sa valeur lors de l'exécution d'une commande, permettant ainsi d'utiliser dynamiquement des données dans des scripts ou des commandes.
+ 
+**Exemple 1:** Remplacement de la variable par sa valeur  
+```bash
+[ndesmangles@localhost ~]$ fichiers="toto titi tutu"
+[ndesmangles@localhost ~]$ ls -l $fichiers
+```
+Commande exécutée :  
+```bash
+[ndesmangles@localhost ~]$ ls -l toto titi tutu
+```
+
+**Exemple 2:** Une variable peut inclure des options :  
+```bash
+[ndesmangles@localhost ~]$ fichiers="-l toto titi tutu"
+[ndesmangles@localhost ~]$ ls $fichiers
+```
+Commande équivalente :  
+```bash
+[ndesmangles@localhost ~]$ ls -l toto titi tutu
+```
+
+## Stocker le résultat d'une commande dans une variable
+
+Stocker le résultat d'une commande dans une variable consiste à capturer la sortie d'une commande en utilisant la syntaxe `$(commande)` afin de la réutiliser ultérieurement dans un script ou une commande.
+ 
+```bash
+[ndesmangles@localhost ~]$ fichiers=$(ls)
+[ndesmangles@localhost ~]$ ls "$fichiers"  # Toujours utiliser des guillemets pour gérer les espaces.
+```
+
+## Expansion de noms de fichiers (* et ?)
+
+Dans *Bash* on peut utiliser des **caractères génériques** pour étendre des motifs en liste de fichiers existants.
+
+| Caractère     | Description                                    | Exemple               | Résultat                               |
+|---------------|------------------------------------------------|-----------------------|----------------------------------------|
+| `*`           | Remplace une chaîne de longueur variable       | `ls *.txt`            | Fichiers comme `toto.txt`, `titi.txt`  |
+| `?`           | Remplace un seul caractère                     | `ls t?t?.txt`         | Fichiers comme `toto.txt`, `titi.txt`  |
+
+## Expansion d’accolades
+
+L'expansion d'accolades en Bash permet de générer rapidement des séries de chaînes ou de motifs en factorisant des éléments variables, comme dans `{a,b,c}` pour produire `a`, `b`, `c`, ou `{1..5}` pour générer `1`, `2`, `3`, `4`, `5`.
+
+|  But                     | Commande                      | Résultat                      |
+|--------------------------|-------------------------------|-------------------------------|
+| Générer des variations   | `touch patat{a,e,i,o,u,y}`    | `patata`, `patate`, ...       |
+| Générer une séquence     | `touch test{1..12}.txt`       | `test1.txt`, `test2.txt`, ... |
+
+{{% notice style="warning" title="Attention" %}}
+- Pas d’espace dans les accolades
+{{% /notice %}}
+
+
+## Protéger contre l’expansion
+
+Protéger contre l’expansion en Bash consiste à empêcher l’interprétation des caractères spéciaux, des variables ou des commandes en utilisant des guillemets simples, doubles ou le caractère d’échappement `\`.
+
+| Méthode               | Commande                           | Effet                                       |
+|-----------------------|------------------------------------|---------------------------------------------|
+| Échappement `\`       | `echo Je veux afficher \* et \$x`  | Affiche `*` et `$x` sans expansion.         |
+| Guillemets simples `'`| `echo 'Voici * et $x'`             | Aucun remplacement, affiche littéralement.  |
+| Guillemets doubles `"`| `echo "Valeur : $x"`               | Permet l’expansion des variables.           |
+
+---
+
+## Commandes spéciales et expansions
+
+Certaines commandes comme `find`[^1] nécessitent une attention particulière concernant l'expansion.
+
+### Exemple : Recherche avec `find`
+Pour rechercher tous les fichiers `.txt` :
+```bash
+find / -name "*.txt"
+```
+Ici, les guillemets protègent `*.txt` pour empêcher Bash d’expandre le motif avant de passer à `find`. Cela garantit que `find` traite correctement le motif.
+
+---
+
+## Bonnes pratiques avec les variables
+
+1. **Toujours utiliser des guillemets pour éviter les problèmes avec les espaces ou caractères spéciaux :**
+   ```bash
+   ls "$fichiers"
+   ```
+
+2. **Protégez les motifs pour les commandes comme `find`:**
+   ```bash
+   find / -name "*.txt"
+   ```
+
+3. **Utilisez les accolades pour générer des séquences et factoriser vos commandes :**
+   ```bash
+   touch fichier{1..10}.txt
+   ```
+
+## Itération sur les résultats de commandes
+
+La boucle `for` est un élément fondamental qui permet de répéter une action pour chaque élément d'une liste ou d'un ensemble de valeurs. Elle est particulièrement utile pour automatiser des tâches répétitives.
+
+
+### Structure générale
 
 ```bash
-nathalie@Yoda:~$ pwd
-/home/nathalie
-
-nathalie@Yoda:~$ cd ..
-nathalie@Yoda:/home$
-
-nathalie@Yoda:~$ cd /etc
-nathalie@Yoda:/etc$
-
-nathalie@Yoda:/etc$ cd ~
-nathalie@Yoda:~$
-
+for variable in liste
+do
+    commande1
+    commande2
+    ...
+done
 ```
 
-### Commandes de gestion des fichiers et répertoires
+- **`variable`** : Une variable temporaire qui prend successivement chaque valeur de la liste.
+- **`liste`** : Un ensemble de valeurs, qui peut être défini explicitement ou généré dynamiquement.
+- Les commandes entre `do` et `done` sont exécutées pour chaque valeur de la liste.
 
-| Commande | Description |
-|----------|-------------|
-| `touch`  | Crée un fichier vide. |
-| `cp`     | Copie des fichiers ou répertoires. |
-| `mv`     | Déplace ou renomme des fichiers ou répertoires. |
-| `rm`     | Supprime des fichiers. L'option `-r` permet de supprimer récursivement un dossier et tout ce qu'il contient. |
-| `mkdir`  | Crée un nouveau répertoire. |
-| `rmdir`  | Supprime uniquement un répertoire s'il est **vide**. |
+---
 
-{{% notice style=warning title=Attention %}}
-- Vous ne pouvez pas supprimer un répertoire qui contient des fichiers, y compris des fichiers masqués ou système. Si vous tentez de le faire, le message suivant s’affiche :
-`The directory is not empty`
-- Vous ne pouvez pas utiliser la commande **`rmdir`** pour supprimer le répertoire actif. Si vous tentez de supprimer le répertoire actif, le message d’erreur suivant s’affiche :
-`The process can't access the file because it is being used by another process.`
-Si vous recevez ce message d’erreur, vous devez passer à un autre répertoire (et non à un sous-répertoire du répertoire actif), puis réessayer.
-{{% /notice %}} 
-
-#### Exemples d'utilisation
+### Exemple 1 : Parcourir une liste statique
 
 ```bash
-nathalie@Yoda:~$ touch fichier.txt
-nathalie@Yoda:~$ ls
-fichier.txt
-
-nathalie@Yoda:~$ mkdir repertoire
-nathalie@Yoda:~$ ls
-fichier.txt  repertoire
-
-nathalie@Yoda:~$ cp fichier.txt copie_fichier.txt
-nathalie@Yoda:~$ ls
-copie_fichier.txt  fichier.txt  repertoire
-
-nathalie@Yoda:~$ mv copie_fichier.txt fichier2.txt
-nathalie@Yoda:~$ ls
-fichier.txt  fichier2.txt  repertoire
-
-nathalie@Yoda:~$ mv fichier2.txt repertoire
-nathalie@Yoda:~$ ls
-fichier.txt  repertoire
-
-nathalie@Yoda:~$ cd repertoire
-nathalie@Yoda:~/repertoire$ ls
-fichier2.txt
-
-nathalie@Yoda:~/repertoire$ rm fichier2.txt
-nathalie@Yoda:~/repertoire$ ls
-
-nathalie@Yoda:~/repertoire$ cd ..
-nathalie@Yoda:~$ ls
-fichier.txt  repertoire
-
-nathalie@Yoda:~$ rmdir repertoire
-nathalie@Yoda:~$ ls
-fichier.txt
+for animal in chat chien oiseau
+do
+    echo "Je suis un $animal"
+done
 ```
 
-[^1]: Nous étudierons comment gérer les droits des différents utilisateurs plus tard dans ce cours.
+**Sortie :**
+```
+Je suis un chat
+Je suis un chien
+Je suis un oiseau
+```
+
+---
+
+### Exemple 2 : Parcourir des fichiers d’un répertoire
+
+```bash
+for fichier in *.txt
+do
+    echo "Traitement de $fichier"
+done
+```
+
+- Ici, `*.txt` est un motif de fichier.
+- Bash remplace `*.txt` par la liste des fichiers correspondants dans le répertoire courant.
+
+**Sortie :** (si le répertoire contient `file1.txt` et `file2.txt`)
+```
+Traitement de file1.txt
+Traitement de file2.txt
+```
+
+---
+
+### Exemple 3 : Générer une liste avec une séquence
+
+Vous pouvez utiliser une séquence avec `{debut..fin}` pour générer des nombres ou des caractères :
+
+```bash
+for i in {1..5}
+do
+    echo "Nombre : $i"
+done
+```
+
+**Sortie :**
+```
+Nombre : 1
+Nombre : 2
+Nombre : 3
+Nombre : 4
+Nombre : 5
+```
+
+---
+
+### Exemple 4 : Ajouter des pas dans une séquence
+
+Pour parcourir une séquence avec un pas spécifique, utilisez `{debut..fin..pas}` :
+
+```bash
+for i in {1..10..2}
+do
+    echo "Nombre impair : $i"
+done
+```
+
+**Sortie :**
+```
+Nombre impair : 1
+Nombre impair : 3
+Nombre impair : 5
+Nombre impair : 7
+Nombre impair : 9
+```
+
+---
+
+### Exemple 5 : Lire des entrées à partir d’une commande
+
+Vous pouvez parcourir les fichiers dans un répertoire pour lister les utilisateurs disposant d'un répertoire personnel sur le système :
+
+```bash
+for user in $(ls /home)
+do
+    echo "Utilisateur avec un répertoire : $user"
+done
+```
+
+**Explication** :
+- `ls /home` liste les répertoires dans `/home`, où chaque répertoire correspond généralement à un utilisateur ayant un compte sur le système.
+- La boucle `for` parcourt chaque nom de répertoire et l'associe à la variable `user`.
+- La commande `echo` affiche ensuite le nom de chaque utilisateur. 
+
+---
+
+### Utiliser des guillemets pour protéger les valeurs
+
+Si les éléments de la liste contiennent des espaces, utilisez des guillemets pour éviter des erreurs :
+
+```bash
+for fichier in "Fichier 1.txt" "Fichier 2.txt"
+do
+    echo "Traitement de $fichier"
+done
+```
+
+---
+
+## Bonnes pratiques avec la boucle *for*
+
+1. **Liste explicite** : Utilisez une liste statique ou une séquence simple :
+   ```bash
+   for i in {1..10}
+   ```
+
+2. **Motifs et fichiers** : Parcourez les fichiers d’un répertoire avec des motifs :
+   ```bash
+   for fichier in *.txt
+   ```
+
+3. **Commandes dynamiques** : Créez une liste à partir du résultat d'une commande :
+   ```bash
+   for utilisateur in $(who | awk '{print $1}')
+   ```
+
+4. **Guillemets** : Protégez les éléments avec des espaces :
+   ```bash
+   for fichier in "file 1" "file 2"
+   ```
+
+
+
+[^1] Nous verrons cette commande plus en détails au prochain cours.

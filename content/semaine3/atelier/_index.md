@@ -1,86 +1,66 @@
 +++
-title = "ATELIER #3: Le système de fichiers et les commandes de base"
+title = "ATELIER #3: Cibles et variables utilisateurs et for"
 weight = 32
 +++
 
-## Objectif de l'atelier
+## Objectifs de l'atelier
 
-Cet atelier a pour but de vous familiariser avec les commandes de base pour la gestion des fichiers sous Linux en utilisant la distribution **AlmaLinux** sur votre VM. 
-Ces exercices pratiques permettront de renforcer la compréhension et l'utilisation de ces commandes.
+- Se familiariser avec les cibles (niveaux d'exécution).
+- Comprendre les bases des variables utilisateur en Bash.
+- Apprendre à manipuler et utiliser des variables pour stocker des résultats de commandes.
+---
 
-# Atelier
+# Atelier 
 
-## Attention:
+## Exercice 1 : Manipuler les cibles (niveaux d'exécution)
 
-Avant de commencer chaque exercice, assurez vous que vous travaillez dans votre répertoire personnel et ne vous déplacez pas que lorsque demandé.
+1. Utiliser la commande `systemctl` pour passer en mode multi-utilisateur sans interface graphique
+2. Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique.
+3. Définir le mode multi-utilisateur avec interface graphique comme cible par défaut.
+4. Redémarrer votre système pour vérifier que le mode graphique est bien la cible par défaut.
 
-{{% notice style=warning title=Attention %}}
-1. À moins d'indication contraire, utiliser TOUJOURS des chemins relatifs.
-2. Les questions qui demandent des réponses textuelles, écrivez-les dans un fichier afin de pouvoir les vérifier avec la solution qui vous sera fournie ultérieurement.
-{{% /notice %}} 
+## Exercice 2 : Création et affichage de variables
 
-## Exercice 1 : Explorer l’arborescence Linux
+1. Déclarez une variable `nom` avec votre prénom.
+2. Affichez la valeur de la variable.
+3. Essayez d’accéder à la variable sans `$`.
+   - Notez la différence.
 
-1. Afficher le chemin de votre répertoire courant. 
-2. Allez dans le répertoire `/usr/share/doc`, puis vérifiez le chemin de votre répertoire courant.
-3. Remontez dans le répertoire parent.
-4. Allez dans votre répertoire personnel.
-5. Listez les fichiers présents du répertoire courant.
-6. Toujours en étant dans votre dossier personnel, listez les fichiers du répertoire `/usr`
+## Exercice 3 : Capturer une date formatée
 
+1. Stockez la date actuelle dans une variable `date_actuelle` avec le format AAAA/MM/JJ hh:mm:ss.
+2. Affichez la date formatée.
 
-## Exercice 2: Commandes de base
+## Exercice 4 : Supprimer une variable
 
-### Préparation
+1. Déclarez une variable temporaire.
+2. Supprimez la variable avec `unset`.
+3. Essayez d’afficher la variable supprimée.
 
-Sur votre machine Almalinux, avec votre utilisateur standard, allez sur votre cours sur Moodle, dans la semaine 3. On vous demande de télécharger ce fichier.
+## Exercice 5: Expansion de variables et d'accolades
 
-![HTTP](atelier3-1.png?height=50)
+1. Créer une variable (variable_etc) contenant la liste des fichiers du répertoire /etc et l'afficher. 
+- Son contenu est-il facile à lire ?
+- Que se passe-t-il si vous exécutez `ls` suivi du nom de votre variable ? Pourquoi ?
+2. Sachant que beaucoup de fichiers de configuration se terminent par `.conf`, les trouver et stocker leur nom dans une variable.
+- Que se passe-t-il si vous exécutez `ls` suivi du nom de votre variable?
+- Seriez-vous capable d’afficher la taille de chacun des fichiers de configuration ? La commande du `-sh <fichier>` permet d’afficher la taille de fichier.
+3. Créer un répertoire dans lequel vous créerez les fichiers suivants à l’aide de la commande `touch` en utilisant la syntaxe permettant de factoriser une commande:
+`test1.txt, test2.txt, test3.txt, test1.doc, test2.doc, test3.doc, test1.tot, test2.tot, test3.tot`
+4. Grâce aux caractères génériques, n’afficher que les fichiers `.txt` qui commencent par `test` (plusieurs possibilités existent, essayez de les trouver).
+a. Tous les fichiers `.txt et `.tot`.
+b. Tous les fichiers test1
 
-1. Cliquez sur fichier1. 
+## Exercice 6: Expansion d’accolade et boucle for
 
-![HTTP](atelier3-2.png?height=200)
+- En faisant cet exercice, vérifiez pour cette question le résultat de vos commandes en utilisant la commande `tree`. 
+- La figure ci-dessous montre un exemple d’utilisation de cette commande.
+- Assurez-vous d’être revenu dans votre répertoire personnel
 
-2. Sur la fenêtre qui s'ouvre, faites un clic droit et choisissez Enregistrez-sous.
+1. À l’aide d’une seule commande et en utilisant l’expansion d’accolade, créez l’arborescence des dossiers suivante :
 
-![HTTP](atelier3-3.png?height=200)
+![structure](atelier3.png)
 
-- Le fichier va être enregistré par défaut dans le dossier **Téléchargements**.
-
-![HTTP](atelier3-4.png?height=300)
-
-3. Fermer la fenêtre.
-
-4. Cliquez sur le bouton Activités sur le bureau.
-
-![HTTP](atelier3-5.png?height=300)
-
-5. Cliquer sur l’icône **Fichiers**.
-
-![HTTP](atelier3-6.png?height=300)
-
-### Commandes
-
-Allez maintenant sur votre terminal. Placez-vous dans votre répertoire personnel et déplacez-vous seulement si c'est demandé. 
-
-1. Créer un répertoire `Atelier2` dans le répertoire courant.
-2. Copier le fichier téléchargé `fichier1.txt` dans le répertoire `Atelier2`.
-3. Créer un autre répertoire nommé `Rep2`.
-4. Déplacer `Atelier2` dans `Rep2`.
-5. Déplacez-vous dans `Atelier2`.
-6. Via l'interface d'Almalinux, ouvrir le fichier `fichier1.txt` et écrivez votre nom complet dans le fichier. Enregistrer la modification et fermer le fichier.
-7. Afficher le contenu du fichier à l’aide de la commande `cat`.
-8. Créer un autre fichier nommé `fichier2.txt` dans `Atelier2`. 
-9. Avec une seule commande `cat` afficher le contenu de `fichier1.txt` et `fichier2.txt`.
-10. Revenir dans votre répertoire personnel.
-11. Supprimer le répertoire `Rep2`.
-12. Dans quel répertoire vous trouvez-vous? Utiliser une commande pour voir le répertoire courant.
-13. Créer un dossier avec le nom `Rep3` dans le dossier `/root`(**en utilisant un chemin absolu**). Avez-vous réussi ? Si non, pourquoi ? 
-14. Afficher le contenu du répertoire `/etc` en utilisant l’option `-l`.
-15. Par quels caractères, les lignes affichées débutent ? Quelles est leur signification ?
-16. Qu’est-ce qui distingue le répertoire `/proc` des autres répertoires de l’arborescence linux ? 
-17. Qu’est ce qui distingue le répertoire <code class="gr">/bin</code> et <code class="gr">/sbin</code> ?
-18. Quel est le répertoire qui est utilisé pour charger le noyau du système d’exploitation au démarrage ? 
-19. Dans Linux, tout est fichier. Si on connecte une clé usb à une machine linux, dans quel répertoire de l’arborescence, on va trouver la référence à cette clé ?
-20. Si on installe un serveur web apache sur une machine linux, dans quel répertoire de l’arborescence le dossier contenant les fichiers de configuration du serveur se trouvera-t-il ?
-
+2. À l’aide d’une seule commande et en utilisant l’expansion d’accolade, créer le fichier vide **priseNote** dans chaque répertoire **lab**.
+3. À l’aide d’une boucle for, renommer les fichier **priseNote** en **priseNote.txt**.
+4. À l’aide d’une boucle for, déplacer les fichiers **priseNote.txt** du répertoire **lab** vers le répertoire **leçon** correspondant.

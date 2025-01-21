@@ -1,18 +1,21 @@
 +++
 chapter = true
 pre = "<b>Semaine 3. </b>"
-title = "Système de fichiers, shell et commandes de base"
+title = "Processus de démarrage, variables et FOR"
 weight = 30
+draft = true
 +++
 
 ## Plan de la leçon
 
 - **Théorie :**
-  - Structure du système de fichiers Linux
-  - Commandes de navigation de base (ls, cd, pwd, etc.)
-  - Commandes de gestion des fichiers (cp, mv, rm, mkdir, etc.)
+  - La séquence de démarrage de Linux.
+  - Les cibles (niveaux d'exécution).
+  - Les variables utilisateur.
+  - Itération avec la boucle FOR.
 
 
 - **Atelier :**
-  - Arborescence du système de fichiers
-  - Manipulation des fichiers et des répertoires
+  - Gestion des cibles.
+  - Création et utilisation de variables.
+  - Utilisation de la boucle FOR.

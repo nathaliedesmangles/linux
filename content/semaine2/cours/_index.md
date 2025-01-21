@@ -398,7 +398,7 @@ La commande `clear` permet d'effacer l'écran du terminal.
      ```
 
     {{% notice style="note" title="Note" %}}
-    **$SHELL** doit être écrit en respectant la casse.
+    $SHELL doit être écrit en respectant la casse.
     {{% /notice %}}
 
 
