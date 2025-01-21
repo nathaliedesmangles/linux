@@ -1,7 +1,6 @@
 +++
 title = "Processus de démarrage, cibles, variables et boucle For"
 weight = 31
-draft = true
 +++
 
 ## Séquence de démarrage de Linux
