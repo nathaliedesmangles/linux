@@ -22,6 +22,13 @@
       <description>Plan de la leçon Théorie :&#xA;Le système de fichiers de Linux. Le Shell Bash. La ligne de commandes Les commandes de base Atelier :&#xA;Utilisation des commandes de base</description>
     </item>
     <item>
+      <title>Processus de démarrage, variables et FOR</title>
+      <link>https://example.org/semaine3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine3/index.html</guid>
+      <description>Plan de la leçon Théorie :&#xA;La séquence de démarrage de Linux. Les cibles (niveaux d’exécution). Les variables utilisateur. Itération avec la boucle FOR. Atelier :&#xA;Gestion des cibles. Création et utilisation de variables. Utilisation de la boucle FOR.</description>
+    </item>
+    <item>
       <title>E/S, redirection et filtrage de commandes et While</title>
       <link>https://example.org/semaine4/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
