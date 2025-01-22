@@ -3,6 +3,7 @@ chapter = true
 pre = "<b>Semaine 14. </b>"
 title = "WSL installation et manipulation (Ubuntu, VS Code)"
 weight = 140
+draft = true
 +++
 
 ## Plan de la leçon

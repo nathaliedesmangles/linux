@@ -71,9 +71,6 @@ Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière
 - **SysVinit** : Ancien gestionnaire basé sur des scripts shell.
 - **Systemd** : Gestionnaire moderne basé sur des unités (units) qui remplacent les scripts traditionnels.
 
-{{% notice style="info" title="Information" %}}
-- Dans ce cours, on se limitera au commandes de `systemd`.
-{{% /notice %}}
 
 ### Rôle de l’init (PID 1)
 
