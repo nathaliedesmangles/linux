@@ -28,5 +28,12 @@
       <guid>https://example.org/semaine3/index.html</guid>
       <description>Plan de la leçon Théorie :&#xA;La séquence de démarrage de Linux. Les cibles (niveaux d’exécution). Les variables utilisateur. Itération avec la boucle FOR. Atelier :&#xA;Gestion des cibles. Création et utilisation de variables. Utilisation de la boucle FOR.</description>
     </item>
+    <item>
+      <title>E/S, redirection et filtrage de commandes et While</title>
+      <link>https://example.org/semaine4/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine4/index.html</guid>
+      <description>Plan de la leçon Théorie :&#xA;grep, set, more, cut, sort, find. Les entrées et sorties des commandes. La redirection des entrées et sorties. Les Pipelines. Les commandes de filtrage courantes. La boucle while. Atelier :&#xA;Redirection des entrées et sorties. Utilisation de pipelines. Utilisation des commandes de filtrage. Itération avec While.</description>
+    </item>
   </channel>
 </rss>

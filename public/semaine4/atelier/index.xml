@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ATELIER #4: Redirection, E/S, pipeline et filtres :: 420-ZG4-MO LINUX</title>
+    <title>ATELIER #4: Redirection, E/S, pipeline, filtres et while :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine4/atelier/index.html</link>
-    <description>Objectif de l’atelier Se familiariser avec les entrées/sorties et la redirection des commandes. Combinaison de commandes. Filtrage de données. Atelier Exercice 1 : E/S Exercice 2: Redirection Exercice 3: Filtrage (grep, sed, cut, find, etc.) Exercice 4: While Exercice 5: Expansion d’accolade et commande find, grep Exercice2 : Caractères génériques et commande find Allez dans le répertoire /etc. Ne vous déplacez pas pour le reste de cet exercice.&#xA;En utilisant la commande find, cherchez les fichiers dont le nom commence par la lettre r à partir du répertoire courant.</description>
+    <description>Objectifs de l’atelier Se familiariser avec les entrées/sorties et la redirection des commandes. Combinaison de commandes. Filtrage de données. Utilisation de l’itération avec la boucle While. Atelier Astuce&#xD;Pour effectuer des opérations simple, vous pouvez utiliser la commande bc de cette façon: $ echo 7-3 | bc&#xD;Exercice 1 Ouvrez une session avec l’utilisateur standard et reproduisez, dans le répertoire courant, l’arborescence suivante et ce en utilisant un maximum de trois commandes : ├── H2025&#xD;│ ├── Linux&#xD;│ │ ├── Cours&#xD;│ │ └── Ateliers&#xD;│ └── Virtualisation&#xD;│ └── machines&#xD;└── Personnel&#xD;Changez de répertoire en allant dans le dossier Notes. En saisissant une seule commande, créez, à l’intérieur du répertoire courant, les dossiers semaine1, semaine2, …semaine15. Vous ne devez pas à entrer tous les noms de semaines dans la commande. En une seule commande, faites-en-sorte que dans chacun des dossiers précédents (semaine1..), un fichier est créé et qui contient la ligne suivante : Ce cours concerne la semaineN Où N correspond au numéro de la semaine.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine4/atelier/index.xml" rel="self" type="application/rss+xml" />

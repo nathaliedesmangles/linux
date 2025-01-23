@@ -8,18 +8,18 @@
     <language>en-us</language>
     <atom:link href="https://example.org/semaine4/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Entrées/Sorties, redirection, filtres et Pipeline des commandes</title>
+      <title>Entrées/Sorties, redirection, filtres, pipeline des commandes et while</title>
       <link>https://example.org/semaine4/cours/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine4/cours/index.html</guid>
-      <description>7. Utilisation spécifique avec find Pour éviter une expansion prématurée par Bash, protégez les motifs :&#xA;find / -name &#34;*.txt&#34;&#xD;Bonnes pratiques avec les variables Utilisez des guillemets pour gérer les espaces : ls &#34;$fichiers&#34;&#xD;Protégez les motifs pour find : find / -name &#34;*.txt&#34;&#xD;Utilisez des accolades pour automatiser : touch fichier{1..10}.txt&#xD;====== Les entrées et sorties des commandes, la redirection des commandes, les filtres et les pipelines de commandes permettent de manipuler et de traiter des données de manière puissante et flexible, en utilisant des commandes simples mais très efficaces.</description>
+      <description>Les concepts d’entrées/sorties, de redirection, de filtres, de pipelines et l’utilisation des boucles pour automatiser des tâches sont des bases essentielles pour manipuler efficacement des données.&#xA;Les entrées et sorties des commandes Qu’est-ce que l’entrée (input) ? L’entrée (standard input ou stdin) est une source d’information qu’une commande peut utiliser. Par défaut, l’entrée provient du clavier.&#xA;Qu’est-ce que la sortie (output) ? La sortie (standard output ou stdout) est l’endroit où une commande affiche ses résultats. Par défaut, cette sortie s’affiche dans le terminal.</description>
     </item>
     <item>
-      <title>ATELIER #4: Redirection, E/S, pipeline et filtres</title>
+      <title>ATELIER #4: Redirection, E/S, pipeline, filtres et while</title>
       <link>https://example.org/semaine4/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine4/atelier/index.html</guid>
-      <description>Objectif de l’atelier Se familiariser avec les entrées/sorties et la redirection des commandes. Combinaison de commandes. Filtrage de données. Atelier Exercice 1 : E/S Exercice 2: Redirection Exercice 3: Filtrage (grep, sed, cut, find, etc.) Exercice 4: While Exercice 5: Expansion d’accolade et commande find, grep Exercice2 : Caractères génériques et commande find Allez dans le répertoire /etc. Ne vous déplacez pas pour le reste de cet exercice.&#xA;En utilisant la commande find, cherchez les fichiers dont le nom commence par la lettre r à partir du répertoire courant.</description>
+      <description>Objectifs de l’atelier Se familiariser avec les entrées/sorties et la redirection des commandes. Combinaison de commandes. Filtrage de données. Utilisation de l’itération avec la boucle While. Atelier Astuce&#xD;Pour effectuer des opérations simple, vous pouvez utiliser la commande bc de cette façon: $ echo 7-3 | bc&#xD;Exercice 1 Ouvrez une session avec l’utilisateur standard et reproduisez, dans le répertoire courant, l’arborescence suivante et ce en utilisant un maximum de trois commandes : ├── H2025&#xD;│ ├── Linux&#xD;│ │ ├── Cours&#xD;│ │ └── Ateliers&#xD;│ └── Virtualisation&#xD;│ └── machines&#xD;└── Personnel&#xD;Changez de répertoire en allant dans le dossier Notes. En saisissant une seule commande, créez, à l’intérieur du répertoire courant, les dossiers semaine1, semaine2, …semaine15. Vous ne devez pas à entrer tous les noms de semaines dans la commande. En une seule commande, faites-en-sorte que dans chacun des dossiers précédents (semaine1..), un fichier est créé et qui contient la ligne suivante : Ce cours concerne la semaineN Où N correspond au numéro de la semaine.</description>
     </item>
   </channel>
 </rss>

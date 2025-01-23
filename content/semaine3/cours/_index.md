@@ -117,7 +117,7 @@ Voici les cibles les plus courantes et leur correspondance:
 **Avec `ps`** : 
 - Affiche tous les processus s'exécutant sur la machine.
 ```bash
-[ndesmangles@localhost ~]$ ps -ef
+$ ps -ef
 UID          PID    PPID  C STIME TTY          TIME CMD
 root           1       0  2 16:18 ?        00:00:01 /usr/lib/systemd/systemd --s
 
@@ -126,13 +126,13 @@ root           1       0  2 16:18 ?        00:00:01 /usr/lib/systemd/systemd --s
 
 1. **Avec `Systemd`** :
    ```bash
-   [ndesmangles@localhost ~]$ systemctl get-default
+   $ systemctl get-default
    graphical.target
    ```
 
 2. **Avec `runlevel` (SysVinit)** :
    ```bash
-   [ndesmangles@localhost ~]$ runlevel
+   $ runlevel
    N 5
    ```
    - Cette commande affiche deux valeurs : le précédent et l’actuel niveau d’exécution. Ici, `N` indique qu'il n'y avait pas de niveau précédent (au démarrage), et `5` est le niveau actuel.
@@ -155,7 +155,7 @@ root           1       0  2 16:18 ?        00:00:01 /usr/lib/systemd/systemd --s
 
 1. **Avec Systemd** :
    ```bash
-   [ndesmangles@localhost ~]$ systemctl get-default		# Renvoie le *target* par défaut.
+   $ systemctl get-default		# Renvoie le *target* par défaut.
    ```
 
 2. **Avec `runlevel` (SysVinit)** :
@@ -167,13 +167,13 @@ root           1       0  2 16:18 ?        00:00:01 /usr/lib/systemd/systemd --s
 1. **Avec Systemd** :
    - Changez le *target* par défaut avec :
      ```bash
-     [ndesmangles@localhost ~]$ sudo systemctl set-default multi-user.target	# Niveau d’exécution 3 (mode texte multi-utilisateur).
+     $ sudo systemctl set-default multi-user.target	# Niveau d’exécution 3 (mode texte multi-utilisateur).
      ```
 
 2. **Avec SysVinit** :
    - Modifiez le fichier `/etc/inittab` (pour les systèmes utilisant encore SysVinit) :
      ```bash
-     [ndesmangles@localhost ~]$ id:5:initdefault:		# Définit le niveau 5 (mode graphique) comme niveau d’exécution par défaut.
+     $ id:5:initdefault:		# Définit le niveau 5 (mode graphique) comme niveau d’exécution par défaut.
      ```
 ---
 
@@ -181,20 +181,20 @@ root           1       0  2 16:18 ?        00:00:01 /usr/lib/systemd/systemd --s
 
 - Utilisez la commande suivante pour forcer le système à se placer dans le niveau d’exécution ou *target* par défaut :
   ```bash
-  [ndesmangles@localhost ~]$ sudo systemctl isolate default.target
+  $ sudo systemctl isolate default.target
   ```
 ---
 
 **Question**: Suite aux commandes suivantes, que se passe-t-il ?
 
-1. **`[ndesmangles@localhost ~]$ init 0` :**
+1. **`$ init 0` :**
 {{% notice style="green" title="Réponse" groupid="notice-toggle" expanded="false" %}}
    - Envoie le système au niveau d’exécution 0, qui correspond à l’**extinction**.
    - **Effet** : Éteint immédiatement la machine, tout comme la commande `systemctl poweroff`.
 {{% /notice %}}
 
 
-2. **`[ndesmangles@localhost ~]$ init 6` :**
+2. **`$ init 6` :**
 {{% notice style="green" title="Réponse" groupid="notice-toggle" expanded="false" %}}
    - Envoie le système au niveau d’exécution 6, qui correspond au **redémarrage**.
    - **Effet** : Redémarre immédiatement la machine, tout comme la commande `systemctl reboot`.
@@ -219,19 +219,19 @@ Exemple: `VAR1` ≠ `var1`
 3. Pas besoin de déclaration explicite, pour affecter une valeur on utilise `=` **sans espace** autour de `=`.
 Exemple:
 ```bash
-[ndesmangles@localhost ~]$ ma_variable="Bonjour, Linux!"
+$ ma_variable="Bonjour, Linux!"
 ```
 
 4. Pour afficher la valeur d'une variable, on utilise le symbole `$` devant le nom.
 Exemple: 
 ```bash
-[ndesmangles@localhost ~]$ echo $ma_variable
+$ echo $ma_variable
 ```
 
 5. Pour supprimer une variable, on utilise `unset` suivi du nom de la variable (**sans `$`**).
 Exemple: 
 ```bash
-[ndesmangles@localhost ~]$ unset ma_variable
+$ unset ma_variable
 ```
 
 ### Stocker le résultat d’une commande dans une variable
@@ -240,15 +240,15 @@ En Bash, vous pouvez capturer la sortie d’une commande dans une variable en ut
 
 **Exemple 1** : Stocker la date courante
 ```bash
-[ndesmangles@localhost ~]$ date_courante=$(date +%Y-%m-%d)	# La date sera stockée dans date_courante aaaa-mm-jj
-[ndesmangles@localhost ~]$ echo $date_courante			# Affiche la valeur de date_courante
+$ date_courante=$(date +%Y-%m-%d)	# La date sera stockée dans date_courante aaaa-mm-jj
+$ echo $date_courante			# Affiche la valeur de date_courante
 2025-01-09
 ```
 
 **Exemple 2** : Compter et stocker le nombre de fichiers dans le répertoire courant
 ```bash
-[ndesmangles@localhost ~]$  nombre_fichiers=$(ls | wc -l)
-[ndesmangles@localhost ~]$  echo $nombre_fichiers
+$  nombre_fichiers=$(ls | wc -l)
+$  echo $nombre_fichiers
 8
 ```
 - **`ls`** : Liste les fichiers et répertoires dans le répertoire courant.
@@ -261,22 +261,22 @@ L'expansion des variables consiste à remplacer le nom d'une variable par sa val
  
 **Exemple 1:** Remplacement de la variable par sa valeur  
 ```bash
-[ndesmangles@localhost ~]$ fichiers="toto titi tutu"
-[ndesmangles@localhost ~]$ ls -l $fichiers
+$ fichiers="toto titi tutu"
+$ ls -l $fichiers
 ```
 Commande exécutée :  
 ```bash
-[ndesmangles@localhost ~]$ ls -l toto titi tutu
+$ ls -l toto titi tutu
 ```
 
 **Exemple 2:** Une variable peut inclure des options :  
 ```bash
-[ndesmangles@localhost ~]$ fichiers="-l toto titi tutu"
-[ndesmangles@localhost ~]$ ls $fichiers
+$ fichiers="-l toto titi tutu"
+$ ls $fichiers
 ```
 Commande équivalente :  
 ```bash
-[ndesmangles@localhost ~]$ ls -l toto titi tutu
+$ ls -l toto titi tutu
 ```
 
 ## Stocker le résultat d'une commande dans une variable
@@ -284,8 +284,8 @@ Commande équivalente :
 Stocker le résultat d'une commande dans une variable consiste à capturer la sortie d'une commande en utilisant la syntaxe `$(commande)` afin de la réutiliser ultérieurement dans un script ou une commande.
  
 ```bash
-[ndesmangles@localhost ~]$ fichiers=$(ls)
-[ndesmangles@localhost ~]$ ls "$fichiers"  # Toujours utiliser des guillemets pour gérer les espaces.
+$ fichiers=$(ls)
+$ ls "$fichiers"  # Toujours utiliser des guillemets pour gérer les espaces.
 ```
 
 ## Expansion de noms de fichiers (* et ?)
@@ -330,7 +330,7 @@ Certaines commandes comme `find`[^1] nécessitent une attention particulière co
 ### Exemple : Recherche avec `find`
 Pour rechercher tous les fichiers `.txt` :
 ```bash
-find / -name "*.txt"
+$ find / -name "*.txt"
 ```
 Ici, les guillemets protègent `*.txt` pour empêcher Bash d’expandre le motif avant de passer à `find`. Cela garantit que `find` traite correctement le motif.
 
@@ -340,17 +340,17 @@ Ici, les guillemets protègent `*.txt` pour empêcher Bash d’expandre le motif
 
 1. **Toujours utiliser des guillemets pour éviter les problèmes avec les espaces ou caractères spéciaux :**
    ```bash
-   ls "$fichiers"
+   $ ls "$fichiers"
    ```
 
 2. **Protégez les motifs pour les commandes comme `find`:**
    ```bash
-   find / -name "*.txt"
+   $ find / -name "*.txt"
    ```
 
 3. **Utilisez les accolades pour générer des séquences et factoriser vos commandes :**
    ```bash
-   touch fichier{1..10}.txt
+   $ touch fichier{1..10}.txt
    ```
 
 ## Itération sur les résultats de commandes
@@ -512,4 +512,4 @@ done
 
 
 
-[^1] Nous verrons cette commande plus en détails au prochain cours.
+[^1]: Nous verrons cette commande plus en détails au prochain cours.

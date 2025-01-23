@@ -5,31 +5,27 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Objectifs L’atelier a pour but de vous guider à travers le processus d’installation de Linux sur une machine virtuelle (VM). Cela permet d’expérimenter avec Linux sans affecter le système d’exploitation principal de l’ordinateur.
-Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Rappels (Cours ZE5 Virtualisation) VMWare permet d’installer différents systèmes d’exploitation sur une même machine. Le nombre de machines virtuelles (VM) que l’on peut installer dépend de la puissance en terme de CPU et de mémoire de la machine hôte. La machine hôte est celle qui héberge les machines virtuelles aussi appelées les invités. La machine hôte peut être Windows ou Linux et les invités peuvent être une grande variété de systèmes d’exploitation. Format de la remise AttentionVous devrez prendre des captures d’écran de vos installations. Pour plus de détails, voir les documents ci-dessous:.">
+    <meta name="description" content="Objectifs Installation du logiciel de virtualisation VMware workstation Pro. Création d’une machine virtuelle (VM). Installation de Linux sur la VM. Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Rappels (Cours ZE5 Virtualisation) VMWare permet d’installer différents systèmes d’exploitation sur une même machine. Le nombre de machines virtuelles (VM) que l’on peut installer dépend de la puissance en terme de CPU et de mémoire de la machine hôte. La machine hôte est celle qui héberge les machines virtuelles aussi appelées les invités. La machine hôte peut être Windows ou Linux et les invités peuvent être une grande variété de systèmes d’exploitation. Format de la remise AttentionVous devrez prendre des captures d’écran de vos installations. Pour plus de détails, voir les documents ci-dessous:.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Objectifs L’atelier a pour but de vous guider à travers le processus d’installation de Linux sur une machine virtuelle (VM). Cela permet d’expérimenter avec Linux sans affecter le système d’exploitation principal de l’ordinateur.
-Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Rappels (Cours ZE5 Virtualisation) VMWare permet d’installer différents systèmes d’exploitation sur une même machine. Le nombre de machines virtuelles (VM) que l’on peut installer dépend de la puissance en terme de CPU et de mémoire de la machine hôte. La machine hôte est celle qui héberge les machines virtuelles aussi appelées les invités. La machine hôte peut être Windows ou Linux et les invités peuvent être une grande variété de systèmes d’exploitation. Format de la remise AttentionVous devrez prendre des captures d’écran de vos installations. Pour plus de détails, voir les documents ci-dessous:.">
+    <meta name="twitter:description" content="Objectifs Installation du logiciel de virtualisation VMware workstation Pro. Création d’une machine virtuelle (VM). Installation de Linux sur la VM. Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Rappels (Cours ZE5 Virtualisation) VMWare permet d’installer différents systèmes d’exploitation sur une même machine. Le nombre de machines virtuelles (VM) que l’on peut installer dépend de la puissance en terme de CPU et de mémoire de la machine hôte. La machine hôte est celle qui héberge les machines virtuelles aussi appelées les invités. La machine hôte peut être Windows ou Linux et les invités peuvent être une grande variété de systèmes d’exploitation. Format de la remise AttentionVous devrez prendre des captures d’écran de vos installations. Pour plus de détails, voir les documents ci-dessous:.">
     <meta property="og:url" content="https://example.org/semaine1/atelier/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Objectifs L’atelier a pour but de vous guider à travers le processus d’installation de Linux sur une machine virtuelle (VM). Cela permet d’expérimenter avec Linux sans affecter le système d’exploitation principal de l’ordinateur.
-Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Rappels (Cours ZE5 Virtualisation) VMWare permet d’installer différents systèmes d’exploitation sur une même machine. Le nombre de machines virtuelles (VM) que l’on peut installer dépend de la puissance en terme de CPU et de mémoire de la machine hôte. La machine hôte est celle qui héberge les machines virtuelles aussi appelées les invités. La machine hôte peut être Windows ou Linux et les invités peuvent être une grande variété de systèmes d’exploitation. Format de la remise AttentionVous devrez prendre des captures d’écran de vos installations. Pour plus de détails, voir les documents ci-dessous:.">
+    <meta property="og:description" content="Objectifs Installation du logiciel de virtualisation VMware workstation Pro. Création d’une machine virtuelle (VM). Installation de Linux sur la VM. Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Rappels (Cours ZE5 Virtualisation) VMWare permet d’installer différents systèmes d’exploitation sur une même machine. Le nombre de machines virtuelles (VM) que l’on peut installer dépend de la puissance en terme de CPU et de mémoire de la machine hôte. La machine hôte est celle qui héberge les machines virtuelles aussi appelées les invités. La machine hôte peut être Windows ou Linux et les invités peuvent être une grande variété de systèmes d’exploitation. Format de la remise AttentionVous devrez prendre des captures d’écran de vos installations. Pour plus de détails, voir les documents ci-dessous:.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Objectifs L’atelier a pour but de vous guider à travers le processus d’installation de Linux sur une machine virtuelle (VM). Cela permet d’expérimenter avec Linux sans affecter le système d’exploitation principal de l’ordinateur.
-Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Rappels (Cours ZE5 Virtualisation) VMWare permet d’installer différents systèmes d’exploitation sur une même machine. Le nombre de machines virtuelles (VM) que l’on peut installer dépend de la puissance en terme de CPU et de mémoire de la machine hôte. La machine hôte est celle qui héberge les machines virtuelles aussi appelées les invités. La machine hôte peut être Windows ou Linux et les invités peuvent être une grande variété de systèmes d’exploitation. Format de la remise AttentionVous devrez prendre des captures d’écran de vos installations. Pour plus de détails, voir les documents ci-dessous:.">
-    <meta itemprop="wordCount" content="254">
+    <meta itemprop="description" content="Objectifs Installation du logiciel de virtualisation VMware workstation Pro. Création d’une machine virtuelle (VM). Installation de Linux sur la VM. Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Rappels (Cours ZE5 Virtualisation) VMWare permet d’installer différents systèmes d’exploitation sur une même machine. Le nombre de machines virtuelles (VM) que l’on peut installer dépend de la puissance en terme de CPU et de mémoire de la machine hôte. La machine hôte est celle qui héberge les machines virtuelles aussi appelées les invités. La machine hôte peut être Windows ou Linux et les invités peuvent être une grande variété de systèmes d’exploitation. Format de la remise AttentionVous devrez prendre des captures d’écran de vos installations. Pour plus de détails, voir les documents ci-dessous:.">
+    <meta itemprop="wordCount" content="241">
     <title>ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX</title>
     <link href="/semaine1/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1737515236" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737515236" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1737515236" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737515236" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1737515236" rel="stylesheet">
-    <link href="/css/theme.min.css?1737515236" rel="stylesheet">
-    <link href="/css/format-html.min.css?1737515236" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1737601526" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737601526" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1737601526" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737601526" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1737601526" rel="stylesheet">
+    <link href="/css/theme.min.css?1737601526" rel="stylesheet">
+    <link href="/css/format-html.min.css?1737601526" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -143,7 +139,12 @@ Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur
 <h1 id="atelier-1-installation-de-linux-sur-une-vm">ATELIER #1: Installation de Linux sur une VM</h1>
 
 <h2 id="objectifs">Objectifs</h2>
-<p>L&rsquo;atelier a pour but de vous guider à travers le processus d&rsquo;installation de Linux sur une machine virtuelle (VM). Cela permet d&rsquo;expérimenter avec Linux sans affecter le système d&rsquo;exploitation principal de l&rsquo;ordinateur.</p>
+<ul>
+<li>Installation du logiciel de virtualisation VMware workstation Pro.</li>
+<li>Création d&rsquo;une machine virtuelle (VM).</li>
+<li>Installation de Linux sur la VM.</li>
+</ul>
+<hr>
 <h2 id="prérequis-pour-latelier">Prérequis pour l’atelier</h2>
 <ol>
 <li>Avoir Windows 11 installé sur votre disque SSD (<strong>sur une seule partition</strong>).</li>
@@ -168,6 +169,7 @@ Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur
 <p>Vous devrez prendre des <strong>captures d&rsquo;écran de vos installations. Pour plus de détails, voir les documents ci-dessous:</strong>.</p>
   </div>
 </details>
+<hr>
 <h1 id="atelier">Atelier</h1>
 <h3 id="étape-1-réinstallation-de-windows">Étape 1: Réinstallation de Windows</h3>
 <p>Utiliser la procédure obtenue dans le cours 420-ZC5-MO de la session d&rsquo;automne.</p>
@@ -222,7 +224,7 @@ Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1737515236";
+          window.index_js_url="/searchindex.en.js?1737601526";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -235,12 +237,12 @@ Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1737515236" defer></script>
-        <script src="/js/lunr/lunr.min.js?1737515236" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1737515236" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1737515236" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1737515236" defer></script>
-        <script src="/js/search.js?1737515236" defer></script>
+        <script src="/js/auto-complete.js?1737601526" defer></script>
+        <script src="/js/lunr/lunr.min.js?1737601526" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1737601526" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1737601526" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1737601526" defer></script>
+        <script src="/js/search.js?1737601526" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -256,6 +258,7 @@ Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur
             <li class="active " data-nav-id="/semaine1/atelier/index.html"><a class="padding" href="/semaine1/atelier/index.html">ATELIER #1: Installation de Linux sur une VM</a></li></ul></li>
             <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>E/S, redirection et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
           </ul>
         </div>
     
@@ -309,8 +312,8 @@ Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1737515236" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1737515236" defer></script>
-    <script src="/js/theme.js?1737515236" defer></script>
+    <script src="/js/clipboard.min.js?1737601526" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1737601526" defer></script>
+    <script src="/js/theme.js?1737601526" defer></script>
   </body>
 </html>

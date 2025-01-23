@@ -22,14 +22,14 @@ Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière
     <meta itemprop="name" content="Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX">
     <meta itemprop="description" content="Séquence de démarrage de Linux Le processus de démarrage de Linux est une série d’étapes qui se déroulent depuis l’allumage de l’ordinateur jusqu’à l’affichage de l’invite de commande ou de l’interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.
 Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière ordonnée pour préparer la machine et le système d’exploitation à fonctionner. Voici les étapes principales :">
-    <meta itemprop="wordCount" content="2355">
+    <meta itemprop="wordCount" content="2334">
     <title>Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX</title>
     <link href="/semaine3/cours/index.xml" rel="alternate" type="application/rss+xml" title="Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1737515236" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737515236" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1737515236" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737515236" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1737515236" rel="stylesheet">
-    <link href="/css/theme.min.css?1737515236" rel="stylesheet">
-    <link href="/css/format-html.min.css?1737515236" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1737601526" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737601526" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1737601526" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737601526" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1737601526" rel="stylesheet">
+    <link href="/css/theme.min.css?1737601526" rel="stylesheet">
+    <link href="/css/format-html.min.css?1737601526" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -204,8 +204,8 @@ Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière
 <li><strong>Noyau Linux</strong> : Configure le matériel, monte le système de fichiers racine, et démarre le processus d’initialisation.</li>
 <li><strong>Init/Systemd</strong> : Gère le lancement des services et des processus utilisateur.</li>
 </ol>
-<p><a href="#R-image-b200063b434f7f36552195b345f2eae9" class="lightbox-link"><img alt="Schema séquence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b200063b434f7f36552195b345f2eae9"><img alt="Schema séquence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg"></a></p>
+<p><a href="#R-image-895f8cacc039962afb1adb9eee496516" class="lightbox-link"><img alt="Schema séquence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-895f8cacc039962afb1adb9eee496516"><img alt="Schema séquence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg"></a></p>
 <hr>
 <h2 id="étape-1--biosuefi">Étape 1 : BIOS/UEFI</h2>
 <h3 id="rôle-du-biosuefi">Rôle du BIOS/UEFI</h3>
@@ -355,19 +355,19 @@ Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière
 <ul>
 <li>Affiche tous les processus s&rsquo;exécutant sur la machine.</li>
 </ul>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ps -ef
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -ef
 </span></span><span style="display:flex;"><span>UID          PID    PPID  C STIME TTY          TIME CMD
 </span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">2</span> 16:18 ?        00:00:01 /usr/lib/systemd/systemd --s</span></span></code></pre></div>
 <h3 id="pour-connaître-le-niveau-dexécution-actuel">Pour connaître le niveau d’exécution actuel</h3>
 <ol>
 <li>
 <p><strong>Avec <code>Systemd</code></strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ systemctl get-default
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ systemctl get-default
 </span></span><span style="display:flex;"><span>graphical.target</span></span></code></pre></div>
 </li>
 <li>
 <p><strong>Avec <code>runlevel</code> (SysVinit)</strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ runlevel
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ runlevel
 </span></span><span style="display:flex;"><span>N <span style="color:#ae81ff">5</span></span></span></code></pre></div>
 <ul>
 <li>Cette commande affiche deux valeurs : le précédent et l’actuel niveau d’exécution. Ici, <code>N</code> indique qu&rsquo;il n&rsquo;y avait pas de niveau précédent (au démarrage), et <code>5</code> est le niveau actuel.</li>
@@ -397,7 +397,7 @@ Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière
 <ol>
 <li>
 <p><strong>Avec Systemd</strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ systemctl get-default		<span style="color:#75715e"># Renvoie le *target* par défaut.</span></span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ systemctl get-default		<span style="color:#75715e"># Renvoie le *target* par défaut.</span></span></span></code></pre></div>
 </li>
 <li>
 <p><strong>Avec <code>runlevel</code> (SysVinit)</strong> :</p>
@@ -413,7 +413,7 @@ Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière
 <p><strong>Avec Systemd</strong> :</p>
 <ul>
 <li>Changez le <em>target</em> par défaut avec :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ sudo systemctl set-default multi-user.target	<span style="color:#75715e"># Niveau d’exécution 3 (mode texte multi-utilisateur).</span></span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo systemctl set-default multi-user.target	<span style="color:#75715e"># Niveau d’exécution 3 (mode texte multi-utilisateur).</span></span></span></code></pre></div>
 </li>
 </ul>
 </li>
@@ -421,7 +421,7 @@ Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière
 <p><strong>Avec SysVinit</strong> :</p>
 <ul>
 <li>Modifiez le fichier <code>/etc/inittab</code> (pour les systèmes utilisant encore SysVinit) :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ id:5:initdefault:		<span style="color:#75715e"># Définit le niveau 5 (mode graphique) comme niveau d’exécution par défaut.</span></span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ id:5:initdefault:		<span style="color:#75715e"># Définit le niveau 5 (mode graphique) comme niveau d’exécution par défaut.</span></span></span></code></pre></div>
 </li>
 </ul>
 </li>
@@ -430,14 +430,14 @@ Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière
 <h3 id="pour-se-rendre-directement-au-niveau-dexécution-par-défaut">Pour se rendre directement au niveau d’exécution par défaut</h3>
 <ul>
 <li>Utilisez la commande suivante pour forcer le système à se placer dans le niveau d’exécution ou <em>target</em> par défaut :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ sudo systemctl isolate default.target</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo systemctl isolate default.target</span></span></code></pre></div>
 </li>
 </ul>
 <hr>
 <p><strong>Question</strong>: Suite aux commandes suivantes, que se passe-t-il ?</p>
 <ol>
 <li>
-<p><strong><code>[ndesmangles@localhost ~]$ init 0</code> :</strong>
+<p><strong><code>$ init 0</code> :</strong>
 
 <details class=" box cstyle notices green expand" name="notice-toggle">
   <summary class="box-label">
@@ -453,7 +453,7 @@ Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière
 </details></p>
 </li>
 <li>
-<p><strong><code>[ndesmangles@localhost ~]$ init 6</code> :</strong>
+<p><strong><code>$ init 6</code> :</strong>
 
 <details class=" box cstyle notices green expand" name="notice-toggle">
   <summary class="box-label">
@@ -498,47 +498,47 @@ Exemple: <code>VAR1</code> ≠ <code>var1</code></p>
 Exemple:</p>
 </li>
 </ol>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ma_variable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Bonjour, Linux!&#34;</span></span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ma_variable<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Bonjour, Linux!&#34;</span></span></span></code></pre></div>
 <ol start="4">
 <li>Pour afficher la valeur d&rsquo;une variable, on utilise le symbole <code>$</code> devant le nom.
 Exemple:</li>
 </ol>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ echo $ma_variable</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo $ma_variable</span></span></code></pre></div>
 <ol start="5">
 <li>Pour supprimer une variable, on utilise <code>unset</code> suivi du nom de la variable (<strong>sans <code>$</code></strong>).
 Exemple:</li>
 </ol>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ unset ma_variable</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ unset ma_variable</span></span></code></pre></div>
 <h3 id="stocker-le-résultat-dune-commande-dans-une-variable">Stocker le résultat d’une commande dans une variable</h3>
 <p>En Bash, vous pouvez capturer la sortie d’une commande dans une variable en utilisant la syntaxe <code>$(...)</code>.</p>
 <p><strong>Exemple 1</strong> : Stocker la date courante</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ date_courante<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +%Y-%m-%d<span style="color:#66d9ef">)</span>	<span style="color:#75715e"># La date sera stockée dans date_courante aaaa-mm-jj</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ echo $date_courante			<span style="color:#75715e"># Affiche la valeur de date_courante</span>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ date_courante<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +%Y-%m-%d<span style="color:#66d9ef">)</span>	<span style="color:#75715e"># La date sera stockée dans date_courante aaaa-mm-jj</span>
+</span></span><span style="display:flex;"><span>$ echo $date_courante			<span style="color:#75715e"># Affiche la valeur de date_courante</span>
 </span></span><span style="display:flex;"><span>2025-01-09</span></span></code></pre></div>
 <p><strong>Exemple 2</strong> : Compter et stocker le nombre de fichiers dans le répertoire courant</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$  nombre_fichiers<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ls | wc -l<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$  echo $nombre_fichiers
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$  nombre_fichiers<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ls | wc -l<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>$  echo $nombre_fichiers
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">8</span></span></span></code></pre></div>
 <ul>
 <li><strong><code>ls</code></strong> : Liste les fichiers et répertoires dans le répertoire courant.</li>
-<li><strong><code>wc -l</code></strong> : Compte le nombre de lignes de la sortie de <code>ls</code>, correspondant au nombre d&rsquo;entrées.[^1]</li>
+<li><strong><code>wc -l</code></strong> : Compte le nombre de lignes de la sortie de <code>ls</code>, correspondant au nombre d&rsquo;entrées.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
 </ul>
 <h2 id="expansion-des-variables-en-bash">Expansion des variables en <em>Bash</em></h2>
 <p>L&rsquo;expansion des variables consiste à remplacer le nom d&rsquo;une variable par sa valeur lors de l&rsquo;exécution d&rsquo;une commande, permettant ainsi d&rsquo;utiliser dynamiquement des données dans des scripts ou des commandes.</p>
 <p><strong>Exemple 1:</strong> Remplacement de la variable par sa valeur</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ fichiers<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;toto titi tutu&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ls -l $fichiers</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ fichiers<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;toto titi tutu&#34;</span>
+</span></span><span style="display:flex;"><span>$ ls -l $fichiers</span></span></code></pre></div>
 <p>Commande exécutée :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ls -l toto titi tutu</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls -l toto titi tutu</span></span></code></pre></div>
 <p><strong>Exemple 2:</strong> Une variable peut inclure des options :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ fichiers<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-l toto titi tutu&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ls $fichiers</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ fichiers<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-l toto titi tutu&#34;</span>
+</span></span><span style="display:flex;"><span>$ ls $fichiers</span></span></code></pre></div>
 <p>Commande équivalente :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ls -l toto titi tutu</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls -l toto titi tutu</span></span></code></pre></div>
 <h2 id="stocker-le-résultat-dune-commande-dans-une-variable-1">Stocker le résultat d&rsquo;une commande dans une variable</h2>
 <p>Stocker le résultat d&rsquo;une commande dans une variable consiste à capturer la sortie d&rsquo;une commande en utilisant la syntaxe <code>$(commande)</code> afin de la réutiliser ultérieurement dans un script ou une commande.</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ fichiers<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ls<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ ls <span style="color:#e6db74">&#34;</span>$fichiers<span style="color:#e6db74">&#34;</span>  <span style="color:#75715e"># Toujours utiliser des guillemets pour gérer les espaces.</span></span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ fichiers<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ls<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>$ ls <span style="color:#e6db74">&#34;</span>$fichiers<span style="color:#e6db74">&#34;</span>  <span style="color:#75715e"># Toujours utiliser des guillemets pour gérer les espaces.</span></span></span></code></pre></div>
 <h2 id="expansion-de-noms-de-fichiers--et-">Expansion de noms de fichiers (* et ?)</h2>
 <p>Dans <em>Bash</em> on peut utiliser des <strong>caractères génériques</strong> pour étendre des motifs en liste de fichiers existants.</p>
 <table>
@@ -630,25 +630,25 @@ Exemple:</li>
 </table>
 <hr>
 <h2 id="commandes-spéciales-et-expansions">Commandes spéciales et expansions</h2>
-<p>Certaines commandes comme <code>find</code>[^1] nécessitent une attention particulière concernant l&rsquo;expansion.</p>
+<p>Certaines commandes comme <code>find</code><sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> nécessitent une attention particulière concernant l&rsquo;expansion.</p>
 <h3 id="exemple--recherche-avec-find">Exemple : Recherche avec <code>find</code></h3>
 <p>Pour rechercher tous les fichiers <code>.txt</code> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -name <span style="color:#e6db74">&#34;*.txt&#34;</span></span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name <span style="color:#e6db74">&#34;*.txt&#34;</span></span></span></code></pre></div>
 <p>Ici, les guillemets protègent <code>*.txt</code> pour empêcher Bash d’expandre le motif avant de passer à <code>find</code>. Cela garantit que <code>find</code> traite correctement le motif.</p>
 <hr>
 <h2 id="bonnes-pratiques-avec-les-variables">Bonnes pratiques avec les variables</h2>
 <ol>
 <li>
 <p><strong>Toujours utiliser des guillemets pour éviter les problèmes avec les espaces ou caractères spéciaux :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls <span style="color:#e6db74">&#34;</span>$fichiers<span style="color:#e6db74">&#34;</span></span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls <span style="color:#e6db74">&#34;</span>$fichiers<span style="color:#e6db74">&#34;</span></span></span></code></pre></div>
 </li>
 <li>
 <p><strong>Protégez les motifs pour les commandes comme <code>find</code>:</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find / -name <span style="color:#e6db74">&#34;*.txt&#34;</span></span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name <span style="color:#e6db74">&#34;*.txt&#34;</span></span></span></code></pre></div>
 </li>
 <li>
 <p><strong>Utilisez les accolades pour générer des séquences et factoriser vos commandes :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>touch fichier<span style="color:#f92672">{</span>1..10<span style="color:#f92672">}</span>.txt</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ touch fichier<span style="color:#f92672">{</span>1..10<span style="color:#f92672">}</span>.txt</span></span></code></pre></div>
 </li>
 </ol>
 <h2 id="itération-sur-les-résultats-de-commandes">Itération sur les résultats de commandes</h2>
@@ -754,7 +754,14 @@ Nombre impair : 9</code></pre></div>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> fichier in <span style="color:#e6db74">&#34;file 1&#34;</span> <span style="color:#e6db74">&#34;file 2&#34;</span></span></span></code></pre></div>
 </li>
 </ol>
-<p>[^1] Nous verrons cette commande plus en détails au prochain cours.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Nous verrons cette commande plus en détails au prochain cours.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
   <footer class="footline">
   </footer>
@@ -771,7 +778,7 @@ Nombre impair : 9</code></pre></div>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1737515236";
+          window.index_js_url="/searchindex.en.js?1737601526";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -784,12 +791,12 @@ Nombre impair : 9</code></pre></div>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1737515236" defer></script>
-        <script src="/js/lunr/lunr.min.js?1737515236" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1737515236" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1737515236" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1737515236" defer></script>
-        <script src="/js/search.js?1737515236" defer></script>
+        <script src="/js/auto-complete.js?1737601526" defer></script>
+        <script src="/js/lunr/lunr.min.js?1737601526" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1737601526" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1737601526" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1737601526" defer></script>
+        <script src="/js/search.js?1737601526" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -805,6 +812,7 @@ Nombre impair : 9</code></pre></div>
             <li class="parent " data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu">
             <li class="active " data-nav-id="/semaine3/cours/index.html"><a class="padding" href="/semaine3/cours/index.html">Processus de démarrage, cibles, variables et boucle For</a></li>
             <li class="" data-nav-id="/semaine3/atelier/index.html"><a class="padding" href="/semaine3/atelier/index.html">ATELIER #3: Cibles et variables utilisateurs et for</a></li></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>E/S, redirection et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
           </ul>
         </div>
     
@@ -858,8 +866,8 @@ Nombre impair : 9</code></pre></div>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1737515236" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1737515236" defer></script>
-    <script src="/js/theme.js?1737515236" defer></script>
+    <script src="/js/clipboard.min.js?1737601526" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1737601526" defer></script>
+    <script src="/js/theme.js?1737601526" defer></script>
   </body>
 </html>

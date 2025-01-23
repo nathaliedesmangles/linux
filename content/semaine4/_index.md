@@ -3,7 +3,6 @@ chapter = true
 pre = "<b>Semaine 4. </b>"
 title = "E/S, redirection et filtrage de commandes et While"
 weight = 40
-draft = true
 +++
 
 ## Plan de la leçon

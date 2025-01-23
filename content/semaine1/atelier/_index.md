@@ -6,7 +6,11 @@ alwaysopen = true
 
 ## Objectifs
 
-L'atelier a pour but de vous guider à travers le processus d'installation de Linux sur une machine virtuelle (VM). Cela permet d'expérimenter avec Linux sans affecter le système d'exploitation principal de l'ordinateur.
+- Installation du logiciel de virtualisation VMware workstation Pro.
+- Création d'une machine virtuelle (VM).
+- Installation de Linux sur la VM. 
+
+---
 
 ## Prérequis pour l’atelier
 
@@ -26,6 +30,8 @@ L'atelier a pour but de vous guider à travers le processus d'installation de Li
 {{% notice style="warning" title="Attention" %}}
 Vous devrez prendre des **captures d'écran de vos installations. Pour plus de détails, voir les documents ci-dessous:**.
 {{% /notice %}}
+
+---
 
 # Atelier
 
