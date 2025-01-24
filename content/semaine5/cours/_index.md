@@ -4,193 +4,229 @@ weight = 51
 draft = true
 +++
 
-### Introduction à l'éditeur de texte **vim**
-
-**vim** (Vi IMproved) est un éditeur de texte très puissant, souvent utilisé dans les environnements Unix/Linux. Il est particulièrement adapté pour les utilisateurs qui souhaitent travailler rapidement avec un clavier sans souris. Bien qu’il puisse sembler intimidant au premier abord, il devient très efficace une fois maîtrisé.  
-
-#### Pourquoi utiliser **vim** ?
-- **Disponibilité** : Installé par défaut sur presque tous les systèmes Unix/Linux.  
-- **Léger et rapide** : Idéal pour éditer des fichiers même sur des systèmes limités en ressources.  
-- **Personnalisable** : Peut être configuré pour répondre à vos besoins spécifiques.  
-- **Puissant** : Supporte des fonctionnalités avancées comme la recherche, la substitution, et l'édition de plusieurs fichiers simultanément.  
-
----
-
-### Premiers pas avec **vim**
-
-Pour ouvrir un fichier avec **vim**, utilisez la commande suivante :  
-```bash
-$ vim nom_du_fichier
-```
-Si le fichier n'existe pas, **vim** le créera.
-
-Lorsque vous ouvrez **vim**, il commence en **mode commande**. Vous ne pouvez pas directement écrire du texte. Vous devez d'abord passer au **mode insertion**.  
-
----
-
-### Modes principaux de **vim**
-
-1. **Mode commande** (par défaut)  
-   - Permet de naviguer, de sauvegarder, et d'effectuer d'autres actions sur le fichier.  
-   - Appuyez sur `Esc` pour revenir à ce mode.  
-
-2. **Mode insertion**  
-   - Permet d’écrire du texte dans le fichier.  
-   - Pour passer en mode insertion, appuyez sur `i`.  
-
-3. **Mode ligne de commande**  
-   - Utilisé pour exécuter des commandes (sauvegarder, quitter, rechercher, etc.).  
-   - Appuyez sur `:` en mode commande pour l’activer.  
-
----
-
-### Commandes de base pour débutants
-
-#### Édition
-- **i** : Passer en mode insertion.  
-- **o** : Ajouter une nouvelle ligne et passer en mode insertion.  
-- **x** : Supprimer un caractère sous le curseur.  
-
-#### Navigation
-- Flèches directionnelles : Déplacer le curseur (ou utiliser les touches `h` (gauche), `j` (bas), `k` (haut), `l` (droite)).  
-- `gg` : Aller au début du fichier.  
-- `G` : Aller à la fin du fichier.  
-
-#### Sauvegarder et quitter
-- `:w` : Sauvegarder les modifications.  
-- `:q` : Quitter si aucune modification n’a été effectuée.  
-- `:wq` ou `:x` : Sauvegarder et quitter.  
-- `:q!` : Quitter sans sauvegarder.  
-
-#### Recherche
-- `/mot` : Rechercher un mot ou une phrase (appuyez sur `n` pour trouver la prochaine occurrence).  
-- `?mot` : Rechercher en remontant dans le fichier.  
-
-#### Annuler et rétablir
-- `u` : Annuler la dernière modification.  
-- `Ctrl+r` : Rétablir une modification annulée.  
-
----
-
-### Exercices pratiques
-
-1. **Ouvrez un fichier** nommé `test.txt` avec la commande :  
-   ```bash
-   $ vim test.txt
-   ```  
-   Passez en mode insertion (`i`), écrivez quelques lignes, puis sauvegardez et quittez avec `:wq`.
-
-2. **Recherchez du texte** : Ouvrez un fichier existant, cherchez un mot avec `/mot`, puis naviguez entre les occurrences avec `n`.
-
-3. **Testez l'annulation** : Modifiez une ligne, annulez avec `u`, puis rétablissez avec `Ctrl+r`.
-
----
-
-### Astuces pour les débutants
-- **Soyez patient !** vim peut être difficile au début, mais une fois que vous le maîtrisez, il devient un outil très puissant.  
-- Entraînez-vous régulièrement avec les commandes de base avant d'apprendre les fonctionnalités avancées.  
-- Si vous êtes bloqué, quittez avec `:q!` sans sauvegarder et réessayez.  
-
-Avec le temps, **vim** deviendra un outil incontournable pour éditer vos fichiers rapidement et efficacement.
-
-=================
-
-Un processus est une instance d'un programme en cours d'exécution. Sous Linux, les processus jouent un rôle central dans la gestion des tâches et des ressources. 
-
-Dans cette leçon nous voyons comment Linux gère les processus, ainsi que les commandes essentielles pour les superviser et les contrôler.
-
----
-
 ## Qu'est-ce qu'un processus ?
 
-Un processus est une entité active qui exécute des instructions d'un programme. Il inclut :
-- **Code exécutable** : Les instructions du programme.
-- **Espace mémoire** : Contient les variables, les données, et la pile d'exécution.
-- **Identifiant unique (PID)** : Chaque processus a un PID unique pour l'identifier.
-
-Les processus peuvent être classés en deux catégories principales :
-- **Processus parents** : Ceux qui initient d'autres processus.
-- **Processus enfants** : Créés par un processus parent.
+Un **processus** est une application ou une commande en cours d'exécution. Certains processus s'arrêtent automatiquement une fois leur tâche terminée, tandis que d'autres continuent de s'exécuter jusqu'à ce que vous les arrêtiez vous-même.
 
 ---
 
-## Types de processus
+## Exemple de processus
 
-1. **Processus en premier plan (foreground)** :
-   - Exécutés directement dans le terminal et occupent l'entrée/sortie standard.
-   - Exemple :
-     ```
-     nano fichier.txt
-     ```
+1. **Commande `ls` :**  
+   Cette commande affiche le contenu d’un dossier, s’exécute, puis se termine immédiatement. Vous pouvez enchaîner avec une autre commande.  
+   ```bash
+   $ ls
+   ```
+2. **Commande `firefox` :**  
+   Cette commande ouvre le navigateur Firefox. Tant que Firefox est ouvert, la commande reste active et bloque le terminal.  
+   ```bash
+   $ firefox
+   ```
 
-2. **Processus en arrière-plan (background)** :
-   - Exécutés sans bloquer le terminal.
-   - Exemple :
-     ```
-     ./script.sh &
-     ```
+---
 
-3. **Démons** :
-   - Processus s'exécutant en tâche de fond pour des services système (comme `sshd`).
+## Exécution en arrière-plan
+
+Si une commande empêche l’utilisation du terminal, c’est parce qu’elle s’exécute au **premier plan**. Voici comment continuer à utiliser le terminal :
+
+1. **Lancer une commande directement en arrière-plan :**  
+   Ajoutez `&` à la fin de la commande.  
+   ```bash
+   $ firefox &
+   ```
+
+2. **Passer une commande déjà en cours au second plan :**  
+   - Appuyez sur `Ctrl + Z` pour suspendre temporairement la commande.  
+   - Tapez `bg` pour la reprendre en **arrière-plan**.
+
+3. **Revenir au premier plan :**  
+   Utilisez `fg`.  
+   ```bash
+   $ fg
+   ```
+
+
+### Exercices 1
+
+1. Lancez Firefox. Faites-le passer en arrière-plan puis ramenez-le au premier plan.  
+2. Fermez Firefox depuis le terminal en tapant `Ctrl + C`.
+
+---
+
+## Visualiser les processus
+
+Pour afficher les processus lancés depuis le terminal, utilisez :  
+```bash
+$ ps -f
+```
+
+Chaque processus est identifié par deux numéros :  
+- **PID** : Identifiant unique du processus.  
+- **PPID** : Identifiant du processus père (celui qui a lancé le processus).
+
+**Exemple :**  
+Si vous lancez une commande dans un terminal, ce terminal devient le **processus père**.
+
+
+### Exercices 2
+
+1. Notez le **PID** de votre shell avec `ps`.  
+2. Lancez Firefox et notez son **PID** et son **PPID**. Quel est le **PPID** de Firefox ?  
+
+---
+
+## États des processus
+
+Un processus peut être dans différents états :  
+- **Élu :** En cours d’exécution.  
+- **Prêt :** En attente d’être exécuté.  
+- **Bloqué :** En attente d’une ressource (par ex. disque).  
+- **Zombie :** Terminé, mais le processus père n’a pas encore pris en compte sa fin.
+
+Utilisez `top` pour surveiller les processus et leur consommation de ressources :  
+```bash
+$ top
+```
+
+
+### Exercices 3
+
+1. Lancez Firefox en tâche de fond. Notez son **PID** et son **PPID**.  
+2. Tuez le parent de Firefox. Quel est le nouveau **PPID** de Firefox ?
 
 ---
 
 ## Gestion des processus
 
-### Commandes de base pour superviser les processus
+- **Arrêter un processus :**  
+  ```bash
+  $ kill <PID>
+  ```
+  Pour forcer l’arrêt :  
+  ```bash
+  $ kill -9 <PID>
+  ```
 
-1. **`ps` (Process Status)** :
-   - Affiche des informations sur les processus en cours.
-   - Exemple :
-     ```
-     ps
-     ps aux  # Affiche tous les processus avec des détails
-     ```
+- **Tuer tous les processus d’un même nom :**  
+  ```bash
+  $ killall <nom_du_processus>
+  ```
 
-2. **`top`** :
-   - Affiche une vue interactive des processus en temps réel.
-   - Contrôles :
-     - `q` : Quitter
-     - `h` : Aide
+- **Préserver un processus si le terminal est fermé :**  
+  - Avant fermeture :  
+    ```bash
+    $ disown <PID>
+    ```
+  - Lors du lancement :  
+    ```bash
+    $ nohup commande &
+    ```
 
-3. **`htop`** :
-   - Une alternative à `top` avec une interface plus conviviale.
+### Exercices 4
 
-4. **`jobs`** :
-   - Liste les processus en arrière-plan du terminal actuel.
-   - Exemple :
-     ```
-     jobs
-     ```
+1. Lancez la commande suivante :  
+   ```bash
+   $ grep <fichier>
+   ```
+   - Trouvez le **PID** avec un autre terminal et tuez le processus.  
+2. Lancez Firefox en tâche de fond, puis fermez le terminal.  
+   - Réessayez avec `disown`.  
+   - Essayez ensuite avec `nohup firefox`.
 
-5. **`kill`** :
-   - Termine un processus en utilisant son PID.
-   - Exemple :
-     ```
-     kill 1234  # Termine le processus avec le PID 1234
-     kill -9 1234  # Forcer l’arrêt
-     ```
+---
 
-6. **`bg` (Background)** :
-   - Reprend un processus arrêté en arrière-plan.
-   - Exemple :
-     ```
-     bg %1
-     ```
+## Codes de retour des commandes
 
-7. **`fg` (Foreground)** :
-   - Reprend un processus en premier plan.
-   - Exemple :
-     ```
-     fg %1
-     ```
+Chaque commande retourne un code :  
 
-8. **`nice` et `renice`** :
-   - Modifient la priorité d'un processus.
-   - Exemple :
-     ```
-     nice -n 10 ./script.sh
-     renice 5 -p 1234  # Change la priorité du PID 1234
-     ```
+- **0** : Succès.  
+- **Différent de 0** : Erreur.
 
+Pour afficher le code de retour de la dernière commande :  
+```bash
+$ echo $?
+```
+
+
+### Exercices 5
+
+1. Lancez `ls`. Quel est son code de retour ?  
+2. Essayez :  
+   ```bash
+   $ find / -name "*.conf"
+   ```
+   Quel est le code de retour ? Pourquoi ?
+
+---
+
+## Combinaison de commandes
+
+La **combinaison de commandes** permet de lier plusieurs commandes dans un même processus, facilitant ainsi l'automatisation et le traitement de données en une seule étape. 
+
+Elle s'effectue grâce à des opérateurs comme `|` (pipe), `&&` (exécuter si la commande précédente réussit) ou `;` (exécuter séquentiellement).
+
+1. **Exécuter successivement :**  
+   ```
+   $ commande1 ; commande2
+   ```
+2. **Exécuter en parallèle :**  
+   ```
+   $ commande1 & commande2
+   ```
+3. **Exécuter si succès :**  
+   ```
+   $ commande1 && commande2
+   ```
+4. **Exécuter si échec :**  
+   ```
+   $ commande1 || commande2
+   ```
+
+
+### Exercices 6
+
+1. Testez :  
+   ```bash
+   $ find / -name "*.conf" && ls
+   ```
+   Que se passe-t-il si vous inversez les commandes ?  
+2. Testez :  
+   ```bash
+   $ find / -name "*.conf" || ls
+   ```
+   Observez les différences.
+
+---
+
+## Création de scripts Bash
+
+Un script Bash est un fichier exécutable contenant des commandes.  
+
+1. Créez un fichier :  
+   ```bash
+   $ vim script.sh
+   ```
+2. Ajoutez cette entête :  
+   ```
+   #!/bin/bash
+   ```
+3. Ajoutez des commandes :  
+   ```
+   echo "Bonjour"
+   pwd
+   touch fichier{1..5}.txt
+   ```
+4. Exécutez-le :  
+   ```bash
+   $ bash script.sh
+   ```
+
+Pour lancer des tâches en parallèle dans un script, utilisez `&` et `wait` :  
+```
+#!/bin/bash
+(cp dossier1/* destination1 &)
+(cp dossier2/* destination2 &)
+wait
+echo "Copie terminée"
+```
 

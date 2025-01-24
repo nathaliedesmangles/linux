@@ -3,7 +3,7 @@
   <channel>
     <title>E/S, redirection et filtrage de commandes et While :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine4/index.html</link>
-    <description>Plan de la leçon Théorie :&#xA;grep, set, more, cut, sort, find. Les entrées et sorties des commandes. La redirection des entrées et sorties. Les Pipelines. Les commandes de filtrage courantes. La boucle while. Atelier :&#xA;Redirection des entrées et sorties. Utilisation de pipelines. Utilisation des commandes de filtrage. Itération avec While.</description>
+    <description>Plan de la leçon Théorie :&#xA;Les entrées et sorties des commandes. La redirection des entrées et sorties. Les Pipelines. Les commandes de filtrage courantes. La boucle while. Atelier :&#xA;Redirection des entrées et sorties. Utilisation de pipelines. Utilisation des commandes de filtrage. Itération avec While.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine4/index.xml" rel="self" type="application/rss+xml" />

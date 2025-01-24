@@ -2,24 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Les processus Linux :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/semaine5/index.html</link>
-    <description>Plan de la leçon Théorie : Atelier :</description>
+    <link>https://example.org/semaine5/index.html</link>
+    <description>Plan de la leçon Théorie :&#xA;Qu’est-ce qu’un processus ? Exemples de processus. L’exécution en arrière-plan. Visualiser les processus. Les états des processus. La gestion des processus. Le code de retour des commandes. Les combinaison de commandes. La création de scripts bash. Atelier :&#xA;Gestion et manipulation de processus à l’aide de scripts.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/semaine5/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Les processus de Linux</title>
-      <link>http://localhost:1313/semaine5/cours/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/semaine5/cours/index.html</guid>
-      <description>Introduction à l’éditeur de texte vim vim (Vi IMproved) est un éditeur de texte très puissant, souvent utilisé dans les environnements Unix/Linux. Il est particulièrement adapté pour les utilisateurs qui souhaitent travailler rapidement avec un clavier sans souris. Bien qu’il puisse sembler intimidant au premier abord, il devient très efficace une fois maîtrisé.&#xA;Pourquoi utiliser vim ? Disponibilité : Installé par défaut sur presque tous les systèmes Unix/Linux. Léger et rapide : Idéal pour éditer des fichiers même sur des systèmes limités en ressources. Personnalisable : Peut être configuré pour répondre à vos besoins spécifiques. Puissant : Supporte des fonctionnalités avancées comme la recherche, la substitution, et l’édition de plusieurs fichiers simultanément. Premiers pas avec vim Pour ouvrir un fichier avec vim, utilisez la commande suivante :</description>
-    </item>
+    <atom:link href="https://example.org/semaine5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ATELIER #5: Gestion des processus Linux</title>
-      <link>http://localhost:1313/semaine5/atelier/index.html</link>
+      <link>https://example.org/semaine5/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/semaine5/atelier/index.html</guid>
-      <description>Objectifs de l’atelier Comprendre les processus sous Linux. Apprendre à lister, gérer et contrôler les processus. Manipuler les processus en premier plan et en arrière-plan. Atelier Dans cet atelier, vous apprendrez à manipuler les processus sous Linux en utilisant des commandes de base. Nous allons explorer les différents types de processus, ainsi que les commandes essentielles pour les superviser et les contrôler. Cet atelier est conçu pour être pratique et interactif.</description>
+      <guid>https://example.org/semaine5/atelier/index.html</guid>
+      <description>Objectifs de l’atelier Manipuler les processus sous Linux en utilisant des commandes de base. Comprendre et explorer les différents types de processus sous Linux. Apprendre à lister, gérer et contrôler les processus. Manipuler les processus en premier plan et en arrière-plan. Remise Vous devez remettre sur Moodle :&#xA;Vos deux fichiers .sh Deux captures d’écran illustrant le fonctionnement des scripts : Capture Contenu 01_nombre_de_fichiers_seq.png Appel au script séquentiel et résultats 02_nombre_de_fichiers_conc.png Appel au script concurrent et résultats Atelier Dans cet atelier, vous apprendrez à créer deux scripts Bash :</description>
     </item>
   </channel>
 </rss>

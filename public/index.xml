@@ -33,7 +33,14 @@
       <link>https://example.org/semaine4/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine4/index.html</guid>
-      <description>Plan de la leçon Théorie :&#xA;grep, set, more, cut, sort, find. Les entrées et sorties des commandes. La redirection des entrées et sorties. Les Pipelines. Les commandes de filtrage courantes. La boucle while. Atelier :&#xA;Redirection des entrées et sorties. Utilisation de pipelines. Utilisation des commandes de filtrage. Itération avec While.</description>
+      <description>Plan de la leçon Théorie :&#xA;Les entrées et sorties des commandes. La redirection des entrées et sorties. Les Pipelines. Les commandes de filtrage courantes. La boucle while. Atelier :&#xA;Redirection des entrées et sorties. Utilisation de pipelines. Utilisation des commandes de filtrage. Itération avec While.</description>
+    </item>
+    <item>
+      <title>Les processus Linux</title>
+      <link>https://example.org/semaine5/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine5/index.html</guid>
+      <description>Plan de la leçon Théorie :&#xA;Qu’est-ce qu’un processus ? Exemples de processus. L’exécution en arrière-plan. Visualiser les processus. Les états des processus. La gestion des processus. Le code de retour des commandes. Les combinaison de commandes. La création de scripts bash. Atelier :&#xA;Gestion et manipulation de processus à l’aide de scripts.</description>
     </item>
   </channel>
 </rss>

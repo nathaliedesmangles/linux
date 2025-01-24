@@ -8,7 +8,6 @@ weight = 40
 ## Plan de la leçon
 
 - **Théorie :**
-  - grep, set, more, cut, sort, find.
   - Les entrées et sorties des commandes.
   - La redirection des entrées et sorties.
   - Les Pipelines.

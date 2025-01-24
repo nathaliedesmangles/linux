@@ -102,7 +102,7 @@ Allez maintenant sur votre terminal. Placez-vous dans votre répertoire personne
 
 {{% notice style="caution" title="Important" %}}
 - Utilisez pas l'interface graphique d'Almalinux QUE LORSQUE demandé (#6). Autrement, utilisez uniquement des commandes pour répondre aux questions.
-- Après chaque question (**sauf #6, #12a, #15 à #20), n'oubliez pas de prendre une capture d'écran et de la nommer `3-X.png` où `X` est le numéro de la question.
+- Après chaque question (**sauf** #6, #12a, #15 à #20), n'oubliez pas de prendre une capture d'écran et de la nommer `3-X.png` où `X` est le numéro de la question.
 {{% /notice %}}
 
 1. Créer un répertoire `Atelier2` dans le répertoire courant.

@@ -327,7 +327,7 @@ Protéger contre l’expansion en Bash consiste à empêcher l’interprétation
 
 Certaines commandes comme `find`[^1] nécessitent une attention particulière concernant l'expansion.
 
-### Exemple : Recherche avec `find`
+### Exemple : Recherche avec **find**
 Pour rechercher tous les fichiers `.txt` :
 ```bash
 $ find / -name "*.txt"
