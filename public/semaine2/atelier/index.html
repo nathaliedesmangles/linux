@@ -21,11 +21,11 @@
     <meta itemprop="wordCount" content="807">
     <title>ATELIER #2: Commandes Linux de base :: 420-ZG4-MO LINUX</title>
     <link href="/semaine2/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #2: Commandes Linux de base :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1737601526" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737601526" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1737601526" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737601526" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1737601526" rel="stylesheet">
-    <link href="/css/theme.min.css?1737601526" rel="stylesheet">
-    <link href="/css/format-html.min.css?1737601526" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1737743635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737743635" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1737743635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737743635" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1737743635" rel="stylesheet">
+    <link href="/css/theme.min.css?1737743635" rel="stylesheet">
+    <link href="/css/format-html.min.css?1737743635" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -109,11 +109,11 @@
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine2/index.html"><span itemprop="name">Système de fichiers, Shell, commandes de base</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine2/index.html"><span itemprop="name">Système de fichiers, Shell, commandes de base, Vim</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ATELIER #2: Commandes Linux de base</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine2/cours/index.html" title="Système de fichiers, Shell et commandes de base (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine2/cours/index.html" title="Système de fichiers, Shell et commandes de base et VIM (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine3/index.html" title="Processus de démarrage, variables et FOR (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
@@ -170,23 +170,23 @@
 <h1 id="atelier">Atelier</h1>
 <h3 id="préparation">Préparation</h3>
 <p>Sur votre machine Almalinux, avec votre utilisateur standard, allez sur votre cours sur Moodle, dans la semaine 2. On vous demande de télécharger le fichier <strong>fichier.txt</strong>. Vous en aurez besoin pour l&rsquo;exercice #3.</p>
-<p><a href="#R-image-f54bfcfae4506a2c65c15bdadc424dbd" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-1.png?height=50" style=" height: 50; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f54bfcfae4506a2c65c15bdadc424dbd"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-1.png?height=50"></a></p>
+<p><a href="#R-image-fd349526cacb00c94689d3577336c1a5" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-1.png?height=50" style=" height: 50; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fd349526cacb00c94689d3577336c1a5"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-1.png?height=50"></a></p>
 <ol>
 <li>Cliquez sur fichier1.</li>
 </ol>
-<p><a href="#R-image-0edc7d156a5ec48bea3ea688ce1bf648" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-2.png?height=200" style=" height: 200; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0edc7d156a5ec48bea3ea688ce1bf648"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-2.png?height=200"></a></p>
+<p><a href="#R-image-2008fbc90f7c3973834a5346b299da7a" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-2.png?height=200" style=" height: 200; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2008fbc90f7c3973834a5346b299da7a"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-2.png?height=200"></a></p>
 <ol start="2">
 <li>Sur la fenêtre qui s&rsquo;ouvre, faites un clic droit et choisissez Enregistrez-sous.</li>
 </ol>
-<p><a href="#R-image-648009e5d2dc244e019618a07890d379" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-3.png?height=200" style=" height: 200; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-648009e5d2dc244e019618a07890d379"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-3.png?height=200"></a></p>
+<p><a href="#R-image-b3ff50b7ad79ccc9a0c84d8d6a9a14f9" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-3.png?height=200" style=" height: 200; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b3ff50b7ad79ccc9a0c84d8d6a9a14f9"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-3.png?height=200"></a></p>
 <ul>
 <li>Le fichier va être enregistré par défaut dans le dossier <strong>Téléchargements</strong>.</li>
 </ul>
-<p><a href="#R-image-8875fb965e8a8c2173541fcd7c32ab5b" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-4.png?height=300" style=" height: 300; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8875fb965e8a8c2173541fcd7c32ab5b"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-4.png?height=300"></a></p>
+<p><a href="#R-image-2c1b507db48f366933ce3d31405699cc" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-4.png?height=300" style=" height: 300; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2c1b507db48f366933ce3d31405699cc"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-4.png?height=300"></a></p>
 <ol start="3">
 <li>
 <p>Fermer la fenêtre.</p>
@@ -195,13 +195,13 @@
 <p>Cliquez sur le bouton Activités sur le bureau.</p>
 </li>
 </ol>
-<p><a href="#R-image-6368e2efc631040452e3666dc43e1d1a" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-5.png?height=300" style=" height: 300; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6368e2efc631040452e3666dc43e1d1a"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-5.png?height=300"></a></p>
+<p><a href="#R-image-51055599be0d7640fc7e72a7bfe68b8d" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-5.png?height=300" style=" height: 300; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-51055599be0d7640fc7e72a7bfe68b8d"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-5.png?height=300"></a></p>
 <ol start="5">
 <li>Cliquer sur l’icône <strong>Fichiers</strong>.</li>
 </ol>
-<p><a href="#R-image-ddab049116a58a2c9a00b94284e5de10" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-6.png?height=300" style=" height: 300; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-ddab049116a58a2c9a00b94284e5de10"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-6.png?height=300"></a></p>
+<p><a href="#R-image-efaba60853b724c08974d386701f4132" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/atelier/atelier3-6.png?height=300" style=" height: 300; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-efaba60853b724c08974d386701f4132"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/atelier/atelier3-6.png?height=300"></a></p>
 
 <details open class=" box cstyle notices warning">
   <summary class="box-label" tabindex="-1">
@@ -291,7 +291,7 @@
 <li>Créer un autre répertoire nommé <code>Rep2</code>.</li>
 <li>Déplacer <code>Atelier2</code> dans <code>Rep2</code>.</li>
 <li>Déplacez-vous dans <code>Atelier2</code>.</li>
-<li>Via l&rsquo;interface d&rsquo;Almalinux, ouvrir le fichier <code>fichier.txt</code> et écrivez votre nom complet dans le fichier. Enregistrer la modification et fermer le fichier.</li>
+<li>Avec vim, ouvrez le fichier <code>fichier.txt</code> et écrivez écrivez votre nom complet dans le fichier. Enregistrer la modification et fermer le fichier.</li>
 <li>Afficher le contenu du fichier à l’aide de la commande <code>cat</code>.</li>
 <li>Créer un autre fichier nommé <code>fichier2.txt</code> dans <code>Atelier2</code>.</li>
 <li>Avec une seule commande <code>cat</code> afficher le contenu de <code>fichier.txt</code> et <code>fichier2.txt</code>.</li>
@@ -323,7 +323,7 @@
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1737601526";
+          window.index_js_url="/searchindex.en.js?1737743635";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -336,12 +336,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1737601526" defer></script>
-        <script src="/js/lunr/lunr.min.js?1737601526" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1737601526" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1737601526" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1737601526" defer></script>
-        <script src="/js/search.js?1737601526" defer></script>
+        <script src="/js/auto-complete.js?1737743635" defer></script>
+        <script src="/js/lunr/lunr.min.js?1737743635" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1737743635" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1737743635" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1737743635" defer></script>
+        <script src="/js/search.js?1737743635" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -353,8 +353,8 @@
         <div id="R-shortcutmenu-home" class="R-sidebarmenu">
           <ul class="enlarge morespace collapsible-menu">
             <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
-            <li class="parent " data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu">
-            <li class="" data-nav-id="/semaine2/cours/index.html"><a class="padding" href="/semaine2/cours/index.html">Système de fichiers, Shell et commandes de base</a></li>
+            <li class="parent " data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu">
+            <li class="" data-nav-id="/semaine2/cours/index.html"><a class="padding" href="/semaine2/cours/index.html">Système de fichiers, Shell et commandes de base et VIM</a></li>
             <li class="active " data-nav-id="/semaine2/atelier/index.html"><a class="padding" href="/semaine2/atelier/index.html">ATELIER #2: Commandes Linux de base</a></li></ul></li>
             <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>E/S, redirection et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
@@ -411,8 +411,8 @@
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1737601526" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1737601526" defer></script>
-    <script src="/js/theme.js?1737601526" defer></script>
+    <script src="/js/clipboard.min.js?1737743635" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1737743635" defer></script>
+    <script src="/js/theme.js?1737743635" defer></script>
   </body>
 </html>

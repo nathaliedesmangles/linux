@@ -15,11 +15,11 @@
       <description>Plan de la leçon Présentation du cours (plan de cours).&#xA;Pondération. Objectifs. Contexte d’apprentissage et méthodes pédagogiques. Evaluations formatives. Évaluations sommatives. Politiques institutionnelles (absences, retards, plagiat, etc.). Règlements en classe et hors classe. Théorie :&#xA;Généralités sur le système d’exploitation Linux. Atelier :&#xA;Installation de Linux sur une machine virtuelle.</description>
     </item>
     <item>
-      <title>Système de fichiers, Shell, commandes de base</title>
+      <title>Système de fichiers, Shell, commandes de base, Vim</title>
       <link>https://example.org/semaine2/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine2/index.html</guid>
-      <description>Plan de la leçon Théorie :&#xA;Le système de fichiers de Linux. Le Shell Bash. La ligne de commandes Les commandes de base Atelier :&#xA;Utilisation des commandes de base</description>
+      <description>Plan de la leçon Théorie :&#xA;Le système de fichiers de Linux. Le Shell Bash. La ligne de commandes. Les commandes de base. Introduction à VIM. Atelier :&#xA;Utilisation des commandes de base et Vim.</description>
     </item>
     <item>
       <title>Processus de démarrage, variables et FOR</title>

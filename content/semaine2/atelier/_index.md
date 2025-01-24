@@ -110,7 +110,7 @@ Allez maintenant sur votre terminal. Placez-vous dans votre répertoire personne
 3. Créer un autre répertoire nommé `Rep2`.
 4. Déplacer `Atelier2` dans `Rep2`.
 5. Déplacez-vous dans `Atelier2`.
-6. Via l'interface d'Almalinux, ouvrir le fichier `fichier.txt` et écrivez votre nom complet dans le fichier. Enregistrer la modification et fermer le fichier.
+6. Avec vim, ouvrez le fichier `fichier.txt` et écrivez écrivez votre nom complet dans le fichier. Enregistrer la modification et fermer le fichier.
 7. Afficher le contenu du fichier à l’aide de la commande `cat`.
 8. Créer un autre fichier nommé `fichier2.txt` dans `Atelier2`. 
 9. Avec une seule commande `cat` afficher le contenu de `fichier.txt` et `fichier2.txt`.

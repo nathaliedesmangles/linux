@@ -1,5 +1,5 @@
 +++
-title = "Système de fichiers, Shell et commandes de base"
+title = "Système de fichiers, Shell et commandes de base et VIM"
 weight = 21
 +++
 
@@ -435,6 +435,58 @@ Une page de manuel typique contient plusieurs sections, telles que :
 passt       passt.avx2  passwd      
 [ndesmangles@localhost ~]$ pass
 ```
+
+## Introduction à l'éditeur de texte VIM
+
+**VIM** (Vi IMproved) est un éditeur de texte, souvent utilisé dans les environnements Unix/Linux. Bien qu’il puisse sembler intimidant au premier abord, il devient très efficace une fois maîtrisé.  
+
+#### Pourquoi utiliser **vim** ?
+
+- **Disponibilité** : Installé par défaut sur presque tous les systèmes Unix/Linux.  
+- **Léger et rapide** : Idéal pour éditer des fichiers même sur des systèmes limités en ressources.   
+- **Puissant** : Supporte des fonctionnalités avancées comme la recherche, la substitution, et l'édition de plusieurs fichiers simultanément.  
+
+---
+
+### Premiers pas avec **vim**
+
+Pour ouvrir un fichier avec **vim**, utilisez la commande suivante :  
+```bash
+$ vim nom_du_fichier
+```
+Si le fichier n'existe pas, **vim** le créera.
+
+Lorsque vous ouvrez **vim**, il commence en **mode commande**. Vous ne pouvez pas directement écrire du texte. Vous devez d'abord passer au **mode insertion**.  
+
+---
+
+### Modes principaux de **vim**
+
+Ces modes sont les bases du fonctionnement de **vim**. Vous pouvez basculer entre eux selon vos besoins pour éditer et manipuler vos fichiers.
+
+
+| Mode | Description | Action | Commande |
+|------|------|------|:--------:|
+| **Normal** | Mode par défaut lorsque vous ouvrez **vim**. | Appuyez sur `Esc` pour revenir à ce mode. | `ESC` |
+| **Insertion** | Permet d'insérer ou de modifier du texte. | Passer en mode insertion où se trouve le curseur. | `i` |
+| **Commande** | Permet de sauvegarder un fichier. | Sauvegarde| `:w` |
+|              | Permet de quitter Vim, si aucun changement n'a été effectué dans le fichier en cours. | Quitter | `:q` |
+|              | Permet de forcer la fermeture de vim sans sauvegarder les modifications. | Quitter sans sauvegarder les modifications. | :q!  | 
+|              | Permet de sauvegarder et fermer le fichier. | Sauvegarde et quitter.| `:wq` |
+
+---
+
+### Exercices pratiques
+
+1. **Ouvrez un fichier** nommé `test.txt` avec la commande :  
+   ```bash
+   $ vim test.txt
+   ```  
+   Passez en mode insertion (`i`), écrivez quelques lignes, puis sauvegardez et quittez avec `:wq`.
+
+2. **Recherchez du texte** : Ouvrez un fichier existant, cherchez un mot avec `/mot`, puis naviguez entre les occurrences avec `n`.
+
+3. **Testez l'annulation** : Modifiez une ligne, annulez avec `u`, puis rétablissez avec `Ctrl+r`.
 
 
 [^1]: Nous étudierons comment gérer les droits des différents utilisateurs plus tard dans ce cours.

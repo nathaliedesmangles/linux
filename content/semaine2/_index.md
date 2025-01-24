@@ -1,7 +1,7 @@
 +++
 chapter = true
 pre = "<b>Semaine 2. </b>"
-title = "Système de fichiers, Shell, commandes de base"
+title = "Système de fichiers, Shell, commandes de base, Vim"
 weight = 20
 +++
 
@@ -10,10 +10,11 @@ weight = 20
 - **Théorie :**
   - Le système de fichiers de Linux.
   - Le Shell Bash.
-  - La ligne de commandes
-  - Les commandes de base
+  - La ligne de commandes.
+  - Les commandes de base.
+  - Introduction à VIM.
 
 
 - **Atelier :**
-  - Utilisation des commandes de base
+  - Utilisation des commandes de base et Vim.
 

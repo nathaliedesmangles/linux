@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Système de fichiers, Shell, commandes de base :: 420-ZG4-MO LINUX</title>
+    <title>Système de fichiers, Shell, commandes de base, Vim :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine2/index.html</link>
-    <description>Plan de la leçon Théorie :&#xA;Le système de fichiers de Linux. Le Shell Bash. La ligne de commandes Les commandes de base Atelier :&#xA;Utilisation des commandes de base</description>
+    <description>Plan de la leçon Théorie :&#xA;Le système de fichiers de Linux. Le Shell Bash. La ligne de commandes. Les commandes de base. Introduction à VIM. Atelier :&#xA;Utilisation des commandes de base et Vim.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine2/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Système de fichiers, Shell et commandes de base</title>
+      <title>Système de fichiers, Shell et commandes de base et VIM</title>
       <link>https://example.org/semaine2/cours/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine2/cours/index.html</guid>
