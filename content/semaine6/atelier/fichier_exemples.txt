@@ -1,0 +1,20 @@
+(123)456-7890
++1(234)567-8901
+(987)654-3210
++1(876)543-2109
+(555)555-5555
++1(444)444-4444
+http://www.example.com
+https://example.org
+http://example.net
+https://www.example.com/
+user@example.com
+name.surname@example.ca
+admin@domain.tld
+info@sub.domain.com
+contact_us@company.org
+phone12345  # Invalide : Pas un numéro de téléphone valide
+example@domain  # Invalide : Pas de TLD valide
+http//example.com  # Invalide : Manque ":" dans http
++1(12345)678-901  # Invalide : Code régional incorrect
+user@.com  # Invalide : Domaine incomplet

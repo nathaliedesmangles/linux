@@ -1,0 +1,24 @@
+toto_r@tutu.ca
+toto.titi@tutu.ca
+toto@tutu.qc.ca
+toto$titi@titi.com
+tete*@domain.com
+tata @domaine.com
+<user@domain.ca>
+515-456-0987
+(555)345-1234
++1450-456-7890
++1(819)654-0987
+(678)-123-8765
+(123)345-213
+http://www.domaine.qc.ca/
+https://www.domaine.qc.ca
+http://domain.com
+ftp://www.domine.com
+http://www.facebook.com
+https://www.google.ca
+H6M2J4
+H4M4H4
+AB1234
+FC4355
+h4N2j5

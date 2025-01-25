@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Les expressions régulières :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine6/index.html</link>
+    <description>Plan de la leçon Théorie :&#xA;Rôles des expressions régulières. Quelques motifs de base. La commande egrep. L’opérateur logique OU. Les ensembles de caractères. Les intervalles. Les quantificateurs. Les groupes. L’échappement de caractères spéciaux. Atelier :.&#xA;Utilisation d’expressions régulières.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Les expressions régulières</title>
+      <link>https://example.org/semaine6/cours/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine6/cours/index.html</guid>
+      <description>Introduction aux expressions régulières Dans l’univers Linux, la manipulation des fichiers texte est une tâche essentielle. Parmi les outils utilisés pour ce faire, on trouve notamment :&#xA;cat : pour afficher le contenu des fichiers, sed : pour les transformations textuelles, grep : pour rechercher et filtrer des lignes. Avec grep, vous pouvez filtrer un texte pour ne conserver que les lignes contenant un mot ou une expression donnée, ou bien les exclure. Mais comment faire si vous souhaitez rechercher des motifs plus complexes, comme des adresses e-mail ou des numéros de téléphone ? C’est ici qu’interviennent les expressions régulières, un outil puissant pour décrire des motifs précis et identifier des textes ayant une structure particulière.</description>
+    </item>
+    <item>
+      <title>ATELIER #6: Les expressions régulières</title>
+      <link>https://example.org/semaine6/atelier/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine6/atelier/index.html</guid>
+      <description>Objectif de l’atelier Maîtriser les bases des expressions régulières. Renforcer la capacité à manipuler des fichiers texte. Renforcer la précision dans la recherche et le filtrage de données. Atelier Important&#xD;Utiliser le fichier expr.txt se trouvant sur Moodle. Utiliser seulement la matière vue dans le cours (semaines 1 à 6). Utiliser des expressions régulières courtes et simples au lieu d’expressions complexes et longues. Dans le fichier fourni:</description>
+    </item>
+  </channel>
+</rss>

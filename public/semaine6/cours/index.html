@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Introduction aux expressions régulières Dans l’univers Linux, la manipulation des fichiers texte est une tâche essentielle. Parmi les outils utilisés pour ce faire, on trouve notamment :
+cat : pour afficher le contenu des fichiers, sed : pour les transformations textuelles, grep : pour rechercher et filtrer des lignes. Avec grep, vous pouvez filtrer un texte pour ne conserver que les lignes contenant un mot ou une expression donnée, ou bien les exclure. Mais comment faire si vous souhaitez rechercher des motifs plus complexes, comme des adresses e-mail ou des numéros de téléphone ? C’est ici qu’interviennent les expressions régulières, un outil puissant pour décrire des motifs précis et identifier des textes ayant une structure particulière.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Les expressions régulières :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Introduction aux expressions régulières Dans l’univers Linux, la manipulation des fichiers texte est une tâche essentielle. Parmi les outils utilisés pour ce faire, on trouve notamment :
+cat : pour afficher le contenu des fichiers, sed : pour les transformations textuelles, grep : pour rechercher et filtrer des lignes. Avec grep, vous pouvez filtrer un texte pour ne conserver que les lignes contenant un mot ou une expression donnée, ou bien les exclure. Mais comment faire si vous souhaitez rechercher des motifs plus complexes, comme des adresses e-mail ou des numéros de téléphone ? C’est ici qu’interviennent les expressions régulières, un outil puissant pour décrire des motifs précis et identifier des textes ayant une structure particulière.">
+    <meta property="og:url" content="https://example.org/semaine6/cours/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Les expressions régulières :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Introduction aux expressions régulières Dans l’univers Linux, la manipulation des fichiers texte est une tâche essentielle. Parmi les outils utilisés pour ce faire, on trouve notamment :
+cat : pour afficher le contenu des fichiers, sed : pour les transformations textuelles, grep : pour rechercher et filtrer des lignes. Avec grep, vous pouvez filtrer un texte pour ne conserver que les lignes contenant un mot ou une expression donnée, ou bien les exclure. Mais comment faire si vous souhaitez rechercher des motifs plus complexes, comme des adresses e-mail ou des numéros de téléphone ? C’est ici qu’interviennent les expressions régulières, un outil puissant pour décrire des motifs précis et identifier des textes ayant une structure particulière.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Les expressions régulières :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Introduction aux expressions régulières Dans l’univers Linux, la manipulation des fichiers texte est une tâche essentielle. Parmi les outils utilisés pour ce faire, on trouve notamment :
+cat : pour afficher le contenu des fichiers, sed : pour les transformations textuelles, grep : pour rechercher et filtrer des lignes. Avec grep, vous pouvez filtrer un texte pour ne conserver que les lignes contenant un mot ou une expression donnée, ou bien les exclure. Mais comment faire si vous souhaitez rechercher des motifs plus complexes, comme des adresses e-mail ou des numéros de téléphone ? C’est ici qu’interviennent les expressions régulières, un outil puissant pour décrire des motifs précis et identifier des textes ayant une structure particulière.">
+    <meta itemprop="wordCount" content="699">
+    <title>Les expressions régulières :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine6/cours/index.xml" rel="alternate" type="application/rss+xml" title="Les expressions régulières :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1737842111" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737842111" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1737842111" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737842111" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1737842111" rel="stylesheet">
+    <link href="/css/theme.min.css?1737842111" rel="stylesheet">
+    <link href="/css/format-html.min.css?1737842111" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine6/cours/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#introduction-aux-expressions-régulières">Introduction aux expressions régulières</a>
+      <ul>
+        <li><a href="#exemple--url-web">Exemple : URL Web</a></li>
+      </ul>
+    </li>
+    <li><a href="#premiers-pas-avec-les-expressions-régulières">Premiers pas avec les expressions régulières</a>
+      <ul>
+        <li><a href="#commandes-pratiques-avec-egrep">Commandes pratiques avec <em>egrep</em></a></li>
+      </ul>
+    </li>
+    <li><a href="#opérateurs-logiques">Opérateurs logiques</a>
+      <ul>
+        <li><a href="#le-ou-">Le OU (<strong>|</strong>)</a></li>
+      </ul>
+    </li>
+    <li><a href="#ensembles-de-caractères">Ensembles de caractères</a>
+      <ul>
+        <li><a href="#intervalles">Intervalles</a></li>
+      </ul>
+    </li>
+    <li><a href="#quantificateurs">Quantificateurs</a></li>
+    <li><a href="#groupes">Groupes</a></li>
+    <li><a href="#échappement">Échappement</a></li>
+    <li><a href="#exercices-pratiques">Exercices pratiques</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine6/index.html"><span itemprop="name">Les expressions régulières</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Les expressions régulières</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine6/index.html" title="Les expressions régulières (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine6/atelier/index.html" title="ATELIER #6: Les expressions régulières (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine6" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="les-expressions-régulières">Les expressions régulières</h1>
+
+<h2 id="introduction-aux-expressions-régulières">Introduction aux expressions régulières</h2>
+<p>Dans l&rsquo;univers Linux, la manipulation des fichiers texte est une tâche essentielle. Parmi les outils utilisés pour ce faire, on trouve notamment :</p>
+<ul>
+<li><strong><code>cat</code></strong> : pour afficher le contenu des fichiers,</li>
+<li><strong><code>sed</code></strong> : pour les transformations textuelles,</li>
+<li><strong><code>grep</code></strong> : pour rechercher et filtrer des lignes.</li>
+</ul>
+<p>Avec <strong><code>grep</code></strong>, vous pouvez filtrer un texte pour ne conserver que les lignes contenant un mot ou une expression donnée, ou bien les exclure. Mais comment faire si vous souhaitez rechercher des motifs plus complexes, comme des adresses e-mail ou des numéros de téléphone ? C&rsquo;est ici qu&rsquo;interviennent les <strong>expressions régulières</strong>, un outil puissant pour décrire des motifs précis et identifier des textes ayant une structure particulière.</p>
+<h3 id="exemple--url-web">Exemple : URL Web</h3>
+<p>Un exemple d&rsquo;expression régulière pour capturer une URL Web :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>https?://[a-zA-Z0-9\.-]+\.[a-zA-Z]{2,4}(/\S*)?</code></pre></div>
+<hr>
+<h2 id="premiers-pas-avec-les-expressions-régulières">Premiers pas avec les expressions régulières</h2>
+<p>Voici quelques motifs de base et leurs significations :</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Motif</strong></th>
+          <th style="text-align: left"><strong>Description</strong></th>
+          <th style="text-align: left"><strong>Exemple</strong></th>
+          <th style="text-align: left"><strong>Contre-exemple</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ab</code></td>
+          <td style="text-align: left">Recherche la chaîne exacte &ldquo;ab&rdquo;.</td>
+          <td style="text-align: left">&ldquo;ab&rdquo;</td>
+          <td style="text-align: left">&ldquo;a&rdquo;, &ldquo;b&rdquo;, chaîne vide</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>.</code></td>
+          <td style="text-align: left">Correspond à n&rsquo;importe quel caractère.</td>
+          <td style="text-align: left">&ldquo;a&rdquo;, &ldquo;b&rdquo;</td>
+          <td style="text-align: left">&ldquo;ab&rdquo;, chaîne vide</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>^</code></td>
+          <td style="text-align: left">Indique le début d&rsquo;une ligne.</td>
+          <td style="text-align: left"><code>^a</code> : un &ldquo;a&rdquo; au début.</td>
+          <td style="text-align: left">Toute ligne ne commençant pas par &ldquo;a&rdquo;.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>$</code></td>
+          <td style="text-align: left">Indique la fin d&rsquo;une ligne.</td>
+          <td style="text-align: left"><code>a$</code> : un &ldquo;a&rdquo; à la fin.</td>
+          <td style="text-align: left">Toute ligne ne se terminant pas par &ldquo;a&rdquo;.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="commandes-pratiques-avec-egrep">Commandes pratiques avec <em>egrep</em></h3>
+<p>La commande <strong><code>egrep</code></strong> est une version avancée de <code>grep</code>, qui prend en charge les expressions régulières étendues (ERE).</p>
+<ul>
+<li>
+<p><strong>Rechercher les lignes contenant &ldquo;ssh&rdquo; dans un fichier :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;ssh&#39;</span> /etc/services</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Rechercher uniquement les commentaires (lignes commençant par <code>#</code>) :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;^#&#39;</span> /etc/services</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Rechercher les lignes se terminant par &ldquo;s&rdquo; :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;s$&#39;</span> /etc/services</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Rechercher les lignes contenant &ldquo;a&rdquo; et &ldquo;z&rdquo; séparées par un caractère quelconque :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;a.z&#39;</span> /etc/services</span></span></code></pre></div>
+</li>
+</ul>
+<hr>
+<h2 id="opérateurs-logiques">Opérateurs logiques</h2>
+<h3 id="le-ou-">Le OU (<strong>|</strong>)</h3>
+<p>L&rsquo;opérateur <strong><code>|</code></strong> permet de rechercher des lignes contenant l&rsquo;une ou l&rsquo;autre des expressions spécifiées.</p>
+<ul>
+<li>
+<p><strong>Exemple : Filtrer les lignes contenant &ldquo;ssh&rdquo; ou &ldquo;ftp&rdquo; :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;ssh|ftp&#39;</span> /etc/services</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Filtrer les commentaires ou les lignes se terminant par &ldquo;s&rdquo; :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;^#|s$&#39;</span> /etc/services</span></span></code></pre></div>
+</li>
+</ul>
+<hr>
+<h2 id="ensembles-de-caractères">Ensembles de caractères</h2>
+<p>Les <strong>ensembles</strong> permettent de rechercher plusieurs possibilités similaires en regroupant des caractères entre crochets <code>[ ]</code>.</p>
+<ul>
+<li>
+<p><strong>Exemple : Rechercher &ldquo;loucher&rdquo;, &ldquo;toucher&rdquo;, &ldquo;doucher&rdquo;, ou &ldquo;coucher&rdquo; :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;[ltdc]oucher&#39;</span> fichier</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Exclure ces mots tout en recherchant ceux contenant &ldquo;oucher&rdquo; :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;[^ltdc]oucher&#39;</span> fichier</span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="intervalles">Intervalles</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Ensemble</strong></th>
+          <th style="text-align: left"><strong>Description</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>[a-z]</code></td>
+          <td style="text-align: left">Toutes les lettres minuscules.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>[A-Z]</code></td>
+          <td style="text-align: left">Toutes les lettres majuscules.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>[0-9]</code></td>
+          <td style="text-align: left">Tous les chiffres.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>[a-zA-Z0-9]</code></td>
+          <td style="text-align: left">Tous les caractères alphanumériques.</td>
+      </tr>
+  </tbody>
+</table>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Important
+  </summary>
+  <div class="box-content">
+<ul>
+<li>Un ensemble décrit un seul caractère.</li>
+</ul>
+  </div>
+</details>
+<ul>
+<li>
+<p><strong>Rechercher des mots contenant un &ldquo;f&rdquo; et un &ldquo;p&rdquo; séparés par une lettre minuscule :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;f[a-z]p&#39;</span> /etc/services</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Rechercher les lignes commençant par un chiffre :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;^[0-9]&#39;</span> /etc/services</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Exclure les commentaires :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;^[^#]&#39;</span> /etc/services</span></span></code></pre></div>
+</li>
+</ul>
+<hr>
+<h2 id="quantificateurs">Quantificateurs</h2>
+<p>Les quantificateurs précisent le nombre de répétitions d&rsquo;un motif.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Quantificateur</strong></th>
+          <th style="text-align: left"><strong>Signification</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>?</code></td>
+          <td style="text-align: left">0 ou 1 fois.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>+</code></td>
+          <td style="text-align: left">1 ou plusieurs fois.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>*</code></td>
+          <td style="text-align: left">0 ou plusieurs fois.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>{n}</code></td>
+          <td style="text-align: left">Exactement n fois.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>{n,m}</code></td>
+          <td style="text-align: left">Entre n et m fois.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>{n,}</code></td>
+          <td style="text-align: left">Au moins n fois.</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>
+<p><strong>Rechercher &ldquo;www&rdquo; dans un texte :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;w{3}&#39;</span> fichier</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Rechercher &ldquo;http&rdquo; ou &ldquo;https&rdquo; :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;https?&#39;</span> fichier</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Rechercher une lettre minuscule répétée entre 3 et 6 fois :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;[a-z]{3,6}&#39;</span> fichier</span></span></code></pre></div>
+</li>
+</ul>
+<hr>
+<h2 id="groupes">Groupes</h2>
+<p>Les <strong>groupes</strong> permettent de regrouper des parties d&rsquo;expressions avec des parenthèses <code>( )</code>. Cela permet d&rsquo;appliquer un quantificateur ou de réutiliser le groupe.</p>
+<ul>
+<li><strong>Exemple :</strong>
+<div class="highlight wrap-code"><pre tabindex="0"><code>(ab)*c</code></pre></div>
+Correspond à : &ldquo;zéro ou plusieurs &lsquo;ab&rsquo;, suivi d&rsquo;un &lsquo;c&rsquo;&rdquo;. Cela capture &ldquo;c&rdquo;, &ldquo;abc&rdquo;, &ldquo;ababc&rdquo;, etc.</li>
+</ul>
+<hr>
+<h2 id="échappement">Échappement</h2>
+<p>Pour rechercher des caractères ayant une signification spéciale dans les expressions régulières (<code>.</code>, <code>+</code>, <code>*</code>, etc.), il faut les <strong>échapper</strong> avec un antislash ().</p>
+<ul>
+<li><strong>Exemple : Rechercher les lignes se terminant par un point :</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;\.$&#39;</span> fichier</span></span></code></pre></div>
+</li>
+</ul>
+<hr>
+<h2 id="exercices-pratiques">Exercices pratiques</h2>
+<ol>
+<li>
+<p>Trouvez les numéros de cartes de crédit valides (16 chiffres, commençant par 4540 et sans 9 dans le dernier groupe) :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>4540 6010 4510 8888
+5440 5010 6610 1010
+4540 7010 4428 5490
+4540 8523 4013 1314
+4540 8710 5410 1012 1314</code></pre></div>
+</li>
+<li>
+<p>Identifiez les noms de variables valides (lettres, chiffres, underscores, mais ne commençant pas par un chiffre) :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>Abcd
+abcd_
+var123
+_var2
+1nombre</code></pre></div>
+</li>
+<li>
+<p>Recherchez les adresses IPv4 valides (quatre nombres entre 0 et 255, séparés par des points) :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>1.240.40.15
+2.256.20.190
+192.168.255.255
+300.200.100.10
+30.40.50.60
+192.168.2
+10.10.10.10.10</code></pre></div>
+</li>
+</ol>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1737842111";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1737842111" defer></script>
+        <script src="/js/lunr/lunr.min.js?1737842111" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1737842111" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1737842111" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1737842111" defer></script>
+        <script src="/js/search.js?1737842111" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>E/S, redirection et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine6/cours/index.html"><a class="padding" href="/semaine6/cours/index.html">Les expressions régulières</a></li>
+            <li class="" data-nav-id="/semaine6/atelier/index.html"><a class="padding" href="/semaine6/atelier/index.html">ATELIER #6: Les expressions régulières</a></li></ul></li>
+            <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions de ateliers</a></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine6/cours/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1737842111" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1737842111" defer></script>
+    <script src="/js/theme.js?1737842111" defer></script>
+  </body>
+</html>

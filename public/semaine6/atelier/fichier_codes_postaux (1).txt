@@ -1,0 +1,16 @@
+
+123 Fake Street, H0H0H0, Canada
+456 Another Rd, J1J2J3, Canada
+InvalidCode, 123ABC, Canada
+Valid Code, K2K3K4, Someplace
+
+H1A 0A1
+K1A 0B1
+V9Z 9C9
+T2P 1N4
+B3J 2S3
+L8S 4K1
+E1C 5H5
+G1V 4M7
+R3C 1M2
+C1A 7N8

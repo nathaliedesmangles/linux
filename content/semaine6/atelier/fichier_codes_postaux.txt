@@ -1,0 +1,15 @@
+K1A0B1
+H2Z1X6
+V5N2B9
+G1A1A1
+L4W5L6
+M3C0C1
+R2L3L8
+T5A1X6
+S7M0E2
+B2Y1L5
+Z9Z9Z9  # Invalide : Non existant
+123456  # Invalide : Pas au bon format
+ABC123  # Invalide : Mélange incorrect
+A1B2C3  # Invalide : Format incorrect
+K1  # Invalide : Trop court

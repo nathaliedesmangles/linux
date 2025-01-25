@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Atelier 6 :: 420-ZG4-MO LINUX</title>
+    <link>http://localhost:54480/solutions/semaine6/index.html</link>
+    <description>Solutions des exercices **Dans le fichier fourni: **&#xA;Trouver les codes postaux canadiens:&#xA;Format attendu : Lettre-Chiffre-Lettre Chiffre-Lettre-Chiffre. $ grep -E &#39;\b[A-Z][0-9][A-Z] ?[0-9][A-Z][0-9]\b&#39; expr.txt&#xD;Identifier les codes d’employés composés de :&#xA;Deux lettres majuscules suivies de quatre chiffres. $ grep -E &#39;\b[A-Z]{2}[0-9]{4}\b&#39; expr.txt&#xD;Compter les lignes ne se terminant pas par une lettre :&#xA;$ egrep &#39;[^a-zA-Z]$&#39; expr.txt&#xD;Identifier les numéros de téléphone :&#xA;Format : (xxx)xxx-xxxx ou +1(xxx)xxx-xxxx. $ grep -E &#39;\+1\([0-9]{3}\)[0-9]{3}-[0-9]{4}|\([0-9]{3}\)[0-9]{3}-[0-9]{4}&#39; expr.txt&#xD;Trouver les URLs comme :</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:54480/solutions/semaine6/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

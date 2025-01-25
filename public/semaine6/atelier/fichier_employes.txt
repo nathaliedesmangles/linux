@@ -1,0 +1,15 @@
+AB1234
+CD5678
+EF9012
+GH3456
+IJ7890
+KL1234
+MN5678
+OP9012
+QR3456
+ST7890
+UV123  # Invalide : Manque un chiffre
+XYZ12345  # Invalide : Trop long
+1A1234  # Invalide : Ne commence pas par des lettres
+AA12BB  # Invalide : Mélange incorrect
+AA123  # Invalide : Trop court

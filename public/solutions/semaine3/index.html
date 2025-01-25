@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=54480&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Solution des exercices Exercice 1 : Manipuler les cibles (niveaux d’exécution) Passer en mode multi-utilisateur sans interface graphique :
+$ sudo systemctl isolate multi-user.targetVérifier que vous êtes en mode multi-utilisateur sans interface graphique :
+$ systemctl get-defaultLa sortie devrait être multi-user.target.
+Définir le mode multi-utilisateur avec interface graphique comme cible par défaut :
+$ sudo systemctl set-default graphical.targetRedémarrer le système pour vérifier :
+$ sudo rebootExercice 2 : Création et affichage de variables Déclarer une variable nom :">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Atelier 3 :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Solution des exercices Exercice 1 : Manipuler les cibles (niveaux d’exécution) Passer en mode multi-utilisateur sans interface graphique :
+$ sudo systemctl isolate multi-user.targetVérifier que vous êtes en mode multi-utilisateur sans interface graphique :
+$ systemctl get-defaultLa sortie devrait être multi-user.target.
+Définir le mode multi-utilisateur avec interface graphique comme cible par défaut :
+$ sudo systemctl set-default graphical.targetRedémarrer le système pour vérifier :
+$ sudo rebootExercice 2 : Création et affichage de variables Déclarer une variable nom :">
+    <meta property="og:url" content="http://localhost:54480/solutions/semaine3/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Atelier 3 :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Solution des exercices Exercice 1 : Manipuler les cibles (niveaux d’exécution) Passer en mode multi-utilisateur sans interface graphique :
+$ sudo systemctl isolate multi-user.targetVérifier que vous êtes en mode multi-utilisateur sans interface graphique :
+$ systemctl get-defaultLa sortie devrait être multi-user.target.
+Définir le mode multi-utilisateur avec interface graphique comme cible par défaut :
+$ sudo systemctl set-default graphical.targetRedémarrer le système pour vérifier :
+$ sudo rebootExercice 2 : Création et affichage de variables Déclarer une variable nom :">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Atelier 3 :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Solution des exercices Exercice 1 : Manipuler les cibles (niveaux d’exécution) Passer en mode multi-utilisateur sans interface graphique :
+$ sudo systemctl isolate multi-user.targetVérifier que vous êtes en mode multi-utilisateur sans interface graphique :
+$ systemctl get-defaultLa sortie devrait être multi-user.target.
+Définir le mode multi-utilisateur avec interface graphique comme cible par défaut :
+$ sudo systemctl set-default graphical.targetRedémarrer le système pour vérifier :
+$ sudo rebootExercice 2 : Création et affichage de variables Déclarer une variable nom :">
+    <meta itemprop="wordCount" content="393">
+    <title>Atelier 3 :: 420-ZG4-MO LINUX</title>
+    <link href="/solutions/semaine3/index.xml" rel="alternate" type="application/rss+xml" title="Atelier 3 :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1737842081" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737842081" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1737842081" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737842081" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1737842081" rel="stylesheet">
+    <link href="/css/theme.css?1737842081" rel="stylesheet">
+    <link href="/css/format-html.css?1737842081" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:54480';
+      window.relearn.min = ``;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/solutions/semaine3/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#exercice-1--manipuler-les-cibles-niveaux-dexécution">Exercice 1 : Manipuler les cibles (niveaux d&rsquo;exécution)</a></li>
+    <li><a href="#exercice-2--création-et-affichage-de-variables">Exercice 2 : Création et affichage de variables</a></li>
+    <li><a href="#exercice-3--capturer-une-date-formatée">Exercice 3 : Capturer une date formatée</a></li>
+    <li><a href="#exercice-4--supprimer-une-variable">Exercice 4 : Supprimer une variable</a></li>
+    <li><a href="#exercice-5--expansion-de-variables-et-daccolades">Exercice 5 : Expansion de variables et d&rsquo;accolades</a></li>
+    <li><a href="#exercice-6--expansion-daccolade-et-boucle-for">Exercice 6 : Expansion d’accolade et boucle for</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/solutions/index.html"><span itemprop="name">Solutions de ateliers</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Atelier 3</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine2/index.html" title="Atelier 2 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine6/index.html" title="Atelier 6 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable solutions" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="atelier-3">Atelier 3</h1>
+
+<h1 id="solution-des-exercices">Solution des exercices</h1>
+<h2 id="exercice-1--manipuler-les-cibles-niveaux-dexécution">Exercice 1 : Manipuler les cibles (niveaux d&rsquo;exécution)</h2>
+<ol>
+<li>
+<p><strong>Passer en mode multi-utilisateur sans interface graphique :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo systemctl isolate multi-user.target</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Vérifier que vous êtes en mode multi-utilisateur sans interface graphique :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ systemctl get-default</span></span></code></pre></div>
+<p>La sortie devrait être <code>multi-user.target</code>.</p>
+</li>
+<li>
+<p><strong>Définir le mode multi-utilisateur avec interface graphique comme cible par défaut :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo systemctl set-default graphical.target</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Redémarrer le système pour vérifier :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo reboot</span></span></code></pre></div>
+</li>
+</ol>
+<hr>
+<h2 id="exercice-2--création-et-affichage-de-variables">Exercice 2 : Création et affichage de variables</h2>
+<ol>
+<li>
+<p><strong>Déclarer une variable <code>nom</code> :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nom<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;VotrePrénom&#34;</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Afficher la valeur de la variable :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo $nom</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Essayer d’accéder à la variable sans <code>$</code> :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nom</span></span></code></pre></div>
+<p>La commande retournera une erreur.</p>
+</li>
+</ol>
+<hr>
+<h2 id="exercice-3--capturer-une-date-formatée">Exercice 3 : Capturer une date formatée</h2>
+<ol>
+<li>
+<p><strong>Stocker la date actuelle dans une variable :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ date_actuelle<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#34;%Y/%m/%d %H:%M:%S&#34;</span><span style="color:#66d9ef">)</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Afficher la date formatée :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo $date_actuelle</span></span></code></pre></div>
+</li>
+</ol>
+<hr>
+<h2 id="exercice-4--supprimer-une-variable">Exercice 4 : Supprimer une variable</h2>
+<ol>
+<li>
+<p><strong>Déclarer une variable temporaire :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ temp_var<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;temporaire&#34;</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Supprimer la variable avec <code>unset</code> :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ unset temp_var</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Essayer d’afficher la variable supprimée :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo $temp_var</span></span></code></pre></div>
+</li>
+</ol>
+<hr>
+<h2 id="exercice-5--expansion-de-variables-et-daccolades">Exercice 5 : Expansion de variables et d&rsquo;accolades</h2>
+<ol>
+<li>
+<p><strong>Créer une variable contenant la liste des fichiers dans <code>/etc</code> :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ variable_etc<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ls /etc<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>$ echo $variable_etc</span></span></code></pre></div>
+<ul>
+<li>Le contenu peut être difficile à lire car tout est affiché sur une seule ligne.</li>
+</ul>
+<p><strong>Exécuter <code>ls</code> sur la variable :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls $variable_etc</span></span></code></pre></div>
+<ul>
+<li>Peut afficher une erreur si des fichiers n&rsquo;existent pas dans le répertoire courant.</li>
+</ul>
+</li>
+<li>
+<p><strong>Trouver les fichiers <code>.conf</code> et stocker dans une variable :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ fichiers_conf<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>find /etc -type f -name <span style="color:#e6db74">&#34;*.conf&#34;</span><span style="color:#66d9ef">)</span></span></span></code></pre></div>
+<p><strong>Exécuter <code>ls</code> sur cette variable :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls $fichiers_conf</span></span></code></pre></div>
+<ul>
+<li>Peut produire une erreur similaire si les chemins complets ne sont pas valides.</li>
+</ul>
+<p><strong>Afficher la taille de chaque fichier <code>.conf</code> :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#66d9ef">for</span> fichier in $fichiers_conf; <span style="color:#66d9ef">do</span> du -sh <span style="color:#e6db74">&#34;</span>$fichier<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">done</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Créer des fichiers avec factorisation :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir test_dir
+</span></span><span style="display:flex;"><span>$ touch test_dir/test<span style="color:#f92672">{</span>1,2,3<span style="color:#f92672">}</span>.<span style="color:#f92672">{</span>txt,doc,tot<span style="color:#f92672">}</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Afficher uniquement les fichiers <code>.txt</code> commençant par <code>test</code> :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls test_dir/test*.txt</span></span></code></pre></div>
+<p><strong>Afficher tous les fichiers <code>.txt</code> et <code>.tot</code> :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls test_dir/*.<span style="color:#f92672">{</span>txt,tot<span style="color:#f92672">}</span></span></span></code></pre></div>
+<p><strong>Afficher tous les fichiers <code>test1</code> :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls test_dir/test1.*</span></span></code></pre></div>
+</li>
+</ol>
+<hr>
+<h2 id="exercice-6--expansion-daccolade-et-boucle-for">Exercice 6 : Expansion d’accolade et boucle for</h2>
+<ol>
+<li>
+<p><strong>Créer l&rsquo;arborescence avec expansion d’accolade :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir -p coursLinux/semaine<span style="color:#f92672">{</span>1..5<span style="color:#f92672">}</span>/<span style="color:#f92672">{</span>lab,lecon<span style="color:#f92672">}</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Créer un fichier <code>priseNote</code> dans chaque répertoire <code>lab</code> :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ touch coursLinux/semaine<span style="color:#f92672">{</span>1..5<span style="color:#f92672">}</span>/lab/priseNote</span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Renommer <code>priseNote</code> en <code>priseNote.txt</code> :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#66d9ef">for</span> fichier in coursLinux/semaine<span style="color:#f92672">{</span>1..5<span style="color:#f92672">}</span>/lab/priseNote; <span style="color:#66d9ef">do</span> mv <span style="color:#e6db74">&#34;</span>$fichier<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>fichier<span style="color:#e6db74">}</span><span style="color:#e6db74">.txt&#34;</span>; <span style="color:#66d9ef">done</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Déplacer <code>priseNote.txt</code> vers le répertoire <code>lecon</code> correspondant :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#66d9ef">for</span> semaine in coursLinux/semaine<span style="color:#f92672">{</span>1..5<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span> mv <span style="color:#e6db74">&#34;</span>$semaine<span style="color:#e6db74">/lab/priseNote.txt&#34;</span> <span style="color:#e6db74">&#34;</span>$semaine<span style="color:#e6db74">/lecon/&#34;</span>; <span style="color:#66d9ef">done</span></span></span></code></pre></div>
+</li>
+</ol>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1737842081";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1737842081" defer></script>
+        <script src="/js/lunr/lunr.min.js?1737842081" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1737842081" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1737842081" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1737842081" defer></script>
+        <script src="/js/search.js?1737842081" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>E/S, redirection et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>VIM et les fichiers de configuration</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>???</a></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions de ateliers</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu">
+            <li class="" data-nav-id="/solutions/semaine1/index.html"><a class="padding" href="/solutions/semaine1/index.html">Atelier 1</a></li>
+            <li class="" data-nav-id="/solutions/semaine2/index.html"><a class="padding" href="/solutions/semaine2/index.html">Atelier 2</a></li>
+            <li class="active " data-nav-id="/solutions/semaine3/index.html"><a class="padding" href="/solutions/semaine3/index.html">Atelier 3</a></li>
+            <li class="" data-nav-id="/solutions/semaine6/index.html"><a class="padding" href="/solutions/semaine6/index.html">Atelier 6</a></li></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/solutions/semaine3/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1737842081" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1737842081" defer></script>
+    <script src="/js/theme.js?1737842081" defer></script>
+  </body>
+</html>

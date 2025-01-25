@@ -49,10 +49,22 @@
     <loc>https://example.org/semaine5/atelier/index.html</loc>
   </url>
   <url>
+    <loc>https://example.org/semaine6/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine6/cours/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine6/atelier/index.html</loc>
+  </url>
+  <url>
     <loc>https://example.org/semaine8/cours/index.html</loc>
   </url>
   <url>
     <loc>https://example.org/semaine14/cours/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/solutions/index.html</loc>
   </url>
   <url>
     <loc>https://example.org/categories/index.html</loc>
