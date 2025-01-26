@@ -68,6 +68,18 @@ Vous obtiendrez le fichier ***AlmaLinux-9.5-x86_64-dvd.iso***
 [Guide - Création d'une VM Almalinux](Creation%20VM%20Almalinux.pdf)
 
 
+#### En cas de problème
+
+Il arrive parfois que le serveur X ne démarre pas dans le temps imparti, ce qui force l'installation à basculer en mode texte. Vous le résolvez en augmentant le délai avec `inst.xtimeout=180` en début d'installation.
+
+Pour résoudre le problème:
+1. menu installation - choisir troubleshooting
+2. touche tab
+3. ajouter inst.xtimeout=valeur en seconde en bas ( comme l'image ci bas)
+
+![HTTP](./vm27.png?height=200)
+
+
 <!--
 [Vidéo par Dell](www.dell.com/support/contents/fr-ca/videos/videoplayer/création-d’une-machine-virtuelle-dans-vmware-workstation-pro/1700108455885340472)
 -->

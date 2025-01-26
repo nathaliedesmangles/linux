@@ -18,14 +18,14 @@
     <meta property="og:type" content="website">
     <meta itemprop="name" content="ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX">
     <meta itemprop="description" content="Objectifs Installation du logiciel de virtualisation VMware workstation Pro. Création d’une machine virtuelle (VM). Installation de Linux sur la VM. Prérequis pour l’atelier Avoir Windows 11 installé sur votre disque SSD (sur une seule partition). Télécharger un logiciel de virtualisation tel que VMWare Workstation Pro 17. Télécharger la dernière version d’Almalinux (janvier 2025 c’est la version 9.5). Rappels (Cours ZE5 Virtualisation) VMWare permet d’installer différents systèmes d’exploitation sur une même machine. Le nombre de machines virtuelles (VM) que l’on peut installer dépend de la puissance en terme de CPU et de mémoire de la machine hôte. La machine hôte est celle qui héberge les machines virtuelles aussi appelées les invités. La machine hôte peut être Windows ou Linux et les invités peuvent être une grande variété de systèmes d’exploitation. Format de la remise AttentionVous devrez prendre des captures d’écran de vos installations. Pour plus de détails, voir les documents ci-dessous:.">
-    <meta itemprop="wordCount" content="241">
+    <meta itemprop="wordCount" content="302">
     <title>ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX</title>
     <link href="/semaine1/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #1: Installation de Linux sur une VM :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1737842111" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737842111" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1737842111" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737842111" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1737842111" rel="stylesheet">
-    <link href="/css/theme.min.css?1737842111" rel="stylesheet">
-    <link href="/css/format-html.min.css?1737842111" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1737926408" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1737926408" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1737926408" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1737926408" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1737926408" rel="stylesheet">
+    <link href="/css/theme.min.css?1737926408" rel="stylesheet">
+    <link href="/css/format-html.min.css?1737926408" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -206,6 +206,16 @@
 <li>Créer une VM pour y installer Almalinux</li>
 </ol>
 <p><a href="/semaine1/atelier/Creation%20VM%20Almalinux.pdf">Guide - Création d&rsquo;une VM Almalinux</a></p>
+<h4 id="en-cas-de-problème">En cas de problème</h4>
+<p>Il arrive parfois que le serveur X ne démarre pas dans le temps imparti, ce qui force l&rsquo;installation à basculer en mode texte. Vous le résolvez en augmentant le délai avec <code>inst.xtimeout=180</code> en début d&rsquo;installation.</p>
+<p>Pour résoudre le problème:</p>
+<ol>
+<li>menu installation - choisir troubleshooting</li>
+<li>touche tab</li>
+<li>ajouter inst.xtimeout=valeur en seconde en bas ( comme l&rsquo;image ci bas)</li>
+</ol>
+<p><a href="#R-image-94380e77d34dd9c7913aa80dcd8d4c67" class="lightbox-link"><img alt="HTTP" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine1/atelier/vm27.png?height=200" style=" height: 200; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-94380e77d34dd9c7913aa80dcd8d4c67"><img alt="HTTP" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine1/atelier/vm27.png?height=200"></a></p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 
@@ -224,7 +234,7 @@
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1737842111";
+          window.index_js_url="/searchindex.en.js?1737926408";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -237,12 +247,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1737842111" defer></script>
-        <script src="/js/lunr/lunr.min.js?1737842111" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1737842111" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1737842111" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1737842111" defer></script>
-        <script src="/js/search.js?1737842111" defer></script>
+        <script src="/js/auto-complete.js?1737926408" defer></script>
+        <script src="/js/lunr/lunr.min.js?1737926408" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1737926408" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1737926408" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1737926408" defer></script>
+        <script src="/js/search.js?1737926408" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -315,8 +325,8 @@
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1737842111" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1737842111" defer></script>
-    <script src="/js/theme.js?1737842111" defer></script>
+    <script src="/js/clipboard.min.js?1737926408" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1737926408" defer></script>
+    <script src="/js/theme.js?1737926408" defer></script>
   </body>
 </html>
