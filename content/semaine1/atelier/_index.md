@@ -65,12 +65,16 @@ Vous obtiendrez le fichier ***AlmaLinux-9.5-x86_64-dvd.iso***
 
 2. Créer une VM pour y installer Almalinux
 
+{{% notice style=warning title=Attention %}}
+Ne pas sauvegarder le fichier `.iso` sur ***OneDrive***, ni dans le répertoire **Téléchargements** (*Downloads*), Sauvegardez le sur votre disque dur (en  général c'est le lecteur C:).
+{{% /notice %}}
+
 [Guide - Création d'une VM Almalinux](Creation%20VM%20Almalinux.pdf)
 
 
 #### En cas de problème
 
-Il arrive parfois que le serveur X ne démarre pas dans le temps imparti, ce qui force l'installation à basculer en mode texte. Vous le résolvez en augmentant le délai avec `inst.xtimeout=180` en début d'installation.
+**Cas #1**: Il arrive parfois que le serveur X ne démarre pas dans le temps imparti, ce qui force l'installation à basculer en mode texte. Vous le résolvez en augmentant le délai avec `inst.xtimeout=180` en début d'installation.
 
 Pour résoudre le problème:
 1. menu installation - choisir troubleshooting
@@ -79,6 +83,15 @@ Pour résoudre le problème:
 
 ![HTTP](./vm27.png?height=200)
 
+**Cas #2**: Si le processus d’installation exécute le ***Check*** et que c'est très long, il suffit d’appuyer plusieurs fois sur la touche `Esc` pour sauter la vérification et poursuivre l'installation.
+
+
+**Cas #3**: Sur certains postes/SSD, la configuration ci-dessous règle les problèmes encourus pendant l'installation d'Almalinux.
+
+Configuration de la VM:
+ - 40 Gb au lieu de 20 Gb
+ - 4096 en mémoire
+ - 1 processeur et 4 Coeurs
 
 <!--
 [Vidéo par Dell](www.dell.com/support/contents/fr-ca/videos/videoplayer/création-d’une-machine-virtuelle-dans-vmware-workstation-pro/1700108455885340472)
