@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Objectif de l’atelier Approfondir l’utilisation de VIM pour modifier des fichiers de configuration Linux de manière efficace. Modifier des fichiers de configuration Linux efficacement : Utiliser un minimum de touches. Ne pas utiliser la souris. Compléter les exercices : 10 exercices de type A (le curseur est déjà placé). 5 exercices de type B (le curseur commence au début du fichier). Instructions de remise Fournissez les captures d’écran des exercices réussis via Moodle.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ATELIER #7: VIM et les fichiers de configuration (À MODIFIER) :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Objectif de l’atelier Approfondir l’utilisation de VIM pour modifier des fichiers de configuration Linux de manière efficace. Modifier des fichiers de configuration Linux efficacement : Utiliser un minimum de touches. Ne pas utiliser la souris. Compléter les exercices : 10 exercices de type A (le curseur est déjà placé). 5 exercices de type B (le curseur commence au début du fichier). Instructions de remise Fournissez les captures d’écran des exercices réussis via Moodle.">
+    <meta property="og:url" content="https://example.org/semaine7/atelier/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="ATELIER #7: VIM et les fichiers de configuration (À MODIFIER) :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Objectif de l’atelier Approfondir l’utilisation de VIM pour modifier des fichiers de configuration Linux de manière efficace. Modifier des fichiers de configuration Linux efficacement : Utiliser un minimum de touches. Ne pas utiliser la souris. Compléter les exercices : 10 exercices de type A (le curseur est déjà placé). 5 exercices de type B (le curseur commence au début du fichier). Instructions de remise Fournissez les captures d’écran des exercices réussis via Moodle.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="ATELIER #7: VIM et les fichiers de configuration (À MODIFIER) :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Objectif de l’atelier Approfondir l’utilisation de VIM pour modifier des fichiers de configuration Linux de manière efficace. Modifier des fichiers de configuration Linux efficacement : Utiliser un minimum de touches. Ne pas utiliser la souris. Compléter les exercices : 10 exercices de type A (le curseur est déjà placé). 5 exercices de type B (le curseur commence au début du fichier). Instructions de remise Fournissez les captures d’écran des exercices réussis via Moodle.">
+    <meta itemprop="wordCount" content="1540">
+    <title>ATELIER #7: VIM et les fichiers de configuration (À MODIFIER) :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine7/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #7: VIM et les fichiers de configuration (À MODIFIER) :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1738288557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738288557" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1738288557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738288557" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1738288557" rel="stylesheet">
+    <link href="/css/theme.min.css?1738288557" rel="stylesheet">
+    <link href="/css/format-html.min.css?1738288557" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine7/atelier/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#objectif-de-latelier">Objectif de l&rsquo;atelier</a></li>
+    <li><a href="#instructions-de-remise">Instructions de remise</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#préparation">Préparation</a>
+      <ul>
+        <li><a href="#installation-des-outils">Installation des outils</a></li>
+        <li><a href="#téléchargement-des-exercices">Téléchargement des exercices</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercices-de-type-a-curseur-déjà-placé">Exercices de type A (curseur déjà placé)</a>
+      <ul>
+        <li><a href="#exercice-a01">Exercice a01</a></li>
+        <li><a href="#exercice-a02">Exercice a02</a></li>
+        <li><a href="#modification-à-apporter-1">Modification à apporter</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercices-de-type-b-curseur-au-début-du-fichier">Exercices de type B (curseur au début du fichier)</a>
+      <ul>
+        <li><a href="#exercice-b01">Exercice b01</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#objectif">Objectif</a></li>
+    <li><a href="#remise">Remise</a></li>
+    <li><a href="#astuces">Astuces:</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#préambule">Préambule</a>
+      <ul>
+        <li><a href="#installation-des-outils-nécessaires">Installation des outils nécessaires</a></li>
+        <li><a href="#télécharger-et-décompresser-les-exercices">Télécharger et décompresser les exercices</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercices-a-le-curseur-est-déjà-placé">Exercices A: le curseur est déjà placé</a></li>
+    <li><a href="#exercice-a01-1">Exercice a01</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-3">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-3">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-a02-1">Exercice a02</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-4">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-4">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches-1">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice-1">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-a03">Exercice a03</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-5">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-5">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches-2">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice-2">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-a04">Exercice a04</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-6">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-6">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches-3">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice-3">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-a05">Exercice a05</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-7">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-7">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches-4">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice-4">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-a06">Exercice a06</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-8">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-8">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches-5">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice-5">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-a07">Exercice a07</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-9">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-9">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches-6">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice-6">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-a08">Exercice a08</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-10">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-10">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches-7">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice-7">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-a09">Exercice a09</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-11">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-11">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches-8">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice-8">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-a10">Exercice a10</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-12">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-12">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches-9">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice-9">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercices-b-le-curseur-est-au-début-du-fichier">Exercices B: le curseur est au début du fichier</a></li>
+    <li><a href="#exercice-b01-1">Exercice b01</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-13">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-13">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches-10">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice-10">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-b02">Exercice b02</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-14">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-14">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches-11">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice-11">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-b03">Exercice b03</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-15">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-15">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches-12">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice-12">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-b04">Exercice b04</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-16">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-16">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches-13">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice-13">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-b05">Exercice b05</a>
+      <ul>
+        <li><a href="#fichier-de-configuration-17">Fichier de configuration</a></li>
+        <li><a href="#modification-à-apporter-17">Modification à apporter</a></li>
+        <li><a href="#nombre-de-touches-14">Nombre de touches</a></li>
+        <li><a href="#pour-visualiser-avec-meld-et-lancer-lexercice-14">Pour visualiser avec meld et lancer l&rsquo;exercice</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine7/index.html"><span itemprop="name">Vim et les fichiers de configuration</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ATELIER #7: VIM et les fichiers de configuration (À MODIFIER)</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine7/cours/index.html" title="Vim et les fichiers de configuration (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/index.html" title="Solutions de ateliers (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine7" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="atelier-7-vim-et-les-fichiers-de-configuration-à-modifier">ATELIER #7: VIM et les fichiers de configuration (À MODIFIER)</h1>
+
+<h2 id="objectif-de-latelier">Objectif de l&rsquo;atelier</h2>
+<ul>
+<li>Approfondir l’utilisation de VIM pour modifier des fichiers de configuration Linux de manière efficace.</li>
+</ul>
+<ol>
+<li><strong>Modifier des fichiers de configuration Linux efficacement</strong> :
+<ul>
+<li>Utiliser un minimum de touches.</li>
+<li>Ne pas utiliser la souris.</li>
+</ul>
+</li>
+<li><strong>Compléter les exercices</strong> :
+<ul>
+<li>10 exercices de type A (le curseur est déjà placé).</li>
+<li>5 exercices de type B (le curseur commence au début du fichier).</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="instructions-de-remise">Instructions de remise</h2>
+<ol>
+<li>
+<p>Fournissez les <strong>captures d’écran</strong> des exercices réussis via Moodle.</p>
+</li>
+<li>
+<p>Chaque capture doit montrer :</p>
+<ul>
+<li>La modification effectuée.</li>
+<li>Le fichier sauvegardé dans l’état final.</li>
+</ul>
+</li>
+<li>
+<p>Exemple de capture attendue :</p>
+<p><a href="#R-image-a72e097ddbdc43a27491bedc07ea8200" class="lightbox-link"><img alt="Exemple" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine7/atelier/exemple.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a72e097ddbdc43a27491bedc07ea8200"><img alt="Exemple" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine7/atelier/exemple.png"></a></p>
+</li>
+<li>
+<p>Une vidéo de démonstration est disponible :</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</li>
+</ol>
+<hr>
+<h1 id="atelier">Atelier</h1>
+<h2 id="préparation">Préparation</h2>
+<h3 id="installation-des-outils">Installation des outils</h3>
+<ol>
+<li>
+<p>Créez un fichier <code>vim.sh</code> avec le contenu suivant :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>wget http://gyoukou.ca/vimrc.dot <span style="color:#f92672">||</span> echo ERREUR
+</span></span><span style="display:flex;"><span>mv vimrc.dot ~/.vimrc
+</span></span><span style="display:flex;"><span>sudo yum install -y epel-release
+</span></span><span style="display:flex;"><span>sudo yum install -y meld
+</span></span><span style="display:flex;"><span>sudo yum groupinstall -y <span style="color:#e6db74">&#34;Development Tools&#34;</span>
+</span></span><span style="display:flex;"><span>sudo yum install -y git automake
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mkdir ~/tmp
+</span></span><span style="display:flex;"><span>cd ~/tmp
+</span></span><span style="display:flex;"><span>git clone https://github.com/kernc/logkeys.git
+</span></span><span style="display:flex;"><span>cd logkeys
+</span></span><span style="display:flex;"><span>./autogen.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd build
+</span></span><span style="display:flex;"><span>../configure
+</span></span><span style="display:flex;"><span>make
+</span></span><span style="display:flex;"><span>sudo make install <span style="color:#f92672">||</span> echo ERREUR</span></span></code></pre></div>
+</li>
+<li>
+<p>Exécutez le script pour installer les outils requis :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ bash vim.sh</span></span></code></pre></div>
+</li>
+</ol>
+<h3 id="téléchargement-des-exercices">Téléchargement des exercices</h3>
+<ol>
+<li>
+<p>Dans votre répertoire personnel, exécutez les commandes suivantes :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd ~
+</span></span><span style="display:flex;"><span>$ wget http://gyoukou.ca/atelier_06.tar.gz <span style="color:#f92672">||</span> echo ERREUR
+</span></span><span style="display:flex;"><span>$ tar zxvf atelier_06.tar.gz
+</span></span><span style="display:flex;"><span>$ cd atelier_06</span></span></code></pre></div>
+</li>
+</ol>
+<hr>
+<h2 id="exercices-de-type-a-curseur-déjà-placé">Exercices de type A (curseur déjà placé)</h2>
+<h3 id="exercice-a01">Exercice a01</h3>
+<h4 id="fichier-de-configuration">Fichier de configuration</h4>
+<p><code>/etc/default/grub</code></p>
+<h4 id="modification-à-apporter">Modification à apporter</h4>
+<ul>
+<li>
+<p><strong>Avant</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">GRUB_CMDLINE_LINUX</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet&#34;</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Après</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">GRUB_CMDLINE_LINUX</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rd.lvm.lv=centos/root rd.lvm.lv=centos/swap quiet&#34;</span></span></span></code></pre></div>
+<p>Supprimez <code>rhgb</code> pour désactiver le démarrage graphique.</p>
+</li>
+</ul>
+<h4 id="performances-attendues">Performances attendues</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Record à battre</th>
+          <th style="text-align: left">Maximum acceptable</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">4 touches</td>
+          <td style="text-align: left">9 touches</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="commandes-pour-lancer-lexercice">Commandes pour lancer l’exercice</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sh afficher_objectif.sh a01
+</span></span><span style="display:flex;"><span>$ sh exercice_vim.sh a01</span></span></code></pre></div>
+<hr>
+<h3 id="exercice-a02">Exercice a02</h3>
+<h4 id="fichier-de-configuration-1">Fichier de configuration</h4>
+<p><code>/etc/selinux/config</code></p>
+<h3 id="modification-à-apporter-1">Modification à apporter</h3>
+<ul>
+<li>
+<p><strong>Avant</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">SELINUX</span><span style="color:#f92672">=</span><span style="color:#a6e22e">enforcing</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Après</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">SELINUX</span><span style="color:#f92672">=</span><span style="color:#a6e22e">disabled</span></span></span></code></pre></div>
+<p>Désactivez <em>SELinux</em>.</p>
+</li>
+</ul>
+<h4 id="performances-attendues-1">Performances attendues</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Record à battre</strong></th>
+          <th style="text-align: left"><strong>Maximum acceptable</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">7 touches</td>
+          <td style="text-align: left">25 touches</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="commandes-pour-lancer-lexercice-1">Commandes pour lancer l’exercice</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sh afficher_objectif.sh a02
+</span></span><span style="display:flex;"><span>$ sh exercice_vim.sh a02</span></span></code></pre></div>
+<hr>
+<p>Répétez cette structure pour les autres exercices.</p>
+<hr>
+<h2 id="exercices-de-type-b-curseur-au-début-du-fichier">Exercices de type B (curseur au début du fichier)</h2>
+<h3 id="exercice-b01">Exercice b01</h3>
+<h4 id="fichier-de-configuration-2">Fichier de configuration</h4>
+<p><code>/etc/ssh/sshd_config</code></p>
+<h4 id="modification-à-apporter-2">Modification à apporter</h4>
+<ul>
+<li>
+<p><strong>Avant</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#75715e">#X11Forwarding yes
+</span></span></span></code></pre></div>
+</li>
+<li>
+<p><strong>Après</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">X11Forwarding</span> <span style="color:#a6e22e">yes</span></span></span></code></pre></div>
+<p>Décommentez la ligne pour activer la redirection graphique.</p>
+</li>
+</ul>
+<h4 id="performances-attendues-2">Performances attendues</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Record à battre</strong></th>
+          <th style="text-align: left"><strong>Maximum acceptable</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">7 touches</td>
+          <td style="text-align: left">18 touches</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="commandes-pour-lancer-lexercice-2">Commandes pour lancer l’exercice</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sh afficher_objectif.sh b01
+</span></span><span style="display:flex;"><span>$ sh exercice_vim.sh b01</span></span></code></pre></div>
+<hr>
+<p>Continuez avec cette structure pour les exercices restants.</p>
+<p>=====================================================</p>
+<h1 id="atelier-7b-vim-avancé">Atelier 7b: vim avancé</h1>
+<p>Cet atelier et l&rsquo;atelier précédent forment l&rsquo;atelier 7.</p>
+<h2 id="objectif">Objectif</h2>
+<ol>
+<li>Effectuer efficacement des modifications à des fichiers de configuration Linux
+<ol>
+<li>NOTE: <em>efficacement</em> veut dire <em>en moins de X touches</em>, <strong>sans utiliser la souris</strong></li>
+</ol>
+</li>
+<li>Vous devez réussir:
+<ul>
+<li><strong>10 exercices</strong> de type A (curseur déjà placé)</li>
+<li><strong>5 exercices</strong> de type B (curseur au début du fichier)</li>
+</ul>
+</li>
+</ol>
+<h2 id="remise">Remise</h2>
+<ul>
+<li>
+<p>À remettre sur Moodle: <strong>Les captures d&rsquo;écran</strong>:</p>
+</li>
+<li>
+<p>Chaque capture d&rsquo;écran correspond à un exercice réussi, p.ex:</p>
+<ul>
+<li>Voici un exemple d&rsquo;exercice réussi:</li>
+</ul>
+<!-- raw HTML omitted -->
+</li>
+<li>
+<p>Voici comment l&rsquo;exercice ci-haut s&rsquo;est déroulé:</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="astuces">Astuces:</h2>
+<p>Utilisez ZZ pour sauvegarder et quitter dans vim.</p>
+<p>Utilisez les commandes données dans les images Aide mémoire en fin du cours pour avoir le record.</p>
+<h1 id="travail-à-effectuer">Travail à effectuer</h1>
+<h2 id="préambule">Préambule</h2>
+<h3 id="installation-des-outils-nécessaires">Installation des outils nécessaires</h3>
+<p>Copiez le texte suivant dans un script nommé <!-- raw HTML omitted -->vim.sh<!-- raw HTML omitted --></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>wget http://gyoukou.ca/vimrc.dot <span style="color:#f92672">||</span> echo ERREUR
+</span></span><span style="display:flex;"><span>mv vimrc.dot ~/.vimrc
+</span></span><span style="display:flex;"><span>sudo yum install -y epel-release
+</span></span><span style="display:flex;"><span>sudo yum install -y meld
+</span></span><span style="display:flex;"><span>sudo yum groupinstall -y <span style="color:#e6db74">&#34;Development Tools&#34;</span>
+</span></span><span style="display:flex;"><span>sudo yum install -y git automake 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mkdir ~/tmp
+</span></span><span style="display:flex;"><span>cd ~/tmp
+</span></span><span style="display:flex;"><span>git clone https://github.com/kernc/logkeys.git
+</span></span><span style="display:flex;"><span>cd logkeys
+</span></span><span style="display:flex;"><span>./autogen.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd build
+</span></span><span style="display:flex;"><span>../configure
+</span></span><span style="display:flex;"><span>make
+</span></span><span style="display:flex;"><span>sudo make install <span style="color:#f92672">||</span> echo ERREUR</span></span></code></pre></div>
+
+<p>Exécutez le script :</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="télécharger-et-décompresser-les-exercices">Télécharger et décompresser les exercices</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercices-a-le-curseur-est-déjà-placé">Exercices A: le curseur est déjà placé</h2>
+<p><!-- raw HTML omitted -->IMPORTANT: ne pas éditer directement les vrais fichiers de configuration. Editer plutôt la copie qui se trouve dans le dossier atelier téléchargé <!-- raw HTML omitted --></p>
+<h2 id="exercice-a01-1">Exercice a01</h2>
+<h3 id="fichier-de-configuration-3">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->/etc/default/grub<!-- raw HTML omitted --></p>
+<ul>
+<li>Configuration de <code>grub</code> (outil de démarrage)</li>
+<li>En particulier: options à donner au noyau Linux au démarrage</li>
+</ul>
+<h3 id="modification-à-apporter-3">Modification à apporter</h3>
+<p>AVANT:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">GRUB_CMDLINE_LINUX</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet&#34;</span></span></span></code></pre></div>
+
+<p>APRÈS:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">GRUB_CMDLINE_LINUX</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rd.lvm.lv=centos/root rd.lvm.lv=centos/swap quiet&#34;</span></span></span></code></pre></div>
+
+<ul>
+<li>Enlever <code>rhgb</code> désactive le démarrage graphique au profit de l&rsquo;affichage d&rsquo;un log</li>
+<li>(<code>rhgb</code> signifie <em>Red Hat Graphical Boot</em>)</li>
+</ul>
+<h3 id="nombre-de-touches">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercice-a02-1">Exercice a02</h2>
+<h3 id="fichier-de-configuration-4">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->/etc/selinux/config<!-- raw HTML omitted --></p>
+<ul>
+<li><em>selinux</em> est un pare-feu d&rsquo;application qui permet de contrôler ou limiter un grand nombre d&rsquo;opérations sur un serveur Linux</li>
+<li>(<em>selinux</em> veut dire <em>Security Enhanced Linux</em>)</li>
+</ul>
+<h3 id="modification-à-apporter-4">Modification à apporter</h3>
+<p>AVANT:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">SELINUX</span><span style="color:#f92672">=</span><span style="color:#a6e22e">enforcing</span></span></span></code></pre></div>
+
+<p>APRÈS:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">SELINUX</span><span style="color:#f92672">=</span><span style="color:#a6e22e">disabled</span></span></span></code></pre></div>
+
+<ul>
+<li>On déscative <em>selinux</em> (généralement préférable sur une machine usager)</li>
+</ul>
+<h3 id="nombre-de-touches-1">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-1">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercice-a03">Exercice a03</h2>
+<h3 id="fichier-de-configuration-5">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->/etc/fstab<!-- raw HTML omitted --></p>
+<ol>
+<li>Liste des partitions utilisées dans le système</li>
+<li>Par défaut, chaque partition est montée au démarrage</li>
+</ol>
+<h3 id="modification-à-apporter-5">Modification à apporter</h3>
+<p>AVANT:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f92672">/</span><span style="color:#a6e22e">dev</span><span style="color:#f92672">/</span><span style="color:#a6e22e">mapper</span><span style="color:#f92672">/</span><span style="color:#a6e22e">centos</span><span style="color:#f92672">-</span><span style="color:#a6e22e">tmp</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">tmp</span>                     <span style="color:#a6e22e">xfs</span>     <span style="color:#a6e22e">defaults</span>        <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span></span></span></code></pre></div>
+
+<p>APRÈS:</p>
+<ol>
+<li>En retirant une ligne, on efface la définition d&rsquo;une partition</li>
+<li>Le répertoire <code>/tmp</code> devient un sous-répertoire de <code>/</code> (partition <code>centos-root</code>)</li>
+</ol>
+<h3 id="nombre-de-touches-2">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-2">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercice-a04">Exercice a04</h2>
+<h3 id="fichier-de-configuration-6">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->/etc/locale.conf<!-- raw HTML omitted --></p>
+<ol>
+<li>Régionalisation du système: langue, date, etc.</li>
+</ol>
+<h3 id="modification-à-apporter-6">Modification à apporter</h3>
+<p>AVANT:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">LC_TIME</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span></span></span></code></pre></div>
+
+<p>APRÈS:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">LC_TIME</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fr_CA.UTF-8&#34;</span></span></span></code></pre></div>
+
+<ol>
+<li>On veut copier <code>fr_CA.UTF-8</code> entre les <code>&quot;</code> afin de définir aussi le format de date</li>
+</ol>
+<h3 id="nombre-de-touches-3">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-3">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercice-a05">Exercice a05</h2>
+<h3 id="fichier-de-configuration-7">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->/etc/mime.types<!-- raw HTML omitted --></p>
+<ol>
+<li>Définition des types de fichier et de leur extensions</li>
+<li>NOTE: la commande <code>file</code> affiche le type d&rsquo;un fichier</li>
+</ol>
+<h3 id="modification-à-apporter-7">Modification à apporter</h3>
+<p>AVANT:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">application</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">gpp</span><span style="color:#f92672">-</span><span style="color:#a6e22e">ims</span><span style="color:#f92672">+</span><span style="color:#a6e22e">xml</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#a6e22e">application</span><span style="color:#f92672">/</span><span style="color:#a6e22e">activemessage</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#a6e22e">application</span><span style="color:#f92672">/</span><span style="color:#a6e22e">andrew</span><span style="color:#f92672">-</span><span style="color:#a6e22e">inset</span></span></span></code></pre></div>
+
+<p>APRÈS:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">application</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3</span><span style="color:#a6e22e">gpp</span><span style="color:#f92672">-</span><span style="color:#a6e22e">ims</span><span style="color:#f92672">+</span><span style="color:#a6e22e">xml</span>			<span style="color:#a6e22e">inconnu</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#a6e22e">application</span><span style="color:#f92672">/</span><span style="color:#a6e22e">activemessage</span>			<span style="color:#a6e22e">inconnu</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#a6e22e">application</span><span style="color:#f92672">/</span><span style="color:#a6e22e">andrew</span><span style="color:#f92672">-</span><span style="color:#a6e22e">inset</span>			<span style="color:#a6e22e">inconnu</span></span></span></code></pre></div>
+
+<ol>
+<li>On ajoute l&rsquo;extension <code>inconnu</code> pour les trois premiers types de fichier</li>
+<li>NOTE: il y a trois tabulations entre le type et l&rsquo;extension</li>
+</ol>
+<h3 id="nombre-de-touches-4">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-4">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercice-a06">Exercice a06</h2>
+<h3 id="fichier-de-configuration-8">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->/etc/hosts<!-- raw HTML omitted --></p>
+<ol>
+<li>Associe un nom réseau à son adresse</li>
+<li>Pour ces noms, le système ne fera pas de requête DNS</li>
+<li>(aussi avantageux pour faire des tests)</li>
+<li>NOTE: ce fichier existe aussi en Windows</li>
+</ol>
+<h3 id="modification-à-apporter-8">Modification à apporter</h3>
+<p>AVANT:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#ae81ff">206.167</span><span style="color:#f92672">.</span><span style="color:#ae81ff">24.30</span>    <span style="color:#a6e22e">ciboulot</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ca</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e">#172.17.0.30      ciboulot.ca
+</span></span></span></code></pre></div>
+
+<p>APRÈS:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">#206.167.24.30    ciboulot.ca
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#75715e"></span><span style="color:#ae81ff">172.17</span><span style="color:#f92672">.</span><span style="color:#ae81ff">0.30</span>      <span style="color:#a6e22e">ciboulot</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ca</span></span></span></code></pre></div>
+
+<ol>
+<li>On met en commentaire l&rsquo;adresse publique de <code>ciboulot.ca</code></li>
+<li>On active l&rsquo;adresse locale (seulement valide au Collège)</li>
+</ol>
+<h3 id="nombre-de-touches-5">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-5">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercice-a07">Exercice a07</h2>
+<h3 id="fichier-de-configuration-9">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->/etc/firewalld/direct.xml<!-- raw HTML omitted --></p>
+<ol>
+<li>Règles de pare-feu directes (écrites à la main)</li>
+<li>NOTE: l&rsquo;autre option est de générer les règles via la commande <code>firewall-cmd</code></li>
+</ol>
+<h3 id="modification-à-apporter-9">Modification à apporter</h3>
+<p>AVANT:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">rule</span> <span style="color:#a6e22e">priority</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">table</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;filter&#34;</span> <span style="color:#a6e22e">ipv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ipv4&#34;</span> <span style="color:#a6e22e">chain</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;FORWARD&#34;</span><span style="color:#f92672">&gt;-</span><span style="color:#a6e22e">i</span> <span style="color:#a6e22e">PRIVE</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">o</span> <span style="color:#66d9ef">PUBLIC</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">j</span> <span style="color:#a6e22e">ACCEPT</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">rule</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">rule</span> <span style="color:#a6e22e">priority</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">table</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;filter&#34;</span> <span style="color:#a6e22e">ipv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ipv4&#34;</span> <span style="color:#a6e22e">chain</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;FORWARD&#34;</span><span style="color:#f92672">&gt;-</span><span style="color:#a6e22e">i</span> <span style="color:#66d9ef">PUBLIC</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">o</span> <span style="color:#a6e22e">PRIVE</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">m</span> <span style="color:#a6e22e">state</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">state</span> <span style="color:#a6e22e">RELATED</span>,<span style="color:#a6e22e">ESTABLISHED</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">j</span> <span style="color:#a6e22e">ACCEPT</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">rule</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">rule</span> <span style="color:#a6e22e">priority</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">table</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nat&#34;</span> <span style="color:#a6e22e">ipv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ipv4&#34;</span> <span style="color:#a6e22e">chain</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POSTROUTING&#34;</span><span style="color:#f92672">&gt;-</span><span style="color:#a6e22e">o</span> <span style="color:#66d9ef">PUBLIC</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">j</span> <span style="color:#a6e22e">MASQUERADE</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">rule</span><span style="color:#f92672">&gt;</span></span></span></code></pre></div>
+
+<p>APRÈS:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">rule</span> <span style="color:#a6e22e">priority</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">table</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;filter&#34;</span> <span style="color:#a6e22e">ipv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ipv4&#34;</span> <span style="color:#a6e22e">chain</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;FORWARD&#34;</span><span style="color:#f92672">&gt;-</span><span style="color:#a6e22e">i</span> <span style="color:#ae81ff">192.168</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1.4</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">o</span> <span style="color:#ae81ff">10.33</span><span style="color:#f92672">.</span><span style="color:#ae81ff">50.3</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">j</span> <span style="color:#a6e22e">ACCEPT</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">rule</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">rule</span> <span style="color:#a6e22e">priority</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">table</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;filter&#34;</span> <span style="color:#a6e22e">ipv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ipv4&#34;</span> <span style="color:#a6e22e">chain</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;FORWARD&#34;</span><span style="color:#f92672">&gt;-</span><span style="color:#a6e22e">i</span> <span style="color:#ae81ff">10.33</span><span style="color:#f92672">.</span><span style="color:#ae81ff">50.3</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">o</span> <span style="color:#ae81ff">192.168</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1.4</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">m</span> <span style="color:#a6e22e">state</span> <span style="color:#f92672">--</span><span style="color:#a6e22e">state</span> <span style="color:#a6e22e">RELATED</span>,<span style="color:#a6e22e">ESTABLISHED</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">j</span> <span style="color:#a6e22e">ACCEPT</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">rule</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">rule</span> <span style="color:#a6e22e">priority</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">table</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nat&#34;</span> <span style="color:#a6e22e">ipv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ipv4&#34;</span> <span style="color:#a6e22e">chain</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POSTROUTING&#34;</span><span style="color:#f92672">&gt;-</span><span style="color:#a6e22e">o</span> <span style="color:#ae81ff">10.33</span><span style="color:#f92672">.</span><span style="color:#ae81ff">50.3</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">j</span> <span style="color:#a6e22e">MASQUERADE</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">rule</span><span style="color:#f92672">&gt;</span></span></span></code></pre></div>
+
+<ol>
+<li>On insère des vraies adresses IP à partir d&rsquo;un patron</li>
+<li>NOTE: ces règles indique au système de faire du NAT</li>
+</ol>
+<h3 id="nombre-de-touches-6">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-6">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercice-a08">Exercice a08</h2>
+<h3 id="fichier-de-configuration-10">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->~/.bashrc<!-- raw HTML omitted --></p>
+<ol>
+<li>Personnalisation du SHELL</li>
+<li>Fichier lu à chaque ouverture du SHEL</li>
+</ol>
+<h3 id="modification-à-apporter-10">Modification à apporter</h3>
+<p>AVANT:</p>
+<p>APRÈS:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">alias</span> <span style="color:#a6e22e">la</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ls -a&#34;</span></span></span></code></pre></div>
+
+<ol>
+<li>On ajoute la ligne pour créer un alias</li>
+<li>NOTE: un alias est un raccourci pour une commande fréquemment utilisée.</li>
+</ol>
+<h3 id="nombre-de-touches-7">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-7">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercice-a09">Exercice a09</h2>
+<h3 id="fichier-de-configuration-11">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->/etc/resolv.conf<!-- raw HTML omitted --></p>
+<ol>
+<li>Le ou les serveur DNS à utiliser</li>
+</ol>
+<h3 id="modification-à-apporter-11">Modification à apporter</h3>
+<p>AVANT:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">nameserver</span> <span style="color:#ae81ff">10.33</span><span style="color:#f92672">.</span><span style="color:#ae81ff">50.1</span></span></span></code></pre></div>
+
+<p>APRÈS:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">nameserver</span> <span style="color:#ae81ff">192.168</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1.1</span></span></span></code></pre></div>
+
+<ol>
+<li>On change l&rsquo;adresse DNS à <code>192.168.1.1</code></li>
+</ol>
+<h3 id="nombre-de-touches-8">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-8">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercice-a10">Exercice a10</h2>
+<h3 id="fichier-de-configuration-12">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->/etc/ssh/sshd_config<!-- raw HTML omitted --></p>
+<ol>
+<li>Configuration du serveur <em>SSH</em></li>
+</ol>
+<h3 id="modification-à-apporter-12">Modification à apporter</h3>
+<p>AVANT:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">#X11Forwarding yes
+</span></span></span></code></pre></div>
+
+<p>APRÈS:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">X11Forwarding</span> <span style="color:#a6e22e">yes</span></span></span></code></pre></div>
+
+<ol>
+<li>Certaines options sont déjà inscrites au fichier.
+<ul>
+<li>Pour les activer, il suffit de les décommenter</li>
+</ul>
+</li>
+<li>Ici, on active la redirection graphique</li>
+</ol>
+<h3 id="nombre-de-touches-9">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-9">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercices-b-le-curseur-est-au-début-du-fichier">Exercices B: le curseur est au début du fichier</h2>
+<p><!-- raw HTML omitted -->IMPORTANT: ne pas éditer directement le fichier<!-- raw HTML omitted --></p>
+<h2 id="exercice-b01-1">Exercice b01</h2>
+<h3 id="fichier-de-configuration-13">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->/etc/ssh/sshd_config<!-- raw HTML omitted --></p>
+<ol>
+<li>Configuration du serveur <em>SSH</em></li>
+</ol>
+<h3 id="modification-à-apporter-13">Modification à apporter</h3>
+<p>AVANT:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#75715e">#X11Forwarding yes
+</span></span></span></code></pre></div>
+
+<p>APRÈS:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">X11Forwarding</span> <span style="color:#a6e22e">yes</span></span></span></code></pre></div>
+
+<ol>
+<li>Même modification que <code>a10</code>, sauf que cette fois-ci le curseur n&rsquo;est pas déjà placé</li>
+</ol>
+<h3 id="nombre-de-touches-10">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-10">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercice-b02">Exercice b02</h2>
+<h3 id="fichier-de-configuration-14">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->/etc/default/grub<!-- raw HTML omitted --></p>
+<ul>
+<li>Configuration de <code>grub</code> (outil de démarrage)</li>
+<li>En particulier: options à donner au noyau Linux au démarrage</li>
+</ul>
+<h3 id="modification-à-apporter-14">Modification à apporter</h3>
+<p>AVANT:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">GRUB_CMDLINE_LINUX</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet&#34;</span></span></span></code></pre></div>
+
+<p>APRÈS:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">GRUB_CMDLINE_LINUX</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rd.lvm.lv=centos/root rd.lvm.lv=centos/swap quiet&#34;</span></span></span></code></pre></div>
+
+<ol>
+<li>Même modification que <code>a01</code>, sauf que le curseur n&rsquo;est pas déjà placé</li>
+</ol>
+<h3 id="nombre-de-touches-11">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-11">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercice-b03">Exercice b03</h2>
+<h3 id="fichier-de-configuration-15">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->/etc/services<!-- raw HTML omitted --></p>
+<ol>
+<li>Liste des services réseau, protocoles et ports</li>
+</ol>
+<h3 id="modification-à-apporter-15">Modification à apporter</h3>
+<p>AVANT:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#a6e22e">systat</span>          <span style="color:#ae81ff">11</span><span style="color:#f92672">/</span><span style="color:#a6e22e">tcp</span>          <span style="color:#a6e22e">users</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#a6e22e">systat</span>          <span style="color:#ae81ff">11</span><span style="color:#f92672">/</span><span style="color:#a6e22e">udp</span>          <span style="color:#a6e22e">users</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#a6e22e">daytime</span>         <span style="color:#ae81ff">13</span><span style="color:#f92672">/</span><span style="color:#a6e22e">tcp</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#a6e22e">daytime</span>         <span style="color:#ae81ff">13</span><span style="color:#f92672">/</span><span style="color:#a6e22e">udp</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#a6e22e">qotd</span>            <span style="color:#ae81ff">17</span><span style="color:#f92672">/</span><span style="color:#a6e22e">tcp</span>          <span style="color:#a6e22e">quote</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#a6e22e">qotd</span>            <span style="color:#ae81ff">17</span><span style="color:#f92672">/</span><span style="color:#a6e22e">udp</span>          <span style="color:#a6e22e">quote</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#a6e22e">msp</span>             <span style="color:#ae81ff">18</span><span style="color:#f92672">/</span><span style="color:#a6e22e">tcp</span>                          <span style="color:#75715e"># message send protocol (historic)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">msp</span>             <span style="color:#ae81ff">18</span><span style="color:#f92672">/</span><span style="color:#a6e22e">udp</span>                          <span style="color:#75715e"># message send protocol (historic)
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#75715e"></span><span style="color:#a6e22e">chargen</span>         <span style="color:#ae81ff">19</span><span style="color:#f92672">/</span><span style="color:#a6e22e">tcp</span>          <span style="color:#a6e22e">ttytst</span> <span style="color:#a6e22e">source</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#a6e22e">chargen</span>         <span style="color:#ae81ff">19</span><span style="color:#f92672">/</span><span style="color:#a6e22e">udp</span>          <span style="color:#a6e22e">ttytst</span> <span style="color:#a6e22e">source</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#a6e22e">ftp</span><span style="color:#f92672">-</span><span style="color:#a6e22e">data</span>        <span style="color:#ae81ff">20</span><span style="color:#f92672">/</span><span style="color:#a6e22e">tcp</span></span></span></code></pre></div>
+
+<p>APRÈS:</p>
+<ol>
+<li>Effacer les services du ports 11 jusqu&rsquo;au port 20 (inclusif)</li>
+</ol>
+<h3 id="nombre-de-touches-12">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-12">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercice-b04">Exercice b04</h2>
+<h3 id="fichier-de-configuration-16">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->/etc/passwd<!-- raw HTML omitted --></p>
+<ol>
+<li>Information sur les usagers Linux</li>
+</ol>
+<h3 id="modification-à-apporter-16">Modification à apporter</h3>
+<p>AVANT:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">gnome</span><span style="color:#f92672">-</span><span style="color:#a6e22e">initial</span><span style="color:#f92672">-</span><span style="color:#a6e22e">setup</span><span style="color:#f92672">:</span><span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#ae81ff">984</span><span style="color:#f92672">:</span><span style="color:#ae81ff">977</span><span style="color:#f92672">::/</span><span style="color:#a6e22e">run</span><span style="color:#f92672">/</span><span style="color:#a6e22e">gnome</span><span style="color:#f92672">-</span><span style="color:#a6e22e">initial</span><span style="color:#f92672">-</span><span style="color:#a6e22e">setup</span><span style="color:#f92672">/:/</span><span style="color:#a6e22e">sbin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">nologin</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#a6e22e">tcpdump</span><span style="color:#f92672">:</span><span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#ae81ff">72</span><span style="color:#f92672">:</span><span style="color:#ae81ff">72</span><span style="color:#f92672">::/:/</span><span style="color:#a6e22e">sbin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">nologin</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#a6e22e">avahi</span><span style="color:#f92672">:</span><span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#ae81ff">70</span><span style="color:#f92672">:</span><span style="color:#ae81ff">70</span><span style="color:#f92672">:</span><span style="color:#a6e22e">Avahi</span> <span style="color:#a6e22e">mDNS</span><span style="color:#f92672">/</span><span style="color:#a6e22e">DNS</span><span style="color:#f92672">-</span><span style="color:#a6e22e">SD</span> <span style="color:#a6e22e">Stack</span><span style="color:#f92672">:/</span><span style="color:#66d9ef">var</span><span style="color:#f92672">/</span><span style="color:#a6e22e">run</span><span style="color:#f92672">/</span><span style="color:#a6e22e">avahi</span><span style="color:#f92672">-</span><span style="color:#a6e22e">daemon</span><span style="color:#f92672">:/</span><span style="color:#a6e22e">sbin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">nologin</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#a6e22e">apache</span><span style="color:#f92672">:</span><span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#ae81ff">48</span><span style="color:#f92672">:</span><span style="color:#ae81ff">48</span><span style="color:#f92672">:</span><span style="color:#a6e22e">Apache</span><span style="color:#f92672">:/</span><span style="color:#a6e22e">usr</span><span style="color:#f92672">/</span><span style="color:#a6e22e">share</span><span style="color:#f92672">/</span><span style="color:#a6e22e">httpd</span><span style="color:#f92672">:/</span><span style="color:#a6e22e">sbin</span><span style="color:#f92672">/</span><span style="color:#a6e22e">nologin</span></span></span></code></pre></div>
+
+<p>APRÈS:</p>
+<ol>
+<li>On efface les 4 dernières lignes</li>
+<li>NOTE: habituellement, ces lignes sont effacées par la commande <code>userdel</code></li>
+</ol>
+<h3 id="nombre-de-touches-13">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-13">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="exercice-b05">Exercice b05</h2>
+<h3 id="fichier-de-configuration-17">Fichier de configuration</h3>
+<p><!-- raw HTML omitted -->/etc/group<!-- raw HTML omitted --></p>
+<ol>
+<li>Liste des groupes d&rsquo;usagers Linux</li>
+<li>Chaque usager est membre de son propre groupe</li>
+<li>Un usager membre d&rsquo;un autre groupe obtient des droits supplémentaires</li>
+</ol>
+<h3 id="modification-à-apporter-17">Modification à apporter</h3>
+<p>AVANT:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">wheel</span><span style="color:#f92672">:</span><span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span><span style="color:#f92672">:</span></span></span></code></pre></div>
+
+<p>APRÈS:</p>
+<div class="highlight wrap-code" linenos="true" linenumbersintable="false"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">wheel</span><span style="color:#f92672">:</span><span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#ae81ff">10</span><span style="color:#f92672">:</span><span style="color:#a6e22e">mbergeron</span></span></span></code></pre></div>
+
+<ol>
+<li>On ajoute l&rsquo;usager <code>mbergeron</code> au groupe <code>wheel</code></li>
+<li>Le groupe <code>wheel</code> est le groupe qui peut faire la commande <code>sudo</code></li>
+</ol>
+<h3 id="nombre-de-touches-14">Nombre de touches</h3>
+<!-- raw HTML omitted -->
+<h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-14">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1738288557";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1738288557" defer></script>
+        <script src="/js/lunr/lunr.min.js?1738288557" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1738288557" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1738288557" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1738288557" defer></script>
+        <script src="/js/search.js?1738288557" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>E/S, redirection et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim et les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu">
+            <li class="" data-nav-id="/semaine7/cours/index.html"><a class="padding" href="/semaine7/cours/index.html">Vim et les fichiers de configuration</a></li>
+            <li class="active " data-nav-id="/semaine7/atelier/index.html"><a class="padding" href="/semaine7/atelier/index.html">ATELIER #7: VIM et les fichiers de configuration (À MODIFIER)</a></li></ul></li>
+            <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions de ateliers</a></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine7/atelier/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1738288557" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1738288557" defer></script>
+    <script src="/js/theme.js?1738288557" defer></script>
+  </body>
+</html>

@@ -142,7 +142,8 @@ ndesmangles
 ```bash
 [ndesmangles@localhost ~]$ date -R
 Fri, 17 Jan 2025 20:19:50 -0500
-[ndesmangles@localhost ~]$
+[ndesmangles@localhost ~]$ date +%R
+20:19 
 ```
 
 Pour exécuter une commande avec des privilèges de **super-utilisateur (`root`)**, on la précède de `sudo`:
@@ -222,6 +223,10 @@ Bash propose une variété de commandes puissantes pour interagir avec le systè
 4. **Cinquième colonne** indique la taille du fichier (notez qu’un répertoire a une taille qui correspond à la taille du fichier répertoire sur le disque).
 5. **Sixième colonne** indique la date de dernière modification.
 6. **Septième colonne** est le nom du fichier.
+
+{{% notice style="tip" title="Bon à savoir" %}}
+La commande `clear` permet d'effacer l'écran du terminal.
+{{% /notice %}}
 
 ---
 
@@ -331,6 +336,10 @@ Bash propose une variété de commandes puissantes pour interagir avec le systè
      - `%H` : Heure (00-23).
      - `%M` : Minutes (00-59).
      - `%S` : Secondes (00-59).
+     - `%r` : Heure au format 12h (ex. 11:11:04 PM) 
+     - `%R` : Heure au format 24h (ex. 23:11 sans les secondes) 
+     - `%p` : Heure avec AM ou PM 
+
      ```bash
      [ndesmangles@localhost ~]$ date
      Thu Jan  9 20:42:36 EST 2025
@@ -374,10 +383,6 @@ Bash propose une variété de commandes puissantes pour interagir avec le systè
      [ndesmangles@localhost ~]$ history
      1  history
      ```
-
-{{% notice style="tip" title="Bon à savoir" %}}
-La commande `clear` permet d'effacer l'écran du terminal.
-{{% /notice %}}
 
 ---
 
@@ -456,7 +461,13 @@ $ vim nom_du_fichier
 ```
 Si le fichier n'existe pas, **vim** le créera.
 
-Lorsque vous ouvrez **vim**, il commence en **mode commande**. Vous ne pouvez pas directement écrire du texte. Vous devez d'abord passer au **mode insertion**.  
+Lorsque vous ouvrez **vim**, il commence en **mode commande**. Vous ne pouvez pas directement écrire du texte. Vous devez d'abord passer au **mode insertion** en tapant la lettre `i`. En bas de la fenêtre Vim, le mot **INSERTION** s'affichera. 
+
+![Mode insertion](./mode_insertion.png?width=100vw)
+
+{{% notice style="tip" title="Revenir au mode Normal" %}}
+Si avant de taper `i` ou n'importe quel autre mode, vous n'êtes plus dans le mode **Normal**, il suffit de tapper la touche `ESC` pour revenir au mode **Normal**.
+{{% /notice %}}
 
 ---
 
@@ -471,7 +482,7 @@ Ces modes sont les bases du fonctionnement de **vim**. Vous pouvez basculer entr
 | **Insertion** | Permet d'insérer ou de modifier du texte. | Passer en mode insertion où se trouve le curseur. | `i` |
 | **Commande** | Permet de sauvegarder un fichier. | Sauvegarde| `:w` |
 |              | Permet de quitter Vim, si aucun changement n'a été effectué dans le fichier en cours. | Quitter | `:q` |
-|              | Permet de forcer la fermeture de vim sans sauvegarder les modifications. | Quitter sans sauvegarder les modifications. | :q!  | 
+|              | Permet de forcer la fermeture de vim sans sauvegarder les modifications. | Quitter sans sauvegarder les modifications. | `:q!`  | 
 |              | Permet de sauvegarder et fermer le fichier. | Sauvegarde et quitter.| `:wq` |
 
 ---

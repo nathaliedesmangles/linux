@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ATELIER #7: VIM et les fichiers de configuration (À MODIFIER) :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine7/atelier/index.html</link>
+    <description>Objectif de l’atelier Approfondir l’utilisation de VIM pour modifier des fichiers de configuration Linux de manière efficace. Modifier des fichiers de configuration Linux efficacement : Utiliser un minimum de touches. Ne pas utiliser la souris. Compléter les exercices : 10 exercices de type A (le curseur est déjà placé). 5 exercices de type B (le curseur commence au début du fichier). Instructions de remise Fournissez les captures d’écran des exercices réussis via Moodle.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine7/atelier/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

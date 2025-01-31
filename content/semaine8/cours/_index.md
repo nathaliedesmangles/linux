@@ -1,169 +1,207 @@
 +++
-title = "L'éditeur Vim et les fichiers de configuration"
+title = "CRON et DNF"
 weight = 81
 +++
 
 
-Vim est un éditeur de texte puissant et flexible, souvent utilisé par les programmeurs et les administrateurs système. Il est basé sur un autre éditeur de texte appelé Vi, mais offre de nombreuses fonctionnalités supplémentaires. 
+## Planification des tâches avec **cron**
 
-Vim peut sembler intimidant au début, mais avec de la pratique, il devient un outil extrêmement puissant pour l'édition de texte.
+**Cron** est un outil qui permet de planifier et d'automatiser des tâches sur un système Linux. Chaque utilisateur peut définir ses propres tâches planifiées.
 
-## Installation de Vim
+### Points essentiels : 
+ 
+- Les tâches planifiées par un utilisateur sont stockées dans le fichier :  
+  `/var/spool/cron/<user>`  
+- Le démon responsable de l'exécution des tâches planifiées s'appelle : **crond**  
+- On peut planifier des tâches complexes grâce aux nombreuses options disponibles.  
 
-Pour installer Vim, vous pouvez utiliser le gestionnaire de paquets de votre système d'exploitation. Par exemple :
 
-- Sur Ubuntu/Debian :
-  ```bash
-  sudo apt-get install vim
-  ```
+## Commandes de base pour gérer les tâches planifiées
 
-- Sur Fedora :
-  ```bash
-  sudo dnf install vim
-  ```
-
-- Sur macOS avec Homebrew :
-  ```bash
-  brew install vim
-  ```
-
-## Modes de Vim
-
-Vim fonctionne en différents modes, chacun ayant un comportement spécifique. Les trois modes principaux sont :
-
-1. **Mode Normal** : Le mode par défaut pour naviguer et manipuler du texte.
-2. **Mode Insertion** : Utilisé pour insérer du texte.
-3. **Mode Commande** : Utilisé pour exécuter des commandes.
-
-### Passer d'un mode à l'autre
-
-- Pour passer en mode Insertion depuis le mode Normal, appuyez sur `i`.
-- Pour revenir en mode Normal depuis le mode Insertion, appuyez sur `Esc`.
-- Pour entrer en mode Commande depuis le mode Normal, appuyez sur `:`.
-
-## Commandes de base
-
-Voici quelques commandes de base pour vous aider à démarrer avec Vim :
-
-### Navigation
-
-- `h`, `j`, `k`, `l` : Déplacer le curseur à gauche, en bas, en haut et à droite.
-- `w` : Aller au début du mot suivant.
-- `b` : Aller au début du mot précédent.
-- `0` : Aller au début de la ligne.
-- `$` : Aller à la fin de la ligne.
-
-### Édition
-
-- `i` : Passer en mode Insertion avant le curseur.
-- `a` : Passer en mode Insertion après le curseur.
-- `x` : Supprimer le caractère sous le curseur.
-- `dd` : Supprimer la ligne courante.
-- `yy` : Copier la ligne courante.
-- `p` : Coller après le curseur.
-
-### Sauvegarde et sortie
-
-- `:w` : Sauvegarder le fichier.
-- `:q` : Quitter Vim.
-- `:wq` : Sauvegarder et quitter Vim.
-- `:q!` : Quitter sans sauvegarder.
-
-## Exemple pratique
-
-Imaginons que vous souhaitiez créer un fichier texte simple avec Vim. Voici les étapes à suivre :
-
-1. Ouvrez Vim en tapant `vim` dans votre terminal.
-2. Passez en mode Insertion en appuyant sur `i`.
-3. Tapez votre texte, par exemple :
+1. **Afficher la liste des tâches planifiées** :  
+   ```bash
+   crontab -l
    ```
-   Bonjour, ceci est un fichier texte créé avec Vim.
+
+2. **Supprimer toutes les tâches planifiées** :  
+   ```bash
+   crontab -r
    ```
-4. Revenez en mode Normal en appuyant sur `Esc`.
-5. Sauvegardez le fichier en tapant `:w nom_du_fichier.txt` et appuyez sur `Enter`.
-6. Quittez Vim en tapant `:q` et appuyez sur `Enter`.
 
-## Les fichiers de configuration dans Linux
+3. **Modifier les tâches d’un autre utilisateur (nécessite les droits root)** :  
+   ```bash
+   crontab -u <utilisateur>
+   ```
 
-Les fichiers de configuration sont essentiels pour le fonctionnement des systèmes Linux. Ils permettent de définir les paramètres et les comportements des applications et des services. Comprendre comment les utiliser et les modifier est crucial pour tout utilisateur de Linux.
+4. **Importer un fichier contenant des tâches planifiées** :  
+   ```bash
+   crontab <fichier>
+   ```
+   > ⚠️ Chaque import écrase toutes les tâches existantes.
 
-### Emplacement des fichiers de configuration
+5. **Modifier ou créer des tâches** (commande la plus courante) :  
+   ```bash
+   crontab -e
+   ```
 
-Les fichiers de configuration se trouvent généralement dans le répertoire `/etc`. Cependant, certains fichiers de configuration spécifiques à l'utilisateur peuvent se trouver dans le répertoire personnel de l'utilisateur, souvent précédés d'un point (`.`), ce qui les rend cachés.
+## Syntaxe d’une tâche **cron**
 
-#### Exemples de fichiers de configuration
+Une tâche dans une crontab se compose de deux parties :  
+1. **La planification** : Décrit quand la tâche doit s’exécuter (5 champs).  
+2. **La commande ou script à exécuter** :  
+   - Peut être une commande bash.  
+   - Recommandation : utilisez un script, spécifié avec son **chemin absolu**.
 
-- `/etc/passwd` : Contient les informations sur les utilisateurs du système.
-- `/etc/fstab` : Contient les informations sur les systèmes de fichiers montés au démarrage.
-- `~/.bashrc` : Contient les configurations spécifiques à l'utilisateur pour le shell Bash.
-
-### Syntaxe des fichiers de configuration
-
-La syntaxe des fichiers de configuration peut varier, mais ils sont souvent basés sur des paires clé-valeur ou des sections. Voici quelques exemples :
-
-#### Fichier de configuration simple
-
-```ini
-# Ceci est un commentaire
-clé1=valeur1
-clé2=valeur2
+**Exemple d’une crontab** :  
+```bash
+15 * * * * bash /home/user/monscript.sh
+30 0 * * * bash /usr/local/bin/autrescript.sh
+0 * * * * echo "Nouvelle heure" >> /home/user/heure.txt
 ```
 
-#### Fichier de configuration avec sections
+Les erreurs de syntaxe dans le fichier crontab sont détectées au moment de l’enregistrement. Si une tâche génère des erreurs lors de l'exécution, elles sont enregistrées dans :  
+`/var/mail/<user>`  
 
-```ini
-[section1]
-clé1=valeur1
 
-[section2]
-clé2=valeur2
+## Comprendre la planification
+
+La planification utilise 5 champs :  
+
+|  Minutes  |  Heures  | Jour du mois  |  Mois  |  Jour de la semaine  |
+|:---:|:---:|:---:|:---:|:---:|
+| 0-59 | 0-23 | 1-31 | 1-12 | 0-7 *(dimanche à dimanche)* |
+
+### Symboles utiles
+
+- **`*`** : Tous les moments possibles (ex. : toutes les heures).  
+- **`,`** : Énumération de valeurs (ex. : `1,5,6`).  
+- **`-`** : Intervalle de valeurs (ex. : `1-10`).  
+- **`*/n`** : Sauts réguliers (ex. : `*/2` toutes les 2 heures).  
+
+### Exemples de planifications
+ 
+- **Tous les jours à 14h30** :  
+  ```bash
+  30 14 * * * bash /chemin/script.sh
+  ```
+- **Chaque heure (25ème minute) en mars uniquement** :  
+  ```bash
+  25 * * 3 * bash /chemin/script.sh
+  ```
+- **Lundi, mercredi et vendredi à midi** :  
+  ```bash
+  0 12 * * 1,3,5 bash /chemin/script.sh
+  ```
+
+## Gestion des paquets avec **dnf**
+
+**DNF** est un gestionnaire de paquets pour les systèmes basés sur Red Hat (comme AlmaLinux). Il simplifie :  
+- L’installation.  
+- La mise à jour.  
+- La suppression de logiciels.  
+
+Contrairement à l’installation manuelle ou avec des fichiers RPM, **dnf** gère automatiquement les dépendances.
+
+### Commandes de base
+
+#### Rechercher un paquet
+
+- Rechercher un paquet par nom ou description :  
+  ```bash
+  dnf search <mot-clé>
+  ```
+  
+- Vérifier si un fichier ou commande fait partie d’un paquet :  
+  ```bash
+  dnf provides <fichier/commande>
+  ```
+
+#### Installation d’un paquet
+
+Pour installer un paquet :  
+```bash
+sudo dnf install <nom_du_paquet>
 ```
 
-### Modifier les fichiers de configuration
+#### Mettre à jour un paquet ou tout le système
 
-Pour modifier un fichier de configuration, vous pouvez utiliser un éditeur de texte comme `nano`, `vim` ou `gedit`. Voici comment modifier un fichier de configuration avec `nano` :
+- Mettre à jour un paquet spécifique :  
+  ```bash
+  sudo dnf update <nom_du_paquet>
+  ```
+- Mettre à jour tous les paquets installés :  
+  ```bash
+  sudo dnf update
+  ```
 
-1. Ouvrez le terminal.
-2. Tapez `sudo nano /etc/nom_du_fichier` pour ouvrir le fichier avec les privilèges administratifs.
-3. Faites les modifications nécessaires.
-4. Appuyez sur `Ctrl+O` pour sauvegarder le fichier, puis `Ctrl+X` pour quitter.
+#### Supprimer un paquet
 
-#### Modifier les fichiers de configuration avec Vim
+Pour désinstaller un paquet :  
+```bash
+sudo dnf remove <nom_du_paquet>
+```
 
-Pour modifier un fichier de configuration avec Vim, suivez ces étapes :
+### Gestion des dépôts
 
-1. Ouvrez le terminal.
-2. Tapez `sudo vim /etc/nom_du_fichier` pour ouvrir le fichier avec les privilèges administratifs.
-3. Passez en mode Insertion en appuyant sur `i`.
-4. Faites les modifications nécessaires.
-5. Revenez en mode Normal en appuyant sur `Esc`.
-6. Sauvegardez et quittez en tapant `:wq` et appuyez sur `Enter`.
+Les dépôts sont des serveurs qui contiennent des paquets. Ils sont configurés dans :  
+`/etc/yum.repos.d`
 
-### Exemple pratique : Modifier le fichier `/etc/hosts`
-
-Le fichier `/etc/hosts` est utilisé pour associer des adresses IP à des noms de domaine. Voici comment le modifier :
-
-#### Avec Nano
-
-1. Ouvrez le terminal.
-2. Tapez `sudo nano /etc/hosts`.
-3. Ajoutez une nouvelle ligne avec l'adresse IP et le nom de domaine, par exemple :
+#### Commandes utiles
+ 
+1. **Lister les dépôts actifs** :  
+   ```bash
+   dnf repolist
    ```
-   127.0.0.1   monsite.local
+2. **Lister tous les dépôts (actifs ou non)** :  
+   ```bash
+   dnf repolist all
    ```
-4. Sauvegardez et quittez en appuyant sur `Ctrl+O`, puis `Ctrl+X`.
 
-#### Avec Vim
+#### Ajouter un nouveau dépôt
 
-1. Ouvrez le terminal.
-2. Tapez `sudo vim /etc/hosts`.
-3. Passez en mode Insertion en appuyant sur `i`.
-4. Ajoutez une nouvelle ligne avec l'adresse IP et le nom de domaine, par exemple :
+Par exemple, pour ajouter le dépôt **remi** :  
+```bash
+sudo dnf install -y https://rpms.remirepo.net/enterprise/remi-release-9.rpm
+```
+
+### Gestion des groupes de paquets
+
+Certaines applications ou environnements sont regroupés en groupes pour simplifier leur gestion.
+
+#### Commandes importantes
+ 
+1. **Lister les groupes disponibles** :  
+   ```bash
+   dnf grouplist
    ```
-   127.0.0.1   monsite.local
+
+2. **Installer un groupe** :  
+   Exemple pour installer l’environnement **Xfce** :  
+   ```bash
+   sudo dnf groupinstall "Xfce"
    ```
-5. Revenez en mode Normal en appuyant sur `Esc`.
-6. Sauvegardez et quittez en tapant `:wq` et appuyez sur `Enter`.
+
+3. **Obtenir des informations sur un groupe** :  
+   ```bash
+   dnf groupinfo "<nom_du_groupe>"
+   ```
+
+### Automatisation avec le shell **dnf**
+
+Le shell **dnf** permet d’exécuter plusieurs commandes à la suite.  
+
+1. **Créer un fichier avec les commandes** (ex. : `installations.txt`) :  
+   ```bash
+   install nmap
+   install zsh
+   run
+   ```
+
+2. **Exécuter le fichier avec dnf** :  
+   ```bash
+   dnf shell installations.txt
+   ```
+
 
 
 

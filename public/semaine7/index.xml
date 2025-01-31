@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim et les fichiers de configuration :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine7/index.html</link>
+    <description>Plan de la leçon Théorie :&#xA;Les bases de l’utilisation de vim. Les principes de certains fichiers de configuration Linux. Présentation de vim. Atelier :.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim et les fichiers de configuration</title>
+      <link>https://example.org/semaine7/cours/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine7/cours/index.html</guid>
+      <description>L’éditeur de texte VIM Dans les systèmes Linux, la majorité des configurations s’effectuent à l’aide de fichiers texte.&#xA;Pour modifier ces fichiers texte, nous utiliserons l’éditeur de texte vim. c’est un éditeur puissant avec de nombreux avantages : • Disponible sur tous les systèmes basés sur UNIX, • Très léger, idéal pour les systèmes sans interface graphique, • Fonctionne en local ou à distance.&#xA;Apprendre à utiliser vim est indispensable pour travailler efficacement sous Linux.</description>
+    </item>
+    <item>
+      <title>ATELIER #7: VIM et les fichiers de configuration (À MODIFIER)</title>
+      <link>https://example.org/semaine7/atelier/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine7/atelier/index.html</guid>
+      <description>Objectif de l’atelier Approfondir l’utilisation de VIM pour modifier des fichiers de configuration Linux de manière efficace. Modifier des fichiers de configuration Linux efficacement : Utiliser un minimum de touches. Ne pas utiliser la souris. Compléter les exercices : 10 exercices de type A (le curseur est déjà placé). 5 exercices de type B (le curseur commence au début du fichier). Instructions de remise Fournissez les captures d’écran des exercices réussis via Moodle.</description>
+    </item>
+  </channel>
+</rss>

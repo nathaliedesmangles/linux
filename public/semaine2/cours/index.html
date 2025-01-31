@@ -26,14 +26,14 @@ Comprendre cette structure est essentiel pour naviguer et gérer efficacement un
     <meta itemprop="description" content="La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine.
 La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation.
 Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.">
-    <meta itemprop="wordCount" content="2510">
+    <meta itemprop="wordCount" content="2588">
     <title>Système de fichiers, Shell et commandes de base et VIM :: 420-ZG4-MO LINUX</title>
     <link href="/semaine2/cours/index.xml" rel="alternate" type="application/rss+xml" title="Système de fichiers, Shell et commandes de base et VIM :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1738106443" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738106443" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1738106443" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738106443" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1738106443" rel="stylesheet">
-    <link href="/css/theme.min.css?1738106443" rel="stylesheet">
-    <link href="/css/format-html.min.css?1738106443" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1738288557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738288557" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1738288557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738288557" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1738288557" rel="stylesheet">
+    <link href="/css/theme.min.css?1738288557" rel="stylesheet">
+    <link href="/css/format-html.min.css?1738288557" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -166,8 +166,8 @@ Comprendre cette structure est essentiel pour naviguer et gérer efficacement un
 
 <h1 id="système-de-fichiers-shell-et-commandes-de-base-et-vim">Système de fichiers, Shell et commandes de base et VIM</h1>
 
-<p><a href="#R-image-b9e7ded24c022c4e2ad89570b02e40c7" class="lightbox-link"><img alt="Arborescence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/cours/filesystem.png?width=100vw" style=" height: auto; width: 100vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b9e7ded24c022c4e2ad89570b02e40c7"><img alt="Arborescence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/cours/filesystem.png?width=100vw"></a></p>
+<p><a href="#R-image-081cf2a8a8a61460aa692cbb86c32169" class="lightbox-link"><img alt="Arborescence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/cours/filesystem.png?width=100vw" style=" height: auto; width: 100vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-081cf2a8a8a61460aa692cbb86c32169"><img alt="Arborescence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/cours/filesystem.png?width=100vw"></a></p>
 <p>La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d&rsquo;un arbre inversé, où la racine (root) est représentée par <code>/</code>.
 Tous les fichiers et répertoires sont situés sous cette racine.</p>
 <p>La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation.</p>
@@ -340,7 +340,8 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
 <p><strong>Exemple de commande avec une option</strong> :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ date -R
 </span></span><span style="display:flex;"><span>Fri, <span style="color:#ae81ff">17</span> Jan <span style="color:#ae81ff">2025</span> 20:19:50 -0500
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ date +%R
+</span></span><span style="display:flex;"><span>20:19 </span></span></code></pre></div>
 <p>Pour exécuter une commande avec des privilèges de <strong>super-utilisateur (<code>root</code>)</strong>, on la précède de <code>sudo</code>:</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ sudo ls /root</span></span></code></pre></div>
 <h2 id="commandes-de-base-en-bash">Commandes de base en <em>Bash</em></h2>
@@ -433,6 +434,16 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
 <li><strong>Sixième colonne</strong> indique la date de dernière modification.</li>
 <li><strong>Septième colonne</strong> est le nom du fichier.</li>
 </ol>
+
+<details open class=" box cstyle notices tip">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-lightbulb"></i> 
+    Bon à savoir
+  </summary>
+  <div class="box-content">
+<p>La commande <code>clear</code> permet d&rsquo;effacer l&rsquo;écran du terminal.</p>
+  </div>
+</details>
 <hr>
 <h2 id="manipulation-de-fichiers-et-répertoires">Manipulation de fichiers et répertoires</h2>
 <table>
@@ -583,12 +594,14 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
 <li>
 <p><strong><code>date</code></strong> :</p>
 <ul>
-<li>Options utiles :
+<li>
+<p>Options utiles :</p>
 <ul>
 <li><code>+</code> : Pour spécifier un format personnalisé.</li>
 </ul>
 </li>
-<li>Formats:
+<li>
+<p>Formats:</p>
 <ul>
 <li><code>%Y</code> : Année complète (ex. 2025).</li>
 <li><code>%m</code> : Mois (01-12).</li>
@@ -596,6 +609,9 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
 <li><code>%H</code> : Heure (00-23).</li>
 <li><code>%M</code> : Minutes (00-59).</li>
 <li><code>%S</code> : Secondes (00-59).</li>
+<li><code>%r</code> : Heure au format 12h (ex. 11:11:04 PM)</li>
+<li><code>%R</code> : Heure au format 24h (ex. 23:11 sans les secondes)</li>
+<li><code>%p</code> : Heure avec AM ou PM</li>
 </ul>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ date
 </span></span><span style="display:flex;"><span>Thu Jan  <span style="color:#ae81ff">9</span> 20:42:36 EST <span style="color:#ae81ff">2025</span>
@@ -646,16 +662,6 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
 </ul>
 </li>
 </ol>
-
-<details open class=" box cstyle notices tip">
-  <summary class="box-label" tabindex="-1">
-    <i class="fa-fw fas fa-lightbulb"></i> 
-    Bon à savoir
-  </summary>
-  <div class="box-content">
-<p>La commande <code>clear</code> permet d&rsquo;effacer l&rsquo;écran du terminal.</p>
-  </div>
-</details>
 <hr>
 <h2 id="commandes-utiles">Commandes utiles</h2>
 <table>
@@ -738,7 +744,19 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
 <p>Pour ouvrir un fichier avec <strong>vim</strong>, utilisez la commande suivante :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vim nom_du_fichier</span></span></code></pre></div>
 <p>Si le fichier n&rsquo;existe pas, <strong>vim</strong> le créera.</p>
-<p>Lorsque vous ouvrez <strong>vim</strong>, il commence en <strong>mode commande</strong>. Vous ne pouvez pas directement écrire du texte. Vous devez d&rsquo;abord passer au <strong>mode insertion</strong>.</p>
+<p>Lorsque vous ouvrez <strong>vim</strong>, il commence en <strong>mode commande</strong>. Vous ne pouvez pas directement écrire du texte. Vous devez d&rsquo;abord passer au <strong>mode insertion</strong> en tapant la lettre <code>i</code>. En bas de la fenêtre Vim, le mot <strong>INSERTION</strong> s&rsquo;affichera.</p>
+<p><a href="#R-image-87e1459c00414cad2e19800139fdf10f" class="lightbox-link"><img alt="Mode insertion" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/cours/mode_insertion.png?width=100vw" style=" height: auto; width: 100vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-87e1459c00414cad2e19800139fdf10f"><img alt="Mode insertion" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/cours/mode_insertion.png?width=100vw"></a></p>
+
+<details open class=" box cstyle notices tip">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-lightbulb"></i> 
+    Revenir au mode Normal
+  </summary>
+  <div class="box-content">
+<p>Si avant de taper <code>i</code> ou n&rsquo;importe quel autre mode, vous n&rsquo;êtes plus dans le mode <strong>Normal</strong>, il suffit de tapper la touche <code>ESC</code> pour revenir au mode <strong>Normal</strong>.</p>
+  </div>
+</details>
 <hr>
 <h3 id="modes-principaux-de-vim">Modes principaux de <strong>vim</strong></h3>
 <p>Ces modes sont les bases du fonctionnement de <strong>vim</strong>. Vous pouvez basculer entre eux selon vos besoins pour éditer et manipuler vos fichiers.</p>
@@ -780,7 +798,7 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
           <td style="text-align: left"></td>
           <td style="text-align: left">Permet de forcer la fermeture de vim sans sauvegarder les modifications.</td>
           <td style="text-align: left">Quitter sans sauvegarder les modifications.</td>
-          <td style="text-align: center">:q!</td>
+          <td style="text-align: center"><code>:q!</code></td>
       </tr>
       <tr>
           <td style="text-align: left"></td>
@@ -829,7 +847,7 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1738106443";
+          window.index_js_url="/searchindex.en.js?1738288557";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -842,12 +860,12 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1738106443" defer></script>
-        <script src="/js/lunr/lunr.min.js?1738106443" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1738106443" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1738106443" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1738106443" defer></script>
-        <script src="/js/search.js?1738106443" defer></script>
+        <script src="/js/auto-complete.js?1738288557" defer></script>
+        <script src="/js/lunr/lunr.min.js?1738288557" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1738288557" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1738288557" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1738288557" defer></script>
+        <script src="/js/search.js?1738288557" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -866,6 +884,7 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
             <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>E/S, redirection et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim et les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions de ateliers</a></li>
           </ul>
         </div>
@@ -920,8 +939,8 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1738106443" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1738106443" defer></script>
-    <script src="/js/theme.js?1738106443" defer></script>
+    <script src="/js/clipboard.min.js?1738288557" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1738288557" defer></script>
+    <script src="/js/theme.js?1738288557" defer></script>
   </body>
 </html>

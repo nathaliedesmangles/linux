@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ATELIER #8: Dnf et Cron :: 420-ZG4-MO LINUX</title>
+    <link>http://localhost:1313/semaine8/atelier/index.html</link>
+    <description>Objectif de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Vous devez soumettre votre travail sur Moodle d’ici les deux prochaines séances.&#xA;Les éléments à remettre incluent :&#xA;Captures d’écran annotées : Montrez les étapes suivies pour déterminer et installer les paquets. Ajoutez votre nom d’utilisateur Linux sur chaque capture. Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Nom des captures d’écran :&#xA;Suivez le format proposé (ex. 01_ifconfig.png). Chaque capture doit inclure :</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/semaine8/atelier/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

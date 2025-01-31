@@ -1,7 +1,7 @@
 +++
 chapter = true
 pre = "<b>Semaine 8. </b>"
-title = "VIM et les fichiers de configuration"
+title = "DNF et CRON"
 weight = 80
 draft = true
 +++
@@ -13,6 +13,5 @@ draft = true
   - 
 
 - **Atelier :**.
-  - Exercices patiques sur 
-  - Création 
+  -  
 

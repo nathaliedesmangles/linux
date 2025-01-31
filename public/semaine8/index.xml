@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>VIM et les fichiers de configuration :: 420-ZG4-MO LINUX</title>
+    <title>DNF et CRON :: 420-ZG4-MO LINUX</title>
     <link>http://localhost:1313/semaine8/index.html</link>
-    <description>Plan de la leçon Théorie : Atelier :.&#xA;Exercices patiques sur Création</description>
+    <description>Plan de la leçon Théorie : Atelier :.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/semaine8/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>L&#39;éditeur Vim et les fichiers de configuration</title>
+      <title>CRON et DNF</title>
       <link>http://localhost:1313/semaine8/cours/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/semaine8/cours/index.html</guid>
-      <description>Vim est un éditeur de texte puissant et flexible, souvent utilisé par les programmeurs et les administrateurs système. Il est basé sur un autre éditeur de texte appelé Vi, mais offre de nombreuses fonctionnalités supplémentaires.&#xA;Vim peut sembler intimidant au début, mais avec de la pratique, il devient un outil extrêmement puissant pour l’édition de texte.&#xA;Installation de Vim Pour installer Vim, vous pouvez utiliser le gestionnaire de paquets de votre système d’exploitation. Par exemple :</description>
+      <description>Planification des tâches avec cron Cron est un outil qui permet de planifier et d’automatiser des tâches sur un système Linux. Chaque utilisateur peut définir ses propres tâches planifiées.&#xA;Points essentiels : Les tâches planifiées par un utilisateur sont stockées dans le fichier :&#xA;/var/spool/cron/&lt;user&gt; Le démon responsable de l’exécution des tâches planifiées s’appelle : crond On peut planifier des tâches complexes grâce aux nombreuses options disponibles. Commandes de base pour gérer les tâches planifiées Afficher la liste des tâches planifiées :</description>
+    </item>
+    <item>
+      <title>ATELIER #8: Dnf et Cron</title>
+      <link>http://localhost:1313/semaine8/atelier/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/semaine8/atelier/index.html</guid>
+      <description>Objectif de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Vous devez soumettre votre travail sur Moodle d’ici les deux prochaines séances.&#xA;Les éléments à remettre incluent :&#xA;Captures d’écran annotées : Montrez les étapes suivies pour déterminer et installer les paquets. Ajoutez votre nom d’utilisateur Linux sur chaque capture. Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Nom des captures d’écran :&#xA;Suivez le format proposé (ex. 01_ifconfig.png). Chaque capture doit inclure :</description>
     </item>
   </channel>
 </rss>

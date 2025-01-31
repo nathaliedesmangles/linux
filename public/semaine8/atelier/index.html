@@ -5,30 +5,34 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Plan de la leçon **Théorie/Test :
-Validation de l’atelier #10 Atelier :
-Installation de WSL et Ubuntu et VS Code">
+    <meta name="description" content="Objectif de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Vous devez soumettre votre travail sur Moodle d’ici les deux prochaines séances.
+Les éléments à remettre incluent :
+Captures d’écran annotées : Montrez les étapes suivies pour déterminer et installer les paquets. Ajoutez votre nom d’utilisateur Linux sur chaque capture. Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Nom des captures d’écran :
+Suivez le format proposé (ex. 01_ifconfig.png). Chaque capture doit inclure :">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="WSL installation et manipulation (Ubuntu, VS Code) :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Plan de la leçon **Théorie/Test :
-Validation de l’atelier #10 Atelier :
-Installation de WSL et Ubuntu et VS Code">
-    <meta property="og:url" content="http://localhost:1313/semaine14/index.html">
+    <meta name="twitter:title" content="ATELIER #8: Dnf et Cron :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Objectif de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Vous devez soumettre votre travail sur Moodle d’ici les deux prochaines séances.
+Les éléments à remettre incluent :
+Captures d’écran annotées : Montrez les étapes suivies pour déterminer et installer les paquets. Ajoutez votre nom d’utilisateur Linux sur chaque capture. Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Nom des captures d’écran :
+Suivez le format proposé (ex. 01_ifconfig.png). Chaque capture doit inclure :">
+    <meta property="og:url" content="http://localhost:1313/semaine8/atelier/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
-    <meta property="og:title" content="WSL installation et manipulation (Ubuntu, VS Code) :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Plan de la leçon **Théorie/Test :
-Validation de l’atelier #10 Atelier :
-Installation de WSL et Ubuntu et VS Code">
+    <meta property="og:title" content="ATELIER #8: Dnf et Cron :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Objectif de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Vous devez soumettre votre travail sur Moodle d’ici les deux prochaines séances.
+Les éléments à remettre incluent :
+Captures d’écran annotées : Montrez les étapes suivies pour déterminer et installer les paquets. Ajoutez votre nom d’utilisateur Linux sur chaque capture. Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Nom des captures d’écran :
+Suivez le format proposé (ex. 01_ifconfig.png). Chaque capture doit inclure :">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
-    <meta itemprop="name" content="WSL installation et manipulation (Ubuntu, VS Code) :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Plan de la leçon **Théorie/Test :
-Validation de l’atelier #10 Atelier :
-Installation de WSL et Ubuntu et VS Code">
-    <meta itemprop="wordCount" content="20">
-    <title>WSL installation et manipulation (Ubuntu, VS Code) :: 420-ZG4-MO LINUX</title>
-    <link href="/semaine14/index.xml" rel="alternate" type="application/rss+xml" title="WSL installation et manipulation (Ubuntu, VS Code) :: 420-ZG4-MO LINUX">
+    <meta itemprop="name" content="ATELIER #8: Dnf et Cron :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Objectif de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Vous devez soumettre votre travail sur Moodle d’ici les deux prochaines séances.
+Les éléments à remettre incluent :
+Captures d’écran annotées : Montrez les étapes suivies pour déterminer et installer les paquets. Ajoutez votre nom d’utilisateur Linux sur chaque capture. Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Nom des captures d’écran :
+Suivez le format proposé (ex. 01_ifconfig.png). Chaque capture doit inclure :">
+    <meta itemprop="wordCount" content="453">
+    <title>ATELIER #8: Dnf et Cron :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine8/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #8: Dnf et Cron :: 420-ZG4-MO LINUX">
     <link href="/css/fontawesome-all.min.css?1738283040" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738283040" rel="stylesheet"></noscript>
     <link href="/css/auto-complete.css?1738283040" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738283040" rel="stylesheet"></noscript>
     <link href="/css/perfect-scrollbar.min.css?1738283040" rel="stylesheet">
@@ -36,8 +40,8 @@ Installation de WSL et Ubuntu et VS Code">
     <link href="/css/format-html.css?1738283040" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.relBasePath='..';
-      window.relearn.relBaseUri='..';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.min = ``;
       window.relearn.disableAnchorCopy=false;
@@ -82,7 +86,7 @@ Installation de WSL et Ubuntu et VS Code">
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/semaine14/index.html">
+  <body class="mobile-support html" data-url="/semaine8/atelier/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -96,7 +100,21 @@ Installation de WSL et Ubuntu et VS Code">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#plan-de-la-leçon">Plan de la leçon</a></li>
+    <li><a href="#objectif-de-latelier">Objectif de l&rsquo;atelier</a></li>
+    <li><a href="#instructions-de-remise">Instructions de remise</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#partie-1--utilisation-de-dnf">Partie 1 : Utilisation de dnf</a>
+      <ul>
+        <li><a href="#exemple">Exemple</a></li>
+      </ul>
+    </li>
+    <li><a href="#partie-2--introduction-à-cron">Partie 2 : Introduction à cron</a>
+      <ul>
+        <li><a href="#éléments-de-validation">Éléments de validation</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
                 </div>
@@ -105,12 +123,13 @@ Installation de WSL et Ubuntu et VS Code">
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">WSL installation et manipulation (Ubuntu, VS Code)</span><meta itemprop="position" content="2"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine8/index.html"><span itemprop="name">DNF et CRON</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ATELIER #8: Dnf et Cron</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine9/index.html" title="??? (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine8/cours/index.html" title="CRON et DNF (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine14/atelier/index.html" title="ATELIER #2: WSL, Ubuntu et des commandes Linux simples (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine9/index.html" title="??? (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -124,26 +143,171 @@ Installation de WSL et Ubuntu et VS Code">
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable semaine14" tabindex="-1">
+      <main id="R-body-inner" class="highlightable semaine8" tabindex="-1">
         <div class="flex-block-wrapper">
 <article class="default">
   <header class="headline">
   </header>
 
-<h1 id="wsl-installation-et-manipulation-ubuntu-vs-code">WSL installation et manipulation (Ubuntu, VS Code)</h1>
+<h1 id="atelier-8-dnf-et-cron">ATELIER #8: Dnf et Cron</h1>
 
-<h2 id="plan-de-la-leçon">Plan de la leçon</h2>
+<h2 id="objectif-de-latelier">Objectif de l&rsquo;atelier</h2>
 <ul>
+<li>Installer des utilitaires et des applications avec dnf.</li>
+<li>Se familiariser avec cron.</li>
+</ul>
+<hr>
+<h2 id="instructions-de-remise">Instructions de remise</h2>
+<p>Vous devez soumettre votre travail sur Moodle <strong>d&rsquo;ici les deux prochaines séances.</strong><br>
+Les éléments à remettre incluent :</p>
+<ul>
+<li><strong>Captures d’écran annotées :</strong>
+<ul>
+<li>Montrez les étapes suivies pour déterminer et installer les paquets.</li>
+<li>Ajoutez votre nom d’utilisateur Linux sur chaque capture.</li>
+</ul>
+</li>
+<li><strong>Fichiers :</strong>
+<ul>
+<li>Une copie de votre crontab.</li>
+<li>Le fichier <code>heures.txt</code> (après validation).</li>
+<li>Le contenu de votre script (lignes utilisées dans cron).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Nom des captures d&rsquo;écran :</strong><br>
+Suivez le format proposé (ex. <code>01_ifconfig.png</code>). Chaque capture doit inclure :</p>
+<ul>
+<li>Les étapes pour déterminer le nom du paquet.</li>
+<li>Votre nom d&rsquo;utilisateur Linux.</li>
+</ul>
+<hr>
+<h1 id="atelier">Atelier</h1>
+<h2 id="partie-1--utilisation-de-dnf">Partie 1 : Utilisation de dnf</h2>
+<ol>
+<li><strong>Pour chaque description ci-dessous :</strong>
+<ul>
+<li>Utilisez <code>dnf</code> pour identifier le nom du paquet correspondant (sans utiliser le Web).</li>
+<li>Installez le paquet.</li>
+<li>Immédiatement après l&rsquo;installation, exécutez la commande :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ history</span></span></code></pre></div>
+<ul>
+<li>Prenez une capture d’écran montrant uniquement les commandes liées à l’installation.</li>
+<li>Rognez et annotez au besoin (ex. nom d&rsquo;utilisateur).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Astuces :</strong>
+<ul>
+<li>Les descriptions des paquets sont en anglais.</li>
+<li>La commande suivante est utile pour rechercher un fichier spécifique dans un paquet :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ dnf provides */FICHIER</span></span></code></pre></div>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="exemple">Exemple</h3>
+<ul>
+<li><strong>Installer un jeu de ninja.</strong>
+<ul>
+<li>Capture nommée : <code>exemple_ninja.png</code></li>
+<li>Contenu : étapes pour identifier le paquet + votre nom d&rsquo;utilisateur.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="paquets-à-installer">Paquets à installer</h4>
+<ol>
 <li>
-<p>**Théorie/Test :</p>
+<p><strong>Paquet 01 :</strong></p>
 <ul>
-<li>Validation de l&rsquo;atelier #10</li>
+<li>Description : l&rsquo;utilitaire <code>ifconfig</code> (ancêtre de <code>ip addr</code>).</li>
+<li>Capture : <code>01_ifconfig.png</code>.</li>
 </ul>
 </li>
 <li>
-<p><strong>Atelier :</strong></p>
+<p><strong>Paquet 02 :</strong></p>
 <ul>
-<li>Installation de WSL et Ubuntu et VS Code</li>
+<li>Description : <code>Kmouth</code> (permet à l&rsquo;ordinateur de parler pour des personnes muettes).</li>
+<li>Capture : <code>02_kmouth.png</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Paquet 03 :</strong></p>
+<ul>
+<li>Description : le langage de programmation <code>go</code>.</li>
+<li>Capture : <code>03_go.png</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Paquet 04 :</strong></p>
+<ul>
+<li>Description : <code>ag</code>, un utilitaire rapide pour chercher dans des fichiers textes.</li>
+<li>Capture : <code>04_ag.png</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Paquet 05 :</strong></p>
+<ul>
+<li>Description : un outil pour visualiser l’espace disque utilisé.</li>
+<li>Capture : <code>05_espace.png</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Paquet 06 :</strong></p>
+<ul>
+<li>Description : un lecteur de musique.</li>
+<li>Capture : <code>06_musique.png</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Paquet 07 :</strong></p>
+<ul>
+<li>Description : un jeu de mémoire où il faut se souvenir de séquences de plus en plus longues.</li>
+<li>Capture : <code>07_jeu.png</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Paquet 08 :</strong></p>
+<ul>
+<li>Description : une suite bureautique.</li>
+<li>Capture : <code>08_bureautique.png</code>.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="partie-2--introduction-à-cron">Partie 2 : Introduction à cron</h2>
+<p>Configurer une tâche cron pour automatiser le téléchargement d’un fichier.</p>
+<ol>
+<li><strong>Configurer une commande cron</strong> pour :
+<ul>
+<li>Télécharger le contenu de <code>http://gyoukou.ca/heure.brut</code> toutes les minutes :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ wget http://gyoukou.ca/heure.brut</span></span></code></pre></div>
+</li>
+<li>Ajouter ce contenu dans un fichier nommé <code>heures.txt</code>. <strong>Utilisez un chemin absolu pour ce fichier.</strong></li>
+</ul>
+</li>
+<li><strong>Vérifiez que la commande fonctionne</strong> :
+<ul>
+<li>Utilisez la commande suivante pour observer l’évolution de <code>heures.txt</code> :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ tail -f heures.txt</span></span></code></pre></div>
+</li>
+</ul>
+</li>
+<li><strong>Désactivez la tâche cron une fois qu’elle est validée</strong> :
+<ul>
+<li>Commentez la ligne dans votre crontab pour éviter que le fichier continue à se remplir à l&rsquo;infini.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="éléments-de-validation">Éléments de validation</h3>
+<ul>
+<li><strong>Capture d’écran <code>09_crontab.png</code></strong> :
+<ul>
+<li>Montrez le contenu de votre crontab.</li>
+<li>Indiquez la date de validation.</li>
 </ul>
 </li>
 </ul>
@@ -199,11 +363,11 @@ Installation de WSL et Ubuntu et VS Code">
             <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim et les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu">
+            <li class="" data-nav-id="/semaine8/cours/index.html"><a class="padding" href="/semaine8/cours/index.html">CRON et DNF</a></li>
+            <li class="active " data-nav-id="/semaine8/atelier/index.html"><a class="padding" href="/semaine8/atelier/index.html">ATELIER #8: Dnf et Cron</a></li></ul></li>
             <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>???</a></li>
-            <li class="active parent " data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu">
-            <li class="" data-nav-id="/semaine14/atelier/index.html"><a class="padding" href="/semaine14/atelier/index.html">ATELIER #2: WSL, Ubuntu et des commandes Linux simples</a></li>
-            <li class="" data-nav-id="/semaine14/cours/index.html"><a class="padding" href="/semaine14/cours/index.html">WSL installation et manipulation (Ubuntu, VS Code)</a></li></ul></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions de ateliers</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
           </ul>
         </div>
@@ -220,7 +384,7 @@ Installation de WSL et Ubuntu et VS Code">
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine14/index.html" lang="en-us" selected></option>
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine8/atelier/index.html" lang="en-us" selected></option>
                     </select>
                   </div>
                   <div class="clear"></div>
