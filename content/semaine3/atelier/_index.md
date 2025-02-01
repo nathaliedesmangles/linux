@@ -8,6 +8,17 @@ weight = 32
 - Se familiariser avec les cibles (niveaux d'exécution).
 - Comprendre les bases des variables utilisateur en Bash.
 - Apprendre à manipuler et utiliser des variables pour stocker des résultats de commandes.
+
+## Format de la remise sur Moodle
+
+{{% notice style="warning" title="Attention" %}}
+- Pour chaque exercice, vous devez prendre une **capture d'écran**. Sur les captures, on doit pouvoir voir :
+  1. Votre nom d'utilisateur (Ne travaillez donc **pas** avec l'utilisateur `root`, ni la commande `sudo`).
+  2. La ligne de commande et la commande.
+  3. Le résultat de la commande. Si le résultat fait plus de 10 lignes, capturer juste les 10 premières lignes.
+- Dans votre remise, l'enseignant/e doit pouvoir facilement identifier les captures d'écran et la question (de quel exercice) correspondante.
+{{% /notice %}}
+
 ---
 
 # Atelier 

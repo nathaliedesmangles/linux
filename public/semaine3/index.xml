@@ -19,7 +19,7 @@
       <link>https://example.org/semaine3/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine3/atelier/index.html</guid>
-      <description>Objectifs de l’atelier Se familiariser avec les cibles (niveaux d’exécution). Comprendre les bases des variables utilisateur en Bash. Apprendre à manipuler et utiliser des variables pour stocker des résultats de commandes. Atelier Exercice 1 : Niveaux d’exécution Modifier le niveau d’exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique.&#xA;Redémarrer la VM pour appliquer les changements à l’aide de la commande shutdown -r now.</description>
+      <description>Objectifs de l’atelier Se familiariser avec les cibles (niveaux d’exécution). Comprendre les bases des variables utilisateur en Bash. Apprendre à manipuler et utiliser des variables pour stocker des résultats de commandes. Format de la remise sur Moodle Attention&#xD;Pour chaque exercice, vous devez prendre une capture d’écran. Sur les captures, on doit pouvoir voir : Votre nom d’utilisateur (Ne travaillez donc pas avec l’utilisateur root, ni la commande sudo). La ligne de commande et la commande. Le résultat de la commande. Si le résultat fait plus de 10 lignes, capturer juste les 10 premières lignes. Dans votre remise, l’enseignant/e doit pouvoir facilement identifier les captures d’écran et la question (de quel exercice) correspondante. Atelier Exercice 1 : Niveaux d’exécution Modifier le niveau d’exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique.</description>
     </item>
   </channel>
 </rss>

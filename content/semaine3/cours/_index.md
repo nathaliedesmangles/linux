@@ -161,7 +161,7 @@ Un utilisateur peut créer ou modifier ses propres variables.
 
 {{% notice style="warning" title="Attention"  %}}
 Il ne faut pas mettre d’espace autour du `=`.
-Les noms sont sensible à la casse: `VAR1` ≠ `var1`
+Les noms sont sensibles à la casse: `VAR1` ≠ `var1`
 {{% /notice %}}
 
 ```bash
