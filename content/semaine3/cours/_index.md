@@ -3,513 +3,626 @@ title = "Processus de démarrage, cibles, variables et boucle For"
 weight = 31
 +++
 
-## Séquence de démarrage de Linux
+## Le processus de démarrage
 
-Le processus de démarrage de Linux est une série d'étapes qui se déroulent depuis l'allumage de l'ordinateur jusqu'à l'affichage de l'invite de commande ou de l'interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage. 
-
-Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière ordonnée pour préparer la machine et le système d’exploitation à fonctionner. Voici les étapes principales :
-
-1. **BIOS/UEFI** : Initialise le matériel et recherche un périphérique amorçable.
-2. **Bootloader (GRUB)** : Charge le noyau Linux et transfère le contrôle au système d’exploitation.
-3. **Noyau Linux** : Configure le matériel, monte le système de fichiers racine, et démarre le processus d’initialisation.
-4. **Init/Systemd** : Gère le lancement des services et des processus utilisateur.
+Le processus de démarrage d'un système Linux suit plusieurs étapes essentielles, impliquant différents composants du système :
 
 ![Schema séquence](boot_process.jpeg)
 
----
+1. **Activation du BIOS/UEFI**
+   - Lorsque vous allumez votre ordinateur, le **BIOS** (*Basic Input Output System*) ou l'**UEFI** (*Unified Extensible Firmware Interface*) s'active.
+   - Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT).
 
-## Étape 1 : BIOS/UEFI
+2. **Chargement du chargeur d'amorçage**
+   - Le **MBR** (*Master Boot Record*) définit le chargeur de démarrage, comme **GRUB** (*GRand Unified Bootloader*).
+   - **GRUB** affiche un menu permettant de choisir le système à démarrer.
 
-### Rôle du BIOS/UEFI
+3. **Chargement du noyau Linux (*Kernel*)**
+   - Après la sélection de Linux, **GRUB** charge le noyau (kernel), qui est le cœur du système.
+   - Le noyau initialise les pilotes, périphériques et la gestion de la mémoire.
+   - Il charge aussi un disque temporaire (`initrd` ou `initramfs`) contenant les modules nécessaires au démarrage.
 
-- Le BIOS (*Basic Input/Output System*) ou l’UEFI (*Unified Extensible Firmware Interface*) est le premier programme exécuté lorsqu’une machine est allumée.
-- Il effectue des tests matériels (POST) et localise le *bootloader* sur un disque amorçable, et charge le MBR en mémoire
-- Le BIOS transfère alors le contrôle au code du *Master Boot Record* (**MBR**). Le MBR se trouve dans le premier secteur du disque dur (secteur 0), c’est-à-dire les premiers 512 octets de l’espace de stockage.
-- Le MBR contient un programme minimal d’amorçage (bootloader primaire) qui localise et charge le ***bootloader*** secondaire (ex. GRUB ou LILO) depuis une partition active.
+4. **Lancement du processus d'initialisation (`init` ou `systemd`)**
+   - Le noyau lance le premier processus du système : `init` ou `systemd` (selon la distribution Linux).
+   - Ce processus démarre les services et scripts de configuration (réseau, interface graphique, gestion des utilisateurs, etc.).
 
-### Modes de démarrage
+5. **Affichage de l'écran de connexion**
+   - Une fois les services chargés, l'écran de connexion s'affiche, demandant un nom d'utilisateur et un mot de passe.
 
-- **Legacy (BIOS)** : Mode traditionnel compatible avec les anciens systèmes.
-- **UEFI** : Plus moderne, prend en charge des fonctionnalités avancées comme le *Secure Boot*.
-
-{{% notice style="orange" title="BIOS ou UEFI ?" groupid="notice-toggle" expanded="false" %}}
-- Avec l’essor de l’UEFI, le MBR est remplacé par le schéma GPT (***GUID Partition Table***), qui offre plus de flexibilité (gestion de disques de grande taille et partitions multiples).
-- Les systèmes UEFI n’utilisent pas de *MBR* classique mais démarrent directement via un fichier exécutable dans une partition EFI (ESP).
-- Le MBR est une étape initiale critique dans les systèmes ***BIOS/MBR***, mais il est remplacé dans les environnements modernes utilisant UEFI.
-{{% /notice %}}
-
----
-
-## Étape 2 : *Bootloader* (*GRUB*)
-
-### Rôle de GRUB
-
-- Le ***bootloader*** (**GRUB** : *GRand Unified Bootloader*) est responsable de charger le noyau Linux en mémoire.
-- Il peut proposer plusieurs options de démarrage, comme des versions différentes du noyau ou un mode de récupération.
+6. **Utilisation du système**
+   - Après authentification, vous pouvez utiliser Linux, lancer des applications et exécuter des commandes.
+   - Vous pouvez aussi arrêter ou redémarrer votre système avec `shutdown`, `reboot` ou `halt`.
 
 ---
 
-## Étape 3 : Le noyau Linux (*Kernel*)
+## Les niveaux d'exécution (*Runlevels*) et cibles (*Targets*)
 
-### Fonctionnalités du noyau au démarrage
+Autrefois, Linux utilisait des niveaux d'exécution (`runlevels`), qui définissaient les services actifs selon le mode de fonctionnement.
+Avec `systemd`, ces niveaux sont remplacés par des **cibles** (`targets`). Cependant, la compatibilité avec les anciens niveaux est conservée.
 
-1. **Détection matérielle** : Identifie et initialise les composants matériels.
-2. **Chargement des modules** : Ajoute des pilotes pour des périphériques spécifiques.
-3. **Montage du système de fichiers racine** : Prépare l’environnement pour le reste du système.
-4. **Lancement du processus d’initialisation** : Appelle le gestionnaire d’initialisation (PID 1).
+### Changer temporairement le niveau d'exécution
 
-{{% notice style="info" title="Définition" %}}
-- ***PID*** : *Processus ID* est l'identifiant d'un processus.
-{{% /notice %}}
+Utilisez la commande suivante pour modifier le niveau d'exécution temporairement :
+```bash
+$ systemctl isolate <nom_niveau>
+```
 
----
+### Correspondance entre les niveaux d'exécution et les cibles *systemd*
 
-## Étape 4 : *Init* et *Systemd*
+| Niveau d'exécution | Cible systemd        | Description                           | Commande associée                   |
+|--------------------|---------------------|-------------------------------------|----------------------------------|
+| 0                | poweroff            | Arrêt du système                  | `$ systemctl isolate poweroff`  |
+| 1                | rescue              | Mode utilisateur unique (maintenance) | `$ systemctl isolate rescue`    |
+| 3                | multi-user          | Mode multi-utilisateur (ligne de commande) | `$ systemctl isolate multi-user` |
+| 5                | graphical           | Mode graphique complet              | `$ systemctl isolate graphical` |
+| 6                | reboot              | Redémarrage du système             | `$ systemctl isolate reboot`    |
 
-### Gestionnaires d’initialisation
+### Afficher et modifier le niveau d'exécution
 
-- **SysVinit** : Ancien gestionnaire basé sur des scripts shell.
-- **Systemd** : Gestionnaire moderne basé sur des unités (units) qui remplacent les scripts traditionnels.
-
-
-### Rôle de l’init (PID 1)
-
-- L’init est le premier processus utilisateur démarré par le noyau.
-- Il gère le lancement des services essentiels et assure la transition vers un état prêt pour les utilisateurs.
-- Les services sont des processus en arrière-plan qui effectuent des tâches spécifiques (ex. serveur SSH, journalisation).
-- Quand tous les services sont lancés, le programme init affiche l’écran de connexion, qui vous demande votre nom d’utilisateur et votre mot de passe.
-
-## 5. Les cibles / niveaux d'exécution (*Runlevels*)
-
-- Les cibles (niveaux d'exécution) définissent l'état du système et les services qui doivent être exécutés.
-- Dans le passé, les modes de fonctionnement étaient connus sous le nom de **niveaux d'exécution**, chacun permettant l'accès à un ensemble spécifique de services. Le concept de niveaux d'exécution a été remplacé par celui de **cibles** (*target*). 
-- L'ensemble des services associés aux anciens niveaux d'exécution ont été conservés dans le système de cibles de `systemd`, afin de maintenir la compatibilité avec les scripts et les configurations existantes.
-
-{{% notice style="info" title="Information" %}}
-- Les distributions modernes comme Fedora, Ubuntu et Almalinux utilisent donc `Systemd`.
-{{% /notice %}}
-
-Voici les cibles les plus courantes et leur correspondance:
-
-| Niveau d'exécution  | Description                        | *Target* Systemd                  |
-|---------------------|------------------------------------|-----------------------------------|
-| 0                   | Arrêt du système.                  | poweroff.target                   |
-| 1                   | Mode monoutilisateur (maintenance).| rescue.target ou emergency.target |
-| 3                   | Multi-utilisateur (texte)          | multi-user.target                 |
-| 5                   | Multi-utilisateur (graphique)      | graphical.target                  |
-| 6                   | Redémarrage                        | reboot.target                     |
-
-### Différence entre *emergency.target* et *rescue.target*
-
-- `emergency.target` : Le mode le plus minimal, aucun système de fichiers supplémentaire n’est monté, pas de réseau, pas de services. C’est vraiment pour les urgences critiques.
-- `rescue.target` : Similaire au mode monoutilisateur (niveau d’exécution 1). Il monte certains systèmes de fichiers et démarre un ensemble limité de services, mais pas de services réseau.
-
-## Commandes liées aux cibles *Systemd* ou *init*.
-
-{{% notice style="note" title="Note" %}}
-- Les commandes `systemctl` qui modifient l’état du système ou des services touchent des fichiers et des processus sous contrôle strict, souvent localisés dans des répertoires comme `/etc/systemd/system` ou `/lib/systemd/system`. Ces zones sont protégées pour éviter des modifications accidentelles ou malveillantes.
-- Dans la plupart des cas, vous devez avoir des privilèges `sudo` ou être connecté en tant qu'utilisateur root pour utiliser la commande `systemctl`, car elle est conçue pour gérer des services, des cibles (*targets*), et d'autres composants système qui nécessitent des autorisations élevées.
-{{% /notice %}}
-
-
-### Pour lister les processus s’exécutant sur une machine
-
-**Avec `ps`** : 
-- Affiche tous les processus s'exécutant sur la machine.
+Pour lister les processus s’exécutant sur une machine :
 ```bash
 $ ps -ef
 UID          PID    PPID  C STIME TTY          TIME CMD
 root           1       0  2 16:18 ?        00:00:01 /usr/lib/systemd/systemd --s
+```
+
+Pour afficher le niveau d'exécution actuel :
+```bash
+$ who -r
+niveau d'exécution 5 2025-02-01 10:09
+$ runlevel
+N 5
+```
+
+{{% notice style="info" title="À propos de Runlevel"  %}}
+La commande `runlevel` affiche deux valeurs : le niveau précédent et le niveau d’exécution actuel. Ici, **N** indique qu'il n'y avait pas de niveau précédent (au démarrage), et **5** est le niveau actuel graphique.
+{{% /notice %}}
+
+
+Pour connaître le niveau par défaut :
+```bash
+$ systemctl get-default
+graphical.target
+```
+
+Pour modifier le niveau d'exécution par défaut :
+```bash
+$ systemctl set-default <nom_niveau>
+```
+
+**Exemple** : fixer le mode multi-utilisateur sans interface graphique comme niveau d'exécution par défaut :
+```bash
+$ systemctl set-default multi-user
+```
+
+Pour revenir au niveau d'exécution par défaut :
+```bash
+$ systemctl default
+$ systemctl isolate default
+```
+
+{{% notice style="info" title="Difference entre isolate et set-default"  %}}
+La différence entre les commandes est que la commande avec ***"isolate"*** est **exécutée immédiatement**, tandis que la commande avec ***"set-default"*** spécifie la cible obtenue **après le redémarrage**.
+{{% /notice %}}
+
+
+## Substitution de commande
+
+La substitution de commande permet d'exécuter une commande et d'utiliser directement son résultat dans une autre commande.
+
+### Syntaxe :
+```
+$(<commande>)
+```
+
+**Exemple 1** :
+
+Bash exécute d'abord la commande `whoami` pour obtenir le nom de l'utilisateur, remplace `$(whoami)` par ce résultat, puis exécute `touch` pour créer un fichier portant ce nom.
+```bash
+$ touch $(whoami).txt
+$ ls
+bonjour.txt  Documents    groupe4  Images   Musique       ndesmangles.txt  Téléchargements  titi      toto      tutu      Vidéos
+Bureau       fichier.txt  groupe6  Modèles  nathalie.txt  Public           test             titi.txt  toto.txt  tutu.txt
 
 ```
-### Pour connaître le niveau d’exécution actuel
 
-1. **Avec `Systemd`** :
-   ```bash
-   $ systemctl get-default
-   graphical.target
-   ```
+**Exemple 2** :
 
-2. **Avec `runlevel` (SysVinit)** :
-   ```bash
-   $ runlevel
-   N 5
-   ```
-   - Cette commande affiche deux valeurs : le précédent et l’actuel niveau d’exécution. Ici, `N` indique qu'il n'y avait pas de niveau précédent (au démarrage), et `5` est le niveau actuel.
-
----
-
-### Pour se placer temporairement dans un niveau d’exécution
-
-1. **Avec `systemctl isolate reboot` :**
-   - Cette commande met immédiatement le système en état de redémarrage. Elle isole le *target* associé à l’action de redémarrage (souvent **reboot.target**).
-   - **Effet** : Redémarrage immédiat, tous les services et processus actifs sont arrêtés proprement.
-
-2. **Avec `systemctl isolate poweroff` :**
-   - Cette commande met immédiatement le système hors tension (extinction complète). Elle isole le *target* associé à l’arrêt (**poweroff.target**).
-   - **Effet** : Extinction immédiate, tous les services et processus actifs sont arrêtés proprement.
+L'exemple ci-dessous affiche les fichiers du dossier personnel :
+```bash
+$ echo "Les fichiers de mon dossier personnel sont : $(ls)"
+Les fichiers de mon dossier personnel sont : bonjour.txt
+Bureau
+Documents
+Images
+Modèles
+Musique
+ndesmangles.txt
+Public
+Téléchargements
+titi
+titi.txt
+toto
+toto.txt
+tutu
+tutu.txt
+Vidéos
+```
 
 ---
 
-### Pour voir quel est le niveau d’exécution par défaut
+## Les variables
 
-1. **Avec Systemd** :
-   ```bash
-   $ systemctl get-default		# Renvoie le *target* par défaut.
-   ```
+En Bash, il est possible de définir des variables. Certaines sont définies par le système au démarrage ou à l’ouverture de la session ; ce sont les **variables d’environnement** (ex: SHELL). Nous pouvons aussi créer nos propres variables (**variables utilisateur**). 
 
-2. **Avec `runlevel` (SysVinit)** :
-   - Vous pouvez également utiliser `runlevel` comme décrit précédemment.
----
+### Définir une variable utilisateur
 
-### Pour modifier le niveau par défaut
-
-1. **Avec Systemd** :
-   - Changez le *target* par défaut avec :
-     ```bash
-     $ sudo systemctl set-default multi-user.target	# Niveau d’exécution 3 (mode texte multi-utilisateur).
-     ```
-
-2. **Avec SysVinit** :
-   - Modifiez le fichier `/etc/inittab` (pour les systèmes utilisant encore SysVinit) :
-     ```bash
-     $ id:5:initdefault:		# Définit le niveau 5 (mode graphique) comme niveau d’exécution par défaut.
-     ```
----
-
-### Pour se rendre directement au niveau d’exécution par défaut
-
-- Utilisez la commande suivante pour forcer le système à se placer dans le niveau d’exécution ou *target* par défaut :
-  ```bash
-  $ sudo systemctl isolate default.target
-  ```
----
-
-**Question**: Suite aux commandes suivantes, que se passe-t-il ?
-
-1. **`$ init 0` :**
-{{% notice style="green" title="Réponse" groupid="notice-toggle" expanded="false" %}}
-   - Envoie le système au niveau d’exécution 0, qui correspond à l’**extinction**.
-   - **Effet** : Éteint immédiatement la machine, tout comme la commande `systemctl poweroff`.
-{{% /notice %}}
-
-
-2. **`$ init 6` :**
-{{% notice style="green" title="Réponse" groupid="notice-toggle" expanded="false" %}}
-   - Envoie le système au niveau d’exécution 6, qui correspond au **redémarrage**.
-   - **Effet** : Redémarre immédiatement la machine, tout comme la commande `systemctl reboot`.
-{{% /notice %}}
-
----
-
-## Les variables utilisateur en *Bash*
-
-### Nomenclature, assignation et affichage des variables
-
-1. Lors de la création d'une variable, **toujours** utiliser des noms descriptifs. 
-Exemple:  `nombre_utilisateurs` au lieu de `nombre`.
+Un utilisateur peut créer ou modifier ses propres variables. 
 
 {{% notice style="warning" title="Attention"  %}}
-- Les caractères spéciaux ou espaces dans les noms peuvent causer des erreurs.
+Il ne faut pas mettre d’espace autour du `=`.
+Les noms sont sensible à la casse: `VAR1` ≠ `var1`
 {{% /notice %}}
 
-2. Les noms sont sensible à la casse.
-Exemple: `VAR1` ≠ `var1` 
-
-3. Pas besoin de déclaration explicite, pour affecter une valeur on utilise `=` **sans espace** autour de `=`.
-Exemple:
 ```bash
-$ ma_variable="Bonjour, Linux!"
+$ variable=valeur
 ```
 
-4. Pour afficher la valeur d'une variable, on utilise le symbole `$` devant le nom.
-Exemple: 
+**Exemples** :
+
+Une variable peut contenir un booléen, une chaîne de caractères ou une valeur numérique :
 ```bash
-$ echo $ma_variable
+$ variable=true
+$ variable="Ceci est un texte"
+$ variable=45
 ```
 
-5. Pour supprimer une variable, on utilise `unset` suivi du nom de la variable (**sans `$`**).
-Exemple: 
+### Accéder au contenu d’une variable
+
+Pour afficher la valeur d’une variable, il faut la préfixer avec `$` :
 ```bash
-$ unset ma_variable
+$ echo $variable
+45
 ```
 
-### Stocker le résultat d’une commande dans une variable
+---
 
-En Bash, vous pouvez capturer la sortie d’une commande dans une variable en utilisant la syntaxe `$(...)`. 
+## Expansion des variables
 
-**Exemple 1** : Stocker la date courante
-```bash
-$ date_courante=$(date +%Y-%m-%d)	# La date sera stockée dans date_courante aaaa-mm-jj
-$ echo $date_courante			# Affiche la valeur de date_courante
-2025-01-09
-```
-
-**Exemple 2** : Compter et stocker le nombre de fichiers dans le répertoire courant
-```bash
-$  nombre_fichiers=$(ls | wc -l)
-$  echo $nombre_fichiers
-8
-```
-- **`ls`** : Liste les fichiers et répertoires dans le répertoire courant.
-- **`wc -l`** : Compte le nombre de lignes de la sortie de `ls`, correspondant au nombre d'entrées.[^1]
+L'expansion des variables permet d'utiliser une variable dans une commande en remplaçant son nom par sa valeur réelle avant l'exécution de la commande.
 
 
-## Expansion des variables en *Bash*
+**Exemple**: Imaginons que nous souhaitons lister trois fichiers : `toto`, `titi`, `tutu`. Nous pouvons stocker ces noms dans une variable :
 
-L'expansion des variables consiste à remplacer le nom d'une variable par sa valeur lors de l'exécution d'une commande, permettant ainsi d'utiliser dynamiquement des données dans des scripts ou des commandes.
- 
-**Exemple 1:** Remplacement de la variable par sa valeur  
 ```bash
 $ fichiers="toto titi tutu"
-$ ls -l $fichiers
 ```
-Commande exécutée :  
+
+Ensuite, nous pouvons utiliser cette variable dans une commande :
+
+```bash
+$ ls -l $fichiers
+-rw-r--r--. 1 ndesmangles ndesmangles 0  1 fév 10:37 titi
+-rw-r--r--. 1 ndesmangles ndesmangles 0  1 fév 10:37 toto
+-rw-r--r--. 1 ndesmangles ndesmangles 0  1 fév 10:37 tutu
+
+```
+
+**Que se passe-t-il ?**
+
+Avant d'exécuter la commande, Bash remplace `$fichiers` par sa valeur réelle, puis exécute la commande résultante :
+
 ```bash
 $ ls -l toto titi tutu
 ```
 
-**Exemple 2:** Une variable peut inclure des options :  
-```bash
-$ fichiers="-l toto titi tutu"
-$ ls $fichiers
-```
-Commande équivalente :  
-```bash
-$ ls -l toto titi tutu
-```
+---
 
 ## Stocker le résultat d'une commande dans une variable
 
-Stocker le résultat d'une commande dans une variable consiste à capturer la sortie d'une commande en utilisant la syntaxe `$(commande)` afin de la réutiliser ultérieurement dans un script ou une commande.
- 
+Il est possible d'affecter à une variable le résultat d'une commande :
+
 ```bash
-$ fichiers=$(ls)
-$ ls "$fichiers"  # Toujours utiliser des guillemets pour gérer les espaces.
+$ ma_variable=$(ls /home)
 ```
 
-## Expansion de noms de fichiers (* et ?)
+**Exemple 1** : Stocker la date actuelle
 
-Dans *Bash* on peut utiliser des **caractères génériques** pour étendre des motifs en liste de fichiers existants.
+```bash
+$ x="La date est : $(date)"
+$ echo $x
+La date est : ven 31 jan 2025 15:39:37 EST
+```
 
-| Caractère     | Description                                    | Exemple               | Résultat                               |
-|---------------|------------------------------------------------|-----------------------|----------------------------------------|
-| `*`           | Remplace une chaîne de longueur variable       | `ls *.txt`            | Fichiers comme `toto.txt`, `titi.txt`  |
-| `?`           | Remplace un seul caractère                     | `ls t?t?.txt`         | Fichiers comme `toto.txt`, `titi.txt`  |
+**Exemple 2** : Stocker le contenu d'un fichier
 
-## Expansion d’accolades
+```bash
+$ x=$(cat /etc/passwd)
+$ echo $x
+root:x:0:0:root:/root:/bin/bash bin:x:1:1:bin:/bin:/sbin/nologin daemon:x:2:2:daemon:/sbin:/sbin/nologin ...
+```
 
-L'expansion d'accolades en Bash permet de générer rapidement des séries de chaînes ou de motifs en factorisant des éléments variables, comme dans `{a,b,c}` pour produire `a`, `b`, `c`, ou `{1..5}` pour générer `1`, `2`, `3`, `4`, `5`.
-
-|  But                     | Commande                      | Résultat                      |
-|--------------------------|-------------------------------|-------------------------------|
-| Générer des variations   | `touch patat{a,e,i,o,u,y}`    | `patata`, `patate`, ...       |
-| Générer une séquence     | `touch test{1..12}.txt`       | `test1.txt`, `test2.txt`, ... |
-
-{{% notice style="warning" title="Attention" %}}
-- Pas d’espace dans les accolades
+{{% notice style="info" title="À savoir"  %}}
+Le résultat d'une commande stocké dans une variable est retourné sur **une seule ligne**, ce qui peut poser problème pour les fichiers avec plusieurs lignes.
 {{% /notice %}}
 
-
-## Protéger contre l’expansion
-
-Protéger contre l’expansion en Bash consiste à empêcher l’interprétation des caractères spéciaux, des variables ou des commandes en utilisant des guillemets simples, doubles ou le caractère d’échappement `\`.
-
-| Méthode               | Commande                           | Effet                                       |
-|-----------------------|------------------------------------|---------------------------------------------|
-| Échappement `\`       | `echo Je veux afficher \* et \$x`  | Affiche `*` et `$x` sans expansion.         |
-| Guillemets simples `'`| `echo 'Voici * et $x'`             | Aucun remplacement, affiche littéralement.  |
-| Guillemets doubles `"`| `echo "Valeur : $x"`               | Permet l’expansion des variables.           |
-
 ---
 
-## Commandes spéciales et expansions
+## Expansion de noms de fichiers à l'aide de caractères génériques
 
-Certaines commandes comme `find`[^1] nécessitent une attention particulière concernant l'expansion.
+Lorsque l'on ne connaît pas précisément le nom d'un fichier ou que l'on veut rechercher plusieurs fichiers ayant un point commun, il est possible d'utiliser des caractères génériques.
+L'expansion des caractères génériques permet de manipuler facilement plusieurs fichiers sans avoir à taper leurs noms en entier.
 
-### Exemple : Recherche avec **find**
-Pour rechercher tous les fichiers `.txt` :
+### Les principaux caractères génériques
+
+| Caractère | Signification |
+|-----------|--------------|
+| `*` | Remplace n'importe quelle chaîne de caractères de n'importe quelle longueur |
+| `?` | Remplace un seul caractère |
+
+Le shell effectue une **expansion des noms de fichiers** en remplaçant les caractères génériques avant d'exécuter la commande.
+
+**Exemple 1** : Lister tous les fichiers **.txt**
+
 ```bash
-$ find / -name "*.txt"
+$ ls *.txt
 ```
-Ici, les guillemets protègent `*.txt` pour empêcher Bash d’expandre le motif avant de passer à `find`. Cela garantit que `find` traite correctement le motif.
+
+Si les fichiers `toto.txt`, `titi.txt` et `tutu.txt` existent, la commande devient :
+
+```bash
+$ ls toto.txt titi.txt tutu.txt
+titi.txt  toto.txt  tutu.txt
+```
+
+{{% notice style="info" title="Sachez que..."  %}}
+Si lors de la création des fichiers, l'extension (**.txt**) était absente, la commande précédente `ls` retournera une erreur:
+```bash
+ls: impossible d'accéder à 'toto.txt': Aucun fichier ou dossier de ce type
+ls: impossible d'accéder à 'titi.txt': Aucun fichier ou dossier de ce type
+ls: impossible d'accéder à 'tutu.txt': Aucun fichier ou dossier de ce type
+```
+{{% /notice %}}
+
+**Exemple 2** : Lister les fichiers avec un format spécifique
+
+```bash
+$ ls t?t?.txt
+```
+
+Le `?` remplace **un seul caractère**, donc cette commande affichera tous les fichiers du répertoire courant correspondant à ce modèle, par exemple : `tata.txt`, `titi.txt`, mais pas `tututu.txt`.
 
 ---
 
-## Bonnes pratiques avec les variables
+## L'expansion d'accolades
 
-1. **Toujours utiliser des guillemets pour éviter les problèmes avec les espaces ou caractères spéciaux :**
-   ```bash
-   $ ls "$fichiers"
-   ```
+L'expansion d'accolades est une fonctionnalité de Bash qui permet de créer plusieurs chaînes de caractères en utilisant une syntaxe abrégée. Elle est particulièrement utile pour la création de fichiers, de répertoires ou pour l'exécution de commandes répétitives.
 
-2. **Protégez les motifs pour les commandes comme `find`:**
-   ```bash
-   $ find / -name "*.txt"
-   ```
+L'expansion d'accolades utilise la syntaxe suivante :
 
-3. **Utilisez les accolades pour générer des séquences et factoriser vos commandes :**
-   ```bash
-   $ touch fichier{1..10}.txt
-   ```
+```
+{élément1,élément2,...}
+```
 
-## Itération sur les résultats de commandes
+où **élément1**, **élément2**, etc. sont les différentes chaînes de caractères que vous souhaitez combiner. Bash va alors générer toutes les combinaisons possibles de ces éléments.
 
-La boucle `for` est un élément fondamental qui permet de répéter une action pour chaque élément d'une liste ou d'un ensemble de valeurs. Elle est particulièrement utile pour automatiser des tâches répétitives.
+{{% notice style="warning" title="Attention"  %}}
+Ne mettez aucun espace à l'intérieur des accolades.
+{{% /notice %}}
 
+## Exemples concrets
 
-### Structure générale
+**Exemple 1** : Création de fichiers multiples
+
+Supposons que vous souhaitez créer les fichiers **patata**, **patate**, **patati** et **patatu**. Sans l'expansion d'accolades, vous devriez exécuter la commande `touch` quatre fois ou écrire au complet tous les noms des fichiers :
 
 ```bash
-for variable in liste
-do
-    commande1
-    commande2
-    ...
+$ touch patata
+$ touch patate
+$ touch patati
+$ touch patatu
+```
+ou
+
+```bash
+$ touch patata patate patati patatu
+```
+Avec l'expansion d'accolades, vous pouvez faire tout cela en une seule ligne :
+
+```bash
+$ touch patat{a,e,i,u}
+```
+
+Bash va alors générer les chaînes **patata**, **patate**, **patati** et **patatu**, puis exécuter la commande `touch` pour chaque chaîne.
+
+**Exemple 2** : Création de séquences numériques
+
+Vous pouvez également utiliser l'expansion d'accolades pour créer des séquences numériques. Par exemple, si vous souhaitez créer les fichiers **test1.txt**, **test2.txt**, **test3.txt**, ..., **test12.txt**, vous pouvez utiliser la commande suivante :
+
+```bash
+$ touch test{1..12}.txt
+```
+
+Bash va générer les nombres de **1 à 12**, puis créer les fichiers correspondants.
+
+## Autres exemples d'utilisation
+
+**Exemple 1** : Création de fichiers dans un dossier spécifique
+
+Pour créer 3 fichiers **test1.txt**, **test2.txt** et **test3.txt** dans le dossier **dossier1**, vous pouvez utiliser la commande suivante :
+
+```bash
+$ touch dossier1/test{1..3}.txt
+```
+
+**Exemple 2** : Combinaison de chaînes et de séquences
+
+Pour créer les fichiers **patate**, **patati** et **patata** dans les dossiers **boite1** et **boite2**, vous pouvez utiliser la commande suivante :
+
+```bash
+$ touch boite{1,2}/patat{a,e,i}
+```
+
+## Protection contre l'expansion
+
+Dans certains cas, vous pouvez souhaiter empêcher l'expansion d'accolades. Pour cela, vous pouvez utiliser le caractère d'échappement `\` ou les guillemets simples (`'`).
+
+### Utilisation du caractère d'échappement
+
+Le caractère `\` est un caractère d'échappement dans le shell Bash. Il permet de protéger le caractère qui le suit de son expansion. Par exemple :
+
+```bash
+$ echo je veux afficher \* et afficher \$x
+je veux afficher * et afficher $x
+```
+
+### Utilisation des guillemets simples
+
+Les guillemets simples (`'`) arrêtent tous les types d'expansion. Par exemple :
+
+```bash
+$ echo 'je veux afficher * et afficher $x'
+je veux afficher * et afficher $x
+```
+
+### Utilisation des guillemets doubles
+
+Les guillemets doubles (`"`) permettent uniquement l'expansion de variables et la substitution de commandes. Par exemple :
+
+```bash
+$ x=5
+$ echo "je veux afficher * et afficher la valeur de $x"
+je veux afficher * et afficher la valeur de 5
+```
+---
+
+## La commande ***find***
+
+La commande `find` est un outil essentiel pour naviguer dans le système de fichiers et localiser des fichiers ou répertoires spécifiques. Elle suit la structure générale suivante :
+
+```
+find <répertoire_de_départ> <options>
+```
+
+- <**répertoire_de_départ**>: Indique le répertoire où la recherche doit commencer. La commande explorera ce répertoire et tous ses sous-répertoires.
+- <**options**>: Définissent les critères de recherche, tels que le nom du fichier, le type, la date de modification, etc.
+
+### Recherche par nom
+
+L'option `-name` est la plus courante pour rechercher des fichiers par leur nom.
+
+- Rechercher un fichier nommé `services` dans tout le système (i.e. à partir de la racine):
+
+```bash
+$ find / -name services
+```
+
+- Rechercher tous les fichiers se terminant par `.txt` dans le répertoire courant :
+
+```bash
+$ find . -name "*.txt"
+```
+
+- Rechercher tous les fichiers commençant par `p` dans le répertoire courant :
+
+```bash
+$ find . -name "p*"
+```
+
+- Rechercher tous les fichiers de 4 caractères se terminant par `n` dans `/var/log` :
+
+```bash
+$ find /var/log -name "???n"
+```
+
+### Pièges à éviter
+
+Lors de l'utilisation de `find`, il est crucial de comprendre comment Bash gère l'expansion des variables et les guillemets. Voici quelques points importants :
+
+- **Expansion des variables**: Bash n'effectue pas d'expansion de noms de fichiers pour la commande `find`. Cela permet à `find` d'interpréter correctement les motifs avec des caractères génériques comme `*.txt`.
+- **Utilisation de guillemets**: Il est souvent nécessaire d'utiliser des guillemets pour protéger les caractères spéciaux et éviter des erreurs d'interprétation.
+
+Le tableau suivant illustre les différences de comportement :
+
+| Commande                                  | Résultat                                                                                                                                                                                                                                                        |
+| :---------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ls *.txt`                                | Affiche tous les fichiers se terminant par `.txt`. Si aucun fichier `.txt` n'est trouvé, la commande s'exécute comme si les guillemets étaient présents.                                                                                                            |
+| `ls "*.txt"`                              | Affiche le fichier nommé exactement `*.txt`.                                                                                                                                                                                                                            |
+| `find . -name *.txt`                      | L'expansion a lieu avant la recherche. Trois cas sont possibles :<br/>- Aucun fichier `.txt` : La commande s'exécute comme si les guillemets étaient présents.<br/>- Un fichier `.txt` : Seul ce fichier est recherché.<br/>- Plusieurs fichiers `.txt` : La commande échoue. |
+| `find . -name "*.txt"`                    | Recherche tous les fichiers `.txt` à partir du répertoire courant.                                                                                                                                                                                                   |
+
+### Exercices
+
+1.  **Manipulation de variables et de `ls` :**
+    - Créez une variable `variable_etc` contenant la liste des fichiers de `/etc` et affichez-la.
+    - Observez le résultat et évaluez sa lisibilité.
+    - Essayez d'exécuter `ls` suivi du nom de votre variable. Expliquez le comportement observé.
+
+2.  **Recherche de fichiers de configuration :**
+    - Trouvez tous les fichiers se terminant par `.conf` et stockez leurs noms dans une variable.
+    - Essayez d'exécuter `ls` suivi du nom de votre variable.
+    - Utilisez la commande `du -sh <fichier>` pour afficher la taille de chaque fichier de configuration.
+
+3.  **Création de fichiers avec factorisation :**
+    - Créez un répertoire et utilisez la commande `touch` avec la syntaxe de factorisation pour créer les fichiers suivants : `test1.txt`, `test2.txt`, `test3.txt`, `test1.doc`, `test2.doc`, `test3.doc`, `test1.tot`, `test2.tot`, `test3.tot`.
+
+4.  **Utilisation de caractères génériques :**
+    - Affichez uniquement les fichiers `.txt` commençant par `test` (trouvez plusieurs solutions).
+    - Affichez tous les fichiers `.txt` et `.tot`.
+    - Affichez tous les fichiers `test1`.
+
+{{% notice style="green" title="Solution à venir..." groupid="notice-toggle" expanded="false" %}}
+<!--
+
+1.  **Manipulation de variables et de `ls` :**
+```bash
+variable_etc=$(ls /etc)
+echo $variable_etc
+ls $variable_etc # Affiche les fichiers séparés par des espaces
+```
+
+2.  **Recherche de fichiers de configuration :**
+```bash
+fichiers_conf=$(find /etc -name "*.conf")
+ls $fichiers_conf # Affiche les fichiers séparés par des espaces
+for fichier in $fichiers_conf; do
+  du -sh $fichier
 done
 ```
 
-- **`variable`** : Une variable temporaire qui prend successivement chaque valeur de la liste.
-- **`liste`** : Un ensemble de valeurs, qui peut être défini explicitement ou généré dynamiquement.
-- Les commandes entre `do` et `done` sont exécutées pour chaque valeur de la liste.
+3.  **Création de fichiers avec factorisation :**
+```bash
+mkdir repertoire_test
+touch repertoire_test/test{1..3}.{txt,doc,tot}
+```
 
----
+4.  **Utilisation de caractères génériques :**
+```bash
+ls repertoire_test/test*.txt # Solution 1
+ls repertoire_test/test[1-3].txt # Solution 2
+ls repertoire_test/*.{txt,tot}
+ls repertoire_test/test1*
+```
+-->
+{{% /notice %}}
 
-### Exemple 1 : Parcourir une liste statique
+## Itération sur le résultat d'une commande avec la boucle ***for***
+
+La syntaxe de base d'une boucle ***for*** est la suivante :
+```bash
+for i in arg1 arg2 ...; do commande; done
+```
+
+-   `i` : Variable qui prendra successivement la valeur de chaque argument.
+-   `arg1 arg2 ...` : Liste des éléments sur lesquels itérer.
+-   `commande` : Commande à exécuter pour chaque élément de la liste.
+
+### Exemples d'utilisation
+
+**Exemple 1** : Affichage du contenu de fichiers .txt
+
+Supposons que vous ayez les fichiers suivants :
+
+```
+fichier1.txt	# contient le mot 'Bonjour'
+fichier2.txt	# contient le mot 'tout'
+fichier3.txt	# contient le mot 'le'
+fichier4.txt	# contient le mot 'monde'
+```
+
+Pour afficher le contenu de chaque fichier, vous pouvez utiliser une boucle `for` :
+```bash
+$ for i in fichier1.txt fichier2.txt fichier3.txt fichier4.txt; do cat $i; done
+Bonjour
+tout
+le
+monde
+```
+
+**Exemple 2** : Utilisation d'une variable pour stocker le résultat d'une commande
+
+Vous pouvez stocker le résultat d'une commande dans une variable, puis itérer sur cette variable :
+```bash
+$ fichiers=$(ls fichier*.txt)
+$ for i in $fichiers; do cat $i; done
+Bonjour
+tout
+le
+monde
+```
+
+**Exemple 3** : Passage direct de la commande à la boucle `for`
+
+Il est également possible de passer directement la commande à la boucle `for` :
+```bash
+$ for i in $(ls fichier*.txt) ; do cat $i; done
+Bonjour
+tout
+le
+monde
+```
+
+**Exemple 4** : Utilisation de l'expansion de noms de fichiers
+
+Pour simplifier l'itération sur des fichiers, vous pouvez utiliser l'expansion de noms de fichiers :
+```bash
+$ for i in fichier*.txt; do cat $i; done
+Bonjour
+tout
+le
+monde
+```
+
+### Formatage de la boucle ***for*** dans un script
+
+Dans un script, il est recommandé d'écrire la boucle `for` sur plusieurs lignes pour une meilleure lisibilité. Les sauts de ligne remplacent le `;` dans ce cas :
 
 ```bash
-for animal in chat chien oiseau
+for i in $var
 do
-    echo "Je suis un $animal"
+  echo $i
 done
 ```
 
-**Sortie :**
-```
-Je suis un chat
-Je suis un chien
-Je suis un oiseau
-```
+### Exercices
 
----
+1.  **Liste des fichiers de `/bin` :**
+    - Créez une variable contenant la liste des fichiers du répertoire `/bin`.
 
-### Exemple 2 : Parcourir des fichiers d’un répertoire
+2.  **Affichage des fichiers :**
+    - Parcourez cette variable à l'aide d'une boucle `for` et affichez chaque fichier sur une ligne différente.
 
+3.  **Taille des fichiers :**
+    - Sachant que vous pouvez concaténer des chaînes de caractères comme ceci :
+
+    ```bash
+    echo /bin/$i
+    ```
+
+    - Essayez d'afficher la taille des fichiers du répertoire `/bin`. Utilisez la commande `du -sh <fichier>` pour afficher la taille d'un fichier.
+
+
+{{% notice style="green" title="Solution à venir..." groupid="notice-toggle" expanded="false" %}}
+<!--
+1.  **Liste des fichiers de `/bin` :**
 ```bash
-for fichier in *.txt
-do
-    echo "Traitement de $fichier"
+fichiers_bin=$(ls /bin)
+```
+
+2.  **Affichage des fichiers :**
+```bash
+for i in $fichiers_bin; do
+  echo $i
 done
 ```
 
-- Ici, `*.txt` est un motif de fichier.
-- Bash remplace `*.txt` par la liste des fichiers correspondants dans le répertoire courant.
-
-**Sortie :** (si le répertoire contient `file1.txt` et `file2.txt`)
-```
-Traitement de file1.txt
-Traitement de file2.txt
-```
-
----
-
-### Exemple 3 : Générer une liste avec une séquence
-
-Vous pouvez utiliser une séquence avec `{debut..fin}` pour générer des nombres ou des caractères :
-
+3.  **Taille des fichiers :**
 ```bash
-for i in {1..5}
-do
-    echo "Nombre : $i"
+for i in $fichiers_bin; do
+  echo /bin/$i
+  du -sh /bin/$i
 done
 ```
+-->
+{{% /notice %}}
 
-**Sortie :**
-```
-Nombre : 1
-Nombre : 2
-Nombre : 3
-Nombre : 4
-Nombre : 5
-```
-
----
-
-### Exemple 4 : Ajouter des pas dans une séquence
-
-Pour parcourir une séquence avec un pas spécifique, utilisez `{debut..fin..pas}` :
-
-```bash
-for i in {1..10..2}
-do
-    echo "Nombre impair : $i"
-done
-```
-
-**Sortie :**
-```
-Nombre impair : 1
-Nombre impair : 3
-Nombre impair : 5
-Nombre impair : 7
-Nombre impair : 9
-```
-
----
-
-### Exemple 5 : Lire des entrées à partir d’une commande
-
-Vous pouvez parcourir les fichiers dans un répertoire pour lister les utilisateurs disposant d'un répertoire personnel sur le système :
-
-```bash
-for user in $(ls /home)
-do
-    echo "Utilisateur avec un répertoire : $user"
-done
-```
-
-**Explication** :
-- `ls /home` liste les répertoires dans `/home`, où chaque répertoire correspond généralement à un utilisateur ayant un compte sur le système.
-- La boucle `for` parcourt chaque nom de répertoire et l'associe à la variable `user`.
-- La commande `echo` affiche ensuite le nom de chaque utilisateur. 
-
----
-
-### Utiliser des guillemets pour protéger les valeurs
-
-Si les éléments de la liste contiennent des espaces, utilisez des guillemets pour éviter des erreurs :
-
-```bash
-for fichier in "Fichier 1.txt" "Fichier 2.txt"
-do
-    echo "Traitement de $fichier"
-done
-```
-
----
-
-## Bonnes pratiques avec la boucle *for*
-
-1. **Liste explicite** : Utilisez une liste statique ou une séquence simple :
-   ```bash
-   for i in {1..10}
-   ```
-
-2. **Motifs et fichiers** : Parcourez les fichiers d’un répertoire avec des motifs :
-   ```bash
-   for fichier in *.txt
-   ```
-
-3. **Commandes dynamiques** : Créez une liste à partir du résultat d'une commande :
-   ```bash
-   for utilisateur in $(who | awk '{print $1}')
-   ```
-
-4. **Guillemets** : Protégez les éléments avec des espaces :
-   ```bash
-   for fichier in "file 1" "file 2"
-   ```
-
-
-
-[^1]: Nous verrons cette commande plus en détails au prochain cours.

@@ -1,7 +1,6 @@
 +++
 title = "Atelier 1"
 weight = 161
-draft = true
 +++
 
 Capture d'écran prouvant la réussite de l'installation d'AlmaLinux sur VMware.

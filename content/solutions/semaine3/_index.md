@@ -6,158 +6,82 @@ draft = true
 
 # Solution des exercices
 
-## Exercice 1 : Manipuler les cibles (niveaux d'exécution)
-
-1. **Passer en mode multi-utilisateur sans interface graphique :**
-   ```bash
-   $ sudo systemctl isolate multi-user.target
-   ```
-
-2. **Vérifier que vous êtes en mode multi-utilisateur sans interface graphique :**
-   ```bash
-   $ systemctl get-default
-   ```
-   La sortie devrait être `multi-user.target`.
-
-3. **Définir le mode multi-utilisateur avec interface graphique comme cible par défaut :**
-   ```bash
-   $ sudo systemctl set-default graphical.target
-   ```
-
-4. **Redémarrer le système pour vérifier :**
-   ```bash
-   $ sudo reboot
-   ```
-
 ---
+## Exercice 1 : Niveaux d'exécution
 
-## Exercice 2 : Création et affichage de variables
+1. Modifier le niveau d'exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique. 
+```bash
+$ sudo systemctl set-default multi-user
+```
 
-1. **Déclarer une variable `nom` :**
-   ```bash
-   $ nom="VotrePrénom"
-   ```
+2. Redémarrer la VM pour appliquer les changements à l'aide de la commande `shutdown -r now`.
+```bash
+$ sudo shutdown -r now
+```
 
-2. **Afficher la valeur de la variable :**
-   ```bash
-   $ echo $nom
-   ```
+3. Après le redémarrage, se connecter à votre VM . Vérifier que l'interface graphique ne démarre pas. Utiliser la commande `systemctl` pour connaître le niveau d'exécution actuel.
+```bash
+$ systemctl get-default
+```
 
-3. **Essayer d’accéder à la variable sans `$` :**
-   ```bash
-   $ nom
-   ```
-   La commande retournera une erreur.
+4. Rétablir le mode graphique par défaut. N'oubliez pas de redémarrer la VM pour que les changements soient pris en compte.
+```bash
+$ sudo systemctl set-default graphical
+```
 
----
+## Exercice 2 : Caractères génériques et commande *find*
 
-## Exercice 3 : Capturer une date formatée
+1. Aller dans le répertoire `/etc`. **Notez qu'il est demandé de ne pas se déplacer pour le reste de cet exercice**.
+```bash
+$ cd /etc
+```
 
-1. **Stocker la date actuelle dans une variable :**
-   ```bash
-   $ date_actuelle=$(date +"%Y/%m/%d %H:%M:%S")
-   ```
+2. Utiliser la commande `find` pour rechercher les fichiers dont le nom commence par la lettre `r` dans le répertoire courant.
+```bash
+$ find . -name "r*"
+```
 
-2. **Afficher la date formatée :**
-   ```bash
-   $ echo $date_actuelle
-   ```
+3.  Utiliser la commande `find` pour rechercher les fichiers contenant la chaîne `rc` dans le répertoire courant.
+```bash
+$ find . -name "*rc*"
+```
 
----
+4.  Utiliser la commande `find` pour rechercher les fichiers dont le nom comporte exactement trois caractères sur l'ensemble du système de fichiers (à partir de la racine).
+```bash
+$ find / -name "???"
+```
 
-## Exercice 4 : Supprimer une variable
+## Exercice 3 : Expansion d'accolades et boucle *for*
 
-1. **Déclarer une variable temporaire :**
-   ```bash
-   $ temp_var="temporaire"
-   ```
+{{% notice style="orange" title="Important" %}}
+Assurez-vous d'être revenu dans votre répertoire personnel avant de commencer cet exercice.
+{{% /notice %}}
 
-2. **Supprimer la variable avec `unset` :**
-   ```bash
-   $ unset temp_var
-   ```
+```bash
+$ cd ~
+```
 
-3. **Essayer d’afficher la variable supprimée :**
-   ```bash
-   $ echo $temp_var
-   ```
+1. Utiliser l'expansion d'accolades pour créer l'arborescence de dossiers suivante en une seule commande.
+```bash
+$ mkdir -p {lecon1,lecon2,lecon3}/{lab1,lab2,lab3}
+```
 
----
+2. Toujours en utilisant l'expansion d'accolades, créer un fichier vide nommé `priseNote` dans chaque répertoire `lab` en une seule commande.
+```bash
+$ touch {lecon1,lecon2,lecon3}/{lab1,lab2,lab3}/priseNote
+```
 
-## Exercice 5 : Expansion de variables et d'accolades
+3. Utiliser une boucle `for` pour renommer tous les fichiers `priseNote` en `priseNote.txt`.
+```bash
+$ for i in {lecon1,lecon2,lecon3}/{lab1,lab2,lab3}/priseNote; do mv "$i" "${i%.*}.txt"; done
+```
 
-1. **Créer une variable contenant la liste des fichiers dans `/etc` :**
-   ```bash
-   $ variable_etc=$(ls /etc)
-   $ echo $variable_etc
-   ```
-
-   - Le contenu peut être difficile à lire car tout est affiché sur une seule ligne.
-
-   **Exécuter `ls` sur la variable :**
-   ```bash
-   $ ls $variable_etc
-   ```
-   - Peut afficher une erreur si des fichiers n'existent pas dans le répertoire courant.
-
-2. **Trouver les fichiers `.conf` et stocker dans une variable :**
-   ```bash
-   $ fichiers_conf=$(find /etc -type f -name "*.conf")
-   ```
-
-   **Exécuter `ls` sur cette variable :**
-   ```bash
-   $ ls $fichiers_conf
-   ```
-   - Peut produire une erreur similaire si les chemins complets ne sont pas valides.
-
-   **Afficher la taille de chaque fichier `.conf` :**
-   ```bash
-   $ for fichier in $fichiers_conf; do du -sh "$fichier"; done
-   ```
-
-3. **Créer des fichiers avec factorisation :**
-   ```bash
-   $ mkdir test_dir
-   $ touch test_dir/test{1,2,3}.{txt,doc,tot}
-   ```
-
-4. **Afficher uniquement les fichiers `.txt` commençant par `test` :**
-   ```bash
-   $ ls test_dir/test*.txt
-   ```
-
-   **Afficher tous les fichiers `.txt` et `.tot` :**
-   ```bash
-   $ ls test_dir/*.{txt,tot}
-   ```
-
-   **Afficher tous les fichiers `test1` :**
-   ```bash
-   $ ls test_dir/test1.*
-   ```
-
----
-
-## Exercice 6 : Expansion d’accolade et boucle for
-
-
-1. **Créer l'arborescence avec expansion d’accolade :**
-   ```bash
-   $ mkdir -p coursLinux/semaine{1..5}/{lab,lecon}
-   ```
-
-2. **Créer un fichier `priseNote` dans chaque répertoire `lab` :**
-   ```bash
-   $ touch coursLinux/semaine{1..5}/lab/priseNote
-   ```
-
-3. **Renommer `priseNote` en `priseNote.txt` :**
-   ```bash
-   $ for fichier in coursLinux/semaine{1..5}/lab/priseNote; do mv "$fichier" "${fichier}.txt"; done
-   ```
-
-4. **Déplacer `priseNote.txt` vers le répertoire `lecon` correspondant :**
-   ```bash
-   $ for semaine in coursLinux/semaine{1..5}; do mv "$semaine/lab/priseNote.txt" "$semaine/lecon/"; done
-   ```
+4. Utiliser une boucle `for` pour déplacer les fichiers `priseNote.txt` des répertoires `lab` vers les répertoires `lecon` correspondants.  
+**NB** : Écrit sur plusieurs lignes, par soucis de lisibilité.
+```bash
+for i in {lecon1,lecon2,lecon3}/{lab1,lab2,lab3}/priseNote.txt; do
+  dossier_destination="${i%/*}"  # Récupère le chemin du dossier parent
+  dossier_destination="${dossier_destination%/lab*}" # Supprime /lab*
+  mv "$i" "$dossier_destination"
+done
+```

@@ -7,5 +7,12 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/solutions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Atelier 1</title>
+      <link>https://example.org/solutions/semaine1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/solutions/semaine1/index.html</guid>
+      <description>Capture d’écran prouvant la réussite de l’installation d’AlmaLinux sur VMware.&#xA;La capture d’écran doit montrer&#xA;La fenêtre du Terminal. Votre nom d’utilisateur standard. Votre nom complet écrit sur la ligne de commande. Exemple:</description>
+    </item>
   </channel>
 </rss>

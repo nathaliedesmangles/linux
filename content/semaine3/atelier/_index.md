@@ -12,55 +12,62 @@ weight = 32
 
 # Atelier 
 
-## Exercice 1 : Manipuler les cibles (niveaux d'exécution)
+## Exercice 1 : Niveaux d'exécution
 
-1. Utiliser la commande `systemctl` pour passer en mode multi-utilisateur sans interface graphique
-2. Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique.
-3. Définir le mode multi-utilisateur avec interface graphique comme cible par défaut.
-4. Redémarrer votre système pour vérifier que le mode graphique est bien la cible par défaut.
+1. Modifier le niveau d'exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique. 
 
-## Exercice 2 : Création et affichage de variables
+2. Redémarrer la VM pour appliquer les changements à l'aide de la commande `shutdown -r now`.
 
-1. Déclarez une variable `nom` avec votre prénom.
-2. Affichez la valeur de la variable.
-3. Essayez d’accéder à la variable sans `$`.
-   - Notez la différence.
+3. Après le redémarrage, se connecter à votre VM . Vérifier que l'interface graphique ne démarre pas. Utiliser la commande `systemctl` pour connaître le niveau d'exécution actuel.
 
-## Exercice 3 : Capturer une date formatée
+4. Rétablir le mode graphique par défaut. N'oubliez pas de redémarrer la VM pour que les changements soient pris en compte.
 
-1. Stockez la date actuelle dans une variable `date_actuelle` avec le format AAAA/MM/JJ hh:mm:ss.
-2. Affichez la date formatée.
+## Exercice 2 : Caractères génériques et commande *find*
 
-## Exercice 4 : Supprimer une variable
+1. Aller dans le répertoire `/etc`. **Notez qu'il est demandé de ne pas se déplacer pour le reste de cet exercice**.
 
-1. Déclarez une variable temporaire.
-2. Supprimez la variable avec `unset`.
-3. Essayez d’afficher la variable supprimée.
+2. Utiliser la commande `find` pour rechercher les fichiers dont le nom commence par la lettre `r` dans le répertoire courant.
 
-## Exercice 5: Expansion de variables et d'accolades
+3.  Utiliser la commande `find` pour rechercher les fichiers contenant la chaîne `rc` dans le répertoire courant.
 
-1. Créer une variable `variable_etc` contenant la liste des fichiers du répertoire `/etc` et l'afficher. 
-- Son contenu est-il facile à lire ?
-- Que se passe-t-il si vous exécutez `ls` suivi du nom de votre variable ? Pourquoi ?
-2. Sachant que beaucoup de fichiers de configuration se terminent par `.conf`, les trouver et stocker leur nom dans une variable.
-- Que se passe-t-il si vous exécutez `ls` suivi du nom de votre variable?
-- Seriez-vous capable d’afficher la taille de chacun des fichiers de configuration ? La commande du `-sh <fichier>` permet d’afficher la taille de fichier.
-3. Créer un répertoire dans lequel vous créerez les fichiers suivants à l’aide de la commande `touch` en utilisant la syntaxe permettant de factoriser une commande:
-`test1.txt, test2.txt, test3.txt, test1.doc, test2.doc, test3.doc, test1.tot, test2.tot, test3.tot`
-4. Grâce aux caractères génériques, n’afficher que les fichiers `.txt` qui commencent par `test` (plusieurs possibilités existent, essayez de les trouver).
-a. Tous les fichiers `.txt et `.tot`.
-b. Tous les fichiers test1
+4.  Utiliser la commande `find` pour rechercher les fichiers dont le nom comporte exactement trois caractères sur l'ensemble du système de fichiers (à partir de la racine).
 
-## Exercice 6: Expansion d’accolade et boucle for
+## Exercice 3 : Expansion d'accolades et boucle *for*
 
-- En faisant cet exercice, vérifiez pour cette question le résultat de vos commandes en utilisant la commande `tree`. 
-- La figure ci-dessous montre un exemple d’utilisation de cette commande.
-- Assurez-vous d’être revenu dans votre répertoire personnel
+{{% notice style="orange" title="Important" %}}
+Assurez-vous d'être revenu dans votre répertoire personnel avant de commencer cet exercice.
+{{% /notice %}}
 
-1. À l’aide d’une seule commande et en utilisant l’expansion d’accolade, créez l’arborescence des dossiers suivante :
+1. Utiliser l'expansion d'accolades pour créer l'arborescence de dossiers suivante en une seule commande.
 
 ![structure](atelier3.png)
 
-2. À l’aide d’une seule commande et en utilisant l’expansion d’accolade, créer le fichier vide **priseNote** dans chaque répertoire **lab**.
-3. À l’aide d’une boucle for, renommer les fichier **priseNote** en **priseNote.txt**.
-4. À l’aide d’une boucle for, déplacer les fichiers **priseNote.txt** du répertoire **lab** vers le répertoire **leçon** correspondant.
+2. Toujours en utilisant l'expansion d'accolades, créer un fichier vide nommé `priseNote` dans chaque répertoire `lab` en une seule commande
+
+3. Utiliser une boucle `for` pour renommer tous les fichiers `priseNote` en `priseNote.txt`.
+
+4. Utiliser une boucle `for` pour déplacer les fichiers `priseNote.txt` des répertoires `lab` vers les répertoires `lecon` correspondants.
+
+
+{{% notice style="primary" title="Vérification des résultats" %}}
+Utilisez la commande `tree` pour vérifier que l'arborescence des dossiers et les fichiers ont été créés et déplacés correctement. Par exemple :
+```bash
+$ tree lecon1
+```
+La structure qui devrait s'afficher :
+
+```
+lecon1
+├── lab1
+│   └── priseNote.txt
+├── lab2
+│   └── priseNote.txt
+└── lab3
+    └── priseNote.txt
+```
+{{% /notice %}}
+
+
+
+
+

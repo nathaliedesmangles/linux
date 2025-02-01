@@ -35,12 +35,12 @@ draft = true
 
 5. **Lister les fichiers présents dans le répertoire courant :**
    ```bash
-   $ ls -la
+   $ ls
    ```
 
 6. **Lister les fichiers du répertoire `/usr` :**
    ```bash
-   $ ls -la /usr
+   $ ls /usr
    ```
 
 ---

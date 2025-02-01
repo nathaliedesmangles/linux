@@ -3,7 +3,7 @@
   <channel>
     <title>Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine3/cours/index.html</link>
-    <description>Séquence de démarrage de Linux Le processus de démarrage de Linux est une série d’étapes qui se déroulent depuis l’allumage de l’ordinateur jusqu’à l’affichage de l’invite de commande ou de l’interface graphique. Comprendre ce processus est essentiel pour diagnostiquer et résoudre les problèmes de démarrage.&#xA;Lorsqu’un système Linux démarre, plusieurs étapes se succèdent de manière ordonnée pour préparer la machine et le système d’exploitation à fonctionner. Voici les étapes principales :</description>
+    <description>Le processus de démarrage Le processus de démarrage d’un système Linux suit plusieurs étapes essentielles, impliquant différents composants du système :&#xA;Activation du BIOS/UEFI&#xA;Lorsque vous allumez votre ordinateur, le BIOS (Basic Input Output System) ou l’UEFI (Unified Extensible Firmware Interface) s’active. Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT). Chargement du chargeur d’amorçage</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine3/cours/index.xml" rel="self" type="application/rss+xml" />

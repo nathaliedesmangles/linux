@@ -5,47 +5,27 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Solution des exercices Exercice 1 : Manipuler les cibles (niveaux d’exécution) Passer en mode multi-utilisateur sans interface graphique :
-$ sudo systemctl isolate multi-user.targetVérifier que vous êtes en mode multi-utilisateur sans interface graphique :
-$ systemctl get-defaultLa sortie devrait être multi-user.target.
-Définir le mode multi-utilisateur avec interface graphique comme cible par défaut :
-$ sudo systemctl set-default graphical.targetRedémarrer le système pour vérifier :
-$ sudo rebootExercice 2 : Création et affichage de variables Déclarer une variable nom :">
+    <meta name="description" content="Solution des exercices Exercice 1 : Niveaux d’exécution Modifier le niveau d’exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique. $ sudo systemctl set-default multi-userRedémarrer la VM pour appliquer les changements à l’aide de la commande shutdown -r now. $ sudo shutdown -r nowAprès le redémarrage, se connecter à votre VM . Vérifier que l’interface graphique ne démarre pas. Utiliser la commande systemctl pour connaître le niveau d’exécution actuel. $ systemctl get-defaultRétablir le mode graphique par défaut. N’oubliez pas de redémarrer la VM pour que les changements soient pris en compte. $ sudo systemctl set-default graphicalExercice 2 : Caractères génériques et commande find Aller dans le répertoire /etc. Notez qu’il est demandé de ne pas se déplacer pour le reste de cet exercice. $ cd /etcUtiliser la commande find pour rechercher les fichiers dont le nom commence par la lettre r dans le répertoire courant. $ find . -name &#34;r*&#34;Utiliser la commande find pour rechercher les fichiers contenant la chaîne rc dans le répertoire courant. $ find . -name &#34;*rc*&#34;Utiliser la commande find pour rechercher les fichiers dont le nom comporte exactement trois caractères sur l’ensemble du système de fichiers (à partir de la racine). $ find / -name &#34;???&#34;Exercice 3 : Expansion d’accolades et boucle for ImportantAssurez-vous d’être revenu dans votre répertoire personnel avant de commencer cet exercice.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Atelier 3 :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Solution des exercices Exercice 1 : Manipuler les cibles (niveaux d’exécution) Passer en mode multi-utilisateur sans interface graphique :
-$ sudo systemctl isolate multi-user.targetVérifier que vous êtes en mode multi-utilisateur sans interface graphique :
-$ systemctl get-defaultLa sortie devrait être multi-user.target.
-Définir le mode multi-utilisateur avec interface graphique comme cible par défaut :
-$ sudo systemctl set-default graphical.targetRedémarrer le système pour vérifier :
-$ sudo rebootExercice 2 : Création et affichage de variables Déclarer une variable nom :">
+    <meta name="twitter:description" content="Solution des exercices Exercice 1 : Niveaux d’exécution Modifier le niveau d’exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique. $ sudo systemctl set-default multi-userRedémarrer la VM pour appliquer les changements à l’aide de la commande shutdown -r now. $ sudo shutdown -r nowAprès le redémarrage, se connecter à votre VM . Vérifier que l’interface graphique ne démarre pas. Utiliser la commande systemctl pour connaître le niveau d’exécution actuel. $ systemctl get-defaultRétablir le mode graphique par défaut. N’oubliez pas de redémarrer la VM pour que les changements soient pris en compte. $ sudo systemctl set-default graphicalExercice 2 : Caractères génériques et commande find Aller dans le répertoire /etc. Notez qu’il est demandé de ne pas se déplacer pour le reste de cet exercice. $ cd /etcUtiliser la commande find pour rechercher les fichiers dont le nom commence par la lettre r dans le répertoire courant. $ find . -name &#34;r*&#34;Utiliser la commande find pour rechercher les fichiers contenant la chaîne rc dans le répertoire courant. $ find . -name &#34;*rc*&#34;Utiliser la commande find pour rechercher les fichiers dont le nom comporte exactement trois caractères sur l’ensemble du système de fichiers (à partir de la racine). $ find / -name &#34;???&#34;Exercice 3 : Expansion d’accolades et boucle for ImportantAssurez-vous d’être revenu dans votre répertoire personnel avant de commencer cet exercice.">
     <meta property="og:url" content="http://localhost:1313/solutions/semaine3/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="Atelier 3 :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Solution des exercices Exercice 1 : Manipuler les cibles (niveaux d’exécution) Passer en mode multi-utilisateur sans interface graphique :
-$ sudo systemctl isolate multi-user.targetVérifier que vous êtes en mode multi-utilisateur sans interface graphique :
-$ systemctl get-defaultLa sortie devrait être multi-user.target.
-Définir le mode multi-utilisateur avec interface graphique comme cible par défaut :
-$ sudo systemctl set-default graphical.targetRedémarrer le système pour vérifier :
-$ sudo rebootExercice 2 : Création et affichage de variables Déclarer une variable nom :">
+    <meta property="og:description" content="Solution des exercices Exercice 1 : Niveaux d’exécution Modifier le niveau d’exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique. $ sudo systemctl set-default multi-userRedémarrer la VM pour appliquer les changements à l’aide de la commande shutdown -r now. $ sudo shutdown -r nowAprès le redémarrage, se connecter à votre VM . Vérifier que l’interface graphique ne démarre pas. Utiliser la commande systemctl pour connaître le niveau d’exécution actuel. $ systemctl get-defaultRétablir le mode graphique par défaut. N’oubliez pas de redémarrer la VM pour que les changements soient pris en compte. $ sudo systemctl set-default graphicalExercice 2 : Caractères génériques et commande find Aller dans le répertoire /etc. Notez qu’il est demandé de ne pas se déplacer pour le reste de cet exercice. $ cd /etcUtiliser la commande find pour rechercher les fichiers dont le nom commence par la lettre r dans le répertoire courant. $ find . -name &#34;r*&#34;Utiliser la commande find pour rechercher les fichiers contenant la chaîne rc dans le répertoire courant. $ find . -name &#34;*rc*&#34;Utiliser la commande find pour rechercher les fichiers dont le nom comporte exactement trois caractères sur l’ensemble du système de fichiers (à partir de la racine). $ find / -name &#34;???&#34;Exercice 3 : Expansion d’accolades et boucle for ImportantAssurez-vous d’être revenu dans votre répertoire personnel avant de commencer cet exercice.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="Atelier 3 :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Solution des exercices Exercice 1 : Manipuler les cibles (niveaux d’exécution) Passer en mode multi-utilisateur sans interface graphique :
-$ sudo systemctl isolate multi-user.targetVérifier que vous êtes en mode multi-utilisateur sans interface graphique :
-$ systemctl get-defaultLa sortie devrait être multi-user.target.
-Définir le mode multi-utilisateur avec interface graphique comme cible par défaut :
-$ sudo systemctl set-default graphical.targetRedémarrer le système pour vérifier :
-$ sudo rebootExercice 2 : Création et affichage de variables Déclarer une variable nom :">
-    <meta itemprop="wordCount" content="393">
+    <meta itemprop="description" content="Solution des exercices Exercice 1 : Niveaux d’exécution Modifier le niveau d’exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique. $ sudo systemctl set-default multi-userRedémarrer la VM pour appliquer les changements à l’aide de la commande shutdown -r now. $ sudo shutdown -r nowAprès le redémarrage, se connecter à votre VM . Vérifier que l’interface graphique ne démarre pas. Utiliser la commande systemctl pour connaître le niveau d’exécution actuel. $ systemctl get-defaultRétablir le mode graphique par défaut. N’oubliez pas de redémarrer la VM pour que les changements soient pris en compte. $ sudo systemctl set-default graphicalExercice 2 : Caractères génériques et commande find Aller dans le répertoire /etc. Notez qu’il est demandé de ne pas se déplacer pour le reste de cet exercice. $ cd /etcUtiliser la commande find pour rechercher les fichiers dont le nom commence par la lettre r dans le répertoire courant. $ find . -name &#34;r*&#34;Utiliser la commande find pour rechercher les fichiers contenant la chaîne rc dans le répertoire courant. $ find . -name &#34;*rc*&#34;Utiliser la commande find pour rechercher les fichiers dont le nom comporte exactement trois caractères sur l’ensemble du système de fichiers (à partir de la racine). $ find / -name &#34;???&#34;Exercice 3 : Expansion d’accolades et boucle for ImportantAssurez-vous d’être revenu dans votre répertoire personnel avant de commencer cet exercice.">
+    <meta itemprop="wordCount" content="347">
     <title>Atelier 3 :: 420-ZG4-MO LINUX</title>
     <link href="/solutions/semaine3/index.xml" rel="alternate" type="application/rss+xml" title="Atelier 3 :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1738283040" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738283040" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1738283040" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738283040" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1738283040" rel="stylesheet">
-    <link href="/css/theme.css?1738283040" rel="stylesheet">
-    <link href="/css/format-html.css?1738283040" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1738440084" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738440084" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1738440084" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738440084" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1738440084" rel="stylesheet">
+    <link href="/css/theme.css?1738440084" rel="stylesheet">
+    <link href="/css/format-html.css?1738440084" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -108,12 +88,9 @@ $ sudo rebootExercice 2 : Création et affichage de variables Déclarer une var
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#exercice-1--manipuler-les-cibles-niveaux-dexécution">Exercice 1 : Manipuler les cibles (niveaux d&rsquo;exécution)</a></li>
-    <li><a href="#exercice-2--création-et-affichage-de-variables">Exercice 2 : Création et affichage de variables</a></li>
-    <li><a href="#exercice-3--capturer-une-date-formatée">Exercice 3 : Capturer une date formatée</a></li>
-    <li><a href="#exercice-4--supprimer-une-variable">Exercice 4 : Supprimer une variable</a></li>
-    <li><a href="#exercice-5--expansion-de-variables-et-daccolades">Exercice 5 : Expansion de variables et d&rsquo;accolades</a></li>
-    <li><a href="#exercice-6--expansion-daccolade-et-boucle-for">Exercice 6 : Expansion d’accolade et boucle for</a></li>
+    <li><a href="#exercice-1--niveaux-dexécution">Exercice 1 : Niveaux d&rsquo;exécution</a></li>
+    <li><a href="#exercice-2--caractères-génériques-et-commande-find">Exercice 2 : Caractères génériques et commande <em>find</em></a></li>
+    <li><a href="#exercice-3--expansion-daccolades-et-boucle-for">Exercice 3 : Expansion d&rsquo;accolades et boucle <em>for</em></a></li>
   </ul>
 </nav>
                 </div>
@@ -151,132 +128,73 @@ $ sudo rebootExercice 2 : Création et affichage de variables Déclarer une var
 <h1 id="atelier-3">Atelier 3</h1>
 
 <h1 id="solution-des-exercices">Solution des exercices</h1>
-<h2 id="exercice-1--manipuler-les-cibles-niveaux-dexécution">Exercice 1 : Manipuler les cibles (niveaux d&rsquo;exécution)</h2>
+<hr>
+<h2 id="exercice-1--niveaux-dexécution">Exercice 1 : Niveaux d&rsquo;exécution</h2>
 <ol>
-<li>
-<p><strong>Passer en mode multi-utilisateur sans interface graphique :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo systemctl isolate multi-user.target</span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Vérifier que vous êtes en mode multi-utilisateur sans interface graphique :</strong></p>
+<li>Modifier le niveau d&rsquo;exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique.</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo systemctl set-default multi-user</span></span></code></pre></div>
+<ol start="2">
+<li>Redémarrer la VM pour appliquer les changements à l&rsquo;aide de la commande <code>shutdown -r now</code>.</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo shutdown -r now</span></span></code></pre></div>
+<ol start="3">
+<li>Après le redémarrage, se connecter à votre VM . Vérifier que l&rsquo;interface graphique ne démarre pas. Utiliser la commande <code>systemctl</code> pour connaître le niveau d&rsquo;exécution actuel.</li>
+</ol>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ systemctl get-default</span></span></code></pre></div>
-<p>La sortie devrait être <code>multi-user.target</code>.</p>
-</li>
-<li>
-<p><strong>Définir le mode multi-utilisateur avec interface graphique comme cible par défaut :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo systemctl set-default graphical.target</span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Redémarrer le système pour vérifier :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo reboot</span></span></code></pre></div>
-</li>
+<ol start="4">
+<li>Rétablir le mode graphique par défaut. N&rsquo;oubliez pas de redémarrer la VM pour que les changements soient pris en compte.</li>
 </ol>
-<hr>
-<h2 id="exercice-2--création-et-affichage-de-variables">Exercice 2 : Création et affichage de variables</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo systemctl set-default graphical</span></span></code></pre></div>
+<h2 id="exercice-2--caractères-génériques-et-commande-find">Exercice 2 : Caractères génériques et commande <em>find</em></h2>
 <ol>
-<li>
-<p><strong>Déclarer une variable <code>nom</code> :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nom<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;VotrePrénom&#34;</span></span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Afficher la valeur de la variable :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo $nom</span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Essayer d’accéder à la variable sans <code>$</code> :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nom</span></span></code></pre></div>
-<p>La commande retournera une erreur.</p>
-</li>
+<li>Aller dans le répertoire <code>/etc</code>. <strong>Notez qu&rsquo;il est demandé de ne pas se déplacer pour le reste de cet exercice</strong>.</li>
 </ol>
-<hr>
-<h2 id="exercice-3--capturer-une-date-formatée">Exercice 3 : Capturer une date formatée</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd /etc</span></span></code></pre></div>
+<ol start="2">
+<li>Utiliser la commande <code>find</code> pour rechercher les fichiers dont le nom commence par la lettre <code>r</code> dans le répertoire courant.</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find . -name <span style="color:#e6db74">&#34;r*&#34;</span></span></span></code></pre></div>
+<ol start="3">
+<li>Utiliser la commande <code>find</code> pour rechercher les fichiers contenant la chaîne <code>rc</code> dans le répertoire courant.</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find . -name <span style="color:#e6db74">&#34;*rc*&#34;</span></span></span></code></pre></div>
+<ol start="4">
+<li>Utiliser la commande <code>find</code> pour rechercher les fichiers dont le nom comporte exactement trois caractères sur l&rsquo;ensemble du système de fichiers (à partir de la racine).</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name <span style="color:#e6db74">&#34;???&#34;</span></span></span></code></pre></div>
+<h2 id="exercice-3--expansion-daccolades-et-boucle-for">Exercice 3 : Expansion d&rsquo;accolades et boucle <em>for</em></h2>
+
+<details open class=" box cstyle notices orange">
+  <summary class="box-label" tabindex="-1">
+    Important
+  </summary>
+  <div class="box-content">
+<p>Assurez-vous d&rsquo;être revenu dans votre répertoire personnel avant de commencer cet exercice.</p>
+  </div>
+</details>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd ~</span></span></code></pre></div>
 <ol>
-<li>
-<p><strong>Stocker la date actuelle dans une variable :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ date_actuelle<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#34;%Y/%m/%d %H:%M:%S&#34;</span><span style="color:#66d9ef">)</span></span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Afficher la date formatée :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo $date_actuelle</span></span></code></pre></div>
-</li>
+<li>Utiliser l&rsquo;expansion d&rsquo;accolades pour créer l&rsquo;arborescence de dossiers suivante en une seule commande.</li>
 </ol>
-<hr>
-<h2 id="exercice-4--supprimer-une-variable">Exercice 4 : Supprimer une variable</h2>
-<ol>
-<li>
-<p><strong>Déclarer une variable temporaire :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ temp_var<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;temporaire&#34;</span></span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Supprimer la variable avec <code>unset</code> :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ unset temp_var</span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Essayer d’afficher la variable supprimée :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo $temp_var</span></span></code></pre></div>
-</li>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir -p <span style="color:#f92672">{</span>lecon1,lecon2,lecon3<span style="color:#f92672">}</span>/<span style="color:#f92672">{</span>lab1,lab2,lab3<span style="color:#f92672">}</span></span></span></code></pre></div>
+<ol start="2">
+<li>Toujours en utilisant l&rsquo;expansion d&rsquo;accolades, créer un fichier vide nommé <code>priseNote</code> dans chaque répertoire <code>lab</code> en une seule commande.</li>
 </ol>
-<hr>
-<h2 id="exercice-5--expansion-de-variables-et-daccolades">Exercice 5 : Expansion de variables et d&rsquo;accolades</h2>
-<ol>
-<li>
-<p><strong>Créer une variable contenant la liste des fichiers dans <code>/etc</code> :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ variable_etc<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ls /etc<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>$ echo $variable_etc</span></span></code></pre></div>
-<ul>
-<li>Le contenu peut être difficile à lire car tout est affiché sur une seule ligne.</li>
-</ul>
-<p><strong>Exécuter <code>ls</code> sur la variable :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls $variable_etc</span></span></code></pre></div>
-<ul>
-<li>Peut afficher une erreur si des fichiers n&rsquo;existent pas dans le répertoire courant.</li>
-</ul>
-</li>
-<li>
-<p><strong>Trouver les fichiers <code>.conf</code> et stocker dans une variable :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ fichiers_conf<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>find /etc -type f -name <span style="color:#e6db74">&#34;*.conf&#34;</span><span style="color:#66d9ef">)</span></span></span></code></pre></div>
-<p><strong>Exécuter <code>ls</code> sur cette variable :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls $fichiers_conf</span></span></code></pre></div>
-<ul>
-<li>Peut produire une erreur similaire si les chemins complets ne sont pas valides.</li>
-</ul>
-<p><strong>Afficher la taille de chaque fichier <code>.conf</code> :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#66d9ef">for</span> fichier in $fichiers_conf; <span style="color:#66d9ef">do</span> du -sh <span style="color:#e6db74">&#34;</span>$fichier<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">done</span></span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Créer des fichiers avec factorisation :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir test_dir
-</span></span><span style="display:flex;"><span>$ touch test_dir/test<span style="color:#f92672">{</span>1,2,3<span style="color:#f92672">}</span>.<span style="color:#f92672">{</span>txt,doc,tot<span style="color:#f92672">}</span></span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Afficher uniquement les fichiers <code>.txt</code> commençant par <code>test</code> :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls test_dir/test*.txt</span></span></code></pre></div>
-<p><strong>Afficher tous les fichiers <code>.txt</code> et <code>.tot</code> :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls test_dir/*.<span style="color:#f92672">{</span>txt,tot<span style="color:#f92672">}</span></span></span></code></pre></div>
-<p><strong>Afficher tous les fichiers <code>test1</code> :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls test_dir/test1.*</span></span></code></pre></div>
-</li>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ touch <span style="color:#f92672">{</span>lecon1,lecon2,lecon3<span style="color:#f92672">}</span>/<span style="color:#f92672">{</span>lab1,lab2,lab3<span style="color:#f92672">}</span>/priseNote</span></span></code></pre></div>
+<ol start="3">
+<li>Utiliser une boucle <code>for</code> pour renommer tous les fichiers <code>priseNote</code> en <code>priseNote.txt</code>.</li>
 </ol>
-<hr>
-<h2 id="exercice-6--expansion-daccolade-et-boucle-for">Exercice 6 : Expansion d’accolade et boucle for</h2>
-<ol>
-<li>
-<p><strong>Créer l&rsquo;arborescence avec expansion d’accolade :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir -p coursLinux/semaine<span style="color:#f92672">{</span>1..5<span style="color:#f92672">}</span>/<span style="color:#f92672">{</span>lab,lecon<span style="color:#f92672">}</span></span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Créer un fichier <code>priseNote</code> dans chaque répertoire <code>lab</code> :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ touch coursLinux/semaine<span style="color:#f92672">{</span>1..5<span style="color:#f92672">}</span>/lab/priseNote</span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Renommer <code>priseNote</code> en <code>priseNote.txt</code> :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#66d9ef">for</span> fichier in coursLinux/semaine<span style="color:#f92672">{</span>1..5<span style="color:#f92672">}</span>/lab/priseNote; <span style="color:#66d9ef">do</span> mv <span style="color:#e6db74">&#34;</span>$fichier<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>fichier<span style="color:#e6db74">}</span><span style="color:#e6db74">.txt&#34;</span>; <span style="color:#66d9ef">done</span></span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Déplacer <code>priseNote.txt</code> vers le répertoire <code>lecon</code> correspondant :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#66d9ef">for</span> semaine in coursLinux/semaine<span style="color:#f92672">{</span>1..5<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span> mv <span style="color:#e6db74">&#34;</span>$semaine<span style="color:#e6db74">/lab/priseNote.txt&#34;</span> <span style="color:#e6db74">&#34;</span>$semaine<span style="color:#e6db74">/lecon/&#34;</span>; <span style="color:#66d9ef">done</span></span></span></code></pre></div>
-</li>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>lecon1,lecon2,lecon3<span style="color:#f92672">}</span>/<span style="color:#f92672">{</span>lab1,lab2,lab3<span style="color:#f92672">}</span>/priseNote; <span style="color:#66d9ef">do</span> mv <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>i%.*<span style="color:#e6db74">}</span><span style="color:#e6db74">.txt&#34;</span>; <span style="color:#66d9ef">done</span></span></span></code></pre></div>
+<ol start="4">
+<li>Utiliser une boucle <code>for</code> pour déplacer les fichiers <code>priseNote.txt</code> des répertoires <code>lab</code> vers les répertoires <code>lecon</code> correspondants.<br>
+<strong>NB</strong> : Écrit sur plusieurs lignes, par soucis de lisibilité.</li>
 </ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>lecon1,lecon2,lecon3<span style="color:#f92672">}</span>/<span style="color:#f92672">{</span>lab1,lab2,lab3<span style="color:#f92672">}</span>/priseNote.txt; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  dossier_destination<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>i%/*<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>  <span style="color:#75715e"># Récupère le chemin du dossier parent</span>
+</span></span><span style="display:flex;"><span>  dossier_destination<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>dossier_destination%/lab*<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#75715e"># Supprime /lab*</span>
+</span></span><span style="display:flex;"><span>  mv <span style="color:#e6db74">&#34;</span>$i<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$dossier_destination<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
 
   <footer class="footline">
   </footer>
@@ -293,7 +211,7 @@ $ sudo rebootExercice 2 : Création et affichage de variables Déclarer une var
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1738283040";
+          window.index_js_url="/searchindex.en.js?1738440084";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -306,12 +224,12 @@ $ sudo rebootExercice 2 : Création et affichage de variables Déclarer une var
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1738283040" defer></script>
-        <script src="/js/lunr/lunr.min.js?1738283040" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1738283040" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1738283040" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1738283040" defer></script>
-        <script src="/js/search.js?1738283040" defer></script>
+        <script src="/js/auto-complete.js?1738440084" defer></script>
+        <script src="/js/lunr/lunr.min.js?1738440084" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1738440084" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1738440084" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1738440084" defer></script>
+        <script src="/js/search.js?1738440084" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -390,8 +308,8 @@ $ sudo rebootExercice 2 : Création et affichage de variables Déclarer une var
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1738283040" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1738283040" defer></script>
-    <script src="/js/theme.js?1738283040" defer></script>
+    <script src="/js/clipboard.min.js?1738440084" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1738440084" defer></script>
+    <script src="/js/theme.js?1738440084" defer></script>
   </body>
 </html>

@@ -1,0 +1,256 @@
++++
+title = "OLD Processus de démarrage, cibles, variables et boucle For"
+weight = 31
++++
+
+## Le processus de démarrage d'un système Linux
+
+Le processus de démarrage d'un système Linux se déroule en plusieurs étapes, impliquant différents composants du système. Voici un résumé clair et ordonné de ces étapes :
+
+![Schema séquence](boot_process.jpeg)
+
+1. **Activation du BIOS/UEFI**
+   - Lorsque vous allumez votre ordinateur, le **BIOS** (*Basic Input Output System*) ou l'**UEFI** (*Unified Extensible Firmware Interface*) s'active.
+   - Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT).
+
+2. **Chargement du chargeur d'amorçage**
+   - Le **MBR** (*Master Boot Record*) définit le chargeur de démarrage, comme **GRUB** (*GRand Unified Bootloader*).
+   - **GRUB** affiche un menu permettant de choisir le système à démarrer.
+
+3. **Chargement du noyau Linux (*Kernel*)**
+   - Après la sélection de Linux, **GRUB** charge le noyau (kernel), qui est le cœur du système.
+   - Le noyau initialise les pilotes, périphériques et la gestion de la mémoire.
+   - Il charge aussi un disque temporaire (`initrd` ou `initramfs`) contenant les modules nécessaires au démarrage.
+
+4. **Lancement du processus d'initialisation (`init` ou `systemd`)**
+   - Le noyau lance le premier processus du système : `init` ou `systemd` (selon la distribution Linux).
+   - Ce processus démarre les services et scripts de configuration (réseau, interface graphique, gestion des utilisateurs, etc.).
+
+5. **Affichage de l'écran de connexion**
+   - Une fois les services chargés, l'écran de connexion s'affiche, demandant un nom d'utilisateur et un mot de passe.
+
+6. **Utilisation du système**
+   - Après authentification, vous pouvez utiliser Linux, lancer des applications et exécuter des commandes.
+   - Vous pouvez aussi arrêter ou redémarrer votre système avec `shutdown`, `reboot` ou `halt`.
+
+---
+
+## Les niveaux d'exécution (*Runlevels*) et cibles (*Targets*)
+
+Autrefois, Linux utilisait des niveaux d'exécution (`runlevels`), qui définissaient les services actifs selon le mode de fonctionnement.
+Avec `systemd`, ces niveaux sont remplacés par des **cibles** (`targets`). Cependant, la correspondance avec les anciens niveaux est conservée.
+
+| Niveau d'exécution | Cible `systemd` | Description | Commande pour modifier temporairement |
+|----------------|----------------|-------------|-------------------------------------|
+| 0 | `poweroff` | Arrêt du système | `$ systemctl isolate poweroff` |
+| 1 | `rescue` | Mode maintenance (utilisateur unique) | `$ systemctl isolate rescue` |
+| 3 | `multi-user` | Mode multi-utilisateur sans interface graphique | `$ systemctl isolate multi-user` |
+| 5 | `graphical` | Mode multi-utilisateur avec interface graphique | `$ systemctl isolate graphical` |
+| 6 | `reboot` | Redémarrage du système | `$ systemctl isolate reboot` |
+
+### Commandes utiles
+
+- **Afficher le niveau d'exécution actuel** :
+  ```bash
+  $ who -r
+  $ runlevel
+  ```
+- **Afficher la cible par défaut** :
+  ```bash
+  $ systemctl get-default
+  ```
+- **Modifier la cible par défaut** (ex. mode multi-utilisateur sans interface graphique) :
+  ```bash
+  $ systemctl set-default multi-user
+  ```
+- **Aller directement au niveau d'exécution par défaut** :
+  ```bash
+  $ systemctl default
+  $ systemctl isolate default
+  ```
+
+---
+
+## Variables et substitutions de commandes en Bash
+
+### Variables en Bash
+
+Une variable en Bash est une donnée stockée sous un nom.
+
+- **Déclaration et affectation d'une variable** :
+  ```bash
+  $ ma_variable="Bonjour"
+  ```
+- **Afficher le contenu d'une variable** :
+  ```bash
+  $ echo $ma_variable
+  ```
+- **Quelques exemples de variables** :
+  ```bash
+  $ ma_variable=true
+  $ ma_variable=42
+  $ ma_variable="Ceci est un texte"
+  ```
+
+### Substitution de commande
+
+Permet d'utiliser le résultat d'une commande comme valeur.
+
+- **Syntaxe** :
+  ```bash
+  $(commande)
+  ```
+- **Exemples** :
+  ```bash
+  $ date_var=$(date)
+  $ echo "La date actuelle est : $date_var"
+  ```
+
+### Stocker le résultat d'une commande dans une variable
+
+- **Exemple** :
+  ```bash
+  $ fichiers=$(ls /etc)
+  $ echo $fichiers  # Tout s'affiche sur une seule ligne
+  ```
+
+---
+
+## Recherche avec `find`
+
+La commande `find` permet de rechercher des fichiers et répertoires selon divers critères comme le nom, la taille ou la date de modification.
+
+### Syntaxe de base
+
+```bash
+find [chemin] [options] [expression]
+```
+
+### Exemples d'utilisation
+
+- **Rechercher un fichier par nom** :
+  ```bash
+  find /home -name "mon_fichier.txt"
+  ```
+- **Rechercher un fichier sans distinction de casse** :
+  ```bash
+  find /home -iname "mon_fichier.txt"
+  ```
+- **Rechercher des fichiers par extension** :
+  ```bash
+  find /var/log -name "*.log"
+  ```
+- **Rechercher des fichiers modifiés depuis 7 jours** :
+  ```bash
+  find /etc -type f -mtime -7
+  ```
+- **Rechercher des fichiers de plus de 10 Mo** :
+  ```bash
+  find /home -size +10M
+  ```
+
+---
+
+## Expansion et protection des commandes
+
+L'expansion en Bash est un mécanisme permettant de transformer une commande avant son exécution. Cela permet d'économiser du temps et d'éviter les répétitions inutiles. Cependant, certaines expansions peuvent causer des erreurs si elles ne sont pas bien contrôlées. C'est pourquoi il est important de savoir comment protéger certaines commandes.
+
+### Expansion de noms de fichiers
+
+L'expansion de noms de fichiers permet de sélectionner plusieurs fichiers selon un motif donné.
+
+- **Le caractère `*` remplace n'importe quelle chaîne de caractères** :
+  ```bash
+  $ ls *.txt  # Liste tous les fichiers .txt
+  ```
+- **Le caractère `?` remplace un seul caractère** :
+  ```bash
+  $ ls t?t?.txt  # Trouve les fichiers ayant exactement 4 lettres, dont la dernière est "t"
+  ```
+
+### Expansion d'accolades {}
+
+L'expansion d'accolades permet de créer rapidement plusieurs fichiers ou d'exécuter des commandes avec des variations.
+
+- **Création de fichiers multiples** :
+  ```bash
+  $ touch fichier{1..5}.txt  # Crée fichier1.txt, fichier2.txt, ..., fichier5.txt
+  ```
+- **Création de fichiers avec différents suffixes** :
+  ```bash
+  $ touch rapport{a,b,c}.pdf  # Crée rapporta.pdf, rapportb.pdf, rapportc.pdf
+  ```
+
+### Protection contre l'expansion
+
+L'expansion automatique peut parfois provoquer des erreurs si elle est appliquée involontairement. Il existe plusieurs méthodes pour empêcher cela.
+
+- **Protéger un caractère avec `\`** :
+  ```bash
+  $ echo "Je veux afficher \* et \$x"
+  ```
+- **Utiliser les guillemets simples pour empêcher toute expansion** :
+  ```bash
+  $ echo 'Je veux afficher * et afficher $x'
+  ```
+- **Utiliser les guillemets doubles pour permettre seulement l'expansion de variables** :
+  ```bash
+  $ echo "La variable x vaut $x"
+  ```
+
+---
+
+## Boucle `for` en Bash
+
+La boucle `for` permet d'exécuter une commande plusieurs fois en parcourant une liste de valeurs. Elle permet d'automatiser des tâches répétitives en Bash.
+
+### Syntaxe de base
+
+```bash
+for variable in liste
+  do
+    commande
+  done
+```
+
+### Exemples d'utilisation
+
+- **Parcourir une liste de mots** :
+  ```bash
+  for mot in rouge vert bleu
+  do
+    echo "Couleur : $mot"
+  done
+  ```
+
+- **Parcourir une liste de fichiers** :
+  ```bash
+  for fichier in *.txt
+  do
+    echo "Traitement de : $fichier"
+  done
+  ```
+
+- **Boucle sur une plage de nombres** :
+  ```bash
+  for i in {1..5}
+  do
+    echo "Itération : $i"
+  done
+  ```
+
+- **Boucle avec `seq`** :
+  ```bash
+  for i in $(seq 1 5)
+  do
+    echo "Numéro : $i"
+  done
+  ```
+
+- **Boucle avec `C`-style syntaxe** :
+  ```bash
+  for ((i=1; i<=5; i++))
+  do
+    echo "Compteur : $i"
+  done
+  ```

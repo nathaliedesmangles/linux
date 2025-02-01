@@ -5,27 +5,31 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Objectifs de l’atelier Se familiariser avec les cibles (niveaux d’exécution). Comprendre les bases des variables utilisateur en Bash. Apprendre à manipuler et utiliser des variables pour stocker des résultats de commandes. Atelier Exercice 1 : Manipuler les cibles (niveaux d’exécution) Utiliser la commande systemctl pour passer en mode multi-utilisateur sans interface graphique Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Définir le mode multi-utilisateur avec interface graphique comme cible par défaut. Redémarrer votre système pour vérifier que le mode graphique est bien la cible par défaut. Exercice 2 : Création et affichage de variables Déclarez une variable nom avec votre prénom. Affichez la valeur de la variable. Essayez d’accéder à la variable sans $. Notez la différence. Exercice 3 : Capturer une date formatée Stockez la date actuelle dans une variable date_actuelle avec le format AAAA/MM/JJ hh:mm:ss. Affichez la date formatée. Exercice 4 : Supprimer une variable Déclarez une variable temporaire. Supprimez la variable avec unset. Essayez d’afficher la variable supprimée. Exercice 5: Expansion de variables et d’accolades Créer une variable variable_etc contenant la liste des fichiers du répertoire /etc et l’afficher. Son contenu est-il facile à lire ? Que se passe-t-il si vous exécutez ls suivi du nom de votre variable ? Pourquoi ? Sachant que beaucoup de fichiers de configuration se terminent par .conf, les trouver et stocker leur nom dans une variable. Que se passe-t-il si vous exécutez ls suivi du nom de votre variable? Seriez-vous capable d’afficher la taille de chacun des fichiers de configuration ? La commande du -sh &lt;fichier&gt; permet d’afficher la taille de fichier. Créer un répertoire dans lequel vous créerez les fichiers suivants à l’aide de la commande touch en utilisant la syntaxe permettant de factoriser une commande: test1.txt, test2.txt, test3.txt, test1.doc, test2.doc, test3.doc, test1.tot, test2.tot, test3.tot Grâce aux caractères génériques, n’afficher que les fichiers .txt qui commencent par test (plusieurs possibilités existent, essayez de les trouver). a. Tous les fichiers .txt et .tot`. b. Tous les fichiers test1 Exercice 6: Expansion d’accolade et boucle for En faisant cet exercice, vérifiez pour cette question le résultat de vos commandes en utilisant la commande tree. La figure ci-dessous montre un exemple d’utilisation de cette commande. Assurez-vous d’être revenu dans votre répertoire personnel À l’aide d’une seule commande et en utilisant l’expansion d’accolade, créez l’arborescence des dossiers suivante :">
+    <meta name="description" content="Objectifs de l’atelier Se familiariser avec les cibles (niveaux d’exécution). Comprendre les bases des variables utilisateur en Bash. Apprendre à manipuler et utiliser des variables pour stocker des résultats de commandes. Atelier Exercice 1 : Niveaux d’exécution Modifier le niveau d’exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique.
+Redémarrer la VM pour appliquer les changements à l’aide de la commande shutdown -r now.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="ATELIER #3: Cibles et variables utilisateurs et for :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Objectifs de l’atelier Se familiariser avec les cibles (niveaux d’exécution). Comprendre les bases des variables utilisateur en Bash. Apprendre à manipuler et utiliser des variables pour stocker des résultats de commandes. Atelier Exercice 1 : Manipuler les cibles (niveaux d’exécution) Utiliser la commande systemctl pour passer en mode multi-utilisateur sans interface graphique Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Définir le mode multi-utilisateur avec interface graphique comme cible par défaut. Redémarrer votre système pour vérifier que le mode graphique est bien la cible par défaut. Exercice 2 : Création et affichage de variables Déclarez une variable nom avec votre prénom. Affichez la valeur de la variable. Essayez d’accéder à la variable sans $. Notez la différence. Exercice 3 : Capturer une date formatée Stockez la date actuelle dans une variable date_actuelle avec le format AAAA/MM/JJ hh:mm:ss. Affichez la date formatée. Exercice 4 : Supprimer une variable Déclarez une variable temporaire. Supprimez la variable avec unset. Essayez d’afficher la variable supprimée. Exercice 5: Expansion de variables et d’accolades Créer une variable variable_etc contenant la liste des fichiers du répertoire /etc et l’afficher. Son contenu est-il facile à lire ? Que se passe-t-il si vous exécutez ls suivi du nom de votre variable ? Pourquoi ? Sachant que beaucoup de fichiers de configuration se terminent par .conf, les trouver et stocker leur nom dans une variable. Que se passe-t-il si vous exécutez ls suivi du nom de votre variable? Seriez-vous capable d’afficher la taille de chacun des fichiers de configuration ? La commande du -sh &lt;fichier&gt; permet d’afficher la taille de fichier. Créer un répertoire dans lequel vous créerez les fichiers suivants à l’aide de la commande touch en utilisant la syntaxe permettant de factoriser une commande: test1.txt, test2.txt, test3.txt, test1.doc, test2.doc, test3.doc, test1.tot, test2.tot, test3.tot Grâce aux caractères génériques, n’afficher que les fichiers .txt qui commencent par test (plusieurs possibilités existent, essayez de les trouver). a. Tous les fichiers .txt et .tot`. b. Tous les fichiers test1 Exercice 6: Expansion d’accolade et boucle for En faisant cet exercice, vérifiez pour cette question le résultat de vos commandes en utilisant la commande tree. La figure ci-dessous montre un exemple d’utilisation de cette commande. Assurez-vous d’être revenu dans votre répertoire personnel À l’aide d’une seule commande et en utilisant l’expansion d’accolade, créez l’arborescence des dossiers suivante :">
+    <meta name="twitter:description" content="Objectifs de l’atelier Se familiariser avec les cibles (niveaux d’exécution). Comprendre les bases des variables utilisateur en Bash. Apprendre à manipuler et utiliser des variables pour stocker des résultats de commandes. Atelier Exercice 1 : Niveaux d’exécution Modifier le niveau d’exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique.
+Redémarrer la VM pour appliquer les changements à l’aide de la commande shutdown -r now.">
     <meta property="og:url" content="https://example.org/semaine3/atelier/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="ATELIER #3: Cibles et variables utilisateurs et for :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Objectifs de l’atelier Se familiariser avec les cibles (niveaux d’exécution). Comprendre les bases des variables utilisateur en Bash. Apprendre à manipuler et utiliser des variables pour stocker des résultats de commandes. Atelier Exercice 1 : Manipuler les cibles (niveaux d’exécution) Utiliser la commande systemctl pour passer en mode multi-utilisateur sans interface graphique Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Définir le mode multi-utilisateur avec interface graphique comme cible par défaut. Redémarrer votre système pour vérifier que le mode graphique est bien la cible par défaut. Exercice 2 : Création et affichage de variables Déclarez une variable nom avec votre prénom. Affichez la valeur de la variable. Essayez d’accéder à la variable sans $. Notez la différence. Exercice 3 : Capturer une date formatée Stockez la date actuelle dans une variable date_actuelle avec le format AAAA/MM/JJ hh:mm:ss. Affichez la date formatée. Exercice 4 : Supprimer une variable Déclarez une variable temporaire. Supprimez la variable avec unset. Essayez d’afficher la variable supprimée. Exercice 5: Expansion de variables et d’accolades Créer une variable variable_etc contenant la liste des fichiers du répertoire /etc et l’afficher. Son contenu est-il facile à lire ? Que se passe-t-il si vous exécutez ls suivi du nom de votre variable ? Pourquoi ? Sachant que beaucoup de fichiers de configuration se terminent par .conf, les trouver et stocker leur nom dans une variable. Que se passe-t-il si vous exécutez ls suivi du nom de votre variable? Seriez-vous capable d’afficher la taille de chacun des fichiers de configuration ? La commande du -sh &lt;fichier&gt; permet d’afficher la taille de fichier. Créer un répertoire dans lequel vous créerez les fichiers suivants à l’aide de la commande touch en utilisant la syntaxe permettant de factoriser une commande: test1.txt, test2.txt, test3.txt, test1.doc, test2.doc, test3.doc, test1.tot, test2.tot, test3.tot Grâce aux caractères génériques, n’afficher que les fichiers .txt qui commencent par test (plusieurs possibilités existent, essayez de les trouver). a. Tous les fichiers .txt et .tot`. b. Tous les fichiers test1 Exercice 6: Expansion d’accolade et boucle for En faisant cet exercice, vérifiez pour cette question le résultat de vos commandes en utilisant la commande tree. La figure ci-dessous montre un exemple d’utilisation de cette commande. Assurez-vous d’être revenu dans votre répertoire personnel À l’aide d’une seule commande et en utilisant l’expansion d’accolade, créez l’arborescence des dossiers suivante :">
+    <meta property="og:description" content="Objectifs de l’atelier Se familiariser avec les cibles (niveaux d’exécution). Comprendre les bases des variables utilisateur en Bash. Apprendre à manipuler et utiliser des variables pour stocker des résultats de commandes. Atelier Exercice 1 : Niveaux d’exécution Modifier le niveau d’exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique.
+Redémarrer la VM pour appliquer les changements à l’aide de la commande shutdown -r now.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="ATELIER #3: Cibles et variables utilisateurs et for :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Objectifs de l’atelier Se familiariser avec les cibles (niveaux d’exécution). Comprendre les bases des variables utilisateur en Bash. Apprendre à manipuler et utiliser des variables pour stocker des résultats de commandes. Atelier Exercice 1 : Manipuler les cibles (niveaux d’exécution) Utiliser la commande systemctl pour passer en mode multi-utilisateur sans interface graphique Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique. Définir le mode multi-utilisateur avec interface graphique comme cible par défaut. Redémarrer votre système pour vérifier que le mode graphique est bien la cible par défaut. Exercice 2 : Création et affichage de variables Déclarez une variable nom avec votre prénom. Affichez la valeur de la variable. Essayez d’accéder à la variable sans $. Notez la différence. Exercice 3 : Capturer une date formatée Stockez la date actuelle dans une variable date_actuelle avec le format AAAA/MM/JJ hh:mm:ss. Affichez la date formatée. Exercice 4 : Supprimer une variable Déclarez une variable temporaire. Supprimez la variable avec unset. Essayez d’afficher la variable supprimée. Exercice 5: Expansion de variables et d’accolades Créer une variable variable_etc contenant la liste des fichiers du répertoire /etc et l’afficher. Son contenu est-il facile à lire ? Que se passe-t-il si vous exécutez ls suivi du nom de votre variable ? Pourquoi ? Sachant que beaucoup de fichiers de configuration se terminent par .conf, les trouver et stocker leur nom dans une variable. Que se passe-t-il si vous exécutez ls suivi du nom de votre variable? Seriez-vous capable d’afficher la taille de chacun des fichiers de configuration ? La commande du -sh &lt;fichier&gt; permet d’afficher la taille de fichier. Créer un répertoire dans lequel vous créerez les fichiers suivants à l’aide de la commande touch en utilisant la syntaxe permettant de factoriser une commande: test1.txt, test2.txt, test3.txt, test1.doc, test2.doc, test3.doc, test1.tot, test2.tot, test3.tot Grâce aux caractères génériques, n’afficher que les fichiers .txt qui commencent par test (plusieurs possibilités existent, essayez de les trouver). a. Tous les fichiers .txt et .tot`. b. Tous les fichiers test1 Exercice 6: Expansion d’accolade et boucle for En faisant cet exercice, vérifiez pour cette question le résultat de vos commandes en utilisant la commande tree. La figure ci-dessous montre un exemple d’utilisation de cette commande. Assurez-vous d’être revenu dans votre répertoire personnel À l’aide d’une seule commande et en utilisant l’expansion d’accolade, créez l’arborescence des dossiers suivante :">
-    <meta itemprop="wordCount" content="435">
+    <meta itemprop="description" content="Objectifs de l’atelier Se familiariser avec les cibles (niveaux d’exécution). Comprendre les bases des variables utilisateur en Bash. Apprendre à manipuler et utiliser des variables pour stocker des résultats de commandes. Atelier Exercice 1 : Niveaux d’exécution Modifier le niveau d’exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique.
+Redémarrer la VM pour appliquer les changements à l’aide de la commande shutdown -r now.">
+    <meta itemprop="wordCount" content="338">
     <title>ATELIER #3: Cibles et variables utilisateurs et for :: 420-ZG4-MO LINUX</title>
     <link href="/semaine3/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #3: Cibles et variables utilisateurs et for :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1738288557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738288557" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1738288557" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738288557" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1738288557" rel="stylesheet">
-    <link href="/css/theme.min.css?1738288557" rel="stylesheet">
-    <link href="/css/format-html.min.css?1738288557" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1738440133" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738440133" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1738440133" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738440133" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1738440133" rel="stylesheet">
+    <link href="/css/theme.min.css?1738440133" rel="stylesheet">
+    <link href="/css/format-html.min.css?1738440133" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -92,12 +96,9 @@
   </ul>
 
   <ul>
-    <li><a href="#exercice-1--manipuler-les-cibles-niveaux-dexécution">Exercice 1 : Manipuler les cibles (niveaux d&rsquo;exécution)</a></li>
-    <li><a href="#exercice-2--création-et-affichage-de-variables">Exercice 2 : Création et affichage de variables</a></li>
-    <li><a href="#exercice-3--capturer-une-date-formatée">Exercice 3 : Capturer une date formatée</a></li>
-    <li><a href="#exercice-4--supprimer-une-variable">Exercice 4 : Supprimer une variable</a></li>
-    <li><a href="#exercice-5-expansion-de-variables-et-daccolades">Exercice 5: Expansion de variables et d&rsquo;accolades</a></li>
-    <li><a href="#exercice-6-expansion-daccolade-et-boucle-for">Exercice 6: Expansion d’accolade et boucle for</a></li>
+    <li><a href="#exercice-1--niveaux-dexécution">Exercice 1 : Niveaux d&rsquo;exécution</a></li>
+    <li><a href="#exercice-2--caractères-génériques-et-commande-find">Exercice 2 : Caractères génériques et commande <em>find</em></a></li>
+    <li><a href="#exercice-3--expansion-daccolades-et-boucle-for">Exercice 3 : Expansion d&rsquo;accolades et boucle <em>for</em></a></li>
   </ul>
 </nav>
                 </div>
@@ -142,72 +143,80 @@
 </ul>
 <hr>
 <h1 id="atelier">Atelier</h1>
-<h2 id="exercice-1--manipuler-les-cibles-niveaux-dexécution">Exercice 1 : Manipuler les cibles (niveaux d&rsquo;exécution)</h2>
+<h2 id="exercice-1--niveaux-dexécution">Exercice 1 : Niveaux d&rsquo;exécution</h2>
 <ol>
-<li>Utiliser la commande <code>systemctl</code> pour passer en mode multi-utilisateur sans interface graphique</li>
-<li>Vérifier que vous êtes maintenant en mode multi-utilisateur sans interface graphique.</li>
-<li>Définir le mode multi-utilisateur avec interface graphique comme cible par défaut.</li>
-<li>Redémarrer votre système pour vérifier que le mode graphique est bien la cible par défaut.</li>
-</ol>
-<h2 id="exercice-2--création-et-affichage-de-variables">Exercice 2 : Création et affichage de variables</h2>
-<ol>
-<li>Déclarez une variable <code>nom</code> avec votre prénom.</li>
-<li>Affichez la valeur de la variable.</li>
-<li>Essayez d’accéder à la variable sans <code>$</code>.
-<ul>
-<li>Notez la différence.</li>
-</ul>
+<li>
+<p>Modifier le niveau d&rsquo;exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique.</p>
+</li>
+<li>
+<p>Redémarrer la VM pour appliquer les changements à l&rsquo;aide de la commande <code>shutdown -r now</code>.</p>
+</li>
+<li>
+<p>Après le redémarrage, se connecter à votre VM . Vérifier que l&rsquo;interface graphique ne démarre pas. Utiliser la commande <code>systemctl</code> pour connaître le niveau d&rsquo;exécution actuel.</p>
+</li>
+<li>
+<p>Rétablir le mode graphique par défaut. N&rsquo;oubliez pas de redémarrer la VM pour que les changements soient pris en compte.</p>
 </li>
 </ol>
-<h2 id="exercice-3--capturer-une-date-formatée">Exercice 3 : Capturer une date formatée</h2>
+<h2 id="exercice-2--caractères-génériques-et-commande-find">Exercice 2 : Caractères génériques et commande <em>find</em></h2>
 <ol>
-<li>Stockez la date actuelle dans une variable <code>date_actuelle</code> avec le format AAAA/MM/JJ hh:mm:ss.</li>
-<li>Affichez la date formatée.</li>
+<li>
+<p>Aller dans le répertoire <code>/etc</code>. <strong>Notez qu&rsquo;il est demandé de ne pas se déplacer pour le reste de cet exercice</strong>.</p>
+</li>
+<li>
+<p>Utiliser la commande <code>find</code> pour rechercher les fichiers dont le nom commence par la lettre <code>r</code> dans le répertoire courant.</p>
+</li>
+<li>
+<p>Utiliser la commande <code>find</code> pour rechercher les fichiers contenant la chaîne <code>rc</code> dans le répertoire courant.</p>
+</li>
+<li>
+<p>Utiliser la commande <code>find</code> pour rechercher les fichiers dont le nom comporte exactement trois caractères sur l&rsquo;ensemble du système de fichiers (à partir de la racine).</p>
+</li>
 </ol>
-<h2 id="exercice-4--supprimer-une-variable">Exercice 4 : Supprimer une variable</h2>
+<h2 id="exercice-3--expansion-daccolades-et-boucle-for">Exercice 3 : Expansion d&rsquo;accolades et boucle <em>for</em></h2>
+
+<details open class=" box cstyle notices orange">
+  <summary class="box-label" tabindex="-1">
+    Important
+  </summary>
+  <div class="box-content">
+<p>Assurez-vous d&rsquo;être revenu dans votre répertoire personnel avant de commencer cet exercice.</p>
+  </div>
+</details>
 <ol>
-<li>Déclarez une variable temporaire.</li>
-<li>Supprimez la variable avec <code>unset</code>.</li>
-<li>Essayez d’afficher la variable supprimée.</li>
+<li>Utiliser l&rsquo;expansion d&rsquo;accolades pour créer l&rsquo;arborescence de dossiers suivante en une seule commande.</li>
 </ol>
-<h2 id="exercice-5-expansion-de-variables-et-daccolades">Exercice 5: Expansion de variables et d&rsquo;accolades</h2>
-<ol>
-<li>Créer une variable <code>variable_etc</code> contenant la liste des fichiers du répertoire <code>/etc</code> et l&rsquo;afficher.</li>
-</ol>
-<ul>
-<li>Son contenu est-il facile à lire ?</li>
-<li>Que se passe-t-il si vous exécutez <code>ls</code> suivi du nom de votre variable ? Pourquoi ?</li>
-</ul>
+<p><a href="#R-image-fad8593cb8b9e817d97c5ebf79394405" class="lightbox-link"><img alt="structure" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine3/atelier/atelier3.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fad8593cb8b9e817d97c5ebf79394405"><img alt="structure" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine3/atelier/atelier3.png"></a></p>
 <ol start="2">
-<li>Sachant que beaucoup de fichiers de configuration se terminent par <code>.conf</code>, les trouver et stocker leur nom dans une variable.</li>
+<li>
+<p>Toujours en utilisant l&rsquo;expansion d&rsquo;accolades, créer un fichier vide nommé <code>priseNote</code> dans chaque répertoire <code>lab</code> en une seule commande</p>
+</li>
+<li>
+<p>Utiliser une boucle <code>for</code> pour renommer tous les fichiers <code>priseNote</code> en <code>priseNote.txt</code>.</p>
+</li>
+<li>
+<p>Utiliser une boucle <code>for</code> pour déplacer les fichiers <code>priseNote.txt</code> des répertoires <code>lab</code> vers les répertoires <code>lecon</code> correspondants.</p>
+</li>
 </ol>
-<ul>
-<li>Que se passe-t-il si vous exécutez <code>ls</code> suivi du nom de votre variable?</li>
-<li>Seriez-vous capable d’afficher la taille de chacun des fichiers de configuration ? La commande du <code>-sh &lt;fichier&gt;</code> permet d’afficher la taille de fichier.</li>
-</ul>
-<ol start="3">
-<li>Créer un répertoire dans lequel vous créerez les fichiers suivants à l’aide de la commande <code>touch</code> en utilisant la syntaxe permettant de factoriser une commande:
-<code>test1.txt, test2.txt, test3.txt, test1.doc, test2.doc, test3.doc, test1.tot, test2.tot, test3.tot</code></li>
-<li>Grâce aux caractères génériques, n’afficher que les fichiers <code>.txt</code> qui commencent par <code>test</code> (plusieurs possibilités existent, essayez de les trouver).
-a. Tous les fichiers <code>.txt et </code>.tot`.
-b. Tous les fichiers test1</li>
-</ol>
-<h2 id="exercice-6-expansion-daccolade-et-boucle-for">Exercice 6: Expansion d’accolade et boucle for</h2>
-<ul>
-<li>En faisant cet exercice, vérifiez pour cette question le résultat de vos commandes en utilisant la commande <code>tree</code>.</li>
-<li>La figure ci-dessous montre un exemple d’utilisation de cette commande.</li>
-<li>Assurez-vous d’être revenu dans votre répertoire personnel</li>
-</ul>
-<ol>
-<li>À l’aide d’une seule commande et en utilisant l’expansion d’accolade, créez l’arborescence des dossiers suivante :</li>
-</ol>
-<p><a href="#R-image-f2bb1ef9b7b6a8c01d85fda468f2da75" class="lightbox-link"><img alt="structure" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine3/atelier/atelier3.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f2bb1ef9b7b6a8c01d85fda468f2da75"><img alt="structure" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine3/atelier/atelier3.png"></a></p>
-<ol start="2">
-<li>À l’aide d’une seule commande et en utilisant l’expansion d’accolade, créer le fichier vide <strong>priseNote</strong> dans chaque répertoire <strong>lab</strong>.</li>
-<li>À l’aide d’une boucle for, renommer les fichier <strong>priseNote</strong> en <strong>priseNote.txt</strong>.</li>
-<li>À l’aide d’une boucle for, déplacer les fichiers <strong>priseNote.txt</strong> du répertoire <strong>lab</strong> vers le répertoire <strong>leçon</strong> correspondant.</li>
-</ol>
+
+<details open class=" box cstyle notices primary">
+  <summary class="box-label" tabindex="-1">
+    Vérification des résultats
+  </summary>
+  <div class="box-content">
+<p>Utilisez la commande <code>tree</code> pour vérifier que l&rsquo;arborescence des dossiers et les fichiers ont été créés et déplacés correctement. Par exemple :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ tree lecon1</span></span></code></pre></div>
+<p>La structure qui devrait s&rsquo;afficher :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>lecon1
+├── lab1
+│   └── priseNote.txt
+├── lab2
+│   └── priseNote.txt
+└── lab3
+    └── priseNote.txt</code></pre></div>
+  </div>
+</details>
 
   <footer class="footline">
   </footer>
@@ -224,7 +233,7 @@ b. Tous les fichiers test1</li>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1738288557";
+          window.index_js_url="/searchindex.en.js?1738440133";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -237,12 +246,12 @@ b. Tous les fichiers test1</li>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1738288557" defer></script>
-        <script src="/js/lunr/lunr.min.js?1738288557" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1738288557" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1738288557" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1738288557" defer></script>
-        <script src="/js/search.js?1738288557" defer></script>
+        <script src="/js/auto-complete.js?1738440133" defer></script>
+        <script src="/js/lunr/lunr.min.js?1738440133" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1738440133" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1738440133" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1738440133" defer></script>
+        <script src="/js/search.js?1738440133" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -262,7 +271,7 @@ b. Tous les fichiers test1</li>
             <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim et les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions de ateliers</a></li>
+            <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions de ateliers</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
           </ul>
         </div>
     
@@ -316,8 +325,8 @@ b. Tous les fichiers test1</li>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1738288557" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1738288557" defer></script>
-    <script src="/js/theme.js?1738288557" defer></script>
+    <script src="/js/clipboard.min.js?1738440133" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1738440133" defer></script>
+    <script src="/js/theme.js?1738440133" defer></script>
   </body>
 </html>
