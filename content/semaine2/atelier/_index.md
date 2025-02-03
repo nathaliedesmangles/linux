@@ -86,7 +86,7 @@ Allez maintenant sur votre terminal. Placez-vous dans votre répertoire personne
    - Affichez les 10 dernières lignes du fichier /etc/services.
    - Prendre une capture d'écran et nommez-la `2-3.png`.
 
-4. **Commande `tail` et la flèche vers le haut**
+4. **Commande `tail`**
    - Répéter la commande précédente avec exactement trois frappes de touches.
    - Prendre une capture d'écran et nommez-la `2-4.png`.
 

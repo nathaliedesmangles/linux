@@ -159,7 +159,7 @@ draft = true
     (Réponse : `d` pour répertoire, `-` pour fichier, `l` pour lien symbolique).
 
 16. **Différence de `/proc` :**
-    (Réponse : Contient des fichiers virtuels représentant des informations sur le système).
+    (Réponse : Contient des fichiers virtuels donc éphémères, représentant des informations sur le système).
 
 17. **Différence entre `/bin` et `/sbin` :**
     (Réponse : `/bin` contient des binaires pour tous les utilisateurs, `/sbin` est réservé à l’administration).
