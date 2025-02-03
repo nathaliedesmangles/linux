@@ -95,7 +95,7 @@ Allez maintenant sur votre terminal. Placez-vous dans votre répertoire personne
    - Prendre une capture d'écran et nommez-la `2-5.png`.
 
 6. **Commande `history`**
-   - Utiliser l’historique du shell pour exécuter à nouveau la commande effectuée pour la question #3 (heure sur 12h)
+   - Utiliser l’historique du shell pour exécuter à nouveau la commande effectuée pour la question #3
    - Prendre une capture d'écran et nommez-la `2-6.png`.
 
 ## Exercice 3: Commandes de base
