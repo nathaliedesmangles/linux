@@ -9,30 +9,14 @@ Le processus de démarrage d'un système Linux suit plusieurs étapes essentiell
 
 ![Schema séquence](boot_process.jpeg)
 
-1. **Activation du BIOS/UEFI**
-   - Lorsque vous allumez votre ordinateur, le **BIOS** (*Basic Input Output System*) ou l'**UEFI** (*Unified Extensible Firmware Interface*) s'active.
-   - Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT).
-
-2. **Chargement du chargeur d'amorçage**
-   - Le **MBR** (*Master Boot Record*) définit le chargeur de démarrage, comme **GRUB** (*GRand Unified Bootloader*).
-   - **GRUB** affiche un menu permettant de choisir le système à démarrer.
-
-3. **Chargement du noyau Linux (*Kernel*)**
-   - Après la sélection de Linux, **GRUB** charge le noyau (kernel), qui est le cœur du système.
-   - Le noyau initialise les pilotes, périphériques et la gestion de la mémoire.
-   - Il charge aussi un disque temporaire (`initrd` ou `initramfs`) contenant les modules nécessaires au démarrage.
-
-4. **Lancement du processus d'initialisation (`init` ou `systemd`)**
-   - Le noyau lance le premier processus du système : `init` ou `systemd` (selon la distribution Linux).
-   - Ce processus démarre les services et scripts de configuration (réseau, interface graphique, gestion des utilisateurs, etc.).
-
-5. **Affichage de l'écran de connexion**
-   - Une fois les services chargés, l'écran de connexion s'affiche, demandant un nom d'utilisateur et un mot de passe.
-
-6. **Utilisation du système**
-   - Après authentification, vous pouvez utiliser Linux, lancer des applications et exécuter des commandes.
-   - Vous pouvez aussi arrêter ou redémarrer votre système avec `shutdown`, `reboot` ou `halt`.
-
+| Étape | Description |  
+|-------|------------|  
+| **1. Activation du BIOS/UEFI** | Au démarrage, le **BIOS** (*Basic Input Output System*) ou l'**UEFI** (*Unified Extensible Firmware Interface*) s'active. Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT). |  
+| **2. Chargement du chargeur d'amorçage** | Le **MBR** (*Master Boot Record*) définit le chargeur de démarrage, comme **GRUB** (*GRand Unified Bootloader*). **GRUB** affiche un menu permettant de choisir le système à démarrer. |  
+| **3. Chargement du noyau Linux (*Kernel*)** | Après sélection de Linux, **GRUB** charge le noyau, qui initialise les pilotes, périphériques et la gestion de la mémoire. Il charge aussi un disque temporaire (`initrd` ou `initramfs`) contenant les modules nécessaires au démarrage. |  
+| **4. Lancement du processus d'initialisation (`init` ou `systemd`)** | Le noyau lance le premier processus du système : `init` ou `systemd` (selon la distribution Linux). Ce processus démarre les services et scripts de configuration (réseau, interface graphique, gestion des utilisateurs, etc.). |  
+| **5. Affichage de l'écran de connexion** | Une fois les services chargés, l'écran de connexion s'affiche, demandant un nom d'utilisateur et un mot de passe. |  
+| **6. Utilisation du système** | Après authentification, vous pouvez utiliser Linux, lancer des applications et exécuter des commandes. Vous pouvez aussi arrêter ou redémarrer votre système avec `shutdown`, `reboot` ou `halt`. |  
 ---
 
 ## Les niveaux d'exécution (*Runlevels*) et cibles (*Targets*)
@@ -49,7 +33,7 @@ $ systemctl isolate <nom_niveau>
 
 ### Correspondance entre les niveaux d'exécution et les cibles *systemd*
 
-| Niveau d'exécution | Cible systemd        | Description                           | Commande associée                   |
+| Niveau d'exécution | Cible *systemd*        | Description                           | Commande associée                   |
 |--------------------|---------------------|-------------------------------------|----------------------------------|
 | 0                | poweroff            | Arrêt du système                  | `$ systemctl isolate poweroff`  |
 | 1                | rescue              | Mode utilisateur unique (maintenance) | `$ systemctl isolate rescue`    |
@@ -59,14 +43,14 @@ $ systemctl isolate <nom_niveau>
 
 ### Afficher et modifier le niveau d'exécution
 
-Pour lister les processus s’exécutant sur une machine :
+Pour lister les processus s’exécutant sur une machine utiliser la commande **`ps -ef`** :
 ```bash
 $ ps -ef
 UID          PID    PPID  C STIME TTY          TIME CMD
 root           1       0  2 16:18 ?        00:00:01 /usr/lib/systemd/systemd --s
 ```
 
-Pour afficher le niveau d'exécution actuel :
+Pour afficher le niveau d'exécution actuel utiliser la commande **`who -r`** :
 ```bash
 $ who -r
 niveau d'exécution 5 2025-02-01 10:09
@@ -74,32 +58,17 @@ $ runlevel
 N 5
 ```
 
-{{% notice style="info" title="À propos de Runlevel"  %}}
+{{% notice style="info" title="À propos de *Runlevel*"  %}}
 La commande `runlevel` affiche deux valeurs : le niveau précédent et le niveau d’exécution actuel. Ici, **N** indique qu'il n'y avait pas de niveau précédent (au démarrage), et **5** est le niveau actuel graphique.
 {{% /notice %}}
 
 
-Pour connaître le niveau par défaut :
-```bash
-$ systemctl get-default
-graphical.target
-```
-
-Pour modifier le niveau d'exécution par défaut :
-```bash
-$ systemctl set-default <nom_niveau>
-```
-
-**Exemple** : fixer le mode multi-utilisateur sans interface graphique comme niveau d'exécution par défaut :
-```bash
-$ systemctl set-default multi-user
-```
-
-Pour revenir au niveau d'exécution par défaut :
-```bash
-$ systemctl default
-$ systemctl isolate default
-```
+| Commande | Description | Exemple |  
+|----------|------------|---------|  
+| `systemctl get-default` | Affiche le niveau d'exécution par défaut. | `$ systemctl get-default` <br> graphical.target |  
+| `systemctl set-default <nom_niveau>` | Modifie le niveau d'exécution par défaut. | `$ systemctl set-default multi-user` |  
+| `systemctl default` | Revient au niveau d'exécution par défaut. | `$ systemctl default` |  
+| `systemctl isolate default` | Bascule immédiatement vers le niveau d'exécution par défaut. | `$ systemctl isolate default` |  
 
 {{% notice style="info" title="Difference entre isolate et set-default"  %}}
 La différence entre les commandes est que la commande avec ***"isolate"*** est **exécutée immédiatement**, tandis que la commande avec ***"set-default"*** spécifie la cible obtenue **après le redémarrage**.
@@ -112,7 +81,7 @@ La substitution de commande permet d'exécuter une commande et d'utiliser direct
 
 ### Syntaxe :
 ```
-$(<commande>)
+$(commande)
 ```
 
 **Exemple 1** :
@@ -164,7 +133,7 @@ Il ne faut pas mettre d’espace autour du `=`.
 Les noms sont sensibles à la casse: `VAR1` ≠ `var1`
 {{% /notice %}}
 
-```bash
+```
 $ variable=valeur
 ```
 
@@ -411,29 +380,12 @@ find <répertoire_de_départ> <options>
 
 L'option `-name` est la plus courante pour rechercher des fichiers par leur nom.
 
-- Rechercher un fichier nommé `services` dans tout le système (i.e. à partir de la racine):
-
-```bash
-$ find / -name services
-```
-
-- Rechercher tous les fichiers se terminant par `.txt` dans le répertoire courant :
-
-```bash
-$ find . -name "*.txt"
-```
-
-- Rechercher tous les fichiers commençant par `p` dans le répertoire courant :
-
-```bash
-$ find . -name "p*"
-```
-
-- Rechercher tous les fichiers de 4 caractères se terminant par `n` dans `/var/log` :
-
-```bash
-$ find /var/log -name "???n"
-```
+| Commande | Description | 
+|-------------|-----------------|
+| `$ find / -name services` | Recherche un fichier nommé `services` dans tout le système (à partir de la racine). | 
+| `$ find . -name "*.txt"` | Recherche tous les fichiers se terminant par `.txt` dans le répertoire courant. |
+| `$ find . -name "p*"` | Recherche tous les fichiers commençant par `p` dans le répertoire courant et ses sous-répertoires. | 
+| `$ find /var/log -name "???n"` | Recherche tous les fichiers de 4 caractères se terminant par `n` dans `/var/log`. |  
 
 ### Pièges à éviter
 

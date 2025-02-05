@@ -18,14 +18,14 @@
     <meta property="og:type" content="website">
     <meta itemprop="name" content="ATELIER #7: VIM et les fichiers de configuration (À MODIFIER) :: 420-ZG4-MO LINUX">
     <meta itemprop="description" content="Objectif de l’atelier Approfondir l’utilisation de VIM pour modifier des fichiers de configuration Linux de manière efficace. Modifier des fichiers de configuration Linux efficacement : Utiliser un minimum de touches. Ne pas utiliser la souris. Compléter les exercices : 10 exercices de type A (le curseur est déjà placé). 5 exercices de type B (le curseur commence au début du fichier). Instructions de remise Fournissez les captures d’écran des exercices réussis via Moodle.">
-    <meta itemprop="wordCount" content="1540">
+    <meta itemprop="wordCount" content="1779">
     <title>ATELIER #7: VIM et les fichiers de configuration (À MODIFIER) :: 420-ZG4-MO LINUX</title>
     <link href="/semaine7/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #7: VIM et les fichiers de configuration (À MODIFIER) :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1738616421" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738616421" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1738616421" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738616421" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1738616421" rel="stylesheet">
-    <link href="/css/theme.min.css?1738616421" rel="stylesheet">
-    <link href="/css/format-html.min.css?1738616421" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1738776156" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738776156" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1738776156" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738776156" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1738776156" rel="stylesheet">
+    <link href="/css/theme.min.css?1738776156" rel="stylesheet">
+    <link href="/css/format-html.min.css?1738776156" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -317,12 +317,12 @@
 </li>
 <li>
 <p>Exemple de capture attendue :</p>
-<p><a href="#R-image-a16da170a545669e1e12605395275bf3" class="lightbox-link"><img alt="Exemple" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine7/atelier/exemple.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a16da170a545669e1e12605395275bf3"><img alt="Exemple" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine7/atelier/exemple.png"></a></p>
+<p><a href="#R-image-d0046711c24c38b930fba805d1d6bb79" class="lightbox-link"><img alt="Exemple" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine7/atelier/exemple.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d0046711c24c38b930fba805d1d6bb79"><img alt="Exemple" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine7/atelier/exemple.png"></a></p>
 </li>
 <li>
 <p>Une vidéo de démonstration est disponible :</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><video width="50%" src="a01-2.webm" type="video/webm" autoplay loop muted></video></p>
 </li>
 </ol>
 <hr>
@@ -503,22 +503,48 @@
 <ul>
 <li>Voici un exemple d&rsquo;exercice réussi:</li>
 </ul>
-<!-- raw HTML omitted -->
+  <center>
+  <img width="500px" src="exemple.png">
+  </center>
 </li>
 <li>
 <p>Voici comment l&rsquo;exercice ci-haut s&rsquo;est déroulé:</p>
 </li>
 </ul>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<center>
+<video width="50%" src="a01-2.webm" type="video/webm" autoplay loop muted>
+</center>
+<!--
+
+
+## Théorie *vim*
+
+### Modes: normal, insertion, visuel
+
+### Mouvements
+
+### Modification en mode normal
+
+### Entrer en mode insertion
+
+### Combinaisons: mouvement et modifications
+
+### Combinaisons: mouvement et insertion
+
+### Répétitions
+
+### Copier-coller
+
+### Auto-complétion (CTRL+N et CTRL+P)
+
+-->
 <h2 id="astuces">Astuces:</h2>
 <p>Utilisez ZZ pour sauvegarder et quitter dans vim.</p>
 <p>Utilisez les commandes données dans les images Aide mémoire en fin du cours pour avoir le record.</p>
 <h1 id="travail-à-effectuer">Travail à effectuer</h1>
 <h2 id="préambule">Préambule</h2>
 <h3 id="installation-des-outils-nécessaires">Installation des outils nécessaires</h3>
-<p>Copiez le texte suivant dans un script nommé <!-- raw HTML omitted -->vim.sh<!-- raw HTML omitted --></p>
+<p>Copiez le texte suivant dans un script nommé <code class="gr">vim.sh</code></p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span>wget http://gyoukou.ca/vimrc.dot <span style="color:#f92672">||</span> echo ERREUR
@@ -540,16 +566,24 @@
 </span></span><span style="display:flex;"><span>sudo make install <span style="color:#f92672">||</span> echo ERREUR</span></span></code></pre></div>
 
 <p>Exécutez le script :</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ bash vim.sh
+</pre>
 <h3 id="télécharger-et-décompresser-les-exercices">Télécharger et décompresser les exercices</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+# IMPORTANT: cd ~ pour aller dans votre répertoire ~
+
+$ cd ~
+
+$ wget http://gyoukou.ca/atelier_06.tar.gz || echo ERREUR
+$ tar zxvf atelier_06.tar.gz
+$ cd atelier_06
+</pre>
 <h2 id="exercices-a-le-curseur-est-déjà-placé">Exercices A: le curseur est déjà placé</h2>
-<p><!-- raw HTML omitted -->IMPORTANT: ne pas éditer directement les vrais fichiers de configuration. Editer plutôt la copie qui se trouve dans le dossier atelier téléchargé <!-- raw HTML omitted --></p>
+<p><b style="color:red">IMPORTANT: ne pas éditer directement les vrais fichiers de configuration. Editer plutôt la copie qui se trouve dans le dossier atelier téléchargé </b></p>
 <h2 id="exercice-a01-1">Exercice a01</h2>
 <h3 id="fichier-de-configuration-3">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->/etc/default/grub<!-- raw HTML omitted --></p>
+<p><code class="gr">/etc/default/grub</code></p>
 <ul>
 <li>Configuration de <code>grub</code> (outil de démarrage)</li>
 <li>En particulier: options à donner au noyau Linux au démarrage</li>
@@ -566,13 +600,16 @@
 <li>(<code>rhgb</code> signifie <em>Red Hat Graphical Boot</em>)</li>
 </ul>
 <h3 id="nombre-de-touches">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>4 touches</td><td>9
+ touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif.sh a01
+$ sh exercice_vim.sh a01
+</pre>
 <h2 id="exercice-a02-1">Exercice a02</h2>
 <h3 id="fichier-de-configuration-4">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->/etc/selinux/config<!-- raw HTML omitted --></p>
+<p><code class="gr">/etc/selinux/config</code></p>
 <ul>
 <li><em>selinux</em> est un pare-feu d&rsquo;application qui permet de contrôler ou limiter un grand nombre d&rsquo;opérations sur un serveur Linux</li>
 <li>(<em>selinux</em> veut dire <em>Security Enhanced Linux</em>)</li>
@@ -588,13 +625,16 @@
 <li>On déscative <em>selinux</em> (généralement préférable sur une machine usager)</li>
 </ul>
 <h3 id="nombre-de-touches-1">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>7 touches</td><td>25
+ touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-1">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif.sh a02
+$ sh exercice_vim.sh a02
+</pre>
 <h2 id="exercice-a03">Exercice a03</h2>
 <h3 id="fichier-de-configuration-5">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->/etc/fstab<!-- raw HTML omitted --></p>
+<p><code class="gr">/etc/fstab</code></p>
 <ol>
 <li>Liste des partitions utilisées dans le système</li>
 <li>Par défaut, chaque partition est montée au démarrage</li>
@@ -609,13 +649,16 @@
 <li>Le répertoire <code>/tmp</code> devient un sous-répertoire de <code>/</code> (partition <code>centos-root</code>)</li>
 </ol>
 <h3 id="nombre-de-touches-2">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>4 touches</td><td>6
+ touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-2">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif.sh a03
+$ sh exercice_vim.sh a03
+</pre>
 <h2 id="exercice-a04">Exercice a04</h2>
 <h3 id="fichier-de-configuration-6">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->/etc/locale.conf<!-- raw HTML omitted --></p>
+<p><code class="gr">/etc/locale.conf</code></p>
 <ol>
 <li>Régionalisation du système: langue, date, etc.</li>
 </ol>
@@ -630,13 +673,16 @@
 <li>On veut copier <code>fr_CA.UTF-8</code> entre les <code>&quot;</code> afin de définir aussi le format de date</li>
 </ol>
 <h3 id="nombre-de-touches-3">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>8 touches</td><td>18
+ touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-3">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif.sh a04
+$ sh exercice_vim.sh a04
+</pre>
 <h2 id="exercice-a05">Exercice a05</h2>
 <h3 id="fichier-de-configuration-7">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->/etc/mime.types<!-- raw HTML omitted --></p>
+<p><code class="gr">/etc/mime.types</code></p>
 <ol>
 <li>Définition des types de fichier et de leur extensions</li>
 <li>NOTE: la commande <code>file</code> affiche le type d&rsquo;un fichier</li>
@@ -657,13 +703,16 @@
 <li>NOTE: il y a trois tabulations entre le type et l&rsquo;extension</li>
 </ol>
 <h3 id="nombre-de-touches-4">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>18 touches</td><td>40
+ touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-4">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif.sh a05
+$ sh exercice_vim.sh a05
+</pre>
 <h2 id="exercice-a06">Exercice a06</h2>
 <h3 id="fichier-de-configuration-8">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->/etc/hosts<!-- raw HTML omitted --></p>
+<p><code class="gr">/etc/hosts</code></p>
 <ol>
 <li>Associe un nom réseau à son adresse</li>
 <li>Pour ces noms, le système ne fera pas de requête DNS</li>
@@ -685,13 +734,16 @@
 <li>On active l&rsquo;adresse locale (seulement valide au Collège)</li>
 </ol>
 <h3 id="nombre-de-touches-5">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>6 touches</td><td>12
+ touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-5">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif.sh a06
+$ sh exercice_vim.sh a06
+</pre>
 <h2 id="exercice-a07">Exercice a07</h2>
 <h3 id="fichier-de-configuration-9">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->/etc/firewalld/direct.xml<!-- raw HTML omitted --></p>
+<p><code class="gr">/etc/firewalld/direct.xml</code></p>
 <ol>
 <li>Règles de pare-feu directes (écrites à la main)</li>
 <li>NOTE: l&rsquo;autre option est de générer les règles via la commande <code>firewall-cmd</code></li>
@@ -712,13 +764,16 @@
 <li>NOTE: ces règles indique au système de faire du NAT</li>
 </ol>
 <h3 id="nombre-de-touches-6">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>37 touches</td><td>120
+ touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-6">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif.sh a07
+$ sh exercice_vim.sh a07
+</pre>
 <h2 id="exercice-a08">Exercice a08</h2>
 <h3 id="fichier-de-configuration-10">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->~/.bashrc<!-- raw HTML omitted --></p>
+<p><code class="gr">~/.bashrc</code></p>
 <ol>
 <li>Personnalisation du SHELL</li>
 <li>Fichier lu à chaque ouverture du SHEL</li>
@@ -733,13 +788,16 @@
 <li>NOTE: un alias est un raccourci pour une commande fréquemment utilisée.</li>
 </ol>
 <h3 id="nombre-de-touches-7">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>12 touches</td><td>22
+ touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-7">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif.sh a08
+$ sh exercice_vim.sh a08
+</pre>
 <h2 id="exercice-a09">Exercice a09</h2>
 <h3 id="fichier-de-configuration-11">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->/etc/resolv.conf<!-- raw HTML omitted --></p>
+<p><code class="gr">/etc/resolv.conf</code></p>
 <ol>
 <li>Le ou les serveur DNS à utiliser</li>
 </ol>
@@ -754,13 +812,15 @@
 <li>On change l&rsquo;adresse DNS à <code>192.168.1.1</code></li>
 </ol>
 <h3 id="nombre-de-touches-8">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>14 touches</td><td>35 touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-8">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif.sh a09
+$ sh exercice_vim.sh a09
+</pre>
 <h2 id="exercice-a10">Exercice a10</h2>
 <h3 id="fichier-de-configuration-12">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->/etc/ssh/sshd_config<!-- raw HTML omitted --></p>
+<p><code class="gr">/etc/ssh/sshd_config</code></p>
 <ol>
 <li>Configuration du serveur <em>SSH</em></li>
 </ol>
@@ -781,15 +841,17 @@
 <li>Ici, on active la redirection graphique</li>
 </ol>
 <h3 id="nombre-de-touches-9">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>3 touches</td><td>8 touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-9">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif.sh a10
+$ sh exercice_vim.sh a10
+</pre>
 <h2 id="exercices-b-le-curseur-est-au-début-du-fichier">Exercices B: le curseur est au début du fichier</h2>
-<p><!-- raw HTML omitted -->IMPORTANT: ne pas éditer directement le fichier<!-- raw HTML omitted --></p>
+<p><b style="color:red">IMPORTANT: ne pas éditer directement le fichier</b></p>
 <h2 id="exercice-b01-1">Exercice b01</h2>
 <h3 id="fichier-de-configuration-13">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->/etc/ssh/sshd_config<!-- raw HTML omitted --></p>
+<p><code class="gr">/etc/ssh/sshd_config</code></p>
 <ol>
 <li>Configuration du serveur <em>SSH</em></li>
 </ol>
@@ -805,13 +867,15 @@
 <li>Même modification que <code>a10</code>, sauf que cette fois-ci le curseur n&rsquo;est pas déjà placé</li>
 </ol>
 <h3 id="nombre-de-touches-10">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>7 touches</td><td>18 touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-10">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif b01
+$ sh exercice_vim.sh b01
+</pre>
 <h2 id="exercice-b02">Exercice b02</h2>
 <h3 id="fichier-de-configuration-14">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->/etc/default/grub<!-- raw HTML omitted --></p>
+<p><code class="gr">/etc/default/grub</code></p>
 <ul>
 <li>Configuration de <code>grub</code> (outil de démarrage)</li>
 <li>En particulier: options à donner au noyau Linux au démarrage</li>
@@ -827,13 +891,15 @@
 <li>Même modification que <code>a01</code>, sauf que le curseur n&rsquo;est pas déjà placé</li>
 </ol>
 <h3 id="nombre-de-touches-11">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>8 touches</td><td>20 touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-11">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif b02
+$ sh exercice_vim.sh b02
+</pre>
 <h2 id="exercice-b03">Exercice b03</h2>
 <h3 id="fichier-de-configuration-15">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->/etc/services<!-- raw HTML omitted --></p>
+<p><code class="gr">/etc/services</code></p>
 <ol>
 <li>Liste des services réseau, protocoles et ports</li>
 </ol>
@@ -856,13 +922,15 @@
 <li>Effacer les services du ports 11 jusqu&rsquo;au port 20 (inclusif)</li>
 </ol>
 <h3 id="nombre-de-touches-12">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>11 touches</td><td>28 touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-12">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif b03
+$ sh exercice_vim.sh b03
+</pre>
 <h2 id="exercice-b04">Exercice b04</h2>
 <h3 id="fichier-de-configuration-16">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->/etc/passwd<!-- raw HTML omitted --></p>
+<p><code class="gr">/etc/passwd</code></p>
 <ol>
 <li>Information sur les usagers Linux</li>
 </ol>
@@ -879,13 +947,15 @@
 <li>NOTE: habituellement, ces lignes sont effacées par la commande <code>userdel</code></li>
 </ol>
 <h3 id="nombre-de-touches-13">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>6 touches</td><td>15 touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-13">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif b04
+$ sh exercice_vim.sh b04
+</pre>
 <h2 id="exercice-b05">Exercice b05</h2>
 <h3 id="fichier-de-configuration-17">Fichier de configuration</h3>
-<p><!-- raw HTML omitted -->/etc/group<!-- raw HTML omitted --></p>
+<p><code class="gr">/etc/group</code></p>
 <ol>
 <li>Liste des groupes d&rsquo;usagers Linux</li>
 <li>Chaque usager est membre de son propre groupe</li>
@@ -903,11 +973,20 @@
 <li>Le groupe <code>wheel</code> est le groupe qui peut faire la commande <code>sudo</code></li>
 </ol>
 <h3 id="nombre-de-touches-14">Nombre de touches</h3>
-<!-- raw HTML omitted -->
+<table><tr><th>Record à battre</th><th>Maximum acceptable</th></tr><tr><td>10 touches</td><td>25 touches</td></tr></table>
 <h3 id="pour-visualiser-avec-meld-et-lancer-lexercice-14">Pour visualiser avec meld et lancer l&rsquo;exercice</h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+$ sh afficher_objectif b05
+$ sh exercice_vim.sh b05
+</pre>
+<!--
+## Après la remise
+
+### Restaurer votre configuration de *vim* (s'il y a lieu)
+
+<pre>
+$ mv ~/.vimrc.bak ~/.vimrc
+
 
   <footer class="footline">
   </footer>
@@ -924,7 +1003,7 @@
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1738616421";
+          window.index_js_url="/searchindex.en.js?1738776156";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -937,12 +1016,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1738616421" defer></script>
-        <script src="/js/lunr/lunr.min.js?1738616421" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1738616421" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1738616421" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1738616421" defer></script>
-        <script src="/js/search.js?1738616421" defer></script>
+        <script src="/js/auto-complete.js?1738776156" defer></script>
+        <script src="/js/lunr/lunr.min.js?1738776156" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1738776156" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1738776156" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1738776156" defer></script>
+        <script src="/js/search.js?1738776156" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -1016,8 +1095,8 @@
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1738616421" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1738616421" defer></script>
-    <script src="/js/theme.js?1738616421" defer></script>
+    <script src="/js/clipboard.min.js?1738776156" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1738776156" defer></script>
+    <script src="/js/theme.js?1738776156" defer></script>
   </body>
 </html>

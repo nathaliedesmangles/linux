@@ -26,14 +26,14 @@ Comprendre cette structure est essentiel pour naviguer et gérer efficacement un
     <meta itemprop="description" content="La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine.
 La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation.
 Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.">
-    <meta itemprop="wordCount" content="2588">
+    <meta itemprop="wordCount" content="2414">
     <title>Système de fichiers, Shell et commandes de base et VIM :: 420-ZG4-MO LINUX</title>
     <link href="/semaine2/cours/index.xml" rel="alternate" type="application/rss+xml" title="Système de fichiers, Shell et commandes de base et VIM :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1738616421" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738616421" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1738616421" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738616421" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1738616421" rel="stylesheet">
-    <link href="/css/theme.min.css?1738616421" rel="stylesheet">
-    <link href="/css/format-html.min.css?1738616421" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1738776156" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738776156" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1738776156" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738776156" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1738776156" rel="stylesheet">
+    <link href="/css/theme.min.css?1738776156" rel="stylesheet">
+    <link href="/css/format-html.min.css?1738776156" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -166,8 +166,8 @@ Comprendre cette structure est essentiel pour naviguer et gérer efficacement un
 
 <h1 id="système-de-fichiers-shell-et-commandes-de-base-et-vim">Système de fichiers, Shell et commandes de base et VIM</h1>
 
-<p><a href="#R-image-093f13721ba27f00184ea7e01db65c5b" class="lightbox-link"><img alt="Arborescence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/cours/filesystem.png?width=100vw" style=" height: auto; width: 100vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-093f13721ba27f00184ea7e01db65c5b"><img alt="Arborescence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/cours/filesystem.png?width=100vw"></a></p>
+<p><a href="#R-image-1ff91ac1919362d28dc42f5b3a273b48" class="lightbox-link"><img alt="Arborescence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/cours/filesystem.png?width=100vw" style=" height: auto; width: 100vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1ff91ac1919362d28dc42f5b3a273b48"><img alt="Arborescence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/cours/filesystem.png?width=100vw"></a></p>
 <p>La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d&rsquo;un arbre inversé, où la racine (root) est représentée par <code>/</code>.
 Tous les fichiers et répertoires sont situés sous cette racine.</p>
 <p>La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation.</p>
@@ -348,91 +348,62 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
 <p>Bash propose une variété de commandes puissantes pour interagir avec le système. Ces commandes de base sont essentielles pour naviguer, gérer des fichiers, et interagir avec votre système sous Bash.</p>
 <hr>
 <h2 id="navigation-dans-le-système-de-fichiers">Navigation dans le système de fichiers</h2>
+<p><strong>Les commandes</strong> :</p>
+<ol>
+<li><strong><code>pwd</code> (Print Working Directory)</strong></li>
+<li><strong><code>cd</code> (Change Directory)</strong></li>
+<li><strong><code>ls</code> (List)</strong></li>
+</ol>
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"><strong>Commande</strong></th>
-          <th style="text-align: left"><strong>Description</strong></th>
+          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Exemple</th>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td style="text-align: left"><code>pwd</code></td>
           <td style="text-align: left">Affiche le chemin absolu du répertoire courant.</td>
+          <td style="text-align: left">/home/user  <br> <code>$ pwd</code>  <br> /home/user</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>cd</code></td>
-          <td style="text-align: left">Change le répertoire courant.</td>
+          <td style="text-align: left">Change le répertoire courant pour Documents.</td>
+          <td style="text-align: left">/home/user  <br> <code>$ cd Documents</code>  <br> /home/user/Documents</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>cd ~</code></td>
+          <td style="text-align: left">Change vers le répertoire personnel de l&rsquo;utilisateur.</td>
+          <td style="text-align: left">/home/user/Documents  <br> <code>$ cd ~</code>  <br> /home/user</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>cd ..</code></td>
+          <td style="text-align: left">Remonte d&rsquo;un niveau dans l&rsquo;arborescence des répertoires.</td>
+          <td style="text-align: left">/home/user/Documents  <br> <code>$ cd ..</code>  <br> /home/user</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>cd ../../</code></td>
+          <td style="text-align: left">Remonte de deux niveaux dans l&rsquo;arborescence.</td>
+          <td style="text-align: left">/home/user/Documents/Projects  <br> <code>$ cd ../../</code>  <br> /home/user</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>ls</code></td>
           <td style="text-align: left">Affiche le contenu d&rsquo;un répertoire.</td>
+          <td style="text-align: left">/home/user/Documents  <br> <code>$ ls</code>  <br> fichier.txt dossier</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ls -l</code></td>
+          <td style="text-align: left">Affiche la liste des fichiers dans un répertoire. <br> L&rsquo;option <code>-l</code> affiche les détails des fichiers dans un répertoire.</td>
+          <td style="text-align: left">/home/user/Documents  <br> <code>$ ls -l</code>  <br> <code>-rw-r--r-- 1 user user 1234 Jan 1 12:00 fichier.txt</code></td>
       </tr>
   </tbody>
 </table>
+<p><strong><code>ls -l</code> Quelques explications du résultat</strong> :</p>
 <ol>
-<li>
-<p><strong><code>pwd</code> (Print Working Directory)</strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ pwd
-</span></span><span style="display:flex;"><span>/home/ndesmangles			<span style="color:#75715e"># Le répertoire personnel dans home</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ </span></span></code></pre></div>
-</li>
-<li>
-<p><strong><code>cd</code> (Change Directory)</strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ cd /etc
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost etc<span style="color:#f92672">]</span>$	<span style="color:#75715e"># Notez le changement du répertoire courant (etc)</span></span></span></code></pre></div>
-<ul>
-<li>Remonter d&rsquo;un niveau.
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost etc<span style="color:#f92672">]</span>$ cd ..
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost /<span style="color:#f92672">]</span>$ 	<span style="color:#75715e"># Notez le positionnement à la racine /</span></span></span></code></pre></div>
-</li>
-<li>Revenir dans le répertoire <code>etc</code>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost /<span style="color:#f92672">]</span>$ cd etc
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost etc<span style="color:#f92672">]</span>$ </span></span></code></pre></div>
-</li>
-<li>Remonter de deux niveaux.
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost etc<span style="color:#f92672">]</span>$ cd ../..
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost /<span style="color:#f92672">]</span>$ 	<span style="color:#75715e"># Notez le retour à la racine /</span></span></span></code></pre></div>
-</li>
-<li>Revenir à notre répertoire personnel
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost etc<span style="color:#f92672">]</span>$ cd ~
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ 	<span style="color:#75715e"># Notez le retour au répertoire personnel ~</span></span></span></code></pre></div>
-</li>
-</ul>
-</li>
-<li>
-<p><strong><code>ls</code> (List)</strong> :</p>
-<ul>
-<li>
-<p>Options utiles :</p>
-<ul>
-<li><code>-l</code> : Affiche des détails comme les permissions<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, la taille, etc.</li>
-<li><code>-a</code> : Montre les fichiers cachés.</li>
-</ul>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost /<span style="color:#f92672">]</span>$ ls
-</span></span><span style="display:flex;"><span>afs  bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost /<span style="color:#f92672">]</span>$ ls -l
-</span></span><span style="display:flex;"><span>total <span style="color:#ae81ff">24</span>
-</span></span><span style="display:flex;"><span>dr-xr-xr-x.   <span style="color:#ae81ff">2</span> root root    <span style="color:#ae81ff">6</span>  <span style="color:#ae81ff">2</span> oct 17:00 afs
-</span></span><span style="display:flex;"><span>lrwxrwxrwx.   <span style="color:#ae81ff">1</span> root root    <span style="color:#ae81ff">7</span>  <span style="color:#ae81ff">2</span> oct 17:00 bin -&gt; usr/bin
-</span></span><span style="display:flex;"><span>dr-xr-xr-x.   <span style="color:#ae81ff">5</span> root root <span style="color:#ae81ff">4096</span> <span style="color:#ae81ff">11</span> jan 23:06 boot</span></span></code></pre></div>
-</li>
-</ul>
-</li>
-</ol>
-<p><strong>Quelques explications</strong> :</p>
-<ol>
-<li><strong>Première colonne</strong>: -rwxr-xr-x par exemple représente le type de fichier et les droits d’accès (abordés en détail dans un prochain cours) qui lui sont associés.</li>
-<li><strong>Deuxième colonne</strong> : ce qu’elle représente dépend du type de fichier:
-<ul>
-<li><strong>Répertoire</strong> : indique le nombre de sous-répertoires (+2 pour . et ..).</li>
-<li><strong>Fichier</strong> : nombre de lien physiques (vu plus loin dans ce cours).</li>
-</ul>
-</li>
-<li><strong>Troisième et quatrième colonnes</strong> représentent l’utilisateur propriétaire du fichier et le groupe propriétaire du fichier.</li>
-<li><strong>Cinquième colonne</strong> indique la taille du fichier (notez qu’un répertoire a une taille qui correspond à la taille du fichier répertoire sur le disque).</li>
-<li><strong>Sixième colonne</strong> indique la date de dernière modification.</li>
-<li><strong>Septième colonne</strong> est le nom du fichier.</li>
+<li><strong>Premier caractère</strong>: -, d ou l représente le type de fichier (fichier, répertoire ou lien symbolique respectivement)</li>
+<li><strong>Neuf caractères suivants</strong>: par exemple <code>rwxr-xr-x</code> représentent les droits d’accès au fichier/répertoire (abordés en détail dans un prochain cours).</li>
 </ol>
 
 <details open class=" box cstyle notices tip">
@@ -446,162 +417,125 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
 </details>
 <hr>
 <h2 id="manipulation-de-fichiers-et-répertoires">Manipulation de fichiers et répertoires</h2>
+<p><strong>Les commandes</strong> :</p>
+<ol>
+<li><strong><code>touch</code></strong></li>
+<li><strong><code>mkdir</code> (Make Directory)</strong></li>
+<li><strong><code>rm</code> (Remove)</strong> :</li>
+<li><strong><code>rmdir</code> (Remove Directory)</strong></li>
+<li><strong><code>cp</code> (Copy)</strong></li>
+<li><strong><code>mv</code> (Move)</strong></li>
+</ol>
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"><strong>Commande</strong></th>
-          <th style="text-align: left"><strong>Description</strong></th>
+          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Exemple</th>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td style="text-align: left"><code>touch</code></td>
           <td style="text-align: left">Crée un fichier vide ou met à jour la date de modification d’un fichier existant.</td>
+          <td style="text-align: left">/home/user <br> <code>$ touch fichier.txt</code> <br> <code>$ ls</code> <br> fichier.txt</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>mkdir</code></td>
           <td style="text-align: left">Crée un nouveau répertoire.</td>
+          <td style="text-align: left">/home/user <br> <code>$ mkdir mon_dossier</code> <br> <code>$ ls</code> <br> mon_dossier</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>rm</code></td>
-          <td style="text-align: left">Supprime des fichiers. Pour supprimer des répertoires, utilisez <code>-r</code> (récursif).</td>
+          <td style="text-align: left">Supprime des fichiers. Utilisez <code>-r</code> pour supprimer des répertoires et leur contenu.</td>
+          <td style="text-align: left">/home/user <br> <code>$ rm fichier.txt</code> <br> <code>$ rm -r mon_dossier</code></td>
       </tr>
       <tr>
           <td style="text-align: left"><code>rmdir</code></td>
-          <td style="text-align: left">Supprime un répertoire vide.</td>
+          <td style="text-align: left">Supprime un répertoire vide (ne fonctionne pas s&rsquo;il contient des fichiers).</td>
+          <td style="text-align: left"><code>$ rmdir mon_dossier</code></td>
       </tr>
       <tr>
           <td style="text-align: left"><code>cp</code></td>
-          <td style="text-align: left">Copie des fichiers ou des répertoires.</td>
+          <td style="text-align: left">Copie des fichiers ou des répertoires (avec <code>-r</code> pour copier des dossiers entiers).</td>
+          <td style="text-align: left"><code>$ cp fichier.txt copie.txt</code> <br> <code>$ ls</code> <br> fichier.txt copie.txt <br> <code>$ cp -r mon_dossier copie_dossier</code> <br>  <code>$ ls</code> <br> mon_dossier copie_dossier</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>mv</code></td>
           <td style="text-align: left">Déplace ou renomme des fichiers et des répertoires.</td>
+          <td style="text-align: left"><code>$ mv fichier.txt nouveau_nom.txt</code>  <br> <code>$ ls</code> <br>  nouveau_nom.txt</td>
       </tr>
   </tbody>
 </table>
-<ol>
-<li>
-<p><strong><code>touch</code></strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ touch nouveau_fichier.txt</span></span></code></pre></div>
-</li>
-<li>
-<p><strong><code>mkdir</code> (Make Directory)</strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ mkdir nouveau_repertoire</span></span></code></pre></div>
-</li>
-<li>
-<p><strong><code>rm</code> (Remove)</strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ rm fichier.txt
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ rm -r dossier_a_supprimer</span></span></code></pre></div>
-</li>
-<li>
-<p><strong><code>rmdir</code> (Remove Directory)</strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ rmdir dossier_vide
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ rmdir dossier_pas_vide   <span style="color:#75715e"># Affiche une erreur</span></span></span></code></pre></div>
-</li>
-<li>
-<p><strong><code>cp</code> (Copy)</strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ cp fichier_source.txt fichier_destination.txt
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ cp -r dossier_source dossier_destination</span></span></code></pre></div>
-</li>
-<li>
-<p><strong><code>mv</code> (Move)</strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ mv ancien_nom.txt nouveau_nom.txt
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ mv fichier.txt /nouveau/chemin/</span></span></code></pre></div>
-</li>
-</ol>
 <hr>
 <h2 id="affichage-et-lecture-de-fichiers">Affichage et lecture de fichiers</h2>
+<p><strong>Les commandes</strong> :</p>
+<ol>
+<li><strong><code>cat</code></strong></li>
+<li><strong><code>less</code></strong></li>
+<li><strong><code>head</code></strong></li>
+<li><strong><code>tail</code></strong></li>
+</ol>
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"><strong>Commande</strong></th>
-          <th style="text-align: left"><strong>Description</strong></th>
+          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Exemple</th>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td style="text-align: left"><code>cat</code></td>
-          <td style="text-align: left">Affiche le contenu complet d&rsquo;un fichier.</td>
+          <td style="text-align: left">Affiche le contenu complet d&rsquo;un ou de plusieurs fichiers.</td>
+          <td style="text-align: left"><code>$ cat fichier.txt</code> <br> <code>$ cat fichier1.txt fichier2.txt</code></td>
       </tr>
       <tr>
           <td style="text-align: left"><code>less</code></td>
-          <td style="text-align: left">Permet de lire un fichier page par page.</td>
+          <td style="text-align: left">Permet de lire un fichier page par page.   <br> Contrôles : <br> <code>Espace</code> : Page suivante <br> <code>q</code> : Quitter</td>
+          <td style="text-align: left"><code>$ less fichier.txt</code></td>
       </tr>
       <tr>
           <td style="text-align: left"><code>head</code></td>
-          <td style="text-align: left">Affiche les premières lignes d&rsquo;un fichier. 10 lignes par défaut.</td>
+          <td style="text-align: left">Affiche les premières lignes d&rsquo;un fichier. <strong>10 lignes par défaut</strong>. <br> L&rsquo;option <code>-n</code> permet de spécifier le nombre de lignes</td>
+          <td style="text-align: left"><code>$ head fichier.txt</code> <br> <code>$ head -n 5 fichier.txt</code></td>
       </tr>
       <tr>
           <td style="text-align: left"><code>tail</code></td>
-          <td style="text-align: left">Affiche les dernières lignes d&rsquo;un fichier. 10 lignes par défaut.</td>
+          <td style="text-align: left">Affiche les dernières lignes d&rsquo;un fichier. <strong>10 lignes par défaut</strong>. <br> L&rsquo;option <code>-n</code> permet de spécifier le nombre de lignes</td>
+          <td style="text-align: left"><code>$ tail fichier.txt</code> <br> <code>$ tail -n 5 fichier.txt</code></td>
       </tr>
   </tbody>
 </table>
-<ol>
-<li>
-<p><strong><code>cat</code></strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ cat fichier.txt
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ cat fichier1 fichier2
-</span></span><span style="display:flex;"><span>Hello World!!
-</span></span><span style="display:flex;"><span>Introduction aux commandes Linux.
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ cat /etc/shells		<span style="color:#75715e"># Affiche les Shells installés sur la machine.</span></span></span></code></pre></div>
-</li>
-<li>
-<p><strong><code>less</code></strong> :</p>
-<ul>
-<li>Contrôles :
-<ul>
-<li><code>Espace</code> : Page suivante</li>
-<li><code>q</code> : Quitter</li>
-</ul>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ less fichier.txt</span></span></code></pre></div>
-</li>
-</ul>
-</li>
-<li>
-<p><strong><code>head</code></strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ head fichier.txt       <span style="color:#75715e"># Affiche les 10 premières lignes</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ head -n <span style="color:#ae81ff">5</span> fichier.txt  <span style="color:#75715e"># Affiche les 5 premières lignes</span></span></span></code></pre></div>
-</li>
-<li>
-<p><strong><code>tail</code></strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ tail fichier.txt       <span style="color:#75715e"># Affiche les 10 dernières lignes</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ tail -n <span style="color:#ae81ff">5</span> fichier.txt  <span style="color:#75715e"># Affiche les 5 dernières lignes</span></span></span></code></pre></div>
-</li>
-</ol>
 <hr>
 <h2 id="informations-système-et-historique">Informations système et historique</h2>
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"><strong>Commande</strong></th>
-          <th style="text-align: left"><strong>Description</strong></th>
+          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Exemple</th>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td style="text-align: left"><code>date</code></td>
           <td style="text-align: left">Affiche la date et l&rsquo;heure actuelles.</td>
+          <td style="text-align: left"><code>$ date</code> <br> Thu Jan  9 20:42:36 EST 2025 <br> <code>$ date &quot;+%Y-%m-%d %H:%M:%S&quot;</code> <br> 2025-01-09 20:42:43</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>history</code></td>
-          <td style="text-align: left">Liste les commandes précédemment exécutées.</td>
+          <td style="text-align: left">Liste les commandes précédemment exécutées.  <br> Options utiles : <br> <code>n</code> : Pour spécifier le nombre de commandes précédentes à afficher. <br> <code>!</code> : Pour exécuter une commande spécifique de l&rsquo;historique, par son numéro. <br> <code>c</code> : Pour effacer l&rsquo;historique de la session.</td>
+          <td style="text-align: left"><code>$ history</code> <br> <code>$ history 5</code> <br> <code>$ history -c</code></td>
       </tr>
   </tbody>
 </table>
 <ol>
 <li>
-<p><strong><code>date</code></strong> :</p>
+<p><strong>Commande date quelques options utiles</strong> :</p>
 <ul>
-<li>
-<p>Options utiles :</p>
-<ul>
-<li><code>+</code> : Pour spécifier un format personnalisé.</li>
-</ul>
-</li>
-<li>
-<p>Formats:</p>
+<li><code>+</code> : Il faut précéder l&rsquo;option du symbole <code>+</code> pour spécifier un format personnalisé.</li>
+<li>Formats:
 <ul>
 <li><code>%Y</code> : Année complète (ex. 2025).</li>
 <li><code>%m</code> : Mois (01-12).</li>
@@ -613,22 +547,11 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
 <li><code>%R</code> : Heure au format 24h (ex. 23:11 sans les secondes)</li>
 <li><code>%p</code> : Heure avec AM ou PM</li>
 </ul>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ date
-</span></span><span style="display:flex;"><span>Thu Jan  <span style="color:#ae81ff">9</span> 20:42:36 EST <span style="color:#ae81ff">2025</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ date <span style="color:#e6db74">&#34;+%Y-%m-%d %H:%M:%S&#34;</span>
-</span></span><span style="display:flex;"><span>2025-01-09 20:42:43</span></span></code></pre></div>
 </li>
 </ul>
 </li>
 <li>
-<p><strong><code>history</code></strong> :</p>
-<ul>
-<li>Options utiles :
-<ul>
-<li><code>n</code> : Pour spécifier le nombre de commandes précédentes à afficher.</li>
-<li><code>!</code> : Pour exécuter une commande spécifique de l&rsquo;historique, par son numéro.</li>
-<li><code>c</code> : Pour effacer l&rsquo;historique de la session.</li>
-</ul>
+<p><strong>Exemples avec la commande history</strong> :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ history		<span style="color:#75715e"># Affiche l&#39;historique complet de la session.</span>
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>  date -R
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span>  pwd
@@ -659,53 +582,34 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ history
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span>  history</span></span></code></pre></div>
 </li>
-</ul>
-</li>
 </ol>
 <hr>
 <h2 id="commandes-utiles">Commandes utiles</h2>
+<ol>
+<li><strong><code>echo</code></strong></li>
+<li><strong><code>man</code> (Manual)</strong></li>
+</ol>
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"><strong>Commande</strong></th>
-          <th style="text-align: left"><strong>Description</strong></th>
+          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Exemple</th>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td style="text-align: left"><code>echo</code></td>
-          <td style="text-align: left">Affiche un message ou une variable dans le terminal.</td>
+          <td style="text-align: left">Affiche un message ou une variable dans le terminal. <br> $SHELL doit être écrit en respectant la casse.</td>
+          <td style="text-align: left"><code>$ echo &quot;Bonjour, monde!&quot;</code> <br> Bonjour, monde! <br> <code>$ echo $SHELL</code> <br> /bin/bash</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>man</code></td>
           <td style="text-align: left">Affiche le manuel d’aide pour une commande.</td>
+          <td style="text-align: left"><code>$ man ls</code></td>
       </tr>
   </tbody>
 </table>
-<ol>
-<li>
-<p><strong><code>echo</code></strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ echo <span style="color:#e6db74">&#34;Bonjour, monde!&#34;</span>
-</span></span><span style="display:flex;"><span>Bonjour, monde!     
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ echo $SHELL
-</span></span><span style="display:flex;"><span>/bin/bash</span></span></code></pre></div>
-
-<details open class=" box cstyle notices note">
-  <summary class="box-label" tabindex="-1">
-    <i class="fa-fw fas fa-exclamation-circle"></i> 
-    Note
-  </summary>
-  <div class="box-content">
-<pre><code>$SHELL doit être écrit en respectant la casse.
-</code></pre>
-  </div>
-</details>
-</li>
-<li>
-<p><strong><code>man</code> (Manual)</strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ndesmangles@localhost ~<span style="color:#f92672">]</span>$ man ls		<span style="color:#75715e"># Affiche le manuel de la commande `ls`.</span></span></span></code></pre></div>
-</li>
-</ol>
 <h3 id="structure-dune-page-de-manuel">Structure d&rsquo;une page de manuel</h3>
 <p>Une page de manuel typique contient plusieurs sections, telles que :</p>
 <ul>
@@ -745,8 +649,8 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vim nom_du_fichier</span></span></code></pre></div>
 <p>Si le fichier n&rsquo;existe pas, <strong>vim</strong> le créera.</p>
 <p>Lorsque vous ouvrez <strong>vim</strong>, il commence en <strong>mode commande</strong>. Vous ne pouvez pas directement écrire du texte. Vous devez d&rsquo;abord passer au <strong>mode insertion</strong> en tapant la lettre <code>i</code>. En bas de la fenêtre Vim, le mot <strong>INSERTION</strong> s&rsquo;affichera.</p>
-<p><a href="#R-image-20c442afff387f4d19a11d4827ed9915" class="lightbox-link"><img alt="Mode insertion" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/cours/mode_insertion.png?width=100vw" style=" height: auto; width: 100vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-20c442afff387f4d19a11d4827ed9915"><img alt="Mode insertion" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/cours/mode_insertion.png?width=100vw"></a></p>
+<p><a href="#R-image-15a9626b18ad3b4e5071967acb52cabf" class="lightbox-link"><img alt="Mode insertion" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/cours/mode_insertion.png?width=100vw" style=" height: auto; width: 100vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-15a9626b18ad3b4e5071967acb52cabf"><img alt="Mode insertion" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/cours/mode_insertion.png?width=100vw"></a></p>
 
 <details open class=" box cstyle notices tip">
   <summary class="box-label" tabindex="-1">
@@ -823,14 +727,6 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
 <p><strong>Testez l&rsquo;annulation</strong> : Modifiez une ligne, annulez avec <code>u</code>, puis rétablissez avec <code>Ctrl+r</code>.</p>
 </li>
 </ol>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p>Nous étudierons comment gérer les droits des différents utilisateurs plus tard dans ce cours.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
 
   <footer class="footline">
   </footer>
@@ -847,7 +743,7 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1738616421";
+          window.index_js_url="/searchindex.en.js?1738776156";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -860,12 +756,12 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1738616421" defer></script>
-        <script src="/js/lunr/lunr.min.js?1738616421" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1738616421" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1738616421" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1738616421" defer></script>
-        <script src="/js/search.js?1738616421" defer></script>
+        <script src="/js/auto-complete.js?1738776156" defer></script>
+        <script src="/js/lunr/lunr.min.js?1738776156" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1738776156" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1738776156" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1738776156" defer></script>
+        <script src="/js/search.js?1738776156" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -939,8 +835,8 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1738616421" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1738616421" defer></script>
-    <script src="/js/theme.js?1738616421" defer></script>
+    <script src="/js/clipboard.min.js?1738776156" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1738776156" defer></script>
+    <script src="/js/theme.js?1738776156" defer></script>
   </body>
 </html>
