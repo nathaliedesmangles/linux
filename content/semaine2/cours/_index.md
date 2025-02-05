@@ -160,69 +160,27 @@ Bash propose une variété de commandes puissantes pour interagir avec le systè
 
 ## Navigation dans le système de fichiers
 
-| **Commande** | **Description** |
-|--------------|-----------------|
-| `pwd`        | Affiche le chemin absolu du répertoire courant.    |
-| `cd`         | Change le répertoire courant.                      |
-| `ls`         | Affiche le contenu d'un répertoire.                |
+**Les commandes** :
+1. **`pwd` (Print Working Directory)**
+2. **`cd` (Change Directory)**
+3. **`ls` (List)**
+  
 
-1. **`pwd` (Print Working Directory)** :
-     ```bash
-     [ndesmangles@localhost ~]$ pwd
-     /home/ndesmangles			# Le répertoire personnel dans home
-     [ndesmangles@localhost ~]$ 
-     ```
+| Commande    | Description                                              | Exemple |
+|-------------|----------------------------------------------------------|---------|
+| `pwd`       | Affiche le chemin absolu du répertoire courant.          | /home/user  <br> `$ pwd`  <br> /home/user |
+| `cd`        | Change le répertoire courant pour Documents.             | /home/user  <br> `$ cd Documents`  <br> /home/user/Documents |
+| `cd ~`      | Change vers le répertoire personnel de l'utilisateur.    | /home/user/Documents  <br> `$ cd ~`  <br> /home/user |
+| `cd ..`     | Remonte d'un niveau dans l'arborescence des répertoires. | /home/user/Documents  <br> `$ cd ..`  <br> /home/user |
+| `cd ../../` | Remonte de deux niveaux dans l'arborescence.             | /home/user/Documents/Projects  <br> `$ cd ../../`  <br> /home/user |
+| `ls`        | Affiche le contenu d'un répertoire.                      | /home/user/Documents  <br> `$ ls`  <br> fichier.txt dossier |
+| `ls -l`     | Affiche la liste des fichiers dans un répertoire. <br> L'option `-l` affiche les détails des fichiers dans un répertoire.     | /home/user/Documents  <br> `$ ls -l`  <br> `-rw-r--r-- 1 user user 1234 Jan 1 12:00 fichier.txt` |
 
-2. **`cd` (Change Directory)** :
-     ```bash
-     [ndesmangles@localhost ~]$ cd /etc
-     [ndesmangles@localhost etc]$	# Notez le changement du répertoire courant (etc)
-     ```
-   - Remonter d'un niveau.
-     ```bash
-     [ndesmangles@localhost etc]$ cd ..
-     [ndesmangles@localhost /]$ 	# Notez le positionnement à la racine /
-     ```
-   - Revenir dans le répertoire `etc`
-     ```bash
-     [ndesmangles@localhost /]$ cd etc
-     [ndesmangles@localhost etc]$ 
-     ```
-   - Remonter de deux niveaux.
-     ```bash
-     [ndesmangles@localhost etc]$ cd ../..
-     [ndesmangles@localhost /]$ 	# Notez le retour à la racine /
-     ```
-   - Revenir à notre répertoire personnel
-     ```bash
-     [ndesmangles@localhost etc]$ cd ~
-     [ndesmangles@localhost ~]$ 	# Notez le retour au répertoire personnel ~
-     ```
 
-3. **`ls` (List)** :
-   - Options utiles :
-     - `-l` : Affiche des détails comme les permissions[^1], la taille, etc.
-     - `-a` : Montre les fichiers cachés.
+**`ls -l` Quelques explications du résultat** :
 
-     ```bash
-     [ndesmangles@localhost /]$ ls
-     afs  bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
-     [ndesmangles@localhost /]$ ls -l
-     total 24
-     dr-xr-xr-x.   2 root root    6  2 oct 17:00 afs
-     lrwxrwxrwx.   1 root root    7  2 oct 17:00 bin -> usr/bin
-     dr-xr-xr-x.   5 root root 4096 11 jan 23:06 boot
-     ```
-**Quelques explications** :
-
-1. **Première colonne**: -rwxr-xr-x par exemple représente le type de fichier et les droits d’accès (abordés en détail dans un prochain cours) qui lui sont associés.
-2. **Deuxième colonne** : ce qu’elle représente dépend du type de fichier:
-   - **Répertoire** : indique le nombre de sous-répertoires (+2 pour . et ..).
-   - **Fichier** : nombre de lien physiques (vu plus loin dans ce cours).
-3. **Troisième et quatrième colonnes** représentent l’utilisateur propriétaire du fichier et le groupe propriétaire du fichier.
-4. **Cinquième colonne** indique la taille du fichier (notez qu’un répertoire a une taille qui correspond à la taille du fichier répertoire sur le disque).
-5. **Sixième colonne** indique la date de dernière modification.
-6. **Septième colonne** est le nom du fichier.
+1. **Premier caractère**: -, d ou l représente le type de fichier (fichier, répertoire ou lien symbolique respectivement)
+2. **Neuf caractères suivants**: par exemple `rwxr-xr-x` représentent les droits d’accès au fichier/répertoire (abordés en détail dans un prochain cours).
 
 {{% notice style="tip" title="Bon à savoir" %}}
 La commande `clear` permet d'effacer l'écran du terminal.
@@ -232,103 +190,55 @@ La commande `clear` permet d'effacer l'écran du terminal.
 
 ## Manipulation de fichiers et répertoires
 
-| **Commande** | **Description** |
-|--------------|-----------------|
-| `touch`      | Crée un fichier vide ou met à jour la date de modification d’un fichier existant.   |
-| `mkdir`      | Crée un nouveau répertoire.                                                         |
-| `rm`         | Supprime des fichiers. Pour supprimer des répertoires, utilisez `-r` (récursif).    |
-| `rmdir`      | Supprime un répertoire vide.                                                        |
-| `cp`         | Copie des fichiers ou des répertoires.                                              |
-| `mv`         | Déplace ou renomme des fichiers et des répertoires.                                 |
-
-
-1. **`touch`** :
-     ```bash
-     [ndesmangles@localhost ~]$ touch nouveau_fichier.txt
-     ```
-
-2. **`mkdir` (Make Directory)** :
-     ```bash
-     [ndesmangles@localhost ~]$ mkdir nouveau_repertoire
-     ```
-
+**Les commandes** :
+1. **`touch`** 
+2. **`mkdir` (Make Directory)**
 3. **`rm` (Remove)** :
-     ```bash
-     [ndesmangles@localhost ~]$ rm fichier.txt
-     [ndesmangles@localhost ~]$ rm -r dossier_a_supprimer
-     ```
+4. **`rmdir` (Remove Directory)**
+5. **`cp` (Copy)**
+6. **`mv` (Move)**
 
-4. **`rmdir` (Remove Directory)** :
-     ```bash
-     [ndesmangles@localhost ~]$ rmdir dossier_vide
-     [ndesmangles@localhost ~]$ rmdir dossier_pas_vide   # Affiche une erreur
-     ```
 
-5. **`cp` (Copy)** :
-     ```bash
-     [ndesmangles@localhost ~]$ cp fichier_source.txt fichier_destination.txt
-     [ndesmangles@localhost ~]$ cp -r dossier_source dossier_destination
-     ```
+| Commande  | Description                                                                             | Exemple |
+|-----------|-----------------------------------------------------------------------------------------|---------|
+| `touch`   | Crée un fichier vide ou met à jour la date de modification d’un fichier existant.      |  /home/user <br> `$ touch fichier.txt` <br> `$ ls` <br> fichier.txt |
+| `mkdir`   | Crée un nouveau répertoire.                                                            |  /home/user <br> `$ mkdir mon_dossier` <br> `$ ls` <br> mon_dossier |
+| `rm`      | Supprime des fichiers. Utilisez `-r` pour supprimer des répertoires et leur contenu.   |  /home/user <br> `$ rm fichier.txt` <br> `$ rm -r mon_dossier` |
+| `rmdir`   | Supprime un répertoire vide (ne fonctionne pas s'il contient des fichiers).            |  `$ rmdir mon_dossier`|
+| `cp`      | Copie des fichiers ou des répertoires (avec `-r` pour copier des dossiers entiers).    |  `$ cp fichier.txt copie.txt` <br> `$ ls` <br> fichier.txt copie.txt <br> `$ cp -r mon_dossier copie_dossier` <br>  `$ ls` <br> mon_dossier copie_dossier |
+| `mv`      | Déplace ou renomme des fichiers et des répertoires.                                    |  `$ mv fichier.txt nouveau_nom.txt`  <br> `$ ls` <br>  nouveau_nom.txt |
 
-6. **`mv` (Move)** :
-     ```bash
-     [ndesmangles@localhost ~]$ mv ancien_nom.txt nouveau_nom.txt
-     [ndesmangles@localhost ~]$ mv fichier.txt /nouveau/chemin/
-     ```
 
 ---
 
-## Affichage et lecture de fichiers
+## Affichage et lecture de fichiers  
 
-| **Commande** | **Description** |
-|--------------|-----------------|
-| `cat`        | Affiche le contenu complet d'un fichier.   |
-| `less`       | Permet de lire un fichier page par page.   |
-| `head`       | Affiche les premières lignes d'un fichier. 10 lignes par défaut. |
-| `tail`       | Affiche les dernières lignes d'un fichier. 10 lignes par défaut.  |
+**Les commandes** :
+1. **`cat`**
+2. **`less`**
+3. **`head`**
+4. **`tail`** 
 
 
-1. **`cat`** :
-     ```bash
-     [ndesmangles@localhost ~]$ cat fichier.txt
-     [ndesmangles@localhost ~]$ cat fichier1 fichier2
-     Hello World!!
-     Introduction aux commandes Linux.
-     [ndesmangles@localhost ~]$ cat /etc/shells		# Affiche les Shells installés sur la machine.
-     ```
+|  Commande    | Description     | Exemple                  |  
+|--------------|-----------------|--------------------------|  
+| `cat`        | Affiche le contenu complet d'un ou de plusieurs fichiers.   | `$ cat fichier.txt` <br> `$ cat fichier1.txt fichier2.txt`|  
+| `less`       | Permet de lire un fichier page par page.   <br> Contrôles : <br> `Espace` : Page suivante <br> `q` : Quitter| `$ less fichier.txt` |  
+| `head`       | Affiche les premières lignes d'un fichier. **10 lignes par défaut**. <br> L'option `-n` permet de spécifier le nombre de lignes | `$ head fichier.txt` <br> `$ head -n 5 fichier.txt` |  
+| `tail`       | Affiche les dernières lignes d'un fichier. **10 lignes par défaut**. <br> L'option `-n` permet de spécifier le nombre de lignes | `$ tail fichier.txt` <br> `$ tail -n 5 fichier.txt` |  
 
-2. **`less`** :
-   - Contrôles :
-     - `Espace` : Page suivante
-     - `q` : Quitter
-     ```bash
-     [ndesmangles@localhost ~]$ less fichier.txt
-     ```
-
-3. **`head`** :
-     ```bash
-     [ndesmangles@localhost ~]$ head fichier.txt       # Affiche les 10 premières lignes
-     [ndesmangles@localhost ~]$ head -n 5 fichier.txt  # Affiche les 5 premières lignes
-     ```
-
-4. **`tail`** :
-     ```bash
-     [ndesmangles@localhost ~]$ tail fichier.txt       # Affiche les 10 dernières lignes
-     [ndesmangles@localhost ~]$ tail -n 5 fichier.txt  # Affiche les 5 dernières lignes
-     ```
 ---
 
 ## Informations système et historique
 
-| **Commande** | **Description** |
-|--------------|-----------------|
-| `date`       | Affiche la date et l'heure actuelles.        |
-| `history`    | Liste les commandes précédemment exécutées.  |
+|  Commande  | Description           | Exemple              |
+|------------|-----------------------|----------------------|
+| `date`     | Affiche la date et l'heure actuelles.        | `$ date` <br> Thu Jan  9 20:42:36 EST 2025 <br> `$ date "+%Y-%m-%d %H:%M:%S"` <br> 2025-01-09 20:42:43 |
+| `history`  | Liste les commandes précédemment exécutées.  <br> Options utiles : <br> `n` : Pour spécifier le nombre de commandes précédentes à afficher. <br> `!` : Pour exécuter une commande spécifique de l'historique, par son numéro. <br> `c` : Pour effacer l'historique de la session.| `$ history` <br> `$ history 5` <br> `$ history -c` |
 
 
-1. **`date`** :
-   - Options utiles :
-     - `+` : Pour spécifier un format personnalisé.
+1. **Commande date quelques options utiles** :
+     - `+` : Il faut précéder l'option du symbole `+` pour spécifier un format personnalisé.
    - Formats: 
      - `%Y` : Année complète (ex. 2025).
      - `%m` : Mois (01-12).
@@ -340,18 +250,8 @@ La commande `clear` permet d'effacer l'écran du terminal.
      - `%R` : Heure au format 24h (ex. 23:11 sans les secondes) 
      - `%p` : Heure avec AM ou PM 
 
-     ```bash
-     [ndesmangles@localhost ~]$ date
-     Thu Jan  9 20:42:36 EST 2025
-     [ndesmangles@localhost ~]$ date "+%Y-%m-%d %H:%M:%S"
-     2025-01-09 20:42:43
-     ```
 
-2. **`history`** :
-   - Options utiles :
-     - `n` : Pour spécifier le nombre de commandes précédentes à afficher.
-     - `!` : Pour exécuter une commande spécifique de l'historique, par son numéro.
-     - `c` : Pour effacer l'historique de la session.
+2. **Exemples avec la commande history** :
      ```bash
      [ndesmangles@localhost ~]$ history		# Affiche l'historique complet de la session.
      1  date -R
@@ -388,29 +288,15 @@ La commande `clear` permet d'effacer l'écran du terminal.
 
 ## Commandes utiles
 
-| **Commande** | **Description** |
-|--------------|-----------------|
-| `echo`       | Affiche un message ou une variable dans le terminal. |
-| `man`        | Affiche le manuel d’aide pour une commande.          |
+1. **`echo`** 
+2. **`man` (Manual)**
 
 
-1. **`echo`** :
-     ```bash
-     [ndesmangles@localhost ~]$ echo "Bonjour, monde!"
-     Bonjour, monde!     
-     [ndesmangles@localhost ~]$ echo $SHELL
-     /bin/bash
-     ```
+|  Commande  | Description     | Exemple  |
+|------------|-----------------|-----------|
+| `echo`     | Affiche un message ou une variable dans le terminal. <br> $SHELL doit être écrit en respectant la casse. | `$ echo "Bonjour, monde!"` <br> Bonjour, monde! <br> `$ echo $SHELL` <br> /bin/bash    
+| `man`      | Affiche le manuel d’aide pour une commande.          | `$ man ls`
 
-    {{% notice style="note" title="Note" %}}
-    $SHELL doit être écrit en respectant la casse.
-    {{% /notice %}}
-
-
-2. **`man` (Manual)** :
-     ```bash
-     [ndesmangles@localhost ~]$ man ls		# Affiche le manuel de la commande `ls`.
-     ```
 
 ### Structure d'une page de manuel
 
