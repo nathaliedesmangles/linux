@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Atelier 2 :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/solutions/semaine2/index.html</link>
+    <link>https://example.org/solutions/semaine2/index.html</link>
     <description>Solution des exercices Exercice 1 : Explorer l’arborescence Linux Afficher le chemin de votre répertoire courant :&#xA;$ pwd&#xD;Aller dans /usr/share/doc et vérifier le chemin :&#xA;$ cd /usr/share/doc $ pwd&#xD;Remonter dans le répertoire parent :&#xA;$ cd .. $ pwd&#xD;Retourner dans le répertoire personnel :&#xA;$ cd ~ $ pwd&#xD;Lister les fichiers présents dans le répertoire courant :&#xA;$ ls&#xD;Lister les fichiers du répertoire /usr :</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/solutions/semaine2/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/solutions/semaine2/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
