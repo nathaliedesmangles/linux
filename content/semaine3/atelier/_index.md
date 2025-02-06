@@ -53,6 +53,10 @@ Assurez-vous d'être revenu dans votre répertoire personnel avant de commencer 
 
 ![structure](atelier3.png)
 
+{{% notice style="primary" title="Astuce" %}}
+Utiliser l'option -p de la commande `mkdir`.
+{{% /notice %}}
+
 2. Toujours en utilisant l'expansion d'accolades, créer un fichier vide nommé `priseNote` dans chaque répertoire `lab` en une seule commande
 
 3. Utiliser une boucle `for` pour renommer tous les fichiers `priseNote` en `priseNote.txt`.
@@ -63,17 +67,17 @@ Assurez-vous d'être revenu dans votre répertoire personnel avant de commencer 
 {{% notice style="primary" title="Vérification des résultats" %}}
 Utilisez la commande `tree` pour vérifier que l'arborescence des dossiers et les fichiers ont été créés et déplacés correctement. Par exemple :
 ```bash
-$ tree lecon1
+$ tree semaine1/lecon
 ```
 La structure qui devrait s'afficher :
 
 ```
-lecon1
-├── lab1
+lecon
+├── lab
 │   └── priseNote.txt
-├── lab2
+├── lab
 │   └── priseNote.txt
-└── lab3
+└── lab
     └── priseNote.txt
 ```
 {{% /notice %}}
