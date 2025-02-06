@@ -67,18 +67,17 @@ Utiliser l'option -p de la commande `mkdir`.
 {{% notice style="primary" title="Vérification des résultats" %}}
 Utilisez la commande `tree` pour vérifier que l'arborescence des dossiers et les fichiers ont été créés et déplacés correctement. Par exemple :
 ```bash
-$ tree semaine1/lecon
+$ tree semaine1
 ```
 La structure qui devrait s'afficher :
 
 ```
-lecon
+semaine1
 ├── lab
+│   └── 
+├── lecon
 │   └── priseNote.txt
-├── lab
-│   └── priseNote.txt
-└── lab
-    └── priseNote.txt
+
 ```
 {{% /notice %}}
 
