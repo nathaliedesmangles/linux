@@ -22,14 +22,14 @@
     <meta itemprop="name" content="Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX">
     <meta itemprop="description" content="Le processus de démarrage Le processus de démarrage d’un système Linux suit plusieurs étapes essentielles, impliquant différents composants du système :
 Étape Description 1. Activation du BIOS/UEFI Au démarrage, le BIOS (Basic Input Output System) ou l’UEFI (Unified Extensible Firmware Interface) s’active. Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT). 2. Chargement du chargeur d’amorçage Le MBR (Master Boot Record) définit le chargeur de démarrage, comme GRUB (GRand Unified Bootloader). GRUB affiche un menu permettant de choisir le système à démarrer. 3. Chargement du noyau Linux (Kernel) Après sélection de Linux, GRUB charge le noyau, qui initialise les pilotes, périphériques et la gestion de la mémoire. Il charge aussi un disque temporaire (initrd ou initramfs) contenant les modules nécessaires au démarrage. 4. Lancement du processus d’initialisation (init ou systemd) Le noyau lance le premier processus du système : init ou systemd (selon la distribution Linux). Ce processus démarre les services et scripts de configuration (réseau, interface graphique, gestion des utilisateurs, etc.). 5. Affichage de l’écran de connexion Une fois les services chargés, l’écran de connexion s’affiche, demandant un nom d’utilisateur et un mot de passe. 6. Utilisation du système Après authentification, vous pouvez utiliser Linux, lancer des applications et exécuter des commandes. Vous pouvez aussi arrêter ou redémarrer votre système avec shutdown, reboot ou halt. Les niveaux d’exécution (Runlevels) et cibles (Targets) Autrefois, Linux utilisait des niveaux d’exécution (runlevels), qui définissaient les services actifs selon le mode de fonctionnement. Avec systemd, ces niveaux sont remplacés par des cibles (targets). Cependant, la compatibilité avec les anciens niveaux est conservée.">
-    <meta itemprop="wordCount" content="2548">
+    <meta itemprop="wordCount" content="2702">
     <title>Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX</title>
     <link href="/semaine3/cours/index.xml" rel="alternate" type="application/rss+xml" title="Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1738876445" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738876445" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1738876445" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738876445" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1738876445" rel="stylesheet">
-    <link href="/css/theme.min.css?1738876445" rel="stylesheet">
-    <link href="/css/format-html.min.css?1738876445" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1738942876" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738942876" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1738942876" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738942876" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1738942876" rel="stylesheet">
+    <link href="/css/theme.min.css?1738942876" rel="stylesheet">
+    <link href="/css/format-html.min.css?1738942876" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -180,8 +180,8 @@
 
 <h2 id="le-processus-de-démarrage">Le processus de démarrage</h2>
 <p>Le processus de démarrage d&rsquo;un système Linux suit plusieurs étapes essentielles, impliquant différents composants du système :</p>
-<p><a href="#R-image-e18dd17194049524b175d95ae7ce45e5" class="lightbox-link"><img alt="Schema séquence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-e18dd17194049524b175d95ae7ce45e5"><img alt="Schema séquence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg"></a></p>
+<p><a href="#R-image-f66858c8a03ba388ef225216a55207be" class="lightbox-link"><img alt="Schema séquence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f66858c8a03ba388ef225216a55207be"><img alt="Schema séquence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg"></a></p>
 <table>
   <thead>
       <tr>
@@ -267,10 +267,6 @@ Avec <code>systemd</code>, ces niveaux sont remplacés par des <strong>cibles</s
   </tbody>
 </table>
 <h3 id="afficher-et-modifier-le-niveau-dexécution">Afficher et modifier le niveau d&rsquo;exécution</h3>
-<p>Pour lister les processus s’exécutant sur une machine utiliser la commande <strong><code>ps -ef</code></strong> :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -ef
-</span></span><span style="display:flex;"><span>UID          PID    PPID  C STIME TTY          TIME CMD
-</span></span><span style="display:flex;"><span>root           <span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">2</span> 16:18 ?        00:00:01 /usr/lib/systemd/systemd --s</span></span></code></pre></div>
 <p>Pour afficher le niveau d&rsquo;exécution actuel utiliser la commande <strong><code>who -r</code></strong> :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ who -r
 </span></span><span style="display:flex;"><span>niveau d<span style="color:#960050;background-color:#1e0010">&#39;</span>exécution <span style="color:#ae81ff">5</span> 2025-02-01 10:09
@@ -496,11 +492,45 @@ L&rsquo;expansion des caractères génériques permet de manipuler facilement pl
 <p>Bash va générer les nombres de <strong>1 à 12</strong>, puis créer les fichiers correspondants.</p>
 <h2 id="autres-exemples-dutilisation">Autres exemples d&rsquo;utilisation</h2>
 <p><strong>Exemple 1</strong> : Création de fichiers dans un dossier spécifique</p>
-<p>Pour créer 3 fichiers <strong>test1.txt</strong>, <strong>test2.txt</strong> et <strong>test3.txt</strong> dans le dossier <strong>dossier1</strong>, vous pouvez utiliser la commande suivante :</p>
+<p>Pour créer la structure suivante :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>dossier1/
+│── test1.txt/
+│── test2.txt/
+│── test3.txt/</code></pre></div>
+<ul>
+<li>Si <strong>dossier1</strong> esxiste déjà</li>
+</ul>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ touch dossier1/test<span style="color:#f92672">{</span>1..3<span style="color:#f92672">}</span>.txt</span></span></code></pre></div>
+<ul>
+<li>Si <strong>dossier1</strong> n&rsquo;existe pas utiliser plutôt la commande <code>mkdir -p</code>.</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir -p dossier1/test<span style="color:#f92672">{</span>1..3<span style="color:#f92672">}</span>.txt</span></span></code></pre></div>
+
+<details open class=" box cstyle notices green">
+  <summary class="box-label" tabindex="-1">
+    L&rsquo;option -p
+  </summary>
+  <div class="box-content">
+<p>L&rsquo;option <code>-p</code> de <code>mkdir</code> signifie <strong>parents</strong>. Elle indique à la commande de créer tous les répertoires parents nécessaires pour atteindre le répertoire cible, s&rsquo;ils n&rsquo;existent pas déjà.
+Attention, l&rsquo;option <code>-p</code> <strong>ne vérifie pas l&rsquo;existence des fichiers</strong>. Utiliser avec précaution pour éviter d&rsquo;écraser des fichiers existants.</p>
+  </div>
+</details>
 <p><strong>Exemple 2</strong> : Combinaison de chaînes et de séquences</p>
-<p>Pour créer les fichiers <strong>patate</strong>, <strong>patati</strong> et <strong>patata</strong> dans les dossiers <strong>boite1</strong> et <strong>boite2</strong>, vous pouvez utiliser la commande suivante :</p>
+<p>Pour créer la structure suivante:</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>boite1/
+│── patata
+│── patate
+│── patati
+boite2/
+│── patata
+│── patate
+│── patati</code></pre></div>
+<ul>
+<li>Si <strong>boite1</strong> et <strong>boite2</strong> existent déjà.</li>
+</ul>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ touch boite<span style="color:#f92672">{</span>1,2<span style="color:#f92672">}</span>/patat<span style="color:#f92672">{</span>a,e,i<span style="color:#f92672">}</span></span></span></code></pre></div>
+<p>ou si <strong>boite1</strong> et <strong>boite2</strong> n&rsquo;existent pas.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir -p boite<span style="color:#f92672">{</span>1,2<span style="color:#f92672">}</span>/patat<span style="color:#f92672">{</span>a,e,i<span style="color:#f92672">}</span></span></span></code></pre></div>
 <h2 id="protection-contre-lexpansion">Protection contre l&rsquo;expansion</h2>
 <p>Dans certains cas, vous pouvez souhaiter empêcher l&rsquo;expansion d&rsquo;accolades. Pour cela, vous pouvez utiliser le caractère d&rsquo;échappement <code>\</code> ou les guillemets simples (<code>'</code>).</p>
 <h3 id="utilisation-du-caractère-déchappement">Utilisation du caractère d&rsquo;échappement</h3>
@@ -554,10 +584,18 @@ L&rsquo;expansion des caractères génériques permet de manipuler facilement pl
 </table>
 <h3 id="pièges-à-éviter">Pièges à éviter</h3>
 <p>Lors de l&rsquo;utilisation de <code>find</code>, il est crucial de comprendre comment Bash gère l&rsquo;expansion des variables et les guillemets. Voici quelques points importants :</p>
+
+<details open class=" box cstyle notices green">
+  <summary class="box-label" tabindex="-1">
+    Commande find et l&rsquo;expansion
+  </summary>
+  <div class="box-content">
 <ul>
-<li><strong>Expansion des variables</strong>: Bash n&rsquo;effectue pas d&rsquo;expansion de noms de fichiers pour la commande <code>find</code>. Cela permet à <code>find</code> d&rsquo;interpréter correctement les motifs avec des caractères génériques comme <code>*.txt</code>.</li>
-<li><strong>Utilisation de guillemets</strong>: Il est souvent nécessaire d&rsquo;utiliser des guillemets pour protéger les caractères spéciaux et éviter des erreurs d&rsquo;interprétation.</li>
+<li>Avec la commande <code>find</code>, l&rsquo;expansion de variables et de noms de fichiers ne se font pas. Cela permet à <code>find</code> d&rsquo;interpréter correctement les motifs avec des caractères génériques comme <code>*.txt</code>.</li>
+<li>Il est souvent nécessaire d&rsquo;utiliser des guillemets pour protéger les caractères spéciaux et éviter des erreurs d&rsquo;interprétation.</li>
 </ul>
+  </div>
+</details>
 <p>Le tableau suivant illustre les différences de comportement :</p>
 <table>
   <thead>
@@ -622,41 +660,35 @@ L&rsquo;expansion des caractères génériques permet de manipuler facilement pl
 <details class=" box cstyle notices green expand" name="notice-toggle">
   <summary class="box-label">
     <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    Solution à venir&hellip;
+    Solution
   </summary>
   <div class="box-content">
-<!--
-
-1.  **Manipulation de variables et de `ls` :**
-```bash
-variable_etc=$(ls /etc)
-echo $variable_etc
-ls $variable_etc # Affiche les fichiers séparés par des espaces
-```
-
-2.  **Recherche de fichiers de configuration :**
-```bash
-fichiers_conf=$(find /etc -name "*.conf")
-ls $fichiers_conf # Affiche les fichiers séparés par des espaces
-for fichier in $fichiers_conf; do
-  du -sh $fichier
-done
-```
-
-3.  **Création de fichiers avec factorisation :**
-```bash
-mkdir repertoire_test
-touch repertoire_test/test{1..3}.{txt,doc,tot}
-```
-
-4.  **Utilisation de caractères génériques :**
-```bash
-ls repertoire_test/test*.txt # Solution 1
-ls repertoire_test/test[1-3].txt # Solution 2
-ls repertoire_test/*.{txt,tot}
-ls repertoire_test/test1*
-```
--->
+<ol>
+<li><strong>Manipulation de variables et de <code>ls</code> :</strong></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>variable_etc<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ls /etc<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>echo $variable_etc
+</span></span><span style="display:flex;"><span>ls $variable_etc <span style="color:#75715e"># Affiche les fichiers séparés par des espaces</span></span></span></code></pre></div>
+<ol start="2">
+<li><strong>Recherche de fichiers de configuration :</strong></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fichiers_conf<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>find /etc -name <span style="color:#e6db74">&#34;*.conf&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>ls $fichiers_conf <span style="color:#75715e"># Affiche les fichiers séparés par des espaces</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> fichier in $fichiers_conf; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  du -sh $fichier
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+<ol start="3">
+<li><strong>Création de fichiers avec factorisation :</strong></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir repertoire_test
+</span></span><span style="display:flex;"><span>touch repertoire_test/test<span style="color:#f92672">{</span>1..3<span style="color:#f92672">}</span>.<span style="color:#f92672">{</span>txt,doc,tot<span style="color:#f92672">}</span></span></span></code></pre></div>
+<ol start="4">
+<li><strong>Utilisation de caractères génériques :</strong></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls repertoire_test/test*.txt <span style="color:#75715e"># Solution 1</span>
+</span></span><span style="display:flex;"><span>ls repertoire_test/test<span style="color:#f92672">[</span>1-3<span style="color:#f92672">]</span>.txt <span style="color:#75715e"># Solution 2</span>
+</span></span><span style="display:flex;"><span>ls repertoire_test/*.<span style="color:#f92672">{</span>txt,tot<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>ls repertoire_test/test1*</span></span></code></pre></div>
   </div>
 </details>
 <h2 id="itération-sur-le-résultat-dune-commande-avec-la-boucle-for">Itération sur le résultat d&rsquo;une commande avec la boucle <em><strong>for</strong></em></h2>
@@ -740,27 +772,23 @@ fichier4.txt	# contient le mot &#39;monde&#39;</code></pre></div>
     Solution à venir&hellip;
   </summary>
   <div class="box-content">
-<!--
-1.  **Liste des fichiers de `/bin` :**
-```bash
-fichiers_bin=$(ls /bin)
-```
-
-2.  **Affichage des fichiers :**
-```bash
-for i in $fichiers_bin; do
-  echo $i
-done
-```
-
-3.  **Taille des fichiers :**
-```bash
-for i in $fichiers_bin; do
-  echo /bin/$i
-  du -sh /bin/$i
-done
-```
--->
+<ol>
+<li><strong>Liste des fichiers de <code>/bin</code> :</strong></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fichiers_bin<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ls /bin<span style="color:#66d9ef">)</span></span></span></code></pre></div>
+<ol start="2">
+<li><strong>Affichage des fichiers :</strong></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in $fichiers_bin; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  echo $i
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+<ol start="3">
+<li><strong>Taille des fichiers :</strong></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in $fichiers_bin; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  echo /bin/$i
+</span></span><span style="display:flex;"><span>  du -sh /bin/$i
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
   </div>
 </details>
 
@@ -779,7 +807,7 @@ done
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1738876445";
+          window.index_js_url="/searchindex.en.js?1738942876";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -792,12 +820,12 @@ done
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1738876445" defer></script>
-        <script src="/js/lunr/lunr.min.js?1738876445" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1738876445" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1738876445" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1738876445" defer></script>
-        <script src="/js/search.js?1738876445" defer></script>
+        <script src="/js/auto-complete.js?1738942876" defer></script>
+        <script src="/js/lunr/lunr.min.js?1738942876" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1738942876" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1738942876" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1738942876" defer></script>
+        <script src="/js/search.js?1738942876" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -871,8 +899,8 @@ done
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1738876445" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1738876445" defer></script>
-    <script src="/js/theme.js?1738876445" defer></script>
+    <script src="/js/clipboard.min.js?1738942876" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1738942876" defer></script>
+    <script src="/js/theme.js?1738942876" defer></script>
   </body>
 </html>

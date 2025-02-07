@@ -43,13 +43,6 @@ $ systemctl isolate <nom_niveau>
 
 ### Afficher et modifier le niveau d'exécution
 
-Pour lister les processus s’exécutant sur une machine utiliser la commande **`ps -ef`** :
-```bash
-$ ps -ef
-UID          PID    PPID  C STIME TTY          TIME CMD
-root           1       0  2 16:18 ?        00:00:01 /usr/lib/systemd/systemd --s
-```
-
 Pour afficher le niveau d'exécution actuel utiliser la commande **`who -r`** :
 ```bash
 $ who -r
@@ -318,18 +311,49 @@ Bash va générer les nombres de **1 à 12**, puis créer les fichiers correspon
 
 **Exemple 1** : Création de fichiers dans un dossier spécifique
 
-Pour créer 3 fichiers **test1.txt**, **test2.txt** et **test3.txt** dans le dossier **dossier1**, vous pouvez utiliser la commande suivante :
-
+Pour créer la structure suivante :
+```
+dossier1/
+│── test1.txt/
+│── test2.txt/
+│── test3.txt/
+```
+- Si **dossier1** esxiste déjà
 ```bash
 $ touch dossier1/test{1..3}.txt
 ```
 
+- Si **dossier1** n'existe pas utiliser plutôt la commande `mkdir -p`.
+```bash
+$ mkdir -p dossier1/test{1..3}.txt
+```
+
+{{% notice style="green" title="L'option -p" %}}
+L'option `-p` de `mkdir` signifie **parents**. Elle indique à la commande de créer tous les répertoires parents nécessaires pour atteindre le répertoire cible, s'ils n'existent pas déjà.
+Attention, l'option `-p` **ne vérifie pas l'existence des fichiers**. Utiliser avec précaution pour éviter d'écraser des fichiers existants.
+{{% /notice %}}
+
 **Exemple 2** : Combinaison de chaînes et de séquences
 
-Pour créer les fichiers **patate**, **patati** et **patata** dans les dossiers **boite1** et **boite2**, vous pouvez utiliser la commande suivante :
+Pour créer la structure suivante:
 
+```
+boite1/
+│── patata
+│── patate
+│── patati
+boite2/
+│── patata
+│── patate
+│── patati
+```
+- Si **boite1** et **boite2** existent déjà.
 ```bash
 $ touch boite{1,2}/patat{a,e,i}
+```
+ou si **boite1** et **boite2** n'existent pas.
+```bash
+$ mkdir -p boite{1,2}/patat{a,e,i}
 ```
 
 ## Protection contre l'expansion
@@ -391,8 +415,10 @@ L'option `-name` est la plus courante pour rechercher des fichiers par leur nom.
 
 Lors de l'utilisation de `find`, il est crucial de comprendre comment Bash gère l'expansion des variables et les guillemets. Voici quelques points importants :
 
-- **Expansion des variables**: Bash n'effectue pas d'expansion de noms de fichiers pour la commande `find`. Cela permet à `find` d'interpréter correctement les motifs avec des caractères génériques comme `*.txt`.
-- **Utilisation de guillemets**: Il est souvent nécessaire d'utiliser des guillemets pour protéger les caractères spéciaux et éviter des erreurs d'interprétation.
+{{% notice style="green" title="Commande find et l'expansion" %}}
+- Avec la commande `find`, l'expansion de variables et de noms de fichiers ne se font pas. Cela permet à `find` d'interpréter correctement les motifs avec des caractères génériques comme `*.txt`.
+- Il est souvent nécessaire d'utiliser des guillemets pour protéger les caractères spéciaux et éviter des erreurs d'interprétation.
+{{% /notice %}}
 
 Le tableau suivant illustre les différences de comportement :
 
@@ -423,9 +449,7 @@ Le tableau suivant illustre les différences de comportement :
     - Affichez tous les fichiers `.txt` et `.tot`.
     - Affichez tous les fichiers `test1`.
 
-{{% notice style="green" title="Solution à venir..." groupid="notice-toggle" expanded="false" %}}
-<!--
-
+{{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
 1.  **Manipulation de variables et de `ls` :**
 ```bash
 variable_etc=$(ls /etc)
@@ -455,7 +479,6 @@ ls repertoire_test/test[1-3].txt # Solution 2
 ls repertoire_test/*.{txt,tot}
 ls repertoire_test/test1*
 ```
--->
 {{% /notice %}}
 
 ## Itération sur le résultat d'une commande avec la boucle ***for***
@@ -555,7 +578,6 @@ done
 
 
 {{% notice style="green" title="Solution à venir..." groupid="notice-toggle" expanded="false" %}}
-<!--
 1.  **Liste des fichiers de `/bin` :**
 ```bash
 fichiers_bin=$(ls /bin)
@@ -575,6 +597,5 @@ for i in $fichiers_bin; do
   du -sh /bin/$i
 done
 ```
--->
 {{% /notice %}}
 
