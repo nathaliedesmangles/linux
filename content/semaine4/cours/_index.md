@@ -191,14 +191,14 @@ $ cat fichier.txt | wc -l
 $ find / -name services
 ```
 C'est difficile de lire la sortie car les résultats sont noyés au milieu de nombreux messages d'erreurs.
-![Find](../find.png?height=200)
+![Find](find.png?height=200)
 
 Pour rediriger les messages d'erreur:
 ```bash
 $ find / -name services 2>/dev/null
 ```
 Maintenant la lecture est beaucoup plus facile:
-![Find2](../find2.png?height=70)
+![Find2](find2.png?height=70)
 
 Pour sauvegarder le résultat dans un fichier:
 ```bash

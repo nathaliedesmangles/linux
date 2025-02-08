@@ -90,7 +90,7 @@ Pour cet exercice:
 - **nomdurépertoire** est affiché automatiquement. 
 - **N** est le nombre trouvé.
 
-Référez-vous au cours de la semaine 2 sur [la commande ls -l](../semaine2/cours/#quelques-explications-du-résultat-de-ls--l)
+Référez-vous au cours de la semaine 2 sur [la commande ls -l](../../../semaine2/cours/#quelques-explications-du-résultat-de-ls--l)
 
 
 1. En une seule ligne de commande, on veut savoir combien de dossiers contient le répertoire courant. Le résultat doit être affiché comme suit :
@@ -134,5 +134,3 @@ Résultat attendu:
 ```
 
 3. Récupérer la sortie standard de la commande précédente et trier le résultat par **ordre croissant de taille**. (**en une seule commande sans utiliser de variable**)
-
-
