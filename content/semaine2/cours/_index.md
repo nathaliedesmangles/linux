@@ -179,7 +179,7 @@ Bash propose une variété de commandes puissantes pour interagir avec le systè
 
 **`ls -l`** ### Quelques explications du résultat
 
-1. **Premier caractère**: -, d ou l représente le type de fichier (fichier, répertoire ou lien symbolique respectivement)
+1. **Premier caractère**: `-`, `d` ou `l` représente le type de fichier (fichier standard, répertoire ou lien symbolique respectivement)
 2. **Neuf caractères suivants**: par exemple `rwxr-xr-x` représentent les droits d’accès au fichier/répertoire (abordés en détail dans un prochain cours).
 
 {{% notice style="tip" title="Bon à savoir" %}}
