@@ -177,7 +177,7 @@ Bash propose une variété de commandes puissantes pour interagir avec le systè
 | `ls -l`     | Affiche la liste des fichiers dans un répertoire. <br> L'option `-l` affiche les détails des fichiers dans un répertoire.     | /home/user/Documents  <br> `$ ls -l`  <br> `-rw-r--r-- 1 user user 1234 Jan 1 12:00 fichier.txt` |
 
 
-**`ls -l`** ### Quelques explications du résultat
+### Quelques explications du résultat de **ls -l**
 
 1. **Premier caractère**: `-`, `d` ou `l` représente le type de fichier (fichier standard, répertoire ou lien symbolique respectivement)
 2. **Neuf caractères suivants**: par exemple `rwxr-xr-x` représentent les droits d’accès au fichier/répertoire (abordés en détail dans un prochain cours).
