@@ -5,27 +5,27 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Objectifs de l’atelier Se familiariser avec les entrées/sorties et la redirection des commandes. Combinaison de commandes. Filtrage de données. Utilisation de l’itération avec la boucle While. Atelier AstucePour effectuer des opérations simple, vous pouvez utiliser la commande bc de cette façon: $ echo 7-3 | bcExercice 1 Ouvrez une session avec l’utilisateur standard et reproduisez, dans le répertoire courant, l’arborescence suivante et ce en utilisant un maximum de trois commandes : ├── H2025│ ├── Linux│ │ ├── Cours│ │ └── Ateliers│ └── Virtualisation│ └── machines└── PersonnelChangez de répertoire en allant dans le dossier Notes. En saisissant une seule commande, créez, à l’intérieur du répertoire courant, les dossiers semaine1, semaine2, …semaine15. Vous ne devez pas à entrer tous les noms de semaines dans la commande. En une seule commande, faites-en-sorte que dans chacun des dossiers précédents (semaine1..), un fichier est créé et qui contient la ligne suivante : Ce cours concerne la semaineN Où N correspond au numéro de la semaine.">
+    <meta name="description" content="Objectifs de l’atelier Utiliser les commandes tree, grep, sep, cut, more, less et sort. Rediriger les résultats de commandes. Enchainer les commandes. Filtrer des données de fichiers ou répertoires. Itérer sur des résultats de commandes avec la boucle While. Atelier AstucePour réaliser les exercices, vous aurez besoin de regarder les différentes commandes vues en cours (commandes et boucles) et les commandes ci-dessous (voir la rubrique Astuces). Vous DEVREZ aller consulter les pages de manuel des différentes commandes pour trouver la façon de réaliser ce que vous souhaitez. Pour effectuer des opérations simple, vous pouvez utiliser la commande bc de cette façon: $ echo 7-3 | bcExercice 1 Ouvrir une session avec l’utilisateur standard et reproduire, dans le répertoire courant, l’arborescence suivante et ce en utilisant un maximum de trois commandes : ├── H2025│ ├── Linux│ │ ├── Cours│ │ └── Ateliers│ └── Virtualisation│ └── machines└── PersonnelChanger de répertoire en allant dans le dossier Notes.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="ATELIER #4: Redirection, E/S, pipeline, filtres et while :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Objectifs de l’atelier Se familiariser avec les entrées/sorties et la redirection des commandes. Combinaison de commandes. Filtrage de données. Utilisation de l’itération avec la boucle While. Atelier AstucePour effectuer des opérations simple, vous pouvez utiliser la commande bc de cette façon: $ echo 7-3 | bcExercice 1 Ouvrez une session avec l’utilisateur standard et reproduisez, dans le répertoire courant, l’arborescence suivante et ce en utilisant un maximum de trois commandes : ├── H2025│ ├── Linux│ │ ├── Cours│ │ └── Ateliers│ └── Virtualisation│ └── machines└── PersonnelChangez de répertoire en allant dans le dossier Notes. En saisissant une seule commande, créez, à l’intérieur du répertoire courant, les dossiers semaine1, semaine2, …semaine15. Vous ne devez pas à entrer tous les noms de semaines dans la commande. En une seule commande, faites-en-sorte que dans chacun des dossiers précédents (semaine1..), un fichier est créé et qui contient la ligne suivante : Ce cours concerne la semaineN Où N correspond au numéro de la semaine.">
+    <meta name="twitter:title" content="ATELIER #4: Commandes utiles, redirection, chainage, filtres et boucle while :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Objectifs de l’atelier Utiliser les commandes tree, grep, sep, cut, more, less et sort. Rediriger les résultats de commandes. Enchainer les commandes. Filtrer des données de fichiers ou répertoires. Itérer sur des résultats de commandes avec la boucle While. Atelier AstucePour réaliser les exercices, vous aurez besoin de regarder les différentes commandes vues en cours (commandes et boucles) et les commandes ci-dessous (voir la rubrique Astuces). Vous DEVREZ aller consulter les pages de manuel des différentes commandes pour trouver la façon de réaliser ce que vous souhaitez. Pour effectuer des opérations simple, vous pouvez utiliser la commande bc de cette façon: $ echo 7-3 | bcExercice 1 Ouvrir une session avec l’utilisateur standard et reproduire, dans le répertoire courant, l’arborescence suivante et ce en utilisant un maximum de trois commandes : ├── H2025│ ├── Linux│ │ ├── Cours│ │ └── Ateliers│ └── Virtualisation│ └── machines└── PersonnelChanger de répertoire en allant dans le dossier Notes.">
     <meta property="og:url" content="https://example.org/semaine4/atelier/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
-    <meta property="og:title" content="ATELIER #4: Redirection, E/S, pipeline, filtres et while :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Objectifs de l’atelier Se familiariser avec les entrées/sorties et la redirection des commandes. Combinaison de commandes. Filtrage de données. Utilisation de l’itération avec la boucle While. Atelier AstucePour effectuer des opérations simple, vous pouvez utiliser la commande bc de cette façon: $ echo 7-3 | bcExercice 1 Ouvrez une session avec l’utilisateur standard et reproduisez, dans le répertoire courant, l’arborescence suivante et ce en utilisant un maximum de trois commandes : ├── H2025│ ├── Linux│ │ ├── Cours│ │ └── Ateliers│ └── Virtualisation│ └── machines└── PersonnelChangez de répertoire en allant dans le dossier Notes. En saisissant une seule commande, créez, à l’intérieur du répertoire courant, les dossiers semaine1, semaine2, …semaine15. Vous ne devez pas à entrer tous les noms de semaines dans la commande. En une seule commande, faites-en-sorte que dans chacun des dossiers précédents (semaine1..), un fichier est créé et qui contient la ligne suivante : Ce cours concerne la semaineN Où N correspond au numéro de la semaine.">
+    <meta property="og:title" content="ATELIER #4: Commandes utiles, redirection, chainage, filtres et boucle while :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Objectifs de l’atelier Utiliser les commandes tree, grep, sep, cut, more, less et sort. Rediriger les résultats de commandes. Enchainer les commandes. Filtrer des données de fichiers ou répertoires. Itérer sur des résultats de commandes avec la boucle While. Atelier AstucePour réaliser les exercices, vous aurez besoin de regarder les différentes commandes vues en cours (commandes et boucles) et les commandes ci-dessous (voir la rubrique Astuces). Vous DEVREZ aller consulter les pages de manuel des différentes commandes pour trouver la façon de réaliser ce que vous souhaitez. Pour effectuer des opérations simple, vous pouvez utiliser la commande bc de cette façon: $ echo 7-3 | bcExercice 1 Ouvrir une session avec l’utilisateur standard et reproduire, dans le répertoire courant, l’arborescence suivante et ce en utilisant un maximum de trois commandes : ├── H2025│ ├── Linux│ │ ├── Cours│ │ └── Ateliers│ └── Virtualisation│ └── machines└── PersonnelChanger de répertoire en allant dans le dossier Notes.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
-    <meta itemprop="name" content="ATELIER #4: Redirection, E/S, pipeline, filtres et while :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Objectifs de l’atelier Se familiariser avec les entrées/sorties et la redirection des commandes. Combinaison de commandes. Filtrage de données. Utilisation de l’itération avec la boucle While. Atelier AstucePour effectuer des opérations simple, vous pouvez utiliser la commande bc de cette façon: $ echo 7-3 | bcExercice 1 Ouvrez une session avec l’utilisateur standard et reproduisez, dans le répertoire courant, l’arborescence suivante et ce en utilisant un maximum de trois commandes : ├── H2025│ ├── Linux│ │ ├── Cours│ │ └── Ateliers│ └── Virtualisation│ └── machines└── PersonnelChangez de répertoire en allant dans le dossier Notes. En saisissant une seule commande, créez, à l’intérieur du répertoire courant, les dossiers semaine1, semaine2, …semaine15. Vous ne devez pas à entrer tous les noms de semaines dans la commande. En une seule commande, faites-en-sorte que dans chacun des dossiers précédents (semaine1..), un fichier est créé et qui contient la ligne suivante : Ce cours concerne la semaineN Où N correspond au numéro de la semaine.">
-    <meta itemprop="wordCount" content="560">
-    <title>ATELIER #4: Redirection, E/S, pipeline, filtres et while :: 420-ZG4-MO LINUX</title>
-    <link href="/semaine4/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #4: Redirection, E/S, pipeline, filtres et while :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1738942876" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738942876" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1738942876" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738942876" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1738942876" rel="stylesheet">
-    <link href="/css/theme.min.css?1738942876" rel="stylesheet">
-    <link href="/css/format-html.min.css?1738942876" rel="stylesheet" id="R-format-style">
+    <meta itemprop="name" content="ATELIER #4: Commandes utiles, redirection, chainage, filtres et boucle while :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Objectifs de l’atelier Utiliser les commandes tree, grep, sep, cut, more, less et sort. Rediriger les résultats de commandes. Enchainer les commandes. Filtrer des données de fichiers ou répertoires. Itérer sur des résultats de commandes avec la boucle While. Atelier AstucePour réaliser les exercices, vous aurez besoin de regarder les différentes commandes vues en cours (commandes et boucles) et les commandes ci-dessous (voir la rubrique Astuces). Vous DEVREZ aller consulter les pages de manuel des différentes commandes pour trouver la façon de réaliser ce que vous souhaitez. Pour effectuer des opérations simple, vous pouvez utiliser la commande bc de cette façon: $ echo 7-3 | bcExercice 1 Ouvrir une session avec l’utilisateur standard et reproduire, dans le répertoire courant, l’arborescence suivante et ce en utilisant un maximum de trois commandes : ├── H2025│ ├── Linux│ │ ├── Cours│ │ └── Ateliers│ └── Virtualisation│ └── machines└── PersonnelChanger de répertoire en allant dans le dossier Notes.">
+    <meta itemprop="wordCount" content="820">
+    <title>ATELIER #4: Commandes utiles, redirection, chainage, filtres et boucle while :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine4/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #4: Commandes utiles, redirection, chainage, filtres et boucle while :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1739051546" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1739051546" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1739051546" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1739051546" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1739051546" rel="stylesheet">
+    <link href="/css/theme.min.css?1739051546" rel="stylesheet">
+    <link href="/css/format-html.min.css?1739051546" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -96,7 +96,6 @@
     <li><a href="#exercice-2">Exercice 2</a></li>
     <li><a href="#exercice-3">Exercice 3</a></li>
     <li><a href="#exercice-4">Exercice 4</a></li>
-    <li><a href="#exercice-5-caractères-génériques-et-commande-find">Exercice 5: Caractères génériques et commande find</a></li>
   </ul>
 </nav>
                 </div>
@@ -105,11 +104,11 @@
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine4/index.html"><span itemprop="name">E/S, redirection et filtrage de commandes et While</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ATELIER #4: Redirection, E/S, pipeline, filtres et while</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine4/index.html"><span itemprop="name">Commandes utiles, redirection, chainage et filtrage de commandes et While</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">ATELIER #4: Commandes utiles, redirection, chainage, filtres et boucle while</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/cours/index.html" title="Entrées/Sorties, redirection, filtres, pipeline des commandes et while (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/cours/index.html" title="Commandes utiles, redirection, chainage, filtres et boucle While (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine5/index.html" title="Les processus Linux (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
@@ -131,14 +130,15 @@
   <header class="headline">
   </header>
 
-<h1 id="atelier-4-redirection-es-pipeline-filtres-et-while">ATELIER #4: Redirection, E/S, pipeline, filtres et while</h1>
+<h1 id="atelier-4-commandes-utiles-redirection-chainage-filtres-et-boucle-while">ATELIER #4: Commandes utiles, redirection, chainage, filtres et boucle while</h1>
 
 <h2 id="objectifs-de-latelier">Objectifs de l&rsquo;atelier</h2>
 <ul>
-<li>Se familiariser avec les entrées/sorties et la redirection des commandes.</li>
-<li>Combinaison de commandes.</li>
-<li>Filtrage de données.</li>
-<li>Utilisation de l&rsquo;itération avec la boucle While.</li>
+<li>Utiliser les commandes <code>tree</code>, <code>grep</code>, <code>sep</code>, <code>cut</code>, <code>more</code>, <code>less</code> et <code>sort</code>.</li>
+<li>Rediriger les résultats de commandes.</li>
+<li>Enchainer les commandes.</li>
+<li>Filtrer des données de fichiers ou répertoires.</li>
+<li>Itérer sur des résultats de commandes avec la boucle While.</li>
 </ul>
 <hr>
 <h1 id="atelier">Atelier</h1>
@@ -150,6 +150,7 @@
   </summary>
   <div class="box-content">
 <ul>
+<li>Pour réaliser les exercices, vous aurez besoin de regarder les différentes commandes vues en cours (commandes et boucles) et les commandes ci-dessous (voir la rubrique Astuces). Vous DEVREZ aller consulter les pages de manuel des différentes commandes pour trouver la façon de réaliser ce que vous souhaitez.</li>
 <li>Pour effectuer des opérations simple, vous pouvez utiliser la commande <code>bc</code> de cette façon:</li>
 </ul>
   </div>
@@ -157,7 +158,7 @@
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo 7-3 | bc</span></span></code></pre></div>
 <h2 id="exercice-1">Exercice 1</h2>
 <ol>
-<li>Ouvrez une session avec l’utilisateur standard et reproduisez, dans le répertoire courant, l&rsquo;arborescence suivante et ce en utilisant un maximum de trois commandes :</li>
+<li>Ouvrir une session avec l’utilisateur standard et reproduire, dans le répertoire courant, l&rsquo;arborescence suivante et ce en utilisant un <strong>maximum de trois commandes</strong> :</li>
 </ol>
 <div class="highlight wrap-code"><pre tabindex="0"><code>├── H2025
 │   ├── Linux
@@ -167,54 +168,118 @@
 │       └── machines
 └── Personnel</code></pre></div>
 <ol start="2">
-<li>Changez de répertoire en allant dans le dossier Notes.</li>
-<li>En saisissant une seule commande, créez, à l’intérieur du répertoire courant, les dossiers semaine1, semaine2, …semaine15. Vous <strong>ne devez pas</strong> à entrer tous les noms de semaines dans la commande.</li>
-<li>En une seule commande, faites-en-sorte que dans chacun des dossiers précédents (semaine1..), un fichier est créé et qui contient la ligne suivante :
-<mark>Ce cours concerne la semaineN</mark></li>
+<li>
+<p>Changer de répertoire en allant dans le dossier <strong>Notes</strong>.</p>
+</li>
+<li>
+<p>En saisissant une seule commande, créer, à l’intérieur du répertoire courant, les dossiers semaine1, semaine2, …, semaine15. Vous <strong>ne devez pas</strong> entrer tous les noms de semaines dans la commande (<strong>hint</strong>: expansion d&rsquo;accolades).</p>
+</li>
+<li>
+<p>À l&rsquo;aide d&rsquo;une <strong>boucle for</strong>, à l&rsquo;interieur de chaque dossier <strong>semaine</strong>, créer un fichier qui contient la phrase suivante :
+<mark>Ce cours concerne la semaineN</mark></p>
+</li>
 </ol>
 <p>Où <code>N</code> correspond au numéro de la semaine.</p>
 <ol start="5">
-<li>Toujours à partir du répertoire courant, utilisez le chemin relatif pour copier dans le dossier Travaux le fichier <code>passwd</code> qui est dans <code>/etc</code>.</li>
-<li>Toujours à partir du répertoire courant et en utilisant le chemin relatif, renommez le fichier copié en ajoutant « Copie » à son nom (<code>passwdCopie</code>)</li>
-<li>Changez le caractère délimiteur du fichier <code>passwdCopie</code> par <code>;</code></li>
-<li>Triez le contenu du fichier <code>passwdCopie</code> en ordre croissant du numéro de groupe, soit le quatrième champ. On veut que le fichier soit trié et non uniquement le résultat retourné par la commande.</li>
+<li>
+<p>Toujours à partir du répertoire courant, utiliser un <strong>chemin relatif</strong> pour copier dans le dossier <strong>Travaux</strong> le fichier <strong><code>passwd</code></strong> qui est dans <strong><code>/etc</code></strong>.</p>
+</li>
+<li>
+<p>Toujours à partir du répertoire courant et en utilisant le chemin relatif, renommer le fichier copié en ajoutant &ldquo;Copie&rdquo; à son nom (<code>passwdCopie</code>).</p>
+</li>
+<li>
+<p>Changer le caractère délimiteur du fichier <code>passwdCopie</code> par <code>;</code> (point-virgule).</p>
+</li>
+<li>
+<p>Trier le contenu du fichier <code>passwdCopie</code> en ordre croissant du numéro de groupe, soit le quatrième champ. On veut que le fichier soit trié et non uniquement le résultat retourné par la commande.</p>
+</li>
 </ol>
 <hr>
 <h2 id="exercice-2">Exercice 2</h2>
-<ul>
-<li>Écrire la ligne de commande qui permet d’afficher le nombre d’utilisateurs qui ont pour shell par défaut un des shells disponibles sur votre machine.
-À l’exécution de la commande, on aurait pour chacun des shells un résultat de la même forme que le suivant:</li>
-</ul>
-<div class="highlight wrap-code"><pre tabindex="0"><code>0 utilisateurs ont pour shell /bin/sh
-11 utilisateurs ont pour shell /bin/bash
-0 utilisateurs ont pour shell /usr/bin/sh
-0 utilisateurs ont pour shell /usr/bin/bash</code></pre></div>
-<p><strong>Vous ne devez pas indiquer manuellement les noms des shells.</strong></p>
+<ol>
+<li>Écrire la commande qui permet de compter le nombre d&rsquo;utilisateurs qui ont pour shell le <code>/bin/bash</code>. Vous trouverez cette information dans le fichier <code>/etc/passwd</code>. À l&rsquo;exécution de la commande, on veut un résultat comme ceci:</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ae81ff">11</span> utilisateurs ont pour shell /bin/bash</span></span></code></pre></div>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Notez que&hellip;
+  </summary>
+  <div class="box-content">
+<p>Le nombre d&rsquo;utilisateurs pourrait être différent.</p>
+  </div>
+</details>
+<ol start="2">
+<li>Maintenant on veut écrire la ligne de commande qui permet d’afficher le nombre d’utilisateurs qui ont pour shell par défaut un des shells disponibles sur votre machine. Pour cela, il faut parcourir le fichier <code>/etc/shells</code> <strong>ligne par ligne</strong> (<strong>hint</strong>: boucle). Vous y trouverez les shells disponibles. À l’exécution de la commande, on aurait pour chacun des shells un résultat de la même forme que le suivant:</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ae81ff">0</span> utilisateurs ont pour shell /bin/sh
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">11</span> utilisateurs ont pour shell /bin/bash
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> utilisateurs ont pour shell /usr/bin/sh
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> utilisateurs ont pour shell /usr/bin/bash</span></span></code></pre></div>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Attention
+  </summary>
+  <div class="box-content">
+<p>Vous <strong>ne devez pas</strong> indiquer manuellement les noms des shells..</p>
+  </div>
+</details>
 <hr>
 <h2 id="exercice-3">Exercice 3</h2>
-<ol>
-<li>On veut savoir combien de dossiers et de fichiers standards et combien d’éléments qui ne sont ni des dossiers ni des fichiers standards contient le répertoire courant. Le résultat doit être affiché comme suit :</li>
-</ol>
-<div class="highlight wrap-code"><pre tabindex="0"><code>Le répertoire nomdurépertoire contient   N dossiers
-Le répertoire nomdurépertoire contient   N fichiers standards
-Le répertoire nomdurépertoire contient   N fichiers qui ne sont ni standards ni des répertoires</code></pre></div>
+<p>Pour cet exercice:</p>
 <ul>
 <li><strong>nomdurépertoire</strong> est affiché automatiquement.</li>
 <li><strong>N</strong> est le nombre trouvé.</li>
 </ul>
-<ol start="2">
-<li>On veut afficher la liste de tous les fichiers standards (de toute l’arborescence) portant le nom du dernier utilisateur créé sur votre machine. Les messages d’erreurs sont redirigés vers <code>/dev/null</code>.</li>
+<p>Référez-vous au cours de la semaine 2 sur <a href="../semaine2/cours/#quelques-explications-du-r%C3%A9sultat-de-ls--l">la commande ls -l</a></p>
+<ol>
+<li>En une seule ligne de commande, on veut savoir combien de dossiers contient le répertoire courant. Le résultat doit être affiché comme suit :</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Le répertoire <span style="color:#e6db74">`</span>nomdurépertoire<span style="color:#e6db74">`</span> contient   N dossiers</span></span></code></pre></div>
+<ol>
+<li>En une seule ligne de commande, on veut savoir combien de fichiers standards contient le répertoire courant. Le résultat doit être affiché comme suit :</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Le répertoire <span style="color:#e6db74">`</span>nomdurépertoire<span style="color:#e6db74">`</span> contient   N fichiers standards</span></span></code></pre></div>
+<ol>
+<li>En une seule ligne de commande, on veut savoir combien d’éléments ne sont ni des dossiers ni des fichiers standards dans le répertoire courant. Le résultat doit être affiché comme suit :</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Le répertoire <span style="color:#e6db74">`</span>nomdurépertoire<span style="color:#e6db74">`</span> contient   N fichiers qui ne sont ni standards ni des répertoires</span></span></code></pre></div>
+<ol>
+<li>
+<p>Écrire une commande qui récupère le nom du <strong>dernier utilisateur</strong> qui a été créé sur votre machine (c&rsquo;est celui qu&rsquo;on retrouve à la <strong>dernière ligne</strong> du fichier <code>/etc/passwd</code>). Le résultat doit être stocké dans une variable nommée <code>nomUtilisateur</code>.</p>
+</li>
+<li>
+<p>En utilisant la variable <code>nomdurépertoire</code> qui contient le nom du dernier utilisateur défini dans <code>/etc/passwd</code>, écrivez une commande permettant de :</p>
+<ul>
+<li>Rechercher tous les fichiers du système (<em>find</em>)</li>
+<li>Lister leurs détails avec <code>ls -l</code></li>
+<li>Filtrer uniquement les fichiers appartenant à cet utilisateur.</li>
+<li>Filtrer uniquement les fichiers standards.</li>
+<li>La commande doit être une seule ligne en utilisant un pipe (<code>|</code>) et une boucle <code>while read</code>.</li>
+</ul>
+</li>
 </ol>
 <hr>
 <h2 id="exercice-4">Exercice 4</h2>
-<p>En une seule ligne de commande, trouvez tous les fichiers txt sur votre disque dur en tant qu’utilisateur standard et sans afficher les erreurs, afficher la taille de ces fichiers avec les unités  et classer les par ordre de taille croissante.</p>
-<hr>
-<h2 id="exercice-5-caractères-génériques-et-commande-find">Exercice 5: Caractères génériques et commande find</h2>
 <ol>
-<li>Aller dans le répertoire <code>/etc</code>. Ne vous déplacez pas pour le reste de cet exercice.</li>
-<li>En utilisant la commande <code>find</code>, chercher les fichiers dont le nom commence par la lettre <strong>r</strong> à partir du répertoire courant.</li>
-<li>Chercher tous les fichiers dont le nom contient la chaîne de caractères &ldquo;rc&rdquo; à partir du répertoire courant.</li>
-<li>Afficher tous les fichiers dont le nom comporte trois caractères sur tout le système.</li>
+<li>
+<p>En tant qu’utilisateur standard, On veut trouver tous les fichiers <code>.txt</code> sur votre disque dur (<strong>ne pas utiliser <code>sudo</code></strong>). Écrire la commande qui permet de retrouver cette information <strong>sans afficher les erreurs</strong>.</p>
+</li>
+<li>
+<p>Récupérer la sortie standard de la commande précédente et à partir de son résultat, <strong>lire chaque ligne</strong> et à l&rsquo;aide de la commande <code>ls</code>, afficher la taille de ces fichiers suivi du chemin vers les fichiers.(<strong>en une seule commande sans utiliser de variable</strong>)
+Résultat attendu:</p>
+</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ae81ff">0</span> /home/mot/dossier2/fichier4.txt
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> /home/mot/dossier3/fichier2.txt
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> /home/mot/dossier3/fichier3.txt
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> /home/mot/dossier3/fichier4.txt
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">79</span> /home/mot/prof.txt</span></span></code></pre></div>
+<ol start="3">
+<li>Récupérer la sortie standard de la commande précédente et trier le résultat par <strong>ordre croissant de taille</strong>. (<strong>en une seule commande sans utiliser de variable</strong>)</li>
 </ol>
 
   <footer class="footline">
@@ -232,7 +297,7 @@ Le répertoire nomdurépertoire contient   N fichiers qui ne sont ni standards n
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1738942876";
+          window.index_js_url="/searchindex.en.js?1739051546";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -245,12 +310,12 @@ Le répertoire nomdurépertoire contient   N fichiers qui ne sont ni standards n
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1738942876" defer></script>
-        <script src="/js/lunr/lunr.min.js?1738942876" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1738942876" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1738942876" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1738942876" defer></script>
-        <script src="/js/search.js?1738942876" defer></script>
+        <script src="/js/auto-complete.js?1739051546" defer></script>
+        <script src="/js/lunr/lunr.min.js?1739051546" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1739051546" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1739051546" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1739051546" defer></script>
+        <script src="/js/search.js?1739051546" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -264,9 +329,9 @@ Le répertoire nomdurépertoire contient   N fichiers qui ne sont ni standards n
             <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
-            <li class="parent " data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>E/S, redirection et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu">
-            <li class="" data-nav-id="/semaine4/cours/index.html"><a class="padding" href="/semaine4/cours/index.html">Entrées/Sorties, redirection, filtres, pipeline des commandes et while</a></li>
-            <li class="active " data-nav-id="/semaine4/atelier/index.html"><a class="padding" href="/semaine4/atelier/index.html">ATELIER #4: Redirection, E/S, pipeline, filtres et while</a></li></ul></li>
+            <li class="parent " data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu">
+            <li class="" data-nav-id="/semaine4/cours/index.html"><a class="padding" href="/semaine4/cours/index.html">Commandes utiles, redirection, chainage, filtres et boucle While</a></li>
+            <li class="active " data-nav-id="/semaine4/atelier/index.html"><a class="padding" href="/semaine4/atelier/index.html">ATELIER #4: Commandes utiles, redirection, chainage, filtres et boucle while</a></li></ul></li>
             <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim et les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
@@ -324,8 +389,8 @@ Le répertoire nomdurépertoire contient   N fichiers qui ne sont ni standards n
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1738942876" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1738942876" defer></script>
-    <script src="/js/theme.js?1738942876" defer></script>
+    <script src="/js/clipboard.min.js?1739051546" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1739051546" defer></script>
+    <script src="/js/theme.js?1739051546" defer></script>
   </body>
 </html>

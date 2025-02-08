@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Entrées/Sorties, redirection, filtres, pipeline des commandes et while :: 420-ZG4-MO LINUX</title>
+    <title>Commandes utiles, redirection, chainage, filtres et boucle While :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine4/cours/index.html</link>
-    <description>Les concepts d’entrées/sorties, de redirection, de filtres, de pipelines et l’utilisation des boucles pour automatiser des tâches sont des bases essentielles pour manipuler efficacement des données.&#xA;Les entrées et sorties des commandes Qu’est-ce que l’entrée (input) ? L’entrée (standard input ou stdin) est une source d’information qu’une commande peut utiliser. Par défaut, l’entrée provient du clavier.&#xA;Qu’est-ce que la sortie (output) ? La sortie (standard output ou stdout) est l’endroit où une commande affiche ses résultats. Par défaut, cette sortie s’affiche dans le terminal.</description>
+    <description>Commandes diverses Commande tree: Afficher l’arborescence des dossiers La commande tree affiche les fichiers et dossiers sous forme d’arbre.&#xA;Exemple :&#xA;$ tree&#xD;Afficher uniquement les dossiers :&#xA;$ tree -d&#xD;Afficher les dossiers d’un endroit précis :&#xA;$ tree /etc&#xD;Limiter l’affichage aux 2 premiers niveaux :&#xA;$ tree -L 2&#xD;Commande grep : Rechercher du texte dans un fichier La commande grep sert à chercher un mot dans un fichier.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine4/cours/index.xml" rel="self" type="application/rss+xml" />

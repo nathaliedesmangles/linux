@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>E/S, redirection et filtrage de commandes et While :: 420-ZG4-MO LINUX</title>
+    <title>Commandes utiles, redirection, chainage et filtrage de commandes et While :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine4/index.html</link>
-    <description>Plan de la leçon Théorie :&#xA;Les entrées et sorties des commandes. La redirection des entrées et sorties. Les Pipelines. Les commandes de filtrage courantes. La boucle while. Atelier :&#xA;Redirection des entrées et sorties. Utilisation de pipelines. Utilisation des commandes de filtrage. Itération avec While.</description>
+    <description>Plan de la leçon Théorie : jeudi 13 février (semaine #4)&#xA;Quelques commandes utiles (tree, grep, sep cut, more, less et sort). Les entrées et sorties et la redirection des commandes. Le chainage de commandes (Pipelines). Les commandes de filtrage courantes. La boucle while. Test #1 : lundi 17 février (semaine #4)&#xA;Format: Test sur Moodle. Matière: Semaine 1: Introduction à Linux. Semaine 2: Système de fichiers, shell, commandes de base, Vim. Semaine 3: Processus de démarrage, variables, commande find et boucle for Documentation permise: Seulement 1 feuille 8.5 x 11 rects-verso manuscrite. Atelier : Remise au plus tard mardi 18 février Utilisation des diverses commandes. Redirection des entrées et sorties. Enchainer les commandes. Itération avec While.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine4/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Entrées/Sorties, redirection, filtres, pipeline des commandes et while</title>
+      <title>Commandes utiles, redirection, chainage, filtres et boucle While</title>
       <link>https://example.org/semaine4/cours/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine4/cours/index.html</guid>
-      <description>Les concepts d’entrées/sorties, de redirection, de filtres, de pipelines et l’utilisation des boucles pour automatiser des tâches sont des bases essentielles pour manipuler efficacement des données.&#xA;Les entrées et sorties des commandes Qu’est-ce que l’entrée (input) ? L’entrée (standard input ou stdin) est une source d’information qu’une commande peut utiliser. Par défaut, l’entrée provient du clavier.&#xA;Qu’est-ce que la sortie (output) ? La sortie (standard output ou stdout) est l’endroit où une commande affiche ses résultats. Par défaut, cette sortie s’affiche dans le terminal.</description>
+      <description>Commandes diverses Commande tree: Afficher l’arborescence des dossiers La commande tree affiche les fichiers et dossiers sous forme d’arbre.&#xA;Exemple :&#xA;$ tree&#xD;Afficher uniquement les dossiers :&#xA;$ tree -d&#xD;Afficher les dossiers d’un endroit précis :&#xA;$ tree /etc&#xD;Limiter l’affichage aux 2 premiers niveaux :&#xA;$ tree -L 2&#xD;Commande grep : Rechercher du texte dans un fichier La commande grep sert à chercher un mot dans un fichier.</description>
     </item>
     <item>
-      <title>ATELIER #4: Redirection, E/S, pipeline, filtres et while</title>
+      <title>ATELIER #4: Commandes utiles, redirection, chainage, filtres et boucle while</title>
       <link>https://example.org/semaine4/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine4/atelier/index.html</guid>
-      <description>Objectifs de l’atelier Se familiariser avec les entrées/sorties et la redirection des commandes. Combinaison de commandes. Filtrage de données. Utilisation de l’itération avec la boucle While. Atelier Astuce&#xD;Pour effectuer des opérations simple, vous pouvez utiliser la commande bc de cette façon: $ echo 7-3 | bc&#xD;Exercice 1 Ouvrez une session avec l’utilisateur standard et reproduisez, dans le répertoire courant, l’arborescence suivante et ce en utilisant un maximum de trois commandes : ├── H2025&#xD;│ ├── Linux&#xD;│ │ ├── Cours&#xD;│ │ └── Ateliers&#xD;│ └── Virtualisation&#xD;│ └── machines&#xD;└── Personnel&#xD;Changez de répertoire en allant dans le dossier Notes. En saisissant une seule commande, créez, à l’intérieur du répertoire courant, les dossiers semaine1, semaine2, …semaine15. Vous ne devez pas à entrer tous les noms de semaines dans la commande. En une seule commande, faites-en-sorte que dans chacun des dossiers précédents (semaine1..), un fichier est créé et qui contient la ligne suivante : Ce cours concerne la semaineN Où N correspond au numéro de la semaine.</description>
+      <description>Objectifs de l’atelier Utiliser les commandes tree, grep, sep, cut, more, less et sort. Rediriger les résultats de commandes. Enchainer les commandes. Filtrer des données de fichiers ou répertoires. Itérer sur des résultats de commandes avec la boucle While. Atelier Astuce&#xD;Pour réaliser les exercices, vous aurez besoin de regarder les différentes commandes vues en cours (commandes et boucles) et les commandes ci-dessous (voir la rubrique Astuces). Vous DEVREZ aller consulter les pages de manuel des différentes commandes pour trouver la façon de réaliser ce que vous souhaitez. Pour effectuer des opérations simple, vous pouvez utiliser la commande bc de cette façon: $ echo 7-3 | bc&#xD;Exercice 1 Ouvrir une session avec l’utilisateur standard et reproduire, dans le répertoire courant, l’arborescence suivante et ce en utilisant un maximum de trois commandes : ├── H2025&#xD;│ ├── Linux&#xD;│ │ ├── Cours&#xD;│ │ └── Ateliers&#xD;│ └── Virtualisation&#xD;│ └── machines&#xD;└── Personnel&#xD;Changer de répertoire en allant dans le dossier Notes.</description>
     </item>
   </channel>
 </rss>

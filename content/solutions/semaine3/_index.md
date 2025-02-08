@@ -63,25 +63,30 @@ $ cd ~
 
 1. Utiliser l'expansion d'accolades pour créer l'arborescence de dossiers suivante en une seule commande.
 ```bash
-$ mkdir -p {lecon1,lecon2,lecon3}/{lab1,lab2,lab3}
+$ mkdir -p coursLinux/semaine{1..5}/{lecon,lab}
+$ tree coursLinux
 ```
+![exo3.1](exo3-1.png)
 
 2. Toujours en utilisant l'expansion d'accolades, créer un fichier vide nommé `priseNote` dans chaque répertoire `lab` en une seule commande.
 ```bash
-$ touch {lecon1,lecon2,lecon3}/{lab1,lab2,lab3}/priseNote
+$ touch coursLinux/semaine{1..5}/lab/priseNote
 ```
+![exo3.2](exo3-2.png)
 
 3. Utiliser une boucle `for` pour renommer tous les fichiers `priseNote` en `priseNote.txt`.
 ```bash
-$ for i in {lecon1,lecon2,lecon3}/{lab1,lab2,lab3}/priseNote; do mv "$i" "${i%.*}.txt"; done
+$ for i in coursLinux/semaine{1..5}/lab/priseNote; do mv "$i" "$i.txt"; done
 ```
+![exo3.3](exo3-3.png)
 
 4. Utiliser une boucle `for` pour déplacer les fichiers `priseNote.txt` des répertoires `lab` vers les répertoires `lecon` correspondants.  
-**NB** : Écrit sur plusieurs lignes, par soucis de lisibilité.
 ```bash
-for i in {lecon1,lecon2,lecon3}/{lab1,lab2,lab3}/priseNote.txt; do
-  dossier_destination="${i%/*}"  # Récupère le chemin du dossier parent
-  dossier_destination="${dossier_destination%/lab*}" # Supprime /lab*
-  mv "$i" "$dossier_destination"
-done
+$ for i in coursLinux/semaine{1..5}; do mv $i/lab/priseNote.txt  $i/lecon; done 
 ```
+ou
+
+```bash
+$ for i in {1..5}; do mv ./coursLinux/semaine$i/lab/priseNote.txt ./coursLinux/semaine$i/lecon;done 
+```
+![exo3.4](exo3-4.png)

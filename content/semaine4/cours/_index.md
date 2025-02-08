@@ -1,307 +1,329 @@
 +++
-title = "Entrées/Sorties, redirection, filtres, pipeline des commandes et while"
+title = "Commandes utiles, redirection, chainage, filtres et boucle While"
 weight = 41
 +++
 
-Les concepts d'entrées/sorties, de redirection, de filtres, de pipelines et l'utilisation des boucles pour automatiser des tâches sont des bases essentielles pour manipuler efficacement des données.
+## Commandes diverses
 
-## Les entrées et sorties des commandes
+### Commande ***tree***: Afficher l'arborescence des dossiers
 
-### Qu'est-ce que l'entrée (input) ?
+La commande `tree` affiche les fichiers et dossiers sous forme d'arbre.
 
-L'entrée (standard input ou `stdin`) est une source d'information qu'une commande peut utiliser. Par défaut, l'entrée provient du **clavier**.
+Exemple :
+```bash
+$ tree
+```
 
-### Qu'est-ce que la sortie (output) ?
+**Afficher uniquement les dossiers** :
+```bash
+$ tree -d
+```
 
-La sortie (standard output ou `stdout`) est l'endroit où une commande affiche ses résultats. Par défaut, cette sortie s'affiche dans le **terminal**.
+**Afficher les dossiers d'un endroit précis** :
+```bash
+$ tree /etc
+```
 
-### Qu'est-ce que la sortie d'erreur (stderr) ?
-
-La sortie d'erreur (standard error ou `stderr`) est où les messages d'erreur sont affichés. Par défaut, elle s'affiche également dans le **terminal**.
+**Limiter l'affichage aux 2 premiers niveaux** :
+```bash
+$ tree -L 2
+```
 
 ---
 
-## La redirection
+### Commande ***grep*** : Rechercher du texte dans un fichier
 
-La redirection permet de changer la source d'entrée ou la destination des sorties pour enregistrer ou réutiliser des données facilement.
+La commande `grep` sert à chercher un mot dans un fichier.
+
+**Trouver « ssh » dans `/etc/services`** :
+```bash
+$ grep ssh /etc/services
+```
+
+**Chercher dans tous les fichiers d'un dossier** :
+```bash
+$ grep -r "ssh" /etc/
+```
+
+**Chercher uniquement au début des lignes** :
+```bash
+$ grep "^root" fichier
+```
+
+---
+
+### Commande ***sed***: Remplacer du texte dans un fichier
+
+**Changer « root » en « admin » (affichage uniquement)** :
+```bash
+$ sed 's/root/admin/' /etc/passwd
+```
+
+**Changer toutes les occurrences** :
+```bash
+$ sed 's/root/admin/g' /etc/passwd
+```
+
+**Changer et enregistrer directement dans le fichier** :
+```bash
+$ sed -i 's/root/admin/g' fichier
+```
+
+---
+
+### Commande ***cut***: Extraire des colonnes d'un fichier
+
+**Extraire le 6e champ d’un fichier où les champs sont séparés par `:`** :
+```bash
+$ cut -d':' -f6 /etc/passwd
+```
+
+**Extraire plusieurs colonnes** :
+```bash
+$ cut -d':' -f1,3 /etc/passwd
+```
+
+---
+
+### Commandes ***more***: Lire un fichier page par page (ancienne, remplacée par ***less***)
+
+- `more` affiche le fichier page par page, mais on ne peut pas remonter.
+- `less` permet d’aller en avant et en arrière.
+
+Exemple :
+```bash
+$ less /etc/passwd
+```
+
+**Commandes utiles dans `less`** :
+- Aller en bas : `↓` ou `Entrée`
+- Aller en haut : `↑`
+- Descendre d'une page : `Espace`
+- Monter d'une page : `b`
+- Quitter : `q`
+
+---
+
+### Commande ***sort***: Trier des lignes
+
+**Trier un fichier alphabétiquement** :
+```bash
+$ sort fruits.txt
+```
+
+**Trier par colonne (exemple : fichier avec noms et numéros)** :
+```bash
+$ sort -k2 profs.txt
+```
+
+**Trier numériquement (sinon, 10 est avant 2)** :
+```bash
+$ sort -k2 -n data.csv
+```
+
+---
+
+## Rediriger la sortie d’une commande
+
+**Enregistrer la sortie dans un fichier avec `1>` ou `>`**:
+```bash
+$ find / -name services 1> resultats.txt
+```
 
 {{% notice style="info" title="Information" %}}
-Nous ne verrons pas la redirection à l’aide de `<`.
-Cependant, vous pouvez rediriger `stdin` pour lire des données à partir d'un fichier ou d'une autre commande, en récupérant la sortie standard d’une autre commande grâce au pipeline (vu plus loin).
+Ici, le chiffre `1` n'est pas obligatoire. Si on ne le met pas, la sortie standard est utilisée par défaut.
 {{% /notice %}}
 
-### Rediriger la sortie standard (***stdout***)
-
-Pour envoyer le résultat d'une commande dans un fichier :
+La commande précédente peut s'écrire aussi comme cela:
 ```bash
-commande > fichier.txt
-```
-Exemple :
-```bash
-$ echo "Bonjour !" > bonjour.txt
+$ find / -name services > resultats.txt
 ```
 
-### Ajouter à un fichier existant
-
-Pour ajouter une sortie à la fin d'un fichier existant **sans écraser** son contenu :
+**Ignorer les erreurs à l'aide de `2>`**:
 ```bash
-commande >> fichier.txt
-```
-Exemple :
-```bash
-$ echo "Encore une ligne." >> bonjour.txt
+$ find / -name services 2>/dev/null
 ```
 
-### Rediriger la sortie standard avec ***1>***
-
-La redirection explicite de `stdout` s'écrit :
+**Envoyer sortie + erreurs dans un fichier en combinant `2>` et `1>`**:
 ```bash
-commande 1> fichier.txt
-```
-Ceci a le même effet que `>`.
-
-### Rediriger la sortie d'erreur (***stderr***)
-
-Pour enregistrer les erreurs dans un fichier :
-```bash
-commande 2> erreurs.txt
+$ find / -name services > resultats.txt 2>&1
 ```
 
-### Combiner ***stdout*** et ***stderr***
-
-Pour rediriger les deux vers un même fichier :
+**Ajouter du texte à un fichier sans l’écraser à l'aide de `>>`**:
 ```bash
-commande > fichier.txt 2>&1
-```
-Pour rediriger la sortie d’erreur standard vers la sortie standard et envoyer le tout dans un fichier 
-```bash
-$ find / -name services >resultats.txt 2>&1
-```
-### Redirection vers ***/dev/null***
-
-Pour ignorer la sortie d'une commande, vous pouvez la rediriger vers `/dev/null` :
-```bash
-commande > /dev/null
+$ echo "Bonjour" >> fichier.txt
 ```
 
-Exemple :
+---
+
+## Enchaîner des commandes avec **|** (pipe)
+
+Le `|` envoie le résultat d’une commande à une autre commande. La 2ème commande récupère le résultat de la 1ère commande pour travailler dessus.
+
+Le nombre de commandes que l’on peut ainsi enchainer n’a pas de limite.
+
+**Afficher le fichier avec `less`** :
 ```bash
-$ ls dossier_inexistant > /dev/null 2>&1
+$ cat /etc/services | less
 ```
 
-Ici, la commande `ls` tente d'afficher le contenu d'un dossier inexistant, et ses messages (sortie standard et erreurs) sont redirigés vers `/dev/null` pour être ignorés.
-
-### Utiliser un fichier comme entrée
-
-Pour utiliser un fichier comme source d'entrée :
+**Chercher « ssh » dans un fichier et afficher** :
 ```bash
-commande < fichier.txt
-```
-Exemple :
-```bash
-$ sort < liste.txt
+$ cat /etc/services | grep ssh
 ```
 
-Exercices 1 : Entrées/Sorties
+**Compter le nombre de lignes d’un fichier** :
+```bash
+$ cat fichier.txt | wc -l
+```
 
-1. Sans être root et sans utiliser `sudo`, rechercher le fichier services sur tout le disque dur.
-- Est-ce facile de le trouver dans la sortie de la commande ?
-2. Faites la même recherche mais en redirigeant les lignes “Accès refusé” vers le fichier `/dev/null`.
-- Est-ce plus facile de trouver le résultat de la commande ?
-- Sauvegardez le résultat dans le fichier `~/services.txt` à l’aide d’une redirection.
+### Exercice 1
+
+1. Sans être `root` et sans utiliser `sudo`, rechercher le fichier `services` sur tout le disque dur.
+ - Est-ce facile de le trouver dans la sortie de la commande ?
+
+2. Faites la même recherche mais en redirigeant les lignes "Accès refusé" vers le fichier `/dev/null`.
+ - Est-ce plus facile de trouver le résultat de la commande ?
+ - Sauvegardez le résultat dans le fichier <code class="gr">~/services.txt</code> à l'aide d'une redirection.
+
+{{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
+```bash
+$ find / -name services
+```
+C'est difficile de lire la sortie car les résultats sont noyés au milieu de nombreux messages d'erreurs.
+![Find](../find.png?height=200)
+
+Pour rediriger les messages d'erreur:
+```bash
+$ find / -name services 2>/dev/null
+```
+Maintenant la lecture est beaucoup plus facile:
+![Find2](../find2.png?height=70)
+
+Pour sauvegarder le résultat dans un fichier:
+```bash
+$ find / -name services 2>/dev/null >~/services.txt
+```
+{{% /notice %}}
 
 ---
 
 ## Les filtres
 
-Un filtre est une commande qui traite une entrée pour produire une sortie modifiée. Voici les filtres les plus courants :
+Enchainer des commandes permet d’appliquer de nombreux filtres sur le résultat d’une commande:
 
-| Commande | Description | Options et descriptions |
-|----------|-------------|--------------------------|
-| `grep` | Recherche des lignes contenant un mot ou une expression. | `-i` : Ignore la casse \\n  `-r` : Recherche récursive\\n  `-v` : Inverse la recherche\\n  `-n` : Affiche les numéros de ligne |
-| `sort` | Trie les lignes d'un fichier. | `-r` : Ordre inverse\\n  `-n` : Tri numérique\\n  `-k` : Tri par clé spécifique |
-| `uniq` | Supprime les doublons dans une liste triée. | `-c` : Compte les occurrences\\n  `-d` : Affiche les doublons uniquement |
-| `wc` | Compte le nombre de lignes, mots ou caractères. | `-l` : Compte les lignes\\n  `-w` : Compte les mots\\n  `-c` : Compte les caractères |
-| `sed` | Modifie le contenu des lignes selon des motifs. | `-e` : Applique plusieurs commandes\\n  `-i` : Modifie en place |
-| `find` | Recherche des fichiers ou dossiers selon des critères. | `-name` : Recherche par nom\\n  `-type` : Recherche par type (dossier ou fichier) |
-| `cut` | Extrait des sections de chaque ligne d'un fichier. | `-d` : Spécifie le délimiteur\\n  `-f` : Spécifie les champs à extraire |
-| `tr` | Traduit ou supprime des caractères. | `-d` : Supprime des caractères\\n  `-s` : Remplace des séquences répétées |
+|Commande|Résutats|
+|---|---|
+|<code class="gr">cat fichier.txt \| wc -l</code>|Compte le nombre de lignes du fichier (<code class="gr">wc</code> : word count, <code class="gr">-l</code> pour les lignes)|
+|<code class="gr">cat fichier \| grep [-iv] recherche</code>|Permet de garder (ou éliminer <code class="gr">-v</code>) les lignes contenant la recherche, sans tenir compte des majuscules <code class="gr">-i</code>.|
+|<code class="gr">find / -name "*.conf" \| sort</code>|classe le résultat de la commande find par ordre alphabétique.|
+|<code class="gr">cat /etc/passwd \| sed 's/root/admin/'</code>|Remplace la 1ère occurrence de root par admin dans l'affichage (pas dans le fichier)|
+|<code class="gr">cat /etc/passwd \| cut -d':' -f1 \| sort</code>|Affiche uniquement le 1er champs de chaque ligne du fichier /etc/passwd en utilisant : comme séparateur de champs et les classe par ordre alphabétique.|
 
-### Exemples
+## D'autres commandes utiles
 
-- **`grep`** : Recherche des lignes contenant un mot ou une expression.
-  ```bash
-  $ grep "mot" fichier.txt
-  ```
-- **`sort`** : Trie les lignes d'un fichier.
-  ```bash
-  $ sort fichier.txt
-  ```
-- **`uniq`** : Supprime les doublons dans une liste triée.
-  ```bash
-  $ sort fichier.txt | uniq
-  ```
-- **`wc`** : Compte le nombre de lignes, mots ou caractères.
-  ```bash
-  $ wc fichier.txt
-  ```
-- **`sed`** : Modifie le contenu des lignes selon des motifs.
-  ```bash
-  $ sed 's/ancien/nouveau/g' fichier.txt
-  ```
-  Exemple : Remplacer "erreur" par "avertissement" dans un fichier :
-  ```bash
-  $ sed 's/erreur/avertissement/g' journal.txt
-  ```
-- **`find`** : Recherche des fichiers ou dossiers selon des critères.
-  ```bash
-  $ find . -name "*.txt"
-  ```
-- **`cut`** : Extrait des sections de chaque ligne d'un fichier.
-  ```bash
-  $ cut -d':' -f1 fichier.txt
-  ```
-  Exemple : Extraire le premier champ d'un fichier où les champs sont séparés par des deux-points (:).
-  ```bash
-  $ cut -d':' -f1 liste.txt
-  ```
-- **`tr`** : Traduit ou supprime des caractères.
-  ```bash
-  $ tr 'a-z' 'A-Z' < fichier.txt
-  ```
-  Exemple : Convertir tout le texte en majuscules.
+**Remplacer des lettres avec la commande `tr`**
+```bash
+$ echo SAlut | tr 'A' 'a'
+salut
+```
+
+**Supprimer les doublons (nécessite `sort`) avec la commande `uniq`**
+```bash
+$ cat fichier | sort | uniq
+```
+
+**Transformer `$PATH` en liste triée**
+```bash
+$ echo $PATH | tr ':' '\n' | sort
+```
+Cela affiche chaque dossier du `PATH` sur une ligne et le trie.
+
+### Exercice 2
+
+1. Trouver le  **numéro de port** de `zephyr-srv` dans `/etc/services`.
+2. Combien de lignes dans `/etc/services` **n'ont pas de `e`**?
+3. Combien de lignes **n'ont ni `e` ni `a` ?
+
+{{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
+Pour trouver le numéro de port:
+```bash
+cat /etc/services | grep "zephyr-srv"
+```
+
+Le numéro du port est 2102.
+Pour trouver le nombre de lignes ne contenant pas 'e':
+```bash
+cat /etc/services | grep -v e | wc -l
+```
+
+Pour les lignes ne contenant ni 'e' ni 'a':
+```bash
+cat /etc/services | grep -v e | grep -v a | wc -l
+```
+{{% /notice %}}
+
 ---
 
-## Les pipelines
+## La boucle ***while***
 
-Les pipelines (ou "pipes") permettent de connecter plusieurs commandes ensemble. Le symbole `|` transmet la sortie d'une commande comme entrée à une autre.
+La boucle `while` permet de **traiter chaque ligne** d’une commande **une par une**.
 
-### Exemples
+La syntaxe de base d’une boucle while en Bash est la suivante :
 
-1. 
 ```bash
-$ cat fichier.txt | grep "mot" | sort
+while condition; do Commandes à exécuter tant que la condition est vraie; done
 ```
-1. **`cat fichier.txt`** : Lit le fichier.
-2. **`grep "mot"`** : Filtre les lignes contenant "mot".
-3. **`sort`** : Trie les lignes filtrées.
-
-
-2. Pour afficher les 5 mots les plus fréquents dans un texte :
+ou sur plusieurs lignes
 ```bash
-cat texte.txt | tr -s ' ' '\n' | sort | uniq -c | sort -nr | head -5
-```
-1. **`tr -s ' '`** : Transforme les espaces multiples en simples et ajoute des sauts de ligne.
-2. **`uniq -c`** : Compte les occurrences de chaque mot.
-3. **`sort -nr`** : Trie par ordre décroissant des fréquences.
-4. **`head -5`** : Affiche les 5 premiers.
-
-3. Redirection de l'entrée standard (***<***)
-
-Vous pouvez utiliser un fichier en entrée dans un pipeline. Par exemple, pour afficher les lignes contenant "erreur" dans un fichier trié :
-```bash
-$ grep "erreur" < journal.txt | sort
-```
-
-
-Exercices 2 : Filtres et pipe
-
-- En utilisant le `|` et les filtres, trouvez le numéro de port de zephyr-srv dans le fichier `/etc/services`.
-- Dans le fichier /etc/services, combien y a-t-il de lignes qui ne contiennent pas de e?
-- Et combien de lignes ne contiennent ni e ni a ?
----
-
-## Automatiser avec la boucle while
-
-Les boucles permettent de répéter des commandes sur un ensemble d'éléments.
-
-### Syntaxe de la boucle while
-
-Voici la forme générale d'une boucle `while` en ligne de commande :
-
-```bash
-while [ condition ]; do
-    # Actions à répéter
-    commande1
-    commande2
-    ...
+while condition
+do
+    Commandes à exécuter tant que la condition est vraie
 done
 ```
 
-- **condition** : C'est ce que le programme vérifie à chaque fois.
-- **do...done** : Tout le code entre `do` et `done` sera répété tant que la condition est vraie.
-
-### Exemples
-
-1. Compter de 1 à 5
+Exemple : connaître la taille de chaque dossier dans la variable d'environnement `$PATH`.
 ```bash
-compteur=1; while [ $compteur -le 5 ]; do echo "Compteur : $compteur"; compteur=$((compteur + 1)); done
+$ echo $PATH | tr ':' '\n' | while read i; do du -sh $i; done
 ```
+ - `tr ':' '\n'` ➡ Remplace `:` par un saut de ligne.
+ - `while read i; do ... done` ➡ Lit chaque ligne et exécute `du -sh` dessus.
 
-- **`compteur=1`** : On commence avec le chiffre 1.
-- **`[ $compteur -le 5 ]`** : La condition signifie "tant que le compteur est inférieur ou égal à 5".
-- **`echo`** : Affiche le compteur.
-- **`compteur=$((compteur + 1))`** : On ajoute 1 au compteur à chaque tour.
+Résultat : La taille de chaque dossier dans `$PATH`.
 
-Affichera :
-```
-Compteur : 1
-Compteur : 2
-Compteur : 3
-Compteur : 4
-Compteur : 5
-```
+### Exercices 3
 
-2. Lire un fichier ligne par ligne et afficher chaque ligne :
+1. Recherchez tous les fichiers de configuration du système (on considère qu'ils se terminent par `.conf`) puis n'affichez que le nom du fichier sans le chemin.
+ - La commande `basename /rep1/rep2/…/fichier.txt` affiche seulement `fichier.txt`.
+ - Une fois l'exercice terminé, classez les résultats par ordre alphabétique.
+2. Avec une boucle **while**, parcourez le fichier `/etc/services` et pour chaque ligne, ne garder que le 1er champs en utilisant comme délimiteur ` ` (espace).
+ - Une fois terminé, éliminez les doublons et comptez le nombre de lignes.
+
+
+{{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
+**Première partie**:
+Pour trouver les fichiers de configuration:
 ```bash
-while read ligne; do
-  echo "Ligne : $ligne"
-done < fichier.txt
+find / -name "*.conf" 2>/dev/null
 ```
-- **`read ligne`** : Lit chaque ligne du fichier.
-- **`echo`** : Affiche le contenu de la ligne.
 
-3. Renommer tous les fichiers `.txt` d'un répertoire pour ajouter le suffixe `_backup` :
+Pour afficher seulement le nom sans le chemin:
 ```bash
-find . -name "*.txt" | while read fichier; do
-  mv "$fichier" "${fichier%.txt}_backup.txt"
-done
+find / -name "*.conf" 2>/dev/null | while read i; do basename "$i"; done
 ```
-- **`find`** : Trouve tous les fichiers `.txt`.
-- **`mv`** : Renomme chaque fichier en ajoutant "_backup".
 
-4. Demander un mot de passe à l'utilisateur
+Pour classer par ordre alphabétique:
 ```bash
-mot_de_passe="secret"; reponse=""; while [ "$reponse" != "$mot_de_passe" ]; do echo "Entrez le mot de passe :"; read reponse; done; echo "Mot de passe correct !"
+find / -name "*.conf" 2>/dev/null | while read i; do basename "$i"; done | sort
 ```
 
-- **`mot_de_passe="secret"`** : Le mot de passe attendu est "secret".
-- **`read reponse`** : Demande à l'utilisateur de taper une réponse.
-- **`[ "$reponse" != "$mot_de_passe" ]`** : Tant que la réponse n'est pas égale au mot de passe, la boucle continue.
+**Deuxième partie**:
+```bash
+cat /etc/services | while read i; do echo "$i" | cut -d' ' -f1 ; done
+```
 
-Cette commande, demandera le mot de passe jusqu'à ce que l'utilisateur tapes "secret".
-
-## Boucles infinie
-
-{{% notice style="warning" title="Attention aux boucles infinies" %}}
-- Si la condition ne devient jamais fausse, la boucle ne s'arrêtera pas. 
+Pour enlever les doublons et compter le nombre de ligne:
+```bash
+cat /etc/services | while read i; do echo "$i" | cut -d' ' -f1 ; done | sort | uniq | wc -l
+```
 {{% /notice %}}
-
-Par exemple :
-```bash
-$ while true; do echo "Ceci ne s'arrête jamais !"; sleep 1; done
-```
-
-{{% notice style="info" title="Information" %}}
-- Utilise `Ctrl + C` pour arrêter une boucle infinie. 
-{{% /notice %}}
-
-
-Exercices 3 : While et autres commandes
-
-- Recherchez tous les fichiers de configuration du système (on considère qu’ils se terminent par `.conf`) puis n’affichez que le nom du fichier sans le chemin.
-- La commande `basename /rep1/rep2/…/fichier.txt` affiche seulement `fichier.txt`.
-- Une fois l’exercice terminé, classez les résultats par ordre alphabétique.
-- Avec une boucle `while`, parcourez le fichier `/etc/services` et pour chaque ligne, ne garder que le 1er champs en utilisant comme délimiteur `‘ ’` (espace).
-- Une fois terminé, éliminez les doublons et comptez le nombre de lignes.
-

@@ -26,14 +26,14 @@ Comprendre cette structure est essentiel pour naviguer et gérer efficacement un
     <meta itemprop="description" content="La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d’un arbre inversé, où la racine (root) est représentée par /. Tous les fichiers et répertoires sont situés sous cette racine.
 La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation.
 Comprendre cette structure est essentiel pour naviguer et gérer efficacement un système Linux.">
-    <meta itemprop="wordCount" content="2414">
+    <meta itemprop="wordCount" content="2415">
     <title>Système de fichiers, Shell et commandes de base et VIM :: 420-ZG4-MO LINUX</title>
     <link href="/semaine2/cours/index.xml" rel="alternate" type="application/rss+xml" title="Système de fichiers, Shell et commandes de base et VIM :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1738942876" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1738942876" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1738942876" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1738942876" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1738942876" rel="stylesheet">
-    <link href="/css/theme.min.css?1738942876" rel="stylesheet">
-    <link href="/css/format-html.min.css?1738942876" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1739051546" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1739051546" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1739051546" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1739051546" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1739051546" rel="stylesheet">
+    <link href="/css/theme.min.css?1739051546" rel="stylesheet">
+    <link href="/css/format-html.min.css?1739051546" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -111,7 +111,11 @@ Comprendre cette structure est essentiel pour naviguer et gérer efficacement un
       </ul>
     </li>
     <li><a href="#commandes-de-base-en-bash">Commandes de base en <em>Bash</em></a></li>
-    <li><a href="#navigation-dans-le-système-de-fichiers">Navigation dans le système de fichiers</a></li>
+    <li><a href="#navigation-dans-le-système-de-fichiers">Navigation dans le système de fichiers</a>
+      <ul>
+        <li><a href="#quelques-explications-du-résultat-de-ls--l">Quelques explications du résultat de <strong>ls -l</strong></a></li>
+      </ul>
+    </li>
     <li><a href="#manipulation-de-fichiers-et-répertoires">Manipulation de fichiers et répertoires</a></li>
     <li><a href="#affichage-et-lecture-de-fichiers">Affichage et lecture de fichiers</a></li>
     <li><a href="#informations-système-et-historique">Informations système et historique</a></li>
@@ -166,8 +170,8 @@ Comprendre cette structure est essentiel pour naviguer et gérer efficacement un
 
 <h1 id="système-de-fichiers-shell-et-commandes-de-base-et-vim">Système de fichiers, Shell et commandes de base et VIM</h1>
 
-<p><a href="#R-image-c42c65715ff5ef612141f76934350a93" class="lightbox-link"><img alt="Arborescence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/cours/filesystem.png?width=100vw" style=" height: auto; width: 100vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c42c65715ff5ef612141f76934350a93"><img alt="Arborescence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/cours/filesystem.png?width=100vw"></a></p>
+<p><a href="#R-image-24b5e1c1796fb71f76b13c01db22a1d6" class="lightbox-link"><img alt="Arborescence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/cours/filesystem.png?width=100vw" style=" height: auto; width: 100vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-24b5e1c1796fb71f76b13c01db22a1d6"><img alt="Arborescence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/cours/filesystem.png?width=100vw"></a></p>
 <p>La structure du système de fichiers Linux est hiérarchique et organisée sous la forme d&rsquo;un arbre inversé, où la racine (root) est représentée par <code>/</code>.
 Tous les fichiers et répertoires sont situés sous cette racine.</p>
 <p>La structure du système de fichiers Linux est conçue pour être logique et organisée, facilitant ainsi la gestion et la navigation.</p>
@@ -400,9 +404,9 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
       </tr>
   </tbody>
 </table>
-<p><strong><code>ls -l</code> Quelques explications du résultat</strong> :</p>
+<h3 id="quelques-explications-du-résultat-de-ls--l">Quelques explications du résultat de <strong>ls -l</strong></h3>
 <ol>
-<li><strong>Premier caractère</strong>: -, d ou l représente le type de fichier (fichier, répertoire ou lien symbolique respectivement)</li>
+<li><strong>Premier caractère</strong>: <code>-</code>, <code>d</code> ou <code>l</code> représente le type de fichier (fichier standard, répertoire ou lien symbolique respectivement)</li>
 <li><strong>Neuf caractères suivants</strong>: par exemple <code>rwxr-xr-x</code> représentent les droits d’accès au fichier/répertoire (abordés en détail dans un prochain cours).</li>
 </ol>
 
@@ -649,8 +653,8 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vim nom_du_fichier</span></span></code></pre></div>
 <p>Si le fichier n&rsquo;existe pas, <strong>vim</strong> le créera.</p>
 <p>Lorsque vous ouvrez <strong>vim</strong>, il commence en <strong>mode commande</strong>. Vous ne pouvez pas directement écrire du texte. Vous devez d&rsquo;abord passer au <strong>mode insertion</strong> en tapant la lettre <code>i</code>. En bas de la fenêtre Vim, le mot <strong>INSERTION</strong> s&rsquo;affichera.</p>
-<p><a href="#R-image-3ab8aa17f14c9d1f7a79de3a47fcdcb5" class="lightbox-link"><img alt="Mode insertion" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/cours/mode_insertion.png?width=100vw" style=" height: auto; width: 100vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3ab8aa17f14c9d1f7a79de3a47fcdcb5"><img alt="Mode insertion" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/cours/mode_insertion.png?width=100vw"></a></p>
+<p><a href="#R-image-498ff3183e839d343336d11bb1ea72a3" class="lightbox-link"><img alt="Mode insertion" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine2/cours/mode_insertion.png?width=100vw" style=" height: auto; width: 100vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-498ff3183e839d343336d11bb1ea72a3"><img alt="Mode insertion" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine2/cours/mode_insertion.png?width=100vw"></a></p>
 
 <details open class=" box cstyle notices tip">
   <summary class="box-label" tabindex="-1">
@@ -743,7 +747,7 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1738942876";
+          window.index_js_url="/searchindex.en.js?1739051546";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -756,12 +760,12 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1738942876" defer></script>
-        <script src="/js/lunr/lunr.min.js?1738942876" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1738942876" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1738942876" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1738942876" defer></script>
-        <script src="/js/search.js?1738942876" defer></script>
+        <script src="/js/auto-complete.js?1739051546" defer></script>
+        <script src="/js/lunr/lunr.min.js?1739051546" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1739051546" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1739051546" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1739051546" defer></script>
+        <script src="/js/search.js?1739051546" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -777,7 +781,7 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
             <li class="active " data-nav-id="/semaine2/cours/index.html"><a class="padding" href="/semaine2/cours/index.html">Système de fichiers, Shell et commandes de base et VIM</a></li>
             <li class="" data-nav-id="/semaine2/atelier/index.html"><a class="padding" href="/semaine2/atelier/index.html">ATELIER #2: Commandes Linux de base</a></li></ul></li>
             <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>E/S, redirection et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim et les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
@@ -835,8 +839,8 @@ Tous les fichiers et répertoires sont situés sous cette racine.</p>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1738942876" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1738942876" defer></script>
-    <script src="/js/theme.js?1738942876" defer></script>
+    <script src="/js/clipboard.min.js?1739051546" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1739051546" defer></script>
+    <script src="/js/theme.js?1739051546" defer></script>
   </body>
 </html>

@@ -577,7 +577,7 @@ done
     - Essayez d'afficher la taille des fichiers du répertoire `/bin`. Utilisez la commande `du -sh <fichier>` pour afficher la taille d'un fichier.
 
 
-{{% notice style="green" title="Solution à venir..." groupid="notice-toggle" expanded="false" %}}
+{{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
 1.  **Liste des fichiers de `/bin` :**
 ```bash
 fichiers_bin=$(ls /bin)
