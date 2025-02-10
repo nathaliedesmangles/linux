@@ -16,12 +16,14 @@ weight = 40
 
 
 - **Test #1 : lundi 17 février (semaine #4)**
-  - **Format**: Test sur Moodle.
+  - **Durée**: 1h40, ~20 questions
+  - **Format**: Test sur Moodle 
+	- Écrire la commande (1 ligne)
+	- Écrire la commande (plus d'une ligne)
   - **Matière**:
-    - **Semaine 1**: Introduction à Linux.
     - **Semaine 2**: Système de fichiers, shell, commandes de base, Vim.
     - **Semaine 3**: Processus de démarrage, variables, commande `find` et boucle `for`
-  - **Documentation permise**: Seulement 1 feuille 8.5 x 11 rects-verso manuscrite.
+  - **Documentation permise**: Seulement 1 feuille 8.5 x 11 recto-verso manuscrite.
 
 
 ---

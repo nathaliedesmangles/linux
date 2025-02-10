@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Comment rechercher récursivement tous les fichiers contenant le mot “config” dans le répertoire /etc et ses sous-répertoires ? Commande: grep -r &#34;config&#34; /etc Vous êtes dans le répertoire /etc et vous voulez rechercher toutes les occurrences du mot “password” dans tous les fichiers .conf. Quelle commande utiliserez vous ?
+Réponse : grep -r &#34;password&#34; *.conf OK Vous avez plusieurs fichiers de configuration dans le répertoire /etc. Vous voulez afficher toutes les lignes contenant le mot “port” dans tous ces fichiers. Quelle commande utiliserez vous ?">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Test 1 - groupes :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Comment rechercher récursivement tous les fichiers contenant le mot “config” dans le répertoire /etc et ses sous-répertoires ? Commande: grep -r &#34;config&#34; /etc Vous êtes dans le répertoire /etc et vous voulez rechercher toutes les occurrences du mot “password” dans tous les fichiers .conf. Quelle commande utiliserez vous ?
+Réponse : grep -r &#34;password&#34; *.conf OK Vous avez plusieurs fichiers de configuration dans le répertoire /etc. Vous voulez afficher toutes les lignes contenant le mot “port” dans tous ces fichiers. Quelle commande utiliserez vous ?">
+    <meta property="og:url" content="http://localhost:1313/semaine4/test/groupes/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Test 1 - groupes :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Comment rechercher récursivement tous les fichiers contenant le mot “config” dans le répertoire /etc et ses sous-répertoires ? Commande: grep -r &#34;config&#34; /etc Vous êtes dans le répertoire /etc et vous voulez rechercher toutes les occurrences du mot “password” dans tous les fichiers .conf. Quelle commande utiliserez vous ?
+Réponse : grep -r &#34;password&#34; *.conf OK Vous avez plusieurs fichiers de configuration dans le répertoire /etc. Vous voulez afficher toutes les lignes contenant le mot “port” dans tous ces fichiers. Quelle commande utiliserez vous ?">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Commandes utiles, redirection, chainage et filtrage de commandes et While">
+    <meta itemprop="name" content="Test 1 - groupes :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Comment rechercher récursivement tous les fichiers contenant le mot “config” dans le répertoire /etc et ses sous-répertoires ? Commande: grep -r &#34;config&#34; /etc Vous êtes dans le répertoire /etc et vous voulez rechercher toutes les occurrences du mot “password” dans tous les fichiers .conf. Quelle commande utiliserez vous ?
+Réponse : grep -r &#34;password&#34; *.conf OK Vous avez plusieurs fichiers de configuration dans le répertoire /etc. Vous voulez afficher toutes les lignes contenant le mot “port” dans tous ces fichiers. Quelle commande utiliserez vous ?">
+    <meta itemprop="wordCount" content="2879">
+    <title>Test 1 - groupes :: 420-ZG4-MO LINUX</title>
+    <link href="/css/fontawesome-all.min.css?1739153593" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1739153593" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1739153593" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1739153593" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1739153593" rel="stylesheet">
+    <link href="/css/theme.css?1739153593" rel="stylesheet">
+    <link href="/css/format-html.css?1739153593" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.min = ``;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine4/test/groupes/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine4/index.html"><span itemprop="name">Commandes utiles, redirection, chainage et filtrage de commandes et While</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine4/test/index.html"><span itemprop="name">Test 1</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Test 1 - groupes</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/test/index.html" title="Test 1 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine5/index.html" title="Les processus Linux (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine4" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="test-1---groupes">Test 1 - groupes</h1>
+
+<ol start="2">
+<li>Comment rechercher récursivement tous les fichiers contenant le mot &ldquo;config&rdquo; dans le répertoire /etc et ses sous-répertoires ?</li>
+</ol>
+<ul>
+<li><strong>Commande:</strong> <code>grep -r &quot;config&quot; /etc</code></li>
+</ul>
+<ol start="2">
+<li>
+<p>Vous êtes dans le répertoire /etc et vous voulez rechercher toutes les occurrences du mot &ldquo;password&rdquo; dans tous les fichiers .conf. Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse :</strong> <code>grep -r &quot;password&quot; *.conf</code></li>
+</ul>
+</li>
+<li>
+<p>OK Vous avez plusieurs fichiers de configuration dans le répertoire /etc. Vous voulez afficher toutes les lignes contenant le mot &ldquo;port&rdquo; dans tous ces fichiers. Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse :</strong> <code>grep -r &quot;port&quot; /etc</code></li>
+</ul>
+</li>
+<li>
+<p>OK Vous avez un fichier de configuration <code>config.ini</code> qui contient des informations sensibles. Vous souhaitez afficher uniquement les lignes contenant le mot &ldquo;password&rdquo;. Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>grep &quot;password&quot; config.ini</code></li>
+</ul>
+</li>
+<li>
+<p>OK2 Vous voulez vérifier si le mot &ldquo;erreur&rdquo; apparaît dans le fichier de configuration httpd.conf. Quelle commande utiliserez-vous ?</p>
+<ul>
+<li><strong>Réponse :</strong> <code>grep &quot;erreur&quot; httpd.conf</code></li>
+</ul>
+</li>
+<li>
+<p>Vous souhaitez rechercher tous les fichiers contenant le mot &ldquo;rapport&rdquo; dans tous les sous-répertoires de <code>Projets</code>. <strong>Question:</strong> Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong>
+<ol>
+<li><code>grep -r &quot;rapport&quot; .</code></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol start="3">
+<li>OK2 Vous souhaitez créer une copie de sauvegarde du fichier important.txt avant de le modifier. Quelle commande utiliserez-vous ?
+<ul>
+<li><strong>Réponse :</strong> <code>cp important.txt important.txt.sauvegarde</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol start="4">
+<li>
+<p>OK Vous souhaitez déplacer le fichier /config.ini vers un répertoire ancien_config. Créez le répertoire ancien_config puis déplacez le fichier config.ini vers ce répertoire. Quelles commandes utilisez-vous ?**</p>
+<ul>
+<li><strong>Réponse :</strong>
+<ol>
+<li><code>mkdir ancien_config</code></li>
+<li><code>mv config.ini ancien_config</code></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>OK Vous avez plusieurs fichiers <code>.txt</code> dans votre répertoire actuel. Vous souhaitez tous les déplacer dans un nouveau sous-répertoire nommé <code>fichiers_txt</code>. Quelles commandes utilisez-vous ?</p>
+<ul>
+<li><strong>Réponse :</strong>
+<ol>
+<li><code>mkdir documents</code></li>
+<li><code>mv *.txt documents</code></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>OK Vous avez créé un nouveau répertoire nommé <code>Archive</code> dans le répertoire <code>Projets</code>. Vous souhaitez déplacer tous les fichiers dont l&rsquo;extension est <code>.bak</code> vers ce nouveau répertoire. <strong>Question:</strong> Quelles commandes utiliserez-vous ?</p>
+<ul>
+<li><strong>Réponse:</strong>
+<ol>
+<li><code>mkdir Archive</code></li>
+<li><code>mv *.bak Archive</code></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>??? Vous souhaitez déplacer tous les fichiers .jpg présents dans le répertoire /home/utilisateur/Images vers un nouveau répertoire nommé &ldquo;archives&rdquo;. Quelle commande utiliserez-vous ?</p>
+<ul>
+<li><strong>Réponse :</strong>
+<ol>
+<li>`mkdir archives</li>
+<li><code>mv *.jpg archives</code> (à exécuter depuis le répertoire /home/utilisateur/Images)</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol start="5">
+<li>
+<p>OK Vous avez installé un nouveau noyau Linux et vous souhaitez redémarrer votre système pour appliquer les modifications. Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>reboot</code> ou <code>shutdown -r now</code></li>
+<li><strong>Explication:</strong> Ces deux commandes redémarrent le système immédiatement.</li>
+</ul>
+</li>
+<li>
+<p>OK Vous avez effectué une mise à jour majeure du système et vous souhaitez redémarrer pour appliquer les changements, mais vous voulez afficher un message aux utilisateurs connectés avant l&rsquo;arrêt. Quelle commande utiliserez vous ?**</p>
+<ul>
+<li><strong>Réponse:</strong> <code>shutdown -r now &quot;Le système va redémarrer pour la mise à jour. Veuillez enregistrer votre travail.&quot;</code></li>
+<li><strong>Explication:</strong> Cette commande redémarre immédiatement le système et affiche le message spécifié aux utilisateurs connectés.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>Vous êtes toujours dans le répertoire <code>Projets</code> et vous avez une structure de fichiers similaire à celle de la question précédente (avec des fichiers <code>.log</code> répartis dans différents sous-dossiers).</p>
+<ol>
+<li>
+<p>Vous souhaitez afficher la taille totale (en octets) de tous les fichiers <code>.log</code> dans le répertoire <code>Projets</code> et ses sous-dossiers. Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>du -sch *.log</code></li>
+<li><strong>Explication:</strong>
+<ul>
+<li><code>du</code>: calcule la taille des fichiers et des répertoires.</li>
+<li><code>-s</code>: affiche uniquement la taille totale de chaque argument.</li>
+<li><code>-c</code>: affiche un total général.</li>
+<li><code>h</code>: affiche les tailles en format lisible par l&rsquo;homme (Ko, Mo, Go).</li>
+<li><code>*.log</code>: cible tous les fichiers avec l&rsquo;extension <code>.log</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Vous voulez copier tous les fichiers <code>.log</code> commençant par &ldquo;journal2&rdquo; dans un nouveau répertoire nommé &ldquo;archives&rdquo;. Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong>
+<ol>
+<li><code>mkdir archives</code></li>
+<li><code>find . -name &quot;journal2*&quot; -exec cp {} archives \;</code></li>
+</ol>
+</li>
+<li><strong>Explication:</strong>
+<ul>
+<li><code>find . -name &quot;journal2*&quot;</code>: cherche tous les fichiers dont le nom commence par &ldquo;journal2&rdquo; dans le répertoire courant et ses sous-répertoires.</li>
+<li><code>-exec cp {} archives \;</code>: exécute la commande <code>cp</code> pour copier chaque fichier trouvé vers le répertoire &ldquo;archives&rdquo;.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Vous souhaitez supprimer tous les fichiers <code>.log</code> qui ont plus de 30 jours. Quelle commande utiliserez-vous ? (Note : assumez que <code>find</code> supporte l&rsquo;option <code>-mtime +30</code> pour les fichiers modifiés il y a plus de 30 jours)</p>
+<ul>
+<li><strong>Réponse:</strong> <code>find . -name &quot;*.log&quot; -mtime +30 -delete</code></li>
+<li><strong>Explication:</strong>
+<ul>
+<li><code>find . -name &quot;*.log&quot;</code>: cherche tous les fichiers avec l&rsquo;extension <code>.log</code>.</li>
+<li><code>-mtime +30</code>: sélectionne les fichiers modifiés il y a plus de 30 jours.</li>
+<li><code>-delete</code>: supprime les fichiers correspondants.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Vous voulez afficher les 10 premières lignes de tous les fichiers <code>.log</code> dans le répertoire <code>Projets</code> et ses sous-répertoires. Quelle commande utiliserez-vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>find . -name &quot;*.log&quot; -exec head -n 10 {} \;</code></li>
+<li><strong>Explication:</strong>
+<ul>
+<li><code>find . -name &quot;*.log&quot;</code>: cherche tous les fichiers avec l&rsquo;extension <code>.log</code>.</li>
+<li><code>-exec head -n 10 {} \;</code>: exécute la commande <code>head -n 10</code> (afficher les 10 premières lignes) sur chaque fichier trouvé.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol start="2">
+<li>
+<p>OK Vous avez constaté une anomalie dans le système de fichiers et vous souhaitez le réparer. Après avoir effectué les réparations nécessaires, quelle commande utiliserez vous pour redémarrer en mode sans échec afin de vérifier si le problème est résolu ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>reboot -x</code> (pour les systèmes utilisant systemd) ou <code>reboot --safe</code> (pour certaines distributions)</li>
+</ul>
+</li>
+<li>
+<p>Vous devez arrêter complètement votre serveur et vous voulez vous assurer qu&rsquo;aucun processus ne soit interrompu brutalement. Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>shutdown -h now</code></li>
+<li><strong>Explication:</strong> Cette commande arrête le système de manière propre, en donnant le temps aux processus en cours de se terminer.</li>
+</ul>
+</li>
+<li>
+<p>Vous avez un fichier log.txt qui devient trop volumineux. Vous souhaitez en créer une copie pour le conserver et supprimer les 1000 premières lignes du fichier d&rsquo;origine. Quelles commandes utilisez-vous ?</p>
+<ul>
+<li><strong>Réponse :</strong>
+<ol>
+<li><code>cp log.txt log.txt.sauvegarde</code></li>
+<li><code>tail -n +1001 log.txt &gt; temp.txt</code></li>
+<li><code>mv temp.txt log.txt</code></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<p>Vous êtes toujours dans le dossier <code>Projets</code> et vous avez besoin de créer de nouveaux fichiers de configuration pour différents environnements.</p>
+<ol>
+<li>
+<p>Vous souhaitez créer cinq fichiers de configuration nommés <code>config_prod.ini</code>, <code>config_dev.ini</code>, <code>config_test.ini</code>, <code>config_staging.ini</code> et <code>config_local.ini</code>. Écrivez une commande utilisant l&rsquo;expansion d&rsquo;accolades pour créer ces fichiers.</p>
+<ul>
+<li><strong>Réponse:</strong> <code>touch config_{prod,dev,test,staging,local}.ini</code></li>
+</ul>
+</li>
+<li>
+<p>Vous avez besoin de créer des fichiers de journalisation pour différents modules de votre application : <code>module1.log</code>, <code>module2.log</code>, et <code>module3.log</code>. De plus, vous souhaitez créer des fichiers de sauvegarde pour chacun de ces fichiers, avec l&rsquo;extension <code>.bak</code>. Écrivez une commande utilisant l&rsquo;expansion d&rsquo;accolades pour créer ces fichiers.</p>
+<ul>
+<li><strong>Réponse:</strong> <code>touch module{1,2,3}.{log,.bak}</code></li>
+</ul>
+</li>
+<li>
+<p>Vous voulez créer des fichiers de sauvegarde pour les fichiers de configuration existants (dont les noms commencent par &ldquo;config_&rdquo;). Les fichiers de sauvegarde doivent avoir le même nom, mais avec l&rsquo;extension <code>.bak</code>. Écrivez une commande utilisant une wildcard et l&rsquo;expansion d&rsquo;accolades pour créer ces fichiers.</p>
+<ul>
+<li><strong>Réponse:</strong> <code>cp config_* config_{}.bak</code></li>
+</ul>
+</li>
+<li>
+<p>Vous avez besoin de créer des répertoires pour différents projets, nommés <code>projet_A</code>, <code>projet_B</code>, et <code>projet_C</code>. Dans chaque répertoire, vous voulez créer un fichier <code>README.md</code>. Écrivez une commande utilisant l&rsquo;expansion d&rsquo;accolades pour créer ces répertoires et fichiers.</p>
+<ul>
+<li><strong>Réponse:</strong> <code>for i in A B C; do mkdir projet_$i &amp;&amp; touch projet_$i/README.md; done</code></li>
+</ul>
+</li>
+<li>
+<p>Vous souhaitez créer des fichiers de rapport pour différentes périodes (mois). Les fichiers seront nommés <code>rapport_mois_1.txt</code>, <code>rapport_mois_2.txt</code>, etc., jusqu&rsquo;à <code>rapport_mois_12.txt</code>. Écrivez une commande utilisant une séquence numérique dans l&rsquo;expansion d&rsquo;accolades pour créer ces fichiers.</p>
+<ul>
+<li><strong>Réponse:</strong> <code>for i in {1..12}; do touch rapport_mois_$i.txt; done</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol>
+<li>
+<p>Vous travaillez sur un projet où vous avez de nombreux fichiers de données avec des noms similaires.</p>
+</li>
+<li>
+<p>Vous avez des fichiers de configuration nommés <code>config_partie1.conf</code>, <code>config_partie2.conf</code>, etc. Vous souhaitez copier tous ces fichiers dans un répertoire nommé <code>backup</code>. Écrivez un script utilisant une boucle <code>for</code> et une expression régulière pour effectuer cette tâche.</p>
+<ul>
+<li><strong>Réponse:</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file in config_*.conf; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    cp <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> backup/
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Question 11:</strong> Vous avez des fichiers de log avec des dates dans leur nom (par exemple, <code>log_20230401.txt</code>). Vous souhaitez supprimer tous les fichiers de log plus anciens que 30 jours. Utilisez <code>find</code> et une boucle <code>for</code> pour réaliser cette tâche.</p>
+<ul>
+<li><strong>Réponse:</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -name <span style="color:#e6db74">&#34;log_*.txt&#34;</span> -mtime +30 -exec rm <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></span></span></code></pre></div>
+</li>
+<li><strong>Explication:</strong> La commande <code>find</code> cherche tous les fichiers nommés &ldquo;log_*.txt&rdquo; modifiés il y a plus de 30 jours et les supprime.</li>
+</ul>
+</li>
+<li>
+<p>Vous avez des fichiers de données avec des extensions différentes (.csv, .json, .xml). Vous souhaitez renommer tous les fichiers .csv en .txt. Utilisez une boucle <code>for</code> et l&rsquo;outil <code>mv</code> pour effectuer cette opération.</p>
+<ul>
+<li><strong>Réponse:</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file in *.csv; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    mv <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>file%.csv<span style="color:#e6db74">}</span><span style="color:#e6db74">.txt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Vous avez plusieurs fichiers de rapport avec des numéros de version (par exemple, rapport_v1.pdf, rapport_v2.pdf). Vous voulez renommer tous ces fichiers en supprimant la partie &ldquo;v&rdquo; et le numéro de version. Utilisez une boucle <code>for</code> et une expression régulière pour cela.</p>
+<ul>
+<li><strong>Réponse:</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> file in rapport_v*.pdf; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    mv <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>file%_v*<span style="color:#e6db74">}</span><span style="color:#e6db74">.pdf&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Vous avez des fichiers de sauvegarde avec des dates au format JJ-MM-AAAA. Vous souhaitez déplacer tous les fichiers de sauvegarde d&rsquo;un mois spécifique (par exemple, avril 2023) dans un répertoire dédié. Utilisez <code>find</code>, <code>grep</code>, et une boucle <code>for</code> pour réaliser cette tâche.</p>
+<ul>
+<li><strong>Réponse:</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir sauvegarde_avril_2023
+</span></span><span style="display:flex;"><span>find . -name <span style="color:#e6db74">&#34;*202304*&#34;</span> -exec mv <span style="color:#f92672">{}</span> sauvegarde_avril_2023 <span style="color:#ae81ff">\;</span></span></span></code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Vous êtes chargé de gérer un serveur de fichiers contenant un grand nombre de fichiers et de répertoires.
+Vous êtes dans le répertoire <code>/var/log</code>. Vous souhaitez supprimer tous les fichiers de log plus anciens que 30 jours. Avant de procéder à la suppression, quelle commande utiliserez-vous pour afficher la liste des fichiers concernés ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>find /var/log -name &quot;*.log&quot; -mtime +30 -print</code></li>
+</ul>
+</li>
+<li>
+<p>Vous avez un répertoire <code>tmp</code> qui contient de nombreux fichiers temporaires. Vous souhaitez déplacer tous les fichiers commençant par &ldquo;tmp_&rdquo; vers un répertoire <code>archive</code>. Avant de déplacer les fichiers, quelle commande utiliserez-vous pour vérifier si le répertoire <code>archive</code> existe et le créer si nécessaire ?</p>
+<ul>
+<li><strong>Réponse:</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -d archive <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    mkdir archive
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>mv tmp_* archive</span></span></code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Vous avez un répertoire contenant des fichiers avec des extensions variées (.txt, .pdf, .docx). Vous souhaitez déplacer tous les fichiers .docx vers un répertoire spécifique. Avant de déplacer les fichiers, quelle commande utiliserez-vous pour afficher un aperçu des fichiers qui seront déplacés ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>ls *.docx</code></li>
+</ul>
+</li>
+<li>
+<p>Vous devez supprimer récursivement un répertoire et tout son contenu. Cependant, vous souhaitez d&rsquo;abord vérifier le contenu de ce répertoire avant de procéder à la suppression. Quelle commande utiliserez-vous pour afficher le contenu du répertoire de manière détaillée (permissions, propriétaire, taille, etc.) ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>ls -la /chemin/vers/le/repertoire</code></li>
+</ul>
+</li>
+<li>
+<p>Vous avez un grand nombre de fichiers dans un répertoire et vous souhaitez les trier par date de modification. Avant de supprimer les plus anciens, quelle commande utiliserez-vous pour afficher la liste des fichiers triés par date ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>ls -lt</code></li>
+</ul>
+</li>
+<li>
+<p>Vous êtes un administrateur système et vous devez gérer un serveur avec un système de fichiers complexe.
+Vous êtes dans le répertoire <code>/var/log</code>. Vous souhaitez lister tous les fichiers de ce répertoire, triés par date de modification, du plus récent au plus ancien. Quelle commande utiliserez-vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>ls -lt /var/log</code></li>
+</ul>
+</li>
+<li>
+<p>Vous êtes dans votre répertoire personnel (<code>/home/&lt;nomUtilisateur&gt;</code>). Vous souhaitez identifier tous les fichiers de configuration (souvent avec des extensions comme <code>.conf</code>, <code>.ini</code>, <code>.yaml</code>). Quelle commande utiliseriez-vous avec une expression régulière pour cela ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>find . -name &quot;*.[c|i|y]onfig&quot;</code></li>
+</ul>
+</li>
+<li>
+<p>Vous avez un répertoire contenant de nombreux fichiers et sous-répertoires. Vous souhaitez obtenir un aperçu rapide de la taille totale de ce répertoire et de son contenu. Quelle commande utiliserez-vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>du -sh .</code>
+<ul>
+<li><code>du</code>: Calcule la taille de chaque fichier, répertoire et de leurs sous-répertoires.</li>
+<li><code>-s</code>: Affiche uniquement la taille totale.</li>
+<li><code>-h</code>: Affiche la taille en format humain lisible (Ko, Mo, Go).</li>
+<li><code>.</code>: Indique le répertoire courant.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Vous avez un répertoire contenant des fichiers avec des dates dans leur nom (par exemple, <code>backup_20230401.tar.gz</code>). Vous souhaitez lister tous les fichiers de sauvegarde créés en avril 2023. Quelle commande utiliseriez-vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>find . -name &quot;backup_202304*&quot; -print</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<ol>
+<li>Vous êtes un administrateur système et vous devez nettoyer régulièrement un serveur pour optimiser ses performances.</li>
+</ol>
+<p>Vous avez un répertoire temporaire qui contient de nombreux fichiers sans extension. Vous souhaitez supprimer tous les fichiers qui commencent par &ldquo;tmp_&rdquo;. Quelle commande utiliserez-vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>rm tmp_*</code></li>
+</ul>
+<ol>
+<li>
+<p>Vous avez un répertoire contenant des fichiers de log avec des dates dans leur nom (par exemple, <code>log_20230401.log</code>). Vous souhaitez supprimer tous les fichiers de log plus anciens que 6 mois. Quelle commande utiliserez vous ? (Note : supposons que <code>find</code> supporte l&rsquo;option <code>-mtime +180</code> pour les fichiers modifiés il y a plus de 180 jours)</p>
+<ul>
+<li><strong>Réponse:</strong> <code>find . -name &quot;log_*.log&quot; -mtime +180 -delete</code></li>
+<li><strong>Explication:</strong> Cette commande est similaire à la question 13, mais elle cible les fichiers de log et utilise un délai de 180 jours.</li>
+</ul>
+</li>
+<li>
+<p>Vous avez un répertoire contenant des fichiers de configuration en double (par exemple, <code>config.old</code>, <code>config.bak</code>, <code>config.new</code>). Vous souhaitez supprimer tous les fichiers de configuration qui ne sont pas le fichier principal (par exemple, <code>config</code>). Quelle commande utiliseriez-vous ? (Note : cette commande suppose que le fichier principal est nommé simplement &ldquo;config&rdquo;)</p>
+<ul>
+<li><strong>Réponse:</strong> <code>find . -name &quot;config*&quot; ! -name &quot;config&quot; -delete</code></li>
+</ul>
+</li>
+<li>
+<p>Vous avez un répertoire contenant des fichiers de différents types. Vous souhaitez supprimer tous les fichiers sauf les fichiers texte (avec l&rsquo;extension <code>.txt</code>). Quelle commande utiliseriez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>find . ! -name &quot;*.txt&quot; -delete</code></li>
+</ul>
+</li>
+<li>
+<p>Vous êtes un administrateur système et vous devez nettoyer un serveur pour libérer de l&rsquo;espace disque.</p>
+</li>
+<li>
+<p>Vous avez un répertoire temporaire nommé &ldquo;tmp&rdquo; que vous souhaitez supprimer complètement, y compris tous les fichiers et sous-répertoires qu&rsquo;il contient. Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>rm -rf tmp</code></li>
+</ul>
+</li>
+<li>
+<p>Vous avez un répertoire nommé &ldquo;ancien_config&rdquo; qui contient d&rsquo;anciennes configurations. Vous souhaitez supprimer ce répertoire et tout son contenu. Quelle commande utiliserez vous, en prenant soin de demander une confirmation avant la suppression ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>rm -ri ancien_config</code></li>
+</ul>
+</li>
+<li>
+<p>Vous avez un répertoire &ldquo;logs&rdquo; qui contient de nombreux fichiers de log. Vous souhaitez supprimer tous les fichiers de log datant de plus d&rsquo;un an. Quelle commande utiliserez vous ? (Note : supposons que <code>find</code> supporte l&rsquo;option <code>-mtime +365</code> pour les fichiers modifiés il y a plus de 365 jours)</p>
+<ul>
+<li><strong>Réponse:</strong> <code>find logs -name &quot;*.log&quot; -mtime +365 -delete</code></li>
+<li><strong>Explication:</strong> Cette commande recherche tous les fichiers se terminant par &ldquo;.log&rdquo; dans le répertoire &ldquo;logs&rdquo; et ses sous-répertoires, et qui ont été modifiés il y a plus de 365 jours, puis les supprime.</li>
+</ul>
+</li>
+<li>
+<p>Vous avez un répertoire &ldquo;téléchargements&rdquo; qui contient de nombreux fichiers téléchargés. Vous souhaitez déplacer tous les fichiers téléchargés il y a plus d&rsquo;un mois vers un répertoire d&rsquo;archive. Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir archives
+</span></span><span style="display:flex;"><span>find téléchargements -mtime +30 -exec mv <span style="color:#f92672">{}</span> archives <span style="color:#ae81ff">\;</span></span></span></code></pre></div>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>Vous êtes un administrateur système et vous devez analyser le contenu de différents fichiers pour résoudre des problèmes ou effectuer des audits.</p>
+<ol>
+<li>
+<p>Vous avez un fichier de log volumineux nommé <code>access.log</code>. Vous souhaitez compter le nombre d&rsquo;occurrences du mot &ldquo;erreur&rdquo; dans ce fichier. Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>grep -c &quot;erreur&quot; access.log</code></li>
+<li><strong>Explication:</strong>
+<ul>
+<li><code>grep</code>: Recherche du texte dans des fichiers.</li>
+<li><code>-c</code>: Affiche uniquement le nombre de lignes contenant la chaîne recherchée.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Question 17:</strong> Vous avez un fichier texte nommé <code>liste_clients.txt</code>. Vous souhaitez afficher les 10 premières lignes de ce fichier. Quelle commande utiliserez-vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>head -n 10 liste_clients.txt</code></li>
+<li><strong>Explication:</strong>
+<ul>
+<li><code>head</code>: Affiche les premières lignes d&rsquo;un fichier.</li>
+<li><code>-n 10</code>: Affiche les 10 premières lignes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Question 18:</strong> Vous avez un fichier de log très volumineux et vous souhaitez afficher les 10 dernières lignes. Quelle commande utiliserez-vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>tail -n 10 access.log</code></li>
+<li><strong>Explication:</strong>
+<ul>
+<li><code>tail</code>: Affiche les dernières lignes d&rsquo;un fichier.</li>
+<li><code>-n 10</code>: Affiche les 10 dernières lignes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Question 19:</strong> Vous avez un fichier texte contenant une liste d&rsquo;adresses IP. Vous souhaitez afficher uniquement les lignes contenant des adresses IP commençant par &ldquo;192.168&rdquo;. Quelle commande utiliserez-vous ?</p>
+<ul>
+<li><strong>Réponse:</strong> <code>grep &quot;^192.168&quot; liste_adresses.txt</code></li>
+<li><strong>Explication:</strong>
+<ul>
+<li><code>^192.168</code>: Recherche les lignes commençant par &ldquo;192.168&rdquo;.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><strong>Contexte:</strong> Vous êtes un administrateur système et vous devez organiser les fichiers sur un serveur en fonction de leur nature et de leur importance.</p>
+<ol>
+<li>
+<p><strong>Question 16:</strong> Vous êtes dans le répertoire <code>/home/nomUtilisateur/Personnel</code>. Vous avez un fichier important nommé <code>rapport_annuel.pdf</code> que vous souhaitez déplacer dans un nouveau répertoire nommé <code>Archives</code> qui sera créé dans votre répertoire personnel. Quelle commande utiliserez-vous ?</p>
+<ul>
+<li><strong>Réponse:</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir ~/Archives
+</span></span><span style="display:flex;"><span>mv rapport_annuel.pdf ~/Archives</span></span></code></pre></div>
+</li>
+<li><strong>Explication:</strong> La première commande crée le répertoire <code>Archives</code> dans votre répertoire personnel. La deuxième commande déplace le fichier <code>rapport_annuel.pdf</code> vers ce nouveau répertoire.</li>
+</ul>
+</li>
+<li>
+<p><strong>Question 17:</strong> Vous avez plusieurs fichiers de configuration (<code>.conf</code>) dans votre répertoire actuel. Vous souhaitez créer un sous-répertoire nommé <code>config</code> et y déplacer tous ces fichiers. Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir config
+</span></span><span style="display:flex;"><span>mv *.conf config/</span></span></code></pre></div>
+</li>
+<li><strong>Explication:</strong> La première commande crée le répertoire <code>config</code>. La deuxième commande déplace tous les fichiers se terminant par <code>.conf</code> vers ce nouveau répertoire.</li>
+</ul>
+</li>
+<li>
+<p><strong>Question 18:</strong> Vous avez un répertoire nommé <code>documents</code> contenant des sous-répertoires pour chaque année (par exemple, <code>documents/2022</code>, <code>documents/2023</code>). Vous souhaitez déplacer tous les fichiers de l&rsquo;année 2022 vers un nouveau répertoire nommé <code>archives_2022</code>. Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir archives_2022
+</span></span><span style="display:flex;"><span>mv documents/2022/* archives_2022/</span></span></code></pre></div>
+</li>
+<li><strong>Explication:</strong> La première commande crée le répertoire <code>archives_2022</code>. La deuxième commande déplace tous les fichiers du répertoire <code>documents/2022</code> vers le nouveau répertoire.</li>
+</ul>
+</li>
+<li>
+<p><strong>Question 19:</strong> Vous avez un répertoire nommé <code>projets</code> contenant plusieurs sous-projets. Vous souhaitez créer un fichier <code>README.md</code> dans chaque sous-projet. Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> projet in */; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    touch <span style="color:#e6db74">&#34;</span>$projet<span style="color:#e6db74">&#34;</span>/README.md
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+</li>
+<li><strong>Explication:</strong> La boucle <code>for</code> itère sur tous les sous-répertoires de <code>projets</code> et crée un fichier <code>README.md</code> dans chacun d&rsquo;eux.</li>
+</ul>
+</li>
+<li>
+<p><strong>Question 20:</strong> Vous avez un répertoire nommé <code>images</code> contenant des images avec différentes extensions (<code>.jpg</code>, <code>.png</code>, <code>.gif</code>). Vous souhaitez créer trois sous-répertoires : <code>images_jpg</code>, <code>images_png</code> et <code>images_gif</code>, puis déplacer les images correspondantes dans les répertoires appropriés. Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir images_jpg images_png images_gif
+</span></span><span style="display:flex;"><span>mv *.jpg images_jpg
+</span></span><span style="display:flex;"><span>mv *.png images_png
+</span></span><span style="display:flex;"><span>mv *.gif images_gif</span></span></code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Vous êtes toujours dans le répertoire <code>Projets</code> et vous souhaitez trier les fichiers par date de modification, du plus récent au plus ancien. <strong>Question:</strong> Quelle commande utiliserez vous ?</p>
+<ul>
+<li><strong>Réponse:</strong>
+<ol>
+<li><code>ls -lt</code></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1739153593";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1739153593" defer></script>
+        <script src="/js/lunr/lunr.min.js?1739153593" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1739153593" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1739153593" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1739153593" defer></script>
+        <script src="/js/search.js?1739153593" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu">
+            <li class="" data-nav-id="/semaine4/cours/index.html"><a class="padding" href="/semaine4/cours/index.html">Commandes utiles, redirection, chainage, filtres et boucle While</a></li>
+            <li class="" data-nav-id="/semaine4/atelier/index.html"><a class="padding" href="/semaine4/atelier/index.html">ATELIER #4: Commandes utiles, redirection, chainage, filtres et boucle while</a></li>
+            <li class="parent alwaysopen " data-nav-id="/semaine4/test/index.html"><a class="padding" href="/semaine4/test/index.html">Test 1</a><ul id="R-subsections-f67c5ae776656baa64ca8199580a70c8" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine4/test/groupes/index.html"><a class="padding" href="/semaine4/test/groupes/index.html">Test 1 - groupes</a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim et les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>???</a></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions de ateliers</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine4/test/groupes/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1739153593" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1739153593" defer></script>
+    <script src="/js/theme.js?1739153593" defer></script>
+  </body>
+</html>
