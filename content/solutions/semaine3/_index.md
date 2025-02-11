@@ -9,24 +9,29 @@ draft = true
 ---
 ## Exercice 1 : Niveaux d'exécution
 
-1. Modifier le niveau d'exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique. 
+1. Modifier le niveau d'exécution par **défaut** de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique. 
 ```bash
-$ sudo systemctl set-default multi-user
+$ systemctl set-default multi-user
 ```
 
 2. Redémarrer la VM pour appliquer les changements à l'aide de la commande `shutdown -r now`.
 ```bash
-$ sudo shutdown -r now
+$ shutdown -r now
 ```
 
-3. Après le redémarrage, se connecter à votre VM . Vérifier que l'interface graphique ne démarre pas. Utiliser la commande `systemctl` pour connaître le niveau d'exécution actuel.
+3. Après le redémarrage, se connecter à votre VM . Vérifier que l'interface graphique ne démarre pas. 
+{{% notice style="green" title="Si au redémarrage vous êtes en mode graphique..." groupid="notice-toggle" expanded="false" %}}
+Cela signifie qu'à la question #1, vous n'avez pas changé le mode **par défaut** (permanent), mais vous avez changé **temporairement** le mode en utilisant `isolate`. Le système étant configuré pour démarrer en mode graphique (`graphical.target`) par défaut, c'est lui qui reprend au redémarrage.
+{{% /notice %}}
+
+Utiliser une commande `systemctl` pour connaître le niveau d'exécution actuel par défaut.
 ```bash
 $ systemctl get-default
 ```
 
-4. Rétablir le mode graphique par défaut. N'oubliez pas de redémarrer la VM pour que les changements soient pris en compte.
+4. Rétablir le mode graphique par **défaut**. N'oubliez pas de redémarrer la VM pour que les changements soient pris en compte.
 ```bash
-$ sudo systemctl set-default graphical
+$ systemctl set-default graphical
 ```
 
 ## Exercice 2 : Caractères génériques et commande *find*

@@ -17,7 +17,8 @@ weight = 42
 
 
 {{% notice style="tip" title="Astuce" %}}
-- Pour réaliser les exercices, vous aurez besoin de regarder les différentes commandes vues en cours (commandes et boucles) et les commandes ci-dessous (voir la rubrique Astuces). Vous DEVREZ aller consulter les pages de manuel des différentes commandes pour trouver la façon de réaliser ce que vous souhaitez.
+- Pour réaliser les exercices, vous aurez besoin de regarder les différentes commandes vues en cours (commandes et boucles). 
+- Vous DEVREZ consulter les pages de manuel des différentes commandes pour trouver la façon de réaliser ce que vous souhaitez.
 - Pour effectuer des opérations simple, vous pouvez utiliser la commande `bc` de cette façon: 
 {{% /notice %}}
 

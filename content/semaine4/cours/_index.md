@@ -5,7 +5,7 @@ weight = 41
 
 ## Commandes diverses
 
-### Commande ***tree***: Afficher l'arborescence des dossiers
+### ***tree***: Afficher l'arborescence des dossiers
 
 La commande `tree` affiche les fichiers et dossiers sous forme d'arbre.
 
@@ -31,9 +31,9 @@ $ tree -L 2
 
 ---
 
-### Commande ***grep*** : Rechercher du texte dans un fichier
+### ***grep*** : Rechercher du texte dans un fichier
 
-La commande `grep` sert à chercher un mot dans un fichier.
+La commande `grep` sert à chercher une chaine de caractère dans un fichier.
 
 **Trouver « ssh » dans `/etc/services`** :
 ```bash
@@ -52,8 +52,16 @@ $ grep "^root" fichier
 
 ---
 
-### Commande ***sed***: Remplacer du texte dans un fichier
+### ***sed***: Remplacer du texte dans un fichier
 
+La commande `sed` est utilisée pour rechercher, remplacer, insérer ou supprimer du texte dans un texte. Par défaut, `sed` affiche le résultat à l’écran sans modifier le fichier d’origine.
+
+- `s/chaine_recherchée/remplacement/` : Remplace un texte (`s` pour "substitute").
+
+#### Option la plus utilisée
+ 
+- `-i` : Modifie le fichier en place (sans créer un fichier temporaire).    
+ 
 **Changer « root » en « admin » (affichage uniquement)** :
 ```bash
 $ sed 's/root/admin/' /etc/passwd
@@ -71,7 +79,7 @@ $ sed -i 's/root/admin/g' fichier
 
 ---
 
-### Commande ***cut***: Extraire des colonnes d'un fichier
+### ***cut***: Extraire des colonnes d'un fichier
 
 **Extraire le 6e champ d’un fichier où les champs sont séparés par `:`** :
 ```bash
@@ -85,7 +93,7 @@ $ cut -d':' -f1,3 /etc/passwd
 
 ---
 
-### Commandes ***more***: Lire un fichier page par page (ancienne, remplacée par ***less***)
+### ***more***: Lire un fichier page par page (ancienne, remplacée par ***less***)
 
 - `more` affiche le fichier page par page, mais on ne peut pas remonter.
 - `less` permet d’aller en avant et en arrière.
@@ -104,7 +112,7 @@ $ less /etc/passwd
 
 ---
 
-### Commande ***sort***: Trier des lignes
+### ***sort***: Trier des lignes
 
 **Trier un fichier alphabétiquement** :
 ```bash
