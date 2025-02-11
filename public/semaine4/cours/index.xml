@@ -3,7 +3,7 @@
   <channel>
     <title>Commandes utiles, redirection, chainage, filtres et boucle While :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine4/cours/index.html</link>
-    <description>Commandes diverses tree: Afficher l’arborescence des dossiers La commande tree affiche les fichiers et dossiers sous forme d’arbre.&#xA;Exemple :&#xA;$ tree&#xD;Afficher uniquement les dossiers :&#xA;$ tree -d&#xD;Afficher les dossiers d’un endroit précis :&#xA;$ tree /etc&#xD;Limiter l’affichage aux 2 premiers niveaux :&#xA;$ tree -L 2&#xD;grep : Rechercher du texte dans un fichier La commande grep sert à chercher une chaine de caractère dans un fichier.</description>
+    <description>Commandes diverses tree: Afficher l’arborescence des dossiers La commande tree affiche les fichiers et dossiers sous forme d’arborescence.&#xA;L’option -d permet d’afficher uniquement les répertoires (et pas les fichiers).&#xA;L’option -L permet de limiter l’affichage à N niveaux de profondeur.&#xA;Afficher uniquement les dossiers :&#xA;$ tree -d&#x9;# `d` pour directory&#xD;Afficher les dossiers d’un endroit précis :&#xA;$ tree /etc&#xD;Limiter l’affichage aux 2 premiers niveaux :&#xA;$ tree -L 2&#xD;grep : Rechercher du texte dans un fichier L’option -r permet de rechercher de manière récursive dans un répertoire et tous ses sous-dossiers.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine4/cours/index.xml" rel="self" type="application/rss+xml" />

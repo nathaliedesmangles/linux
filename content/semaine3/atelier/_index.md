@@ -29,7 +29,7 @@ weight = 32
 
 2. Redémarrer la VM pour appliquer les changements à l'aide de la commande `shutdown -r now`.
 
-3. Après le redémarrage, se connecter à votre VM . Vérifier que l'interface graphique ne démarre pas. Utiliser la commande `systemctl` pour connaître le niveau d'exécution actuel par défaut.
+3. Après le redémarrage, se connecter à votre VM . Vérifier que l'interface graphique ne démarre pas. Utiliser la commande `systemctl` pour connaître le niveau d'exécution actuel.
 
 4. Rétablir le mode graphique par défaut. N'oubliez pas de redémarrer la VM pour que les changements soient pris en compte.
 

@@ -40,16 +40,16 @@ $ echo 7-3 | bc
 └── Personnel
 ```
 
-2. Changer de répertoire en allant dans le dossier **Notes**. 
+2. Changer de répertoire en allant dans le dossier **Cours**. 
 
 3. En saisissant une seule commande, créer, à l’intérieur du répertoire courant, les dossiers semaine1, semaine2, …, semaine15. Vous **ne devez pas** entrer tous les noms de semaines dans la commande (**hint**: expansion d'accolades). 
 
-4. À l'aide d'une **boucle for**, à l'interieur de chaque dossier **semaine**, créer un fichier qui contient la phrase suivante :
+4. À l'aide d'une **boucle for**, à l'intérieur de chaque dossier **semaine**, créer un fichier qui contient la phrase suivante :
 <mark>Ce cours concerne la semaineN</mark>
 
 Où `N` correspond au numéro de la semaine. 
 
-5. Toujours à partir du répertoire courant, utiliser un **chemin relatif** pour copier dans le dossier **Travaux** le fichier **`passwd`** qui est dans **`/etc`**. 
+5. Toujours à partir du répertoire courant, utiliser un **chemin relatif** pour copier dans le dossier **ateliers** le fichier **`passwd`** qui est dans **`/etc`**. 
 
 6. Toujours à partir du répertoire courant et en utilisant le chemin relatif, renommer le fichier copié en ajoutant "Copie" à son nom (`passwdCopie`).
 

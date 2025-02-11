@@ -18,15 +18,34 @@ $ systemctl set-default multi-user
 ```bash
 $ shutdown -r now
 ```
+ou
+```bash
+$ systemctl reboot
+```
 
 3. Après le redémarrage, se connecter à votre VM . Vérifier que l'interface graphique ne démarre pas. 
 {{% notice style="green" title="Si au redémarrage vous êtes en mode graphique..." groupid="notice-toggle" expanded="false" %}}
 Cela signifie qu'à la question #1, vous n'avez pas changé le mode **par défaut** (permanent), mais vous avez changé **temporairement** le mode en utilisant `isolate`. Le système étant configuré pour démarrer en mode graphique (`graphical.target`) par défaut, c'est lui qui reprend au redémarrage.
 {{% /notice %}}
 
-Utiliser une commande `systemctl` pour connaître le niveau d'exécution actuel par défaut.
+Utiliser une commande `systemctl` pour connaître le niveau d'exécution actuel.
+
 ```bash
 $ systemctl get-default
+```
+{{% notice style="green" title="Pourquoi get-default ?" groupid="notice-toggle" expanded="false" %}}
+Si le `default.target` est différent du target réellement actif, cela signifie que le système fonctionne temporairement sous un autre niveau (par exemple, après une modification manuelle avec `systemctl isolate` ou en raison d’un problème au démarrage).
+{{% /notice %}}
+
+ou
+
+```bash
+$ who -r
+```
+ou
+
+```bash
+$ runlevel
 ```
 
 4. Rétablir le mode graphique par **défaut**. N'oubliez pas de redémarrer la VM pour que les changements soient pris en compte.

@@ -7,98 +7,104 @@ weight = 41
 
 ### ***tree***: Afficher l'arborescence des dossiers
 
-La commande `tree` affiche les fichiers et dossiers sous forme d'arbre.
+La commande `tree` affiche les fichiers et dossiers sous forme d'arborescence.
 
-Exemple :
-```bash
-$ tree
-```
+- L'option `-d` permet d'afficher uniquement les répertoires (et pas les fichiers).
+- L'option `-L` permet de limiter l'affichage à N niveaux de profondeur.
 
-**Afficher uniquement les dossiers** :
-```bash
-$ tree -d
-```
+   **Afficher uniquement les dossiers** :
+   ```bash
+   $ tree -d	# `d` pour directory
+   ```
 
-**Afficher les dossiers d'un endroit précis** :
-```bash
-$ tree /etc
-```
+   **Afficher les dossiers d'un endroit précis** :
+   ```bash
+   $ tree /etc
+   ```
 
-**Limiter l'affichage aux 2 premiers niveaux** :
-```bash
-$ tree -L 2
-```
+   **Limiter l'affichage aux 2 premiers niveaux** :
+   ```bash
+   $ tree -L 2
+   ```
 
 ---
 
 ### ***grep*** : Rechercher du texte dans un fichier
 
-La commande `grep` sert à chercher une chaine de caractère dans un fichier.
+- L'option `-r` permet de rechercher de manière récursive dans un répertoire et tous ses sous-dossiers.
+- Le caractère `^` est utilisé pour faire correspondre le début d'une ligne dans un fichier lorsqu'il est placé **au début** d'une chaine.
 
-**Trouver « ssh » dans `/etc/services`** :
-```bash
-$ grep ssh /etc/services
-```
+   **Trouver "ssh" dans `/etc/services`** :
+   ```bash
+   $ grep ssh /etc/services
+   ```
 
-**Chercher dans tous les fichiers d'un dossier** :
-```bash
-$ grep -r "ssh" /etc/
-```
+   **Chercher dans tous les fichiers d'un dossier** :
+   ```bash
+   $ grep -r "ssh" /etc/
+   ```
 
-**Chercher uniquement au début des lignes** :
-```bash
-$ grep "^root" fichier
-```
+   **Chercher uniquement au début des lignes** :
+   ```bash
+   $ grep "^root" /etc/passwd
+   ```
 
 ---
 
 ### ***sed***: Remplacer du texte dans un fichier
 
-La commande `sed` est utilisée pour rechercher, remplacer, insérer ou supprimer du texte dans un texte. Par défaut, `sed` affiche le résultat à l’écran sans modifier le fichier d’origine.
+- Le préfixe `s` dans `sed` signifie substitution. Il est utilisé pour rechercher et remplacer une chaîne de caractères dans un fichier ou un flux de texte.
+- L'option `-i` permet de modifier un fichier sans créer de fichier temporaire.
+- Par défaut, `sed` ne remplace que la première occurrence d'un motif sur une ligne. En ajoutant `g`, il remplace toutes les occurrences.
 
-- `s/chaine_recherchée/remplacement/` : Remplace un texte (`s` pour "substitute").
-
-#### Option la plus utilisée
+```
+`s/ancien/nouveau/`	# Remplace 'ancien' par 'nouveau' (`s` pour "substitute").
+`s/ancien/nouveau/g`	# Remplace toutes les occurrences 'd'ancien' par 'nouveau' (`g` pour "global").
+```    
  
-- `-i` : Modifie le fichier en place (sans créer un fichier temporaire).    
- 
-**Changer « root » en « admin » (affichage uniquement)** :
-```bash
-$ sed 's/root/admin/' /etc/passwd
-```
+   **Changer « root » en « admin » (affichage uniquement)** :
+   ```bash
+   $ sed 's/root/admin/' /etc/passwd
+   ```
 
-**Changer toutes les occurrences** :
-```bash
-$ sed 's/root/admin/g' /etc/passwd
-```
+   **Changer toutes les occurrences** :
+   ```bash
+   $ sed 's/root/admin/g' /etc/passwd
+   ```
 
-**Changer et enregistrer directement dans le fichier** :
-```bash
-$ sed -i 's/root/admin/g' fichier
-```
+   **Changer et enregistrer directement dans le fichier** :
+   ```bash
+   $ sed -i 's/root/admin/g' /etc/passwd
+   ```
 
 ---
 
 ### ***cut***: Extraire des colonnes d'un fichier
 
-**Extraire le 6e champ d’un fichier où les champs sont séparés par `:`** :
-```bash
-$ cut -d':' -f6 /etc/passwd
-```
+- L'option `-d` permet de définir le **délimiteur** utilisé pour diviser les champs d'une ligne.
+- L'option `-f` est utilisée pour sélectionner un ou plusieurs champs **après avoir défini un délimiteur** avec `-d`.
 
-**Extraire plusieurs colonnes** :
-```bash
-$ cut -d':' -f1,3 /etc/passwd
-```
+   {{% notice style="blue" title="Délimiteur par défaut" %}}
+   Par défaut, `cut` utilise la **tabulation** comme délimiteur.
+   {{% /notice %}}
+
+   **Extraire le 6e champ d’un fichier où les champs sont séparés par `:`** :
+   ```bash
+   $ cut -d':' -f6 /etc/passwd
+   ```
+
+   **Extraire plusieurs colonnes ((1re et 3e)** :
+   ```bash
+   $ cut -d':' -f1,3 /etc/passwd
+   ```
 
 ---
 
-### ***more***: Lire un fichier page par page (ancienne, remplacée par ***less***)
+### ***more***: Lire un fichier page par page (ou ***less***)
 
 - `more` affiche le fichier page par page, mais on ne peut pas remonter.
 - `less` permet d’aller en avant et en arrière.
 
-Exemple :
 ```bash
 $ less /etc/passwd
 ```
@@ -106,28 +112,37 @@ $ less /etc/passwd
 **Commandes utiles dans `less`** :
 - Aller en bas : `↓` ou `Entrée`
 - Aller en haut : `↑`
+- Aller au début du fichier : `g`
+- Aller à la fin du fichier : `G`
 - Descendre d'une page : `Espace`
 - Monter d'une page : `b`
+- Rechercher un mot : `/mot` puis `Entrée`
+- Rechercher en arrière: `?mot` puis `Entrée`
+- Aller à la prochaine occurrence : `n`
+- Revenir à l’occurrence précédente : `N`
 - Quitter : `q`
 
 ---
 
 ### ***sort***: Trier des lignes
 
-**Trier un fichier alphabétiquement** :
-```bash
-$ sort fruits.txt
-```
+- L'option `-k` permet de spécifier la colonne (ou champ) à utiliser pour le tri.
+- L'option `-n` permet de trier des nombres correctement (plutôt qu’en mode texte).
 
-**Trier par colonne (exemple : fichier avec noms et numéros)** :
-```bash
-$ sort -k2 profs.txt
-```
+   **Trier un fichier alphabétiquement** :
+   ```bash
+   $ sort fruits.txt
+   ```
 
-**Trier numériquement (sinon, 10 est avant 2)** :
-```bash
-$ sort -k2 -n data.csv
-```
+   **Trier par colonne (exemple : fichier avec noms et numéros)** :
+   ```bash
+   $ sort -k2 profs.txt
+   ```
+
+   **Trier numériquement (sinon, 10 est avant 2)** :
+   ```bash
+   $ sort -k2 -n data.csv
+   ```
 
 ---
 
@@ -198,6 +213,7 @@ $ cat fichier.txt | wc -l
 ```bash
 $ find / -name services
 ```
+
 C'est difficile de lire la sortie car les résultats sont noyés au milieu de nombreux messages d'erreurs.
 ![Find](find.png?height=200)
 
@@ -297,7 +313,7 @@ $ echo $PATH | tr ':' '\n' | while read i; do du -sh $i; done
  - `tr ':' '\n'` ➡ Remplace `:` par un saut de ligne.
  - `while read i; do ... done` ➡ Lit chaque ligne et exécute `du -sh` dessus.
 
-Résultat : La taille de chaque dossier dans `$PATH`.
+**Résultat** : La taille de chaque dossier dans `$PATH`.
 
 ### Exercices 3
 
