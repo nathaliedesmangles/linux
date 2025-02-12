@@ -21,5 +21,12 @@
       <guid>https://example.org/solutions/semaine2/index.html</guid>
       <description>Solution des exercices Exercice 1 : Explorer l’arborescence Linux Afficher le chemin de votre répertoire courant :&#xA;$ pwd&#xD;Aller dans /usr/share/doc et vérifier le chemin :&#xA;$ cd /usr/share/doc $ pwd&#xD;Remonter dans le répertoire parent :&#xA;$ cd .. $ pwd&#xD;Retourner dans le répertoire personnel :&#xA;$ cd ~ $ pwd&#xD;Lister les fichiers présents dans le répertoire courant :&#xA;$ ls&#xD;Lister les fichiers du répertoire /usr :</description>
     </item>
+    <item>
+      <title>Atelier 3</title>
+      <link>https://example.org/solutions/semaine3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/solutions/semaine3/index.html</guid>
+      <description>Solution des exercices Exercice 1 : Niveaux d’exécution Modifier le niveau d’exécution par défaut de votre machine virtuelle (VM) pour passer en mode multi-utilisateurs sans interface graphique. $ systemctl set-default multi-user&#xD;Redémarrer la VM pour appliquer les changements à l’aide de la commande shutdown -r now. $ shutdown -r now&#xD;ou&#xA;$ systemctl reboot&#xD;Après le redémarrage, se connecter à votre VM . Vérifier que l’interface graphique ne démarre pas. Si au redémarrage vous êtes en mode graphique…&#xD;Cela signifie qu’à la question #1, vous n’avez pas changé le mode par défaut (permanent), mais vous avez changé temporairement le mode en utilisant isolate. Le système étant configuré pour démarrer en mode graphique (graphical.target) par défaut, c’est lui qui reprend au redémarrage.</description>
+    </item>
   </channel>
 </rss>

@@ -1,7 +1,6 @@
 +++
 title = "Atelier 3"
 weight = 163
-draft = true
 +++
 
 # Solution des exercices

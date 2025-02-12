@@ -37,14 +37,14 @@ $ echo 7-3 | bc
 │   │   └── Ateliers
 │   └── Virtualisation
 │       └── machines
-└── Personnel
+└── Icones
 ```
 
-2. Changer de répertoire en allant dans le dossier **Cours**. 
+2. Changer de répertoire en allant dans le dossier **Cours**. Pour le reste des question de cet exercice, rester dans le répertoire **Cours**.
 
 3. En saisissant une seule commande, créer, à l’intérieur du répertoire courant, les dossiers semaine1, semaine2, …, semaine15. Vous **ne devez pas** entrer tous les noms de semaines dans la commande (**hint**: expansion d'accolades). 
 
-4. À l'aide d'une **boucle for**, à l'intérieur de chaque dossier **semaine**, créer un fichier qui contient la phrase suivante :
+4. À l'aide d'une **boucle for**, à l'intérieur de chaque dossier **semaine**, créer un fichier .txt qui contient la phrase suivante :
 <mark>Ce cours concerne la semaineN</mark>
 
 Où `N` correspond au numéro de la semaine. 
@@ -53,13 +53,15 @@ Où `N` correspond au numéro de la semaine.
 
 6. Toujours à partir du répertoire courant et en utilisant le chemin relatif, renommer le fichier copié en ajoutant "Copie" à son nom (`passwdCopie`).
 
-7. Changer le caractère délimiteur du fichier `passwdCopie` par `;` (point-virgule).
+7. Changer toutes les occurrences du caractère délimiteur `:` (deux points) du fichier `passwdCopie` par `;` (point-virgule).
 
 8. Trier le contenu du fichier `passwdCopie` en ordre croissant du numéro de groupe, soit le quatrième champ. On veut que le fichier soit trié et non uniquement le résultat retourné par la commande. 
 
 ---
 
 ## Exercice 2
+
+Revenir dans votre dossier personnel.
 
 1. Écrire la commande qui permet de compter le nombre d'utilisateurs qui ont pour shell le `/bin/bash`. Vous trouverez cette information dans le fichier `/etc/passwd`. À l'exécution de la commande, on veut un résultat comme ceci:
 ```bash
@@ -87,6 +89,8 @@ Vous **ne devez pas** indiquer manuellement les noms des shells..
 
 ## Exercice 3
 
+Revenir dans votre dossier personnel.
+
 Pour cet exercice:
 - **nomdurépertoire** est affiché automatiquement. 
 - **N** est le nombre trouvé.
@@ -94,24 +98,24 @@ Pour cet exercice:
 Référez-vous au cours de la semaine 2 sur [la commande ls -l](../../../semaine2/cours/#quelques-explications-du-résultat-de-ls--l)
 
 
-1. En une seule ligne de commande, on veut savoir combien de dossiers contient le répertoire courant. Le résultat doit être affiché comme suit :
+1. En une seule ligne de commande, on veut savoir combien de **fichiers et dossiers** contient le répertoire courant. Le résultat doit être affiché comme suit :
 ```bash
 Le répertoire `nomdurépertoire` contient   N dossiers
 ```
 
-1. En une seule ligne de commande, on veut savoir combien de fichiers standards contient le répertoire courant. Le résultat doit être affiché comme suit :
+2. En une seule ligne de commande, on veut savoir combien de **fichiers standards** contient le répertoire courant. Le résultat doit être affiché comme suit :
 ```bash
 Le répertoire `nomdurépertoire` contient   N fichiers standards
 ```
 
-1. En une seule ligne de commande, on veut savoir combien d’éléments ne sont ni des dossiers ni des fichiers standards dans le répertoire courant. Le résultat doit être affiché comme suit :
+3. En une seule ligne de commande, on veut savoir combien d’éléments ne sont **ni des dossiers ni des fichiers standards** dans le répertoire courant. Le résultat doit être affiché comme suit :
 ```bash
 Le répertoire `nomdurépertoire` contient   N fichiers qui ne sont ni standards ni des répertoires
 ```
 
-1. Écrire une commande qui récupère le nom du **dernier utilisateur** qui a été créé sur votre machine (c'est celui qu'on retrouve à la **dernière ligne** du fichier `/etc/passwd`). Le résultat doit être stocké dans une variable nommée `nomUtilisateur`.
+4. Écrire une commande qui récupère le nom du **dernier utilisateur** qui a été créé sur votre machine (c'est celui qu'on retrouve à la **dernière ligne** du fichier `/etc/passwd`). Le résultat doit être stocké dans une variable nommée `nomUtilisateur`.
 
-1. En utilisant la variable `nomdurépertoire` qui contient le nom du dernier utilisateur défini dans `/etc/passwd`, écrivez une commande permettant de :
+5. En utilisant la variable `nomdurépertoire` qui contient le nom du dernier utilisateur défini dans `/etc/passwd`, écrivez une commande permettant de :
     - Rechercher tous les fichiers du système (*find*)
     - Lister leurs détails avec `ls -l`
     - Filtrer uniquement les fichiers appartenant à cet utilisateur.
