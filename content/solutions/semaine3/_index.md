@@ -85,10 +85,24 @@ $ cd ~
 ```
 
 1. Utiliser l'expansion d'accolades pour créer l'arborescence de dossiers suivante en une seule commande.
+
+```bash
+$ mkdir -p coursLinux/semaine{1..5}/l{econ,ab}
+```
+
+ou
+
 ```bash
 $ mkdir -p coursLinux/semaine{1..5}/{lecon,lab}
+```
+
+ou
+
+```bash
+$ mkdir -p coursLinux/semaine{1..5}/lab coursLinux/semaine{1..5}/lecon
 $ tree coursLinux
 ```
+
 ![exo3.1](exo3-1.png)
 
 2. Toujours en utilisant l'expansion d'accolades, créer un fichier vide nommé `priseNote` dans chaque répertoire `lab` en une seule commande.
