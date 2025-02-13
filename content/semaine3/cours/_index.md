@@ -599,3 +599,13 @@ done
 ```
 {{% /notice %}}
 
+
+##  Quand utiliser l'expansion d'accolades { } vs la boucle *for*
+
+-  **Utiliser `{}`** pour les **opérations simples et statiques** (création, copie, expansion).  
+-  **Utiliser `for`** dès qu’il y a **des conditions, des manipulations avancées, ou une liste dynamique** (suppression, renommage).  
+
+
+{{% notice style="yellow" title="En bref" %}}
+Si **une simple expansion suffit**, il vaut mieux l’utiliser pour **gagner en lisibilité et en performance**.
+{{% /notice %}}

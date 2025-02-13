@@ -146,6 +146,17 @@ Fri, 17 Jan 2025 20:19:50 -0500
 20:19 
 ```
 
+{{% notice style="orange" title="Vous avez perdu la ligne de commande ?"  %}}
+Si vous appuyer 'Entrée' avant d'avoir terminé d'écrire une commande, vous perdrez la ligne de commande. Le symbole `>` s'affichera à la place.
+Pour retrouver la ligne de commande, faites `Ctrl+C`.
+```bash
+[ndesmangles@localhost ~]$ commande_incomplète
+> ^C
+[ndesmangles@localhost ~]$ 
+```
+{{% /notice %}}
+
+
 Pour exécuter une commande avec des privilèges de **super-utilisateur (`root`)**, on la précède de `sudo`:
 
 ```bash

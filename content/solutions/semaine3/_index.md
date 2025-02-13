@@ -103,19 +103,19 @@ $ mkdir -p coursLinux/semaine{1..5}/lab coursLinux/semaine{1..5}/lecon
 $ tree coursLinux
 ```
 
-![exo3.1](exo3-1.png)
+![exo3.1](exo3-1.png?width=27vw)
 
 2. Toujours en utilisant l'expansion d'accolades, créer un fichier vide nommé `priseNote` dans chaque répertoire `lab` en une seule commande.
 ```bash
 $ touch coursLinux/semaine{1..5}/lab/priseNote
 ```
-![exo3.2](exo3-2.png)
+![exo3.2](exo3-2.png?width=27vw)
 
 3. Utiliser une boucle `for` pour renommer tous les fichiers `priseNote` en `priseNote.txt`.
 ```bash
 $ for i in coursLinux/semaine{1..5}/lab/priseNote; do mv "$i" "$i.txt"; done
 ```
-![exo3.3](exo3-3.png)
+![exo3.3](exo3-3.png?width=27vw)
 
 4. Utiliser une boucle `for` pour déplacer les fichiers `priseNote.txt` des répertoires `lab` vers les répertoires `lecon` correspondants.  
 ```bash
@@ -126,4 +126,4 @@ ou
 ```bash
 $ for i in {1..5}; do mv ./coursLinux/semaine$i/lab/priseNote.txt ./coursLinux/semaine$i/lecon;done 
 ```
-![exo3.4](exo3-4.png)
+![exo3.4](exo3-4.png?width=27vw)

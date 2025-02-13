@@ -22,14 +22,14 @@
     <meta itemprop="name" content="Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX">
     <meta itemprop="description" content="Le processus de démarrage Le processus de démarrage d’un système Linux suit plusieurs étapes essentielles, impliquant différents composants du système :
 Étape Description 1. Activation du BIOS/UEFI Au démarrage, le BIOS (Basic Input Output System) ou l’UEFI (Unified Extensible Firmware Interface) s’active. Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT). 2. Chargement du chargeur d’amorçage Le MBR (Master Boot Record) définit le chargeur de démarrage, comme GRUB (GRand Unified Bootloader). GRUB affiche un menu permettant de choisir le système à démarrer. 3. Chargement du noyau Linux (Kernel) Après sélection de Linux, GRUB charge le noyau, qui initialise les pilotes, périphériques et la gestion de la mémoire. Il charge aussi un disque temporaire (initrd ou initramfs) contenant les modules nécessaires au démarrage. 4. Lancement du processus d’initialisation (init ou systemd) Le noyau lance le premier processus du système : init ou systemd (selon la distribution Linux). Ce processus démarre les services et scripts de configuration (réseau, interface graphique, gestion des utilisateurs, etc.). 5. Affichage de l’écran de connexion Une fois les services chargés, l’écran de connexion s’affiche, demandant un nom d’utilisateur et un mot de passe. 6. Utilisation du système Après authentification, vous pouvez utiliser Linux, lancer des applications et exécuter des commandes. Vous pouvez aussi arrêter ou redémarrer votre système avec shutdown, reboot ou halt. Les niveaux d’exécution (Runlevels) et cibles (Targets) Autrefois, Linux utilisait des niveaux d’exécution (runlevels), qui définissaient les services actifs selon le mode de fonctionnement. Avec systemd, ces niveaux sont remplacés par des cibles (targets). Cependant, la compatibilité avec les anciens niveaux est conservée.">
-    <meta itemprop="wordCount" content="2700">
+    <meta itemprop="wordCount" content="2756">
     <title>Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX</title>
     <link href="/semaine3/cours/index.xml" rel="alternate" type="application/rss+xml" title="Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1739409354" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1739409354" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1739409354" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1739409354" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1739409354" rel="stylesheet">
-    <link href="/css/theme.min.css?1739409354" rel="stylesheet">
-    <link href="/css/format-html.min.css?1739409354" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1739485868" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1739485868" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1739485868" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1739485868" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1739485868" rel="stylesheet">
+    <link href="/css/theme.min.css?1739485868" rel="stylesheet">
+    <link href="/css/format-html.min.css?1739485868" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -142,6 +142,7 @@
         <li><a href="#exercices-1">Exercices</a></li>
       </ul>
     </li>
+    <li><a href="#quand-utiliser-lexpansion-daccolades---vs-la-boucle-for">Quand utiliser l&rsquo;expansion d&rsquo;accolades { } vs la boucle <em>for</em></a></li>
   </ul>
 </nav>
                 </div>
@@ -180,8 +181,8 @@
 
 <h2 id="le-processus-de-démarrage">Le processus de démarrage</h2>
 <p>Le processus de démarrage d&rsquo;un système Linux suit plusieurs étapes essentielles, impliquant différents composants du système :</p>
-<p><a href="#R-image-0d3a50bb2f785e62963dbbfdbf8fbdd9" class="lightbox-link"><img alt="Schema séquence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0d3a50bb2f785e62963dbbfdbf8fbdd9"><img alt="Schema séquence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg"></a></p>
+<p><a href="#R-image-e28e2edfc414df3f0a570871e27d5c86" class="lightbox-link"><img alt="Schema séquence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e28e2edfc414df3f0a570871e27d5c86"><img alt="Schema séquence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg"></a></p>
 <table>
   <thead>
       <tr>
@@ -791,6 +792,20 @@ fichier4.txt	# contient le mot &#39;monde&#39;</code></pre></div>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
   </div>
 </details>
+<h2 id="quand-utiliser-lexpansion-daccolades---vs-la-boucle-for">Quand utiliser l&rsquo;expansion d&rsquo;accolades { } vs la boucle <em>for</em></h2>
+<ul>
+<li><strong>Utiliser <code>{}</code></strong> pour les <strong>opérations simples et statiques</strong> (création, copie, expansion).</li>
+<li><strong>Utiliser <code>for</code></strong> dès qu’il y a <strong>des conditions, des manipulations avancées, ou une liste dynamique</strong> (suppression, renommage).</li>
+</ul>
+
+<details open class=" box cstyle notices yellow">
+  <summary class="box-label" tabindex="-1">
+    En bref
+  </summary>
+  <div class="box-content">
+<p>Si <strong>une simple expansion suffit</strong>, il vaut mieux l’utiliser pour <strong>gagner en lisibilité et en performance</strong>.</p>
+  </div>
+</details>
 
   <footer class="footline">
   </footer>
@@ -807,7 +822,7 @@ fichier4.txt	# contient le mot &#39;monde&#39;</code></pre></div>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1739409354";
+          window.index_js_url="/searchindex.en.js?1739485868";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -820,12 +835,12 @@ fichier4.txt	# contient le mot &#39;monde&#39;</code></pre></div>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1739409354" defer></script>
-        <script src="/js/lunr/lunr.min.js?1739409354" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1739409354" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1739409354" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1739409354" defer></script>
-        <script src="/js/search.js?1739409354" defer></script>
+        <script src="/js/auto-complete.js?1739485868" defer></script>
+        <script src="/js/lunr/lunr.min.js?1739485868" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1739485868" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1739485868" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1739485868" defer></script>
+        <script src="/js/search.js?1739485868" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -899,8 +914,8 @@ fichier4.txt	# contient le mot &#39;monde&#39;</code></pre></div>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1739409354" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1739409354" defer></script>
-    <script src="/js/theme.js?1739409354" defer></script>
+    <script src="/js/clipboard.min.js?1739485868" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1739485868" defer></script>
+    <script src="/js/theme.js?1739485868" defer></script>
   </body>
 </html>
