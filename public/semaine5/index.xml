@@ -8,6 +8,13 @@
     <language>en-us</language>
     <atom:link href="https://example.org/semaine5/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Les processus de Linux</title>
+      <link>https://example.org/semaine5/cours/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine5/cours/index.html</guid>
+      <description>Les processus Chaque application, chaque commande est un processus.&#xA;Certains processus vont s’exécuter jusqu’à ce que vous les arrêtiez, d’autres vont réaliser une tâche et s’arrêter tout seul.&#xA;Exemple:&#xA;Commande Comportement ls S’exécute et se termine immédiatement. firefox Ouvre Firefox et reste en exécution empêchant l’utilisation du terminal, jusqu’à la fermeture de Firefox. Quand une commande empêche l’utilisation du terminal pendant son exécution, elle s’exécute au premier plan.&#xA;Pour permettre l’utilisation du terminal, il faut lancer l’application bloquante en arrière-plan.</description>
+    </item>
+    <item>
       <title>ATELIER #5: Gestion des processus Linux</title>
       <link>https://example.org/semaine5/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

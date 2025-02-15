@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Qu’est-ce qu’un processus ? Un processus est une application ou une commande en cours d’exécution. Certains processus s’arrêtent automatiquement une fois leur tâche terminée, tandis que d’autres continuent de s’exécuter jusqu’à ce que vous les arrêtiez vous-même.
-Exemple de processus Commande ls :
-Cette commande affiche le contenu d’un dossier, s’exécute, puis se termine immédiatement. Vous pouvez enchaîner avec une autre commande. $ lsCommande firefox :
-Cette commande ouvre le navigateur Firefox. Tant que Firefox est ouvert, la commande reste active et bloque le terminal. $ firefoxExécution en arrière-plan Si une commande empêche l’utilisation du terminal, c’est parce qu’elle s’exécute au premier plan. Voici comment continuer à utiliser le terminal :">
+    <meta name="description" content="Les processus Chaque application, chaque commande est un processus.
+Certains processus vont s’exécuter jusqu’à ce que vous les arrêtiez, d’autres vont réaliser une tâche et s’arrêter tout seul.
+Exemple:
+Commande Comportement ls S’exécute et se termine immédiatement. firefox Ouvre Firefox et reste en exécution empêchant l’utilisation du terminal, jusqu’à la fermeture de Firefox. Quand une commande empêche l’utilisation du terminal pendant son exécution, elle s’exécute au premier plan.
+Pour permettre l’utilisation du terminal, il faut lancer l’application bloquante en arrière-plan.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Les processus de Linux :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Qu’est-ce qu’un processus ? Un processus est une application ou une commande en cours d’exécution. Certains processus s’arrêtent automatiquement une fois leur tâche terminée, tandis que d’autres continuent de s’exécuter jusqu’à ce que vous les arrêtiez vous-même.
-Exemple de processus Commande ls :
-Cette commande affiche le contenu d’un dossier, s’exécute, puis se termine immédiatement. Vous pouvez enchaîner avec une autre commande. $ lsCommande firefox :
-Cette commande ouvre le navigateur Firefox. Tant que Firefox est ouvert, la commande reste active et bloque le terminal. $ firefoxExécution en arrière-plan Si une commande empêche l’utilisation du terminal, c’est parce qu’elle s’exécute au premier plan. Voici comment continuer à utiliser le terminal :">
-    <meta property="og:url" content="http://localhost:1313/semaine5/cours/index.html">
+    <meta name="twitter:description" content="Les processus Chaque application, chaque commande est un processus.
+Certains processus vont s’exécuter jusqu’à ce que vous les arrêtiez, d’autres vont réaliser une tâche et s’arrêter tout seul.
+Exemple:
+Commande Comportement ls S’exécute et se termine immédiatement. firefox Ouvre Firefox et reste en exécution empêchant l’utilisation du terminal, jusqu’à la fermeture de Firefox. Quand une commande empêche l’utilisation du terminal pendant son exécution, elle s’exécute au premier plan.
+Pour permettre l’utilisation du terminal, il faut lancer l’application bloquante en arrière-plan.">
+    <meta property="og:url" content="https://example.org/semaine5/cours/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="Les processus de Linux :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Qu’est-ce qu’un processus ? Un processus est une application ou une commande en cours d’exécution. Certains processus s’arrêtent automatiquement une fois leur tâche terminée, tandis que d’autres continuent de s’exécuter jusqu’à ce que vous les arrêtiez vous-même.
-Exemple de processus Commande ls :
-Cette commande affiche le contenu d’un dossier, s’exécute, puis se termine immédiatement. Vous pouvez enchaîner avec une autre commande. $ lsCommande firefox :
-Cette commande ouvre le navigateur Firefox. Tant que Firefox est ouvert, la commande reste active et bloque le terminal. $ firefoxExécution en arrière-plan Si une commande empêche l’utilisation du terminal, c’est parce qu’elle s’exécute au premier plan. Voici comment continuer à utiliser le terminal :">
+    <meta property="og:description" content="Les processus Chaque application, chaque commande est un processus.
+Certains processus vont s’exécuter jusqu’à ce que vous les arrêtiez, d’autres vont réaliser une tâche et s’arrêter tout seul.
+Exemple:
+Commande Comportement ls S’exécute et se termine immédiatement. firefox Ouvre Firefox et reste en exécution empêchant l’utilisation du terminal, jusqu’à la fermeture de Firefox. Quand une commande empêche l’utilisation du terminal pendant son exécution, elle s’exécute au premier plan.
+Pour permettre l’utilisation du terminal, il faut lancer l’application bloquante en arrière-plan.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="Les processus de Linux :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Qu’est-ce qu’un processus ? Un processus est une application ou une commande en cours d’exécution. Certains processus s’arrêtent automatiquement une fois leur tâche terminée, tandis que d’autres continuent de s’exécuter jusqu’à ce que vous les arrêtiez vous-même.
-Exemple de processus Commande ls :
-Cette commande affiche le contenu d’un dossier, s’exécute, puis se termine immédiatement. Vous pouvez enchaîner avec une autre commande. $ lsCommande firefox :
-Cette commande ouvre le navigateur Firefox. Tant que Firefox est ouvert, la commande reste active et bloque le terminal. $ firefoxExécution en arrière-plan Si une commande empêche l’utilisation du terminal, c’est parce qu’elle s’exécute au premier plan. Voici comment continuer à utiliser le terminal :">
-    <meta itemprop="wordCount" content="690">
+    <meta itemprop="description" content="Les processus Chaque application, chaque commande est un processus.
+Certains processus vont s’exécuter jusqu’à ce que vous les arrêtiez, d’autres vont réaliser une tâche et s’arrêter tout seul.
+Exemple:
+Commande Comportement ls S’exécute et se termine immédiatement. firefox Ouvre Firefox et reste en exécution empêchant l’utilisation du terminal, jusqu’à la fermeture de Firefox. Quand une commande empêche l’utilisation du terminal pendant son exécution, elle s’exécute au premier plan.
+Pour permettre l’utilisation du terminal, il faut lancer l’application bloquante en arrière-plan.">
+    <meta itemprop="wordCount" content="1650">
     <title>Les processus de Linux :: 420-ZG4-MO LINUX</title>
     <link href="/semaine5/cours/index.xml" rel="alternate" type="application/rss+xml" title="Les processus de Linux :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1739485827" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1739485827" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1739485827" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1739485827" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1739485827" rel="stylesheet">
-    <link href="/css/theme.css?1739485827" rel="stylesheet">
-    <link href="/css/format-html.css?1739485827" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1739629450" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1739629450" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1739629450" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1739629450" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1739629450" rel="stylesheet">
+    <link href="/css/theme.min.css?1739629450" rel="stylesheet">
+    <link href="/css/format-html.min.css?1739629450" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..';
-      window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.min = ``;
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       // variant stuff
@@ -100,39 +104,52 @@ Cette commande ouvre le navigateur Firefox. Tant que Firefox est ouvert, la comm
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#quest-ce-quun-processus-">Qu&rsquo;est-ce qu&rsquo;un processus ?</a></li>
-    <li><a href="#exemple-de-processus">Exemple de processus</a></li>
-    <li><a href="#exécution-en-arrière-plan">Exécution en arrière-plan</a>
+    <li><a href="#les-processus">Les processus</a>
       <ul>
-        <li><a href="#exercices-1">Exercices 1</a></li>
+        <li><a href="#exécution-en-arrière-plan">Exécution en arrière-plan</a></li>
+        <li><a href="#exercice-1">Exercice 1</a></li>
       </ul>
     </li>
-    <li><a href="#visualiser-les-processus">Visualiser les processus</a>
+    <li><a href="#affichage-et-gestion-des-processus">Affichage et gestion des processus</a>
       <ul>
-        <li><a href="#exercices-2">Exercices 2</a></li>
+        <li><a href="#exercice-2">Exercice 2</a></li>
       </ul>
     </li>
     <li><a href="#états-des-processus">États des processus</a>
       <ul>
-        <li><a href="#exercices-3">Exercices 3</a></li>
+        <li><a href="#exercice-3">Exercice 3</a></li>
       </ul>
     </li>
-    <li><a href="#gestion-des-processus">Gestion des processus</a>
+    <li><a href="#exécution-persistante-des-processus">Exécution persistante des processus</a>
       <ul>
-        <li><a href="#exercices-4">Exercices 4</a></li>
+        <li><a href="#exercice-4">Exercice 4</a></li>
       </ul>
     </li>
-    <li><a href="#codes-de-retour-des-commandes">Codes de retour des commandes</a>
+    <li><a href="#codes-de-retour-et-variables-système">Codes de retour et variables système</a>
       <ul>
-        <li><a href="#exercices-5">Exercices 5</a></li>
+        <li><a href="#exercice-5">Exercice 5</a></li>
       </ul>
     </li>
-    <li><a href="#combinaison-de-commandes">Combinaison de commandes</a>
+    <li><a href="#opérateurs-de-comparaison-en-bash">Opérateurs de comparaison en Bash</a></li>
+    <li><a href="#attente-de-la-fin-dexécution-dune-commande">Attente de la fin d&rsquo;exécution d&rsquo;une commande</a></li>
+    <li><a href="#combinaison-et-synchronisation-des-commandes">Combinaison et synchronisation des commandes</a>
       <ul>
-        <li><a href="#exercices-6">Exercices 6</a></li>
+        <li><a href="#opérateurs-logiques">Opérateurs logiques</a></li>
+        <li><a href="#exercice-6--expérimentation-des-opérateurs-logiques">Exercice 6 : Expérimentation des opérateurs logiques</a></li>
       </ul>
     </li>
-    <li><a href="#création-de-scripts-bash">Création de scripts Bash</a></li>
+    <li><a href="#priorité-des-opérateurs">Priorité des opérateurs</a></li>
+    <li><a href="#création-et-exécution-dun-script-bash">Création et exécution d&rsquo;un script Bash</a>
+      <ul>
+        <li><a href="#création-dun-script">Création d&rsquo;un script</a></li>
+        <li><a href="#exécution-dun-script">Exécution d&rsquo;un script</a></li>
+      </ul>
+    </li>
+    <li><a href="#scripts-concurrents">Scripts concurrents</a>
+      <ul>
+        <li><a href="#exercice-7">Exercice 7</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
                 </div>
@@ -169,187 +186,579 @@ Cette commande ouvre le navigateur Firefox. Tant que Firefox est ouvert, la comm
 
 <h1 id="les-processus-de-linux">Les processus de Linux</h1>
 
-<h2 id="quest-ce-quun-processus-">Qu&rsquo;est-ce qu&rsquo;un processus ?</h2>
-<p>Un <strong>processus</strong> est une application ou une commande en cours d&rsquo;exécution. Certains processus s&rsquo;arrêtent automatiquement une fois leur tâche terminée, tandis que d&rsquo;autres continuent de s&rsquo;exécuter jusqu&rsquo;à ce que vous les arrêtiez vous-même.</p>
-<hr>
-<h2 id="exemple-de-processus">Exemple de processus</h2>
+<h2 id="les-processus">Les processus</h2>
+<p>Chaque application, chaque commande est un processus.</p>
+<p>Certains processus vont s&rsquo;exécuter jusqu&rsquo;à ce que vous les arrêtiez, d&rsquo;autres vont réaliser une tâche et s&rsquo;arrêter tout seul.</p>
+<blockquote>
+<p><strong>Exemple:</strong></p>
+</blockquote>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Comportement</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ls</code></td>
+          <td style="text-align: left">S&rsquo;exécute et se termine immédiatement.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>firefox</code></td>
+          <td style="text-align: left">Ouvre Firefox et reste en exécution empêchant l&rsquo;utilisation du terminal, jusqu&rsquo;à la fermeture de Firefox.</td>
+      </tr>
+  </tbody>
+</table>
+<p>Quand une commande empêche l&rsquo;utilisation du terminal pendant son exécution, elle s&rsquo;exécute au <strong>premier plan</strong>.</p>
+<p>Pour permettre l&rsquo;utilisation du terminal, il faut lancer l&rsquo;application bloquante en <strong>arrière-plan</strong>.</p>
+<h3 id="exécution-en-arrière-plan">Exécution en arrière-plan</h3>
+<p>Deux possibilités :</p>
 <ol>
-<li><strong>Commande <code>ls</code> :</strong><br>
-Cette commande affiche le contenu d’un dossier, s’exécute, puis se termine immédiatement. Vous pouvez enchaîner avec une autre commande.
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls</span></span></code></pre></div>
-</li>
-<li><strong>Commande <code>firefox</code> :</strong><br>
-Cette commande ouvre le navigateur Firefox. Tant que Firefox est ouvert, la commande reste active et bloque le terminal.
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ firefox</span></span></code></pre></div>
-</li>
-</ol>
-<hr>
-<h2 id="exécution-en-arrière-plan">Exécution en arrière-plan</h2>
-<p>Si une commande empêche l’utilisation du terminal, c’est parce qu’elle s’exécute au <strong>premier plan</strong>. Voici comment continuer à utiliser le terminal :</p>
-<ol>
-<li>
-<p><strong>Lancer une commande directement en arrière-plan :</strong><br>
-Ajoutez <code>&amp;</code> à la fin de la commande.</p>
+<li><strong>Au lancement</strong> : Ajouter <code>&amp;</code> à la fin de la commande :
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ firefox &amp;</span></span></code></pre></div>
 </li>
-<li>
-<p><strong>Passer une commande déjà en cours au second plan :</strong></p>
+<li><strong>Après lancement</strong> :
 <ul>
-<li>Appuyez sur <code>Ctrl + Z</code> pour suspendre temporairement la commande.</li>
-<li>Tapez <code>bg</code> pour la reprendre en <strong>arrière-plan</strong>.</li>
+<li>Suspendre avec <code>Ctrl-z</code></li>
+<li>Reprendre en arrière-plan avec <code>bg</code></li>
+<li>Repasser au premier plan avec <code>fg</code></li>
 </ul>
 </li>
-<li>
-<p><strong>Revenir au premier plan :</strong><br>
-Utilisez <code>fg</code>.</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ fg</span></span></code></pre></div>
-</li>
 </ol>
-<h3 id="exercices-1">Exercices 1</h3>
-<ol>
-<li>Lancez Firefox. Faites-le passer en arrière-plan puis ramenez-le au premier plan.</li>
-<li>Fermez Firefox depuis le terminal en tapant <code>Ctrl + C</code>.</li>
-</ol>
+<h3 id="exercice-1">Exercice 1</h3>
+<p>Lancez Firefox, passez-le en arrière-plan et ramenez-le au premier plan.</p>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution&hellip;
+  </summary>
+  <div class="box-content">
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ firefox &amp;  <span style="color:#75715e"># Lancement en arrière-plan</span>
+</span></span><span style="display:flex;"><span>$ fg         <span style="color:#75715e"># Ramène au premier plan</span></span></span></code></pre></div>
+<p>Pour arrêter une commande au premier plan : <code>Ctrl-c</code></p>
+  </div>
+</details>
 <hr>
-<h2 id="visualiser-les-processus">Visualiser les processus</h2>
-<p>Pour afficher les processus lancés depuis le terminal, utilisez :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -f</span></span></code></pre></div>
-<p>Chaque processus est identifié par deux numéros :</p>
+<h2 id="affichage-et-gestion-des-processus">Affichage et gestion des processus</h2>
+<p>Chaque processus est identifié par :</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Identifiant</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>pid</code></td>
+          <td style="text-align: left">Identifiant unique du processus.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ppid</code></td>
+          <td style="text-align: left">Identifiant du processus parent.</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Exemple:</strong></p>
+<p>Si vous lancez une commande à partir du terminal, celui-ci est le parent du processus créé.</p>
+</blockquote>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ps -f</code></td>
+          <td style="text-align: left">Affiche les processus en cours d&rsquo;exécution depuis le terminal.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>top</code></td>
+          <td style="text-align: left">Affiche les processus en temps réel.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>kill pid</code></td>
+          <td style="text-align: left">Termine un processus avec son <code>pid</code>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>kill -9 pid</code></td>
+          <td style="text-align: left">Termine immédiatement un processus.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>killall nom_processus</code></td>
+          <td style="text-align: left">Termine tous les processus portant un certain nom.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>pstree</code></td>
+          <td style="text-align: left">Affiche l’arborescence des processus.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ps -ef</code></td>
+          <td style="text-align: left">Affiche les détails de tous les processus du système.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="exercice-2">Exercice 2</h3>
+<p>Utilisez <code>ps</code> pour :</p>
 <ul>
-<li><strong>PID</strong> : Identifiant unique du processus.</li>
-<li><strong>PPID</strong> : Identifiant du processus père (celui qui a lancé le processus).</li>
+<li>Noter le <code>pid</code> de votre shell.</li>
+<li>Lancer Firefox an <strong>arrière-plan</strong> et observer son <code>pid</code> ainsi que son <code>ppid</code>.</li>
 </ul>
-<p><strong>Exemple :</strong><br>
-Si vous lancez une commande dans un terminal, ce terminal devient le <strong>processus père</strong>.</p>
-<h3 id="exercices-2">Exercices 2</h3>
-<ol>
-<li>Notez le <strong>PID</strong> de votre shell avec <code>ps</code>.</li>
-<li>Lancez Firefox et notez son <strong>PID</strong> et son <strong>PPID</strong>. Quel est le <strong>PPID</strong> de Firefox ?</li>
-</ol>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution&hellip;
+  </summary>
+  <div class="box-content">
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ps -ef | grep bash
+</span></span><span style="display:flex;"><span>$ firefox &amp;
+</span></span><span style="display:flex;"><span>$ ps -ef | grep firefox  <span style="color:#75715e"># Trouver le PID et PPID</span></span></span></code></pre></div>
+<p>Le <code>pid</code> du parent de Firefox doit être le <code>pid</code> de votre SHELL.</p>
+  </div>
+</details>
 <hr>
 <h2 id="états-des-processus">États des processus</h2>
-<p>Un processus peut être dans différents états :</p>
+<p><a href="#R-image-8acbf15df8ee2994184bcb8bb4c37b77" class="lightbox-link"><img alt="États des processus" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine5/cours/etats.png?width=50vw" style=" height: auto; width: 50vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8acbf15df8ee2994184bcb8bb4c37b77"><img alt="États des processus" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine5/cours/etats.png?width=50vw"></a></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">État</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Élu</strong></td>
+          <td style="text-align: left">En cours d&rsquo;exécution sur le processeur.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Prêt</strong></td>
+          <td style="text-align: left">En attente d&rsquo;exécution, sans attente de ressource.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Bloqué</strong></td>
+          <td style="text-align: left">En attente d&rsquo;une ressource autre que le processeur.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Zombie</strong></td>
+          <td style="text-align: left">Terminé mais non encore récupéré par son processus parent.</td>
+      </tr>
+  </tbody>
+</table>
+<p>Ces états sont gérés par l’<strong>ordonnanceur</strong>.</p>
+
+<details open class=" box cstyle notices primary">
+  <summary class="box-label" tabindex="-1">
+    L&rsquo;ordonnanceur
+  </summary>
+  <div class="box-content">
+<p>C&rsquo;est la partie du noyau du système d&rsquo;exploitation <strong>responsable du choix du processus élu qui va pouvoir bénéficier du service du processeur</strong> (et globalement toutes les tâches annexes qui en découlent). Cette tâche se nomme <strong>l&rsquo;ordonnancement</strong>.</p>
+  </div>
+</details>
+<h3 id="exercice-3">Exercice 3</h3>
 <ul>
-<li><strong>Élu :</strong> En cours d’exécution.</li>
-<li><strong>Prêt :</strong> En attente d’être exécuté.</li>
-<li><strong>Bloqué :</strong> En attente d’une ressource (par ex. disque).</li>
-<li><strong>Zombie :</strong> Terminé, mais le processus père n’a pas encore pris en compte sa fin.</li>
+<li>Lancez Firefox en arrière-plan et notez son <code>pid</code> et <code>ppid</code>.</li>
+<li>Tuez son parent.</li>
+<li>Quel est le <code>ppid</code> de Firefox maintenant ?</li>
 </ul>
-<p>Utilisez <code>top</code> pour surveiller les processus et leur consommation de ressources :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ top</span></span></code></pre></div>
-<h3 id="exercices-3">Exercices 3</h3>
-<ol>
-<li>Lancez Firefox en tâche de fond. Notez son <strong>PID</strong> et son <strong>PPID</strong>.</li>
-<li>Tuez le parent de Firefox. Quel est le nouveau <strong>PPID</strong> de Firefox ?</li>
-</ol>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution&hellip;
+  </summary>
+  <div class="box-content">
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ firefox &amp;
+</span></span><span style="display:flex;"><span>$ ps -ef | grep firefox  <span style="color:#75715e"># Noter PID et PPID</span>
+</span></span><span style="display:flex;"><span>$ kill -9 &lt;PPID&gt;  <span style="color:#75715e"># Tuer le parent</span>
+</span></span><span style="display:flex;"><span>$ ps -ef | grep firefox  <span style="color:#75715e"># Observer le nouveau PPID (probablement 1, ou son instance)</span></span></span></code></pre></div>
+<p>Le <code>ppid</code> de firefox est le <code>pid</code> de votre terminal.</p>
+  </div>
+</details>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Comment se nomme le processus 1?
+  </summary>
+  <div class="box-content">
+<p><em><strong>init</strong></em></p>
+  </div>
+</details>
 <hr>
-<h2 id="gestion-des-processus">Gestion des processus</h2>
-<ul>
-<li>
-<p><strong>Arrêter un processus :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kill &lt;PID&gt;</span></span></code></pre></div>
-<p>Pour forcer l’arrêt :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kill -9 &lt;PID&gt;</span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Tuer tous les processus d’un même nom :</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ killall &lt;nom_du_processus&gt;</span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Préserver un processus si le terminal est fermé :</strong></p>
-<ul>
-<li>Avant fermeture :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ disown &lt;PID&gt;</span></span></code></pre></div>
-</li>
-<li>Lors du lancement :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nohup commande &amp;</span></span></code></pre></div>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="exercices-4">Exercices 4</h3>
+<h2 id="exécution-persistante-des-processus">Exécution persistante des processus</h2>
+<p>Si un terminal est fermé, ses processus sont arrêtés. Pour éviter cela :</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Effet</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>disown &lt;pid&gt;</code></td>
+          <td style="text-align: left">Si le processus est en cours, il se détachera de son terminal.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>nohup &lt;commande&gt;</code></td>
+          <td style="text-align: left">Lance une commande en ignorant les signaux de fermeture du terminal.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="exercice-4">Exercice 4</h3>
 <ol>
-<li>Lancez la commande suivante :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ grep &lt;fichier&gt;</span></span></code></pre></div>
+<li>
+<p>Exécuter <code>grep &lt;fichier&gt;</code>, puis:</p>
 <ul>
-<li>Trouvez le <strong>PID</strong> avec un autre terminal et tuez le processus.</li>
+<li>Noter que cette commande ne se termine pas.</li>
+<li>Ouvrir un autre terminal.</li>
+<li>Trouver le <code>pid</code> de la commande <code>grep</code>.</li>
+<li>Tuer la commande.</li>
 </ul>
 </li>
-<li>Lancez Firefox en tâche de fond, puis fermez le terminal.
+<li>
+<p>Ouvrir un nouveau terminal,</p>
 <ul>
-<li>Réessayez avec <code>disown</code>.</li>
-<li>Essayez ensuite avec <code>nohup firefox</code>.</li>
+<li>a) Lancer Firefox en arrière-plan, fermer le terminal. Que se passe-t-il ?</li>
+<li>b) Exécuter <code>disown &lt;pid firefox&gt;</code>, puis lancer Firefox en arrière-plan, fermer le terminal. Que se passe-t-il ?</li>
+<li>c) Exécuter <code>nohup firefox</code>, puis lancer Firefox en arrière-plan, fermer le terminal. Que se passe-t-il ?</li>
 </ul>
 </li>
 </ol>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution&hellip;
+  </summary>
+  <div class="box-content">
+<p><strong>1</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ grep fichier
+</span></span><span style="display:flex;"><span>$ ps -ef | grep egrep  <span style="color:#75715e"># Trouver le PID de egrep</span>
+</span></span><span style="display:flex;"><span>$ kill -9 &lt;PID de egrep&gt;  <span style="color:#75715e"># Terminer depuis un autre terminal</span></span></span></code></pre></div>
+<p><strong>2 a)</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ firefox &amp;</span></span></code></pre></div>
+<p>Après avoir fermé le terminal, Firefox se ferme aussi.</p>
+<p><strong>2 b)</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ disown &lt;PID&gt;
+</span></span><span style="display:flex;"><span>$ firefox &amp;</span></span></code></pre></div>
+<p><strong>2 c)</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nohup 
+</span></span><span style="display:flex;"><span>$ firefox &amp;</span></span></code></pre></div>
+<p>Avec l&rsquo;utilisation de <code>disown</code> et <code>nohup</code>, le terminal peut être fermé mais Firefox reste ouvert.</p>
+  </div>
+</details>
 <hr>
-<h2 id="codes-de-retour-des-commandes">Codes de retour des commandes</h2>
-<p>Chaque commande retourne un code :</p>
-<ul>
-<li><strong>0</strong> : Succès.</li>
-<li><strong>Différent de 0</strong> : Erreur.</li>
-</ul>
-<p>Pour afficher le code de retour de la dernière commande :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo $?</span></span></code></pre></div>
-<h3 id="exercices-5">Exercices 5</h3>
+<h2 id="codes-de-retour-et-variables-système">Codes de retour et variables système</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Variable</th>
+          <th style="text-align: left">Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>$?</code></td>
+          <td style="text-align: left">Code de retour de la dernière commande (0 = succès, autre = erreur).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>$!</code></td>
+          <td style="text-align: left"><code>PID</code> de la dernière commande exécutée en arrière-plan.</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Exemple:</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ test -e fichier   
+</span></span><span style="display:flex;"><span>$ echo $?  <span style="color:#75715e"># Affiche 0 si le fichier existe, 1 sinon</span></span></span></code></pre></div>
+</blockquote>
+<h3 id="exercice-5">Exercice 5</h3>
 <ol>
-<li>Lancez <code>ls</code>. Quel est son code de retour ?</li>
-<li>Essayez :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name <span style="color:#e6db74">&#34;*.conf&#34;</span></span></span></code></pre></div>
-Quel est le code de retour ? Pourquoi ?</li>
+<li>Lancez <code>ls</code>. Quel est son code de retour ? Est-ce un succès ou un échec ?</li>
+<li>Lancez <code>find / -name &quot;*.conf&quot;</code> sans être root. Quel est le code de retour ? Pourquoi ?</li>
 </ol>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution&hellip;
+  </summary>
+  <div class="box-content">
+<p><strong>1.</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls
+</span></span><span style="display:flex;"><span>$ echo $?</span></span></code></pre></div>
+<p>Le code de retour est 0, car <code>ls</code> se termine avec succès.</p>
+<p><strong>2.</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name <span style="color:#e6db74">&#34;*.conf&#34;</span>
+</span></span><span style="display:flex;"><span>$ echo $?  <span style="color:#75715e"># Probablement 1 à cause des permissions</span></span></span></code></pre></div>
+<p>Le code de retour est différent de 0 (probablement 1), car il y a eu  une erreur (permission: accès refusé)</p>
+  </div>
+</details>
 <hr>
-<h2 id="combinaison-de-commandes">Combinaison de commandes</h2>
-<p>La <strong>combinaison de commandes</strong> permet de lier plusieurs commandes dans un même processus, facilitant ainsi l&rsquo;automatisation et le traitement de données en une seule étape.</p>
-<p>Elle s&rsquo;effectue grâce à des opérateurs comme <code>|</code> (pipe), <code>&amp;&amp;</code> (exécuter si la commande précédente réussit) ou <code>;</code> (exécuter séquentiellement).</p>
+<h2 id="opérateurs-de-comparaison-en-bash">Opérateurs de comparaison en Bash</h2>
+<p>Les opérateurs de comparaison permettent de tester des valeurs numériques dans des conditions.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Opérateur</th>
+          <th style="text-align: left">Signification</th>
+          <th style="text-align: left">Exemple</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>-eq</code></td>
+          <td style="text-align: left">Égalité (<code>equal</code>)</td>
+          <td style="text-align: left"><code>test $var -eq 0</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>-ne</code></td>
+          <td style="text-align: left">Différence (<code>not equal</code>)</td>
+          <td style="text-align: left"><code>test $var -ne 0</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>-lt</code></td>
+          <td style="text-align: left">Strictement inférieur (<code>less than</code>)</td>
+          <td style="text-align: left"><code>test $var -lt 0</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>-gt</code></td>
+          <td style="text-align: left">Strictement supérieur (<code>greater than</code>)</td>
+          <td style="text-align: left"><code>test $var -gt 0</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>-le</code></td>
+          <td style="text-align: left">Inférieur ou égal (<code>less or equal</code>)</td>
+          <td style="text-align: left"><code>test $var -le 0</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>-ge</code></td>
+          <td style="text-align: left">Supérieur ou égal (<code>greater or equal</code>)</td>
+          <td style="text-align: left"><code>test $var -ge 0</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="attente-de-la-fin-dexécution-dune-commande">Attente de la fin d&rsquo;exécution d&rsquo;une commande</h2>
+<p>Il est possible d&rsquo;attendre qu&rsquo;une commande en arrière-plan se termine avant de poursuivre l&rsquo;exécution d&rsquo;autres commandes.</p>
+<blockquote>
+<p><strong>Exemple :</strong></p>
+</blockquote>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cp dossierVolumineux/* destination &amp;
+</span></span><span style="display:flex;"><span>$ wait $!</span></span></code></pre></div>
+<p>Dans un script, on peut attendre plusieurs commandes exécutées en arrière-plan :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>cp dossier1/* destination1 &amp;
+</span></span><span style="display:flex;"><span>cp dossier2/* destination2 &amp;
+</span></span><span style="display:flex;"><span>wait 
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Toutes les copies sont terminées.&#34;</span></span></span></code></pre></div>
+<hr>
+<h2 id="combinaison-et-synchronisation-des-commandes">Combinaison et synchronisation des commandes</h2>
+<h3 id="opérateurs-logiques">Opérateurs logiques</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Opérateur</th>
+          <th style="text-align: left">Exemple</th>
+          <th style="text-align: left">Fonctionnement</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>;</code></td>
+          <td style="text-align: left"><code>$ commande1 ; commande2</code></td>
+          <td style="text-align: left"><code>commande2</code> s’exécute une fois que <code>commande1</code> se termine, indépendamment du succès ou de l&rsquo;échec.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>&amp;</code></td>
+          <td style="text-align: left"><code>$ commande1 &amp; commande2 &amp;</code></td>
+          <td style="text-align: left">Les commandes s&rsquo;exécutent en parallèle, simultanément.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>&amp;&amp;</code></td>
+          <td style="text-align: left"><code>$ commande1 &amp;&amp; commande2</code></td>
+          <td style="text-align: left"><code>commande2</code> s’exécute si <code>commande1</code> réussit.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>||</code></td>
+          <td style="text-align: left"><code>$ commande1 || commande2</code></td>
+          <td style="text-align: left"><code>commande2</code> s’exécute si <code>commande1</code> échoue.</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Exemples :</strong></p>
+</blockquote>
+<p>Tester l&rsquo;existence d&rsquo;un fichier avant d&rsquo;exécuter une commande :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ test -e fichier <span style="color:#f92672">&amp;&amp;</span> commande</span></span></code></pre></div>
+<p>Afficher &ldquo;OK&rdquo; si la commande réussit :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ commande <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;OK&#34;</span></span></span></code></pre></div>
+<p>Afficher &ldquo;ERREUR&rdquo; si la commande échoue :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ commande <span style="color:#f92672">||</span> echo <span style="color:#e6db74">&#34;ERREUR&#34;</span></span></span></code></pre></div>
+<p>Afficher &ldquo;OK&rdquo; si la commande réussit, sinon &ldquo;ERREUR&rdquo; :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ test $var -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;</span>$var<span style="color:#e6db74"> = 0&#34;</span> <span style="color:#f92672">||</span> echo <span style="color:#e6db74">&#34;</span>$var<span style="color:#e6db74"> != 0&#34;</span></span></span></code></pre></div>
+<hr>
+<h3 id="exercice-6--expérimentation-des-opérateurs-logiques">Exercice 6 : Expérimentation des opérateurs logiques</h3>
 <ol>
-<li><strong>Exécuter successivement :</strong>
-<div class="highlight wrap-code"><pre tabindex="0"><code>$ commande1 ; commande2</code></pre></div>
-</li>
-<li><strong>Exécuter en parallèle :</strong>
-<div class="highlight wrap-code"><pre tabindex="0"><code>$ commande1 &amp; commande2</code></pre></div>
-</li>
-<li><strong>Exécuter si succès :</strong>
-<div class="highlight wrap-code"><pre tabindex="0"><code>$ commande1 &amp;&amp; commande2</code></pre></div>
-</li>
-<li><strong>Exécuter si échec :</strong>
-<div class="highlight wrap-code"><pre tabindex="0"><code>$ commande1 || commande2</code></pre></div>
-</li>
-</ol>
-<h3 id="exercices-6">Exercices 6</h3>
-<ol>
-<li>Testez :
+<li>
+<p>Exécutez :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name <span style="color:#e6db74">&#34;*.conf&#34;</span> <span style="color:#f92672">&amp;&amp;</span> ls</span></span></code></pre></div>
-Que se passe-t-il si vous inversez les commandes ?</li>
-<li>Testez :
+<ul>
+<li>Les deux commandes s&rsquo;exécutent elles ? Inversez-les et observez le résultat.</li>
+</ul>
+</li>
+<li>
+<p>Exécutez :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name <span style="color:#e6db74">&#34;*.conf&#34;</span> <span style="color:#f92672">||</span> ls</span></span></code></pre></div>
-Observez les différences.</li>
+<ul>
+<li>Les deux commandes s&rsquo;exécutent elles ? Inversez-les et observez le résultat.</li>
+</ul>
+</li>
+<li>
+<p>Exécutez :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name <span style="color:#e6db74">&#34;*.conf&#34;</span> &amp; ls &amp;</span></span></code></pre></div>
+<ul>
+<li>Les deux commandes s&rsquo;exécutent elles en parallèle ?</li>
+</ul>
+</li>
 </ol>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution&hellip;
+  </summary>
+  <div class="box-content">
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name <span style="color:#e6db74">&#34;*.conf&#34;</span> <span style="color:#f92672">&amp;&amp;</span> ls </span></span></code></pre></div>
+<p><code>ls</code> s&rsquo;exécute si <code>find</code> réussit.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name <span style="color:#e6db74">&#34;*.conf&#34;</span> <span style="color:#f92672">||</span> ls</span></span></code></pre></div>
+<p><code>ls</code> s&rsquo;exécute si <code>find</code> échoue</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name <span style="color:#e6db74">&#34;*.conf&#34;</span> &amp; ls &amp;</span></span></code></pre></div>
+<p>Les deux commendes s&rsquo;exécutent simultanément.</p>
+  </div>
+</details>
 <hr>
-<h2 id="création-de-scripts-bash">Création de scripts Bash</h2>
-<p>Un script Bash est un fichier exécutable contenant des commandes.</p>
+<h2 id="priorité-des-opérateurs">Priorité des opérateurs</h2>
+<p>On peut utiliser des parenthèses pour organiser l&rsquo;ordre d&rsquo;exécution des opérateurs :</p>
+<blockquote>
+<p><strong>Exemple :</strong></p>
+</blockquote>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#f92672">(</span>find / -name <span style="color:#e6db74">&#34;*.conf&#34;</span> 2&gt;/dev/null <span style="color:#f92672">||</span> ls<span style="color:#f92672">)</span> | grep a</span></span></code></pre></div>
+<p>Dans cet exemple :</p>
+<ul>
+<li><code>find</code> est exécuté en premier. Si une erreur survient, <code>ls</code> prend le relais.</li>
+<li>Ensuite, <code>grep</code> filtre les résultats.</li>
+</ul>
+<p>Si on écrit :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name <span style="color:#e6db74">&#34;*.conf&#34;</span> 2&gt;/dev/null <span style="color:#f92672">||</span> <span style="color:#f92672">(</span>ls | grep a<span style="color:#f92672">)</span></span></span></code></pre></div>
+<p>Seul le résultat de <code>ls</code> sera filtré par <code>grep</code> en cas d&rsquo;échec de <code>find</code>.</p>
+<hr>
+<h2 id="création-et-exécution-dun-script-bash">Création et exécution d&rsquo;un script Bash</h2>
+<p>Un script Bash est un fichier <code>.sh</code> contenant une série de commandes.</p>
+<h3 id="création-dun-script">Création d&rsquo;un script</h3>
 <ol>
-<li>Créez un fichier :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vim script.sh</span></span></code></pre></div>
+<li>Ouvrir un fichier avec Vim :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vim monscript.sh</span></span></code></pre></div>
 </li>
-<li>Ajoutez cette entête :
-<div class="highlight wrap-code"><pre tabindex="0"><code>#!/bin/bash</code></pre></div>
+<li>Ajouter l&rsquo;en-tête (1re ligne) du script :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash</span></span></span></code></pre></div>
 </li>
-<li>Ajoutez des commandes :
-<div class="highlight wrap-code"><pre tabindex="0"><code>echo &#34;Bonjour&#34;
-pwd
-touch fichier{1..5}.txt</code></pre></div>
+<li>Écrire les commandes et ajouter des commentaires (précédés de <code>#</code>).</li>
+</ol>
+<blockquote>
+<p><strong>Exemple : fichier monscript.sh</strong></p>
+</blockquote>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>echo <span style="color:#e6db74">&#34;Bonjour tout le monde&#34;</span>
+</span></span><span style="display:flex;"><span>pwd
+</span></span><span style="display:flex;"><span>touch fiche<span style="color:#f92672">{</span>1..5<span style="color:#f92672">}</span>.txt</span></span></code></pre></div>
+<h3 id="exécution-dun-script">Exécution d&rsquo;un script</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ bash chemin_vers_monscript.sh</span></span></code></pre></div>
+<hr>
+<h2 id="scripts-concurrents">Scripts concurrents</h2>
+<p>Un script concurrent contient des commandes exécutées <strong>en arrière-plan</strong>.</p>
+<blockquote>
+<p><strong>Exemple :</strong></p>
+</blockquote>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">(</span>echo <span style="color:#e6db74">&#34;Début copie dossier 1&#34;</span>; cp dossier1/* destination1; echo <span style="color:#e6db74">&#34;Fin copie&#34;</span><span style="color:#f92672">)</span> &amp;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>echo <span style="color:#e6db74">&#34;Début copie dossier 2&#34;</span>; cp dossier2/* destination2; echo <span style="color:#e6db74">&#34;Fin copie&#34;</span><span style="color:#f92672">)</span> &amp;
+</span></span><span style="display:flex;"><span>wait
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Toutes les copies sont terminées.&#34;</span></span></span></code></pre></div>
+<p>Dans cet exemple :</p>
+<ul>
+<li>Chaque copie est lancée en arrière-plan avec <code>&amp;</code>.</li>
+<li><code>wait</code> garantit que le script affiche &ldquo;Toutes les copies sont terminées&rdquo; uniquement après la fin des copies.</li>
+</ul>
+<p>Un autre exemple avec <code>sleep</code> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">(</span>sleep 15; echo <span style="color:#e6db74">&#34;Pause de 15 secondes terminée&#34;</span><span style="color:#f92672">)</span> &amp;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>sleep 20; echo <span style="color:#e6db74">&#34;Pause de 20 secondes terminée&#34;</span><span style="color:#f92672">)</span> &amp;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>sleep 3; echo <span style="color:#e6db74">&#34;Pause de 3 secondes terminée&#34;</span><span style="color:#f92672">)</span> &amp;
+</span></span><span style="display:flex;"><span>wait
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Réveillez-vous, toutes les pauses sont terminées !&#34;</span></span></span></code></pre></div>
+<p>Ce script Bash lance trois commandes <code>sleep</code> en parallèle, chacune suivie d&rsquo;un message indiquant la fin de la pause.</p>
+<p><strong>Explication</strong> :</p>
+<ol>
+<li>
+<p><strong>Lancement en arrière-plan (<code>&amp;</code>)</strong> :</p>
+<ul>
+<li><code>sleep 15</code> attend 15 secondes avant d&rsquo;afficher &ldquo;Pause de 15 secondes terminée&rdquo;.</li>
+<li><code>sleep 20</code> attend 20 secondes avant d&rsquo;afficher &ldquo;Pause de 20 secondes terminée&rdquo;.</li>
+<li><code>sleep 3</code> attend 3 secondes avant d&rsquo;afficher &ldquo;Pause de 3 secondes terminée&rdquo;.</li>
+</ul>
+<p>Chaque commande est exécutée en arrière-plan grâce au <code>&amp;</code>, ce qui signifie qu&rsquo;elles démarrent immédiatement et ne bloquent pas l&rsquo;exécution du script.</p>
 </li>
-<li>Exécutez-le :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ bash script.sh</span></span></code></pre></div>
+<li>
+<p><strong><code>wait</code></strong> :</p>
+<ul>
+<li>Cette commande attend que <strong>toutes</strong> les tâches en arrière-plan soient terminées avant de poursuivre.</li>
+</ul>
+</li>
+<li>
+<p><strong>Affichage final</strong> :</p>
+<ul>
+<li>Une fois toutes les pauses terminées, le script affiche <code>&quot;Réveillez-vous, toutes les pauses sont terminées !&quot;</code>.</li>
+</ul>
 </li>
 </ol>
-<p>Pour lancer des tâches en parallèle dans un script, utilisez <code>&amp;</code> et <code>wait</code> :</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>#!/bin/bash
-(cp dossier1/* destination1 &amp;)
-(cp dossier2/* destination2 &amp;)
-wait
-echo &#34;Copie terminée&#34;</code></pre></div>
+<h3 id="exercice-7">Exercice 7</h3>
+<ol>
+<li>Exécutez un script avec <code>sleep 15</code>, <code>sleep 20</code>, et <code>sleep 3</code> en parallèle.</li>
+<li>Dans quel ordre s&rsquo;afficheront les messages ?</li>
+<li>Que se passe-t-il si vous retirez <code>wait</code> ?</li>
+</ol>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution&hellip;
+  </summary>
+  <div class="box-content">
+<ol start="2">
+<li>L&rsquo;ordre d&rsquo;affichage:</li>
+</ol>
+<ul>
+<li>Après <strong>3 secondes</strong> → <code>&quot;Pause de 3 secondes terminée&quot;</code></li>
+<li>Après <strong>15 secondes</strong> → <code>&quot;Pause de 15 secondes terminée&quot;</code></li>
+<li>Après <strong>20 secondes</strong> → <code>&quot;Pause de 20 secondes terminée&quot;</code></li>
+<li>Enfin, lorsque toutes les commandes sont terminées → `&ldquo;Réveillez-vous, toutes les pauses sont terminées !&rdquo;</li>
+</ul>
+<ol start="3">
+<li>Si on enlève <code>wait</code>, le script pourrait afficher immédiatement le dernier message avant la fin des <code>sleep</code>.</li>
+</ol>
+  </div>
+</details>
+<p>`</p>
 
   <footer class="footline">
   </footer>
@@ -366,7 +775,7 @@ echo &#34;Copie terminée&#34;</code></pre></div>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1739485827";
+          window.index_js_url="/searchindex.en.js?1739629450";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -379,12 +788,12 @@ echo &#34;Copie terminée&#34;</code></pre></div>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1739485827" defer></script>
-        <script src="/js/lunr/lunr.min.js?1739485827" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1739485827" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1739485827" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1739485827" defer></script>
-        <script src="/js/search.js?1739485827" defer></script>
+        <script src="/js/auto-complete.js?1739629450" defer></script>
+        <script src="/js/lunr/lunr.min.js?1739629450" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1739629450" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1739629450" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1739629450" defer></script>
+        <script src="/js/search.js?1739629450" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -404,9 +813,6 @@ echo &#34;Copie terminée&#34;</code></pre></div>
             <li class="" data-nav-id="/semaine5/atelier/index.html"><a class="padding" href="/semaine5/atelier/index.html">ATELIER #5: Gestion des processus Linux</a></li></ul></li>
             <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim et les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>???</a></li>
-            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions de ateliers</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
           </ul>
         </div>
@@ -461,8 +867,8 @@ echo &#34;Copie terminée&#34;</code></pre></div>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1739485827" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1739485827" defer></script>
-    <script src="/js/theme.js?1739485827" defer></script>
+    <script src="/js/clipboard.min.js?1739629450" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1739629450" defer></script>
+    <script src="/js/theme.js?1739629450" defer></script>
   </body>
 </html>

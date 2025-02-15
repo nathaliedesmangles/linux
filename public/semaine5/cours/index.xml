@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Les processus de Linux :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/semaine5/cours/index.html</link>
-    <description>Qu’est-ce qu’un processus ? Un processus est une application ou une commande en cours d’exécution. Certains processus s’arrêtent automatiquement une fois leur tâche terminée, tandis que d’autres continuent de s’exécuter jusqu’à ce que vous les arrêtiez vous-même.&#xA;Exemple de processus Commande ls :&#xA;Cette commande affiche le contenu d’un dossier, s’exécute, puis se termine immédiatement. Vous pouvez enchaîner avec une autre commande. $ ls&#xD;Commande firefox :&#xA;Cette commande ouvre le navigateur Firefox. Tant que Firefox est ouvert, la commande reste active et bloque le terminal. $ firefox&#xD;Exécution en arrière-plan Si une commande empêche l’utilisation du terminal, c’est parce qu’elle s’exécute au premier plan. Voici comment continuer à utiliser le terminal :</description>
+    <link>https://example.org/semaine5/cours/index.html</link>
+    <description>Les processus Chaque application, chaque commande est un processus.&#xA;Certains processus vont s’exécuter jusqu’à ce que vous les arrêtiez, d’autres vont réaliser une tâche et s’arrêter tout seul.&#xA;Exemple:&#xA;Commande Comportement ls S’exécute et se termine immédiatement. firefox Ouvre Firefox et reste en exécution empêchant l’utilisation du terminal, jusqu’à la fermeture de Firefox. Quand une commande empêche l’utilisation du terminal pendant son exécution, elle s’exécute au premier plan.&#xA;Pour permettre l’utilisation du terminal, il faut lancer l’application bloquante en arrière-plan.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/semaine5/cours/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/semaine5/cours/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
