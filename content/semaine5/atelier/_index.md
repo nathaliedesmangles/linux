@@ -6,125 +6,113 @@ weight = 52
 
 ## Objectifs de l'atelier
 
-- Manipuler les processus sous Linux en utilisant des commandes de base.
-- Comprendre et explorer les différents types de processus sous Linux.
-- Apprendre à lister, gérer et contrôler les processus.
-- Manipuler les processus en premier plan et en arrière-plan.
+Dans cet atelier, vous allez créer deux versions d’un script Bash :  
 
+1. Une version **séquentielle**, où les commandes s'exécutent les unes après les autres. 
+	- `nombre_de_fichiers_seq.sh` : Affiche le nombre de fichiers par type. 
+2. Une version **asynchrone**, où plusieurs commandes s'exécutent simultanément en arrière-plan.  
+	- `nombre_de_fichiers_conc.sh` : Réécriture du script précédent avec des commandes asynchrones (`&`).
 
-### Remise
+---
+
+## Remise
 
 Vous devez remettre sur Moodle :
 - Vos deux fichiers `.sh`
 - Deux captures d’écran illustrant le fonctionnement des scripts :
 
-| Capture                     | Contenu                                      |
-|-----------------------------|----------------------------------------------|
-| 01_nombre_de_fichiers_seq.png | Appel au script séquentiel et résultats      |
-| 02_nombre_de_fichiers_conc.png | Appel au script concurrent et résultats      |
+| Capture                            | Contenu                                      |
+|------------------------------------|----------------------------------------------|
+| **01_nombre_de_fichiers_seq.png**  | Exécution du script `nombre_de_fichiers_seq.sh` et résultats      |
+| **02_nombre_de_fichiers_conc.png** | Exécution du script `nombre_de_fichiers_conc.sh` et son résultat      |
+
+
+--- 
+
+
+## **Rappels** 
+
+### Stocker une valeur dans une variable
+```bash
+nb=$(ls | wc -l)
+```
+Cette commande stocke le nombre de fichiers du répertoire courant dans la variable `nb`.  
+
+### Tester la valeur d’une variable
+ 
+Pour comparer la valeur d’une variable à un chiffre :  
+```bash
+test $nb -eq 10
+```
+Cette commande compare `nb` à `10`. Si les deux valeurs sont égales, le code de retour sera `0`, sinon il sera différent de `0`.  
+
+On peut alors utiliser cette comparaison dans une condition :  
+```bash
+test $nb -eq 10 && echo "Les deux valeurs sont égales" || echo "Les deux valeurs sont différentes"
+```
+
+### Parcourir une variable avec une boucle *for*
+  
+Si vous avez une liste de serveurs dans une variable et souhaitez les parcourir :  
+```bash
+serveurs="google.com facebook.com youtube.com"
+for i in $serveurs; do echo $i; done
+```
 
 ---
 
 # Atelier
 
-Dans cet atelier, vous apprendrez à créer deux scripts Bash : 
-1. l’un avec des commandes séquentielles et 
-2. l’autre avec des commandes exécutées de manière asynchrone. 
+## Exercice 1 : Script séquentiel  
 
-Ces scripts vous permettront de mieux comprendre les différences entre l’exécution séquentielle et concurrente.
+Créer un script `nombre_de_fichiers_seq.sh` contenant des commandes **séquentielles**.  
 
-## Astuces et rappels
+**Le script doit** :  
+1. **Compter** le nombre de fichiers pour les extensions suivantes : `java`, `conf`, `txt`, `png`, `tiff`.  
+2. **Afficher** le nombre de fichiers pour chaque type.  
+3. **Si aucun fichier d'un type donné n'existe**, afficher :  
+   ```bash
+   Il n’y a aucun fichier .<extension>
+   ```
+4. **Ne pas afficher d’autres informations**.  
 
-### Stocker une valeur dans une variable
-
-Pour stocker le nombre de fichiers présents dans un répertoire :
+**À inclure au début du script**  
 ```bash
-nb=$(ls | wc -l)
-```
-Cette commande place le nombre de fichiers dans la variable `nb`.
-
-### Tester la valeur d’une variable
-
-Pour comparer une variable à un chiffre :
-```bash
-test $nb -eq 10
-```
-Cette commande vérifie si `nb` est égal à 10. Si c’est le cas, le code de retour sera `0`, sinon il sera différent de `0`.
-
-Vous pouvez combiner cette commande avec des opérateurs logiques :
-```bash
-test $nb -eq 10 && echo "Les deux valeurs sont égales" || echo "Les deux valeurs sont différentes"
+types="java conf txt png tiff"
 ```
 
-### Parcourir une variable avec une boucle `for`
-
-Pour parcourir une liste de serveurs :
+**Exemple de résultat**  
 ```bash
-serveurs="google.com facebook.com youtube.com"
-for i in $serveurs; do echo $i; done
+Décompte des fichiers java conf txt png tiff
+
+Il y a 50718 fichiers .java  
+Il y a 1171 fichiers .conf  
+Il y a 6999 fichiers .txt  
+Il y a 67296 fichiers .png  
+Il n’y a aucun fichier .tiff  
 ```
-Chaque élément de la variable `serveurs` sera affiché séparément.
-
-### Conseils supplémentaires
-
-- Pour mesurer les performances des scripts, utilisez la commande `time`.
-- Comparez les temps d’exécution pour comprendre l’intérêt de la concurrence.
 
 ---
 
-## Exercice 1 : Script séquentiel
+## Exercice 2 : Script concurrent 
 
-- Créer un script Bash nommé **nombre_de_fichiers_seq.sh** pour compter le nombre de fichiers par type.
+Créer un script `nombre_de_fichiers_conc.sh`, qui est une version **asynchrone** du script précédent.  
 
-### Aide pour l'exercice
+**Spécifications du script**  
+1. Effectuer **exactement** les mêmes opérations que le script séquentiel.  
+2. Utiliser le symbole `&` pour exécuter les commandes **en arrière-plan**.  
+3. Exécuter **toutes les commandes `find` simultanément**.  
+4. Regrouper les commandes avec `(CMD1; CMD2; …) &` pour les exécuter en parallèle.  
+5. Ajouter une commande `wait` à la fin du script pour s’assurer que tous les processus se terminent avant la fin du script.  
 
-- Ce script doit compter et afficher le nombre de fichiers pour chaque type suivant : `java`, `conf`, `txt`, `png`, `tiff`.
-- Structure de base
-
-  Ajoutez cette ligne au début du script :
-  ```bash
-   types="java conf txt png tiff"
-  ```
-- Fonctionnalités à implémenter
-
-   1. Compter le nombre de fichiers pour chaque type.
-   2. Afficher un message si aucun fichier n’est trouvé.
-   3. Ne pas afficher d’autres messages.
-
-- Exemple de sortie
-
-```plaintext
+**Exemple de résultat**  
+L’ordre des lignes peut être différent en raison de l’exécution parallèle.  
+```bash
 Décompte des fichiers java conf txt png tiff
 
-Il y a 50718 fichiers .java
-Il y a 1171 fichiers .conf
-Il y a 6999 fichiers .txt
-Il y a 67296 fichiers .png
-Il n’y a aucun fichier .tiff
-```
-
-
-## Exercice 2 : Script concurrent
-
-- Créer une version concurrente de ce script nommée **nombre_de_fichiers_conc.sh**, en utilisant des commandes asynchrones (&).
-
-### Aide pour l'exercice
-
-- Ce script doit être une version améliorée de **nombre_de_fichiers_seq.sh**, en exécutant les commandes de manière asynchrone.
-- Fonctionnalités à implémenter
-
-   1. Utiliser `&` pour exécuter les commandes `find` en arrière-plan.
-   2. Regrouper les processus dans un sous-processus avec `(CMD1; CMD2; ...) &`.
-   3. Utiliser la commande `wait` à la fin pour attendre la fin de tous les processus en arrière-plan.
-
-- Exemple de sortie
-
-```plaintext
-Décompte des fichiers java conf txt png tiff
-
-Il y a 1171 fichiers .conf
-Il n’y a aucun fichier .tiff
-Il y a 67296 fichiers .png
-Il y a 50718 fichiers .java
-Il y a 6999 fichiers .txt
+Il y a 1171 fichiers .conf  
+Il n’y a aucun fichier .tiff  
+Il y a 67296 fichiers .png  
+Il y a 50718 fichiers .java  
+Il y a 6999 fichiers .txt  
 ```
