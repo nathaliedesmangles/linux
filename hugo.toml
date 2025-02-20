@@ -6,3 +6,6 @@ repository_url = ""
 
 [markup.goldmark.renderer]
 unsafe = true
+
+[params]
+  show_metadata = false 
