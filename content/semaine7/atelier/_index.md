@@ -1,6 +1,7 @@
 +++
 title = "ATELIER #7: VIM et les fichiers de configuration (À MODIFIER)"
 weight = 72
+draft = true
 +++
 
 ## Objectif de l'atelier
