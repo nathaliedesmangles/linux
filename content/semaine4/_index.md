@@ -7,7 +7,7 @@ weight = 40
 
 ## Plan de la leçon
 
-- **Théorie : jeudi 13 février (semaine #4)**
+- **Théorie : lundi 24 février (dû à la levée des cours du 13/02)**
   - Quelques commandes utiles (tree, grep, sep cut, more, less et sort).
   - Les entrées et sorties et la redirection des commandes.
   - Le chainage de commandes (*Pipelines*).
@@ -15,19 +15,19 @@ weight = 40
   - La boucle while.
 
 
-- **Test #1 : lundi 17 février (semaine #4)**
-  - **Durée**: 1h40, ~20 questions
+- **Test #1 : jeudi 20 février (dû à la levée des cours du 17/02)**
+  - **Durée**: 1h45, 20 questions
   - **Format**: Test sur Moodle 
 	- Écrire la commande (1 ligne)
 	- Écrire la commande (plus d'une ligne)
   - **Matière**:
     - **Semaine 2**: Système de fichiers, shell, commandes de base, Vim.
-    - **Semaine 3**: Processus de démarrage, variables, commande `find` et boucle `for`
-  - **Documentation permise**: Seulement 1 feuille 8.5 x 11 recto-verso manuscrite.
+    - **Semaine 3**: Processus de démarrage, niveaux, variables, commande `find` et boucle `for`
+  - **Documentation permise**: Seulement 1 feuille 8.5 x 11 recto-verso manuscrite ou imprimée.
 
 
 ---
-- **Atelier : Remise au plus tard mardi 18 février**
+- **Atelier : jeudi 27 février**
   - Utilisation des diverses commandes.
   - Redirection des entrées et sorties.
   - Enchainer les commandes.
