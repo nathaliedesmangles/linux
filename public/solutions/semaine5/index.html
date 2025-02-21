@@ -5,42 +5,22 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Solutions des exercices **Dans le fichier fourni: **
-Trouver les codes postaux canadiens:
-Format attendu : Lettre-Chiffre-Lettre Chiffre-Lettre-Chiffre. $ grep -E &#39;\b[A-Z][0-9][A-Z] ?[0-9][A-Z][0-9]\b&#39; expr.txtIdentifier les codes d’employés composés de :
-Deux lettres majuscules suivies de quatre chiffres. $ grep -E &#39;\b[A-Z]{2}[0-9]{4}\b&#39; expr.txtCompter les lignes ne se terminant pas par une lettre :
-$ egrep &#39;[^a-zA-Z]$&#39; expr.txtIdentifier les numéros de téléphone :
-Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ grep -E &#39;\&#43;1\([0-9]{3}\)[0-9]{3}-[0-9]{4}|\([0-9]{3}\)[0-9]{3}-[0-9]{4}&#39; expr.txtTrouver les URLs comme :">
+    <meta name="description" content="Solution des exercices Exercice 1 : nombre_de_fichiers_seq.sh` #!/bin/bash # Définition des types de fichiers à analyser types=&#34;java conf txt png tiff&#34; echo &#34;Décompte des fichiers $types&#34; echo &#34;&#34; # Boucle sur chaque type de fichier for type in $types; do # Compter le nombre de fichiers avec l&#39;extension donnée nombre=$(find . -type f -name &#34;*.$type&#34; | wc -l) # Affichage du résultat en utilisant des expressions arithmétiques echo &#34;Il y a $nombre fichiers .$type&#34; | sed &#39;s/ 0 fichiers/ aucun fichier/&#39; doneExercice 2 : nombre_de_fichiers_conc.sh #!/bin/bash # Définition des types de fichiers à analyser types=&#34;java conf txt png tiff&#34; echo &#34;Décompte des fichiers $types&#34; echo &#34;&#34; # Boucle sur chaque type de fichier (lancement en arrière-plan) for type in $types; do ( nombre=$(find . -type f -name &#34;*.$type&#34; | wc -l) # Affichage avec substitution via `sed` echo &#34;Il y a $nombre fichiers .$type&#34; | sed &#39;s/ 0 fichiers/ aucun fichier/&#39; ) &amp; done # Attendre la fin de tous les processus en arrière-plan wait">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Atelier 6 :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Solutions des exercices **Dans le fichier fourni: **
-Trouver les codes postaux canadiens:
-Format attendu : Lettre-Chiffre-Lettre Chiffre-Lettre-Chiffre. $ grep -E &#39;\b[A-Z][0-9][A-Z] ?[0-9][A-Z][0-9]\b&#39; expr.txtIdentifier les codes d’employés composés de :
-Deux lettres majuscules suivies de quatre chiffres. $ grep -E &#39;\b[A-Z]{2}[0-9]{4}\b&#39; expr.txtCompter les lignes ne se terminant pas par une lettre :
-$ egrep &#39;[^a-zA-Z]$&#39; expr.txtIdentifier les numéros de téléphone :
-Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ grep -E &#39;\&#43;1\([0-9]{3}\)[0-9]{3}-[0-9]{4}|\([0-9]{3}\)[0-9]{3}-[0-9]{4}&#39; expr.txtTrouver les URLs comme :">
-    <meta property="og:url" content="http://localhost:1313/solutions/semaine6/index.html">
+    <meta name="twitter:title" content="Atelier 5 :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Solution des exercices Exercice 1 : nombre_de_fichiers_seq.sh` #!/bin/bash # Définition des types de fichiers à analyser types=&#34;java conf txt png tiff&#34; echo &#34;Décompte des fichiers $types&#34; echo &#34;&#34; # Boucle sur chaque type de fichier for type in $types; do # Compter le nombre de fichiers avec l&#39;extension donnée nombre=$(find . -type f -name &#34;*.$type&#34; | wc -l) # Affichage du résultat en utilisant des expressions arithmétiques echo &#34;Il y a $nombre fichiers .$type&#34; | sed &#39;s/ 0 fichiers/ aucun fichier/&#39; doneExercice 2 : nombre_de_fichiers_conc.sh #!/bin/bash # Définition des types de fichiers à analyser types=&#34;java conf txt png tiff&#34; echo &#34;Décompte des fichiers $types&#34; echo &#34;&#34; # Boucle sur chaque type de fichier (lancement en arrière-plan) for type in $types; do ( nombre=$(find . -type f -name &#34;*.$type&#34; | wc -l) # Affichage avec substitution via `sed` echo &#34;Il y a $nombre fichiers .$type&#34; | sed &#39;s/ 0 fichiers/ aucun fichier/&#39; ) &amp; done # Attendre la fin de tous les processus en arrière-plan wait">
+    <meta property="og:url" content="http://localhost:1313/solutions/semaine5/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
-    <meta property="og:title" content="Atelier 6 :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Solutions des exercices **Dans le fichier fourni: **
-Trouver les codes postaux canadiens:
-Format attendu : Lettre-Chiffre-Lettre Chiffre-Lettre-Chiffre. $ grep -E &#39;\b[A-Z][0-9][A-Z] ?[0-9][A-Z][0-9]\b&#39; expr.txtIdentifier les codes d’employés composés de :
-Deux lettres majuscules suivies de quatre chiffres. $ grep -E &#39;\b[A-Z]{2}[0-9]{4}\b&#39; expr.txtCompter les lignes ne se terminant pas par une lettre :
-$ egrep &#39;[^a-zA-Z]$&#39; expr.txtIdentifier les numéros de téléphone :
-Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ grep -E &#39;\&#43;1\([0-9]{3}\)[0-9]{3}-[0-9]{4}|\([0-9]{3}\)[0-9]{3}-[0-9]{4}&#39; expr.txtTrouver les URLs comme :">
+    <meta property="og:title" content="Atelier 5 :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Solution des exercices Exercice 1 : nombre_de_fichiers_seq.sh` #!/bin/bash # Définition des types de fichiers à analyser types=&#34;java conf txt png tiff&#34; echo &#34;Décompte des fichiers $types&#34; echo &#34;&#34; # Boucle sur chaque type de fichier for type in $types; do # Compter le nombre de fichiers avec l&#39;extension donnée nombre=$(find . -type f -name &#34;*.$type&#34; | wc -l) # Affichage du résultat en utilisant des expressions arithmétiques echo &#34;Il y a $nombre fichiers .$type&#34; | sed &#39;s/ 0 fichiers/ aucun fichier/&#39; doneExercice 2 : nombre_de_fichiers_conc.sh #!/bin/bash # Définition des types de fichiers à analyser types=&#34;java conf txt png tiff&#34; echo &#34;Décompte des fichiers $types&#34; echo &#34;&#34; # Boucle sur chaque type de fichier (lancement en arrière-plan) for type in $types; do ( nombre=$(find . -type f -name &#34;*.$type&#34; | wc -l) # Affichage avec substitution via `sed` echo &#34;Il y a $nombre fichiers .$type&#34; | sed &#39;s/ 0 fichiers/ aucun fichier/&#39; ) &amp; done # Attendre la fin de tous les processus en arrière-plan wait">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
-    <meta itemprop="name" content="Atelier 6 :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Solutions des exercices **Dans le fichier fourni: **
-Trouver les codes postaux canadiens:
-Format attendu : Lettre-Chiffre-Lettre Chiffre-Lettre-Chiffre. $ grep -E &#39;\b[A-Z][0-9][A-Z] ?[0-9][A-Z][0-9]\b&#39; expr.txtIdentifier les codes d’employés composés de :
-Deux lettres majuscules suivies de quatre chiffres. $ grep -E &#39;\b[A-Z]{2}[0-9]{4}\b&#39; expr.txtCompter les lignes ne se terminant pas par une lettre :
-$ egrep &#39;[^a-zA-Z]$&#39; expr.txtIdentifier les numéros de téléphone :
-Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ grep -E &#39;\&#43;1\([0-9]{3}\)[0-9]{3}-[0-9]{4}|\([0-9]{3}\)[0-9]{3}-[0-9]{4}&#39; expr.txtTrouver les URLs comme :">
-    <meta itemprop="wordCount" content="220">
-    <title>Atelier 6 :: 420-ZG4-MO LINUX</title>
-    <link href="/solutions/semaine6/index.xml" rel="alternate" type="application/rss+xml" title="Atelier 6 :: 420-ZG4-MO LINUX">
+    <meta itemprop="name" content="Atelier 5 :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Solution des exercices Exercice 1 : nombre_de_fichiers_seq.sh` #!/bin/bash # Définition des types de fichiers à analyser types=&#34;java conf txt png tiff&#34; echo &#34;Décompte des fichiers $types&#34; echo &#34;&#34; # Boucle sur chaque type de fichier for type in $types; do # Compter le nombre de fichiers avec l&#39;extension donnée nombre=$(find . -type f -name &#34;*.$type&#34; | wc -l) # Affichage du résultat en utilisant des expressions arithmétiques echo &#34;Il y a $nombre fichiers .$type&#34; | sed &#39;s/ 0 fichiers/ aucun fichier/&#39; doneExercice 2 : nombre_de_fichiers_conc.sh #!/bin/bash # Définition des types de fichiers à analyser types=&#34;java conf txt png tiff&#34; echo &#34;Décompte des fichiers $types&#34; echo &#34;&#34; # Boucle sur chaque type de fichier (lancement en arrière-plan) for type in $types; do ( nombre=$(find . -type f -name &#34;*.$type&#34; | wc -l) # Affichage avec substitution via `sed` echo &#34;Il y a $nombre fichiers .$type&#34; | sed &#39;s/ 0 fichiers/ aucun fichier/&#39; ) &amp; done # Attendre la fin de tous les processus en arrière-plan wait">
+    <meta itemprop="wordCount" content="166">
+    <title>Atelier 5 :: 420-ZG4-MO LINUX</title>
+    <link href="/solutions/semaine5/index.xml" rel="alternate" type="application/rss+xml" title="Atelier 5 :: 420-ZG4-MO LINUX">
     <link href="/css/fontawesome-all.min.css?1740104035" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1740104035" rel="stylesheet"></noscript>
     <link href="/css/auto-complete.css?1740104035" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1740104035" rel="stylesheet"></noscript>
     <link href="/css/perfect-scrollbar.min.css?1740104035" rel="stylesheet">
@@ -94,7 +74,7 @@ Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ grep -E &#39;\&#43;1\([0-9]{3}\
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/solutions/semaine6/index.html">
+  <body class="mobile-support html" data-url="/solutions/semaine5/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -105,7 +85,13 @@ Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ grep -E &#39;\&#43;1\([0-9]{3}\
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#exercice-1--nombre_de_fichiers_seqsh">Exercice 1 : nombre_de_fichiers_seq.sh`</a></li>
+    <li><a href="#exercice-2--nombre_de_fichiers_concsh">Exercice 2 : nombre_de_fichiers_conc.sh</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -113,12 +99,12 @@ Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ grep -E &#39;\&#43;1\([0-9]{3}\
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/solutions/index.html"><span itemprop="name">Solutions de ateliers</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Atelier 6</span><meta itemprop="position" content="3"></li>
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Atelier 5</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine5/index.html" title="Atelier 5 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine4/index.html" title="Atelier 4 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine6/index.html" title="Atelier 6 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -138,93 +124,48 @@ Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ grep -E &#39;\&#43;1\([0-9]{3}\
   <header class="headline">
   </header>
 
-<h1 id="atelier-6">Atelier 6</h1>
+<h1 id="atelier-5">Atelier 5</h1>
 
-<h1 id="solutions-des-exercices">Solutions des exercices</h1>
-<p>**Dans le fichier fourni: **</p>
-<ol>
-<li>
-<p>Trouver les codes postaux canadiens:</p>
-<ul>
-<li>Format attendu : Lettre-Chiffre-Lettre Chiffre-Lettre-Chiffre.
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ grep -E <span style="color:#e6db74">&#39;\b[A-Z][0-9][A-Z] ?[0-9][A-Z][0-9]\b&#39;</span> expr.txt</span></span></code></pre></div>
-</li>
-</ul>
-</li>
-<li>
-<p>Identifier les codes d’employés composés de :</p>
-<ul>
-<li>Deux lettres majuscules suivies de quatre chiffres.
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ grep -E <span style="color:#e6db74">&#39;\b[A-Z]{2}[0-9]{4}\b&#39;</span> expr.txt</span></span></code></pre></div>
-</li>
-</ul>
-</li>
-<li>
-<p>Compter les lignes <strong>ne se terminant pas</strong> par une lettre :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;[^a-zA-Z]$&#39;</span> expr.txt</span></span></code></pre></div>
-</li>
-<li>
-<p><strong>Identifier les numéros de téléphone :</strong></p>
-<ul>
-<li>Format : <code>(xxx)xxx-xxxx</code> ou <code>+1(xxx)xxx-xxxx</code>.</li>
-</ul>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ grep -E <span style="color:#e6db74">&#39;\+1\([0-9]{3}\)[0-9]{3}-[0-9]{4}|\([0-9]{3}\)[0-9]{3}-[0-9]{4}&#39;</span> expr.txt</span></span></code></pre></div>
-</li>
-<li>
-<p>Trouver les URLs comme :</p>
-<ul>
-<li><code>http://www.domaine.tld</code> ou <code>http://www.domaine.tld/</code></li>
-<li><code>https://www.domaine.tld</code> ou <code>https://www.domaine.tld/</code></li>
-</ul>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;https?://[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}/?&#39;</span> fichier</span></span></code></pre></div>
-</li>
-<li>
-<p>Rechercher des adresses e-mail :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}\b&#39;</span> fichier</span></span></code></pre></div>
-</li>
-</ol>
+<h1 id="solution-des-exercices">Solution des exercices</h1>
+<h2 id="exercice-1--nombre_de_fichiers_seqsh">Exercice 1 : nombre_de_fichiers_seq.sh`</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Définition des types de fichiers à analyser</span>
+</span></span><span style="display:flex;"><span>types<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;java conf txt png tiff&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Décompte des fichiers </span>$types<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Boucle sur chaque type de fichier</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> type in $types; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Compter le nombre de fichiers avec l&#39;extension donnée</span>
+</span></span><span style="display:flex;"><span>    nombre<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>find . -type f -name <span style="color:#e6db74">&#34;*.</span>$type<span style="color:#e6db74">&#34;</span> | wc -l<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Affichage du résultat en utilisant des expressions arithmétiques</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Il y a </span>$nombre<span style="color:#e6db74"> fichiers .</span>$type<span style="color:#e6db74">&#34;</span> | sed <span style="color:#e6db74">&#39;s/ 0 fichiers/ aucun fichier/&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
 <hr>
-<p><strong>Dans le fichier <code>/etc/sercices</code></strong></p>
-<ol start="7">
-<li>
-<p>Trouver les lignes contenant &ldquo;ssh&rdquo; sans espace après.</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;ssh(?! )&#39;</span> /etc/services</span></span></code></pre></div>
-</li>
-<li>
-<p>Compter les lignes totales et celles non vides.</p>
-<ul>
-<li>Total :</li>
-</ul>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ wc -l /etc/services</span></span></code></pre></div>
-<ul>
-<li>Non vides :</li>
-</ul>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep -v <span style="color:#e6db74">&#39;^$&#39;</span> /etc/services | wc -l</span></span></code></pre></div>
-</li>
-<li>
-<p>Trouver les lignes contenant soit <code>udp</code> soit <code>tcp</code> avec un numéro à trois chiffres.</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;(udp|tcp).*\b[0-9]{3}\b&#39;</span> /etc/services</span></span></code></pre></div>
-</li>
-<li>
-<p>Rechercher les mots de quatre lettres entourés d&rsquo;espaces.</p>
-</li>
-</ol>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;\b[a-zA-Z]{4}\b&#39;</span> /etc/services</span></span></code></pre></div>
-<ol start="11">
-<li>Identifier les mots avec exactement deux &ldquo;a&rdquo;.</li>
-</ol>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;\b[^ ]*a[^ ]*a[^ ]*\b&#39;</span> /etc/services</span></span></code></pre></div>
-<hr>
-<p><strong>Dans le fichier /etc/passwd</strong></p>
-<ol start="12">
-<li><strong>Assurez-vous que toutes les lignes dans <code>/etc/passwd</code> contiennent deux nombres entre &ldquo;:&rdquo; :</strong></li>
-</ol>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;:[0-9]+:[0-9]+:&#39;</span> /etc/passwd</span></span></code></pre></div>
-<ol start="13">
-<li>Compter les utilisateurs sans bash comme shell.
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep -v <span style="color:#e6db74">&#39;/bash$&#39;</span> /etc/passwd | wc -l</span></span></code></pre></div>
-</li>
-</ol>
+<h2 id="exercice-2--nombre_de_fichiers_concsh">Exercice 2 : nombre_de_fichiers_conc.sh</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Définition des types de fichiers à analyser</span>
+</span></span><span style="display:flex;"><span>types<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;java conf txt png tiff&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Décompte des fichiers </span>$types<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Boucle sur chaque type de fichier (lancement en arrière-plan)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> type in $types; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">(</span>
+</span></span><span style="display:flex;"><span>        nombre<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>find . -type f -name <span style="color:#e6db74">&#34;*.</span>$type<span style="color:#e6db74">&#34;</span> | wc -l<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Affichage avec substitution via `sed`</span>
+</span></span><span style="display:flex;"><span>        echo <span style="color:#e6db74">&#34;Il y a </span>$nombre<span style="color:#e6db74"> fichiers .</span>$type<span style="color:#e6db74">&#34;</span> | sed <span style="color:#e6db74">&#39;s/ 0 fichiers/ aucun fichier/&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">)</span> &amp;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Attendre la fin de tous les processus en arrière-plan</span>
+</span></span><span style="display:flex;"><span>wait</span></span></code></pre></div>
 
   <footer class="footline">
   </footer>
@@ -285,8 +226,8 @@ Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ grep -E &#39;\&#43;1\([0-9]{3}\
             <li class="" data-nav-id="/solutions/semaine2/index.html"><a class="padding" href="/solutions/semaine2/index.html">Atelier 2</a></li>
             <li class="" data-nav-id="/solutions/semaine3/index.html"><a class="padding" href="/solutions/semaine3/index.html">Atelier 3</a></li>
             <li class="" data-nav-id="/solutions/semaine4/index.html"><a class="padding" href="/solutions/semaine4/index.html">Atelier 4</a></li>
-            <li class="" data-nav-id="/solutions/semaine5/index.html"><a class="padding" href="/solutions/semaine5/index.html">Atelier 5</a></li>
-            <li class="active " data-nav-id="/solutions/semaine6/index.html"><a class="padding" href="/solutions/semaine6/index.html">Atelier 6</a></li></ul></li>
+            <li class="active " data-nav-id="/solutions/semaine5/index.html"><a class="padding" href="/solutions/semaine5/index.html">Atelier 5</a></li>
+            <li class="" data-nav-id="/solutions/semaine6/index.html"><a class="padding" href="/solutions/semaine6/index.html">Atelier 6</a></li></ul></li>
           </ul>
         </div>
     
@@ -302,7 +243,7 @@ Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ grep -E &#39;\&#43;1\([0-9]{3}\
                   <div class="control-style">
                     <label class="a11y-only" for="R-select-language">Language</label>
                     <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
-                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/solutions/semaine6/index.html" lang="en-us" selected></option>
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/solutions/semaine5/index.html" lang="en-us" selected></option>
                     </select>
                   </div>
                   <div class="clear"></div>

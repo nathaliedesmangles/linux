@@ -29,9 +29,7 @@ Vous devez remettre sur Moodle :
 
 --- 
 
-
-## **Rappels** 
-
+{{% notice style="green" title="Quelques rappels utiles" groupid="notice-toggle" expanded="false" %}}
 ### Stocker une valeur dans une variable
 ```bash
 nb=$(ls | wc -l)
@@ -58,6 +56,8 @@ Si vous avez une liste de serveurs dans une variable et souhaitez les parcourir 
 serveurs="google.com facebook.com youtube.com"
 for i in $serveurs; do echo $i; done
 ```
+{{% /notice %}}
+
 
 ---
 
