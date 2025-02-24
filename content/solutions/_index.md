@@ -1,6 +1,6 @@
 +++
 chapter = true
 pre = "<b>>></b>"
-title = "Solutions de ateliers"
+title = "Solutions: ateliers et tests"
 weight = 160
 +++

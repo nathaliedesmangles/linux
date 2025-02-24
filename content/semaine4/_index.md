@@ -27,6 +27,9 @@ weight = 40
 
 
 ---
+- **Test 1**: Correction (jeudi 27, si le temps le permet)
+  - Les critères de correction seront disponibles sur le site sous "**Solutions: ateliers et tests**".
+
 - **Atelier : jeudi 27 février**
   - Utilisation des diverses commandes.
   - Redirection des entrées et sorties.

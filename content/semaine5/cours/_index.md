@@ -120,7 +120,7 @@ C'est la partie du noyau du système d'exploitation **responsable du choix du pr
 $ firefox &
 $ ps -ef | grep firefox  # Noter PID et PPID
 $ kill -9 <PPID>  # Tuer le parent
-$ ps -ef | grep firefox  # Observer le nouveau PPID (probablement 1, ou son instance)
+$ ps -ef | grep firefox  # Observer le nouveau PPID (probablement systemd, ou une  instance)
 ```
 Le `ppid` de firefox est le `pid` de votre terminal.
 {{% /notice %}}
@@ -436,7 +436,7 @@ Ce script Bash lance trois commandes `sleep` en parallèle, chacune suivie d'un 
    - Cette commande attend que **toutes** les tâches en arrière-plan soient terminées avant de poursuivre.
 
 3. **Affichage final** :  
-   - Une fois toutes les pauses terminées, le script affiche `"Réveillez-vous, toutes les pauses sont terminées !"`.
+   - Une fois toutes les pauses terminées, appuyer sur `Entrée`, le script affiche `"Réveillez-vous, toutes les pauses sont terminées !"`.
 
 
 ### Exercice 7

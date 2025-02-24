@@ -74,7 +74,7 @@ La commande `tree` affiche les fichiers et dossiers sous forme d'arborescence.
 
    **Changer et enregistrer directement dans le fichier** :
    ```bash
-   $ sed -i 's/root/admin/g' /etc/passwd
+   $ sed -i 's/nom/prenom/g' rapport.txt
    ```
 
 ---
