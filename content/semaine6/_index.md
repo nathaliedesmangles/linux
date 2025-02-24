@@ -7,7 +7,7 @@ weight = 60
 
 ## Plan de la leçon
 
-- **Théorie :**
+- **Théorie : lundi 17 mars**
   - Rôles des expressions régulières.
   - Quelques motifs de base.
   - La commande `egrep`.
@@ -18,6 +18,18 @@ weight = 60
   - Les groupes.
   - L'échappement de caractères spéciaux.
 
-- **Atelier :**.
+---
+
+- **Test #2 : jeudi 20 mars**
+  - **Durée**: 1h45
+  - **Format**: À déterminer 
+  - **Matière**:
+    - **Semaine 4**: 
+    - **Semaine 5**: 
+  - **Documentation permise**: À déterminer.
+
+---
+
+- **Atelier : Remise vendredi 21 mars 23h59**.
   - Utilisation d'expressions régulières.
 

@@ -33,7 +33,7 @@
       <link>https://example.org/semaine4/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine4/index.html</guid>
-      <description>Plan de la leçon Théorie : lundi 24 février (dû à la levée des cours du 13/02)&#xA;Quelques commandes utiles (tree, grep, sep cut, more, less et sort). Les entrées et sorties et la redirection des commandes. Le chainage de commandes (Pipelines). Les commandes de filtrage courantes. La boucle while. Test #1 : jeudi 20 février (dû à la levée des cours du 17/02)&#xA;Durée: 1h45, 20 questions Format: Test sur Moodle Écrire la commande (1 ligne) Écrire la commande (plus d’une ligne) Matière: Semaine 2: Système de fichiers, shell, commandes de base, Vim. Semaine 3: Processus de démarrage, niveaux, variables, commande find et boucle for Documentation permise: Seulement 1 feuille 8.5 x 11 recto-verso manuscrite ou imprimée. Test 1: Correction (jeudi 27, si le temps le permet)</description>
+      <description>Plan de la leçon Théorie : lundi 24 février (dû à la levée des cours du 13/02) Quelques commandes utiles (tree, grep, sep cut, more, less et sort). Les entrées et sorties et la redirection des commandes. Le chainage de commandes (Pipelines). Les commandes de filtrage courantes. La boucle while. Test #1 : jeudi 20 février (dû à la levée des cours du 17/02) Durée: 1h45, 20 questions Format: Test sur Moodle Écrire la commande (1 ligne) Écrire la commande (plus d’une ligne) Matière: Semaine 2: Système de fichiers, shell, commandes de base, Vim. Semaine 3: Processus de démarrage, niveaux, variables, commande find et boucle for Documentation permise: Seulement 1 feuille 8.5 x 11 recto-verso manuscrite ou imprimée. Test 1: Correction (jeudi 27, si le temps le permet)</description>
     </item>
     <item>
       <title>Les processus Linux</title>
@@ -47,7 +47,7 @@
       <link>https://example.org/semaine6/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine6/index.html</guid>
-      <description>Plan de la leçon Théorie :&#xA;Rôles des expressions régulières. Quelques motifs de base. La commande egrep. L’opérateur logique OU. Les ensembles de caractères. Les intervalles. Les quantificateurs. Les groupes. L’échappement de caractères spéciaux. Atelier :.&#xA;Utilisation d’expressions régulières.</description>
+      <description>Plan de la leçon Théorie : lundi 17 mars Rôles des expressions régulières. Quelques motifs de base. La commande egrep. L’opérateur logique OU. Les ensembles de caractères. Les intervalles. Les quantificateurs. Les groupes. L’échappement de caractères spéciaux. Test #2 : jeudi 20 mars Durée: 1h45 Format: À déterminer Matière: Semaine 4: Semaine 5: Documentation permise: À déterminer. Atelier : Remise vendredi 21 mars 23h59. Utilisation d’expressions régulières.</description>
     </item>
     <item>
       <title>Solutions: ateliers et tests</title>
