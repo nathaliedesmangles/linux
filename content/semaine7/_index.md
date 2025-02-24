@@ -3,6 +3,7 @@ chapter = true
 pre = "<b>Semaine 7. </b>"
 title = "Vim et les fichiers de configuration"
 weight = 70
+draft = true
 +++
 
 ## Plan de la leçon
