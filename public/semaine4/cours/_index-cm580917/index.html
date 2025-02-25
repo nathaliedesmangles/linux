@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Les concepts d’entrées/sorties, de redirection, de filtres, de pipelines et l’utilisation des boucles pour automatiser des tâches sont des bases essentielles pour manipuler efficacement des données.
+Les entrées et sorties des commandes Qu’est-ce que l’entrée (input) ? L’entrée (standard input ou stdin) est une source d’information qu’une commande peut utiliser. Par défaut, l’entrée provient du clavier.
+Qu’est-ce que la sortie (output) ? La sortie (standard output ou stdout) est l’endroit où une commande affiche ses résultats. Par défaut, cette sortie s’affiche dans le terminal.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Commandes Entrées/Sorties, redirection, filtres, pipeline des commandes et while :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Les concepts d’entrées/sorties, de redirection, de filtres, de pipelines et l’utilisation des boucles pour automatiser des tâches sont des bases essentielles pour manipuler efficacement des données.
+Les entrées et sorties des commandes Qu’est-ce que l’entrée (input) ? L’entrée (standard input ou stdin) est une source d’information qu’une commande peut utiliser. Par défaut, l’entrée provient du clavier.
+Qu’est-ce que la sortie (output) ? La sortie (standard output ou stdout) est l’endroit où une commande affiche ses résultats. Par défaut, cette sortie s’affiche dans le terminal.">
+    <meta property="og:url" content="https://example.org/semaine4/cours/_index-cm580917/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Commandes Entrées/Sorties, redirection, filtres, pipeline des commandes et while :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Les concepts d’entrées/sorties, de redirection, de filtres, de pipelines et l’utilisation des boucles pour automatiser des tâches sont des bases essentielles pour manipuler efficacement des données.
+Les entrées et sorties des commandes Qu’est-ce que l’entrée (input) ? L’entrée (standard input ou stdin) est une source d’information qu’une commande peut utiliser. Par défaut, l’entrée provient du clavier.
+Qu’est-ce que la sortie (output) ? La sortie (standard output ou stdout) est l’endroit où une commande affiche ses résultats. Par défaut, cette sortie s’affiche dans le terminal.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Commandes utiles, redirection, chainage et filtrage de commandes et While">
+    <meta itemprop="name" content="Commandes Entrées/Sorties, redirection, filtres, pipeline des commandes et while :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Les concepts d’entrées/sorties, de redirection, de filtres, de pipelines et l’utilisation des boucles pour automatiser des tâches sont des bases essentielles pour manipuler efficacement des données.
+Les entrées et sorties des commandes Qu’est-ce que l’entrée (input) ? L’entrée (standard input ou stdin) est une source d’information qu’une commande peut utiliser. Par défaut, l’entrée provient du clavier.
+Qu’est-ce que la sortie (output) ? La sortie (standard output ou stdout) est l’endroit où une commande affiche ses résultats. Par défaut, cette sortie s’affiche dans le terminal.">
+    <meta itemprop="wordCount" content="1476">
+    <title>Commandes Entrées/Sorties, redirection, filtres, pipeline des commandes et while :: 420-ZG4-MO LINUX</title>
+    <link href="/css/fontawesome-all.min.css?1740452383" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1740452383" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1740452383" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1740452383" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1740452383" rel="stylesheet">
+    <link href="/css/theme.min.css?1740452383" rel="stylesheet">
+    <link href="/css/format-html.min.css?1740452383" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine4/cours/_index-cm580917/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#les-entrées-et-sorties-des-commandes">Les entrées et sorties des commandes</a>
+      <ul>
+        <li><a href="#quest-ce-que-lentrée-input-">Qu&rsquo;est-ce que l&rsquo;entrée (input) ?</a></li>
+        <li><a href="#quest-ce-que-la-sortie-output-">Qu&rsquo;est-ce que la sortie (output) ?</a></li>
+        <li><a href="#quest-ce-que-la-sortie-derreur-stderr-">Qu&rsquo;est-ce que la sortie d&rsquo;erreur (stderr) ?</a></li>
+      </ul>
+    </li>
+    <li><a href="#la-redirection">La redirection</a>
+      <ul>
+        <li><a href="#rediriger-la-sortie-standard-stdout">Rediriger la sortie standard (<em><strong>stdout</strong></em>)</a></li>
+        <li><a href="#ajouter-à-un-fichier-existant">Ajouter à un fichier existant</a></li>
+        <li><a href="#rediriger-la-sortie-standard-avec-1">Rediriger la sortie standard avec <em><strong>1&gt;</strong></em></a></li>
+        <li><a href="#rediriger-la-sortie-derreur-stderr">Rediriger la sortie d&rsquo;erreur (<em><strong>stderr</strong></em>)</a></li>
+        <li><a href="#combiner-stdout-et-stderr">Combiner <em><strong>stdout</strong></em> et <em><strong>stderr</strong></em></a></li>
+        <li><a href="#redirection-vers-devnull">Redirection vers <em><strong>/dev/null</strong></em></a></li>
+        <li><a href="#utiliser-un-fichier-comme-entrée">Utiliser un fichier comme entrée</a></li>
+      </ul>
+    </li>
+    <li><a href="#les-filtres">Les filtres</a>
+      <ul>
+        <li><a href="#exemples">Exemples</a></li>
+      </ul>
+    </li>
+    <li><a href="#les-pipelines">Les pipelines</a>
+      <ul>
+        <li><a href="#exemples-1">Exemples</a></li>
+      </ul>
+    </li>
+    <li><a href="#automatiser-avec-la-boucle-while">Automatiser avec la boucle while</a>
+      <ul>
+        <li><a href="#syntaxe-de-la-boucle-while">Syntaxe de la boucle while</a></li>
+        <li><a href="#exemples-2">Exemples</a></li>
+      </ul>
+    </li>
+    <li><a href="#boucles-infinie">Boucles infinie</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine4/index.html"><span itemprop="name">Commandes utiles, redirection, chainage et filtrage de commandes et While</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine4/cours/index.html"><span itemprop="name">Commandes utiles, redirection, chainage, filtres et boucle While</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Commandes Entrées/Sorties, redirection, filtres, pipeline des commandes et while</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/cours/index.html" title="Commandes utiles, redirection, chainage, filtres et boucle While (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/atelier/index.html" title="ATELIER #4: Commandes utiles, redirection, chainage, filtres et boucle while (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine4" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="commandes-entréessorties-redirection-filtres-pipeline-des-commandes-et-while">Commandes Entrées/Sorties, redirection, filtres, pipeline des commandes et while</h1>
+
+<p>Les concepts d&rsquo;entrées/sorties, de redirection, de filtres, de pipelines et l&rsquo;utilisation des boucles pour automatiser des tâches sont des bases essentielles pour manipuler efficacement des données.</p>
+<h2 id="les-entrées-et-sorties-des-commandes">Les entrées et sorties des commandes</h2>
+<h3 id="quest-ce-que-lentrée-input-">Qu&rsquo;est-ce que l&rsquo;entrée (input) ?</h3>
+<p>L&rsquo;entrée (standard input ou <code>stdin</code>) est une source d&rsquo;information qu&rsquo;une commande peut utiliser. Par défaut, l&rsquo;entrée provient du <strong>clavier</strong>.</p>
+<h3 id="quest-ce-que-la-sortie-output-">Qu&rsquo;est-ce que la sortie (output) ?</h3>
+<p>La sortie (standard output ou <code>stdout</code>) est l&rsquo;endroit où une commande affiche ses résultats. Par défaut, cette sortie s&rsquo;affiche dans le <strong>terminal</strong>.</p>
+<h3 id="quest-ce-que-la-sortie-derreur-stderr-">Qu&rsquo;est-ce que la sortie d&rsquo;erreur (stderr) ?</h3>
+<p>La sortie d&rsquo;erreur (standard error ou <code>stderr</code>) est où les messages d&rsquo;erreur sont affichés. Par défaut, elle s&rsquo;affiche également dans le <strong>terminal</strong>.</p>
+<hr>
+<h2 id="la-redirection">La redirection</h2>
+<p>La redirection permet de changer la source d&rsquo;entrée ou la destination des sorties pour enregistrer ou réutiliser des données facilement.</p>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Information
+  </summary>
+  <div class="box-content">
+<p>Nous ne verrons pas la redirection à l’aide de <code>&lt;</code>.
+Cependant, vous pouvez rediriger <code>stdin</code> pour lire des données à partir d&rsquo;un fichier ou d&rsquo;une autre commande, en récupérant la sortie standard d’une autre commande grâce au pipeline (vu plus loin).</p>
+  </div>
+</details>
+<h3 id="rediriger-la-sortie-standard-stdout">Rediriger la sortie standard (<em><strong>stdout</strong></em>)</h3>
+<p>Pour envoyer le résultat d&rsquo;une commande dans un fichier :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>commande &gt; fichier.txt</span></span></code></pre></div>
+<p>Exemple :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;Bonjour !&#34;</span> &gt; bonjour.txt</span></span></code></pre></div>
+<h3 id="ajouter-à-un-fichier-existant">Ajouter à un fichier existant</h3>
+<p>Pour ajouter une sortie à la fin d&rsquo;un fichier existant <strong>sans écraser</strong> son contenu :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>commande &gt;&gt; fichier.txt</span></span></code></pre></div>
+<p>Exemple :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;Encore une ligne.&#34;</span> &gt;&gt; bonjour.txt</span></span></code></pre></div>
+<h3 id="rediriger-la-sortie-standard-avec-1">Rediriger la sortie standard avec <em><strong>1&gt;</strong></em></h3>
+<p>La redirection explicite de <code>stdout</code> s&rsquo;écrit :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>commande 1&gt; fichier.txt</span></span></code></pre></div>
+<p>Ceci a le même effet que <code>&gt;</code>.</p>
+<h3 id="rediriger-la-sortie-derreur-stderr">Rediriger la sortie d&rsquo;erreur (<em><strong>stderr</strong></em>)</h3>
+<p>Pour enregistrer les erreurs dans un fichier :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>commande 2&gt; erreurs.txt</span></span></code></pre></div>
+<h3 id="combiner-stdout-et-stderr">Combiner <em><strong>stdout</strong></em> et <em><strong>stderr</strong></em></h3>
+<p>Pour rediriger les deux vers un même fichier :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>commande &gt; fichier.txt 2&gt;&amp;<span style="color:#ae81ff">1</span></span></span></code></pre></div>
+<p>Pour rediriger la sortie d’erreur standard vers la sortie standard et envoyer le tout dans un fichier</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name services &gt;resultats.txt 2&gt;&amp;<span style="color:#ae81ff">1</span></span></span></code></pre></div>
+<h3 id="redirection-vers-devnull">Redirection vers <em><strong>/dev/null</strong></em></h3>
+<p>Pour ignorer la sortie d&rsquo;une commande, vous pouvez la rediriger vers <code>/dev/null</code> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>commande &gt; /dev/null</span></span></code></pre></div>
+<p>Exemple :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls dossier_inexistant &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span></span></span></code></pre></div>
+<p>Ici, la commande <code>ls</code> tente d&rsquo;afficher le contenu d&rsquo;un dossier inexistant, et ses messages (sortie standard et erreurs) sont redirigés vers <code>/dev/null</code> pour être ignorés.</p>
+<h3 id="utiliser-un-fichier-comme-entrée">Utiliser un fichier comme entrée</h3>
+<p>Pour utiliser un fichier comme source d&rsquo;entrée :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>commande &lt; fichier.txt</span></span></code></pre></div>
+<p>Exemple :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sort &lt; liste.txt</span></span></code></pre></div>
+<p>Exercices 1 : Entrées/Sorties</p>
+<ol>
+<li>Sans être root et sans utiliser <code>sudo</code>, rechercher le fichier services sur tout le disque dur.</li>
+</ol>
+<ul>
+<li>Est-ce facile de le trouver dans la sortie de la commande ?</li>
+</ul>
+<ol start="2">
+<li>Faites la même recherche mais en redirigeant les lignes “Accès refusé” vers le fichier <code>/dev/null</code>.</li>
+</ol>
+<ul>
+<li>Est-ce plus facile de trouver le résultat de la commande ?</li>
+<li>Sauvegardez le résultat dans le fichier <code>~/services.txt</code> à l’aide d’une redirection.</li>
+</ul>
+<hr>
+<h2 id="les-filtres">Les filtres</h2>
+<p>Un filtre est une commande qui traite une entrée pour produire une sortie modifiée. Voici les filtres les plus courants :</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Options et descriptions</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>grep</code></td>
+          <td style="text-align: left">Recherche des lignes contenant un mot ou une expression.</td>
+          <td style="text-align: left"><code>-i</code> : Ignore la casse \n  <code>-r</code> : Recherche récursive\n  <code>-v</code> : Inverse la recherche\n  <code>-n</code> : Affiche les numéros de ligne</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>sort</code></td>
+          <td style="text-align: left">Trie les lignes d&rsquo;un fichier.</td>
+          <td style="text-align: left"><code>-r</code> : Ordre inverse\n  <code>-n</code> : Tri numérique\n  <code>-k</code> : Tri par clé spécifique</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>uniq</code></td>
+          <td style="text-align: left">Supprime les doublons dans une liste triée.</td>
+          <td style="text-align: left"><code>-c</code> : Compte les occurrences\n  <code>-d</code> : Affiche les doublons uniquement</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>wc</code></td>
+          <td style="text-align: left">Compte le nombre de lignes, mots ou caractères.</td>
+          <td style="text-align: left"><code>-l</code> : Compte les lignes\n  <code>-w</code> : Compte les mots\n  <code>-c</code> : Compte les caractères</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>sed</code></td>
+          <td style="text-align: left">Modifie le contenu des lignes selon des motifs.</td>
+          <td style="text-align: left"><code>-e</code> : Applique plusieurs commandes\n  <code>-i</code> : Modifie en place</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>find</code></td>
+          <td style="text-align: left">Recherche des fichiers ou dossiers selon des critères.</td>
+          <td style="text-align: left"><code>-name</code> : Recherche par nom\n  <code>-type</code> : Recherche par type (dossier ou fichier)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>cut</code></td>
+          <td style="text-align: left">Extrait des sections de chaque ligne d&rsquo;un fichier.</td>
+          <td style="text-align: left"><code>-d</code> : Spécifie le délimiteur\n  <code>-f</code> : Spécifie les champs à extraire</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>tr</code></td>
+          <td style="text-align: left">Traduit ou supprime des caractères.</td>
+          <td style="text-align: left"><code>-d</code> : Supprime des caractères\n  <code>-s</code> : Remplace des séquences répétées</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="exemples">Exemples</h3>
+<ul>
+<li><strong><code>grep</code></strong> : Recherche des lignes contenant un mot ou une expression.
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ grep <span style="color:#e6db74">&#34;mot&#34;</span> fichier.txt</span></span></code></pre></div>
+</li>
+<li><strong><code>sort</code></strong> : Trie les lignes d&rsquo;un fichier.
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sort fichier.txt</span></span></code></pre></div>
+</li>
+<li><strong><code>uniq</code></strong> : Supprime les doublons dans une liste triée.
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sort fichier.txt | uniq</span></span></code></pre></div>
+</li>
+<li><strong><code>wc</code></strong> : Compte le nombre de lignes, mots ou caractères.
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ wc fichier.txt</span></span></code></pre></div>
+</li>
+<li><strong><code>sed</code></strong> : Modifie le contenu des lignes selon des motifs.
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sed <span style="color:#e6db74">&#39;s/ancien/nouveau/g&#39;</span> fichier.txt</span></span></code></pre></div>
+Exemple : Remplacer &ldquo;erreur&rdquo; par &ldquo;avertissement&rdquo; dans un fichier :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sed <span style="color:#e6db74">&#39;s/erreur/avertissement/g&#39;</span> journal.txt</span></span></code></pre></div>
+</li>
+<li><strong><code>find</code></strong> : Recherche des fichiers ou dossiers selon des critères.
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find . -name <span style="color:#e6db74">&#34;*.txt&#34;</span></span></span></code></pre></div>
+</li>
+<li><strong><code>cut</code></strong> : Extrait des sections de chaque ligne d&rsquo;un fichier.
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cut -d<span style="color:#e6db74">&#39;:&#39;</span> -f1 fichier.txt</span></span></code></pre></div>
+Exemple : Extraire le premier champ d&rsquo;un fichier où les champs sont séparés par des deux-points (:).
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cut -d<span style="color:#e6db74">&#39;:&#39;</span> -f1 liste.txt</span></span></code></pre></div>
+</li>
+<li><strong><code>tr</code></strong> : Traduit ou supprime des caractères.
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ tr <span style="color:#e6db74">&#39;a-z&#39;</span> <span style="color:#e6db74">&#39;A-Z&#39;</span> &lt; fichier.txt</span></span></code></pre></div>
+Exemple : Convertir tout le texte en majuscules.</li>
+</ul>
+<hr>
+<h2 id="les-pipelines">Les pipelines</h2>
+<p>Les pipelines (ou &ldquo;pipes&rdquo;) permettent de connecter plusieurs commandes ensemble. Le symbole <code>|</code> transmet la sortie d&rsquo;une commande comme entrée à une autre.</p>
+<h3 id="exemples-1">Exemples</h3>
+<ol>
+<li></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cat fichier.txt | grep <span style="color:#e6db74">&#34;mot&#34;</span> | sort</span></span></code></pre></div>
+<ol>
+<li>
+<p><strong><code>cat fichier.txt</code></strong> : Lit le fichier.</p>
+</li>
+<li>
+<p><strong><code>grep &quot;mot&quot;</code></strong> : Filtre les lignes contenant &ldquo;mot&rdquo;.</p>
+</li>
+<li>
+<p><strong><code>sort</code></strong> : Trie les lignes filtrées.</p>
+</li>
+<li>
+<p>Pour afficher les 5 mots les plus fréquents dans un texte :</p>
+</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat texte.txt | tr -s <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#e6db74">&#39;\n&#39;</span> | sort | uniq -c | sort -nr | head -5</span></span></code></pre></div>
+<ol>
+<li>
+<p><strong><code>tr -s ' '</code></strong> : Transforme les espaces multiples en simples et ajoute des sauts de ligne.</p>
+</li>
+<li>
+<p><strong><code>uniq -c</code></strong> : Compte les occurrences de chaque mot.</p>
+</li>
+<li>
+<p><strong><code>sort -nr</code></strong> : Trie par ordre décroissant des fréquences.</p>
+</li>
+<li>
+<p><strong><code>head -5</code></strong> : Affiche les 5 premiers.</p>
+</li>
+<li>
+<p>Redirection de l&rsquo;entrée standard (<em><strong>&lt;</strong></em>)</p>
+</li>
+</ol>
+<p>Vous pouvez utiliser un fichier en entrée dans un pipeline. Par exemple, pour afficher les lignes contenant &ldquo;erreur&rdquo; dans un fichier trié :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ grep <span style="color:#e6db74">&#34;erreur&#34;</span> &lt; journal.txt | sort</span></span></code></pre></div>
+<p>Exercices 2 : Filtres et pipe</p>
+<ul>
+<li>En utilisant le <code>|</code> et les filtres, trouvez le numéro de port de zephyr-srv dans le fichier <code>/etc/services</code>.</li>
+<li>Dans le fichier /etc/services, combien y a-t-il de lignes qui ne contiennent pas de e?</li>
+<li>Et combien de lignes ne contiennent ni e ni a ?</li>
+</ul>
+<hr>
+<h2 id="automatiser-avec-la-boucle-while">Automatiser avec la boucle while</h2>
+<p>Les boucles permettent de répéter des commandes sur un ensemble d&rsquo;éléments.</p>
+<h3 id="syntaxe-de-la-boucle-while">Syntaxe de la boucle while</h3>
+<p>Voici la forme générale d&rsquo;une boucle <code>while</code> en ligne de commande :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> condition <span style="color:#f92672">]</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Actions à répéter</span>
+</span></span><span style="display:flex;"><span>    commande1
+</span></span><span style="display:flex;"><span>    commande2
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+<ul>
+<li><strong>condition</strong> : C&rsquo;est ce que le programme vérifie à chaque fois.</li>
+<li><strong>do&hellip;done</strong> : Tout le code entre <code>do</code> et <code>done</code> sera répété tant que la condition est vraie.</li>
+</ul>
+<h3 id="exemples-2">Exemples</h3>
+<ol>
+<li>Compter de 1 à 5</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>compteur<span style="color:#f92672">=</span>1; <span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> $compteur -le <span style="color:#ae81ff">5</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;Compteur : </span>$compteur<span style="color:#e6db74">&#34;</span>; compteur<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span>compteur <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">))</span>; <span style="color:#66d9ef">done</span></span></span></code></pre></div>
+<ul>
+<li><strong><code>compteur=1</code></strong> : On commence avec le chiffre 1.</li>
+<li><strong><code>[ $compteur -le 5 ]</code></strong> : La condition signifie &ldquo;tant que le compteur est inférieur ou égal à 5&rdquo;.</li>
+<li><strong><code>echo</code></strong> : Affiche le compteur.</li>
+<li><strong><code>compteur=$((compteur + 1))</code></strong> : On ajoute 1 au compteur à chaque tour.</li>
+</ul>
+<p>Affichera :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>Compteur : 1
+Compteur : 2
+Compteur : 3
+Compteur : 4
+Compteur : 5</code></pre></div>
+<ol start="2">
+<li>Lire un fichier ligne par ligne et afficher chaque ligne :</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">while</span> read ligne; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Ligne : </span>$ligne<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span> &lt; fichier.txt</span></span></code></pre></div>
+<ul>
+<li><strong><code>read ligne</code></strong> : Lit chaque ligne du fichier.</li>
+<li><strong><code>echo</code></strong> : Affiche le contenu de la ligne.</li>
+</ul>
+<ol start="3">
+<li>Renommer tous les fichiers <code>.txt</code> d&rsquo;un répertoire pour ajouter le suffixe <code>_backup</code> :</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -name <span style="color:#e6db74">&#34;*.txt&#34;</span> | <span style="color:#66d9ef">while</span> read fichier; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  mv <span style="color:#e6db74">&#34;</span>$fichier<span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>fichier%.txt<span style="color:#e6db74">}</span><span style="color:#e6db74">_backup.txt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
+<ul>
+<li><strong><code>find</code></strong> : Trouve tous les fichiers <code>.txt</code>.</li>
+<li><strong><code>mv</code></strong> : Renomme chaque fichier en ajoutant &ldquo;_backup&rdquo;.</li>
+</ul>
+<ol start="4">
+<li>Demander un mot de passe à l&rsquo;utilisateur</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mot_de_passe<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;secret&#34;</span>; reponse<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>; <span style="color:#66d9ef">while</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$reponse<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span>$mot_de_passe<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;Entrez le mot de passe :&#34;</span>; read reponse; <span style="color:#66d9ef">done</span>; echo <span style="color:#e6db74">&#34;Mot de passe correct !&#34;</span></span></span></code></pre></div>
+<ul>
+<li><strong><code>mot_de_passe=&quot;secret&quot;</code></strong> : Le mot de passe attendu est &ldquo;secret&rdquo;.</li>
+<li><strong><code>read reponse</code></strong> : Demande à l&rsquo;utilisateur de taper une réponse.</li>
+<li><strong><code>[ &quot;$reponse&quot; != &quot;$mot_de_passe&quot; ]</code></strong> : Tant que la réponse n&rsquo;est pas égale au mot de passe, la boucle continue.</li>
+</ul>
+<p>Cette commande, demandera le mot de passe jusqu&rsquo;à ce que l&rsquo;utilisateur tapes &ldquo;secret&rdquo;.</p>
+<h2 id="boucles-infinie">Boucles infinie</h2>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Attention aux boucles infinies
+  </summary>
+  <div class="box-content">
+<ul>
+<li>Si la condition ne devient jamais fausse, la boucle ne s&rsquo;arrêtera pas.</li>
+</ul>
+  </div>
+</details>
+<p>Par exemple :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#66d9ef">while</span> true; <span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;Ceci ne s&#39;arrête jamais !&#34;</span>; sleep 1; <span style="color:#66d9ef">done</span></span></span></code></pre></div>
+
+<details open class=" box cstyle notices info">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-info-circle"></i> 
+    Information
+  </summary>
+  <div class="box-content">
+<ul>
+<li>Utilise <code>Ctrl + C</code> pour arrêter une boucle infinie.</li>
+</ul>
+  </div>
+</details>
+<p>Exercices 3 : While et autres commandes</p>
+<ul>
+<li>Recherchez tous les fichiers de configuration du système (on considère qu’ils se terminent par <code>.conf</code>) puis n’affichez que le nom du fichier sans le chemin.</li>
+<li>La commande <code>basename /rep1/rep2/…/fichier.txt</code> affiche seulement <code>fichier.txt</code>.</li>
+<li>Une fois l’exercice terminé, classez les résultats par ordre alphabétique.</li>
+<li>Avec une boucle <code>while</code>, parcourez le fichier <code>/etc/services</code> et pour chaque ligne, ne garder que le 1er champs en utilisant comme délimiteur <code>‘ ’</code> (espace).</li>
+<li>Une fois terminé, éliminez les doublons et comptez le nombre de lignes.</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1740452383";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1740452383" defer></script>
+        <script src="/js/lunr/lunr.min.js?1740452383" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1740452383" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1740452383" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1740452383" defer></script>
+        <script src="/js/search.js?1740452383" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/semaine4/cours/index.html"><a class="padding" href="/semaine4/cours/index.html">Commandes utiles, redirection, chainage, filtres et boucle While</a><ul id="R-subsections-5837b38c8ee0dcc990d4bc183f41faa7" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine4/cours/_index-cm580917/index.html"><a class="padding" href="/semaine4/cours/_index-cm580917/index.html">Commandes Entrées/Sorties, redirection, filtres, pipeline des commandes et while</a></li></ul></li>
+            <li class="" data-nav-id="/semaine4/atelier/index.html"><a class="padding" href="/semaine4/atelier/index.html">ATELIER #4: Commandes utiles, redirection, chainage, filtres et boucle while</a></li></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine4/cours/_index-cm580917/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1740452383" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1740452383" defer></script>
+    <script src="/js/theme.js?1740452383" defer></script>
+  </body>
+</html>

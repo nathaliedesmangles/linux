@@ -18,7 +18,7 @@ weight = 42
 
 {{% notice style="tip" title="Astuce" %}}
 - Pour réaliser les exercices, vous aurez besoin de regarder les différentes commandes vues en cours (commandes et boucles). 
-- Vous DEVREZ consulter les pages de manuel des différentes commandes pour trouver la façon de réaliser ce que vous souhaitez.
+- Vous **devrez consulter les pages de manuel** (commande `man`) des différentes commandes pour trouver la façon de réaliser ce que vous souhaitez.
 - Pour effectuer des opérations simple, vous pouvez utiliser la commande `bc` de cette façon: 
 {{% /notice %}}
 
@@ -56,12 +56,18 @@ Où `N` correspond au numéro de la semaine.
 7. Changer toutes les occurrences du caractère délimiteur `:` (deux points) du fichier `passwdCopie` par `;` (point-virgule).
 
 8. Trier le contenu du fichier `passwdCopie` en ordre croissant du numéro de groupe, soit le quatrième champ. On veut que le fichier soit trié et non uniquement le résultat retourné par la commande. 
+{{% notice style="info" title="Hint" %}}
+Utilisez la commande `man` pour trouver les options de la commande `sort` qui vous aideront à accomplir la tâche demandée.
+{{% /notice %}}
 
 ---
 
 ## Exercice 2
 
+{{% notice style="warning" title="Attention" %}}
 Revenir dans votre dossier personnel.
+{{% /notice %}}
+
 
 1. Écrire la commande qui permet de compter le nombre d'utilisateurs qui ont pour shell le `/bin/bash`. Vous trouverez cette information dans le fichier `/etc/passwd`. À l'exécution de la commande, on veut un résultat comme ceci:
 ```bash

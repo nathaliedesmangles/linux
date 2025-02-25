@@ -3,9 +3,16 @@
   <channel>
     <title>Commandes utiles, redirection, chainage, filtres et boucle While :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine4/cours/index.html</link>
-    <description>Commandes diverses tree: Afficher l’arborescence des dossiers La commande tree affiche les fichiers et dossiers sous forme d’arborescence.&#xA;L’option -d permet d’afficher uniquement les répertoires (et pas les fichiers).&#xA;L’option -L permet de limiter l’affichage à N niveaux de profondeur.&#xA;Afficher uniquement les dossiers :&#xA;$ tree -d&#x9;# `d` pour directory&#xD;Afficher les dossiers d’un endroit précis :&#xA;$ tree /etc&#xD;Limiter l’affichage aux 2 premiers niveaux :&#xA;$ tree -L 2&#xD;grep : Rechercher du texte dans un fichier L’option -r permet de rechercher de manière récursive dans un répertoire et tous ses sous-dossiers.</description>
+    <description>Commandes diverses Information&#xD;Les guillemets simples (’) ou doubles (&#34;) peuvent tous les deux être utilisés, lorsque des guillemets sont nécessaires.&#xA;tree: Afficher l’arborescence des dossiers La commande tree affiche les fichiers et dossiers sous forme d’arborescence.&#xA;L’option -d permet d’afficher uniquement les répertoires (et pas les fichiers).&#xA;L’option -L permet de limiter l’affichage à N niveaux de profondeur.&#xA;Afficher uniquement les dossiers :&#xA;$ tree -d&#x9;# `d` pour directory&#xD;Afficher les dossiers d’un endroit précis :</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine4/cours/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Commandes Entrées/Sorties, redirection, filtres, pipeline des commandes et while</title>
+      <link>https://example.org/semaine4/cours/_index-cm580917/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine4/cours/_index-cm580917/index.html</guid>
+      <description>Les concepts d’entrées/sorties, de redirection, de filtres, de pipelines et l’utilisation des boucles pour automatiser des tâches sont des bases essentielles pour manipuler efficacement des données.&#xA;Les entrées et sorties des commandes Qu’est-ce que l’entrée (input) ? L’entrée (standard input ou stdin) est une source d’information qu’une commande peut utiliser. Par défaut, l’entrée provient du clavier.&#xA;Qu’est-ce que la sortie (output) ? La sortie (standard output ou stdout) est l’endroit où une commande affiche ses résultats. Par défaut, cette sortie s’affiche dans le terminal.</description>
+    </item>
   </channel>
 </rss>

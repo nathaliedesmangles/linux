@@ -5,6 +5,10 @@ weight = 41
 
 ## Commandes diverses
 
+{{% notice style="secondary" title="Information" %}}
+Les guillemets simples (') ou doubles (") peuvent tous les deux être utilisés, lorsque des guillemets sont nécessaires.
+{{% /notice %}}
+
 ### ***tree***: Afficher l'arborescence des dossiers
 
 La commande `tree` affiche les fichiers et dossiers sous forme d'arborescence.
@@ -54,13 +58,14 @@ La commande `tree` affiche les fichiers et dossiers sous forme d'arborescence.
 ### ***sed***: Remplacer du texte dans un fichier
 
 - Le préfixe `s` dans `sed` signifie substitution. Il est utilisé pour rechercher et remplacer une chaîne de caractères dans un fichier ou un flux de texte.
-- L'option `-i` permet de modifier un fichier sans créer de fichier temporaire.
+- L'option `-i` permet de modifier un fichier **sans créer de fichier temporaire**.
 - Par défaut, `sed` ne remplace que la première occurrence d'un motif sur une ligne. En ajoutant `g`, il remplace toutes les occurrences.
 
 ```
 `s/ancien/nouveau/`	# Remplace 'ancien' par 'nouveau' (`s` pour "substitute").
 `s/ancien/nouveau/g`	# Remplace toutes les occurrences 'd'ancien' par 'nouveau' (`g` pour "global").
 ```    
+
  
    **Changer « root » en « admin » (affichage uniquement)** :
    ```bash
@@ -74,7 +79,7 @@ La commande `tree` affiche les fichiers et dossiers sous forme d'arborescence.
 
    **Changer et enregistrer directement dans le fichier** :
    ```bash
-   $ sed -i 's/nom/prenom/g' rapport.txt
+   $ sed -i 's/ancienne_chaine/nouvelle_chaine/g' fichier_non_temporaire.txt
    ```
 
 ---
@@ -93,7 +98,7 @@ La commande `tree` affiche les fichiers et dossiers sous forme d'arborescence.
    $ cut -d':' -f6 /etc/passwd
    ```
 
-   **Extraire plusieurs colonnes ((1re et 3e)** :
+   **Extraire plusieurs colonnes (1re ET 3e)** :
    ```bash
    $ cut -d':' -f1,3 /etc/passwd
    ```
@@ -159,7 +164,7 @@ Ici, le chiffre `1` n'est pas obligatoire. Si on ne le met pas, la sortie standa
 
 La commande précédente peut s'écrire aussi comme cela:
 ```bash
-$ find / -name services > resultats.txt
+$ find / -name services 1> resultats.txt
 ```
 
 **Ignorer les erreurs à l'aide de `2>`**:
@@ -169,7 +174,7 @@ $ find / -name services 2>/dev/null
 
 **Envoyer sortie + erreurs dans un fichier en combinant `2>` et `1>`**:
 ```bash
-$ find / -name services > resultats.txt 2>&1
+$ find / -name services 1> resultats.txt 2>&1
 ```
 
 **Ajouter du texte à un fichier sans l’écraser à l'aide de `>>`**:
@@ -248,7 +253,7 @@ Enchainer des commandes permet d’appliquer de nombreux filtres sur le résulta
 
 **Remplacer des lettres avec la commande `tr`**
 ```bash
-$ echo SAlut | tr 'A' 'a'
+$ echo sAlut | tr 'A' 'a'
 salut
 ```
 

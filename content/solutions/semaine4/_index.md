@@ -116,13 +116,13 @@ $ sed -i 's/:/;/g' ../Ateliers/passwdCopie
 
 8. Trier le contenu du fichier `passwdCopie` en ordre croissant du numéro de groupe, soit le quatrième champ. On veut que le fichier soit trié et non uniquement le résultat retourné par la commande. 
 ```bash
-$ sort -t ';' -k4,4 ../Ateliers/passwdCopie -o ../Ateliers/passwdCopie
+$ sort -t ';' -k4n ../Ateliers/passwdCopie -o ../Ateliers/passwdCopie
 ```
 
 **Explication :**
 - `sort` : Outil pour trier le contenu d'un fichier.
 - `-t ';'` : Définit le délimiteur comme étant le point-virgule (`;`).
-- `-k4,4` : Trie les lignes en fonction du quatrième champ.
+- `-k4n` : Trie les lignes en fonction du quatrième champ qui est numérique.
 - `-o ../Ateliers/passwdCopie` : Sauvegarde directement le résultat trié dans le même fichier **`passwdCopie`**.
 
 ---
@@ -130,6 +130,9 @@ $ sort -t ';' -k4,4 ../Ateliers/passwdCopie -o ../Ateliers/passwdCopie
 ## Exercice 2
 
 Revenir dans votre dossier personnel.
+```bash
+$ cd ~
+```
 
 1. Écrire la commande qui permet de compter le nombre d'utilisateurs qui ont pour shell le `/bin/bash`. Vous trouverez cette information dans le fichier `/etc/passwd`. 
 ```bash
