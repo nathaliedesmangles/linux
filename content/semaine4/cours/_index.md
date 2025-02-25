@@ -79,7 +79,7 @@ La commande `tree` affiche les fichiers et dossiers sous forme d'arborescence.
 
    **Changer et enregistrer directement dans le fichier** :
    ```bash
-   $ sed -i 's/ancienne_chaine/nouvelle_chaine/g' fichier_non_temporaire.txt
+   $ sed -i 's/ancien/nouveau/g' fichier_non_temporaire.txt
    ```
 
 ---
