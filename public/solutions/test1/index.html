@@ -6,21 +6,26 @@
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
     <meta name="description" content="Critères de correction appliqués Question Points -100% -75% -50% -25% Réponses 1 3 cd absent cd ../../home/user
-cd root cd /home/user cd /home ~ cd ~ 2 2 mkdir absente autre commande mkdir /home/user/projets/python/scripts mkdir projets/python/scripts mkdir -p /home/user/projets/python/scripts mkdir -p projets/python/scripts 3 2 sudo seul Flèche Mauvaise commande (ex: history) history !sudo !sudo sud tab 4 2 Mauvais caractère générique find -name pas assez de ? 8 ? ls log?????.txt ls-l log?????.txt 5 2 Mauvaise commande
-Boucle incorrecte touch rapport_20{00,01,02, …, 25}.txt mkdir rapport_{2000..2025} touch /rapport_20{00..25}
+cd root cd /home/user cd /home ~ cd /~ cd ~ 2 2 mkdir absente autre commande mkdir /home/user/projets/python/scripts mkdir projets/python/scripts mkdir -p /home/user/projets/python/scripts mkdir -p projets/python/scripts 3 2 sudo seul Flèche Mauvaise commande (ex: history -!100) history !sudo !sudo sud tab 4 2 Mauvais caractère générique find -name pas assez de ? 8 ? ls log?????.txt ls-l log?????.txt 5 2 Mauvaise commande
+Boucle touch rapport_20{00,01,02, …, 25}.txt mkdir rapport_{2000..2025} touch /rapport_20{00..25}
 touch rapport_20{00..25} Toutes les années
-Extension manquante touch rapport_{2000..2025}.txt touch rapport_20{00..25}.txt 6 2 Mauvaise syntaxe de la boucle Mauvaise commande (ex : rmdir) Mauvais chemin for i in /home/user/Documents/*.bak; do rm “$i”; done 7 2 Commande et chemin erronés (ex: cd ../../var/log) Mauvais chemin relatif (ex: ls ../../var/log) Mauvaise commande et bon chemin (ex: cd /var/log) ls /var/log ls -l /var/log 8 2 Commande et chemin erronés Chemin relatif erroné
+Extension manquante touch rapport_{2000..2025}.txt touch rapport_20{00..25}.txt 6 2 Mauvaise syntaxe de la boucle Mauvaise commande (ex : rmdir) Mauvais chemin
+pas reutiliser la variable for i in /home/user/Documents/*.bak; do rm “$i”; done 7 2 Commande et chemin erronés (ex: cd ../../var/log) Mauvais chemin relatif (ex: ls ../../var/log) Mauvaise commande et bon chemin (ex: cd /var/log) ls /var/log ls -l /var/log 8 2 Commande et chemin erronés Chemin relatif erroné
 Mauvaise commande (ex: mv) cd /home/user/Documents/projets/developpement/scripts
-cd /developpement/scripts cd developpement/scripts 9 2 Option manquante
+cd /developpement/scripts cd developpement cd developpement/scripts 9 2 Option manquante
 Mauvaise commande head -15 data.csv head -n 15 data.csv head data.csv -n 15 10 2 Mauvaise commande tail -n 10 data.csv tail 10 data.csv tail data.csv 11 2 Mauvaise commande history !-2 history !49
-history 49 !-2
-!49 12 2 Absence de boucle
+history 49
+!2 !-2
+!49 !48 12 2 Absence de boucle
 Syntaxe de la boucle Mauvaise extension
 Mauvais chemin
-Mauvaise commande for i in *.log; do echo $i; done 13 2 sudo absent et mauvaise commande/chemin sudo absent &#43; rm &#43; chemin sudo présent &#43; chemin, mais mauvaise commande (ex : rmdir) sudo rm /etc/secret.conf 14 4 Mauvaise commande ls *.log *.txt *.csv ls *.{log,txt,csv}
+Mauvaise commande for i in *.log; do echo $i; done 13 2 sudo absent et mauvaise commande/chemin sudo absent &#43; rm &#43; chemin sudo présent &#43; chemin, mais mauvaise commande (ex : rmdir) sudo rm /etc/secret.conf 14 4 Mauvaise commande ls *.log *.txt .csv
+ls -name {.log, *.txt, *.csv} ls *.{log,txt,csv}
 ls *{.log,.txt,.csv} 15 3 Mauvaise commande (ex : mv) syntaxe erronée syntaxe cp inversée
 Toutes les années
-Extension manquante cp backup_{2000..2025}.tar /mnt/archives cp backup_20{00..25}.tar /mnt/archives cp backup_{2000..2025}.{b,t}ar /mnt/archives 16 2 Mauvaise commande seulement la commande Tous les noms Extension manquante Nombres impairs mv config-{2,4,6,8,10}.txt configs/ 17 2 Mauvaise commande (ex : ls) Mauvais chemin
+copy backup_{2000 .. 2025}.tar /mnt/archives/
+Extension manquante cp backup_{2000..2025}.tar /mnt/archives cp backup_20{00..25}.tar /mnt/archives cp backup_{2000..2025}.{b,t}ar /mnt/archives 16 2 Mauvaise commande seulement la commande Tous les noms Extension manquante Nombres impairs mv config-{2,4,6,8,10}.txt configs/ 17 2 Pas de commande
+Mauvaise commande (ex : ls) Mauvais chemin
 Commande find sans l’option -name find /home/user/scripts -name “*.sh” 18 2 Commande autre que systemctl, init Absence d’isolate Utilisation de runlevel (init)
 Mauvaise cible systemctl isolate multi-user.target
 systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des 2 réponses est bonne 1. systemctl multi-user.target: requiert un redémarrage. 2. systemctl isolate multi-user.target : ne requiert pas de redémarrage 20 5 Aucune des 2 réponses sont bonnes 1 seule des 2 réponses est bonne 1. touch tests/test{1..5}.log 2. ls tests TOTAL 50 Rappels des notions de base importantes non réussies Syntaxe de base d’une commande dans l’ordre">
@@ -28,21 +33,26 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Test 1 :: 420-ZG4-MO LINUX">
     <meta name="twitter:description" content="Critères de correction appliqués Question Points -100% -75% -50% -25% Réponses 1 3 cd absent cd ../../home/user
-cd root cd /home/user cd /home ~ cd ~ 2 2 mkdir absente autre commande mkdir /home/user/projets/python/scripts mkdir projets/python/scripts mkdir -p /home/user/projets/python/scripts mkdir -p projets/python/scripts 3 2 sudo seul Flèche Mauvaise commande (ex: history) history !sudo !sudo sud tab 4 2 Mauvais caractère générique find -name pas assez de ? 8 ? ls log?????.txt ls-l log?????.txt 5 2 Mauvaise commande
-Boucle incorrecte touch rapport_20{00,01,02, …, 25}.txt mkdir rapport_{2000..2025} touch /rapport_20{00..25}
+cd root cd /home/user cd /home ~ cd /~ cd ~ 2 2 mkdir absente autre commande mkdir /home/user/projets/python/scripts mkdir projets/python/scripts mkdir -p /home/user/projets/python/scripts mkdir -p projets/python/scripts 3 2 sudo seul Flèche Mauvaise commande (ex: history -!100) history !sudo !sudo sud tab 4 2 Mauvais caractère générique find -name pas assez de ? 8 ? ls log?????.txt ls-l log?????.txt 5 2 Mauvaise commande
+Boucle touch rapport_20{00,01,02, …, 25}.txt mkdir rapport_{2000..2025} touch /rapport_20{00..25}
 touch rapport_20{00..25} Toutes les années
-Extension manquante touch rapport_{2000..2025}.txt touch rapport_20{00..25}.txt 6 2 Mauvaise syntaxe de la boucle Mauvaise commande (ex : rmdir) Mauvais chemin for i in /home/user/Documents/*.bak; do rm “$i”; done 7 2 Commande et chemin erronés (ex: cd ../../var/log) Mauvais chemin relatif (ex: ls ../../var/log) Mauvaise commande et bon chemin (ex: cd /var/log) ls /var/log ls -l /var/log 8 2 Commande et chemin erronés Chemin relatif erroné
+Extension manquante touch rapport_{2000..2025}.txt touch rapport_20{00..25}.txt 6 2 Mauvaise syntaxe de la boucle Mauvaise commande (ex : rmdir) Mauvais chemin
+pas reutiliser la variable for i in /home/user/Documents/*.bak; do rm “$i”; done 7 2 Commande et chemin erronés (ex: cd ../../var/log) Mauvais chemin relatif (ex: ls ../../var/log) Mauvaise commande et bon chemin (ex: cd /var/log) ls /var/log ls -l /var/log 8 2 Commande et chemin erronés Chemin relatif erroné
 Mauvaise commande (ex: mv) cd /home/user/Documents/projets/developpement/scripts
-cd /developpement/scripts cd developpement/scripts 9 2 Option manquante
+cd /developpement/scripts cd developpement cd developpement/scripts 9 2 Option manquante
 Mauvaise commande head -15 data.csv head -n 15 data.csv head data.csv -n 15 10 2 Mauvaise commande tail -n 10 data.csv tail 10 data.csv tail data.csv 11 2 Mauvaise commande history !-2 history !49
-history 49 !-2
-!49 12 2 Absence de boucle
+history 49
+!2 !-2
+!49 !48 12 2 Absence de boucle
 Syntaxe de la boucle Mauvaise extension
 Mauvais chemin
-Mauvaise commande for i in *.log; do echo $i; done 13 2 sudo absent et mauvaise commande/chemin sudo absent &#43; rm &#43; chemin sudo présent &#43; chemin, mais mauvaise commande (ex : rmdir) sudo rm /etc/secret.conf 14 4 Mauvaise commande ls *.log *.txt *.csv ls *.{log,txt,csv}
+Mauvaise commande for i in *.log; do echo $i; done 13 2 sudo absent et mauvaise commande/chemin sudo absent &#43; rm &#43; chemin sudo présent &#43; chemin, mais mauvaise commande (ex : rmdir) sudo rm /etc/secret.conf 14 4 Mauvaise commande ls *.log *.txt .csv
+ls -name {.log, *.txt, *.csv} ls *.{log,txt,csv}
 ls *{.log,.txt,.csv} 15 3 Mauvaise commande (ex : mv) syntaxe erronée syntaxe cp inversée
 Toutes les années
-Extension manquante cp backup_{2000..2025}.tar /mnt/archives cp backup_20{00..25}.tar /mnt/archives cp backup_{2000..2025}.{b,t}ar /mnt/archives 16 2 Mauvaise commande seulement la commande Tous les noms Extension manquante Nombres impairs mv config-{2,4,6,8,10}.txt configs/ 17 2 Mauvaise commande (ex : ls) Mauvais chemin
+copy backup_{2000 .. 2025}.tar /mnt/archives/
+Extension manquante cp backup_{2000..2025}.tar /mnt/archives cp backup_20{00..25}.tar /mnt/archives cp backup_{2000..2025}.{b,t}ar /mnt/archives 16 2 Mauvaise commande seulement la commande Tous les noms Extension manquante Nombres impairs mv config-{2,4,6,8,10}.txt configs/ 17 2 Pas de commande
+Mauvaise commande (ex : ls) Mauvais chemin
 Commande find sans l’option -name find /home/user/scripts -name “*.sh” 18 2 Commande autre que systemctl, init Absence d’isolate Utilisation de runlevel (init)
 Mauvaise cible systemctl isolate multi-user.target
 systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des 2 réponses est bonne 1. systemctl multi-user.target: requiert un redémarrage. 2. systemctl isolate multi-user.target : ne requiert pas de redémarrage 20 5 Aucune des 2 réponses sont bonnes 1 seule des 2 réponses est bonne 1. touch tests/test{1..5}.log 2. ls tests TOTAL 50 Rappels des notions de base importantes non réussies Syntaxe de base d’une commande dans l’ordre">
@@ -50,21 +60,26 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="Test 1 :: 420-ZG4-MO LINUX">
     <meta property="og:description" content="Critères de correction appliqués Question Points -100% -75% -50% -25% Réponses 1 3 cd absent cd ../../home/user
-cd root cd /home/user cd /home ~ cd ~ 2 2 mkdir absente autre commande mkdir /home/user/projets/python/scripts mkdir projets/python/scripts mkdir -p /home/user/projets/python/scripts mkdir -p projets/python/scripts 3 2 sudo seul Flèche Mauvaise commande (ex: history) history !sudo !sudo sud tab 4 2 Mauvais caractère générique find -name pas assez de ? 8 ? ls log?????.txt ls-l log?????.txt 5 2 Mauvaise commande
-Boucle incorrecte touch rapport_20{00,01,02, …, 25}.txt mkdir rapport_{2000..2025} touch /rapport_20{00..25}
+cd root cd /home/user cd /home ~ cd /~ cd ~ 2 2 mkdir absente autre commande mkdir /home/user/projets/python/scripts mkdir projets/python/scripts mkdir -p /home/user/projets/python/scripts mkdir -p projets/python/scripts 3 2 sudo seul Flèche Mauvaise commande (ex: history -!100) history !sudo !sudo sud tab 4 2 Mauvais caractère générique find -name pas assez de ? 8 ? ls log?????.txt ls-l log?????.txt 5 2 Mauvaise commande
+Boucle touch rapport_20{00,01,02, …, 25}.txt mkdir rapport_{2000..2025} touch /rapport_20{00..25}
 touch rapport_20{00..25} Toutes les années
-Extension manquante touch rapport_{2000..2025}.txt touch rapport_20{00..25}.txt 6 2 Mauvaise syntaxe de la boucle Mauvaise commande (ex : rmdir) Mauvais chemin for i in /home/user/Documents/*.bak; do rm “$i”; done 7 2 Commande et chemin erronés (ex: cd ../../var/log) Mauvais chemin relatif (ex: ls ../../var/log) Mauvaise commande et bon chemin (ex: cd /var/log) ls /var/log ls -l /var/log 8 2 Commande et chemin erronés Chemin relatif erroné
+Extension manquante touch rapport_{2000..2025}.txt touch rapport_20{00..25}.txt 6 2 Mauvaise syntaxe de la boucle Mauvaise commande (ex : rmdir) Mauvais chemin
+pas reutiliser la variable for i in /home/user/Documents/*.bak; do rm “$i”; done 7 2 Commande et chemin erronés (ex: cd ../../var/log) Mauvais chemin relatif (ex: ls ../../var/log) Mauvaise commande et bon chemin (ex: cd /var/log) ls /var/log ls -l /var/log 8 2 Commande et chemin erronés Chemin relatif erroné
 Mauvaise commande (ex: mv) cd /home/user/Documents/projets/developpement/scripts
-cd /developpement/scripts cd developpement/scripts 9 2 Option manquante
+cd /developpement/scripts cd developpement cd developpement/scripts 9 2 Option manquante
 Mauvaise commande head -15 data.csv head -n 15 data.csv head data.csv -n 15 10 2 Mauvaise commande tail -n 10 data.csv tail 10 data.csv tail data.csv 11 2 Mauvaise commande history !-2 history !49
-history 49 !-2
-!49 12 2 Absence de boucle
+history 49
+!2 !-2
+!49 !48 12 2 Absence de boucle
 Syntaxe de la boucle Mauvaise extension
 Mauvais chemin
-Mauvaise commande for i in *.log; do echo $i; done 13 2 sudo absent et mauvaise commande/chemin sudo absent &#43; rm &#43; chemin sudo présent &#43; chemin, mais mauvaise commande (ex : rmdir) sudo rm /etc/secret.conf 14 4 Mauvaise commande ls *.log *.txt *.csv ls *.{log,txt,csv}
+Mauvaise commande for i in *.log; do echo $i; done 13 2 sudo absent et mauvaise commande/chemin sudo absent &#43; rm &#43; chemin sudo présent &#43; chemin, mais mauvaise commande (ex : rmdir) sudo rm /etc/secret.conf 14 4 Mauvaise commande ls *.log *.txt .csv
+ls -name {.log, *.txt, *.csv} ls *.{log,txt,csv}
 ls *{.log,.txt,.csv} 15 3 Mauvaise commande (ex : mv) syntaxe erronée syntaxe cp inversée
 Toutes les années
-Extension manquante cp backup_{2000..2025}.tar /mnt/archives cp backup_20{00..25}.tar /mnt/archives cp backup_{2000..2025}.{b,t}ar /mnt/archives 16 2 Mauvaise commande seulement la commande Tous les noms Extension manquante Nombres impairs mv config-{2,4,6,8,10}.txt configs/ 17 2 Mauvaise commande (ex : ls) Mauvais chemin
+copy backup_{2000 .. 2025}.tar /mnt/archives/
+Extension manquante cp backup_{2000..2025}.tar /mnt/archives cp backup_20{00..25}.tar /mnt/archives cp backup_{2000..2025}.{b,t}ar /mnt/archives 16 2 Mauvaise commande seulement la commande Tous les noms Extension manquante Nombres impairs mv config-{2,4,6,8,10}.txt configs/ 17 2 Pas de commande
+Mauvaise commande (ex : ls) Mauvais chemin
 Commande find sans l’option -name find /home/user/scripts -name “*.sh” 18 2 Commande autre que systemctl, init Absence d’isolate Utilisation de runlevel (init)
 Mauvaise cible systemctl isolate multi-user.target
 systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des 2 réponses est bonne 1. systemctl multi-user.target: requiert un redémarrage. 2. systemctl isolate multi-user.target : ne requiert pas de redémarrage 20 5 Aucune des 2 réponses sont bonnes 1 seule des 2 réponses est bonne 1. touch tests/test{1..5}.log 2. ls tests TOTAL 50 Rappels des notions de base importantes non réussies Syntaxe de base d’une commande dans l’ordre">
@@ -72,32 +87,37 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
     <meta property="og:type" content="website">
     <meta itemprop="name" content="Test 1 :: 420-ZG4-MO LINUX">
     <meta itemprop="description" content="Critères de correction appliqués Question Points -100% -75% -50% -25% Réponses 1 3 cd absent cd ../../home/user
-cd root cd /home/user cd /home ~ cd ~ 2 2 mkdir absente autre commande mkdir /home/user/projets/python/scripts mkdir projets/python/scripts mkdir -p /home/user/projets/python/scripts mkdir -p projets/python/scripts 3 2 sudo seul Flèche Mauvaise commande (ex: history) history !sudo !sudo sud tab 4 2 Mauvais caractère générique find -name pas assez de ? 8 ? ls log?????.txt ls-l log?????.txt 5 2 Mauvaise commande
-Boucle incorrecte touch rapport_20{00,01,02, …, 25}.txt mkdir rapport_{2000..2025} touch /rapport_20{00..25}
+cd root cd /home/user cd /home ~ cd /~ cd ~ 2 2 mkdir absente autre commande mkdir /home/user/projets/python/scripts mkdir projets/python/scripts mkdir -p /home/user/projets/python/scripts mkdir -p projets/python/scripts 3 2 sudo seul Flèche Mauvaise commande (ex: history -!100) history !sudo !sudo sud tab 4 2 Mauvais caractère générique find -name pas assez de ? 8 ? ls log?????.txt ls-l log?????.txt 5 2 Mauvaise commande
+Boucle touch rapport_20{00,01,02, …, 25}.txt mkdir rapport_{2000..2025} touch /rapport_20{00..25}
 touch rapport_20{00..25} Toutes les années
-Extension manquante touch rapport_{2000..2025}.txt touch rapport_20{00..25}.txt 6 2 Mauvaise syntaxe de la boucle Mauvaise commande (ex : rmdir) Mauvais chemin for i in /home/user/Documents/*.bak; do rm “$i”; done 7 2 Commande et chemin erronés (ex: cd ../../var/log) Mauvais chemin relatif (ex: ls ../../var/log) Mauvaise commande et bon chemin (ex: cd /var/log) ls /var/log ls -l /var/log 8 2 Commande et chemin erronés Chemin relatif erroné
+Extension manquante touch rapport_{2000..2025}.txt touch rapport_20{00..25}.txt 6 2 Mauvaise syntaxe de la boucle Mauvaise commande (ex : rmdir) Mauvais chemin
+pas reutiliser la variable for i in /home/user/Documents/*.bak; do rm “$i”; done 7 2 Commande et chemin erronés (ex: cd ../../var/log) Mauvais chemin relatif (ex: ls ../../var/log) Mauvaise commande et bon chemin (ex: cd /var/log) ls /var/log ls -l /var/log 8 2 Commande et chemin erronés Chemin relatif erroné
 Mauvaise commande (ex: mv) cd /home/user/Documents/projets/developpement/scripts
-cd /developpement/scripts cd developpement/scripts 9 2 Option manquante
+cd /developpement/scripts cd developpement cd developpement/scripts 9 2 Option manquante
 Mauvaise commande head -15 data.csv head -n 15 data.csv head data.csv -n 15 10 2 Mauvaise commande tail -n 10 data.csv tail 10 data.csv tail data.csv 11 2 Mauvaise commande history !-2 history !49
-history 49 !-2
-!49 12 2 Absence de boucle
+history 49
+!2 !-2
+!49 !48 12 2 Absence de boucle
 Syntaxe de la boucle Mauvaise extension
 Mauvais chemin
-Mauvaise commande for i in *.log; do echo $i; done 13 2 sudo absent et mauvaise commande/chemin sudo absent &#43; rm &#43; chemin sudo présent &#43; chemin, mais mauvaise commande (ex : rmdir) sudo rm /etc/secret.conf 14 4 Mauvaise commande ls *.log *.txt *.csv ls *.{log,txt,csv}
+Mauvaise commande for i in *.log; do echo $i; done 13 2 sudo absent et mauvaise commande/chemin sudo absent &#43; rm &#43; chemin sudo présent &#43; chemin, mais mauvaise commande (ex : rmdir) sudo rm /etc/secret.conf 14 4 Mauvaise commande ls *.log *.txt .csv
+ls -name {.log, *.txt, *.csv} ls *.{log,txt,csv}
 ls *{.log,.txt,.csv} 15 3 Mauvaise commande (ex : mv) syntaxe erronée syntaxe cp inversée
 Toutes les années
-Extension manquante cp backup_{2000..2025}.tar /mnt/archives cp backup_20{00..25}.tar /mnt/archives cp backup_{2000..2025}.{b,t}ar /mnt/archives 16 2 Mauvaise commande seulement la commande Tous les noms Extension manquante Nombres impairs mv config-{2,4,6,8,10}.txt configs/ 17 2 Mauvaise commande (ex : ls) Mauvais chemin
+copy backup_{2000 .. 2025}.tar /mnt/archives/
+Extension manquante cp backup_{2000..2025}.tar /mnt/archives cp backup_20{00..25}.tar /mnt/archives cp backup_{2000..2025}.{b,t}ar /mnt/archives 16 2 Mauvaise commande seulement la commande Tous les noms Extension manquante Nombres impairs mv config-{2,4,6,8,10}.txt configs/ 17 2 Pas de commande
+Mauvaise commande (ex : ls) Mauvais chemin
 Commande find sans l’option -name find /home/user/scripts -name “*.sh” 18 2 Commande autre que systemctl, init Absence d’isolate Utilisation de runlevel (init)
 Mauvaise cible systemctl isolate multi-user.target
 systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des 2 réponses est bonne 1. systemctl multi-user.target: requiert un redémarrage. 2. systemctl isolate multi-user.target : ne requiert pas de redémarrage 20 5 Aucune des 2 réponses sont bonnes 1 seule des 2 réponses est bonne 1. touch tests/test{1..5}.log 2. ls tests TOTAL 50 Rappels des notions de base importantes non réussies Syntaxe de base d’une commande dans l’ordre">
-    <meta itemprop="wordCount" content="793">
+    <meta itemprop="wordCount" content="816">
     <title>Test 1 :: 420-ZG4-MO LINUX</title>
     <link href="/solutions/test1/index.xml" rel="alternate" type="application/rss+xml" title="Test 1 :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1740432253" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1740432253" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1740432253" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1740432253" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1740432253" rel="stylesheet">
-    <link href="/css/theme.css?1740432253" rel="stylesheet">
-    <link href="/css/format-html.css?1740432253" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1740595268" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1740595268" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1740595268" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1740595268" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1740595268" rel="stylesheet">
+    <link href="/css/theme.css?1740595268" rel="stylesheet">
+    <link href="/css/format-html.css?1740595268" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -217,7 +237,7 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
           <td style="text-align: center"><strong>3</strong></td>
           <td style="text-align: left"><code>cd</code> absent <br>cd ../../home/user<br>cd root</td>
           <td style="text-align: left"></td>
-          <td style="text-align: left">cd /home/user <br> cd /home <br>~</td>
+          <td style="text-align: left">cd /home/user <br> cd /home <br>~ <br>cd /~</td>
           <td style="text-align: left"></td>
           <td style="text-align: left">cd ~</td>
       </tr>
@@ -233,7 +253,7 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
       <tr>
           <td style="text-align: left"><strong>3</strong></td>
           <td style="text-align: center"><strong>2</strong></td>
-          <td style="text-align: left">sudo seul <br>Flèche <br> Mauvaise commande (ex: history)</td>
+          <td style="text-align: left">sudo seul <br>Flèche <br> Mauvaise commande (ex: history -!100)</td>
           <td style="text-align: left"></td>
           <td style="text-align: left">history !sudo</td>
           <td style="text-align: left"></td>
@@ -251,7 +271,7 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
       <tr>
           <td style="text-align: left"><strong>5</strong></td>
           <td style="text-align: center"><strong>2</strong></td>
-          <td style="text-align: left">Mauvaise commande<br> Boucle incorrecte</td>
+          <td style="text-align: left">Mauvaise commande<br> Boucle</td>
           <td style="text-align: left">touch rapport_20{00,01,02, &hellip;, 25}.txt <br> mkdir rapport_{2000..2025}</td>
           <td style="text-align: left">touch /rapport_20{00..25}<br> touch rapport_20{00..25}</td>
           <td style="text-align: left">Toutes les années<br> Extension manquante</td>
@@ -262,7 +282,7 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
           <td style="text-align: center"><strong>2</strong></td>
           <td style="text-align: left">Mauvaise syntaxe de la boucle <br> Mauvaise commande (ex : rmdir)</td>
           <td style="text-align: left"></td>
-          <td style="text-align: left">Mauvais chemin</td>
+          <td style="text-align: left">Mauvais chemin<br>pas reutiliser la variable</td>
           <td style="text-align: left"></td>
           <td style="text-align: left">for i in /home/user/Documents/*.bak; do rm &ldquo;$i&rdquo;; done</td>
       </tr>
@@ -280,7 +300,7 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
           <td style="text-align: center"><strong>2</strong></td>
           <td style="text-align: left">Commande et chemin erronés <br>Chemin relatif erroné<br> Mauvaise commande (ex: mv)</td>
           <td style="text-align: left"></td>
-          <td style="text-align: left">cd /home/user/Documents/projets/developpement/scripts<br>cd /developpement/scripts</td>
+          <td style="text-align: left">cd /home/user/Documents/projets/developpement/scripts<br>cd /developpement/scripts <br>cd developpement</td>
           <td style="text-align: left"></td>
           <td style="text-align: left">cd developpement/scripts</td>
       </tr>
@@ -307,9 +327,9 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
           <td style="text-align: center"><strong>2</strong></td>
           <td style="text-align: left">Mauvaise commande</td>
           <td style="text-align: left"></td>
-          <td style="text-align: left">history !-2 <br> history !49<br> history 49</td>
+          <td style="text-align: left">history !-2 <br> history !49<br> history 49<br>!2</td>
           <td style="text-align: left"></td>
-          <td style="text-align: left">!-2<br> !49</td>
+          <td style="text-align: left">!-2<br> !49 <br>!48</td>
       </tr>
       <tr>
           <td style="text-align: left"><strong>12</strong></td>
@@ -334,7 +354,7 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
           <td style="text-align: center"><strong>4</strong></td>
           <td style="text-align: left">Mauvaise commande</td>
           <td style="text-align: left"></td>
-          <td style="text-align: left">ls *.log *.txt *.csv</td>
+          <td style="text-align: left">ls *.log *.txt <em>.csv<br>ls -name {</em>.log, *.txt, *.csv}</td>
           <td style="text-align: left"></td>
           <td style="text-align: left">ls *.{log,txt,csv}<br> ls *{.log,.txt,.csv}</td>
       </tr>
@@ -343,7 +363,7 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
           <td style="text-align: center"><strong>3</strong></td>
           <td style="text-align: left">Mauvaise commande (ex : mv) <br> syntaxe erronée</td>
           <td style="text-align: left"></td>
-          <td style="text-align: left">syntaxe <code>cp</code> inversée<br>Toutes les années<br> Extension manquante</td>
+          <td style="text-align: left">syntaxe <code>cp</code> inversée<br>Toutes les années<br> copy backup_{2000 .. 2025}.tar /mnt/archives/<br>Extension manquante</td>
           <td style="text-align: left"></td>
           <td style="text-align: left">cp backup_{2000..2025}.tar /mnt/archives <br> cp backup_20{00..25}.tar /mnt/archives <br>cp backup_{2000..2025}.{b,t}ar /mnt/archives</td>
       </tr>
@@ -359,7 +379,7 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
       <tr>
           <td style="text-align: left"><strong>17</strong></td>
           <td style="text-align: center"><strong>2</strong></td>
-          <td style="text-align: left">Mauvaise commande (ex : ls)</td>
+          <td style="text-align: left">Pas de commande<br>Mauvaise commande (ex : ls)</td>
           <td style="text-align: left"></td>
           <td style="text-align: left">Mauvais chemin<br>Commande <code>find</code> sans l’option <code>-name</code></td>
           <td style="text-align: left"></td>
@@ -500,7 +520,7 @@ J&#39;aime les oranges</code></pre></div>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1740432253";
+          window.index_js_url="/searchindex.en.js?1740595268";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -513,12 +533,12 @@ J&#39;aime les oranges</code></pre></div>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1740432253" defer></script>
-        <script src="/js/lunr/lunr.min.js?1740432253" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1740432253" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1740432253" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1740432253" defer></script>
-        <script src="/js/search.js?1740432253" defer></script>
+        <script src="/js/auto-complete.js?1740595268" defer></script>
+        <script src="/js/lunr/lunr.min.js?1740595268" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1740595268" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1740595268" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1740595268" defer></script>
+        <script src="/js/search.js?1740595268" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -603,8 +623,8 @@ J&#39;aime les oranges</code></pre></div>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1740432253" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1740432253" defer></script>
-    <script src="/js/theme.js?1740432253" defer></script>
+    <script src="/js/clipboard.min.js?1740595268" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1740595268" defer></script>
+    <script src="/js/theme.js?1740595268" defer></script>
   </body>
 </html>

@@ -98,9 +98,24 @@ La commande `tree` affiche les fichiers et dossiers sous forme d'arborescence.
    $ cut -d':' -f6 /etc/passwd
    ```
 
-   **Extraire plusieurs colonnes (1re ET 3e)** :
+   **Extraire plusieurs colonnes (1re ET 6e)** :
+
+   **AVANT l'extraction: 3 premières lignes du fichier passwd**
+   ```
+   root:x:0:0:root:/root:/bin/bash
+   bin:x:1:1:bin:/bin:/sbin/nologin
+   daemon:x:2:2:daemon:/sbin:/sbin/nologin
+   ```
+
    ```bash
-   $ cut -d':' -f1,3 /etc/passwd
+   $ cut -d':' -f1,6 /etc/passwd
+   ```
+   
+   **APRÈS l'extraction:**
+   ```bash
+   root:/root
+   bin:/bin
+   daemon:/sbin
    ```
 
 ---
@@ -146,41 +161,55 @@ $ less /etc/passwd
 
    **Trier numériquement (sinon, 10 est avant 2)** :
    ```bash
-   $ sort -k2 -n data.csv
+   $ sort -k2 -n profs.txt
    ```
 
 ---
 
 ## Rediriger la sortie d’une commande
 
-**Enregistrer la sortie dans un fichier avec `1>` ou `>`**:
+La sortie standard (`1>` ou `>`) est le flux par défaut où un programme écrit ses résultats, généralement affiché à l'écran (**Terminal**), sauf si redirigé vers un fichier ou un autre processus.
+
+**Enregistrer la sortie standard dans un fichier**:
 ```bash
 $ find / -name services 1> resultats.txt
 ```
+
+Si le fichier `resultats.txt` n'existe pas, il sera crée.
 
 {{% notice style="info" title="Information" %}}
-Ici, le chiffre `1` n'est pas obligatoire. Si on ne le met pas, la sortie standard est utilisée par défaut.
-{{% /notice %}}
-
-La commande précédente peut s'écrire aussi comme cela:
+Ici, le chiffre `1` n'est pas obligatoire. Si on ne le met pas, la sortie standard est utilisée par défaut. La commande précédente peut s'écrire aussi comme cela:
 ```bash
-$ find / -name services 1> resultats.txt
+$ find / -name services > resultats.txt
 ```
+La sortie standard (`1>`) n'inclut pas les erreurs. Les erreurs sont envoyées vers la sortie d'erreur standard (`2>`). Le fichier `resultats.txt` ne contiendra pas les lignes ayant une mention d'erreur comme par exemple: **"Permission non accordée"**.
+{{% /notice %}}
 
 **Ignorer les erreurs à l'aide de `2>`**:
 ```bash
 $ find / -name services 2>/dev/null
 ```
 
-**Envoyer sortie + erreurs dans un fichier en combinant `2>` et `1>`**:
+**Envoyer la sortie standard ET les erreurs dans un fichier**:
 ```bash
 $ find / -name services 1> resultats.txt 2>&1
 ```
+
+**Explications** :
+
+Cette commande `find` recherche un fichier ou dossier nommé **"services"** dans tout le système (`/`).  
+
+- `1> resultats.txt` : Redirige la sortie normale (résultats trouvés) vers **resultats.txt**.  
+- `2>&1` : Redirige les erreurs (ex. : permissions non accordées) vers le même fichier.  
+
+Ainsi, **tout** (résultats et erreurs) est enregistré dans **resultats.txt**.
 
 **Ajouter du texte à un fichier sans l’écraser à l'aide de `>>`**:
 ```bash
 $ echo "Bonjour" >> fichier.txt
 ```
+
+La ligne `Bonjour` est ajoutée à la fin du fichier `fichier.txt` sans écraser son contenu existant (si le fichier n'existe pas, il est crée).
 
 ---
 
@@ -220,6 +249,7 @@ $ find / -name services
 ```
 
 C'est difficile de lire la sortie car les résultats sont noyés au milieu de nombreux messages d'erreurs.
+
 ![Find](find.png?height=200)
 
 Pour rediriger les messages d'erreur:
@@ -272,7 +302,7 @@ Cela affiche chaque dossier du `PATH` sur une ligne et le trie.
 
 1. Trouver le  **numéro de port** de `zephyr-srv` dans `/etc/services`.
 2. Combien de lignes dans `/etc/services` **n'ont pas de `e`**?
-3. Combien de lignes **n'ont ni `e` ni `a` ?
+3. Combien de lignes **n'ont ni `e` ni `a`** ?
 
 {{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
 Pour trouver le numéro de port:
@@ -311,7 +341,12 @@ do
 done
 ```
 
-Exemple : connaître la taille de chaque dossier dans la variable d'environnement `$PATH`.
+**Exemple 1** : Lire un fichier ligne par ligne
+```bash
+while read ligne; do echo "Ligne: $ligne"; done < fichier.txt
+```
+
+**Exemple 2** : connaître la taille de chaque dossier dans la variable d'environnement `$PATH`.
 ```bash
 $ echo $PATH | tr ':' '\n' | while read i; do du -sh $i; done
 ```
@@ -319,6 +354,11 @@ $ echo $PATH | tr ':' '\n' | while read i; do du -sh $i; done
  - `while read i; do ... done` ➡ Lit chaque ligne et exécute `du -sh` dessus.
 
 **Résultat** : La taille de chaque dossier dans `$PATH`.
+
+{{% notice style="info" title="Information" %}}
+Lorsqu'on étudiera les **opérateurs logiques**, on pourra spécifier des conditions à l'aide d'**expressions booléennes**.
+{{% /notice %}}
+
 
 ### Exercices 3
 
