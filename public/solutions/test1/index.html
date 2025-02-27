@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
@@ -13,7 +13,9 @@ Extension manquante touch rapport_{2000..2025}.txt touch rapport_20{00..25}.txt 
 pas reutiliser la variable for i in /home/user/Documents/*.bak; do rm “$i”; done 7 2 Commande et chemin erronés (ex: cd ../../var/log) Mauvais chemin relatif (ex: ls ../../var/log) Mauvaise commande et bon chemin (ex: cd /var/log) ls /var/log ls -l /var/log 8 2 Commande et chemin erronés Chemin relatif erroné
 Mauvaise commande (ex: mv) cd /home/user/Documents/projets/developpement/scripts
 cd /developpement/scripts cd developpement cd developpement/scripts 9 2 Option manquante
-Mauvaise commande head -15 data.csv head -n 15 data.csv head data.csv -n 15 10 2 Mauvaise commande tail -n 10 data.csv tail 10 data.csv tail data.csv 11 2 Mauvaise commande history !-2 history !49
+Mauvaise commande head -15 data.csv head -n 15 data.csv head data.csv -n 15
+head -15 data.csv
+head 15 data.csv 10 2 Mauvaise commande tail -n 10 data.csv tail 10 data.csv tail data.csv 11 2 Mauvaise commande history !-2 history !49
 history 49
 !2 !-2
 !49 !48 12 2 Absence de boucle
@@ -40,7 +42,9 @@ Extension manquante touch rapport_{2000..2025}.txt touch rapport_20{00..25}.txt 
 pas reutiliser la variable for i in /home/user/Documents/*.bak; do rm “$i”; done 7 2 Commande et chemin erronés (ex: cd ../../var/log) Mauvais chemin relatif (ex: ls ../../var/log) Mauvaise commande et bon chemin (ex: cd /var/log) ls /var/log ls -l /var/log 8 2 Commande et chemin erronés Chemin relatif erroné
 Mauvaise commande (ex: mv) cd /home/user/Documents/projets/developpement/scripts
 cd /developpement/scripts cd developpement cd developpement/scripts 9 2 Option manquante
-Mauvaise commande head -15 data.csv head -n 15 data.csv head data.csv -n 15 10 2 Mauvaise commande tail -n 10 data.csv tail 10 data.csv tail data.csv 11 2 Mauvaise commande history !-2 history !49
+Mauvaise commande head -15 data.csv head -n 15 data.csv head data.csv -n 15
+head -15 data.csv
+head 15 data.csv 10 2 Mauvaise commande tail -n 10 data.csv tail 10 data.csv tail data.csv 11 2 Mauvaise commande history !-2 history !49
 history 49
 !2 !-2
 !49 !48 12 2 Absence de boucle
@@ -56,7 +60,7 @@ Mauvaise commande (ex : ls) Mauvais chemin
 Commande find sans l’option -name find /home/user/scripts -name “*.sh” 18 2 Commande autre que systemctl, init Absence d’isolate Utilisation de runlevel (init)
 Mauvaise cible systemctl isolate multi-user.target
 systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des 2 réponses est bonne 1. systemctl multi-user.target: requiert un redémarrage. 2. systemctl isolate multi-user.target : ne requiert pas de redémarrage 20 5 Aucune des 2 réponses sont bonnes 1 seule des 2 réponses est bonne 1. touch tests/test{1..5}.log 2. ls tests TOTAL 50 Rappels des notions de base importantes non réussies Syntaxe de base d’une commande dans l’ordre">
-    <meta property="og:url" content="http://localhost:1313/solutions/test1/index.html">
+    <meta property="og:url" content="https://example.org/solutions/test1/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="Test 1 :: 420-ZG4-MO LINUX">
     <meta property="og:description" content="Critères de correction appliqués Question Points -100% -75% -50% -25% Réponses 1 3 cd absent cd ../../home/user
@@ -67,7 +71,9 @@ Extension manquante touch rapport_{2000..2025}.txt touch rapport_20{00..25}.txt 
 pas reutiliser la variable for i in /home/user/Documents/*.bak; do rm “$i”; done 7 2 Commande et chemin erronés (ex: cd ../../var/log) Mauvais chemin relatif (ex: ls ../../var/log) Mauvaise commande et bon chemin (ex: cd /var/log) ls /var/log ls -l /var/log 8 2 Commande et chemin erronés Chemin relatif erroné
 Mauvaise commande (ex: mv) cd /home/user/Documents/projets/developpement/scripts
 cd /developpement/scripts cd developpement cd developpement/scripts 9 2 Option manquante
-Mauvaise commande head -15 data.csv head -n 15 data.csv head data.csv -n 15 10 2 Mauvaise commande tail -n 10 data.csv tail 10 data.csv tail data.csv 11 2 Mauvaise commande history !-2 history !49
+Mauvaise commande head -15 data.csv head -n 15 data.csv head data.csv -n 15
+head -15 data.csv
+head 15 data.csv 10 2 Mauvaise commande tail -n 10 data.csv tail 10 data.csv tail data.csv 11 2 Mauvaise commande history !-2 history !49
 history 49
 !2 !-2
 !49 !48 12 2 Absence de boucle
@@ -94,7 +100,9 @@ Extension manquante touch rapport_{2000..2025}.txt touch rapport_20{00..25}.txt 
 pas reutiliser la variable for i in /home/user/Documents/*.bak; do rm “$i”; done 7 2 Commande et chemin erronés (ex: cd ../../var/log) Mauvais chemin relatif (ex: ls ../../var/log) Mauvaise commande et bon chemin (ex: cd /var/log) ls /var/log ls -l /var/log 8 2 Commande et chemin erronés Chemin relatif erroné
 Mauvaise commande (ex: mv) cd /home/user/Documents/projets/developpement/scripts
 cd /developpement/scripts cd developpement cd developpement/scripts 9 2 Option manquante
-Mauvaise commande head -15 data.csv head -n 15 data.csv head data.csv -n 15 10 2 Mauvaise commande tail -n 10 data.csv tail 10 data.csv tail data.csv 11 2 Mauvaise commande history !-2 history !49
+Mauvaise commande head -15 data.csv head -n 15 data.csv head data.csv -n 15
+head -15 data.csv
+head 15 data.csv 10 2 Mauvaise commande tail -n 10 data.csv tail 10 data.csv tail data.csv 11 2 Mauvaise commande history !-2 history !49
 history 49
 !2 !-2
 !49 !48 12 2 Absence de boucle
@@ -110,20 +118,20 @@ Mauvaise commande (ex : ls) Mauvais chemin
 Commande find sans l’option -name find /home/user/scripts -name “*.sh” 18 2 Commande autre que systemctl, init Absence d’isolate Utilisation de runlevel (init)
 Mauvaise cible systemctl isolate multi-user.target
 systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des 2 réponses est bonne 1. systemctl multi-user.target: requiert un redémarrage. 2. systemctl isolate multi-user.target : ne requiert pas de redémarrage 20 5 Aucune des 2 réponses sont bonnes 1 seule des 2 réponses est bonne 1. touch tests/test{1..5}.log 2. ls tests TOTAL 50 Rappels des notions de base importantes non réussies Syntaxe de base d’une commande dans l’ordre">
-    <meta itemprop="wordCount" content="816">
+    <meta itemprop="wordCount" content="869">
     <title>Test 1 :: 420-ZG4-MO LINUX</title>
     <link href="/solutions/test1/index.xml" rel="alternate" type="application/rss+xml" title="Test 1 :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1740595268" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1740595268" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1740595268" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1740595268" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1740595268" rel="stylesheet">
-    <link href="/css/theme.css?1740595268" rel="stylesheet">
-    <link href="/css/format-html.css?1740595268" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1740618060" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1740618060" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1740618060" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1740618060" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1740618060" rel="stylesheet">
+    <link href="/css/theme.min.css?1740618060" rel="stylesheet">
+    <link href="/css/format-html.min.css?1740618060" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..';
-      window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.min = ``;
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       // variant stuff
@@ -194,9 +202,9 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Test 1</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine6/index.html" title="Atelier 6 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine3/index.html" title="Atelier 3 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/test2/index.html" title="Test 2 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><span class="topbar-control"><i class="fa-fw fas fa-chevron-right"></i></span>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -311,7 +319,7 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
           <td style="text-align: left"></td>
           <td style="text-align: left">head -15 data.csv</td>
           <td style="text-align: left"></td>
-          <td style="text-align: left">head -n 15 data.csv <br> head data.csv -n 15</td>
+          <td style="text-align: left">head -n 15 data.csv <br> head data.csv -n 15<br>head -15 data.csv<br>head 15 data.csv</td>
       </tr>
       <tr>
           <td style="text-align: left"><strong>10</strong></td>
@@ -427,22 +435,59 @@ systemctl isolate multi-user 19 5 Aucune des 2 réponses sont bonnes 1 seule des
 <ol>
 <li>
 <p><strong>Syntaxe de base d&rsquo;une commande dans l&rsquo;ordre</strong></p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>commande option arguments</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>commande -option arguments</span></span></code></pre></div>
 <ul>
 <li><strong>commande</strong> : action à exécuter.</li>
-<li><strong>option</strong> : modifie le comportement de la commande. Généralement commence par le symbole <code>-</code> (moins)</li>
-<li><strong>arguments</strong> : cible sur laquelle la commande s&rsquo;applique. Peut être un chemin vers un fichier/répertoire, un texte, un nombre, etc</li>
+<li><strong>option</strong> : modifie le comportement de la commande. Généralement commence par le symbole <code>-</code> (moins).</li>
+<li><strong>arguments</strong> : cible sur laquelle la commande s&rsquo;applique. Peut être un chemin vers un <strong>fichier/répertoire</strong>, un <strong>texte</strong>, un <strong>nombre</strong>, etc.</li>
 </ul>
 </li>
 <li>
 <p><strong>Chemin relatif vs absolu</strong></p>
 <ul>
-<li>Un <strong>chemin absolu</strong> commence toujours par <code>/</code></li>
-<li>Les caractère <code>/</code> correspond à la racine de l&rsquo;arborescence de Linux <a href="https://linuxh25.netlify.app/semaine2/cours/" rel="external" target="_blank">voir cours semaine 2</a></li>
+<li>Un <strong>chemin absolu</strong> commence toujours par <code>/</code>.</li>
+<li>Les caractère <code>/</code> correspond à la racine de l&rsquo;arborescence de Linux <a href="https://linuxh25.netlify.app/semaine2/cours/" rel="external" target="_blank">voir cours semaine 2</a>.</li>
 <li>Un <strong>chemin relatif</strong> NE COMMENCE PAS par <code>/</code>. Dépendamment de où on se trouve, un chemin relatif commencera soit par:
 <ul>
 <li>le nom (chemin) du répertoire/fichier à atteindre.</li>
 <li>Un ou plusieurs <code>../</code> pour remonter dans l&rsquo;arborescence.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>La commande <em>cd</em></strong></p>
+<ul>
+<li><strong><code>cd</code></strong> ➝ <em>Change Directory</em>, se déplacer dans l&rsquo;arborescence de fichiers/repertoires de Linux.</li>
+</ul>
+</li>
+<li>
+<p><strong>Difference entre <em>find</em> et <em>ls</em></strong></p>
+<ul>
+<li><strong><code>ls</code></strong> → Affiche le contenu d&rsquo;un répertoire donné.</li>
+<li><strong><code>find</code></strong> → Recherche des fichiers/dossiers selon des critères (nom, taille, date, etc.), même dans les sous-dossiers.</li>
+</ul>
+<p><strong>Exemple concret</strong> :</p>
+<ul>
+<li>
+<p><strong>Lister tous les fichiers <code>.txt</code></strong> dans le répertoire courant :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls *.txt</span></span></code></pre></div>
+<p>➝ Ne fonctionne que pour le répertoire actuel.</p>
+</li>
+<li>
+<p><strong>Trouver tous les fichiers <code>.txt</code></strong> dans tous les sous-dossiers :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -name <span style="color:#e6db74">&#34;*.txt&#34;</span></span></span></code></pre></div>
+<p>➝ Recherche dans le dossier actuel <strong>et tous ses sous-dossiers</strong>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Les commandes touch et mkdir</p>
+<ul>
+<li><strong><code>touch</code></strong> ➝ création de fichiers</li>
+<li><strong><code>mkdir</code></strong> ➝ création de répertoires (<strong>dir</strong>ectory)
+<ul>
+<li>L&rsquo;option <code>-p</code> permet de créer les sous répertoires</li>
 </ul>
 </li>
 </ul>
@@ -477,27 +522,10 @@ J&#39;aime les oranges</code></pre></div>
 <p><strong>Ex</strong>: <code>$(find /home/user/Documents -name &quot;*.bak&quot;)</code> <strong>cherche</strong> tous les répertoires dont le <strong>nom</strong> contient <code>Documents</code> et non les fichiers contenant <code>.bak</code>.</p>
 </li>
 <li>
-<p><strong>Difference entre <em>find</em> et <em>ls</em></strong></p>
-<ul>
-<li><strong><code>ls</code></strong> → Affiche le contenu d&rsquo;un répertoire donné.</li>
-<li><strong><code>find</code></strong> → Recherche des fichiers/dossiers selon des critères (nom, taille, date, etc.), même dans les sous-dossiers.</li>
-</ul>
-<p><strong>Exemple concret</strong> :</p>
-<ul>
-<li>
-<p><strong>Lister tous les fichiers <code>.txt</code></strong> dans le répertoire courant :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls *.txt</span></span></code></pre></div>
-<p>➝ Ne fonctionne que pour le répertoire actuel.</p>
+<p><strong>L&rsquo;expansion d&rsquo;accolades</strong> { }</p>
 </li>
 <li>
-<p><strong>Trouver tous les fichiers <code>.txt</code></strong> dans tous les sous-dossiers :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -name <span style="color:#e6db74">&#34;*.txt&#34;</span></span></span></code></pre></div>
-<p>➝ Recherche dans le dossier actuel <strong>et tous ses sous-dossiers</strong>.</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Rôle de <em>isolate</em></strong></p>
+<p><strong>Rôle de <em>isolate</em> dans la commande <em>systemctl</em></strong></p>
 <ul>
 <li>Dans <code>systemctl</code>, la commande <code>isolate</code> sert à basculer <strong>immédiatement</strong> vers une cible (target) <strong>sans avoir à redémarrer</strong> le système.</li>
 <li><code>isolate</code> <strong>ne redémarre pas la machine</strong>, mais change l’environnement d’exécution.</li>
@@ -520,7 +548,7 @@ J&#39;aime les oranges</code></pre></div>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1740595268";
+          window.index_js_url="/searchindex.en.js?1740618060";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -533,12 +561,12 @@ J&#39;aime les oranges</code></pre></div>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1740595268" defer></script>
-        <script src="/js/lunr/lunr.min.js?1740595268" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1740595268" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1740595268" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1740595268" defer></script>
-        <script src="/js/search.js?1740595268" defer></script>
+        <script src="/js/auto-complete.js?1740618060" defer></script>
+        <script src="/js/lunr/lunr.min.js?1740618060" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1740618060" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1740618060" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1740618060" defer></script>
+        <script src="/js/search.js?1740618060" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -555,21 +583,11 @@ J&#39;aime les oranges</code></pre></div>
             <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim et les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>???</a></li>
-            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu">
             <li class="" data-nav-id="/solutions/semaine1/index.html"><a class="padding" href="/solutions/semaine1/index.html">Atelier 1</a></li>
             <li class="" data-nav-id="/solutions/semaine2/index.html"><a class="padding" href="/solutions/semaine2/index.html">Atelier 2</a></li>
             <li class="" data-nav-id="/solutions/semaine3/index.html"><a class="padding" href="/solutions/semaine3/index.html">Atelier 3</a></li>
-            <li class="" data-nav-id="/solutions/semaine4/index.html"><a class="padding" href="/solutions/semaine4/index.html">Atelier 4</a></li>
-            <li class="" data-nav-id="/solutions/semaine5/index.html"><a class="padding" href="/solutions/semaine5/index.html">Atelier 5</a></li>
-            <li class="" data-nav-id="/solutions/semaine6/index.html"><a class="padding" href="/solutions/semaine6/index.html">Atelier 6</a></li>
-            <li class="active " data-nav-id="/solutions/test1/index.html"><a class="padding" href="/solutions/test1/index.html">Test 1</a></li>
-            <li class="" data-nav-id="/solutions/test2/index.html"><a class="padding" href="/solutions/test2/index.html">Test 2</a></li>
-            <li class="" data-nav-id="/solutions/test3/index.html"><a class="padding" href="/solutions/test3/index.html">Test 3</a></li>
-            <li class="" data-nav-id="/solutions/test4/index.html"><a class="padding" href="/solutions/test4/index.html">Test 4</a></li></ul></li>
+            <li class="active " data-nav-id="/solutions/test1/index.html"><a class="padding" href="/solutions/test1/index.html">Test 1</a></li></ul></li>
           </ul>
         </div>
     
@@ -623,8 +641,8 @@ J&#39;aime les oranges</code></pre></div>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1740595268" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1740595268" defer></script>
-    <script src="/js/theme.js?1740595268" defer></script>
+    <script src="/js/clipboard.min.js?1740618060" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1740618060" defer></script>
+    <script src="/js/theme.js?1740618060" defer></script>
   </body>
 </html>
