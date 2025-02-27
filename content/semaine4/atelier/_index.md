@@ -76,6 +76,7 @@ Revenir dans votre dossier personnel.
 
 {{% notice style="info" title="Notez que..." %}}
 Le nombre d'utilisateurs pourrait être différent.
+Utilisez la commande `man` pour trouver l' option de la commande `grep` qui vous aidera à accomplir la tâche demandée.
 {{% /notice %}}
 
 2. Maintenant on veut écrire la ligne de commande qui permet d’afficher le nombre d’utilisateurs qui ont pour shell par défaut un des shells disponibles sur votre machine. Pour cela, il faut parcourir le fichier `/etc/shells` **ligne par ligne** (**hint**: boucle). Vous y trouverez les shells disponibles. À l’exécution de la commande, on aurait pour chacun des shells un résultat de la même forme que le suivant:
@@ -95,7 +96,9 @@ Vous **ne devez pas** indiquer manuellement les noms des shells..
 
 ## Exercice 3
 
+{{% notice style="warning" title="Attention" %}}
 Revenir dans votre dossier personnel.
+{{% /notice %}}
 
 Pour cet exercice:
 - **nomdurépertoire** est affiché automatiquement. 
@@ -106,27 +109,31 @@ Référez-vous au cours de la semaine 2 sur [la commande ls -l](../../../semaine
 
 1. En une seule ligne de commande, on veut savoir combien de **fichiers et dossiers** contient le répertoire courant. Le résultat doit être affiché comme suit :
 ```bash
-Le répertoire `nomdurépertoire` contient   N dossiers
+Le répertoire `nomdurépertoire` contient N fichiers et dossiers
 ```
 
 2. En une seule ligne de commande, on veut savoir combien de **fichiers standards** contient le répertoire courant. Le résultat doit être affiché comme suit :
 ```bash
-Le répertoire `nomdurépertoire` contient   N fichiers standards
+Le répertoire `nomdurépertoire` contient N fichiers standards
 ```
 
 3. En une seule ligne de commande, on veut savoir combien d’éléments ne sont **ni des dossiers ni des fichiers standards** dans le répertoire courant. Le résultat doit être affiché comme suit :
 ```bash
-Le répertoire `nomdurépertoire` contient   N fichiers qui ne sont ni standards ni des répertoires
+Le répertoire `nomdurépertoire` contient N fichiers qui ne sont ni standards ni des répertoires
 ```
 
 4. Écrire une commande qui récupère le nom du **dernier utilisateur** qui a été créé sur votre machine (c'est celui qu'on retrouve à la **dernière ligne** du fichier `/etc/passwd`). Le résultat doit être stocké dans une variable nommée `nomUtilisateur`.
 
 5. En utilisant la variable `nomdurépertoire` qui contient le nom du dernier utilisateur défini dans `/etc/passwd`, écrivez une commande permettant de :
-    - Rechercher tous les fichiers du système (*find*)
+    - Rechercher tous les fichiers à partir de `/home` (*find*)
     - Lister leurs détails avec `ls -l`
     - Filtrer uniquement les fichiers appartenant à cet utilisateur.
     - Filtrer uniquement les fichiers standards. 
     - La commande doit être une seule ligne en utilisant un pipe (`|`) et une boucle `while read`.
+
+{{% notice style="info" title="Hint" %}}
+Utilisez la commande `man` pour trouver les options des commandes `find` et `ls` qui vous aideront à accomplir la tâche demandée.
+{{% /notice %}}
 
 ---
 

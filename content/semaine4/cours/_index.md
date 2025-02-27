@@ -173,7 +173,9 @@ $ less /etc/passwd
 
 ## Rediriger la sortie d’une commande
 
-La sortie standard (`1>` ou `>`) est le flux par défaut où un programme écrit ses résultats, généralement affiché à l'écran (**Terminal**), sauf si redirigé vers un fichier ou un autre processus.
+L'**entrée standard** (`<`) est une source d'information qu'une commande peut utiliser. Par défaut, l'entrée provient du **clavier**. Elle peut aussi provenir d'un fichier.
+
+La **sortie standard** (`1>` ou `>`) est le flux par défaut où un programme écrit ses résultats, généralement affiché à l'écran (**Terminal**), sauf si redirigé vers un fichier ou un autre processus.
 
 **Enregistrer la sortie standard dans un fichier**:
 ```bash
@@ -187,10 +189,10 @@ Ici, le chiffre `1` n'est pas obligatoire. Si on ne le met pas, la sortie standa
 ```bash
 $ find / -name services > resultats.txt
 ```
-La sortie standard (`1>`) n'inclut pas les erreurs. Les erreurs sont envoyées vers la sortie d'erreur standard (`2>`). Le fichier `resultats.txt` ne contiendra pas les lignes ayant une mention d'erreur comme par exemple: **"Permission non accordée"**.
+La **sortie standard** (`1>`) n'inclut pas les erreurs. Les erreurs sont envoyées vers la sortie d'erreur standard (`2>`). Le fichier `resultats.txt` ne contiendra pas les lignes ayant une mention d'erreur comme par exemple: **"Permission non accordée"**.
 {{% /notice %}}
 
-**Ignorer les erreurs à l'aide de `2>`**:
+**Ignorer **les erreurs** à l'aide de `2>`**:
 ```bash
 $ find / -name services 2>/dev/null
 ```

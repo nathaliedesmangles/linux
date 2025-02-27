@@ -77,7 +77,7 @@ $ for i in {1..15}; do echo "Ce cours concerne la semaine$i" > semaine$i/semaine
 
 5. Toujours à partir du répertoire courant, utiliser un **chemin relatif** pour copier dans le dossier **Ateliers** le fichier **`passwd`** qui est dans **`/etc`**. 
 ```bash
-$ cp /etc/passwd ../Ateliers/
+$ cp ../../../../../etc/passwd ../Ateliers/
 ```
 ```
 ├── Ateliers
@@ -146,17 +146,36 @@ $ echo "$(grep -c '/bin/bash' /etc/passwd) utilisateurs ont pour shell /bin/bash
 
 2. Maintenant on veut écrire la ligne de commande qui permet d’afficher le nombre d’utilisateurs qui ont pour shell par défaut un des shells disponibles sur votre machine. Pour cela, il faut parcourir le fichier `/etc/shells` **ligne par ligne** (**hint**: boucle). Vous y trouverez les shells disponibles. 
 ```bash
-for shell in $(cat /etc/shells); do
+while read shell; do
     cpt=$(grep -c "^.*:$shell" /etc/passwd)
-    echo "$cpt utilisateurs ont pour shell $shell";
-done
+    echo "$cpt utilisateurs ont pour shell $shell"
+done < /etc/shells
+
 ```
 
 **Explication :**
-- `$(cat /etc/shells)` : Récupère tous les shells disponibles dans le fichier **`/etc/shells`**.
-- `for shell in $(...)` : Parcourt chaque shell ligne par ligne.
-- `grep -c "^.*:$shell" /etc/passwd` : Compte le nombre d'utilisateurs dont le shell correspond à l'élément `$shell` dans **`/etc/passwd`**. Le `^.*:` garantit que l'on regarde uniquement la partie correspondant au shell (après le `:` dans chaque ligne).
-- `echo "$count utilisateurs ont pour shell $shell"` : Affiche le résultat pour chaque shell.
+- `while read shell; do` : Lit chaque ligne du fichier `/etc/shells` et stocke la valeur dans shell.
+- `grep -c "^.*:$shell" /etc/passwd` : Compte le nombre de lignes dans `/etc/passwd` où le champ shell correspond.
+- `done < /etc/shells` : Indique que la boucle doit lire les entrées de `/etc/shells`.
+
+**Autre solution** :
+```bash
+cat /etc/shells | while read i; do echo "$(cat /etc/passwd | grep $i | wc -l) utilisateurs ont pour shell $i"; done
+```
+
+1. **`cat /etc/shells`**  
+   → Affiche le contenu du fichier `/etc/shells` (liste des shells disponibles sur le système).  
+2. **`| while read i; do ... done`**  
+   → Lit chaque ligne du fichier `/etc/shells` et stocke la valeur dans la variable `i`.  
+3. **`cat /etc/passwd | grep $i | wc -l`**  
+   - `cat /etc/passwd` : Affiche le contenu du fichier `/etc/passwd` (liste des utilisateurs avec leur shell).  
+   - `grep $i` : Filtre les lignes contenant le shell `i`.  
+   - `wc -l` : Compte le nombre de lignes correspondantes (donc le nombre d’utilisateurs utilisant ce shell).  
+4. **`echo "$( ... ) utilisateurs ont pour shell $i"`**  
+
+    
+L’utilisation de `cat` avant `grep` est inutile et moins efficace que la solution précédente.  
+
 
 --- 
 
@@ -195,26 +214,30 @@ $ nomUtilisateur=$(tail -n 1 /etc/passwd | cut -d: -f1)
 
 
 5. En utilisant la variable `nomdurépertoire` qui contient le nom du dernier utilisateur défini dans `/etc/passwd`, écrivez une commande permettant de :
-    - Rechercher tous les fichiers du système (*find*)
+    - Rechercher tous les fichiers à partir de `/home` (*find*)
     - Lister leurs détails avec `ls -l`
     - Filtrer uniquement les fichiers appartenant à cet utilisateur.
     - Filtrer uniquement les fichiers standards. 
     - La commande doit être une seule ligne en utilisant un pipe (`|`) et une boucle `while read`.
 ```bash
-$ find / -type f -user "$nomUtilisateur" 2>/dev/null | while read fichier; do ls -l "$fichier"; done
+$ find /home -type f -user "$nomUtilisateur" 2>/dev/null | while read fichier; do ls -ld "$fichier"; done
 ```
 
 **Explication** :
 - `find / -type f -user "$nomUtilisateur" 2>/dev/null`  
-   - `find /` → Recherche dans tout le système.  
-   - `-type f` → Filtre pour ne garder que les fichiers standards.  
+   - `find /home` → Recherche dans tout le répertoire `/home` et ses sous dossiers.  
+   - `-type f` → Filtre pour ne garder que les fichiers standards (exclut les dossiers et autres types de fichiers).  
    - `-user "$nomUtilisateur"` → Sélectionne uniquement les fichiers appartenant à l’utilisateur défini dans la variable `nomUtilisateur`.  
-   - `2>/dev/null` → Supprime les messages d'erreur liés aux permissions.  
+   - `2>/dev/null` → Supprime les messages d'erreur liés aux permissions pour éviter qu'elles s'affichent.  
 
-- `| while read fichier; do ls -l "$fichier"; done`  
-   - Lit chaque fichier trouvé.  
-   - Utilise `ls -l` pour afficher ses détails.  
+- `| while read fichier; do ls -ld "$fichier"; done`  
+   - Lit chaque fichier trouvé, stockant chaque chemin de fichier dans la variable `fichier`.  
+   - Utilise `ls -ld` pour afficher les détails du fichier (-l pour le format détaillé, -d pour éviter de suivre les liens symboliques).
 
+**Autre solution non optimale**
+```bash
+find /home -name "$user" 2>/dev/null |while read i; do ls -ld $i ; done |grep ^-  
+```
 ---
 
 ## Exercice 4
@@ -227,7 +250,7 @@ $ find / -type f -name "*.txt" 2>/dev/null
 **Explication** :
 - `find /` → Recherche à partir de la racine du système.  
 - `-type f` → Filtre pour ne garder que les fichiers standards.  
-- `-name "*.txt"` → Cherche uniquement les fichiers dont le nom se termine par `.txt`.  
+- `-name "*.txt"` → Cherche uniquement les fichiers avec l'extension `.txt`.
 - `2>/dev/null` → Redirige les erreurs (par exemple, permissions refusées) vers `/dev/null`, les rendant invisibles.  
 
 
@@ -250,7 +273,7 @@ $ find / -type f -name "*.txt" 2>/dev/null | while read fichier; do ls -l "$fich
      - `-f9-` → Le chemin du fichier (prend tout ce qui suit pour éviter les erreurs si le nom contient des espaces).  
 
 
-3. Récupérer la sortie standard de la commande précédente et trier le résultat par **ordre croissant de taille**. (**en une seule commande sans utiliser de variable**).
+3. Récupérer la sortie standard de la commande précédente et **trier** le résultat par **ordre croissant de taille**. (**en une seule commande sans utiliser de variable**).
 ```bash
 $ find / -type f -name "*.txt" 2>/dev/null | while read fichier; do ls -l "$fichier" | cut -d' ' -f5,9-; done | sort -n
 ```
