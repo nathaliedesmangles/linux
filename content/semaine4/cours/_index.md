@@ -147,7 +147,7 @@ $ less /etc/passwd
 ### ***sort***: Trier des lignes
 
 - L'option `-k` permet de spécifier la colonne (ou champ) à utiliser pour le tri.
-    - Les colonnes sont séparées par des espaces ou des tabulations par défaut.
+    - Les colonnes sont séparées par des **espaces** ou des **tabulations** par défaut.
 - L'option `-n` permet de trier des nombres correctement (plutôt qu’en mode texte).
 
    **Trier un fichier alphabétiquement** :
@@ -164,7 +164,11 @@ $ less /etc/passwd
    ```bash
    $ sort -k2 -n profs.txt
    ```
+   ou
 
+   ```bash
+   $ sort -k2n profs.txt
+   ```
 ---
 
 ## Rediriger la sortie d’une commande
