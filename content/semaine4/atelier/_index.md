@@ -139,6 +139,10 @@ Utilisez la commande `man` pour trouver les options des commandes `find` et `ls`
 
 ## Exercice 4
 
+{{% notice style="info" title="Hint" %}}
+Pour les #2 et #3, Utilisez la commande `man` pour trouver les options de la commande `sort` qui vous aideront à accomplir la tâche demandée.
+{{% /notice %}}
+
 1. En tant qu’utilisateur standard, On veut trouver tous les fichiers `.txt` sur votre disque dur (**ne pas utiliser `sudo`**). Écrire la commande qui permet de retrouver cette information **sans afficher les erreurs**.
 
 2. Récupérer la sortie standard de la commande précédente et à partir de son résultat, **lire chaque ligne** et à l'aide de la commande `ls`, afficher la taille de ces fichiers suivi du chemin vers les fichiers.(**en une seule commande sans utiliser de variable**)

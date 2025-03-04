@@ -43,7 +43,7 @@ draft = true
    ```bash
    #!/bin/bash
 
-   wget http://gyoukou.ca/vimrc.dot || echo ERREUR
+   wget https://linuxh25.netlify.app/semaine7/atelier/vimrc.dot || echo ERREUR
    mv vimrc.dot ~/.vimrc
    sudo yum install -y epel-release
    sudo yum install -y meld
@@ -74,9 +74,9 @@ draft = true
 
    ```bash
    $ cd ~
-   $ wget http://gyoukou.ca/atelier_06.tar.gz || echo ERREUR
-   $ tar zxvf atelier_06.tar.gz
-   $ cd atelier_06
+   $ wget https://linuxh25.netlify.app/semaine7/atelier/atelier_07.tar.gz || echo ERREUR
+   $ tar zxvf atelier_07.tar.gz
+   $ cd atelier_07
    ```
 ---
 

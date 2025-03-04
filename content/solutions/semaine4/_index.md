@@ -1,7 +1,6 @@
 +++
 title = "Atelier 4"
 weight = 164
-draft = true
 +++
 
 # Solution des exercices
@@ -269,24 +268,37 @@ $ find / -type f -name "*.txt" 2>/dev/null | while read fichier; do ls -l "$fich
    - `ls -l "$fichier"` affiche les détails du fichier.  
    - `tr -s ' '` compresse les espaces multiples en un seul espace pour éviter les décalages dans `cut`.  
    - `cut -d' ' -f5,9-` extrait :
-     - `-f5` → La taille du fichier.  
-     - `-f9-` → Le chemin du fichier (prend tout ce qui suit pour éviter les erreurs si le nom contient des espaces).  
+     - `-f5` → La taille du fichier (5ᵉ champ).  
+     - `-f9-` → Extrait le chemin du fichier (le nom commence au 9ᵉ champ).  
 
 
 3. Récupérer la sortie standard de la commande précédente et **trier** le résultat par **ordre croissant de taille**. (**en une seule commande sans utiliser de variable**).
 ```bash
-$ find / -type f -name "*.txt" 2>/dev/null | while read fichier; do ls -l "$fichier" | cut -d' ' -f5,9-; done | sort -n
+$ find / -type f -name "*.txt" 2>/dev/null | while read fichier; do ls -l "$fichier" | tr -s ' ' | cut -d' ' -f5,9-; done | sort -n
 ```
 
-**Explication** :
-- `find / -type f -name "*.txt" 2>/dev/null`  
-   - Trouve tous les fichiers `.txt` accessibles.  
-   - Ignore les erreurs de permission.  
-- `| while read fichier; do ls -l "$fichier" | cut -d' ' -f5,9-; done`  
-   - Lit chaque fichier ligne par ligne.  
-   - `ls -l "$fichier"` affiche les détails.  
-   - `cut -d' ' -f5,9-` extrait :
-     - `-f5` → La taille du fichier.  
-     - `-f9-` → Le chemin du fichier (peut être sur plusieurs champs si des espaces sont présents).  
+**Explication** :  
 - `| sort -n`  
    - Trie les résultats par ordre croissant de taille (`sort -n` pour tri numérique).  
+
+**Autres solutions**
+```bash
+$ find / -name "*.txt" 2>/dev/null| while read i; do du -sh $i; done | sort -h
+```
+
+**Explication**
+- `while read i` → Lit chaque ligne de la sortie de find, stockant chaque chemin de fichier dans i.
+- `du -sh $i` →
+   - `du` (Disk Usage) mesure la taille du fichier.
+   - `s` → Affiche uniquement la taille totale du fichier, sans détails supplémentaires.
+   - `h` → Formate la taille en unités lisibles (K, M, G).
+- `sort -h` → Trie les fichiers par taille, en interprétant correctement les suffixes (K, M, G).
+- Sans `-h`, le tri serait incorrect pour des valeurs comme 512K et 1.2M (car sort classerait alphabétiquement).
+
+
+```bash
+$ find / -name "*.txt" 2>/dev/null | while read fichier; do ls -lh $fichier; done |sort -t' ' -k5h
+```
+
+**Explication**
+- `ls -lh $fichier` → Affiche les détails du fichier (ls -l), mais avec -h pour afficher la taille dans un format lisible (Ko, Mo, Go).

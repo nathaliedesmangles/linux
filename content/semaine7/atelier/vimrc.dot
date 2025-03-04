@@ -1,0 +1,35 @@
+" afficher les numéros de lignes
+set nu
+
+" recherche incrémentale
+set incsearch
+
+" recherche visuelle
+set hls
+
+" F2 pour effacer les traces de la recherche
+map <F2> :let @/=""<CR>
+
+" afficher la commande en cours
+set showcmd
+
+" afficher les tabulations
+set list
+set lcs=tab:»·
+
+" utiliser viminfo pour sauvegarder l'historique
+set viminfo='1000,f1,%,<500,\"100,:100,n~/.viminfo
+
+" sauvegarder/restaurer l'emplement du curseur
+function! ResCur()
+    if line("'\"") <= line("$")
+        normal! g`"
+        return 1
+    endif
+endfunction
+
+augroup resCur
+    autocmd!
+    autocmd BufWinEnter * call ResCur()
+augroup END
+
