@@ -113,8 +113,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "420-ZG4-MO Système d’exploitation Linux",
-    "content": "Plan de la leçon Théorie :\nQu’est-ce qu’un processus ? Exemples de processus. L’exécution en arrière-plan. Visualiser les processus. Les états des processus. La gestion des processus. Le code de retour des commandes. Les combinaison de commandes. La création de scripts bash. Atelier :\nGestion et manipulation de processus à l’aide de scripts.",
-    "description": "Plan de la leçon Théorie :\nQu’est-ce qu’un processus ? Exemples de processus. L’exécution en arrière-plan. Visualiser les processus. Les états des processus. La gestion des processus. Le code de retour des commandes. Les combinaison de commandes. La création de scripts bash. Atelier :\nGestion et manipulation de processus à l’aide de scripts.",
+    "content": "Plan de la leçon Théorie : Lundi 10 mars\nQu’est-ce qu’un processus ? Exemples de processus. L’exécution en arrière-plan. Visualiser les processus. Les états des processus. La gestion des processus. Le code de retour des commandes. Les combinaison de commandes. La création de scripts bash. Atelier : Jeudi 13 mars\nGestion et manipulation de processus à l’aide de scripts.",
+    "description": "Plan de la leçon Théorie : Lundi 10 mars\nQu’est-ce qu’un processus ? Exemples de processus. L’exécution en arrière-plan. Visualiser les processus. Les états des processus. La gestion des processus. Le code de retour des commandes. Les combinaison de commandes. La création de scripts bash. Atelier : Jeudi 13 mars\nGestion et manipulation de processus à l’aide de scripts.",
     "tags": [],
     "title": "Les processus Linux",
     "uri": "/semaine5/index.html"
@@ -137,8 +137,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "420-ZG4-MO Système d’exploitation Linux",
-    "content": "Plan de la leçon Théorie : lundi 17 mars Rôles des expressions régulières. Quelques motifs de base. La commande egrep. L’opérateur logique OU. Les ensembles de caractères. Les intervalles. Les quantificateurs. Les groupes. L’échappement de caractères spéciaux. Test #2 : jeudi 20 mars Durée: 1h45 Format: À déterminer Matière: Semaine 4: Semaine 5: Documentation permise: À déterminer. Atelier : Remise vendredi 21 mars 23h59. Utilisation d’expressions régulières.",
-    "description": "Plan de la leçon Théorie : lundi 17 mars Rôles des expressions régulières. Quelques motifs de base. La commande egrep. L’opérateur logique OU. Les ensembles de caractères. Les intervalles. Les quantificateurs. Les groupes. L’échappement de caractères spéciaux. Test #2 : jeudi 20 mars Durée: 1h45 Format: À déterminer Matière: Semaine 4: Semaine 5: Documentation permise: À déterminer. Atelier : Remise vendredi 21 mars 23h59. Utilisation d’expressions régulières.",
+    "content": "Plan de la leçon Théorie : lundi 17 mars Rôles des expressions régulières. Quelques motifs de base. La commande egrep. L’opérateur logique OU. Les ensembles de caractères. Les intervalles. Les quantificateurs. Les groupes. L’échappement de caractères spéciaux. Test #2 : jeudi 20 mars Durée: 1h45 Format: Test Moodle Questions à choix multiples Questions à réponses courtes Questions à coder (scripts) Matière: Semaine 4: Semaine 5: Documentation permise: À déterminer. Atelier : Remise vendredi 21 mars 23h59. Utilisation d’expressions régulières.",
+    "description": "Plan de la leçon Théorie : lundi 17 mars Rôles des expressions régulières. Quelques motifs de base. La commande egrep. L’opérateur logique OU. Les ensembles de caractères. Les intervalles. Les quantificateurs. Les groupes. L’échappement de caractères spéciaux. Test #2 : jeudi 20 mars Durée: 1h45 Format: Test Moodle Questions à choix multiples Questions à réponses courtes Questions à coder (scripts) Matière: Semaine 4: Semaine 5: Documentation permise: À déterminer. Atelier : Remise vendredi 21 mars 23h59. Utilisation d’expressions régulières.",
     "tags": [],
     "title": "Les expressions régulières",
     "uri": "/semaine6/index.html"

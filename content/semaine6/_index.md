@@ -22,7 +22,10 @@ weight = 60
 
 - **Test #2 : jeudi 20 mars**
   - **Durée**: 1h45
-  - **Format**: À déterminer 
+  - **Format**: Test Moodle
+	- Questions à choix multiples
+	- Questions à réponses courtes
+	- Questions à coder (scripts) 
   - **Matière**:
     - **Semaine 4**: 
     - **Semaine 5**: 

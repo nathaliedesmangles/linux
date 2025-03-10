@@ -7,7 +7,7 @@ weight = 50
 
 ## Plan de la leçon
 
-- **Théorie :**
+- **Théorie : Lundi 10 mars**
   - Qu'est-ce qu'un processus ?
      - Exemples de processus.
      - L'exécution en arrière-plan.
@@ -18,5 +18,5 @@ weight = 50
   - Les combinaison de commandes.
   - La création de scripts bash.
 
-- **Atelier :**
+- **Atelier : Jeudi 13 mars**
   - Gestion et manipulation de processus à l'aide de scripts.
