@@ -361,6 +361,7 @@ Un script Bash est un fichier `.sh` contenant une série de commandes.
    ```bash
    #!/bin/bash
    ```
+   Elle n'est pas obligatoire, mais **pour ce cours**, cette ligne DOIT TOUJOURS être présente. Il faut aussi comprendre son utilité.
 3. Écrire les commandes et ajouter des commentaires (précédés de `#`).
 
 > **Exemple : fichier monscript.sh**
