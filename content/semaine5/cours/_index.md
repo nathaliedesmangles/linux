@@ -48,7 +48,6 @@ $ fg         # Ramène au premier plan
 Pour arrêter une commande au premier plan : `Ctrl-c`
 {{% /notice %}}
 
----
 
 ## Affichage et gestion des processus
 
@@ -67,12 +66,12 @@ Chaque processus est identifié par :
 | Commande | Description |
 |----------|------------|
 | `ps -f` | Affiche les processus en cours d'exécution depuis le terminal. |
+| `ps -ef` | Affiche les détails de tous les processus du système. |
+| `pstree` | Affiche l’arborescence des processus. |
 | `top` | Affiche les processus en temps réel. |
 | `kill pid` | Termine un processus avec son `pid`. |
 | `kill -9 pid` | Termine immédiatement un processus. |
 | `killall nom_processus` | Termine tous les processus portant un certain nom. |
-| `pstree` | Affiche l’arborescence des processus. |
-| `ps -ef` | Affiche les détails de tous les processus du système. |
 
 
 ### Exercice 2
@@ -90,7 +89,6 @@ $ ps -ef | grep firefox  # Trouver le PID et PPID
 Le `pid` du parent de Firefox doit être le `pid` de votre SHELL.
 {{% /notice %}}
 
----
 
 ## États des processus
 
@@ -129,7 +127,6 @@ Le `ppid` de firefox est le `pid` de votre terminal.
 ***init***
 {{% /notice %}}
 
----
 
 ## Exécution persistante des processus
 
@@ -181,7 +178,6 @@ $ firefox &
 Avec l'utilisation de `disown` et `nohup`, le terminal peut être fermé mais Firefox reste ouvert.
 {{% /notice %}}
 
----
 
 ## Codes de retour et variables système
 
@@ -218,7 +214,6 @@ $ echo $?  # Probablement 1 à cause des permissions
 Le code de retour est différent de 0 (probablement 1), car il y a eu  une erreur (permission: accès refusé)
 {{% /notice %}}
 
----
 
 ## Opérateurs de comparaison en Bash
 
@@ -232,8 +227,6 @@ Les opérateurs de comparaison permettent de tester des valeurs numériques dans
 | `-gt` | Strictement supérieur (`greater than`) | `test $var -gt 0` |
 | `-le` | Inférieur ou égal (`less or equal`) | `test $var -le 0` |
 | `-ge` | Supérieur ou égal (`greater or equal`) | `test $var -ge 0` |
-
----
 
 ## Attente de la fin d'exécution d'une commande
 
@@ -256,7 +249,6 @@ wait
 echo "Toutes les copies sont terminées."
 ```
 
----
 
 ## Combinaison et synchronisation des commandes
 
@@ -295,7 +287,6 @@ Afficher "OK" si la commande réussit, sinon "ERREUR" :
 $ test $var -eq 0 && echo "$var = 0" || echo "$var != 0"
 ```
 
----
 
 ### Exercice 6 : Expérimentation des opérateurs logiques
 
@@ -335,7 +326,6 @@ $ find / -name "*.conf" & ls &
 Les deux commendes s'exécutent simultanément.
 {{% /notice %}}
 
----
 
 ## Priorité des opérateurs
 
@@ -359,7 +349,6 @@ $ find / -name "*.conf" 2>/dev/null || (ls | grep a)
 
 Seul le résultat de `ls` sera filtré par `grep` en cas d'échec de `find`.
 
----
 
 ## Création et exécution d'un script Bash
 
@@ -392,7 +381,6 @@ touch fiche{1..5}.txt
 $ bash chemin_vers_monscript.sh
 ```
 
----
 
 ## Scripts concurrents
 

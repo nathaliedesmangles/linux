@@ -37,11 +37,11 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
     <meta itemprop="wordCount" content="1653">
     <title>Les processus de Linux :: 420-ZG4-MO LINUX</title>
     <link href="/semaine5/cours/index.xml" rel="alternate" type="application/rss+xml" title="Les processus de Linux :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1741571133" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1741571133" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1741571133" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1741571133" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1741571133" rel="stylesheet">
-    <link href="/css/theme.min.css?1741571133" rel="stylesheet">
-    <link href="/css/format-html.min.css?1741571133" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1741571614" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1741571614" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1741571614" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1741571614" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1741571614" rel="stylesheet">
+    <link href="/css/theme.min.css?1741571614" rel="stylesheet">
+    <link href="/css/format-html.min.css?1741571614" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -240,7 +240,6 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 <p>Pour arrêter une commande au premier plan : <code>Ctrl-c</code></p>
   </div>
 </details>
-<hr>
 <h2 id="affichage-et-gestion-des-processus">Affichage et gestion des processus</h2>
 <p>Chaque processus est identifié par :</p>
 <table>
@@ -278,6 +277,14 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
           <td style="text-align: left">Affiche les processus en cours d&rsquo;exécution depuis le terminal.</td>
       </tr>
       <tr>
+          <td style="text-align: left"><code>ps -ef</code></td>
+          <td style="text-align: left">Affiche les détails de tous les processus du système.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>pstree</code></td>
+          <td style="text-align: left">Affiche l’arborescence des processus.</td>
+      </tr>
+      <tr>
           <td style="text-align: left"><code>top</code></td>
           <td style="text-align: left">Affiche les processus en temps réel.</td>
       </tr>
@@ -292,14 +299,6 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
       <tr>
           <td style="text-align: left"><code>killall nom_processus</code></td>
           <td style="text-align: left">Termine tous les processus portant un certain nom.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>pstree</code></td>
-          <td style="text-align: left">Affiche l’arborescence des processus.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>ps -ef</code></td>
-          <td style="text-align: left">Affiche les détails de tous les processus du système.</td>
       </tr>
   </tbody>
 </table>
@@ -322,10 +321,9 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 <p>Le <code>pid</code> du parent de Firefox doit être le <code>pid</code> de votre SHELL.</p>
   </div>
 </details>
-<hr>
 <h2 id="états-des-processus">États des processus</h2>
-<p><a href="#R-image-2bd06e531d3be4d3c93905a866a5bad6" class="lightbox-link"><img alt="États des processus" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine5/cours/etats.png?width=50vw" style=" height: auto; width: 50vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2bd06e531d3be4d3c93905a866a5bad6"><img alt="États des processus" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine5/cours/etats.png?width=50vw"></a></p>
+<p><a href="#R-image-5ff5df28e13fce0727a7c75508373572" class="lightbox-link"><img alt="États des processus" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine5/cours/etats.png?width=50vw" style=" height: auto; width: 50vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5ff5df28e13fce0727a7c75508373572"><img alt="États des processus" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine5/cours/etats.png?width=50vw"></a></p>
 <table>
   <thead>
       <tr>
@@ -392,7 +390,6 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 <p><em><strong>init</strong></em></p>
   </div>
 </details>
-<hr>
 <h2 id="exécution-persistante-des-processus">Exécution persistante des processus</h2>
 <p>Si un terminal est fermé, ses processus sont arrêtés. Pour éviter cela :</p>
 <table>
@@ -456,7 +453,6 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 <p>Avec l&rsquo;utilisation de <code>disown</code> et <code>nohup</code>, le terminal peut être fermé mais Firefox reste ouvert.</p>
   </div>
 </details>
-<hr>
 <h2 id="codes-de-retour-et-variables-système">Codes de retour et variables système</h2>
 <table>
   <thead>
@@ -503,7 +499,6 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 <p>Le code de retour est différent de 0 (probablement 1), car il y a eu  une erreur (permission: accès refusé)</p>
   </div>
 </details>
-<hr>
 <h2 id="opérateurs-de-comparaison-en-bash">Opérateurs de comparaison en Bash</h2>
 <p>Les opérateurs de comparaison permettent de tester des valeurs numériques dans des conditions.</p>
 <table>
@@ -547,7 +542,6 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
       </tr>
   </tbody>
 </table>
-<hr>
 <h2 id="attente-de-la-fin-dexécution-dune-commande">Attente de la fin d&rsquo;exécution d&rsquo;une commande</h2>
 <p>Il est possible d&rsquo;attendre qu&rsquo;une commande en arrière-plan se termine avant de poursuivre l&rsquo;exécution d&rsquo;autres commandes.</p>
 <blockquote>
@@ -561,7 +555,6 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 </span></span><span style="display:flex;"><span>cp dossier2/* destination2 &amp;
 </span></span><span style="display:flex;"><span>wait 
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Toutes les copies sont terminées.&#34;</span></span></span></code></pre></div>
-<hr>
 <h2 id="combinaison-et-synchronisation-des-commandes">Combinaison et synchronisation des commandes</h2>
 <h3 id="opérateurs-logiques">Opérateurs logiques</h3>
 <table>
@@ -606,7 +599,6 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ commande <span style="color:#f92672">||</span> echo <span style="color:#e6db74">&#34;ERREUR&#34;</span></span></span></code></pre></div>
 <p>Afficher &ldquo;OK&rdquo; si la commande réussit, sinon &ldquo;ERREUR&rdquo; :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ test $var -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;</span>$var<span style="color:#e6db74"> = 0&#34;</span> <span style="color:#f92672">||</span> echo <span style="color:#e6db74">&#34;</span>$var<span style="color:#e6db74"> != 0&#34;</span></span></span></code></pre></div>
-<hr>
 <h3 id="exercice-6--expérimentation-des-opérateurs-logiques">Exercice 6 : Expérimentation des opérateurs logiques</h3>
 <ol>
 <li>
@@ -646,7 +638,6 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 <p>Les deux commendes s&rsquo;exécutent simultanément.</p>
   </div>
 </details>
-<hr>
 <h2 id="priorité-des-opérateurs">Priorité des opérateurs</h2>
 <p>On peut utiliser des parenthèses pour organiser l&rsquo;ordre d&rsquo;exécution des opérateurs :</p>
 <blockquote>
@@ -661,7 +652,6 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 <p>Si on écrit :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ find / -name <span style="color:#e6db74">&#34;*.conf&#34;</span> 2&gt;/dev/null <span style="color:#f92672">||</span> <span style="color:#f92672">(</span>ls | grep a<span style="color:#f92672">)</span></span></span></code></pre></div>
 <p>Seul le résultat de <code>ls</code> sera filtré par <code>grep</code> en cas d&rsquo;échec de <code>find</code>.</p>
-<hr>
 <h2 id="création-et-exécution-dun-script-bash">Création et exécution d&rsquo;un script Bash</h2>
 <p>Un script Bash est un fichier <code>.sh</code> contenant une série de commandes.</p>
 <h3 id="création-dun-script">Création d&rsquo;un script</h3>
@@ -683,7 +673,6 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 </span></span><span style="display:flex;"><span>touch fiche<span style="color:#f92672">{</span>1..5<span style="color:#f92672">}</span>.txt</span></span></code></pre></div>
 <h3 id="exécution-dun-script">Exécution d&rsquo;un script</h3>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ bash chemin_vers_monscript.sh</span></span></code></pre></div>
-<hr>
 <h2 id="scripts-concurrents">Scripts concurrents</h2>
 <p>Un script concurrent contient des commandes exécutées <strong>en arrière-plan</strong>.</p>
 <blockquote>
@@ -775,7 +764,7 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1741571133";
+          window.index_js_url="/searchindex.en.js?1741571614";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -788,12 +777,12 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1741571133" defer></script>
-        <script src="/js/lunr/lunr.min.js?1741571133" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1741571133" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1741571133" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1741571133" defer></script>
-        <script src="/js/search.js?1741571133" defer></script>
+        <script src="/js/auto-complete.js?1741571614" defer></script>
+        <script src="/js/lunr/lunr.min.js?1741571614" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1741571614" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1741571614" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1741571614" defer></script>
+        <script src="/js/search.js?1741571614" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -866,8 +855,8 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1741571133" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1741571133" defer></script>
-    <script src="/js/theme.js?1741571133" defer></script>
+    <script src="/js/clipboard.min.js?1741571614" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1741571614" defer></script>
+    <script src="/js/theme.js?1741571614" defer></script>
   </body>
 </html>
