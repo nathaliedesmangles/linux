@@ -33,6 +33,6 @@ weight = 60
 
 ---
 
-- **Atelier : Remise vendredi 21 mars 23h59**.
+- **Atelier : Remise lundi 24 mars 23h59**.
   - Utilisation d'expressions régulières.
 

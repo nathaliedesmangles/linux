@@ -190,7 +190,7 @@ Avec l'utilisation de `disown` et `nohup`, le terminal peut être fermé mais Fi
 >
 > ```bash
 > $ test -e fichier   
-> $ echo $?  # Affiche 0 si le fichier existe, 1 sinon
+> $ echo $?  # Affiche 0 si le fichier existe, un autre chiffre sinon
 > ```
 
 ### Exercice 5
@@ -239,6 +239,8 @@ $ cp dossierVolumineux/* destination &
 $ wait $!
 ```
 
+`wait`  attend que la copie en arrière-plan soit terminée avant de poursuivre.
+
 Dans un script, on peut attendre plusieurs commandes exécutées en arrière-plan :
 
 ```bash
@@ -248,7 +250,6 @@ cp dossier2/* destination2 &
 wait 
 echo "Toutes les copies sont terminées."
 ```
-
 
 ## Combinaison et synchronisation des commandes
 
@@ -264,29 +265,26 @@ echo "Toutes les copies sont terminées."
 > **Exemples :**
 
 Tester l'existence d'un fichier avant d'exécuter une commande :
-
 ```bash
 $ test -e fichier && commande
 ```
 
 Afficher "OK" si la commande réussit :
-
 ```bash
 $ commande && echo "OK"
 ```
 
 Afficher "ERREUR" si la commande échoue :
-
 ```bash
 $ commande || echo "ERREUR"
 ```
 
 Afficher "OK" si la commande réussit, sinon "ERREUR" :
-
 ```bash
-$ test $var -eq 0 && echo "$var = 0" || echo "$var != 0"
+$ test $var -eq 0 && echo "OK" || echo "ERREUR"
 ```
 
+C'est l'équivalent d'un SI var = 0 ALORS affiche "OK", SINON affiche "ERREUR". 
 
 ### Exercice 6 : Expérimentation des opérateurs logiques
 
@@ -349,7 +347,6 @@ $ find / -name "*.conf" 2>/dev/null || (ls | grep a)
 
 Seul le résultat de `ls` sera filtré par `grep` en cas d'échec de `find`.
 
-
 ## Création et exécution d'un script Bash
 
 Un script Bash est un fichier `.sh` contenant une série de commandes.
@@ -380,7 +377,6 @@ touch fiche{1..5}.txt
 ```bash
 $ bash chemin_vers_monscript.sh
 ```
-
 
 ## Scripts concurrents
 
