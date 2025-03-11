@@ -15,13 +15,37 @@ Avec **`grep`**, vous pouvez filtrer un texte pour ne conserver que les lignes c
 
 ### Exemple : URL Web
 
-Un exemple d'expression régulière pour capturer une URL Web :
+Un exemple d'expression régulière pour capturer une URL (adresse web):
 
 ```
 https?://[a-zA-Z0-9\.-]+\.[a-zA-Z]{2,4}(/\S*)?
 ```
 
----
+**Expications** : 
+
+1. **`https?://`** → Indique que l'URL commence par `http://` ou `https://`.  
+   - Le `s?` signifie que le `s` est facultatif (pour inclure HTTP et HTTPS).  
+
+2. **`[a-zA-Z0-9\.-]+`** → Représente le nom de domaine, qui peut contenir :  
+   - Des lettres (`a-z`, `A-Z`),  
+   - Des chiffres (`0-9`),  
+   - Des points (`.`) et des tirets (`-`).  
+   - Le `+` signifie qu’il doit y avoir au moins un caractère.  
+
+3. **`\.[a-zA-Z]{2,4}`** → Désigne l’extension du domaine, comme `.com`, `.org`, `.net`, etc.  
+   - Le `\.` correspond au point avant l’extension.  
+   - `[a-zA-Z]{2,4}` signifie que l’extension contient entre 2 et 4 lettres (ex. `fr`, `com`, `info`).  
+
+4. **`(/\S*)?`** → Capture la partie après le domaine (le chemin).  
+   - Le `/` signifie que l’URL peut contenir un chemin (ex. `/page1`).  
+   - `\S*` signifie « zéro ou plusieurs caractères qui ne sont pas des espaces » (le contenu du chemin).  
+   - Le `?` indique que cette partie est facultative (l’URL peut se terminer après l’extension du domaine).  
+
+### Exemple d'URLs valides selon cette regex :  
+- `http://example.com`  
+- `https://www.mon-site.fr/page1`  
+- `https://blog.exemple.net/article`  
+
 
 ## Premiers pas avec les expressions régulières
 
@@ -34,7 +58,6 @@ Voici quelques motifs de base et leurs significations :
 | `^`         | Indique le début d'une ligne.              | `^a` : un "a" au début.      | Toute ligne ne commençant pas par "a".   |
 | `$`         | Indique la fin d'une ligne.                | `a$` : un "a" à la fin.      | Toute ligne ne se terminant pas par "a". |
 
----
 
 ### Commandes pratiques avec *egrep*
 
@@ -60,7 +83,6 @@ La commande **`egrep`** est une version avancée de `grep`, qui prend en charge 
   $ egrep 'a.z' /etc/services
   ```
 
----
 
 ## Opérateurs logiques
 
@@ -77,8 +99,6 @@ L'opérateur **`|`** permet de rechercher des lignes contenant l'une ou l'autre 
   ```bash
   $ egrep '^#|s$' /etc/services
   ```
-
----
 
 ## Ensembles de caractères
 
@@ -123,7 +143,6 @@ Les **ensembles** permettent de rechercher plusieurs possibilités similaires en
   $ egrep '^[^#]' /etc/services
   ```
 
----
 
 ## Quantificateurs
 
@@ -153,7 +172,6 @@ Les quantificateurs précisent le nombre de répétitions d'un motif.
   $ egrep '[a-z]{3,6}' fichier
   ```
 
----
 
 ## Groupes
 
@@ -165,7 +183,6 @@ Les **groupes** permettent de regrouper des parties d'expressions avec des paren
   ```
   Correspond à : "zéro ou plusieurs 'ab', suivi d'un 'c'". Cela capture "c", "abc", "ababc", etc.
 
----
 
 ## Échappement
 

@@ -22,14 +22,14 @@ cat : pour afficher le contenu des fichiers, sed : pour les transformations text
     <meta itemprop="name" content="Les expressions régulières :: 420-ZG4-MO LINUX">
     <meta itemprop="description" content="Introduction aux expressions régulières Dans l’univers Linux, la manipulation des fichiers texte est une tâche essentielle. Parmi les outils utilisés pour ce faire, on trouve notamment :
 cat : pour afficher le contenu des fichiers, sed : pour les transformations textuelles, grep : pour rechercher et filtrer des lignes. Avec grep, vous pouvez filtrer un texte pour ne conserver que les lignes contenant un mot ou une expression donnée, ou bien les exclure. Mais comment faire si vous souhaitez rechercher des motifs plus complexes, comme des adresses e-mail ou des numéros de téléphone ? C’est ici qu’interviennent les expressions régulières, un outil puissant pour décrire des motifs précis et identifier des textes ayant une structure particulière.">
-    <meta itemprop="wordCount" content="699">
+    <meta itemprop="wordCount" content="857">
     <title>Les expressions régulières :: 420-ZG4-MO LINUX</title>
     <link href="/semaine6/cours/index.xml" rel="alternate" type="application/rss+xml" title="Les expressions régulières :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1741627956" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1741627956" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1741627956" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1741627956" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1741627956" rel="stylesheet">
-    <link href="/css/theme.min.css?1741627956" rel="stylesheet">
-    <link href="/css/format-html.min.css?1741627956" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1741715109" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1741715109" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1741715109" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1741715109" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1741715109" rel="stylesheet">
+    <link href="/css/theme.min.css?1741715109" rel="stylesheet">
+    <link href="/css/format-html.min.css?1741715109" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -95,6 +95,7 @@ cat : pour afficher le contenu des fichiers, sed : pour les transformations text
     <li><a href="#introduction-aux-expressions-régulières">Introduction aux expressions régulières</a>
       <ul>
         <li><a href="#exemple--url-web">Exemple : URL Web</a></li>
+        <li><a href="#exemple-durls-valides-selon-cette-regex-">Exemple d&rsquo;URLs valides selon cette regex :</a></li>
       </ul>
     </li>
     <li><a href="#premiers-pas-avec-les-expressions-régulières">Premiers pas avec les expressions régulières</a>
@@ -161,9 +162,47 @@ cat : pour afficher le contenu des fichiers, sed : pour les transformations text
 </ul>
 <p>Avec <strong><code>grep</code></strong>, vous pouvez filtrer un texte pour ne conserver que les lignes contenant un mot ou une expression donnée, ou bien les exclure. Mais comment faire si vous souhaitez rechercher des motifs plus complexes, comme des adresses e-mail ou des numéros de téléphone ? C&rsquo;est ici qu&rsquo;interviennent les <strong>expressions régulières</strong>, un outil puissant pour décrire des motifs précis et identifier des textes ayant une structure particulière.</p>
 <h3 id="exemple--url-web">Exemple : URL Web</h3>
-<p>Un exemple d&rsquo;expression régulière pour capturer une URL Web :</p>
+<p>Un exemple d&rsquo;expression régulière pour capturer une URL (adresse web):</p>
 <div class="highlight wrap-code"><pre tabindex="0"><code>https?://[a-zA-Z0-9\.-]+\.[a-zA-Z]{2,4}(/\S*)?</code></pre></div>
-<hr>
+<p><strong>Expications</strong> :</p>
+<ol>
+<li>
+<p><strong><code>https?://</code></strong> → Indique que l&rsquo;URL commence par <code>http://</code> ou <code>https://</code>.</p>
+<ul>
+<li>Le <code>s?</code> signifie que le <code>s</code> est facultatif (pour inclure HTTP et HTTPS).</li>
+</ul>
+</li>
+<li>
+<p><strong><code>[a-zA-Z0-9\.-]+</code></strong> → Représente le nom de domaine, qui peut contenir :</p>
+<ul>
+<li>Des lettres (<code>a-z</code>, <code>A-Z</code>),</li>
+<li>Des chiffres (<code>0-9</code>),</li>
+<li>Des points (<code>.</code>) et des tirets (<code>-</code>).</li>
+<li>Le <code>+</code> signifie qu’il doit y avoir au moins un caractère.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>\.[a-zA-Z]{2,4}</code></strong> → Désigne l’extension du domaine, comme <code>.com</code>, <code>.org</code>, <code>.net</code>, etc.</p>
+<ul>
+<li>Le <code>\.</code> correspond au point avant l’extension.</li>
+<li><code>[a-zA-Z]{2,4}</code> signifie que l’extension contient entre 2 et 4 lettres (ex. <code>fr</code>, <code>com</code>, <code>info</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong><code>(/\S*)?</code></strong> → Capture la partie après le domaine (le chemin).</p>
+<ul>
+<li>Le <code>/</code> signifie que l’URL peut contenir un chemin (ex. <code>/page1</code>).</li>
+<li><code>\S*</code> signifie « zéro ou plusieurs caractères qui ne sont pas des espaces » (le contenu du chemin).</li>
+<li>Le <code>?</code> indique que cette partie est facultative (l’URL peut se terminer après l’extension du domaine).</li>
+</ul>
+</li>
+</ol>
+<h3 id="exemple-durls-valides-selon-cette-regex-">Exemple d&rsquo;URLs valides selon cette regex :</h3>
+<ul>
+<li><code>http://example.com</code></li>
+<li><code>https://www.mon-site.fr/page1</code></li>
+<li><code>https://blog.exemple.net/article</code></li>
+</ul>
 <h2 id="premiers-pas-avec-les-expressions-régulières">Premiers pas avec les expressions régulières</h2>
 <p>Voici quelques motifs de base et leurs significations :</p>
 <table>
@@ -202,7 +241,6 @@ cat : pour afficher le contenu des fichiers, sed : pour les transformations text
       </tr>
   </tbody>
 </table>
-<hr>
 <h3 id="commandes-pratiques-avec-egrep">Commandes pratiques avec <em>egrep</em></h3>
 <p>La commande <strong><code>egrep</code></strong> est une version avancée de <code>grep</code>, qui prend en charge les expressions régulières étendues (ERE).</p>
 <ul>
@@ -223,7 +261,6 @@ cat : pour afficher le contenu des fichiers, sed : pour les transformations text
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;a.z&#39;</span> /etc/services</span></span></code></pre></div>
 </li>
 </ul>
-<hr>
 <h2 id="opérateurs-logiques">Opérateurs logiques</h2>
 <h3 id="le-ou-">Le OU (<strong>|</strong>)</h3>
 <p>L&rsquo;opérateur <strong><code>|</code></strong> permet de rechercher des lignes contenant l&rsquo;une ou l&rsquo;autre des expressions spécifiées.</p>
@@ -237,7 +274,6 @@ cat : pour afficher le contenu des fichiers, sed : pour les transformations text
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;^#|s$&#39;</span> /etc/services</span></span></code></pre></div>
 </li>
 </ul>
-<hr>
 <h2 id="ensembles-de-caractères">Ensembles de caractères</h2>
 <p>Les <strong>ensembles</strong> permettent de rechercher plusieurs possibilités similaires en regroupant des caractères entre crochets <code>[ ]</code>.</p>
 <ul>
@@ -303,7 +339,6 @@ cat : pour afficher le contenu des fichiers, sed : pour les transformations text
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;^[^#]&#39;</span> /etc/services</span></span></code></pre></div>
 </li>
 </ul>
-<hr>
 <h2 id="quantificateurs">Quantificateurs</h2>
 <p>Les quantificateurs précisent le nombre de répétitions d&rsquo;un motif.</p>
 <table>
@@ -354,7 +389,6 @@ cat : pour afficher le contenu des fichiers, sed : pour les transformations text
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;[a-z]{3,6}&#39;</span> fichier</span></span></code></pre></div>
 </li>
 </ul>
-<hr>
 <h2 id="groupes">Groupes</h2>
 <p>Les <strong>groupes</strong> permettent de regrouper des parties d&rsquo;expressions avec des parenthèses <code>( )</code>. Cela permet d&rsquo;appliquer un quantificateur ou de réutiliser le groupe.</p>
 <ul>
@@ -362,7 +396,6 @@ cat : pour afficher le contenu des fichiers, sed : pour les transformations text
 <div class="highlight wrap-code"><pre tabindex="0"><code>(ab)*c</code></pre></div>
 Correspond à : &ldquo;zéro ou plusieurs &lsquo;ab&rsquo;, suivi d&rsquo;un &lsquo;c&rsquo;&rdquo;. Cela capture &ldquo;c&rdquo;, &ldquo;abc&rdquo;, &ldquo;ababc&rdquo;, etc.</li>
 </ul>
-<hr>
 <h2 id="échappement">Échappement</h2>
 <p>Pour rechercher des caractères ayant une signification spéciale dans les expressions régulières (<code>.</code>, <code>+</code>, <code>*</code>, etc.), il faut les <strong>échapper</strong> avec un antislash ().</p>
 <ul>
@@ -416,7 +449,7 @@ _var2
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1741627956";
+          window.index_js_url="/searchindex.en.js?1741715109";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -429,12 +462,12 @@ _var2
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1741627956" defer></script>
-        <script src="/js/lunr/lunr.min.js?1741627956" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1741627956" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1741627956" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1741627956" defer></script>
-        <script src="/js/search.js?1741627956" defer></script>
+        <script src="/js/auto-complete.js?1741715109" defer></script>
+        <script src="/js/lunr/lunr.min.js?1741715109" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1741715109" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1741715109" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1741715109" defer></script>
+        <script src="/js/search.js?1741715109" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -508,8 +541,8 @@ _var2
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1741627956" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1741627956" defer></script>
-    <script src="/js/theme.js?1741627956" defer></script>
+    <script src="/js/clipboard.min.js?1741715109" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1741715109" defer></script>
+    <script src="/js/theme.js?1741715109" defer></script>
   </body>
 </html>
