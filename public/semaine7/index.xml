@@ -12,7 +12,7 @@
       <link>https://example.org/semaine7/cours/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine7/cours/index.html</guid>
-      <description>L’éditeur de texte VIM Dans les systèmes Linux, la majorité des configurations s’effectuent à l’aide de fichiers texte.&#xA;Pour modifier ces fichiers texte, nous utiliserons l’éditeur de texte vim. c’est un éditeur puissant avec de nombreux avantages : • Disponible sur tous les systèmes basés sur UNIX, • Très léger, idéal pour les systèmes sans interface graphique, • Fonctionne en local ou à distance.&#xA;Apprendre à utiliser vim est indispensable pour travailler efficacement sous Linux.</description>
+      <description>L’éditeur de texte VIM Dans les systèmes Linux, la majorité des configurations s’effectuent à l’aide de fichiers texte.&#xA;Pour modifier ces fichiers texte, nous utiliserons l’éditeur de texte vim. c’est un éditeur puissant avec de nombreux avantages :&#xA;Disponible sur tous les systèmes basés sur UNIX, Très léger, idéal pour les systèmes sans interface graphique, Fonctionne en local ou à distance. Apprendre à utiliser vim est indispensable pour travailler efficacement sous Linux.</description>
     </item>
   </channel>
 </rss>

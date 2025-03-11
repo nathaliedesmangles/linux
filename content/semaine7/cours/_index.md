@@ -9,9 +9,9 @@ weight = 71
 Dans les systèmes Linux, la majorité des configurations s’effectuent à l’aide de fichiers texte.
 
 Pour modifier ces fichiers texte, nous utiliserons l'éditeur de texte **vim**. c'est un éditeur puissant avec de nombreux avantages :
-• Disponible sur tous les systèmes basés sur UNIX,
-• Très léger, idéal pour les systèmes sans interface graphique,
-• Fonctionne en local ou à distance.
+- Disponible sur tous les systèmes basés sur UNIX,
+- Très léger, idéal pour les systèmes sans interface graphique,
+- Fonctionne en local ou à distance.
 
 Apprendre à utiliser vim est indispensable pour travailler efficacement sous Linux.
 
@@ -55,7 +55,7 @@ Voici les principales commandes pour se déplacer rapidement :
 
 {{% notice style="tip" title="Astuce" %}}
 Vous pouvez ajouter un quantificateur pour répéter une commande.
-**Exemple** : 3w pour avancer de 3 mots, 50j pour descendre de 50 lignes.
+**Exemple** : `3w` pour avancer de 3 mots, `50j` pour descendre de 50 lignes.
 {{% /notice %}}
 
 ### Commandes de base
