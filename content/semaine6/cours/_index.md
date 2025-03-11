@@ -124,7 +124,7 @@ Les **ensembles** permettent de rechercher plusieurs possibilités similaires en
 | `[a-zA-Z0-9]`    | Tous les caractères alphanumériques.     |
 
 {{% notice style="warning" title="Important"  %}}
- - Un ensemble décrit un seul caractère.
+ - Un ensemble décrit **un seul** caractère dans la chaine recherchée. Par exemple: `[a-zA-Z0-9]` signifie qu'il y avoir 1 seule lettre minuscule ou majuscule OU 1 seul chiffre.
 {{% /notice %}}
 
 
