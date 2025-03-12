@@ -79,6 +79,9 @@
     <loc>https://example.org/solutions/semaine1/index.html</loc>
   </url>
   <url>
+    <loc>https://example.org/solutions/test1/index.html</loc>
+  </url>
+  <url>
     <loc>https://example.org/solutions/semaine2/index.html</loc>
   </url>
   <url>
@@ -88,7 +91,7 @@
     <loc>https://example.org/solutions/semaine4/index.html</loc>
   </url>
   <url>
-    <loc>https://example.org/solutions/test1/index.html</loc>
+    <loc>https://example.org/semaine6/cours/recapitulatif/index.html</loc>
   </url>
   <url>
     <loc>https://example.org/categories/index.html</loc>

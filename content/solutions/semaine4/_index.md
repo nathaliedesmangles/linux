@@ -1,6 +1,6 @@
 +++
 title = "Atelier 4"
-weight = 164
+weight = 174
 +++
 
 # Solution des exercices

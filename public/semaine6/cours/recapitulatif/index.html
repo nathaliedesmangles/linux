@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Ces tableaux couvrent les symboles essentiels pour utiliser les expressions régulières !
+1. Opérateurs spéciaux (métacaractères) Symbole Signification Exemple Correspondances . N’importe quel caractère sauf un saut de ligne a.b acb, a1b, a_b ^ Début de ligne ^Hello Hello world (valide), Salut Hello (non valide) $ Fin de ligne end$ C&#39;est la fin [...] Un seul caractère parmi ceux spécifiés [aeiou] a, e, o [^...] Un seul caractère sauf ceux spécifiés [^aeiou] b, c, x (tout sauf voyelles) (xyz) Capture un groupe (abc) abc (capture complète) | OU logique chien|chat chien, chat \s Un espace blanc (y compris tabulation, retour à la ligne) \s&#43; → &#34; &#34; [ \t\n\r\f\v] \S Tous sauf un espace blanc (y compris tabulation, retour à la ligne) \S&#43; → &#34;abc&#34; [^ \t\n\r\f\v] (Tout sauf les espaces) 2. Quantificateurs Symbole Signification Exemple Correspondances * 0 ou plusieurs fois ab*c ac, abc, abbc &#43; 1 ou plusieurs fois ab&#43;c abc, abbc mais pas ac ? 0 ou 1 fois (optionnel) colou?r color, colour {n} Exactement n répétitions [0-9]{4} 2025, 1234 {n,} Au moins n fois [0-9]{2,} 12, 456, 7890 {n,m} Entre n et m fois [0-9]{2,4} 12, 123, 4567 3. Séquence d’échappement Symbole Signification Exemples \ Échappe un métacaractère \. → correspond à . (point) \&#43; → correspond au symbole &#43;, \$ → correspond au symbole $ etc.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Tableaux récapitulatifs des symboles des regexp :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Ces tableaux couvrent les symboles essentiels pour utiliser les expressions régulières !
+1. Opérateurs spéciaux (métacaractères) Symbole Signification Exemple Correspondances . N’importe quel caractère sauf un saut de ligne a.b acb, a1b, a_b ^ Début de ligne ^Hello Hello world (valide), Salut Hello (non valide) $ Fin de ligne end$ C&#39;est la fin [...] Un seul caractère parmi ceux spécifiés [aeiou] a, e, o [^...] Un seul caractère sauf ceux spécifiés [^aeiou] b, c, x (tout sauf voyelles) (xyz) Capture un groupe (abc) abc (capture complète) | OU logique chien|chat chien, chat \s Un espace blanc (y compris tabulation, retour à la ligne) \s&#43; → &#34; &#34; [ \t\n\r\f\v] \S Tous sauf un espace blanc (y compris tabulation, retour à la ligne) \S&#43; → &#34;abc&#34; [^ \t\n\r\f\v] (Tout sauf les espaces) 2. Quantificateurs Symbole Signification Exemple Correspondances * 0 ou plusieurs fois ab*c ac, abc, abbc &#43; 1 ou plusieurs fois ab&#43;c abc, abbc mais pas ac ? 0 ou 1 fois (optionnel) colou?r color, colour {n} Exactement n répétitions [0-9]{4} 2025, 1234 {n,} Au moins n fois [0-9]{2,} 12, 456, 7890 {n,m} Entre n et m fois [0-9]{2,4} 12, 123, 4567 3. Séquence d’échappement Symbole Signification Exemples \ Échappe un métacaractère \. → correspond à . (point) \&#43; → correspond au symbole &#43;, \$ → correspond au symbole $ etc.">
+    <meta property="og:url" content="https://example.org/semaine6/cours/recapitulatif/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Tableaux récapitulatifs des symboles des regexp :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Ces tableaux couvrent les symboles essentiels pour utiliser les expressions régulières !
+1. Opérateurs spéciaux (métacaractères) Symbole Signification Exemple Correspondances . N’importe quel caractère sauf un saut de ligne a.b acb, a1b, a_b ^ Début de ligne ^Hello Hello world (valide), Salut Hello (non valide) $ Fin de ligne end$ C&#39;est la fin [...] Un seul caractère parmi ceux spécifiés [aeiou] a, e, o [^...] Un seul caractère sauf ceux spécifiés [^aeiou] b, c, x (tout sauf voyelles) (xyz) Capture un groupe (abc) abc (capture complète) | OU logique chien|chat chien, chat \s Un espace blanc (y compris tabulation, retour à la ligne) \s&#43; → &#34; &#34; [ \t\n\r\f\v] \S Tous sauf un espace blanc (y compris tabulation, retour à la ligne) \S&#43; → &#34;abc&#34; [^ \t\n\r\f\v] (Tout sauf les espaces) 2. Quantificateurs Symbole Signification Exemple Correspondances * 0 ou plusieurs fois ab*c ac, abc, abbc &#43; 1 ou plusieurs fois ab&#43;c abc, abbc mais pas ac ? 0 ou 1 fois (optionnel) colou?r color, colour {n} Exactement n répétitions [0-9]{4} 2025, 1234 {n,} Au moins n fois [0-9]{2,} 12, 456, 7890 {n,m} Entre n et m fois [0-9]{2,4} 12, 123, 4567 3. Séquence d’échappement Symbole Signification Exemples \ Échappe un métacaractère \. → correspond à . (point) \&#43; → correspond au symbole &#43;, \$ → correspond au symbole $ etc.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Tableaux récapitulatifs des symboles des regexp :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Ces tableaux couvrent les symboles essentiels pour utiliser les expressions régulières !
+1. Opérateurs spéciaux (métacaractères) Symbole Signification Exemple Correspondances . N’importe quel caractère sauf un saut de ligne a.b acb, a1b, a_b ^ Début de ligne ^Hello Hello world (valide), Salut Hello (non valide) $ Fin de ligne end$ C&#39;est la fin [...] Un seul caractère parmi ceux spécifiés [aeiou] a, e, o [^...] Un seul caractère sauf ceux spécifiés [^aeiou] b, c, x (tout sauf voyelles) (xyz) Capture un groupe (abc) abc (capture complète) | OU logique chien|chat chien, chat \s Un espace blanc (y compris tabulation, retour à la ligne) \s&#43; → &#34; &#34; [ \t\n\r\f\v] \S Tous sauf un espace blanc (y compris tabulation, retour à la ligne) \S&#43; → &#34;abc&#34; [^ \t\n\r\f\v] (Tout sauf les espaces) 2. Quantificateurs Symbole Signification Exemple Correspondances * 0 ou plusieurs fois ab*c ac, abc, abbc &#43; 1 ou plusieurs fois ab&#43;c abc, abbc mais pas ac ? 0 ou 1 fois (optionnel) colou?r color, colour {n} Exactement n répétitions [0-9]{4} 2025, 1234 {n,} Au moins n fois [0-9]{2,} 12, 456, 7890 {n,m} Entre n et m fois [0-9]{2,4} 12, 123, 4567 3. Séquence d’échappement Symbole Signification Exemples \ Échappe un métacaractère \. → correspond à . (point) \&#43; → correspond au symbole &#43;, \$ → correspond au symbole $ etc.">
+    <meta itemprop="wordCount" content="221">
+    <title>Tableaux récapitulatifs des symboles des regexp :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine6/cours/recapitulatif/index.xml" rel="alternate" type="application/rss+xml" title="Tableaux récapitulatifs des symboles des regexp :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1741799679" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1741799679" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1741799679" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1741799679" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1741799679" rel="stylesheet">
+    <link href="/css/theme.min.css?1741799679" rel="stylesheet">
+    <link href="/css/format-html.min.css?1741799679" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine6/cours/recapitulatif/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-opérateurs-spéciaux-métacaractères"><strong>1. Opérateurs spéciaux (métacaractères)</strong></a></li>
+    <li><a href="#2-quantificateurs"><strong>2. Quantificateurs</strong></a></li>
+    <li><a href="#3-séquence-déchappement"><strong>3. Séquence d’échappement</strong></a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine6/index.html"><span itemprop="name">Les expressions régulières</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine6/cours/index.html"><span itemprop="name">Les expressions régulières</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Tableaux récapitulatifs des symboles des regexp</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine6/cours/index.html" title="Les expressions régulières (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine6/atelier/index.html" title="ATELIER #6: Les expressions régulières (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine6" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="tableaux-récapitulatifs-des-symboles-des-regexp">Tableaux récapitulatifs des symboles des regexp</h1>
+
+<p>Ces tableaux couvrent <strong>les symboles essentiels</strong> pour utiliser les expressions régulières !</p>
+<h2 id="1-opérateurs-spéciaux-métacaractères"><strong>1. Opérateurs spéciaux (métacaractères)</strong></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Symbole</strong></th>
+          <th style="text-align: left"><strong>Signification</strong></th>
+          <th style="text-align: left"><strong>Exemple</strong></th>
+          <th style="text-align: left"><strong>Correspondances</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>.</code></td>
+          <td style="text-align: left">N&rsquo;importe quel caractère sauf un saut de ligne</td>
+          <td style="text-align: left"><code>a.b</code></td>
+          <td style="text-align: left"><code>acb</code>, <code>a1b</code>, <code>a_b</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>^</code></td>
+          <td style="text-align: left">Début de ligne</td>
+          <td style="text-align: left"><code>^Hello</code></td>
+          <td style="text-align: left"><code>Hello world</code> (valide), <code>Salut Hello</code> (non valide)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>$</code></td>
+          <td style="text-align: left">Fin de ligne</td>
+          <td style="text-align: left"><code>end$</code></td>
+          <td style="text-align: left"><code>C'est la fin</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>[...]</code></td>
+          <td style="text-align: left">Un seul caractère parmi ceux spécifiés</td>
+          <td style="text-align: left"><code>[aeiou]</code></td>
+          <td style="text-align: left"><code>a</code>, <code>e</code>, <code>o</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>[^...]</code></td>
+          <td style="text-align: left">Un seul caractère <strong>sauf</strong> ceux spécifiés</td>
+          <td style="text-align: left"><code>[^aeiou]</code></td>
+          <td style="text-align: left"><code>b</code>, <code>c</code>, <code>x</code> (tout sauf voyelles)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>(xyz)</code></td>
+          <td style="text-align: left">Capture un groupe</td>
+          <td style="text-align: left"><code>(abc)</code></td>
+          <td style="text-align: left"><code>abc</code> (capture complète)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>|</code></td>
+          <td style="text-align: left">OU logique</td>
+          <td style="text-align: left"><code>chien|chat</code></td>
+          <td style="text-align: left"><code>chien</code>, <code>chat</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\s</code></td>
+          <td style="text-align: left">Un espace blanc (y compris tabulation, retour à la ligne)</td>
+          <td style="text-align: left"><code>\s+</code> → <code>&quot;   &quot;</code></td>
+          <td style="text-align: left"><code>[ \t\n\r\f\v]</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\S</code></td>
+          <td style="text-align: left">Tous <strong>sauf</strong> un espace blanc (y compris tabulation, retour à la ligne)</td>
+          <td style="text-align: left"><code>\S+</code> → <code>&quot;abc&quot;</code></td>
+          <td style="text-align: left"><code>[^ \t\n\r\f\v]</code> (Tout sauf les espaces)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="2-quantificateurs"><strong>2. Quantificateurs</strong></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Symbole</strong></th>
+          <th style="text-align: left"><strong>Signification</strong></th>
+          <th style="text-align: left"><strong>Exemple</strong></th>
+          <th style="text-align: left"><strong>Correspondances</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>*</code></td>
+          <td style="text-align: left">0 ou plusieurs fois</td>
+          <td style="text-align: left"><code>ab*c</code></td>
+          <td style="text-align: left"><code>ac</code>, <code>abc</code>, <code>abbc</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>+</code></td>
+          <td style="text-align: left">1 ou plusieurs fois</td>
+          <td style="text-align: left"><code>ab+c</code></td>
+          <td style="text-align: left"><code>abc</code>, <code>abbc</code> mais pas <code>ac</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>?</code></td>
+          <td style="text-align: left">0 ou 1 fois (optionnel)</td>
+          <td style="text-align: left"><code>colou?r</code></td>
+          <td style="text-align: left"><code>color</code>, <code>colour</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>{n}</code></td>
+          <td style="text-align: left">Exactement <code>n</code> répétitions</td>
+          <td style="text-align: left"><code>[0-9]{4}</code></td>
+          <td style="text-align: left"><code>2025</code>, <code>1234</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>{n,}</code></td>
+          <td style="text-align: left">Au moins <code>n</code> fois</td>
+          <td style="text-align: left"><code>[0-9]{2,}</code></td>
+          <td style="text-align: left"><code>12</code>, <code>456</code>, <code>7890</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>{n,m}</code></td>
+          <td style="text-align: left">Entre <code>n</code> et <code>m</code> fois</td>
+          <td style="text-align: left"><code>[0-9]{2,4}</code></td>
+          <td style="text-align: left"><code>12</code>, <code>123</code>, <code>4567</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="3-séquence-déchappement"><strong>3. Séquence d’échappement</strong></h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Symbole</strong></th>
+          <th style="text-align: left"><strong>Signification</strong></th>
+          <th style="text-align: left"><strong>Exemples</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>\</code></td>
+          <td style="text-align: left">Échappe un métacaractère</td>
+          <td style="text-align: left"><code>\.</code> → correspond à <code>.</code> (point) <br> <code>\+</code> → correspond au symbole <code>+</code>, <br> <code>\$</code> → correspond au symbole <code>$</code> <br>etc.</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1741799679";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1741799679" defer></script>
+        <script src="/js/lunr/lunr.min.js?1741799679" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1741799679" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1741799679" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1741799679" defer></script>
+        <script src="/js/search.js?1741799679" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/semaine6/cours/index.html"><a class="padding" href="/semaine6/cours/index.html">Les expressions régulières</a><ul id="R-subsections-99b133f8b96a95753af5ca0d67ae3a86" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine6/cours/recapitulatif/index.html"><a class="padding" href="/semaine6/cours/recapitulatif/index.html">Tableaux récapitulatifs des symboles des regexp</a></li></ul></li>
+            <li class="" data-nav-id="/semaine6/atelier/index.html"><a class="padding" href="/semaine6/atelier/index.html">ATELIER #6: Les expressions régulières</a></li></ul></li>
+            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim et les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine6/cours/recapitulatif/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1741799679" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1741799679" defer></script>
+    <script src="/js/theme.js?1741799679" defer></script>
+  </body>
+</html>

@@ -20,8 +20,7 @@ Un exemple d'expression régulière pour capturer une URL (adresse web):
 ```
 https?://[a-zA-Z0-9\.-]+\.[a-zA-Z]{2,4}(/\S*)?
 ```
-
-**Expications** : 
+{{% notice style="green" title="Explication..." groupid="notice-toggle" expanded="false" %}}
 
 1. **`https?://`** → Indique que l'URL commence par `http://` ou `https://`.  
    - Le `s?` signifie que le `s` est facultatif (pour inclure HTTP et HTTPS).  
@@ -45,7 +44,7 @@ https?://[a-zA-Z0-9\.-]+\.[a-zA-Z]{2,4}(/\S*)?
 - `http://example.com`  
 - `https://www.mon-site.fr/page1`  
 - `https://blog.exemple.net/article`  
-
+{{% /notice %}}
 
 ## Premiers pas avec les expressions régulières
 
@@ -178,7 +177,7 @@ Les quantificateurs précisent le nombre de répétitions d'un motif.
 Les **groupes** permettent de regrouper des parties d'expressions avec des parenthèses `( )`. Cela permet d'appliquer un quantificateur ou de réutiliser le groupe.
 
 - **Exemple :**
-  ```
+  ```bash
   (ab)*c
   ```
   Correspond à : "zéro ou plusieurs 'ab', suivi d'un 'c'". Cela capture "c", "abc", "ababc", etc.
@@ -206,16 +205,54 @@ Pour rechercher des caractères ayant une signification spéciale dans les expre
    4540 8523 4013 1314
    4540 8710 5410 1012 1314
    ```
+{{% notice style="green" title="Solution..." groupid="notice-toggle" expanded="false" %}}
+**Règles à respecter** :
+
+- 16 chiffres
+- Commence par « 4540 »
+- Le dernier groupe (4 chiffres) ne doit pas contenir le chiffre 9
+
+**Cas 1** Expression proposée (format avec espaces obligatoires entre groupes) :
+```
+^4540 [0-9]{4} [0-9]{4} [0-8]{4}$
+```
+
+**Explications** :
+
+`^4540` : La chaîne doit commencer par "4540". <br>
+`[0-9]{4}` : Ensuite, un espace suivi de 4 chiffres (de 0 à 9) (deux fois). <br>
+`[0-8]{4}` : Un espace puis exactement 4 chiffres, chacun allant de 0 à 8 (ainsi, aucun 9 n’est autorisé dans ce dernier groupe).<br>
+`$` : Fin de la chaîne.
+
+**Remarque** : Si vous souhaitez accepter des formats avec ou sans espaces, vous pouvez adapter l’expression en rendant les espaces optionnels avec \s? :
+```
+^4540\s?[0-9]{4}\s?[0-9]{4}\s?[0-8]{4}$
+```
+{{% /notice %}}
 
 2. Identifiez les noms de variables valides (lettres, chiffres, underscores, mais ne commençant pas par un chiffre) :
 
-   ```
-   Abcd
-   abcd_
-   var123
-   _var2
-   1nombre
-   ```
+<pre>
+Abcd <br>
+abcd_ <br>
+var123 <br>
+_var2 <br>
+1nombre
+</pre>
+{{% notice style="green" title="Solution..." groupid="notice-toggle" expanded="false" %}}
+**Règles à respecter** :
+
+- Doit être composé de lettres, chiffres et underscores
+- Ne peut pas commencer par un chiffre
+```
+^[A-Za-z_][A-Za-z0-9_]*$
+```
+**Explications** :
+
+`^[A-Za-z_]` : Le premier caractère doit être une lettre (majuscule ou minuscule) ou un underscore. <br>
+`[A-Za-z0-9_]*` : Les caractères suivants peuvent être des lettres, des chiffres ou des underscores, et ils peuvent apparaître zéro ou plusieurs fois. <br>
+`$` : Fin de la chaîne.
+{{% /notice %}}
 
 3. Recherchez les adresses IPv4 valides (quatre nombres entre 0 et 255, séparés par des points) :
 
@@ -228,4 +265,23 @@ Pour rechercher des caractères ayant une signification spéciale dans les expre
    192.168.2
    10.10.10.10.10
    ```
+{{% notice style="green" title="Solution..." groupid="notice-toggle" expanded="false" %}}
+**Règles à respecter** :
 
+- 4 nombres séparés par des points
+- Chaque nombre (octet) doit être compris entre 0 et 255
+
+```
+^(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}$
+```
+
+**Explications** :
+
+Pour un octet :
+`25[0-5]` : Correspond aux nombres de 250 à 255. <br>
+`2[0-4][0-9]` : Correspond aux nombres de 200 à 249. <br>
+`1[0-9]{2}` : Correspond aux nombres de 100 à 199. <br>
+`[1-9]?[0-9]` : Correspond aux nombres de 0 à 99 (le [1-9]? permet d’éviter un zéro initial non significatif, tout en autorisant le 0 seul). <br>
+`^ ... $` : Assure que toute la chaîne correspond exactement à ce format. <br>
+`(\.(...)){3}` : Indique qu’après le premier octet, trois autres octets doivent précéder, chacun précédé d’un point.
+{{% /notice %}}
