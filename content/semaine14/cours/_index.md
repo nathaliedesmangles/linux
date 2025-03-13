@@ -1,9 +1,4 @@
 +++
-title = "WSL installation et manipulation (Ubuntu, VS Code)"
-weight = 141
-+++
-
-+++
 title = "Installation et manipulation de WSL avec Ubuntu et VS Code"
 weight = 141
 draft = true
