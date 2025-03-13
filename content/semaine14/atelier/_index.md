@@ -1,6 +1,5 @@
- 
 +++
-title = "ATELIER #2: WSL, Ubuntu et des commandes Linux simples"
+title = "ATELIER #10: WSL, Ubuntu et des commandes Linux simples"
 weight = 142
 +++
 
