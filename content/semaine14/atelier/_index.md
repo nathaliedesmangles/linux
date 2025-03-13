@@ -1,7 +1,7 @@
  
 +++
 title = "ATELIER #2: WSL, Ubuntu et des commandes Linux simples"
-weight = 22
+weight = 142
 +++
 
 ## Objectifs de l'atelier

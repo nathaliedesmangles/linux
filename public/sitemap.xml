@@ -22,9 +22,6 @@
     <loc>https://example.org/semaine2/atelier/index.html</loc>
   </url>
   <url>
-    <loc>https://example.org/semaine14/atelier/index.html</loc>
-  </url>
-  <url>
     <loc>https://example.org/semaine3/index.html</loc>
   </url>
   <url>
@@ -70,7 +67,16 @@
     <loc>https://example.org/semaine8/cours/index.html</loc>
   </url>
   <url>
+    <loc>https://example.org/semaine14/index.html</loc>
+  </url>
+  <url>
     <loc>https://example.org/semaine14/cours/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine14/atelier/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/aidesvm/vmwaretools/index.html</loc>
   </url>
   <url>
     <loc>https://example.org/solutions/index.html</loc>
@@ -92,6 +98,9 @@
   </url>
   <url>
     <loc>https://example.org/semaine6/cours/recapitulatif/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/aidesvm/index.html</loc>
   </url>
   <url>
     <loc>https://example.org/categories/index.html</loc>

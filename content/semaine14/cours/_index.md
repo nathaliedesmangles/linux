@@ -6,6 +6,7 @@ weight = 141
 +++
 title = "Installation et manipulation de WSL avec Ubuntu et VS Code"
 weight = 141
+draft = true
 +++
 
 Le ***Windows Subsystem for Linux*** (WSL) est une fonctionnalité de Windows qui permet d'exécuter un environnement Linux directement sur un système Windows sans avoir besoin d'une machine virtuelle. 

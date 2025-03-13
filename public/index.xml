@@ -57,10 +57,24 @@
       <description>Plan de la leçon Théorie : Jeudi 27 mars&#xA;Utilisation avancée de VIM. Les principes de certains fichiers de configuration Linux. Atelier : Lundi 31 mars.&#xA;Installation d’outils. Utilisation de VIM. Manipulation de fichiers de configuration.</description>
     </item>
     <item>
+      <title>WSL installation et manipulation (Ubuntu, VS Code)</title>
+      <link>https://example.org/semaine14/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine14/index.html</guid>
+      <description>Plan de la leçon Théorie/Test :&#xA;Validation de l’atelier #10 Atelier :&#xA;Installation de WSL et Ubuntu et VS Code</description>
+    </item>
+    <item>
       <title>Solutions: ateliers et tests</title>
       <link>https://example.org/solutions/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/solutions/index.html</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AidesVMs</title>
+      <link>https://example.org/aidesvm/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/aidesvm/index.html</guid>
       <description></description>
     </item>
   </channel>
