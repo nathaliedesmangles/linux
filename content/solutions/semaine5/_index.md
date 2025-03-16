@@ -1,7 +1,6 @@
 +++
 title = "Atelier 5"
 weight = 175
-draft = true
 +++
 
 # Solution des exercices
@@ -62,7 +61,7 @@ types="java conf txt png tiff"
 echo "Décompte des fichiers $types"
 echo ""
 
-# Boucle sur chaque type de fichier (lancement en arrière-plan)
+# Boucle sur chaque type de fichier (lancement en arrière-plan avec `&`)
 for i in $types
 do
 	(nb=$(find / -name "*.$i" 2>/dev/null | wc -l)
