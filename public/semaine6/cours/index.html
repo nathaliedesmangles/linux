@@ -22,14 +22,14 @@ cat : pour afficher le contenu des fichiers, sed : pour les transformations text
     <meta itemprop="name" content="Les expressions régulières :: 420-ZG4-MO LINUX">
     <meta itemprop="description" content="Introduction aux expressions régulières Dans l’univers Linux, la manipulation des fichiers texte est une tâche essentielle. Parmi les outils utilisés pour ce faire, on trouve notamment :
 cat : pour afficher le contenu des fichiers, sed : pour les transformations textuelles, grep : pour rechercher et filtrer des lignes. Avec grep, vous pouvez filtrer un texte pour ne conserver que les lignes contenant un mot ou une expression donnée, ou bien les exclure. Mais comment faire si vous souhaitez rechercher des motifs plus complexes, comme des adresses e-mail ou des numéros de téléphone ? C’est ici qu’interviennent les expressions régulières, un outil puissant pour décrire des motifs précis et identifier des textes ayant une structure particulière.">
-    <meta itemprop="wordCount" content="1170">
+    <meta itemprop="wordCount" content="1185">
     <title>Les expressions régulières :: 420-ZG4-MO LINUX</title>
     <link href="/semaine6/cours/index.xml" rel="alternate" type="application/rss+xml" title="Les expressions régulières :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1742131895" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742131895" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1742131895" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742131895" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1742131895" rel="stylesheet">
-    <link href="/css/theme.min.css?1742131895" rel="stylesheet">
-    <link href="/css/format-html.min.css?1742131895" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742148775" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742148775" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742148775" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742148775" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742148775" rel="stylesheet">
+    <link href="/css/theme.min.css?1742148775" rel="stylesheet">
+    <link href="/css/format-html.min.css?1742148775" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -374,7 +374,7 @@ cat : pour afficher le contenu des fichiers, sed : pour les transformations text
       </tr>
       <tr>
           <td style="text-align: left"><code>{n,m}</code></td>
-          <td style="text-align: left">Entre n et m fois.</td>
+          <td style="text-align: left">Entre n et m fois (n et m inclus).</td>
       </tr>
       <tr>
           <td style="text-align: left"><code>{n,}</code></td>
@@ -392,19 +392,20 @@ cat : pour afficher le contenu des fichiers, sed : pour les transformations text
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;https?&#39;</span> fichier</span></span></code></pre></div>
 </li>
 <li>
-<p><strong>Rechercher une lettre minuscule répétée entre 3 et 6 fois :</strong></p>
+<p><strong>Rechercher une lettre minuscule répétée entre 3 et 6 fois inclues:</strong></p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;[a-z]{3,6}&#39;</span> fichier</span></span></code></pre></div>
 </li>
 </ul>
 <h2 id="groupes">Groupes</h2>
 <p>Les <strong>groupes</strong> permettent de regrouper des parties d&rsquo;expressions avec des parenthèses <code>( )</code>. Cela permet d&rsquo;appliquer un quantificateur ou de réutiliser le groupe.</p>
+<p>Contrairement aux intervalles (<code>[ ]</code>), les groupes <code>( )</code> représentent plus d&rsquo;un caractères.</p>
 <ul>
 <li><strong>Exemple :</strong>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">(</span>ab<span style="color:#f92672">)</span>*c</span></span></code></pre></div>
 Correspond à : &ldquo;zéro ou plusieurs &lsquo;ab&rsquo;, suivi d&rsquo;un &lsquo;c&rsquo;&rdquo;. Cela capture &ldquo;c&rdquo;, &ldquo;abc&rdquo;, &ldquo;ababc&rdquo;, etc.</li>
 </ul>
 <h2 id="échappement">Échappement</h2>
-<p>Pour rechercher des caractères ayant une signification spéciale dans les expressions régulières (<code>.</code>, <code>+</code>, <code>*</code>, etc.), il faut les <strong>échapper</strong> avec un antislash ().</p>
+<p>Pour rechercher des caractères ayant une signification spéciale dans les expressions régulières (<code>.</code>, <code>+</code>, <code>*</code>, etc.), il faut les <strong>échapper</strong> avec un antislash (<code>\</code>).</p>
 <ul>
 <li><strong>Exemple : Rechercher les lignes se terminant par un point :</strong>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;\.$&#39;</span> fichier</span></span></code></pre></div>
@@ -431,9 +432,9 @@ Correspond à : &ldquo;zéro ou plusieurs &lsquo;ab&rsquo;, suivi d&rsquo;un &ls
   <div class="box-content">
 <p><strong>Règles à respecter</strong> :</p>
 <ul>
-<li>16 chiffres</li>
-<li>Commence par « 4540 »</li>
-<li>Le dernier groupe (4 chiffres) ne doit pas contenir le chiffre 9</li>
+<li>16 chiffres.</li>
+<li>Commence par &ldquo;4540&rdquo;.</li>
+<li>Le dernier groupe (4 chiffres) ne doit pas contenir le chiffre 9.</li>
 </ul>
 <p><strong>Cas 1</strong> Expression proposée (format avec espaces obligatoires entre groupes) :</p>
 <div class="highlight wrap-code"><pre tabindex="0"><code>^4540 [0-9]{4} [0-9]{4} [0-8]{4}$</code></pre></div>
@@ -442,7 +443,7 @@ Correspond à : &ldquo;zéro ou plusieurs &lsquo;ab&rsquo;, suivi d&rsquo;un &ls
 <code>[0-9]{4}</code> : Ensuite, un espace suivi de 4 chiffres (de 0 à 9) (deux fois). <br>
 <code>[0-8]{4}</code> : Un espace puis exactement 4 chiffres, chacun allant de 0 à 8 (ainsi, aucun 9 n’est autorisé dans ce dernier groupe).<br>
 <code>$</code> : Fin de la chaîne.</p>
-<p><strong>Remarque</strong> : Si vous souhaitez accepter des formats avec ou sans espaces, vous pouvez adapter l’expression en rendant les espaces optionnels avec \s? :</p>
+<p><strong>Remarque</strong> : Si vous souhaitez accepter des formats avec ou sans espaces, vous pouvez adapter l’expression en rendant les espaces optionnels avec <code>\s?</code> :</p>
 <div class="highlight wrap-code"><pre tabindex="0"><code>^4540\s?[0-9]{4}\s?[0-9]{4}\s?[0-8]{4}$</code></pre></div>
   </div>
 </details>
@@ -465,8 +466,8 @@ _var2 <br>
   <div class="box-content">
 <p><strong>Règles à respecter</strong> :</p>
 <ul>
-<li>Doit être composé de lettres, chiffres et underscores</li>
-<li>Ne peut pas commencer par un chiffre</li>
+<li>Doit être composé de lettres, chiffres et underscores.</li>
+<li>Ne peut pas commencer par un chiffre.</li>
 </ul>
 <div class="highlight wrap-code"><pre tabindex="0"><code>^[A-Za-z_][A-Za-z0-9_]*$</code></pre></div>
 <p><strong>Explications</strong> :</p>
@@ -496,8 +497,8 @@ _var2 <br>
   <div class="box-content">
 <p><strong>Règles à respecter</strong> :</p>
 <ul>
-<li>4 nombres séparés par des points</li>
-<li>Chaque nombre (octet) doit être compris entre 0 et 255</li>
+<li>4 nombres séparés par des points.</li>
+<li>Chaque nombre (octet) doit être compris entre 0 et 255.</li>
 </ul>
 <div class="highlight wrap-code"><pre tabindex="0"><code>^(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}$</code></pre></div>
 <p><strong>Explications</strong> :</p>
@@ -526,7 +527,7 @@ _var2 <br>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1742131895";
+          window.index_js_url="/searchindex.en.js?1742148775";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -539,12 +540,12 @@ _var2 <br>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1742131895" defer></script>
-        <script src="/js/lunr/lunr.min.js?1742131895" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1742131895" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1742131895" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1742131895" defer></script>
-        <script src="/js/search.js?1742131895" defer></script>
+        <script src="/js/auto-complete.js?1742148775" defer></script>
+        <script src="/js/lunr/lunr.min.js?1742148775" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1742148775" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1742148775" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1742148775" defer></script>
+        <script src="/js/search.js?1742148775" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -622,8 +623,8 @@ _var2 <br>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1742131895" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1742131895" defer></script>
-    <script src="/js/theme.js?1742131895" defer></script>
+    <script src="/js/clipboard.min.js?1742148775" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742148775" defer></script>
+    <script src="/js/theme.js?1742148775" defer></script>
   </body>
 </html>

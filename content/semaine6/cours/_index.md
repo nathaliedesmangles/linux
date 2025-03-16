@@ -147,14 +147,14 @@ Les **ensembles** permettent de rechercher plusieurs possibilités similaires en
 
 Les quantificateurs précisent le nombre de répétitions d'un motif.
 
-| **Quantificateur** | **Signification**             |
-|--------------------|-------------------------------|
-| `?`                | 0 ou 1 fois.                  |
-| `+`                | 1 ou plusieurs fois.          |
-| `*`                | 0 ou plusieurs fois.          |
-| `{n}`              | Exactement n fois.            |
-| `{n,m}`            | Entre n et m fois.            |
-| `{n,}`             | Au moins n fois.              |
+| **Quantificateur** | **Signification**                  |
+|--------------------|------------------------------------|
+| `?`                | 0 ou 1 fois.                       |
+| `+`                | 1 ou plusieurs fois.               |
+| `*`                | 0 ou plusieurs fois.               |
+| `{n}`              | Exactement n fois.                 |
+| `{n,m}`            | Entre n et m fois (n et m inclus). |
+| `{n,}`             | Au moins n fois.                   |
 
 - **Rechercher "www" dans un texte :**
   ```bash
@@ -166,7 +166,7 @@ Les quantificateurs précisent le nombre de répétitions d'un motif.
   $ egrep 'https?' fichier
   ```
 
-- **Rechercher une lettre minuscule répétée entre 3 et 6 fois :**
+- **Rechercher une lettre minuscule répétée entre 3 et 6 fois inclues:**
   ```bash
   $ egrep '[a-z]{3,6}' fichier
   ```
@@ -175,6 +175,8 @@ Les quantificateurs précisent le nombre de répétitions d'un motif.
 ## Groupes
 
 Les **groupes** permettent de regrouper des parties d'expressions avec des parenthèses `( )`. Cela permet d'appliquer un quantificateur ou de réutiliser le groupe.
+
+Contrairement aux intervalles (`[ ]`), les groupes `( )` représentent plus d'un caractères.
 
 - **Exemple :**
   ```bash
@@ -185,7 +187,7 @@ Les **groupes** permettent de regrouper des parties d'expressions avec des paren
 
 ## Échappement
 
-Pour rechercher des caractères ayant une signification spéciale dans les expressions régulières (`.`, `+`, `*`, etc.), il faut les **échapper** avec un antislash (\).
+Pour rechercher des caractères ayant une signification spéciale dans les expressions régulières (`.`, `+`, `*`, etc.), il faut les **échapper** avec un antislash (`\`).
 
 - **Exemple : Rechercher les lignes se terminant par un point :**
   ```bash
@@ -208,9 +210,9 @@ Pour rechercher des caractères ayant une signification spéciale dans les expre
 {{% notice style="green" title="Solution..." groupid="notice-toggle" expanded="false" %}}
 **Règles à respecter** :
 
-- 16 chiffres
-- Commence par « 4540 »
-- Le dernier groupe (4 chiffres) ne doit pas contenir le chiffre 9
+- 16 chiffres.
+- Commence par "4540".
+- Le dernier groupe (4 chiffres) ne doit pas contenir le chiffre 9.
 
 **Cas 1** Expression proposée (format avec espaces obligatoires entre groupes) :
 ```
@@ -224,7 +226,7 @@ Pour rechercher des caractères ayant une signification spéciale dans les expre
 `[0-8]{4}` : Un espace puis exactement 4 chiffres, chacun allant de 0 à 8 (ainsi, aucun 9 n’est autorisé dans ce dernier groupe).<br>
 `$` : Fin de la chaîne.
 
-**Remarque** : Si vous souhaitez accepter des formats avec ou sans espaces, vous pouvez adapter l’expression en rendant les espaces optionnels avec \s? :
+**Remarque** : Si vous souhaitez accepter des formats avec ou sans espaces, vous pouvez adapter l’expression en rendant les espaces optionnels avec `\s?` :
 ```
 ^4540\s?[0-9]{4}\s?[0-9]{4}\s?[0-8]{4}$
 ```
@@ -242,8 +244,8 @@ _var2 <br>
 {{% notice style="green" title="Solution..." groupid="notice-toggle" expanded="false" %}}
 **Règles à respecter** :
 
-- Doit être composé de lettres, chiffres et underscores
-- Ne peut pas commencer par un chiffre
+- Doit être composé de lettres, chiffres et underscores.
+- Ne peut pas commencer par un chiffre.
 ```
 ^[A-Za-z_][A-Za-z0-9_]*$
 ```
@@ -268,8 +270,8 @@ _var2 <br>
 {{% notice style="green" title="Solution..." groupid="notice-toggle" expanded="false" %}}
 **Règles à respecter** :
 
-- 4 nombres séparés par des points
-- Chaque nombre (octet) doit être compris entre 0 et 255
+- 4 nombres séparés par des points.
+- Chaque nombre (octet) doit être compris entre 0 et 255.
 
 ```
 ^(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}$
