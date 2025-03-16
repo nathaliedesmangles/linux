@@ -22,17 +22,15 @@ weight = 60
 
 - **Test #2 : jeudi 20 mars**
   - **Durée**: 1h45
-  - **Format**: Test Moodle
+  - **Format**: Test Moodle (**total de 14 questions**)
 	- Questions à choix multiples
 	- Questions à réponses courtes
-	- Questions à coder (scripts) 
-  - **Matière**:
-    - **Semaine 4**: 
-    - **Semaine 5**: 
-  - **Documentation permise**: À déterminer.
+	- Questions à coder (2 scripts) 
+  - **Matière**: Semaine 4 et semaine 5
+  - **Documentation permise**: 1 feuille de note 8.5x11 recto-verso (manuscrite ou imprimée).
 
 ---
 
-- **Atelier : Remise lundi 24 mars 23h59**.
+- **Atelier #6: Remise lundi 24 mars 23h59**.
   - Utilisation d'expressions régulières.
 
