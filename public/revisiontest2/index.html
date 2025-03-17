@@ -30,14 +30,14 @@ Exemple :">
 Ne vous limitez pas à cette page pour vous préparer au test #2, car certaines notions du cours ne s’y trouvent pas.
 1. La commande tree La commande tree permet d’afficher la structure des dossiers sous forme d’arbre. Elle est utile pour visualiser rapidement l’organisation des fichiers.
 Exemple :">
-    <meta itemprop="wordCount" content="996">
+    <meta itemprop="wordCount" content="995">
     <title>TEST #2-Quelques notions à maitriser :: 420-ZG4-MO LINUX</title>
     <link href="/revisiontest2/index.xml" rel="alternate" type="application/rss+xml" title="TEST #2-Quelques notions à maitriser :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1742148775" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742148775" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1742148775" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742148775" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1742148775" rel="stylesheet">
-    <link href="/css/theme.min.css?1742148775" rel="stylesheet">
-    <link href="/css/format-html.min.css?1742148775" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742222879" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742222879" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742222879" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742222879" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742222879" rel="stylesheet">
+    <link href="/css/theme.min.css?1742222879" rel="stylesheet">
+    <link href="/css/format-html.min.css?1742222879" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..';
@@ -116,8 +116,8 @@ Exemple :">
       </ul>
     </li>
     <li><a href="#13-la-commande-test">13. La commande <code>test</code></a></li>
-    <li><a href="#8-boucles-for-et-while">8. Boucles <em>for</em> et <em>while</em></a></li>
-    <li><a href="#14-processus-séquentiels-vs-concurrents">14. Processus séquentiels vs concurrents</a></li>
+    <li><a href="#14-boucles-for-et-while">14. Boucles <em>for</em> et <em>while</em></a></li>
+    <li><a href="#15-processus-séquentiels-vs-concurrents">15. Processus séquentiels vs concurrents</a></li>
   </ul>
 </nav>
                 </div>
@@ -202,7 +202,6 @@ Exemple :">
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls | grep <span style="color:#e6db74">&#34;txt&#34;</span></span></span></code></pre></div>
 Affiche uniquement les fichiers contenant &ldquo;txt&rdquo; dans leur nom.</li>
 </ul>
-<p>==========================================</p>
 <h2 id="7-la-commande-find">7. <strong>La commande <em>find</em></strong></h2>
 <p><code>find</code> permet de <strong>rechercher des fichiers</strong> dans un répertoire selon divers critères :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find /home -name <span style="color:#e6db74">&#34;*.txt&#34;</span></span></span></code></pre></div>
@@ -290,7 +289,7 @@ Affiche uniquement les fichiers contenant &ldquo;txt&rdquo; dans leur nom.</li>
 <ul>
 <li><code>test -e &quot;fichier.txt&quot;</code> vérifie si le fichier existe. S&rsquo;il existe on affiche son contenu avec <code>cat fichier.txt</code>, sinon, on crée le fichier a l&rsquo;aide de la commande <code>touch fichier.txt</code>.</li>
 </ul>
-<h2 id="8-boucles-for-et-while">8. Boucles <em>for</em> et <em>while</em></h2>
+<h2 id="14-boucles-for-et-while">14. Boucles <em>for</em> et <em>while</em></h2>
 <p>Les boucles permettent d’<strong>exécuter des commandes plusieurs fois</strong>.</p>
 <p><strong>Boucle for</strong> :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> variable in éléments_sur_lesquels_boucler
@@ -309,7 +308,7 @@ Affiche uniquement les fichiers contenant &ldquo;txt&rdquo; dans leur nom.</li>
 </span></span><span style="display:flex;"><span>    ...
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span></span></span></code></pre></div>
 <p><strong>NB</strong>: Dans un fichier .sh, que ce soit pour la boucle <code>for</code> ou la boucle <code>while</code>, <strong>on ne mets pas les point-virgule, on les remplace par un saut de ligne.</strong></p>
-<h2 id="14-processus-séquentiels-vs-concurrents">14. Processus séquentiels vs concurrents</h2>
+<h2 id="15-processus-séquentiels-vs-concurrents">15. Processus séquentiels vs concurrents</h2>
 <p><strong>Processus séquentiels</strong> :<br>
 Les commandes <strong>s’exécutent l’une après l’autre dans l&rsquo;ordre qu&rsquo;elles sont écrites</strong> :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;S&#39;affiche en premier&#34;</span>
@@ -353,7 +352,7 @@ On peut exécuter des commandes en parallèle (simultanément) avec <code>&amp;<
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1742148775";
+          window.index_js_url="/searchindex.en.js?1742222879";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -366,12 +365,12 @@ On peut exécuter des commandes en parallèle (simultanément) avec <code>&amp;<
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1742148775" defer></script>
-        <script src="/js/lunr/lunr.min.js?1742148775" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1742148775" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1742148775" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1742148775" defer></script>
-        <script src="/js/search.js?1742148775" defer></script>
+        <script src="/js/auto-complete.js?1742222879" defer></script>
+        <script src="/js/lunr/lunr.min.js?1742222879" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1742222879" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1742222879" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1742222879" defer></script>
+        <script src="/js/search.js?1742222879" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -389,7 +388,7 @@ On peut exécuter des commandes en parallèle (simultanément) avec <code>&amp;<
             <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
             <li class="active " data-nav-id="/revisiontest2/index.html"><a class="padding" href="/revisiontest2/index.html">TEST #2-Quelques notions à maitriser</a></li>
             <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim et les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim, les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
@@ -446,8 +445,8 @@ On peut exécuter des commandes en parallèle (simultanément) avec <code>&amp;<
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1742148775" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1742148775" defer></script>
-    <script src="/js/theme.js?1742148775" defer></script>
+    <script src="/js/clipboard.min.js?1742222879" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742222879" defer></script>
+    <script src="/js/theme.js?1742222879" defer></script>
   </body>
 </html>

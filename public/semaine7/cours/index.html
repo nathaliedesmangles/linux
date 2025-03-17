@@ -26,14 +26,14 @@ Disponible sur tous les systèmes basés sur UNIX, Très léger, idéal pour les
     <meta itemprop="description" content="L’éditeur de texte VIM Dans les systèmes Linux, la majorité des configurations s’effectuent à l’aide de fichiers texte.
 Pour modifier ces fichiers texte, nous utiliserons l’éditeur de texte vim. c’est un éditeur puissant avec de nombreux avantages :
 Disponible sur tous les systèmes basés sur UNIX, Très léger, idéal pour les systèmes sans interface graphique, Fonctionne en local ou à distance. Apprendre à utiliser vim est indispensable pour travailler efficacement sous Linux.">
-    <meta itemprop="wordCount" content="507">
+    <meta itemprop="wordCount" content="518">
     <title>Vim et les fichiers de configuration :: 420-ZG4-MO LINUX</title>
     <link href="/semaine7/cours/index.xml" rel="alternate" type="application/rss+xml" title="Vim et les fichiers de configuration :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1742148775" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742148775" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1742148775" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742148775" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1742148775" rel="stylesheet">
-    <link href="/css/theme.min.css?1742148775" rel="stylesheet">
-    <link href="/css/format-html.min.css?1742148775" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742222879" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742222879" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742222879" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742222879" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742222879" rel="stylesheet">
+    <link href="/css/theme.min.css?1742222879" rel="stylesheet">
+    <link href="/css/format-html.min.css?1742222879" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -98,6 +98,7 @@ Disponible sur tous les systèmes basés sur UNIX, Très léger, idéal pour les
   <ul>
     <li><a href="#léditeur-de-texte-vim">L&rsquo;éditeur de texte VIM</a>
       <ul>
+        <li><a href="#tutoriels">Tutoriels</a></li>
         <li><a href="#les-principaux-modes-de-vim">Les principaux modes de VIM</a></li>
         <li><a href="#navigation-dans-vim">Navigation dans vim</a></li>
         <li><a href="#commandes-de-base">Commandes de base</a></li>
@@ -118,13 +119,13 @@ Disponible sur tous les systèmes basés sur UNIX, Très léger, idéal pour les
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine7/index.html"><span itemprop="name">Vim et les fichiers de configuration</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine7/index.html"><span itemprop="name">Vim, les fichiers de configuration</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Vim et les fichiers de configuration</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine7/index.html" title="Vim et les fichiers de configuration (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine7/index.html" title="Vim, les fichiers de configuration (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine14/index.html" title="WSL installation et manipulation (Ubuntu, VS Code) (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine7/atelier/index.html" title="ATELIER #7: VIM et les fichiers de configuration (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -155,6 +156,16 @@ Disponible sur tous les systèmes basés sur UNIX, Très léger, idéal pour les
 <li>Fonctionne en local ou à distance.</li>
 </ul>
 <p>Apprendre à utiliser vim est indispensable pour travailler efficacement sous Linux.</p>
+<h3 id="tutoriels">Tutoriels</h3>
+<ol>
+<li>Tutoriel directement sur VIM</li>
+</ol>
+<p><a href="#R-image-963d9afb9a4677c18f1a26053f941555" class="lightbox-link"><img alt="vimtutor" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine7/cours/vimtutor.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-963d9afb9a4677c18f1a26053f941555"><img alt="vimtutor" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine7/cours/vimtutor.png"></a></p>
+<ol start="2">
+<li>Vidéo YouTube</li>
+</ol>
+<p><a href="https://youtu.be/yfGbfZUzFq8?si=29JC21SMTF_Fur0l" rel="external" target="_blank">Apprendre tout sur Vim</a></p>
 <h3 id="les-principaux-modes-de-vim">Les principaux modes de VIM</h3>
 <p>vim propose 3 modes principaux pour travailler :</p>
 <ol>
@@ -484,7 +495,7 @@ Disponible sur tous les systèmes basés sur UNIX, Très léger, idéal pour les
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1742148775";
+          window.index_js_url="/searchindex.en.js?1742222879";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -497,12 +508,12 @@ Disponible sur tous les systèmes basés sur UNIX, Très léger, idéal pour les
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1742148775" defer></script>
-        <script src="/js/lunr/lunr.min.js?1742148775" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1742148775" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1742148775" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1742148775" defer></script>
-        <script src="/js/search.js?1742148775" defer></script>
+        <script src="/js/auto-complete.js?1742222879" defer></script>
+        <script src="/js/lunr/lunr.min.js?1742222879" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1742222879" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1742222879" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1742222879" defer></script>
+        <script src="/js/search.js?1742222879" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -520,8 +531,9 @@ Disponible sur tous les systèmes basés sur UNIX, Très léger, idéal pour les
             <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/revisiontest2/index.html"><a class="padding" href="/revisiontest2/index.html">TEST #2-Quelques notions à maitriser</a></li>
             <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
-            <li class="parent " data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim et les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu">
-            <li class="active " data-nav-id="/semaine7/cours/index.html"><a class="padding" href="/semaine7/cours/index.html">Vim et les fichiers de configuration</a></li></ul></li>
+            <li class="parent " data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim, les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine7/cours/index.html"><a class="padding" href="/semaine7/cours/index.html">Vim et les fichiers de configuration</a></li>
+            <li class="" data-nav-id="/semaine7/atelier/index.html"><a class="padding" href="/semaine7/atelier/index.html">ATELIER #7: VIM et les fichiers de configuration</a></li></ul></li>
             <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
@@ -578,8 +590,8 @@ Disponible sur tous les systèmes basés sur UNIX, Très léger, idéal pour les
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1742148775" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1742148775" defer></script>
-    <script src="/js/theme.js?1742148775" defer></script>
+    <script src="/js/clipboard.min.js?1742222879" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742222879" defer></script>
+    <script src="/js/theme.js?1742222879" defer></script>
   </body>
 </html>

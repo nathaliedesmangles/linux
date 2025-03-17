@@ -15,6 +15,16 @@ Pour modifier ces fichiers texte, nous utiliserons l'éditeur de texte **vim**. 
 
 Apprendre à utiliser vim est indispensable pour travailler efficacement sous Linux.
 
+### Tutoriels
+
+1. Tutoriel directement sur VIM
+
+![vimtutor](./vimtutor.png)
+
+2. Vidéo YouTube
+
+[Apprendre tout sur Vim](https://youtu.be/yfGbfZUzFq8?si=29JC21SMTF_Fur0l)
+
 ### Les principaux modes de VIM
  
 vim propose 3 modes principaux pour travailler :

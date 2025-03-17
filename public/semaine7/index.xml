@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vim et les fichiers de configuration :: 420-ZG4-MO LINUX</title>
+    <title>Vim, les fichiers de configuration :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine7/index.html</link>
-    <description>Plan de la leçon Théorie : Jeudi 27 mars&#xA;Utilisation avancée de VIM. Les principes de certains fichiers de configuration Linux. Atelier : Lundi 31 mars.&#xA;Installation d’outils. Utilisation de VIM. Manipulation de fichiers de configuration.</description>
+    <description>Plan de la leçon Théorie : Lundi 24 mars&#xA;Utilisation avancée de VIM (vimtutor fr). Les principes de certains fichiers de configuration Linux. DNF et CRON semaine 8 Atelier 7: FACULTATIF (pas de remise).&#xA;Installation d’outils. Utilisation de VIM. Manipulation de fichiers de configuration. Atelier 8: Jeudi 27 mars.&#xA;Installer des utilitaires et des applications avec dnf. Planifier et automatiser des tâches sur Linux.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine7/index.xml" rel="self" type="application/rss+xml" />
@@ -13,6 +13,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine7/cours/index.html</guid>
       <description>L’éditeur de texte VIM Dans les systèmes Linux, la majorité des configurations s’effectuent à l’aide de fichiers texte.&#xA;Pour modifier ces fichiers texte, nous utiliserons l’éditeur de texte vim. c’est un éditeur puissant avec de nombreux avantages :&#xA;Disponible sur tous les systèmes basés sur UNIX, Très léger, idéal pour les systèmes sans interface graphique, Fonctionne en local ou à distance. Apprendre à utiliser vim est indispensable pour travailler efficacement sous Linux.</description>
+    </item>
+    <item>
+      <title>ATELIER #7: VIM et les fichiers de configuration</title>
+      <link>https://example.org/semaine7/atelier/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine7/atelier/index.html</guid>
+      <description>Objectif de l’atelier Approfondir l’utilisation de VIM pour modifier des fichiers de configuration Linux de manière efficace. Modifier des fichiers de configuration Linux efficacement : Utiliser un minimum de touches. Ne pas utiliser la souris. Compléter les exercices : 10 exercices de type A (le curseur est déjà placé). 5 exercices de type B (le curseur commence au début du fichier). Instructions de remise Fournissez les captures d’écran des exercices réussis via Moodle.</description>
     </item>
   </channel>
 </rss>

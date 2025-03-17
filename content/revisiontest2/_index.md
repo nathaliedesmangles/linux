@@ -68,8 +68,6 @@ Les **résultats des commandes peuvent être redirigés vers un fichier ou encha
   Affiche uniquement les fichiers contenant "txt" dans leur nom.
  
 
-==========================================
-
 ## 7. **La commande *find***  
 `find` permet de **rechercher des fichiers** dans un répertoire selon divers critères :  
 ```bash
@@ -91,7 +89,6 @@ wc -l fichier.txt   # Compte les lignes
 wc -w fichier.txt   # Compte les mots  
 wc -c fichier.txt   # Compte les caractères  
 ```
-
 
 ## 9. **Variables**  
 Une variable **stocke une valeur**, comme du **texte** ou un **nombre** ou le **résultat d'un commande** (voir le point 10.):  
@@ -164,7 +161,7 @@ test $note ge 60 && echo "Cours réussit" || echo "Cours échoué"
 **Explication du premier test** :
 - `test -e "fichier.txt"` vérifie si le fichier existe. S'il existe on affiche son contenu avec `cat fichier.txt`, sinon, on crée le fichier a l'aide de la commande `touch fichier.txt`.
 
-## 8. Boucles *for* et *while*  
+## 14. Boucles *for* et *while*  
 Les boucles permettent d’**exécuter des commandes plusieurs fois**.  
 
 **Boucle for** :  
@@ -192,7 +189,7 @@ done
 
 **NB**: Dans un fichier .sh, que ce soit pour la boucle `for` ou la boucle `while`, **on ne mets pas les point-virgule, on les remplace par un saut de ligne.**
 
-## 14. Processus séquentiels vs concurrents  
+## 15. Processus séquentiels vs concurrents  
 
 **Processus séquentiels** :  
 Les commandes **s’exécutent l’une après l’autre dans l'ordre qu'elles sont écrites** :  
