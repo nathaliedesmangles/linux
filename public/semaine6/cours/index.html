@@ -22,14 +22,14 @@ cat : pour afficher le contenu des fichiers, sed : pour les transformations text
     <meta itemprop="name" content="Les expressions régulières :: 420-ZG4-MO LINUX">
     <meta itemprop="description" content="Introduction aux expressions régulières Dans l’univers Linux, la manipulation des fichiers texte est une tâche essentielle. Parmi les outils utilisés pour ce faire, on trouve notamment :
 cat : pour afficher le contenu des fichiers, sed : pour les transformations textuelles, grep : pour rechercher et filtrer des lignes. Avec grep, vous pouvez filtrer un texte pour ne conserver que les lignes contenant un mot ou une expression donnée, ou bien les exclure. Mais comment faire si vous souhaitez rechercher des motifs plus complexes, comme des adresses e-mail ou des numéros de téléphone ? C’est ici qu’interviennent les expressions régulières, un outil puissant pour décrire des motifs précis et identifier des textes ayant une structure particulière.">
-    <meta itemprop="wordCount" content="1185">
+    <meta itemprop="wordCount" content="1297">
     <title>Les expressions régulières :: 420-ZG4-MO LINUX</title>
     <link href="/semaine6/cours/index.xml" rel="alternate" type="application/rss+xml" title="Les expressions régulières :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1742222879" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742222879" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1742222879" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742222879" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1742222879" rel="stylesheet">
-    <link href="/css/theme.min.css?1742222879" rel="stylesheet">
-    <link href="/css/format-html.min.css?1742222879" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742244945" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742244945" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742244945" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742244945" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742244945" rel="stylesheet">
+    <link href="/css/theme.min.css?1742244945" rel="stylesheet">
+    <link href="/css/format-html.min.css?1742244945" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -115,6 +115,12 @@ cat : pour afficher le contenu des fichiers, sed : pour les transformations text
     <li><a href="#quantificateurs">Quantificateurs</a></li>
     <li><a href="#groupes">Groupes</a></li>
     <li><a href="#échappement">Échappement</a></li>
+    <li><a href="#les-caractères-blancs-et-non-blancs">Les caractères blancs et non blancs</a>
+      <ul>
+        <li><a href="#exemples-"><strong>Exemples :</strong></a></li>
+        <li><a href="#utilisation-pratique-"><strong>Utilisation pratique :</strong></a></li>
+      </ul>
+    </li>
     <li><a href="#exercices-pratiques">Exercices pratiques</a></li>
   </ul>
 </nav>
@@ -411,6 +417,54 @@ Correspond à : &ldquo;zéro ou plusieurs &lsquo;ab&rsquo;, suivi d&rsquo;un &ls
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;\.$&#39;</span> fichier</span></span></code></pre></div>
 </li>
 </ul>
+<h2 id="les-caractères-blancs-et-non-blancs">Les caractères blancs et non blancs</h2>
+<p>En expressions régulières, certains raccourcis permettent de rechercher facilement les <strong>espaces</strong> incluant les <strong>tabulations</strong> et les <strong>retours à la ligne</strong> (<code>Entrée</code>).</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Expression</th>
+          <th style="text-align: left">Signification</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>\s</code></td>
+          <td style="text-align: left">Correspond à <strong>n&rsquo;importe quel espace blanc</strong>, y compris l’espace (<code> </code>), la tabulation (<code>\t</code>) et le retour de ligne (<code>\n</code>).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\S</code></td>
+          <td style="text-align: left">Correspond à <strong>n&rsquo;importe quel caractère sauf un espace blanc</strong>. Il inclut les lettres, chiffres, ponctuation et symboles.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="exemples-"><strong>Exemples :</strong></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Expression</th>
+          <th style="text-align: left">Correspondance</th>
+          <th style="text-align: left">Non correspondance</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>\s+</code></td>
+          <td style="text-align: left"><code>&quot; &quot;</code> (espace), <code>&quot;\t&quot;</code> (tabulation)</td>
+          <td style="text-align: left"><code>&quot;abc&quot;</code>, <code>&quot;123&quot;</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>\S+</code></td>
+          <td style="text-align: left"><code>&quot;abc&quot;</code>, <code>&quot;123&quot;</code>, <code>&quot;@!#&quot;</code></td>
+          <td style="text-align: left"><code>&quot; &quot;</code> (espace), <code>&quot;\n&quot;</code> (saut de ligne)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="utilisation-pratique-"><strong>Utilisation pratique :</strong></h3>
+<ul>
+<li>Trouver <strong>tous les mots</strong> dans un texte (séparés par des espaces) :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;\S+&#39;</span> fichier.txt</span></span></code></pre></div>
+</li>
+</ul>
 <hr>
 <h2 id="exercices-pratiques">Exercices pratiques</h2>
 <ol>
@@ -527,7 +581,7 @@ _var2 <br>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1742222879";
+          window.index_js_url="/searchindex.en.js?1742244945";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -540,12 +594,12 @@ _var2 <br>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1742222879" defer></script>
-        <script src="/js/lunr/lunr.min.js?1742222879" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1742222879" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1742222879" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1742222879" defer></script>
-        <script src="/js/search.js?1742222879" defer></script>
+        <script src="/js/auto-complete.js?1742244945" defer></script>
+        <script src="/js/lunr/lunr.min.js?1742244945" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1742244945" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1742244945" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1742244945" defer></script>
+        <script src="/js/search.js?1742244945" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -623,8 +677,8 @@ _var2 <br>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1742222879" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1742222879" defer></script>
-    <script src="/js/theme.js?1742222879" defer></script>
+    <script src="/js/clipboard.min.js?1742244945" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742244945" defer></script>
+    <script src="/js/theme.js?1742244945" defer></script>
   </body>
 </html>

@@ -14,16 +14,17 @@ weight = 62
 
 {{% notice style="important" title="Important" %}}
 - Utiliser le fichier `expr.txt` se trouvant sur Moodle.
+- Faites un **copier-coller** du contenu du fichier `expr.txt` dans un nouveau fichier texte.
 - Utiliser **uniquement** les commandes, les symboles et la matière vue dans le cours (semaines 1 à 6)
 	- [RegExp: Tableaux récapitulatifs](https://linuxh25.netlify.app/semaine6/cours/recapitulatif)
 {{% /notice %}}
 
 ---
 
-**Dans le fichier `expr.txt` fourni, à l'aide d'expressions régulières**:
+**Dans le fichier `expr.txt`, à l'aide d'expressions régulières**:
 
 1. Trouvez les codes postaux canadiens :
-	- Format attendu : `Lettre-Chiffre-Lettre Chiffre-Lettre-Chiffre`.
+	- Format attendu : `LettreChiffreLettreChiffreLettreChiffre` (ex: H7N5H9 ou h7n5h9)
 
 2. Identifiez les codes d’employés composés de :
 	- Deux lettres majuscules suivies de quatre chiffres.
@@ -36,6 +37,8 @@ weight = 62
 
 	- `http://www.domaine.tld` ou `http://www.domaine.tld/`
 	- `https://www.domaine.tld` ou `https://www.domaine.tld/`
+
+**NB** : **domaine** et **tld** représentent n'importe quel vrai domaine (ex: google) et n'importe quel sous-dommaine (.com, .ca, .qc.ca, etc.)
 
 6. Rechercher des adresses e-mail valides. Elles contiennent :
 	- des lettres majuscules ou minuscules, 
@@ -57,6 +60,7 @@ weight = 62
 8. Compter les lignes totales et celles non vides.
 
 9. Trouver les lignes contenant `udp` ou `tcp` avec un numéro à trois chiffres.
+**NB**: Affichez le contenu du fichier **services** situé dans le répertoire `/etc` pour voir comment se présente l'information et créer la bonne expression régulière.
 
 10. Rechercher les mots de quatre lettres entourés d'espaces.
 

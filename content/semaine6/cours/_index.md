@@ -194,6 +194,26 @@ Pour rechercher des caractères ayant une signification spéciale dans les expre
   $ egrep '\.$' fichier
   ```
 
+## Les caractères blancs et non blancs
+
+En expressions régulières, certains raccourcis permettent de rechercher facilement les **espaces** incluant les **tabulations** et les **retours à la ligne** (`Entrée`).
+
+| Expression | Signification |
+|------------|--------------|
+| `\s`      | Correspond à **n'importe quel espace blanc**, y compris l’espace (` `), la tabulation (`\t`) et le retour de ligne (`\n`). |
+| `\S`      | Correspond à **n'importe quel caractère sauf un espace blanc**. Il inclut les lettres, chiffres, ponctuation et symboles. |
+
+### **Exemples :**
+| Expression | Correspondance | Non correspondance |
+|------------|---------------|--------------------|
+| `\s+`     | `" "` (espace), `"\t"` (tabulation) | `"abc"`, `"123"` |
+| `\S+`     | `"abc"`, `"123"`, `"@!#"` | `" "` (espace), `"\n"` (saut de ligne) |
+
+### **Utilisation pratique :**
+- Trouver **tous les mots** dans un texte (séparés par des espaces) :
+  ```bash
+  $ egrep '\S+' fichier.txt
+  ```
 ---
 
 ## Exercices pratiques
