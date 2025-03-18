@@ -2,24 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DNF et CRON :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/semaine8/index.html</link>
-    <description>Plan de la leçon Théorie : Atelier :.</description>
+    <link>https://example.org/semaine8/index.html</link>
+    <description>Plan de la leçon Théorie : Lundi 24 mars&#xA;Gérer des tâches avec Cron et la commande crontab La syntaxe d’un tâche La gestion des paquets avec Dnf Atelier : Jeudi 27 mars.&#xA;Installer des utilitaires et des applications avec Dnf. Planifier et automatiser des tâches sur Linux avec Cron.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/semaine8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/semaine8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CRON et DNF</title>
-      <link>http://localhost:1313/semaine8/cours/index.html</link>
+      <link>https://example.org/semaine8/cours/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/semaine8/cours/index.html</guid>
-      <description>Planification des tâches avec cron Cron est un outil qui permet de planifier et d’automatiser des tâches sur un système Linux. Chaque utilisateur peut définir ses propres tâches planifiées.&#xA;Points essentiels : Les tâches planifiées par un utilisateur sont stockées dans le fichier :&#xA;/var/spool/cron/&lt;user&gt; Le démon responsable de l’exécution des tâches planifiées s’appelle : crond On peut planifier des tâches complexes grâce aux nombreuses options disponibles. Commandes de base pour gérer les tâches planifiées Afficher la liste des tâches planifiées :</description>
-    </item>
-    <item>
-      <title>ATELIER #8: Dnf et Cron</title>
-      <link>http://localhost:1313/semaine8/atelier/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/semaine8/atelier/index.html</guid>
-      <description>Objectif de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Vous devez soumettre votre travail sur Moodle d’ici les deux prochaines séances.&#xA;Les éléments à remettre incluent :&#xA;Captures d’écran annotées : Montrez les étapes suivies pour déterminer et installer les paquets. Ajoutez votre nom d’utilisateur Linux sur chaque capture. Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Nom des captures d’écran :&#xA;Suivez le format proposé (ex. 01_ifconfig.png). Chaque capture doit inclure :</description>
+      <guid>https://example.org/semaine8/cours/index.html</guid>
+      <description>Planification des tâches avec Cron Le programme cron permet de planifier des tâches automatiquement sur un système Linux. Chaque utilisateur peut définir ses propres tâches planifiées, qui sont stockées par défaut dans :&#xA;/var/spool/cron/&lt;user&gt;&#xD;Il est possible d’utiliser un fichier personnalisé pour la planification. Le deamon responsable de l’exécution des tâches est crond.&#xA;Qu’est-ce qu’un Deamon ?&#xD;Un deamon est un type de programme informatique, un processus ou un ensemble de processus qui s’exécute en arrière-plan plutôt que sous le contrôle direct d’un utilisateur.</description>
     </item>
   </channel>
 </rss>

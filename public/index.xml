@@ -61,7 +61,14 @@
       <link>https://example.org/semaine7/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine7/index.html</guid>
-      <description>Plan de la leçon Théorie : Lundi 24 mars&#xA;Utilisation avancée de VIM (vimtutor fr). Les principes de certains fichiers de configuration Linux. DNF et CRON semaine 8 Atelier 7: FACULTATIF (pas de remise).&#xA;Installation d’outils. Utilisation de VIM. Manipulation de fichiers de configuration. Atelier 8: Jeudi 27 mars.&#xA;Installer des utilitaires et des applications avec dnf. Planifier et automatiser des tâches sur Linux.</description>
+      <description>Plan de la leçon Théorie : Lundi 24 mars&#xA;Utilisation avancée de VIM (vimtutor fr). Les principes de certains fichiers de configuration Linux. DNF et CRON semaine 8 Atelier 7: ANNULÉ.&#xA;Installation d’outils. Utilisation de VIM. Manipulation de fichiers de configuration. Atelier 8: Jeudi 27 mars.</description>
+    </item>
+    <item>
+      <title>DNF et CRON</title>
+      <link>https://example.org/semaine8/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine8/index.html</guid>
+      <description>Plan de la leçon Théorie : Lundi 24 mars&#xA;Gérer des tâches avec Cron et la commande crontab La syntaxe d’un tâche La gestion des paquets avec Dnf Atelier : Jeudi 27 mars.&#xA;Installer des utilitaires et des applications avec Dnf. Planifier et automatiser des tâches sur Linux avec Cron.</description>
     </item>
     <item>
       <title>WSL installation et manipulation (Ubuntu, VS Code)</title>

@@ -3,7 +3,7 @@
   <channel>
     <title>Vim, les fichiers de configuration :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine7/index.html</link>
-    <description>Plan de la leçon Théorie : Lundi 24 mars&#xA;Utilisation avancée de VIM (vimtutor fr). Les principes de certains fichiers de configuration Linux. DNF et CRON semaine 8 Atelier 7: FACULTATIF (pas de remise).&#xA;Installation d’outils. Utilisation de VIM. Manipulation de fichiers de configuration. Atelier 8: Jeudi 27 mars.&#xA;Installer des utilitaires et des applications avec dnf. Planifier et automatiser des tâches sur Linux.</description>
+    <description>Plan de la leçon Théorie : Lundi 24 mars&#xA;Utilisation avancée de VIM (vimtutor fr). Les principes de certains fichiers de configuration Linux. DNF et CRON semaine 8 Atelier 7: ANNULÉ.&#xA;Installation d’outils. Utilisation de VIM. Manipulation de fichiers de configuration. Atelier 8: Jeudi 27 mars.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine7/index.xml" rel="self" type="application/rss+xml" />

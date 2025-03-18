@@ -23,29 +23,29 @@ Apprendre à utiliser vim est indispensable pour travailler efficacement sous Li
 
 2. Vidéo YouTube
 
-[Apprendre tout sur Vim](https://youtu.be/yfGbfZUzFq8?si=29JC21SMTF_Fur0l)
+   [Apprendre tout sur Vim](https://youtu.be/yfGbfZUzFq8?si=29JC21SMTF_Fur0l)
 
 ### Les principaux modes de VIM
  
 vim propose 3 modes principaux pour travailler :
 
-1. Mode normal (par défaut) :
- - Interprète les touches comme des commandes (ex. copier, supprimer, naviguer).
- - Utilisez la touche Échap (ESC) pour revenir à ce mode à tout moment.
+1. **Mode normal** (par défaut) :
+   - Interprète les touches comme des commandes (ex. copier, supprimer, naviguer).
+   - Utilisez la touche Échap (ESC) pour revenir à ce mode à tout moment.
 
-2. Mode visuel :
- - Permet de sélectionner du texte.
- - Activez-le avec :
-   - v : pour sélectionner des caractères,
-   - V : pour sélectionner des lignes entières.
+2. **Mode visuel** :
+   - Permet de sélectionner du texte.
+   - Activez-le avec :
+     - **v** : pour sélectionner des caractères,
+     - **V** : pour sélectionner des lignes entières.
 
-3. Mode insertion :
- - Permet d’ajouter ou modifier du texte.
- - Activez-le avec :
-   - i : insérer à l’endroit du curseur,
-   - a : insérer après le curseur,
-   - I : insérer au début de la ligne,
-   - A : insérer à la fin de la ligne.
+3. **Mode insertion** :
+   - Permet d’ajouter ou modifier du texte.
+   - Activez-le avec :
+     - **i** : insérer à l’endroit du curseur.
+     - **a** : insérer après le curseur.
+     - **I** : insérer au début de la ligne.
+     - **A** : insérer à la fin de la ligne.
 
 ### Navigation dans vim
 
@@ -66,6 +66,10 @@ Voici les principales commandes pour se déplacer rapidement :
 {{% notice style="tip" title="Astuce" %}}
 Vous pouvez ajouter un quantificateur pour répéter une commande.
 **Exemple** : `3w` pour avancer de 3 mots, `50j` pour descendre de 50 lignes.
+{{% /notice %}}
+
+{{% notice style="note" title="Sachez que..." %}}
+Une virgule (`,`) sera considérée comme un mot.
 {{% /notice %}}
 
 ### Commandes de base

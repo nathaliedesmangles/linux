@@ -12,13 +12,12 @@ weight = 70
   - Les principes de certains fichiers de configuration Linux.
   - DNF et CRON [semaine 8](https://linuxh25.netlify.app/semaine8/cours/)
 
-- **Atelier 7: FACULTATIF (pas de remise)**.
+- **Atelier 7: ANNULÉ**.
   - Installation d'outils.
   - Utilisation de VIM.
   - Manipulation de fichiers de configuration.
 
 - **Atelier 8:  Jeudi 27 mars**.
-  - Installer des utilitaires et des applications avec dnf.
-  - Planifier et automatiser des tâches sur Linux.
+
 
 
