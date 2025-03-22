@@ -1,7 +1,6 @@
 +++
-title = "ATELIER #8: Dnf et Cron (À MODIFIER POUR CRON)"
+title = "ATELIER #8: Dnf et Cron"
 weight = 82
-draft = true
 +++
 
 ## Objectif de l'atelier
@@ -94,23 +93,26 @@ Suivez le format proposé (ex. `01_ifconfig.png`). Chaque capture doit inclure :
 
 ---
 
-## Partie 2 : Introduction à cron
+## Partie 2 : Expérimenter avec *cron*
 
-Configurer une tâche cron pour automatiser le téléchargement d’un fichier.
- 
-1. **Configurer une commande cron** pour :  
-   - Télécharger le contenu de `http://gyoukou.ca/heure.brut` toutes les minutes :  
-     ```bash
-     $ wget http://gyoukou.ca/heure.brut
-     ```  
-   - Ajouter ce contenu dans un fichier nommé `heures.txt`. **Utilisez un chemin absolu pour ce fichier.**  
-2. **Vérifiez que la commande fonctionne** :  
-   - Utilisez la commande suivante pour observer l’évolution de `heures.txt` :  
-     ```bash
-     $ tail -f heures.txt
-     ```  
-3. **Désactivez la tâche cron une fois qu’elle est validée** :  
-   - Commentez la ligne dans votre crontab pour éviter que le fichier continue à se remplir à l'infini.
+Dans cet exercice, vous allez configurer une tâche planifiée qui exécutera une commande périodiquement afin d’accumuler des Relevés d’heure dans un fichier.
+
+L’objectif est d’observer comment un fichier peut croître automatiquement au fil du temps et d’apprendre à gérer une tâche récurrente. Vous pourrez ensuite suivre l’évolution du fichier en temps réel et désactiver la tâche une fois satisfait du résultat.
+
+1. Installer une commande *cron* qui va :
+	- exécuter une commande enregistrant l’heure actuelle chaque minute
+	- accumuler ce contenu dans heures.txt
+		**ATTENTION**: utiliser un chemin absolu
+2. Vous pouvez vérifier que le fichier heures.txt grossit à chaque minute en le suivant:
+
+	```bash
+	$ tail -f heures.txt
+	```
+
+3. **IMPORTANT** : une fois satisfait que votre commande fonctionne, désactiver votre ligne *cron*
+
+	- (p.ex. en la mettant en commentaire)
+	- on ne veut pas continuer à accumuler du contenu dans **heures.txt** à chaque minute pour toujours
 
 ---
 

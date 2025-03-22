@@ -226,7 +226,7 @@ find /etc/ -name "*.log" 2>&1 && fichiers_log.txt
 
 **Absence du caractère générique étoile**
 ```bash
-find /etc/ -name ".log"> fichiers_log.txt 2>&1 
+find /etc/ -name ".log" > fichiers_log.txt 2>&1 
 ```
 
 
