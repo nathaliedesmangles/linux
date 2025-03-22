@@ -187,22 +187,22 @@ cut -d' ' -f2 data.txt && grep 'valeur'
 
 **Mauvaise commande de recherche:** `grep` au lieu de `find`
 ```bash
-grep /etc/ -name " test " 2>/dev/null | wc -l
+grep /etc/ -name "*test*" 2>/dev/null | wc -l
 ```
 
 **Absence du comptage de lignes**
 ```bash
-find /etc/ -name " test " 2>/dev/null | wc -l
+find /etc/ -name "*test*" 2>/dev/null | wc -l
 ```
 
 **Mauvais emplacement du comptage de ligne**
 ```bash
-find /etc/ -name " test " | wc -l | 2>/dev/null 
+find /etc/ -name "*test*" | wc -l | 2>/dev/null 
 ```
 
 **Logique erronée: Absence du pipeline**
 ```bash
-find /etc/ -name " test " 2>/dev/null && wc -l
+find /etc/ -name "*test*" 2>/dev/null && wc -l
 ```
 
 **Utilisation d'un chemin absolu `/`**
