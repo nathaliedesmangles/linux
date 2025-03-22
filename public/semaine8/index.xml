@@ -12,7 +12,7 @@
       <link>https://example.org/semaine8/cours/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine8/cours/index.html</guid>
-      <description>Planification des tâches avec Cron Le programme cron permet de planifier des tâches automatiquement sur un système Linux. Chaque utilisateur peut définir ses propres tâches planifiées, qui sont stockées par défaut dans :&#xA;/var/spool/cron/&lt;user&gt;&#xD;Il est possible d’utiliser un fichier personnalisé pour la planification. Le deamon responsable de l’exécution des tâches est crond.&#xA;Qu’est-ce qu’un Deamon ?&#xD;Un deamon est un type de programme informatique, un processus ou un ensemble de processus qui s’exécute en arrière-plan plutôt que sous le contrôle direct d’un utilisateur.</description>
+      <description>Planification des tâches avec Cron Le programme cron permet de planifier des tâches automatiquement sur un système Linux. Chaque utilisateur peut définir ses propres tâches planifiées, qui sont stockées par défaut dans :&#xA;/var/spool/cron/&#xD;Qu’est-ce qu’une crontab ? Qu’est-ce qu’une Crontab ?&#xD;Une crontab (abréviation de cron table) est un fichier de configuration utilisé par le planificateur de tâches cron sous Unix/Linux. Il permet d’exécuter automatiquement des commandes ou des scripts à des moments spécifiés.</description>
     </item>
     <item>
       <title>ATELIER #8: Dnf et Cron</title>

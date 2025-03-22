@@ -8,8 +8,14 @@ weight = 81
 Le programme **cron** permet de planifier des tâches automatiquement sur un système Linux. Chaque utilisateur peut définir ses propres tâches planifiées, qui sont stockées par défaut dans :
 
 ```
-/var/spool/cron/<user>
+/var/spool/cron/
 ```
+
+### Qu'est-ce qu'une crontab ?
+
+{{% notice style="info" title="Qu'est-ce qu'une Crontab ?" %}}
+Une ***crontab*** (abréviation de *cron table*) est un fichier de configuration utilisé par le planificateur de tâches ***cron*** sous Unix/Linux. Il permet d'exécuter automatiquement des commandes ou des scripts à des moments spécifiés.
+{{% /notice %}}
 
 Il est possible d'utiliser un fichier personnalisé pour la planification. Le ***deamon*** responsable de l'exécution des tâches est **crond**.
 
@@ -20,50 +26,69 @@ Un ***deamon*** est un type de programme informatique, un processus ou un ensemb
 
 ### Commandes principales
 
-#### Afficher les tâches planifiées
+#### Afficher les tâches planifiées de l'utilisateur actuel
 ```bash
 crontab -l
 ```
+**Résultat** : 
+- Si aucune tâche n'est planifiée, le message ***no crontab for user*** s'affiche.
+- Sinon, la liste des tâches planifiées s'affiche (voir un exemple ICI)
 
-#### Supprimer toutes les tâches planifiées
+#### Supprimer toutes les tâches planifiées de l'utilisateur
 ```bash
 crontab -r
 ```
+{{% notice style="warning" title="Attention" icon="skull-crossbones" %}}
+**Cette action est irréversible**.
+{{% /notice %}}
+
 
 #### Gérer la crontab d'un autre utilisateur (nécessite d'être *root*)
 ```bash
 sudo crontab -u <utilisateur>
 ```
+**Exemple** :
+```bash
+sudo crontab -u nathalie -l
+```
 
-#### Enregistrer un fichier de tâches planifiées dans la crontab
+#### Charger ou remplacer une tâche planifiée à partir d'un fichier
 ```bash
 crontab <fichier>
 ```
+**Exemple** :
+```bash
+crontab ma_tache.txt
+```
+
+{{% notice style="note" title="À savoir..." %}}
+- Chaque nouvelle utilisation de `crontab <fichier>` écrase toutes les tâches planifiées précédentes.
+{{% /notice %}}
 
 #### Modifier la *crontab* existante ou en créer une nouvelle
 ```bash
 crontab -e
 ```
 
-Chaque nouvelle utilisation de `crontab <fichier>` écrase toutes les tâches planifiées précédentes.
+**Résultat** : La crontab s'ouvre dans l'éditeur de texte (ex: Vim)
 
-### Syntaxe d'une tâche cron
+### Syntaxe d'une tâche ***cron***
 
-Une tâche cron est définie selon le format suivant :
+Une tâche ***cron*** est définie selon le format suivant :
 
 ```bash
 * * * * * commande_à_exécuter
 ```
 
 Chaque ligne contient :
-- **Planification** (5 champs)
-- **Tâche** (une commande Bash ou un script, recommandé)
+- **Planification** (Les cinq étoilels représentent 5 champs)
+- **Tâche** (une commande *Bash* ou de préférence un script)
 
 **Exemple :**
 ```bash
-15 * * * * bash /home/<user>/monscript.sh
+15 * * * * bash /home/ndesmangles/monscript.sh
 30 0 * * * bash /usr/local/bin/autrescript.sh
-0 * * * * echo "Nouvelle heure" >> /home/<user>/heure.txt
+0 * * * * echo "Nouvelle heure" >> /home/ndesmangles/heure.txt
 ```
 
 {{% notice style="warning" title="Important" %}}
@@ -71,15 +96,15 @@ Les scripts doivent être spécifiés avec leur **chemin absolu**.
 {{% /notice %}}
 
 
-### Explication des champs de planification
+### Explication des champs de planification (le moment auquel la tâche doit s'exécuter)
 
-| Champ        | Valeurs possibles         | Description |
-|-------------|--------------------------|-------------|
-| **Minute**   | 0-59                      | Minute d'exécution |
-| **Heure**    | 0-23                      | Heure d'exécution |
-| **Jour**     | 1-31                      | Jour du mois |
-| **Mois**     | 1-12                      | Mois de l'année |
-| **Jour de semaine** | 0-7 (0 et 7 = dimanche) | Jour de la semaine |
+| No du champ *  | Rôle du champ       | Valeurs possibles |
+|:--------------:|---------------------|:-----------------:|
+|1re *           | **Minute**          | 0 - 59            |
+|2e *            | **Heure**           | 0 - 23            |
+|3e *            | **Jour du mois**    | 1 - 31            |
+|4e *            | **Mois de l'année** | 1 - 12            |
+|5e *            | **Jour de semaine** | 0 et 7 = dimanche <br> 1 = lundi<br> 2 = mardi, etc. |
 
 #### Opérateurs utiles
 - `*` : chaque unité de temps.
@@ -89,27 +114,27 @@ Les scripts doivent être spécifiés avec leur **chemin absolu**.
 
 ### Exemples d'utilisation
 
-Exécuter un script chaque jour à 14h30 :
+Exécuter un script **chaque jour à 14h30** :
 ```bash
 30 14 * * * bash /chemin/script.sh
 ```
 
-Exécuter un script chaque heure (à la 25e minute) en mars :
+Exécuter un script **chaque heure (à la 25e minute) en mars** :
 ```bash
 25 * * 3 * bash /chemin/script.sh
 ```
 
-Exécuter un script une fois par heure entre 9h et 17h :
+Exécuter un script **une fois par heure entre 9h et 17h** :
 ```bash
 15 9-17 * * * bash /chemin/script.sh
 ```
 
-Exécuter un script à midi les lundis, mercredis et vendredis :
+Exécuter un script **à midi les lundis, mercredis et vendredis** :
 ```bash
 0 12 * * 1,3,5 bash /chemin/script.sh
 ```
 
-Exécuter un script toutes les deux heures :
+Exécuter un script **toutes les deux heures** :
 ```bash
 0 */2 * * * bash /chemin/script.sh
 ```
@@ -121,7 +146,7 @@ Exécuter un script toutes les deux heures :
 Sur AlmaLinux, il existe plusieurs façons d'installer une application :
 1. **Compiler manuellement** à partir des sources (long et complexe).
 2. **Utiliser un paquet RPM** (résolution des dépendances nécessaire).
-3. **Utiliser `dnf`** (méthode recommandée, gère les dépendances automatiquement).
+3. **Utiliser** ***dnf*** (méthode recommandée, gère les dépendances automatiquement).
 
 ### Les dépôts
 
