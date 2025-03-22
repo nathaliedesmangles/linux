@@ -86,7 +86,7 @@ find /etc/ -name "*.log"> fichiers_log.txt 2>&1
 
 
 #### **Question 12.** Dans le répertoire `/etc`, vous devez compter le nombre de fichiers dont le nom contient le mot "test", en redirigeant les erreurs de la commande vers "/dev/null" . Quelle commande utiliserez vous ?
-Réponse :
+**Réponse** :
 ```bash
 find /etc/ -name " test " 2>/dev/null | wc -l
 ```
@@ -161,4 +161,141 @@ echo "Tous les fichiers ont été traités."
 - `&`
 - `wait`
 
+---
 
+## Les incohérences dans vos réponses
+
+**Mauvais délimiteur: deux-points au lieu de la virgule**
+```bash
+cut -d':' -f3
+```
+
+**Mauvaise option pour le délimiteur et/ou la colonne**
+```bash
+cut -k',' -t3
+```
+
+**Deuxième commande du pipeline `|` répéter le fichier**
+```bash
+cut -d' ' -f2 data.txt | grep 'valeur' data.txt
+```
+
+**Mauvaise logique: pipeline pas utilisé**
+```bash
+cut -d' ' -f2 data.txt && grep 'valeur'
+```
+
+**Mauvaise commande de recherche:** `grep` au lieu de `find`
+```bash
+grep /etc/ -name " test " 2>/dev/null | wc -l
+```
+
+**Absence du comptage de lignes**
+```bash
+find /etc/ -name " test " 2>/dev/null | wc -l
+```
+
+**Mauvais emplacement du comptage de ligne**
+```bash
+find /etc/ -name " test " | wc -l | 2>/dev/null 
+```
+
+**Logique erronée: Absence du pipeline**
+```bash
+find /etc/ -name " test " 2>/dev/null && wc -l
+```
+
+**Utilisation d'un chemin absolu `/`**
+```bash
+grep "erreur" /log.txt
+```
+
+**Réponses hors sujet**
+```bash
+sort -kn
+```
+
+```bash
+-k2n
+```
+
+**Redirection des erreurs mal placée OU manquante**
+```bash
+find /etc/ -name "*.log" 2>&1 && fichiers_log.txt 
+```
+
+**Absence du caractère générique étoile**
+```bash
+find /etc/ -name ".log"> fichiers_log.txt 2>&1 
+```
+
+
+### script à coder
+
+- Non respect des consignes: boucle `for` au lieu de `while`
+
+- Absence de l'instruction **`#!/bin/bash`** sur la première ligne
+
+- Compétence non acquise: Notion de boucle
+```bash
+while
+   touch file1.txt
+   touch file2.txt
+   touch file3.txt
+do
+   test -e file1.txt
+   test -e file2.txt
+   test -e file3.txt
+done
+
+echo "Création du fichier à été confirmé."
+```
+- Structure du **`while`** incohérente: 
+```bash
+1. pas de variable de compte initialisée ou initialisée à 0 au lieu de 1
+
+2. variable initialisée à 1, mais il y a des espaces 
+i = 1
+
+3. pas de condition après le while 
+while X
+do
+   les commandes à répéter
+done
+
+4. mauvaise condition après le while
+while read
+
+5. une condition sans la commande test
+while $i -le 3
+
+6. mauvais opérateur de comparaison
+while test $i -gt 3
+
+```
+
+- Syntaxes ou commandes pas vues en classe qui entrainent la note de 0**
+```bash
+[$i != 3] 
+if
+awk 
+```
+
+
+{{% notice style=warning title="ATTENTION: Erreurs qui vaudront 0 à la question" icon="skull-crossbones" %}}
+Dans les prochains tests et ateliers voici les erreurs de la matière déjà vues en classe qui seront fortement pénalisées:
+
+- Utilisation de syntaxe ou commandes pas déjà vue en classe 
+- Utilisation d'une chemin absolu (`/`) rendant la commande erronée
+- Utilisation de `grep` au lieu de `find` et vice versa
+- Utilisation de `cat` ou `ls` au lieu de `grep` ou `find`
+- Absence de pipeline ou remplacé par un opérateur logique (ex: &&)
+- Si la redirection des erreurs, le chiffre 2 est absent
+- Utilisation de `if...` si elle n'a pas déjà été vue en classe
+- Utilisation des [ ] au lieu de la commande `test`
+- Utilisation des [ ] des expressions régulières mais hors sujet
+- Partie de la réponse hors sujet (ex: une commande de trop, une option de trop)
+- Oublie des caractères génériques (exemple l'étoile)
+- etc. des semaines 7 à 14
+
+{{% /notice %}}
