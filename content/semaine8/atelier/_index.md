@@ -3,29 +3,24 @@ title = "ATELIER #8: Dnf et Cron"
 weight = 82
 +++
 
-## Objectif de l'atelier
+## Objectifs de l'atelier
 
- - Installer des utilitaires et des applications avec dnf.
- - Se familiariser avec cron.
+ - Installer des utilitaires et des applications avec ***dnf***.
+ - Se familiariser avec ***cron***.
 
 ---
 
 ## Instructions de remise
-
-Vous devez soumettre votre travail sur Moodle **d'ici les deux prochaines séances.**  
+  
 Les éléments à remettre incluent :  
 - **Captures d’écran annotées :**  
-  - Montrez les étapes suivies pour déterminer et installer les paquets.  
-  - Ajoutez votre nom d’utilisateur Linux sur chaque capture.  
+  - Montrez les étapes suivies pour déterminer le nom du paquet et l'installer.  
+  - Votre nom d’utilisateur Linux doit être visible sur chaque capture. 
+- **Nom des captures d'écran :** Suivez le format proposé (ex. `01_ifconfig.png`).  
 - **Fichiers :**  
-  - Une copie de votre crontab.  
+  - Une copie de votre *crontab*.  
   - Le fichier `heures.txt` (après validation).  
-  - Le contenu de votre script (lignes utilisées dans cron).  
-
-**Nom des captures d'écran :**  
-Suivez le format proposé (ex. `01_ifconfig.png`). Chaque capture doit inclure :  
-- Les étapes pour déterminer le nom du paquet.  
-- Votre nom d'utilisateur Linux.  
+  - Le contenu de votre script (lignes utilisées dans *cron*).  
 
 ---
 
@@ -46,20 +41,34 @@ Suivez le format proposé (ex. `01_ifconfig.png`). Chaque capture doit inclure :
    - Les descriptions des paquets sont en anglais.  
    - La commande suivante est utile pour rechercher un fichier spécifique dans un paquet :  
      ```bash
-     $ dnf provides */FICHIER
+     $ dnf provides */fichier
      ```  
+
+La commande `dnf provides` (ou `dnf whatprovides`) permet de rechercher quel paquet contient un fichier spécifique.
 
 ### Exemple
 
-- **Installer un jeu de ninja.**  
-  - Capture nommée : `exemple_ninja.png`  
-  - Contenu : étapes pour identifier le paquet + votre nom d'utilisateur.
+Si vous essayez d'exécuter `ifconfig` mais que la commande n'est pas trouvée, vous pouvez chercher le paquet qui l'inclut avec la commande :
+```bash
+dnf provides */ifconfig
+```
+
+**Résultat possible** :
+```yaml
+net-tools-2.0-0.52.20160912git.el8.x86_64 : Basic networking tools
+```
+Cela indique que la commande `ifconfig` est fournie par le paquet `net-tools`.
+
+**Pour l'installer** :
+```bash
+sudo dnf install net-tools
+```
 
 ---
 
-#### Paquets à installer
+### Paquets à installer
 
-1. **Paquet 01 :**  
+1. **Paquet 01 : (voir l'exemple plus haut)**  
    - Description : l'utilitaire `ifconfig` (ancêtre de `ip addr`).  
    - Capture : `01_ifconfig.png`.  
 
@@ -101,24 +110,22 @@ L’objectif est d’observer comment un fichier peut croître automatiquement a
 
 1. Installer une commande *cron* qui va :
 	- exécuter une commande enregistrant l’heure actuelle chaque minute
-	- accumuler ce contenu dans heures.txt
-		**ATTENTION**: utiliser un chemin absolu
-2. Vous pouvez vérifier que le fichier heures.txt grossit à chaque minute en le suivant:
+	- accumuler ce contenu dans le fichier **heures.txt**.
+		<br><b><span style="color:red;">ATTENTION</span></b>: utiliser un <b><u>chemin absolu</u></b>
+2. Vous pouvez vérifier que le fichier **heures.txt** grossit à chaque minute à l'aide de la commande suivante:
 
 	```bash
 	$ tail -f heures.txt
 	```
 
-3. **IMPORTANT** : une fois satisfait que votre commande fonctionne, désactiver votre ligne *cron*
+3. <b><span style="color:red;">IMPORTANT</span></b> : une fois satisfait que votre commande fonctionne, désactiver votre ligne *cron*.
+	- (p.ex. en la mettant en commentaire à l'aide du symbole `#`)
+	- on ne veut pas continuer à accumuler du contenu dans **heures.txt** à chaque minute pour toujours.
 
-	- (p.ex. en la mettant en commentaire)
-	- on ne veut pas continuer à accumuler du contenu dans **heures.txt** à chaque minute pour toujours
 
----
+### Remise 
 
-### Éléments de validation 
-
-- **Capture d’écran `09_crontab.png`** :  
-  - Montrez le contenu de votre crontab.  
-  - Indiquez la date de validation.  
+- **Capture d’écran `09_crontab.png`**, on doit voir :  
+  - le contenu de votre *crontab*.  
+  - la date de validation.  
 

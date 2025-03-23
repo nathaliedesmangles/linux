@@ -5,39 +5,31 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Objectif de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Vous devez soumettre votre travail sur Moodle d’ici les deux prochaines séances.
-Les éléments à remettre incluent :
-Captures d’écran annotées : Montrez les étapes suivies pour déterminer et installer les paquets. Ajoutez votre nom d’utilisateur Linux sur chaque capture. Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Nom des captures d’écran :
-Suivez le format proposé (ex. 01_ifconfig.png). Chaque capture doit inclure :">
+    <meta name="description" content="Objectifs de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Les éléments à remettre incluent :
+Captures d’écran annotées : Montrez les étapes suivies pour déterminer le nom du paquet et l’installer. Votre nom d’utilisateur Linux doit être visible sur chaque capture. Nom des captures d’écran : Suivez le format proposé (ex. 01_ifconfig.png). Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Atelier Partie 1 : Utilisation de dnf Pour chaque description ci-dessous : Utilisez dnf pour identifier le nom du paquet correspondant (sans utiliser le Web). Installez le paquet. Immédiatement après l’installation, exécutez la commande : $ historyPrenez une capture d’écran montrant uniquement les commandes liées à l’installation. Rognez et annotez au besoin (ex. nom d’utilisateur). Astuces : Les descriptions des paquets sont en anglais. La commande suivante est utile pour rechercher un fichier spécifique dans un paquet : $ dnf provides */fichierLa commande dnf provides (ou dnf whatprovides) permet de rechercher quel paquet contient un fichier spécifique.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="ATELIER #8: Dnf et Cron :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Objectif de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Vous devez soumettre votre travail sur Moodle d’ici les deux prochaines séances.
-Les éléments à remettre incluent :
-Captures d’écran annotées : Montrez les étapes suivies pour déterminer et installer les paquets. Ajoutez votre nom d’utilisateur Linux sur chaque capture. Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Nom des captures d’écran :
-Suivez le format proposé (ex. 01_ifconfig.png). Chaque capture doit inclure :">
+    <meta name="twitter:description" content="Objectifs de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Les éléments à remettre incluent :
+Captures d’écran annotées : Montrez les étapes suivies pour déterminer le nom du paquet et l’installer. Votre nom d’utilisateur Linux doit être visible sur chaque capture. Nom des captures d’écran : Suivez le format proposé (ex. 01_ifconfig.png). Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Atelier Partie 1 : Utilisation de dnf Pour chaque description ci-dessous : Utilisez dnf pour identifier le nom du paquet correspondant (sans utiliser le Web). Installez le paquet. Immédiatement après l’installation, exécutez la commande : $ historyPrenez une capture d’écran montrant uniquement les commandes liées à l’installation. Rognez et annotez au besoin (ex. nom d’utilisateur). Astuces : Les descriptions des paquets sont en anglais. La commande suivante est utile pour rechercher un fichier spécifique dans un paquet : $ dnf provides */fichierLa commande dnf provides (ou dnf whatprovides) permet de rechercher quel paquet contient un fichier spécifique.">
     <meta property="og:url" content="https://example.org/semaine8/atelier/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="ATELIER #8: Dnf et Cron :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Objectif de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Vous devez soumettre votre travail sur Moodle d’ici les deux prochaines séances.
-Les éléments à remettre incluent :
-Captures d’écran annotées : Montrez les étapes suivies pour déterminer et installer les paquets. Ajoutez votre nom d’utilisateur Linux sur chaque capture. Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Nom des captures d’écran :
-Suivez le format proposé (ex. 01_ifconfig.png). Chaque capture doit inclure :">
+    <meta property="og:description" content="Objectifs de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Les éléments à remettre incluent :
+Captures d’écran annotées : Montrez les étapes suivies pour déterminer le nom du paquet et l’installer. Votre nom d’utilisateur Linux doit être visible sur chaque capture. Nom des captures d’écran : Suivez le format proposé (ex. 01_ifconfig.png). Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Atelier Partie 1 : Utilisation de dnf Pour chaque description ci-dessous : Utilisez dnf pour identifier le nom du paquet correspondant (sans utiliser le Web). Installez le paquet. Immédiatement après l’installation, exécutez la commande : $ historyPrenez une capture d’écran montrant uniquement les commandes liées à l’installation. Rognez et annotez au besoin (ex. nom d’utilisateur). Astuces : Les descriptions des paquets sont en anglais. La commande suivante est utile pour rechercher un fichier spécifique dans un paquet : $ dnf provides */fichierLa commande dnf provides (ou dnf whatprovides) permet de rechercher quel paquet contient un fichier spécifique.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="ATELIER #8: Dnf et Cron :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Objectif de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Vous devez soumettre votre travail sur Moodle d’ici les deux prochaines séances.
-Les éléments à remettre incluent :
-Captures d’écran annotées : Montrez les étapes suivies pour déterminer et installer les paquets. Ajoutez votre nom d’utilisateur Linux sur chaque capture. Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Nom des captures d’écran :
-Suivez le format proposé (ex. 01_ifconfig.png). Chaque capture doit inclure :">
-    <meta itemprop="wordCount" content="502">
+    <meta itemprop="description" content="Objectifs de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Les éléments à remettre incluent :
+Captures d’écran annotées : Montrez les étapes suivies pour déterminer le nom du paquet et l’installer. Votre nom d’utilisateur Linux doit être visible sur chaque capture. Nom des captures d’écran : Suivez le format proposé (ex. 01_ifconfig.png). Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Atelier Partie 1 : Utilisation de dnf Pour chaque description ci-dessous : Utilisez dnf pour identifier le nom du paquet correspondant (sans utiliser le Web). Installez le paquet. Immédiatement après l’installation, exécutez la commande : $ historyPrenez une capture d’écran montrant uniquement les commandes liées à l’installation. Rognez et annotez au besoin (ex. nom d’utilisateur). Astuces : Les descriptions des paquets sont en anglais. La commande suivante est utile pour rechercher un fichier spécifique dans un paquet : $ dnf provides */fichierLa commande dnf provides (ou dnf whatprovides) permet de rechercher quel paquet contient un fichier spécifique.">
+    <meta itemprop="wordCount" content="539">
     <title>ATELIER #8: Dnf et Cron :: 420-ZG4-MO LINUX</title>
     <link href="/semaine8/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #8: Dnf et Cron :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1742678741" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742678741" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1742678741" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742678741" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1742678741" rel="stylesheet">
-    <link href="/css/theme.min.css?1742678741" rel="stylesheet">
-    <link href="/css/format-html.min.css?1742678741" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742770953" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742770953" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742770953" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742770953" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742770953" rel="stylesheet">
+    <link href="/css/theme.min.css?1742770953" rel="stylesheet">
+    <link href="/css/format-html.min.css?1742770953" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -100,7 +92,7 @@ Suivez le format proposé (ex. 01_ifconfig.png). Chaque capture doit inclure :">
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#objectif-de-latelier">Objectif de l&rsquo;atelier</a></li>
+    <li><a href="#objectifs-de-latelier">Objectifs de l&rsquo;atelier</a></li>
     <li><a href="#instructions-de-remise">Instructions de remise</a></li>
   </ul>
 
@@ -108,11 +100,12 @@ Suivez le format proposé (ex. 01_ifconfig.png). Chaque capture doit inclure :">
     <li><a href="#partie-1--utilisation-de-dnf">Partie 1 : Utilisation de dnf</a>
       <ul>
         <li><a href="#exemple">Exemple</a></li>
+        <li><a href="#paquets-à-installer">Paquets à installer</a></li>
       </ul>
     </li>
     <li><a href="#partie-2--expérimenter-avec-cron">Partie 2 : Expérimenter avec <em>cron</em></a>
       <ul>
-        <li><a href="#éléments-de-validation">Éléments de validation</a></li>
+        <li><a href="#remise">Remise</a></li>
       </ul>
     </li>
   </ul>
@@ -151,35 +144,29 @@ Suivez le format proposé (ex. 01_ifconfig.png). Chaque capture doit inclure :">
 
 <h1 id="atelier-8-dnf-et-cron">ATELIER #8: Dnf et Cron</h1>
 
-<h2 id="objectif-de-latelier">Objectif de l&rsquo;atelier</h2>
+<h2 id="objectifs-de-latelier">Objectifs de l&rsquo;atelier</h2>
 <ul>
-<li>Installer des utilitaires et des applications avec dnf.</li>
-<li>Se familiariser avec cron.</li>
+<li>Installer des utilitaires et des applications avec <em><strong>dnf</strong></em>.</li>
+<li>Se familiariser avec <em><strong>cron</strong></em>.</li>
 </ul>
 <hr>
 <h2 id="instructions-de-remise">Instructions de remise</h2>
-<p>Vous devez soumettre votre travail sur Moodle <strong>d&rsquo;ici les deux prochaines séances.</strong><br>
-Les éléments à remettre incluent :</p>
+<p>Les éléments à remettre incluent :</p>
 <ul>
 <li><strong>Captures d’écran annotées :</strong>
 <ul>
-<li>Montrez les étapes suivies pour déterminer et installer les paquets.</li>
-<li>Ajoutez votre nom d’utilisateur Linux sur chaque capture.</li>
+<li>Montrez les étapes suivies pour déterminer le nom du paquet et l&rsquo;installer.</li>
+<li>Votre nom d’utilisateur Linux doit être visible sur chaque capture.</li>
 </ul>
 </li>
+<li><strong>Nom des captures d&rsquo;écran :</strong> Suivez le format proposé (ex. <code>01_ifconfig.png</code>).</li>
 <li><strong>Fichiers :</strong>
 <ul>
-<li>Une copie de votre crontab.</li>
+<li>Une copie de votre <em>crontab</em>.</li>
 <li>Le fichier <code>heures.txt</code> (après validation).</li>
-<li>Le contenu de votre script (lignes utilisées dans cron).</li>
+<li>Le contenu de votre script (lignes utilisées dans <em>cron</em>).</li>
 </ul>
 </li>
-</ul>
-<p><strong>Nom des captures d&rsquo;écran :</strong><br>
-Suivez le format proposé (ex. <code>01_ifconfig.png</code>). Chaque capture doit inclure :</p>
-<ul>
-<li>Les étapes pour déterminer le nom du paquet.</li>
-<li>Votre nom d&rsquo;utilisateur Linux.</li>
 </ul>
 <hr>
 <h1 id="atelier">Atelier</h1>
@@ -202,25 +189,25 @@ Suivez le format proposé (ex. <code>01_ifconfig.png</code>). Chaque capture doi
 <ul>
 <li>Les descriptions des paquets sont en anglais.</li>
 <li>La commande suivante est utile pour rechercher un fichier spécifique dans un paquet :
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ dnf provides */FICHIER</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ dnf provides */fichier</span></span></code></pre></div>
 </li>
 </ul>
 </li>
 </ol>
+<p>La commande <code>dnf provides</code> (ou <code>dnf whatprovides</code>) permet de rechercher quel paquet contient un fichier spécifique.</p>
 <h3 id="exemple">Exemple</h3>
-<ul>
-<li><strong>Installer un jeu de ninja.</strong>
-<ul>
-<li>Capture nommée : <code>exemple_ninja.png</code></li>
-<li>Contenu : étapes pour identifier le paquet + votre nom d&rsquo;utilisateur.</li>
-</ul>
-</li>
-</ul>
+<p>Si vous essayez d&rsquo;exécuter <code>ifconfig</code> mais que la commande n&rsquo;est pas trouvée, vous pouvez chercher le paquet qui l&rsquo;inclut avec la commande :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dnf provides */ifconfig</span></span></code></pre></div>
+<p><strong>Résultat possible</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">net-tools-2.0-0.52.20160912git.el8.x86_64 </span>: <span style="color:#ae81ff">Basic networking tools</span></span></span></code></pre></div>
+<p>Cela indique que la commande <code>ifconfig</code> est fournie par le paquet <code>net-tools</code>.</p>
+<p><strong>Pour l&rsquo;installer</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dnf install net-tools</span></span></code></pre></div>
 <hr>
-<h4 id="paquets-à-installer">Paquets à installer</h4>
+<h3 id="paquets-à-installer">Paquets à installer</h3>
 <ol>
 <li>
-<p><strong>Paquet 01 :</strong></p>
+<p><strong>Paquet 01 : (voir l&rsquo;exemple plus haut)</strong></p>
 <ul>
 <li>Description : l&rsquo;utilitaire <code>ifconfig</code> (ancêtre de <code>ip addr</code>).</li>
 <li>Capture : <code>01_ifconfig.png</code>.</li>
@@ -285,29 +272,28 @@ Suivez le format proposé (ex. <code>01_ifconfig.png</code>). Chaque capture doi
 <p>Installer une commande <em>cron</em> qui va :</p>
 <ul>
 <li>exécuter une commande enregistrant l’heure actuelle chaque minute</li>
-<li>accumuler ce contenu dans heures.txt
-<strong>ATTENTION</strong>: utiliser un chemin absolu</li>
+<li>accumuler ce contenu dans le fichier <strong>heures.txt</strong>.
+<br><b><span style="color:red;">ATTENTION</span></b>: utiliser un <b><u>chemin absolu</u></b></li>
 </ul>
 </li>
 <li>
-<p>Vous pouvez vérifier que le fichier heures.txt grossit à chaque minute en le suivant:</p>
+<p>Vous pouvez vérifier que le fichier <strong>heures.txt</strong> grossit à chaque minute à l&rsquo;aide de la commande suivante:</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ tail -f heures.txt</span></span></code></pre></div>
 </li>
 <li>
-<p><strong>IMPORTANT</strong> : une fois satisfait que votre commande fonctionne, désactiver votre ligne <em>cron</em></p>
+<p><b><span style="color:red;">IMPORTANT</span></b> : une fois satisfait que votre commande fonctionne, désactiver votre ligne <em>cron</em>.</p>
 <ul>
-<li>(p.ex. en la mettant en commentaire)</li>
-<li>on ne veut pas continuer à accumuler du contenu dans <strong>heures.txt</strong> à chaque minute pour toujours</li>
+<li>(p.ex. en la mettant en commentaire à l&rsquo;aide du symbole <code>#</code>)</li>
+<li>on ne veut pas continuer à accumuler du contenu dans <strong>heures.txt</strong> à chaque minute pour toujours.</li>
 </ul>
 </li>
 </ol>
-<hr>
-<h3 id="éléments-de-validation">Éléments de validation</h3>
+<h3 id="remise">Remise</h3>
 <ul>
-<li><strong>Capture d’écran <code>09_crontab.png</code></strong> :
+<li><strong>Capture d’écran <code>09_crontab.png</code></strong>, on doit voir :
 <ul>
-<li>Montrez le contenu de votre crontab.</li>
-<li>Indiquez la date de validation.</li>
+<li>le contenu de votre <em>crontab</em>.</li>
+<li>la date de validation.</li>
 </ul>
 </li>
 </ul>
@@ -327,7 +313,7 @@ Suivez le format proposé (ex. <code>01_ifconfig.png</code>). Chaque capture doi
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1742678741";
+          window.index_js_url="/searchindex.en.js?1742770953";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -340,12 +326,12 @@ Suivez le format proposé (ex. <code>01_ifconfig.png</code>). Chaque capture doi
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1742678741" defer></script>
-        <script src="/js/lunr/lunr.min.js?1742678741" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1742678741" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1742678741" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1742678741" defer></script>
-        <script src="/js/search.js?1742678741" defer></script>
+        <script src="/js/auto-complete.js?1742770953" defer></script>
+        <script src="/js/lunr/lunr.min.js?1742770953" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1742770953" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1742770953" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1742770953" defer></script>
+        <script src="/js/search.js?1742770953" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -423,8 +409,8 @@ Suivez le format proposé (ex. <code>01_ifconfig.png</code>). Chaque capture doi
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1742678741" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1742678741" defer></script>
-    <script src="/js/theme.js?1742678741" defer></script>
+    <script src="/js/clipboard.min.js?1742770953" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742770953" defer></script>
+    <script src="/js/theme.js?1742770953" defer></script>
   </body>
 </html>

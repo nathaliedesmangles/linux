@@ -14,5 +14,12 @@
       <guid>https://example.org/aidesvm/vmwaretools/index.html</guid>
       <description>Ces étapes vous permettront de , texte et images entre votre machine hôte et la VM en utilisant le glisser déposer. Notez que certaines restrictions peuvent s’appliquer selon la configuration de votre environnement VMware.&#xA;Pour pouvoir transférer des fichiers, dossiers entre votre machine hôte et une machine virtuelle sous VMware, suivez ces étapes :&#xA;Installer VMware Tools :&#xA;Assurez-vous que VMware Tools est installé sur la VM. Cette suite d’utilitaires améliore les performances et offre des fonctionnalités comme le glisser déposer. Pour l’installer : Ouvrez VMware Workstation. Sélectionnez votre VM et cliquez sur Lecteur &gt; Gérer &gt; Installer VMware Tools. Suivez les instructions à l’écran pour finaliser l’installation, puis redémarrez la VM. Activer le glisser déposer :</description>
     </item>
+    <item>
+      <title>Rôle administrateur</title>
+      <link>https://example.org/aidesvm/administrateur/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/aidesvm/administrateur/index.html</guid>
+      <description>Pour effectuer une commande en mode administrateur [ndesmangles@localhost ~]$ sudo &lt;commande&gt;&#xD;Passer de l’utilisateur standard à l’utilisateur root su - Mot de passe : [root@localhost ~]# Pour revenir à votre utilisateur standard après avoir utilisé su - [root@localhost ~]# exit déconnexion [ndesmangles@localhost ~]$</description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rôle administrateur :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/aidesvm/administrateur/index.html</link>
+    <description>Pour effectuer une commande en mode administrateur [ndesmangles@localhost ~]$ sudo &lt;commande&gt;&#xD;Passer de l’utilisateur standard à l’utilisateur root su - Mot de passe : [root@localhost ~]# Pour revenir à votre utilisateur standard après avoir utilisé su - [root@localhost ~]# exit déconnexion [ndesmangles@localhost ~]$</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/aidesvm/administrateur/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
