@@ -1,90 +1,96 @@
 +++
 title = "Atelier 7"
 weight = 177
-draft = true
 +++
 
-# Solution des exercices
+# Solutions des exercices
 
+## Exercice a01
 
-## YUM
+<mark>Record</mark>
 
-### Paquet 01
+<code class="gr">dw ZZ</code>
 
-<pre>
-$ yum provides ifconfig
-$ sudo yum install -y net-tools
-</pre>
+## Exercice a02
 
-### Paquet 02
+<mark>Record</mark>
 
-<pre>
-$ yum search speak
-$ sudo yum install -y kmouth
-</pre>
+<code class="gr">cw d CTRL-n ESC ZZ</code>
 
-### Paquet 03
+## Exercice a03
 
-<pre>
-$ yum search go | grep -i lang
-$ sudo yum install -y golang
-</pre>
+<mark>Record</mark>
 
-### Paquet 04
+<code class="gr">dd ZZ</code>
 
-<pre>
-$ yum provides ag
-$ yum install -y the_silver_searcher
-</pre>
+## Exercice a04
 
-### Paquet 05
+<mark>Record</mark>
 
-<pre>
-$ yum search disk usage
-$ sudo yum install -y filelight
-</pre>
+<code class="gr">yi" w &darr; P</code>
 
-### Paquet 06
+## Exercice a05
 
-<pre>
-$ yum search music
-$ sudo yum install -y juk
-</pre>
+<mark>Record</mark>
 
-### Paquet 07
+<code class="gr">A TAB TAB TAB inconnu ESC &darr;. &darr;. ZZ</code>
 
-<pre>
-$ yum search game | grep -i memory
-$ sudo yum install -y blinken
-</pre>
+## Exercice a06
 
-### Paquet 08
+<mark>7 touches</mark>
 
-<pre>
-$ yum search office
-$ sudo yum install -y libreoffice-writer libreoffice-math libreoffice-calc libreoffice-impress ...
-</pre>
+<code class="gr">I # ESC &darr; x ZZ</code>
 
-## Cron
+## Exercice a07
 
-Créez un script <code class="gr">/home/&lt;user&gt;/script.sh</code>
+<mark>40 touches</mark>
 
-Dans le script :
+<code class="gr">cw 192.168.1.4 ESC &darr;. /PU ENTRÉE cw 10.33.50.3 ESC n. n. ZZ</code>
 
-{{< highlight bash "linenos=true,linenumbersintable=false"  >}}
-wget --no-check-certificate https://gyoukou.ca/heure.brut
-cat /home/axel/heure.brut >> /home/axel/heures.txt
-rm /home/axel/heure.brut
-{{< / highlight >}}
+## Exercice a08
 
-Ensuite, éditez la crontab :
+<mark>Record</mark>
 
-<pre>
-$ crontab -e
-</pre>
+<code class="gr">yyp cw GATEWAY ESC ZZ</code>
 
-Dans la crontab :
+## Exercice a09
 
-{{< highlight bash "linenos=true,linenumbersintable=false"  >}}
-* * * * * bash /home/axel/script.sh
-{{< / highlight >}}
+<mark>Record</mark>
+
+<code class="gr">7Xi 92.168.1 ESC ZZ</code>
+
+## Exercice a10
+
+<mark>Record</mark>
+
+<code class="gr">xZZ</code>
+
+## Exercice b01
+
+<mark>Record</mark>
+
+<code class="gr">/X ENTRÉE X ZZ</code>
+
+## Exercice b02
+
+<mark>Record</mark>
+
+<code class="gr">/q ENTRÉE 5X ZZ</code>
+
+## Exercice b03
+
+<mark>Record</mark>
+
+<code class="gr">:31 11dd ZZ</code>
+
+## Exercice b04
+
+<mark>9 touches</mark>
+
+<code class="gr">:$ ENTRÉE d3k ZZ</code>
+
+## Exercice b05
+
+<mark>Record</mark>
+
+<code class="gr">10j A mb CTRL-n ESC ZZ</code>

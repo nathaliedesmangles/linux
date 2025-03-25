@@ -150,7 +150,7 @@ Exécuter un script **chaque heure (à la 25e minute) en mars** :
 25 * * 3 * bash /chemin_absolu/script.sh
 ```
 
-Exécuter un script **une fois par heure entre 9h et 17h** :
+Exécuter un script **une fois par heure entre 9h et 17h (9h15, 10h15, ..., 17h15)** :
 ```bash
 15 9-17 * * * bash /chemin_absolu/script.sh
 ```

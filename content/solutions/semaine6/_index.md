@@ -101,9 +101,16 @@ draft = true
    **début du résultat**
    ![q10](./q10.png)
 
-11. Identifier les mots avec exactement deux "a".
+11. Identifier les **mots** avec exactement deux "a".
    ```bash
-   $ egrep '^([^a]*a){2}[^a]*$' /etc/services.txt
+   egrep '\ [b-zB-Z]*a[b-zB-Z]*a[b-zB-Z]*\ ' /etc/services
+   ```
+   **début du résultat**
+   ![q11a](./q11a.png)
+
+   Si vous n'avez pas pris en compte les mots, mais les **lignes**, la regExp suivante sera acceptée
+   ```bash
+   egrep '^([^a]*a){2}[^a]*$' /etc/services.txt
    ```
    **début du résultat**
    ![q11](./q11.png)

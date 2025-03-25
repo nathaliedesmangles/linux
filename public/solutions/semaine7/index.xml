@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Atelier 7 :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/solutions/semaine7/index.html</link>
-    <description>Solution des exercices YUM Paquet 01 $ yum provides ifconfig&#xD;$ sudo yum install -y net-tools&#xD;Paquet 02 $ yum search speak&#xD;$ sudo yum install -y kmouth&#xD;Paquet 03 $ yum search go | grep -i lang&#xD;$ sudo yum install -y golang&#xD;Paquet 04 $ yum provides ag&#xD;$ yum install -y the_silver_searcher&#xD;Paquet 05 $ yum search disk usage&#xD;$ sudo yum install -y filelight&#xD;Paquet 06 $ yum search music&#xD;$ sudo yum install -y juk&#xD;Paquet 07 $ yum search game | grep -i memory&#xD;$ sudo yum install -y blinken&#xD;Paquet 08 $ yum search office&#xD;$ sudo yum install -y libreoffice-writer libreoffice-math libreoffice-calc libreoffice-impress ...&#xD;Cron Créez un script /home/&lt;user&gt;/script.sh</description>
+    <link>https://example.org/solutions/semaine7/index.html</link>
+    <description>Solutions des exercices Exercice a01 Record&#xA;dw ZZ&#xA;Exercice a02 Record&#xA;cw d CTRL-n ESC ZZ&#xA;Exercice a03 Record&#xA;dd ZZ&#xA;Exercice a04 Record&#xA;yi&#34; w ↓ P&#xA;Exercice a05 Record&#xA;A TAB TAB TAB inconnu ESC ↓. ↓. ZZ&#xA;Exercice a06 7 touches&#xA;I # ESC ↓ x ZZ&#xA;Exercice a07 40 touches&#xA;cw 192.168.1.4 ESC ↓. /PU ENTRÉE cw 10.33.50.3 ESC n. n. ZZ&#xA;Exercice a08 Record&#xA;yyp cw GATEWAY ESC ZZ</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/solutions/semaine7/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/solutions/semaine7/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
