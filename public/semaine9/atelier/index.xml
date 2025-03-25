@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ATELIER #9: Tests, paramètres et opérations arithmétiques :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine9/atelier/index.html</link>
+    <description>Objectifs de l’atelier Créer un script qui récupère trois valeurs numériques passées en paramètre, effectue des opérations mathématiques et affiche le résultat. Créer un script pour tester l’existence et les permissions d’un fichier. Créer des scripts permettant d’effectuer des opérations mathématiques à partir des arguments fournis. Atelier ATTENTION&#xD;Aucun point ne sera accordé sans la remise des scripts (fichiers .sh) demandés.&#xA;Exercice 1 : Manipulation de valeurs numériques Créez un script param3.sh qui : Récupère trois paramètres en entrée.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine9/atelier/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

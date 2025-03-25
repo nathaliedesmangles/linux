@@ -1,18 +1,39 @@
 +++
-title = "Installation et manipulation de WSL avec Ubuntu et VS Code"
+title = "WSL avec Ubuntu et VS Code"
 weight = 141
 draft = true
 +++
 
-Le ***Windows Subsystem for Linux*** (WSL) est une fonctionnalité de Windows qui permet d'exécuter un environnement Linux directement sur un système Windows sans avoir besoin d'une machine virtuelle. 
+## Qu'est-ce que WSL?
 
-Nous allons voir comment installer et utiliser WSL avec Ubuntu et Visual Studio Code (VS Code).
+***Windows Subsystem for Linux*** (WSL) est une fonctionnalité de Windows qui permet d'exécuter un environnement Linux directement sur un système Windows sans avoir besoin d'une machine virtuelle. 
+
+Grâce à WSL, vous pouvez :
+- Choisir et installer des distributions Linux à partir du Microsoft Store.
+- Exécuter des commandes en ligne de commande tels que grep, sed et awk et autres 
+- Exécuter des scripts Bash et des logiciels Linux
+
+## Développement Croisé
+
+- WSL est particulièrement utile pour les développeurs qui travaillent avec des technologies basées sur Linux ou des projets qui doivent être exécutés ou testés dans un environnement Linux. 
+- Ils peuvent développer sur Windows tout en exécutant et en testant leur code dans un environnement Linux.
+
+## Interopérabilité
+
+- WSL permet une interaction transparente entre Windows et Linux, où vous pouvez accéder aux fichiers Windows depuis Linux et vice-versa, exécuter des commandes Linux dans PowerShell, et même lancer des applications Windows depuis l'environnement Linux.
+- Pour accéder aux répertoires partagés, 
+  - Du terminal linux, aller dans le répertoire /mnt. Vous y trouverez des dossiers correspondant à chaque lecteur de votre système Windows. Par exemple, /mnt/c représente le lecteur C: de Windows, /mnt/d le lecteur D:, et ainsi de suite.
+  - Depuis l'Explorateur de Fichiers de Windows, vous pouvez taper \\wsl$ dans la barre d'adresse de l'Explorateur de Fichiers de Windows. Cela vous donnera accès aux fichiers de votre distribution Linux.
+
+Dans l'atelier, nous allons voir comment installer et utiliser WSL avec Ubuntu et Visual Studio Code (VS Code).
 
 ## Prérequis
 
 - Un PC sous Windows 10 (version 2004 ou ultérieure) ou Windows 11.
 - Accès à une connexion Internet.
 
+
+<!--
 ---
 
 ## 1. Activation de WSL
@@ -44,72 +65,5 @@ Nous allons voir comment installer et utiliser WSL avec Ubuntu et Visual Studio 
    - Créez un utilisateur et un mot de passe lors du premier démarrage.
 
 ---
-
-## 3. Installation de Visual Studio Code
-
-1. **Installer VS Code :**
-   - Téléchargez et installez Visual Studio Code depuis le site officiel : [code.visualstudio.com](https://code.visualstudio.com).
-
-2. **Installer l'extension WSL :**
-   - Ouvrez VS Code.
-   - Accédez à l'onglet des extensions (icône de carré à gauche ou `Ctrl+Shift+X`).
-   - Recherchez et installez l'extension **Remote - WSL**.
-
----
-
-## 4. Configuration de l'environnement
-
-1. **Accéder à WSL depuis VS Code :**
-   - Lancez Ubuntu (WSL) et naviguez jusqu'à votre répertoire de projet ou créez-en un :
-     ```
-     mkdir mon_projet
-     cd mon_projet
-     ```
-   - Tapez `code .` pour ouvrir VS Code directement dans ce répertoire.
-
-2. **Configurer le terminal :**
-   - Dans VS Code, allez dans `Fichier > Préférences > Paramètres`.
-   - Recherchez "terminal.integrated.defaultProfile.windows" et sélectionnez "WSL" comme terminal par défaut.
-
----
-
-## 5. Manipulation de l'environnement Ubuntu dans WSL
-
-1. **Installer des outils de développement :**
-   - Utilisez `apt` pour installer des packages :
-     ```
-     sudo apt update
-     sudo apt install build-essential git curl
-     ```
-
-2. **Cloner un projet Git :**
-   - Utilisez la commande suivante pour cloner un projet :
-     ```
-     git clone https://github.com/utilisateur/projet.git
-     ```
-
-3. **Exécuter un projet :**
-   - Par exemple, pour un projet Node.js :
-     ```
-     sudo apt install nodejs npm
-     npm install
-     npm start
-     ```
-
----
-
-## 6. Conseils et Astuces
-
-- **Partage de fichiers entre Windows et WSL :** Les fichiers créés sous WSL sont accessibles dans l’explorateur Windows sous : `\\wsl$\Ubuntu\`.
-- **Performances :** Pour des performances optimales, stockez vos fichiers de projet dans le système de fichiers Linux (dans WSL) plutôt que dans le système de fichiers Windows.
-- **Mises à jour :** Pensez à mettre à jour régulièrement WSL et Ubuntu :
-  ```
-  sudo apt update && sudo apt upgrade
-  ```
-
----
-
-## Conclusion
-
-Avec WSL, Ubuntu et VS Code, vous disposez d’un environnement puissant pour le développement sous Linux, tout en conservant la commodité de Windows.
+-->
 

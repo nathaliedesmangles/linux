@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DNF et CRON :: 420-ZG4-MO LINUX</title>
-    <link>https://example.org/semaine8/index.html</link>
+    <link>http://localhost:1313/semaine8/index.html</link>
     <description>Plan de la leçon Théorie : Lundi 24 mars&#xA;Gérer des tâches avec Cron et la commande crontab La syntaxe d’un tâche La gestion des paquets avec Dnf Atelier : Jeudi 27 mars.&#xA;Installer des utilitaires et des applications avec Dnf. Planifier et automatiser des tâches sur Linux avec Cron.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://example.org/semaine8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/semaine8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CRON et DNF</title>
-      <link>https://example.org/semaine8/cours/index.html</link>
+      <link>http://localhost:1313/semaine8/cours/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/semaine8/cours/index.html</guid>
+      <guid>http://localhost:1313/semaine8/cours/index.html</guid>
       <description>Planification des tâches avec Cron Le programme cron permet de planifier des tâches automatiquement sur un système Linux. Chaque utilisateur peut définir ses propres tâches planifiées, qui sont stockées par défaut dans :&#xA;/var/spool/cron/&#xD;Qu’est-ce qu’une crontab ? Qu’est-ce qu’une Crontab ?&#xD;Une crontab (abréviation de cron table) est un fichier de configuration utilisé par le planificateur de tâches cron sous Unix/Linux. Il permet d’exécuter automatiquement des commandes ou des scripts à des moments spécifiés.</description>
     </item>
     <item>
       <title>ATELIER #8: Dnf et Cron</title>
-      <link>https://example.org/semaine8/atelier/index.html</link>
+      <link>http://localhost:1313/semaine8/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://example.org/semaine8/atelier/index.html</guid>
+      <guid>http://localhost:1313/semaine8/atelier/index.html</guid>
       <description>Objectifs de l’atelier Installer des utilitaires et des applications avec dnf. Se familiariser avec cron. Instructions de remise Les éléments à remettre incluent :&#xA;Captures d’écran annotées : Montrez les étapes suivies pour déterminer le nom du paquet et l’installer. Votre nom d’utilisateur Linux doit être visible sur chaque capture. Nom des captures d’écran : Suivez le format proposé (ex. 01_ifconfig.png). Fichiers : Une copie de votre crontab. Le fichier heures.txt (après validation). Le contenu de votre script (lignes utilisées dans cron). Atelier Partie 1 : Utilisation de dnf Pour chaque description ci-dessous : Utilisez dnf pour identifier le nom du paquet correspondant (sans utiliser le Web). Installez le paquet. Immédiatement après l’installation, exécutez la commande : $ history&#xD;Prenez une capture d’écran montrant uniquement les commandes liées à l’installation. Rognez et annotez au besoin (ex. nom d’utilisateur). Astuces : Les descriptions des paquets sont en anglais. La commande suivante est utile pour rechercher un fichier spécifique dans un paquet : $ dnf provides */fichier&#xD;La commande dnf provides (ou dnf whatprovides) permet de rechercher quel paquet contient un fichier spécifique.</description>
     </item>
   </channel>

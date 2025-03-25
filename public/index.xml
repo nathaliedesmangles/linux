@@ -71,6 +71,13 @@
       <description>Plan de la leçon Théorie : Lundi 24 mars&#xA;Gérer des tâches avec Cron et la commande crontab La syntaxe d’un tâche La gestion des paquets avec Dnf Atelier : Jeudi 27 mars.&#xA;Installer des utilitaires et des applications avec Dnf. Planifier et automatiser des tâches sur Linux avec Cron.</description>
     </item>
     <item>
+      <title>Variables de paramètres de script et structure IF</title>
+      <link>https://example.org/semaine9/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine9/index.html</guid>
+      <description>Plan de la leçon Théorie : Lundi 31 mars&#xA;Les opérations mathématiques dans Linux (bash) Les variables de paramètres Les tests sur les fichiers La structure conditionnelle if…then…else…fi Atelier 9: Jeudi 3 avril.&#xA;test sur les valeurs numériques tests sur les fichiers opération arithmétique et test sur les chaines</description>
+    </item>
+    <item>
       <title>WSL installation et manipulation (Ubuntu, VS Code)</title>
       <link>https://example.org/semaine14/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

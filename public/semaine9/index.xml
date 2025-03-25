@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>??? :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/semaine9/index.html</link>
-    <description>Plan de la leçon Théorie : Atelier :.</description>
+    <title>Variables de paramètres de script et structure IF :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine9/index.html</link>
+    <description>Plan de la leçon Théorie : Lundi 31 mars&#xA;Les opérations mathématiques dans Linux (bash) Les variables de paramètres Les tests sur les fichiers La structure conditionnelle if…then…else…fi Atelier 9: Jeudi 3 avril.&#xA;test sur les valeurs numériques tests sur les fichiers opération arithmétique et test sur les chaines</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/semaine9/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/semaine9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Variables, paramètres et if_then_else_fi</title>
+      <link>https://example.org/semaine9/cours/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine9/cours/index.html</guid>
+      <description>Effectuer des opérations mathématiques En Bash, les variables stockent des chaînes de caractères par défaut, ce qui empêche la manipulation directe des nombres. Pour effectuer des calculs, nous utilisons la commande let.&#xA;Opérations arithmétiques disponibles : Addition : + Soustraction : - Multiplication : * Division entière : / Puissance : ** Modulo (reste de la division entière) : % Exemples : #!/bin/bash a=5 b=2 let &#34;c = a + b&#34;&#xD;Autres exemples :</description>
+    </item>
+    <item>
+      <title>ATELIER #9: Tests, paramètres et opérations arithmétiques</title>
+      <link>https://example.org/semaine9/atelier/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine9/atelier/index.html</guid>
+      <description>Objectifs de l’atelier Créer un script qui récupère trois valeurs numériques passées en paramètre, effectue des opérations mathématiques et affiche le résultat. Créer un script pour tester l’existence et les permissions d’un fichier. Créer des scripts permettant d’effectuer des opérations mathématiques à partir des arguments fournis. Atelier ATTENTION&#xD;Aucun point ne sera accordé sans la remise des scripts (fichiers .sh) demandés.&#xA;Exercice 1 : Manipulation de valeurs numériques Créez un script param3.sh qui : Récupère trois paramètres en entrée.</description>
+    </item>
   </channel>
 </rss>

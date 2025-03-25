@@ -1,5 +1,5 @@
 +++
-title = "ATELIER #10: WSL, Ubuntu et des commandes Linux simples"
+title = "ATELIER: WSL, Ubuntu et des commandes Linux simples"
 weight = 142
 +++
 
@@ -7,11 +7,15 @@ weight = 142
 
 Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux. 
 
+<!--
+
 ## Format de la remise
 
 {{% notice style=warning title=Attention %}}
 Pour chacune des étapes des **parties 2 et 3** vous devrez prendre une **capture d'écran de vos commandes et résultats**. **ATTENTION**: On doit pouvoir voir votre nom d'utilisateur. Ne travaillez donc **pas** avec l'utilisateur `root`.
 {{% /notice %}}
+
+-->
 
 # Atelier
 
@@ -51,13 +55,81 @@ Il existe plusieurs façons d'installer des distributions sur WSL, nous nous con
 ```plaintext
 $ sudo apt update
 ```
+<!--
 - Prenez une capture d'écran de la fenêtre de la commande avec le résultat et nommez-la `1.png`.
+-->
 
 **NOTE**: La commande `sudo` permet d’exécuter une commande en tant qu’administrateur du système.
 
 Une fois installé, vous pouvez soit lancer l'application directement depuis le Microsoft Store, soit rechercher Ubuntu dans votre barre de recherche Windows.
 
+<!--
 - Prenez une capture d'écran de la fenêtre de terminal Ubuntu et nommez-la `2.png`.
+-->
+
+
+## Partie 3: Installation et configuration de Visual Studio Code
+
+### Installation
+
+1. **Installer VS Code :**
+   - Téléchargez et installez Visual Studio Code depuis le site officiel : [code.visualstudio.com](https://code.visualstudio.com).
+
+2. **Installer l'extension WSL :**
+   - Ouvrez VS Code.
+   - Accédez à l'onglet des extensions (icône de carré à gauche ou `Ctrl+Shift+X`).
+   - Recherchez et installez l'extension **Remote - WSL**.
+
+### Configuration de l'environnement
+
+1. **Accéder à WSL depuis VS Code :**
+   - Lancez Ubuntu (WSL) et naviguez jusqu'à votre répertoire de projet ou créez-en un :
+     ```
+     mkdir mon_projet
+     cd mon_projet
+     ```
+   - Tapez `code .` pour ouvrir VS Code directement dans ce répertoire.
+
+2. **Configurer le terminal :**
+   - Dans VS Code, allez dans `Fichier > Préférences > Paramètres`.
+   - Recherchez "terminal.integrated.defaultProfile.windows" et sélectionnez "WSL" comme terminal par défaut.
+
+
+## Partie 4 : Manipulation de l'environnement Ubuntu dans WSL
+
+1. **Installer des outils de développement :**
+   - Utilisez `apt` pour installer des packages :
+     ```
+     sudo apt update
+     sudo apt install build-essential git curl
+     ```
+
+2. **Cloner un projet Git :**
+   - Utilisez la commande suivante pour cloner un projet :
+     ```
+     git clone https://github.com/utilisateur/projet.git
+     ```
+
+3. **Exécuter un projet :**
+   - Par exemple, pour un projet Node.js :
+     ```
+     sudo apt install nodejs npm
+     npm install
+     npm start
+     ```
+
+## Conseils et Astuces
+
+- **Partage de fichiers entre Windows et WSL :** Les fichiers créés sous WSL sont accessibles dans l’explorateur Windows sous : `\\wsl$\Ubuntu\`.
+- **Performances :** Pour des performances optimales, stockez vos fichiers de projet dans le système de fichiers Linux (dans WSL) plutôt que dans le système de fichiers Windows.
+- **Mises à jour :** Pensez à mettre à jour régulièrement WSL et Ubuntu :
+  ```
+  sudo apt update && sudo apt upgrade
+  ```
+
+## Conclusion
+
+Avec WSL, Ubuntu et VS Code, vous disposez d’un environnement puissant pour le développement sous Linux, tout en conservant la commodité de Windows.
 
 ---
 **References**:  

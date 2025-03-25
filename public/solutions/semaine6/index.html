@@ -41,11 +41,11 @@ Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ egrep &#39;\&#43;1\([0-9]{3}\)[
     <meta itemprop="wordCount" content="299">
     <title>Atelier 6 :: 420-ZG4-MO LINUX</title>
     <link href="/solutions/semaine6/index.xml" rel="alternate" type="application/rss+xml" title="Atelier 6 :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1742869161" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742869161" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1742869161" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742869161" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1742869161" rel="stylesheet">
-    <link href="/css/theme.css?1742869161" rel="stylesheet">
-    <link href="/css/format-html.css?1742869161" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1742869674" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1742869674" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1742869674" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1742869674" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1742869674" rel="stylesheet">
+    <link href="/css/theme.css?1742869674" rel="stylesheet">
+    <link href="/css/format-html.css?1742869674" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -228,8 +228,8 @@ Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ egrep &#39;\&#43;1\([0-9]{3}\)[
 <p>Trouver les lignes contenant soit <code>udp</code> soit <code>tcp</code> avec un numéro à trois chiffres.</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;\s+[0-9]{3}/(udp|tcp)&#39;</span> /etc/services</span></span></code></pre></div>
 <p><strong>début du résultat</strong>
-<a href="#R-image-da8d76b0a51bd3304b78b0673bc84760" class="lightbox-link"><img alt="q9" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/solutions/semaine6/q9.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-da8d76b0a51bd3304b78b0673bc84760"><img alt="q9" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/solutions/semaine6/q9.png"></a></p>
+<a href="#R-image-36c2ce727e1d7ed50124a9be29da16d8" class="lightbox-link"><img alt="q9" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/solutions/semaine6/q9.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-36c2ce727e1d7ed50124a9be29da16d8"><img alt="q9" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/solutions/semaine6/q9.png"></a></p>
 </li>
 <li>
 <p>Rechercher les mots de quatre lettres entourés d&rsquo;espaces.</p>
@@ -237,36 +237,36 @@ Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ egrep &#39;\&#43;1\([0-9]{3}\)[
 </ol>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep <span style="color:#e6db74">&#39;\s[a-zA-Z]{4}\s&#39;</span> /etc/services</span></span></code></pre></div>
 <p><strong>début du résultat</strong>
-<a href="#R-image-c978c76031f05c5fef42701687703e2b" class="lightbox-link"><img alt="q10" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/solutions/semaine6/q10.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c978c76031f05c5fef42701687703e2b"><img alt="q10" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/solutions/semaine6/q10.png"></a></p>
+<a href="#R-image-bfc3aa076975111194e382d2fe84e0b9" class="lightbox-link"><img alt="q10" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/solutions/semaine6/q10.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bfc3aa076975111194e382d2fe84e0b9"><img alt="q10" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/solutions/semaine6/q10.png"></a></p>
 <ol start="11">
 <li>Identifier les <strong>mots</strong> avec exactement deux &ldquo;a&rdquo;.</li>
 </ol>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>egrep <span style="color:#e6db74">&#39;\ [b-zB-Z]*a[b-zB-Z]*a[b-zB-Z]*\ &#39;</span> /etc/services</span></span></code></pre></div>
 <p><strong>début du résultat</strong>
-<a href="#R-image-2fdc0fdd1e28a1ad0b59b28d8d5a5e29" class="lightbox-link"><img alt="q11a" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/solutions/semaine6/q11a.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-2fdc0fdd1e28a1ad0b59b28d8d5a5e29"><img alt="q11a" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/solutions/semaine6/q11a.png"></a></p>
+<a href="#R-image-f9f87fd4cd528e4e71bfb0ebc9226f41" class="lightbox-link"><img alt="q11a" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/solutions/semaine6/q11a.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f9f87fd4cd528e4e71bfb0ebc9226f41"><img alt="q11a" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/solutions/semaine6/q11a.png"></a></p>
 <p>Si vous n&rsquo;avez pas pris en compte les mots, mais les <strong>lignes</strong>, la regExp suivante sera acceptée</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>egrep <span style="color:#e6db74">&#39;^([^a]*a){2}[^a]*$&#39;</span> /etc/services.txt</span></span></code></pre></div>
 <p><strong>début du résultat</strong>
-<a href="#R-image-89aeec396ad4d96243a41880614ea009" class="lightbox-link"><img alt="q11" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/solutions/semaine6/q11.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-89aeec396ad4d96243a41880614ea009"><img alt="q11" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/solutions/semaine6/q11.png"></a></p>
+<a href="#R-image-3273447cbef6e44400a42026d813ae9d" class="lightbox-link"><img alt="q11" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/solutions/semaine6/q11.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3273447cbef6e44400a42026d813ae9d"><img alt="q11" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/solutions/semaine6/q11.png"></a></p>
 <hr>
 <p><strong>Dans le fichier /etc/passwd</strong></p>
 <ol start="12">
 <li><strong>Assurez-vous que toutes les lignes dans <code>/etc/passwd</code> contiennent deux nombres entre &ldquo;:&rdquo; :</strong></li>
 </ol>
 <p><strong>résultat</strong>
-<a href="#R-image-0ffb4d4baffab966e98f8ba29e5c4014" class="lightbox-link"><img alt="q12" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/solutions/semaine6/q12.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0ffb4d4baffab966e98f8ba29e5c4014"><img alt="q12" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/solutions/semaine6/q12.png"></a></p>
+<a href="#R-image-2cef461643fa45acdca97e29d29cd841" class="lightbox-link"><img alt="q12" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/solutions/semaine6/q12.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2cef461643fa45acdca97e29d29cd841"><img alt="q12" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/solutions/semaine6/q12.png"></a></p>
 <ol start="13">
 <li>Compter les utilisateurs sans bash comme shell.
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ egrep -v <span style="color:#e6db74">&#39;/bash$&#39;</span> /etc/passwd | wc -l
 </span></span><span style="display:flex;"><span><span style="color:#ae81ff">33</span></span></span></code></pre></div>
 </li>
 </ol>
-<p><a href="#R-image-9caefe00ac2d2bf99194e36147a3d4da" class="lightbox-link"><img alt="q13" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/solutions/semaine6/q13.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9caefe00ac2d2bf99194e36147a3d4da"><img alt="q13" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/solutions/semaine6/q13.png"></a></p>
+<p><a href="#R-image-2cc40a304332d81ee315f6e18ccfe107" class="lightbox-link"><img alt="q13" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/solutions/semaine6/q13.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-2cc40a304332d81ee315f6e18ccfe107"><img alt="q13" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/solutions/semaine6/q13.png"></a></p>
 
   <footer class="footline">
   </footer>
@@ -283,7 +283,7 @@ Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ egrep &#39;\&#43;1\([0-9]{3}\)[
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1742869161";
+          window.index_js_url="/searchindex.en.js?1742869674";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -296,12 +296,12 @@ Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ egrep &#39;\&#43;1\([0-9]{3}\)[
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1742869161" defer></script>
-        <script src="/js/lunr/lunr.min.js?1742869161" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1742869161" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1742869161" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1742869161" defer></script>
-        <script src="/js/search.js?1742869161" defer></script>
+        <script src="/js/auto-complete.js?1742869674" defer></script>
+        <script src="/js/lunr/lunr.min.js?1742869674" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1742869674" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1742869674" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1742869674" defer></script>
+        <script src="/js/search.js?1742869674" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -321,7 +321,7 @@ Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ egrep &#39;\&#43;1\([0-9]{3}\)[
             <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim, les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>???</a></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>???</a><ul id="R-subsections-1f01a70d85857b8ac721c011c139e3af" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu">
             <li class="" data-nav-id="/solutions/semaine1/index.html"><a class="padding" href="/solutions/semaine1/index.html">Atelier 1</a></li>
@@ -390,8 +390,8 @@ Format : (xxx)xxx-xxxx ou &#43;1(xxx)xxx-xxxx. $ egrep &#39;\&#43;1\([0-9]{3}\)[
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1742869161" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1742869161" defer></script>
-    <script src="/js/theme.js?1742869161" defer></script>
+    <script src="/js/clipboard.min.js?1742869674" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1742869674" defer></script>
+    <script src="/js/theme.js?1742869674" defer></script>
   </body>
 </html>

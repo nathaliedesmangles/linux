@@ -8,11 +8,11 @@
     <language>en-us</language>
     <atom:link href="https://example.org/semaine14/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ATELIER #10: WSL, Ubuntu et des commandes Linux simples</title>
+      <title>ATELIER: WSL, Ubuntu et des commandes Linux simples</title>
       <link>https://example.org/semaine14/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine14/atelier/index.html</guid>
-      <description>Objectifs de l’atelier Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux.&#xA;Format de la remise Attention&#xD;Pour chacune des étapes des parties 2 et 3 vous devrez prendre une capture d’écran de vos commandes et résultats. ATTENTION: On doit pouvoir voir votre nom d’utilisateur. Ne travaillez donc pas avec l’utilisateur root.&#xA;Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les fonctionnalités Windows</description>
+      <description>Objectifs de l’atelier Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux.</description>
     </item>
   </channel>
 </rss>
