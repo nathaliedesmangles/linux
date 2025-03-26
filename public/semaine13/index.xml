@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Titre :: 420-ZG4-MO LINUX</title>
+    <link>http://localhost:1313/semaine13/index.html</link>
+    <description>Plan de la leçon Théorie : Lundi 28 avril&#xA;s Atelier : Vendredi 2 mai.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/semaine13/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

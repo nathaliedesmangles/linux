@@ -88,6 +88,18 @@
     <loc>https://example.org/semaine9/atelier/index.html</loc>
   </url>
   <url>
+    <loc>https://example.org/semaine10/atelier/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine11/atelier/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine12/atelier/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine13/atelier/index.html</loc>
+  </url>
+  <url>
     <loc>https://example.org/semaine14/index.html</loc>
   </url>
   <url>
@@ -113,6 +125,9 @@
   </url>
   <url>
     <loc>https://example.org/solutions/semaine5/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/solutions/semaine6/index.html</loc>
   </url>
   <url>
     <loc>https://example.org/solutions/semaine7/index.html</loc>

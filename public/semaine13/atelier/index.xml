@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ATELIER #10d: Titre :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine13/atelier/index.html</link>
+    <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .&#xA;Atelier Exercice 1 : Titre</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine13/atelier/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

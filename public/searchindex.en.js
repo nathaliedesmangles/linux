@@ -232,6 +232,38 @@ var relearn_searchindex = [
     "uri": "/semaine9/atelier/index.html"
   },
   {
+    "breadcrumb": "420-ZG4-MO Système d’exploitation Linux \u003e Utilisateurs et groupes",
+    "content": "Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .\nAtelier Exercice 1 : Titre",
+    "description": "Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .\nAtelier Exercice 1 : Titre",
+    "tags": [],
+    "title": "ATELIER #10a: Utilisateurs et groupes",
+    "uri": "/semaine10/atelier/index.html"
+  },
+  {
+    "breadcrumb": "420-ZG4-MO Système d’exploitation Linux \u003e Titre",
+    "content": "Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .\nAtelier Exercice 1 : Titre",
+    "description": "Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .\nAtelier Exercice 1 : Titre",
+    "tags": [],
+    "title": "ATELIER #10b: Titre",
+    "uri": "/semaine11/atelier/index.html"
+  },
+  {
+    "breadcrumb": "420-ZG4-MO Système d’exploitation Linux \u003e Titre",
+    "content": "Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .\nAtelier Exercice 1 : Titre",
+    "description": "Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .\nAtelier Exercice 1 : Titre",
+    "tags": [],
+    "title": "ATELIER #10c: Titre",
+    "uri": "/semaine12/atelier/index.html"
+  },
+  {
+    "breadcrumb": "420-ZG4-MO Système d’exploitation Linux \u003e Titre",
+    "content": "Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .\nAtelier Exercice 1 : Titre",
+    "description": "Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .\nAtelier Exercice 1 : Titre",
+    "tags": [],
+    "title": "ATELIER #10d: Titre",
+    "uri": "/semaine13/atelier/index.html"
+  },
+  {
     "breadcrumb": "420-ZG4-MO Système d’exploitation Linux",
     "content": "Plan de la leçon Théorie/Test :\nValidation de l’atelier #10 Atelier :\nInstallation de WSL et Ubuntu et VS Code",
     "description": "Plan de la leçon Théorie/Test :\nValidation de l’atelier #10 Atelier :\nInstallation de WSL et Ubuntu et VS Code",
@@ -302,6 +334,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Atelier 5",
     "uri": "/solutions/semaine5/index.html"
+  },
+  {
+    "breadcrumb": "420-ZG4-MO Système d’exploitation Linux \u003e Solutions: ateliers et tests",
+    "content": "Solutions des exercices Dans le fichier expr.txt:\nTrouver les codes postaux canadiens:\nFormat attendu : LettreChiffreLettreChiffreLettreChiffre. $ egrep '^[a-zA-Z][0-9][A-Z][0-9][a-zA-Z][0-9]$' expr.txt H6M2J4 H4M4H4 h4N2j5\rIdentifier les codes d’employés composés de :\nDeux lettres majuscules suivies de quatre chiffres. $ egrep '^[A-Z]{2}[0-9]{4}$' expr.txt AB1234 FC4355\rCompter les lignes ne se terminant pas par une lettre :\n$ egrep '[^a-zA-Z]$' expr.txt | wc -l 13\rIdentifier les numéros de téléphone :\nFormat : (xxx)xxx-xxxx ou +1(xxx)xxx-xxxx. $ egrep '\\+1\\([0-9]{3}\\)[0-9]{3}-[0-9]{4}|\\([0-9]{3}\\)[0-9]{3}-[0-9]{4}' expr.txt (555)345-1234 +1(819)654-0987\rTrouver les URLs comme :\nhttp://www.domaine.tld ou http://www.domaine.tld/ https://www.domaine.tld ou https://www.domaine.tld/ $ egrep 'https?://(w){3}\\.[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}/?' expr.txt http://www.domaine.qc.ca/ https://www.domaine.qc.ca http://www.facebook.com https://www.google.ca\rRechercher des adresses e-mail :\n$ egrep '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$' expr.txt toto_r@tutu.ca toto.titi@tutu.ca toto@tutu.qc.ca\rDans le fichier /etc/sercices\nTrouver les lignes contenant “ssh” sans espace après.\n$ egrep 'ssh[^ ]' /etc/services x11-ssh-offset 6010/tcp # SSH X11 forwarding offset sshell 614/tcp # SSLshell sshell 614/udp # SSLshell snmpssh-trap 5162/tcp # SNMP Notification over SSH Transport Model ssh-mgmt 17235/tcp # SSH Tectia Manager ssh-mgmt 17235/udp # SSH Tectia Manager\rCompter les lignes totales et celles non vides.\nTotal : $ wc -l /etc/services 11473 /etc/services\rNon vides : $ egrep -v '^$' /etc/services | wc -l 11457\rTrouver les lignes contenant soit udp soit tcp avec un numéro à trois chiffres.\n$ egrep '\\s+[0-9]{3}/(udp|tcp)' /etc/services\rdébut du résultat Rechercher les mots de quatre lettres entourés d’espaces.\n$ egrep '\\s[a-zA-Z]{4}\\s' /etc/services\rdébut du résultat Identifier les mots avec exactement deux “a”. egrep '\\ [b-zB-Z]*a[b-zB-Z]*a[b-zB-Z]*\\ ' /etc/services\rdébut du résultat Si vous n’avez pas pris en compte les mots, mais les lignes, la regExp suivante sera acceptée\negrep '^([^a]*a){2}[^a]*$' /etc/services.txt\rdébut du résultat Dans le fichier /etc/passwd\nAssurez-vous que toutes les lignes dans /etc/passwd contiennent deux nombres entre “:” : résultat Compter les utilisateurs sans bash comme shell. $ egrep -v '/bash$' /etc/passwd | wc -l 33",
+    "description": "Solutions des exercices Dans le fichier expr.txt:\nTrouver les codes postaux canadiens:\nFormat attendu : LettreChiffreLettreChiffreLettreChiffre. $ egrep '^[a-zA-Z][0-9][A-Z][0-9][a-zA-Z][0-9]$' expr.txt H6M2J4 H4M4H4 h4N2j5\rIdentifier les codes d’employés composés de :\nDeux lettres majuscules suivies de quatre chiffres. $ egrep '^[A-Z]{2}[0-9]{4}$' expr.txt AB1234 FC4355\rCompter les lignes ne se terminant pas par une lettre :\n$ egrep '[^a-zA-Z]$' expr.txt | wc -l 13\rIdentifier les numéros de téléphone :\nFormat : (xxx)xxx-xxxx ou +1(xxx)xxx-xxxx. $ egrep '\\+1\\([0-9]{3}\\)[0-9]{3}-[0-9]{4}|\\([0-9]{3}\\)[0-9]{3}-[0-9]{4}' expr.txt (555)345-1234 +1(819)654-0987\rTrouver les URLs comme :",
+    "tags": [],
+    "title": "Atelier 6",
+    "uri": "/solutions/semaine6/index.html"
   },
   {
     "breadcrumb": "420-ZG4-MO Système d’exploitation Linux \u003e Solutions: ateliers et tests",

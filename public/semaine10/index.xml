@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Utilisateurs et groupes :: 420-ZG4-MO LINUX</title>
+    <link>http://localhost:1313/semaine10/index.html</link>
+    <description>Plan de la leçon Théorie : Lundi 7 avril&#xA;Gestion des utilisateurs Gestion des groupes Atelier : Vendredi 11 avril.&#xA;Création et gestion d’utilisateur Création et gestion de groupes</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/semaine10/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Utilisateurs et groupes</title>
+      <link>http://localhost:1313/semaine10/cours/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/semaine10/cours/index.html</guid>
+      <description>Les utilisateurs Types de comptes Il existe quatre types de comptes sous Linux :&#xA;root : Le super-utilisateur qui possède tous les droits (UID 0). nobody : Un compte très restreint utilisé pour les personnes non authentifiées (UID 65534). Comptes systèmes et d’application : Utilisés pour exécuter certaines applications et services (démons) avec des permissions limitées. Cela réduit les risques si une faille de sécurité est exploitée. Leurs UID se situent entre 1 et 999. Comptes standards : Destinés aux utilisateurs humains (UID supérieur à 1000). Création d’un utilisateur La commande de création d’un utilisateur est useradd.</description>
+    </item>
+    <item>
+      <title>ATELIER #10a: Utilisateurs et groupes</title>
+      <link>http://localhost:1313/semaine10/atelier/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/semaine10/atelier/index.html</guid>
+      <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .&#xA;Atelier Exercice 1 : Titre</description>
+    </item>
+  </channel>
+</rss>
