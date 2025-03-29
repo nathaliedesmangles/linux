@@ -6,21 +6,7 @@ weight = 82
 ## Objectifs de l'atelier
 
  - Installer des utilitaires et des applications avec ***dnf***.
- - Se familiariser avec ***cron***.
-
----
-
-## Instructions de remise
-  
-Les éléments à remettre incluent :  
-- **Captures d’écran annotées :**  
-  - Montrez les étapes suivies pour déterminer le nom du paquet et l'installer.  
-  - Votre nom d’utilisateur Linux doit être visible sur chaque capture. 
-- **Nom des captures d'écran :** Suivez le format proposé (ex. `01_ifconfig.png`).  
-- **Fichiers :**  
-  - Une copie de votre *crontab*.  
-  - Le fichier `heures.txt` (après validation).  
-  - Le contenu de votre script (lignes utilisées dans *cron*).  
+ - Se familiariser avec ***cron***.  
 
 ---
 
@@ -28,25 +14,101 @@ Les éléments à remettre incluent :
 
 ## Partie 1 : Utilisation de dnf
 
-1. **Pour chaque description ci-dessous :**  
-   - Utilisez `dnf` pour identifier le nom du paquet correspondant (sans utiliser le Web).  
-   - Installez le paquet.  
-   - Immédiatement après l'installation, exécutez la commande :  
-     ```bash
-     $ history
-     ```  
-     - Prenez une capture d’écran montrant uniquement les commandes liées à l’installation.  
-     - Rognez et annotez au besoin (ex. nom d'utilisateur).  
-2. **Astuces :**  
-   - Les descriptions des paquets sont en anglais.  
-   - La commande suivante est utile pour rechercher un fichier spécifique dans un paquet :  
-     ```bash
-     $ dnf provides */fichier
-     ```  
+### Paquets à installer  
 
-La commande `dnf provides` (ou `dnf whatprovides`) permet de rechercher quel paquet contient un fichier spécifique.
+| **Paquet** | **Description**                                                                                             | **Capture**            |
+|-------------|-------------------------------------------------------------------------------------------------------------|------------------------|
+| **Paquet 01**   | L'utilitaire `ifconfig` (ancêtre de `ip addr`).                                                              | `01_ifconfig.png`      |
+| **Paquet 02**   | `Kmouth` (permet à l'ordinateur de parler pour des personnes muettes).                                       | `02_kmouth.png`        |
+| **Paquet 03**   | Le langage de programmation `go`.                                                                            | `03_go.png`            |
+| **Paquet 04**   | `ag`, un utilitaire rapide pour chercher dans des fichiers textes.                                           | `04_ag.png`            |
+| **Paquet 05**   | Un outil pour visualiser l’espace disque utilisé.                                                            | `05_espace.png`        |
+| **Paquet 06**   | Un lecteur de musique.                                                                                       | `06_musique.png`       |
+| **Paquet 07**   | Un jeu de mémoire où il faut se souvenir de séquences de plus en plus longues.                               | `07_jeu.png`           |
+| **Paquet 08**   | Une suite bureautique.                                                                                       | `08_bureautique.png`   |
 
-### Exemple
+
+### 1.1 Mise à jour des dépôts 
+
+Avant toute installation, il est recommandé de s'assurer que votre système est à jour :
+
+{{% notice style="tip" title="Avant de commencer..." %}}
+Mettre à jour les dépôts ***dnf*** avec la commande:
+```bash
+sudo dnf update -y
+```
+{{% /notice %}}
+
+### 1.2 Installer le dépôt EPEL
+
+Le dépôt **EPEL** (*Extra Packages for Enterprise Linux*) fournit des paquets additionnels utiles.
+
+```bash
+sudo dnf install epel-release -y
+```
+
+#### 1.2.1 Vérifier que le dépôt EPEL est activé
+
+```bash
+dnf repolist | grep epel
+```
+
+### 1.3 Installer le dépôt Remi
+
+Le dépôt **Remi** est spécialisé dans les versions récentes de PHP et autres logiciels. 
+  
+```bash
+sudo dnf install https://rpms.remirepo.net/enterprise/remi-release-9.rpm -y
+```
+*(Où **"9"** est la version de votre AlmaLinux.)*
+
+#### 1.3.1 Activer le dépôt Remi 
+ 
+```bash
+sudo dnf config-manager --set-enabled remi
+```
+
+#### 1.3.2 Vérifier que le dépôt Remi est activé
+  
+```bash
+dnf repolist | grep remi
+```
+
+### 1.4 Recherche des noms des paquets à installer
+
+Pour chacun des paquets indiqués dans le tableau, rechercher le nom exact du paquet à l'aide d'une des commandes suivantes:
+
+```bash
+dnf search <nom_du_paquet>
+```
+ou
+```bash
+dnf search description_du_paquet
+```
+ou
+```bash
+dnf provides */nom_commande
+```
+
+### 1.5 Installer le paquet
+
+```bash
+sudo dnf install -y <nom_exact_du_paquet>
+```
+
+### 1.6 Commande *history* et capture d'écran pour la remise
+
+Lancez la commande `history` et prenez une capture d'écran du résultat. 
+```bash
+history
+``` 
+Le résultat doit montrer au minimum:
+ - La ou les commandes effectuées pour trouver le nom exact du paquet à installer
+ - La commande effectuée pour installer le paquet
+   
+---
+
+### Exemple (paquet 01)
 
 Si vous essayez d'exécuter `ifconfig` mais que la commande n'est pas trouvée, vous pouvez chercher le paquet qui l'inclut avec la commande :
 ```bash
@@ -59,73 +121,60 @@ net-tools-2.0-0.52.20160912git.el8.x86_64 : Basic networking tools
 ```
 Cela indique que la commande `ifconfig` est fournie par le paquet `net-tools`.
 
+{{% notice style="green" title="Que signifie x86_64 ?" groupid="notice-toggle" expanded="false" %}}
+**x86_64** fait référence à l'architecture de processeur compatible avec les systèmes 64 bits. 
+- **x86** : Terme historique qui désigne les processeurs compatibles avec l'architecture Intel x86 (originellement 16 bits, puis 32 bits avec les processeurs 80386 et suivants).
+- **64** : Indique que le processeur peut traiter des données sur 64 bits, ce qui permet de gérer plus de mémoire (jusqu’à 16 exaoctets théoriques) et d’exécuter des calculs plus complexes en un seul cycle d’horloge.
+{{% /notice %}}
+
 **Pour l'installer** :
 ```bash
 sudo dnf install net-tools
 ```
 
----
-
-### Paquets à installer
-
-1. **Paquet 01 : (voir l'exemple plus haut)**  
-   - Description : l'utilitaire `ifconfig` (ancêtre de `ip addr`).  
-   - Capture : `01_ifconfig.png`.  
-
-2. **Paquet 02 :**  
-   - Description : `Kmouth` (permet à l'ordinateur de parler pour des personnes muettes).  
-   - Capture : `02_kmouth.png`.  
-
-3. **Paquet 03 :**  
-   - Description : le langage de programmation `go`.  
-   - Capture : `03_go.png`.  
-
-4. **Paquet 04 :**  
-   - Description : `ag`, un utilitaire rapide pour chercher dans des fichiers textes.  
-   - Capture : `04_ag.png`.  
-
-5. **Paquet 05 :**  
-   - Description : un outil pour visualiser l’espace disque utilisé.  
-   - Capture : `05_espace.png`.  
-
-6. **Paquet 06 :**  
-   - Description : un lecteur de musique.  
-   - Capture : `06_musique.png`.  
-
-7. **Paquet 07 :**  
-   - Description : un jeu de mémoire où il faut se souvenir de séquences de plus en plus longues.  
-   - Capture : `07_jeu.png`.  
-
-8. **Paquet 08 :**  
-   - Description : une suite bureautique.  
-   - Capture : `08_bureautique.png`.  
+**Historique des commandes** :
+```bash
+history
+```
+![history](./dnf_history.png)
 
 ---
 
 ## Partie 2 : Expérimenter avec *cron*
 
-Dans cet exercice, vous allez configurer une tâche planifiée qui exécutera une commande périodiquement afin d’accumuler des Relevés d’heure dans un fichier.
+### 2.1 Trouver la commande qui permet d'afficher l'heure actuelle [voir le cours de la semaine 2](http://linuxh25.netlify.app/semaine2/cours/#informations-système-et-historique)
 
-L’objectif est d’observer comment un fichier peut croître automatiquement au fil du temps et d’apprendre à gérer une tâche récurrente. Vous pourrez ensuite suivre l’évolution du fichier en temps réel et désactiver la tâche une fois satisfait du résultat.
+### 2.2 Créer la tache
 
-1. Installer une commande *cron* qui va :
-	- exécuter une commande enregistrant l’heure actuelle chaque minute
-	- accumuler ce contenu dans le fichier **heures.txt**.
-		<br><b><span style="color:red;">ATTENTION</span></b>: utiliser un <b><u>chemin absolu</u></b>
-2. Vous pouvez vérifier que le fichier **heures.txt** grossit à chaque minute à l'aide de la commande suivante:
+Vous devez créer une crontab (commande `crontab -e`) pour planifier une tâche qui exécutera la commande trouvée précédemment de façon **périodique**
+- La tâche doit s'exécuter **à toutes les minutes** afin d’accumuler les relevés d’heures dans un fichier nommé **heures.txt**.
 
-	```bash
-	$ tail -f heures.txt
-	```
+**Hint** : Redirigez le résultat de la commande (à exécuter périodiquement) dans le fichier **heures.txt**, sans écraser son contenu.
 
-3. <b><span style="color:red;">IMPORTANT</span></b> : une fois satisfait que votre commande fonctionne, désactiver votre ligne *cron*.
-	- (p.ex. en la mettant en commentaire à l'aide du symbole `#`)
-	- on ne veut pas continuer à accumuler du contenu dans **heures.txt** à chaque minute pour toujours.
+### 2.3 Sauvegarder et lancer la crontab
 
+- Sauvegarder votre crontab (touches `Echap`, `:wq`)
+- À l'aide de la commande `crontab -l` lancer la tâche.
+
+### 2.4 Observer et suivre l'évolution du fichier heures.txt en temps réél.
+
+Vous pouvez vérifier que le fichier **heures.txt** grossit à chaque minute à l'aide de la commande suivante:
+
+```bash
+tail -f heures.txt
+```
+Si votre tâche s'exécute correctement (au moins 2 heures s'affichent), vous devriez voir s'afficher dans la Terminal, l'heure actuelle, à chaque minute.
+
+### 2.5 Désactiver la ligne *cron*
+
+On ne veut pas continuer à accumuler du contenu dans **heures.txt** à chaque minute pour toujours.
+
+<b><span style="color:red;">IMPORTANT</span></b> : Une fois satisfait que votre commande fonctionne, désactiver votre ligne *cron*.<br>
+	- Par exemple, en la mettant en commentaire à l'aide du symbole `#`
 
 ### Remise 
 
-- **Capture d’écran `09_crontab.png`**, on doit voir :  
-  - le contenu de votre *crontab*.  
-  - la date de validation.  
-
+- Capture d’écran de la ligne du crontab `crontab -l` (09_crontab.png),
+- Le résultat du fichier **heures.txt** :
+  - soit le fichier heures.txt
+  - soit le résultat de la commande `tail -f heures.txt`

@@ -3,162 +3,187 @@ title = "Variables, paramètres et if_then_else_fi"
 weight = 91
 +++
 
-## Effectuer des opérations mathématiques
 
-En Bash, les variables stockent des **chaînes de caractères par défaut**, ce qui empêche la manipulation directe des nombres. Pour effectuer des calculs, nous utilisons la commande `let`.
+## Les opérations mathématiques en Bash
 
-### Opérations arithmétiques disponibles :
+Bash, le shell de commande sous Linux, ne traite pas les nombres de manière native. Toutes les variables sont considérées comme des chaînes de caractères. Pour effectuer des opérations mathématiques, on utilise des commandes spécifiques comme `let`.
+
+La commande `let` permet d'exécuter des opérations arithmétiques simples.
+
+**Exemple :**
+```bash
+$ a=5
+$ b=2
+$ let "c = a + b"
+$ echo $c
+7
+```
+
+### Opérations et opérateurs disponibles
 
 - Addition : `+`
 - Soustraction : `-`
 - Multiplication : `*`
-- Division entière : `/`
+- Division entière : `/` (les décimales sont ignorées)
 - Puissance : `**`
-- Modulo (reste de la division entière) : `%`
+- Modulo : `%` (renvoie le reste de la division)
 
-#### Exemples :
+**Exemples :**
 ```bash
-#!/bin/bash
-
-a=5
-b=2
-let "c = a + b"
+let "a = 4 * 3"  # Multiplication
+let "a = 3 ** 2" # Puissance
+let "a = 12 / 2" # Division entière
+let "a = 10 / 3" # Division entière, résultat : 3
+let "a = 10 % 3" # Modulo, résultat : 1
 ```
 
-Autres exemples :
+On peut aussi utiliser la notation raccourcie :
 ```bash
-#!/bin/bash
-
-let "a = 4 * 3"
-let "a = 3 ** 2"
-let "a = 12 / 2"
-let "a = 10 / 3"
-let "a = 10 % 3"
-```
-- `10 / 3` donne `3` car la division est entière.
-- `10 % 3` donne `1` car 10 divisé par 3 laisse un reste de 1.
-
-On peut aussi écrire des opérations sous forme abrégée :
-```bash
-#!/bin/bash
-
-let "a = a * 3"  # Équivaut à :
-let "a *= 3"
+let "a *= 3" # Équivaut à : let "a = a * 3"
 ```
 
-## Variables et paramètres
+## Variables de paramètres dans les scripts
 
-Les scripts Bash peuvent accepter des paramètres en ligne de commande :
+Les scripts Bash acceptent des paramètres passés en ligne de commande, **lors de l'exécution du script**
+
 ```bash
-./script.sh param1 param2 param3
+bash script.sh param1 param2 param3
 ```
 
-Les variables associées :
+Une fois le script lancé, Linux crée **automatiquement** des variables.
 
-- `$#` : Nombre de paramètres.
-- `$0` : Nom du script exécuté.
-- `$1, $2, ..., $9` : Paramètres de 1 à 9.
-- `$?` : Code de retour de la dernière commande (0 = succès).
-- `$*` : Liste des paramètres.
+### Variables créées automatiquement
 
-## Test de conditions
+- `$#` : Nombre de paramètres
+- `$0` : Nom du script exécuté
+- `$1` à `$9` : Valeurs des paramètres 1 à 9
+- `$?` : Code de retour de la dernière commande (0 si succès)
+- `$*` : Liste de tous les paramètres
 
-La commande `test` permet d’évaluer des conditions. Le résultat est stocké dans `$?` (0 = vrai, autre valeur = faux).
+## Tester des conditions avec la commande *test*
+
+La commande `test` permet de vérifier des conditions, et le résultat est stocké dans `$?` (0 si la condition est vraie).
 
 ### Tests sur les chaînes de caractères
 
-```bash
-#!/bin/bash
+| **Commande**                     | **Description**                               |
+|----------------------------------|-----------------------------------------------|
+| `test -z $variable`              | Vrai si `$variable` est **vide**.                 |
+| `test -n $variable`              | Vrai si `$variable` n'est **pas vide**.           |
+| `test $variable = "chaine"`      | Vrai si `$variable` est **identique à** "chaine". |
+| `test $variable != "chaine"`     | Vrai si `$variable` est **différent de** "chaine".|
 
-test -z "$variable"  # Vrai si la variable est vide
-test -n "$variable"  # Vrai si la variable n'est pas vide
-test "$variable" = "chaine"  # Vrai si les valeurs sont identiques
-test "$variable" != "chaine"  # Vrai si les valeurs sont différentes
+**Exemples**
+```bash
+$ test -z "$a"
+$ echo $?
+0            # car la variable "a" n'a pas été initialisée
+$ a="abcd"
+$ test -n "$a"
+$ echo $?
+0
+$ test a = "abcd"
+$ echo $?
+0		# Vrai
+$ test a != "dcba"
+$ echo $?
+0		# Vrai
 ```
 
-### **Rappel**: Tests sur les valeurs numériques
 
-Les comparaisons sont faites avec :
+{{% notice style="note" title="Note" %}}
+Contrairement aux nombres, avec les chaînes de caractères les symboles `=` (égal) et `!=` (différent) sont utilisés comme opérateur d'égalité et d'inégalité.
+{{% /notice %}}
 
-- `-eq` : Égal
+### Tests sur les nombres
+
+Les options disponibles sont :
+- `-eq` : Égalité
 - `-ne` : Différent
 - `-lt` : Inférieur
 - `-gt` : Supérieur
 - `-le` : Inférieur ou égal
 - `-ge` : Supérieur ou égal
 
-Exemple :
+**Exemple :**
 ```bash
-#!/bin/bash
-
 a=10
 b=20
-test "$a" -ne "$b"; echo $?
-test "$a" -eq "$b"; echo $?
+test "$a" -ne "$b"; echo $? # Affiche 0 (vrai)
+test "$a" -eq "$b"; echo $? # Affiche 1 (faux)
 ```
 
 ### Tests sur les fichiers
 
-Syntaxe : `test option fichier`
+La syntaxe est test option `nom_fichier`
 
-- `-e` : Existence du fichier
-- `-s` : Fichier non vide
-- `-f` : Fichier normal
+Les options:
+
+- `-e` : Existe
+- `-s` : Non vide
+- `-f` : Fichier standard
 - `-d` : Répertoire
 - `-r` : Lecture autorisée
 - `-w` : Écriture autorisée
 - `-x` : Exécution autorisée
 
-## Structure conditionnelle *if ... then ... else ... fi*
+## Structure conditionnelle if...then...else
 
-Syntaxe :
 ```bash
-#!/bin/bash
-
 if [ condition ]
 then
-  commandes_si_vrai
+  # Commandes à exécuter si la condition est vraie
 else
-  commandes_si_faux
+  # Commandes à exécuter si la condition est fausse
 fi
 ```
 
-Exemple :
+### Exemple 1: Nombre de paramètres
+
 ```bash
 #!/bin/bash
 
 if [ $# -ne 0 ]
 then
-  echo "Il y a des paramètres en ligne de commande"
-  echo "Nombre de paramètres : $#"
-  echo "Paramètres : 1=$1 2=$2 3=$3 4=$4"
-  echo "Liste : $*"
+  echo "il y paramètres en ligne de commande";
+  echo "Nombre de paramètres:$#";
+  echo "Paramètres: 1=$1 2=$2 3=$3 4=$4";
+  echo "Liste : $*";
 else
-  echo "Pas de paramètres"
+  echo "Pas de paramètres ";
 fi
 ```
 
-Autre exemple :
+**Exécution du script** : sans paramètres 
+
+![Exemple 1 if](./exemple1_if.png?width=45vw)
+
+### Exemple 2: avec comparaisons
+
 ```bash
 #!/bin/bash
 
 if [ $1 -gt $2 ]
 then
-  echo "Le premier paramètre est supérieur au deuxième"
+  echo "Le premier paramètre est supérieur au deuxième paramètre"
 elif [ $1 -lt $2 ]
 then
-  echo "Le premier paramètre est inférieur au deuxième"
+  echo "Le premier paramètre est inférieur au deuxième paramètre"
 else
-  echo "Les deux nombres sont égaux"
+  echo "Les deux sont égaux"
 fi
 ```
 
-### Tester l'existence d'un fichier
+**Exécution du script** : en passant les paramètres 
+
+![Exemple 2 if](./exemple2_if.png?width=45vw)
+
+### Exemple 3: Tester si un fichier existe
 
 ```bash
 #!/bin/bash
 
-if [ -e "$1" ]
+if [ -e $1 ]
 then
   echo "Le fichier existe"
 else
@@ -166,14 +191,21 @@ else
 fi
 ```
 
-## Lire une entrée clavier
+**Exécution du script** : avec le fichier /etc/passwd en paramètre 
 
-Pour stocker une entrée utilisateur dans une variable :
-```bash
-read nombre
-```
+![Exemple 3 if](./exemple3_if.png?width=45vw)
 
-Modification du script précédent pour lire les nombres au clavier :
+
+## Lire des entrées clavier (commande *read*)
+
+### Exemple 4: Attendre la saisie au clavier de l'utilisateur
+
+Pour lire une information saisie au clavier par l'utilisateur on utilise la commande `read`:
+
+![Exemple 4 read](./exemple4_read.png?width=45vw)
+
+### Exemple 5: Demander à l'utilisateur de saisir 2 nombres au clavier
+
 ```bash
 #!/bin/bash
 
@@ -182,14 +214,18 @@ read nb1
 echo "Entrez un autre nombre"
 read nb2
 
-if [ "$nb1" -gt "$nb2" ]
+if [ $nb1 -gt $nb2 ]
 then
-  echo "Le premier nombre est supérieur au deuxième"
-elif [ "$nb1" -lt "$nb2" ]
+  echo "Le premier nombre est supérieur au deuxième nombre"
+elif [ $nb1 -lt $nb2 ]
 then
-  echo "Le premier nombre est inférieur au deuxième"
+  echo "Le premier nombre est inférieur au deuxième nombre"
 else
   echo "Les deux nombres sont égaux"
 fi
 ```
+
+**Exécution du script** :
+
+![Exemple 5 read](./exemple5_read.png?width=40vw)
 

@@ -57,6 +57,13 @@
       <description>Solutions des exercices Exercice a01 Record&#xA;dw ZZ&#xA;Exercice a02 Record&#xA;cw d CTRL-n ESC ZZ&#xA;Exercice a03 Record&#xA;dd ZZ&#xA;Exercice a04 Record&#xA;yi&#34; w ↓ P&#xA;Exercice a05 Record&#xA;A TAB TAB TAB inconnu ESC ↓. ↓. ZZ&#xA;Exercice a06 7 touches&#xA;I # ESC ↓ x ZZ&#xA;Exercice a07 40 touches&#xA;cw 192.168.1.4 ESC ↓. /PU ENTRÉE cw 10.33.50.3 ESC n. n. ZZ&#xA;Exercice a08 Record&#xA;yyp cw GATEWAY ESC ZZ</description>
     </item>
     <item>
+      <title>Atelier 8</title>
+      <link>https://example.org/solutions/semaine8/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/solutions/semaine8/index.html</guid>
+      <description>Solution des exercices Partie 1 : Utilisation de dnf Information&#xD;La commande history peut être exécutée après chaque installation ou 1 fois à la fin&#xA;Voici comment identifier et installer les paquets demandés à l’aide de dnf :&#xA;Paquet 01 : Utilitaire ifconfig Recherche du paquet&#xA;$ dnf provides */ifconfig&#xD;Installation&#xA;$ sudo dnf install -y net-tools&#xD;Paquet 02 : kmouth Recherche du nom du paquet</description>
+    </item>
+    <item>
       <title>Test 1</title>
       <link>https://example.org/solutions/test1/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

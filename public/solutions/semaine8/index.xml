@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Atelier 8 :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/solutions/semaine8/index.html</link>
-    <description>Solution des exercices Partie 1 : Utilisation de dnf Voici comment identifier et installer les paquets demandés à l’aide de dnf :&#xA;Paquet 01 : Utilitaire ifconfig Recherche du paquet :&#xA;dnf provides */ifconfig&#xD;Installation :&#xA;sudo dnf install -y net-tools&#xD;Paquet 02 : Kmouth Recherche du paquet :&#xA;dnf search kmouth&#xD;Installation :&#xA;sudo dnf install -y kmouth&#xD;Paquet 03 : Langage de programmation Go Recherche du paquet :</description>
+    <link>https://example.org/solutions/semaine8/index.html</link>
+    <description>Solution des exercices Partie 1 : Utilisation de dnf Information&#xD;La commande history peut être exécutée après chaque installation ou 1 fois à la fin&#xA;Voici comment identifier et installer les paquets demandés à l’aide de dnf :&#xA;Paquet 01 : Utilitaire ifconfig Recherche du paquet&#xA;$ dnf provides */ifconfig&#xD;Installation&#xA;$ sudo dnf install -y net-tools&#xD;Paquet 02 : kmouth Recherche du nom du paquet</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/solutions/semaine8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/solutions/semaine8/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

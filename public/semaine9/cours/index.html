@@ -5,31 +5,39 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Effectuer des opérations mathématiques En Bash, les variables stockent des chaînes de caractères par défaut, ce qui empêche la manipulation directe des nombres. Pour effectuer des calculs, nous utilisons la commande let.
-Opérations arithmétiques disponibles : Addition : &#43; Soustraction : - Multiplication : * Division entière : / Puissance : ** Modulo (reste de la division entière) : % Exemples : #!/bin/bash a=5 b=2 let &#34;c = a &#43; b&#34;Autres exemples :">
+    <meta name="description" content="Les opérations mathématiques en Bash Bash, le shell de commande sous Linux, ne traite pas les nombres de manière native. Toutes les variables sont considérées comme des chaînes de caractères. Pour effectuer des opérations mathématiques, on utilise des commandes spécifiques comme let.
+La commande let permet d’exécuter des opérations arithmétiques simples.
+Exemple :
+$ a=5 $ b=2 $ let &#34;c = a &#43; b&#34; $ echo $c 7Opérations et opérateurs disponibles Addition : &#43; Soustraction : - Multiplication : * Division entière : / (les décimales sont ignorées) Puissance : ** Modulo : % (renvoie le reste de la division) Exemples :">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Variables, paramètres et if_then_else_fi :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Effectuer des opérations mathématiques En Bash, les variables stockent des chaînes de caractères par défaut, ce qui empêche la manipulation directe des nombres. Pour effectuer des calculs, nous utilisons la commande let.
-Opérations arithmétiques disponibles : Addition : &#43; Soustraction : - Multiplication : * Division entière : / Puissance : ** Modulo (reste de la division entière) : % Exemples : #!/bin/bash a=5 b=2 let &#34;c = a &#43; b&#34;Autres exemples :">
+    <meta name="twitter:description" content="Les opérations mathématiques en Bash Bash, le shell de commande sous Linux, ne traite pas les nombres de manière native. Toutes les variables sont considérées comme des chaînes de caractères. Pour effectuer des opérations mathématiques, on utilise des commandes spécifiques comme let.
+La commande let permet d’exécuter des opérations arithmétiques simples.
+Exemple :
+$ a=5 $ b=2 $ let &#34;c = a &#43; b&#34; $ echo $c 7Opérations et opérateurs disponibles Addition : &#43; Soustraction : - Multiplication : * Division entière : / (les décimales sont ignorées) Puissance : ** Modulo : % (renvoie le reste de la division) Exemples :">
     <meta property="og:url" content="https://example.org/semaine9/cours/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="Variables, paramètres et if_then_else_fi :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Effectuer des opérations mathématiques En Bash, les variables stockent des chaînes de caractères par défaut, ce qui empêche la manipulation directe des nombres. Pour effectuer des calculs, nous utilisons la commande let.
-Opérations arithmétiques disponibles : Addition : &#43; Soustraction : - Multiplication : * Division entière : / Puissance : ** Modulo (reste de la division entière) : % Exemples : #!/bin/bash a=5 b=2 let &#34;c = a &#43; b&#34;Autres exemples :">
+    <meta property="og:description" content="Les opérations mathématiques en Bash Bash, le shell de commande sous Linux, ne traite pas les nombres de manière native. Toutes les variables sont considérées comme des chaînes de caractères. Pour effectuer des opérations mathématiques, on utilise des commandes spécifiques comme let.
+La commande let permet d’exécuter des opérations arithmétiques simples.
+Exemple :
+$ a=5 $ b=2 $ let &#34;c = a &#43; b&#34; $ echo $c 7Opérations et opérateurs disponibles Addition : &#43; Soustraction : - Multiplication : * Division entière : / (les décimales sont ignorées) Puissance : ** Modulo : % (renvoie le reste de la division) Exemples :">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="Variables, paramètres et if_then_else_fi :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Effectuer des opérations mathématiques En Bash, les variables stockent des chaînes de caractères par défaut, ce qui empêche la manipulation directe des nombres. Pour effectuer des calculs, nous utilisons la commande let.
-Opérations arithmétiques disponibles : Addition : &#43; Soustraction : - Multiplication : * Division entière : / Puissance : ** Modulo (reste de la division entière) : % Exemples : #!/bin/bash a=5 b=2 let &#34;c = a &#43; b&#34;Autres exemples :">
-    <meta itemprop="wordCount" content="584">
+    <meta itemprop="description" content="Les opérations mathématiques en Bash Bash, le shell de commande sous Linux, ne traite pas les nombres de manière native. Toutes les variables sont considérées comme des chaînes de caractères. Pour effectuer des opérations mathématiques, on utilise des commandes spécifiques comme let.
+La commande let permet d’exécuter des opérations arithmétiques simples.
+Exemple :
+$ a=5 $ b=2 $ let &#34;c = a &#43; b&#34; $ echo $c 7Opérations et opérateurs disponibles Addition : &#43; Soustraction : - Multiplication : * Division entière : / (les décimales sont ignorées) Puissance : ** Modulo : % (renvoie le reste de la division) Exemples :">
+    <meta itemprop="wordCount" content="755">
     <title>Variables, paramètres et if_then_else_fi :: 420-ZG4-MO LINUX</title>
     <link href="/semaine9/cours/index.xml" rel="alternate" type="application/rss+xml" title="Variables, paramètres et if_then_else_fi :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1743004097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743004097" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1743004097" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743004097" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1743004097" rel="stylesheet">
-    <link href="/css/theme.min.css?1743004097" rel="stylesheet">
-    <link href="/css/format-html.min.css?1743004097" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1743212981" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743212981" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1743212981" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743212981" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1743212981" rel="stylesheet">
+    <link href="/css/theme.min.css?1743212981" rel="stylesheet">
+    <link href="/css/format-html.min.css?1743212981" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -92,25 +100,36 @@ Opérations arithmétiques disponibles : Addition : &#43; Soustraction : - Multi
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#effectuer-des-opérations-mathématiques">Effectuer des opérations mathématiques</a>
+    <li><a href="#les-opérations-mathématiques-en-bash">Les opérations mathématiques en Bash</a>
       <ul>
-        <li><a href="#opérations-arithmétiques-disponibles-">Opérations arithmétiques disponibles :</a></li>
+        <li><a href="#opérations-et-opérateurs-disponibles">Opérations et opérateurs disponibles</a></li>
       </ul>
     </li>
-    <li><a href="#variables-et-paramètres">Variables et paramètres</a></li>
-    <li><a href="#test-de-conditions">Test de conditions</a>
+    <li><a href="#variables-de-paramètres-dans-les-scripts">Variables de paramètres dans les scripts</a>
+      <ul>
+        <li><a href="#variables-créées-automatiquement">Variables créées automatiquement</a></li>
+      </ul>
+    </li>
+    <li><a href="#tester-des-conditions-avec-la-commande-test">Tester des conditions avec la commande <em>test</em></a>
       <ul>
         <li><a href="#tests-sur-les-chaînes-de-caractères">Tests sur les chaînes de caractères</a></li>
-        <li><a href="#rappel-tests-sur-les-valeurs-numériques"><strong>Rappel</strong>: Tests sur les valeurs numériques</a></li>
+        <li><a href="#tests-sur-les-nombres">Tests sur les nombres</a></li>
         <li><a href="#tests-sur-les-fichiers">Tests sur les fichiers</a></li>
       </ul>
     </li>
-    <li><a href="#structure-conditionnelle-if--then--else--fi">Structure conditionnelle <em>if &hellip; then &hellip; else &hellip; fi</em></a>
+    <li><a href="#structure-conditionnelle-ifthenelse">Structure conditionnelle if&hellip;then&hellip;else</a>
       <ul>
-        <li><a href="#tester-lexistence-dun-fichier">Tester l&rsquo;existence d&rsquo;un fichier</a></li>
+        <li><a href="#exemple-1-nombre-de-paramètres">Exemple 1: Nombre de paramètres</a></li>
+        <li><a href="#exemple-2-avec-comparaisons">Exemple 2: avec comparaisons</a></li>
+        <li><a href="#exemple-3-tester-si-un-fichier-existe">Exemple 3: Tester si un fichier existe</a></li>
       </ul>
     </li>
-    <li><a href="#lire-une-entrée-clavier">Lire une entrée clavier</a></li>
+    <li><a href="#lire-des-entrées-clavier-commande-read">Lire des entrées clavier (commande <em>read</em>)</a>
+      <ul>
+        <li><a href="#exemple-4-attendre-la-saisie-au-clavier-de-lutilisateur">Exemple 4: Attendre la saisie au clavier de l&rsquo;utilisateur</a></li>
+        <li><a href="#exemple-5-demander-à-lutilisateur-de-saisir-2-nombres-au-clavier">Exemple 5: Demander à l&rsquo;utilisateur de saisir 2 nombres au clavier</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
                 </div>
@@ -147,135 +166,179 @@ Opérations arithmétiques disponibles : Addition : &#43; Soustraction : - Multi
 
 <h1 id="variables-paramètres-et-if_then_else_fi">Variables, paramètres et if_then_else_fi</h1>
 
-<h2 id="effectuer-des-opérations-mathématiques">Effectuer des opérations mathématiques</h2>
-<p>En Bash, les variables stockent des <strong>chaînes de caractères par défaut</strong>, ce qui empêche la manipulation directe des nombres. Pour effectuer des calculs, nous utilisons la commande <code>let</code>.</p>
-<h3 id="opérations-arithmétiques-disponibles-">Opérations arithmétiques disponibles :</h3>
+<h2 id="les-opérations-mathématiques-en-bash">Les opérations mathématiques en Bash</h2>
+<p>Bash, le shell de commande sous Linux, ne traite pas les nombres de manière native. Toutes les variables sont considérées comme des chaînes de caractères. Pour effectuer des opérations mathématiques, on utilise des commandes spécifiques comme <code>let</code>.</p>
+<p>La commande <code>let</code> permet d&rsquo;exécuter des opérations arithmétiques simples.</p>
+<p><strong>Exemple :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ a<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>$ b<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>$ let <span style="color:#e6db74">&#34;c = a + b&#34;</span>
+</span></span><span style="display:flex;"><span>$ echo $c
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">7</span></span></span></code></pre></div>
+<h3 id="opérations-et-opérateurs-disponibles">Opérations et opérateurs disponibles</h3>
 <ul>
 <li>Addition : <code>+</code></li>
 <li>Soustraction : <code>-</code></li>
 <li>Multiplication : <code>*</code></li>
-<li>Division entière : <code>/</code></li>
+<li>Division entière : <code>/</code> (les décimales sont ignorées)</li>
 <li>Puissance : <code>**</code></li>
-<li>Modulo (reste de la division entière) : <code>%</code></li>
+<li>Modulo : <code>%</code> (renvoie le reste de la division)</li>
 </ul>
-<h4 id="exemples-">Exemples :</h4>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>a<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
-</span></span><span style="display:flex;"><span>b<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>let <span style="color:#e6db74">&#34;c = a + b&#34;</span></span></span></code></pre></div>
-<p>Autres exemples :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>let <span style="color:#e6db74">&#34;a = 4 * 3&#34;</span>
-</span></span><span style="display:flex;"><span>let <span style="color:#e6db74">&#34;a = 3 ** 2&#34;</span>
-</span></span><span style="display:flex;"><span>let <span style="color:#e6db74">&#34;a = 12 / 2&#34;</span>
-</span></span><span style="display:flex;"><span>let <span style="color:#e6db74">&#34;a = 10 / 3&#34;</span>
-</span></span><span style="display:flex;"><span>let <span style="color:#e6db74">&#34;a = 10 % 3&#34;</span></span></span></code></pre></div>
+<p><strong>Exemples :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>let <span style="color:#e6db74">&#34;a = 4 * 3&#34;</span>  <span style="color:#75715e"># Multiplication</span>
+</span></span><span style="display:flex;"><span>let <span style="color:#e6db74">&#34;a = 3 ** 2&#34;</span> <span style="color:#75715e"># Puissance</span>
+</span></span><span style="display:flex;"><span>let <span style="color:#e6db74">&#34;a = 12 / 2&#34;</span> <span style="color:#75715e"># Division entière</span>
+</span></span><span style="display:flex;"><span>let <span style="color:#e6db74">&#34;a = 10 / 3&#34;</span> <span style="color:#75715e"># Division entière, résultat : 3</span>
+</span></span><span style="display:flex;"><span>let <span style="color:#e6db74">&#34;a = 10 % 3&#34;</span> <span style="color:#75715e"># Modulo, résultat : 1</span></span></span></code></pre></div>
+<p>On peut aussi utiliser la notation raccourcie :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>let <span style="color:#e6db74">&#34;a *= 3&#34;</span> <span style="color:#75715e"># Équivaut à : let &#34;a = a * 3&#34;</span></span></span></code></pre></div>
+<h2 id="variables-de-paramètres-dans-les-scripts">Variables de paramètres dans les scripts</h2>
+<p>Les scripts Bash acceptent des paramètres passés en ligne de commande, <strong>lors de l&rsquo;exécution du script</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash script.sh param1 param2 param3</span></span></code></pre></div>
+<p>Une fois le script lancé, Linux crée <strong>automatiquement</strong> des variables.</p>
+<h3 id="variables-créées-automatiquement">Variables créées automatiquement</h3>
 <ul>
-<li><code>10 / 3</code> donne <code>3</code> car la division est entière.</li>
-<li><code>10 % 3</code> donne <code>1</code> car 10 divisé par 3 laisse un reste de 1.</li>
+<li><code>$#</code> : Nombre de paramètres</li>
+<li><code>$0</code> : Nom du script exécuté</li>
+<li><code>$1</code> à <code>$9</code> : Valeurs des paramètres 1 à 9</li>
+<li><code>$?</code> : Code de retour de la dernière commande (0 si succès)</li>
+<li><code>$*</code> : Liste de tous les paramètres</li>
 </ul>
-<p>On peut aussi écrire des opérations sous forme abrégée :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>let <span style="color:#e6db74">&#34;a = a * 3&#34;</span>  <span style="color:#75715e"># Équivaut à :</span>
-</span></span><span style="display:flex;"><span>let <span style="color:#e6db74">&#34;a *= 3&#34;</span></span></span></code></pre></div>
-<h2 id="variables-et-paramètres">Variables et paramètres</h2>
-<p>Les scripts Bash peuvent accepter des paramètres en ligne de commande :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./script.sh param1 param2 param3</span></span></code></pre></div>
-<p>Les variables associées :</p>
-<ul>
-<li><code>$#</code> : Nombre de paramètres.</li>
-<li><code>$0</code> : Nom du script exécuté.</li>
-<li><code>$1, $2, ..., $9</code> : Paramètres de 1 à 9.</li>
-<li><code>$?</code> : Code de retour de la dernière commande (0 = succès).</li>
-<li><code>$*</code> : Liste des paramètres.</li>
-</ul>
-<h2 id="test-de-conditions">Test de conditions</h2>
-<p>La commande <code>test</code> permet d’évaluer des conditions. Le résultat est stocké dans <code>$?</code> (0 = vrai, autre valeur = faux).</p>
+<h2 id="tester-des-conditions-avec-la-commande-test">Tester des conditions avec la commande <em>test</em></h2>
+<p>La commande <code>test</code> permet de vérifier des conditions, et le résultat est stocké dans <code>$?</code> (0 si la condition est vraie).</p>
 <h3 id="tests-sur-les-chaînes-de-caractères">Tests sur les chaînes de caractères</h3>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>test -z <span style="color:#e6db74">&#34;</span>$variable<span style="color:#e6db74">&#34;</span>  <span style="color:#75715e"># Vrai si la variable est vide</span>
-</span></span><span style="display:flex;"><span>test -n <span style="color:#e6db74">&#34;</span>$variable<span style="color:#e6db74">&#34;</span>  <span style="color:#75715e"># Vrai si la variable n&#39;est pas vide</span>
-</span></span><span style="display:flex;"><span>test <span style="color:#e6db74">&#34;</span>$variable<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;chaine&#34;</span>  <span style="color:#75715e"># Vrai si les valeurs sont identiques</span>
-</span></span><span style="display:flex;"><span>test <span style="color:#e6db74">&#34;</span>$variable<span style="color:#e6db74">&#34;</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;chaine&#34;</span>  <span style="color:#75715e"># Vrai si les valeurs sont différentes</span></span></span></code></pre></div>
-<h3 id="rappel-tests-sur-les-valeurs-numériques"><strong>Rappel</strong>: Tests sur les valeurs numériques</h3>
-<p>Les comparaisons sont faites avec :</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Commande</strong></th>
+          <th style="text-align: left"><strong>Description</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>test -z $variable</code></td>
+          <td style="text-align: left">Vrai si <code>$variable</code> est <strong>vide</strong>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>test -n $variable</code></td>
+          <td style="text-align: left">Vrai si <code>$variable</code> n&rsquo;est <strong>pas vide</strong>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>test $variable = &quot;chaine&quot;</code></td>
+          <td style="text-align: left">Vrai si <code>$variable</code> est <strong>identique à</strong> &ldquo;chaine&rdquo;.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>test $variable != &quot;chaine&quot;</code></td>
+          <td style="text-align: left">Vrai si <code>$variable</code> est <strong>différent de</strong> &ldquo;chaine&rdquo;.</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Exemples</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ test -z <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>$ echo $?
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>            <span style="color:#75715e"># car la variable &#34;a&#34; n&#39;a pas été initialisée</span>
+</span></span><span style="display:flex;"><span>$ a<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;abcd&#34;</span>
+</span></span><span style="display:flex;"><span>$ test -n <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>$ echo $?
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>$ test a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;abcd&#34;</span>
+</span></span><span style="display:flex;"><span>$ echo $?
+</span></span><span style="display:flex;"><span>0		<span style="color:#75715e"># Vrai</span>
+</span></span><span style="display:flex;"><span>$ test a !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;dcba&#34;</span>
+</span></span><span style="display:flex;"><span>$ echo $?
+</span></span><span style="display:flex;"><span>0		<span style="color:#75715e"># Vrai</span></span></span></code></pre></div>
+
+<details open class=" box cstyle notices note">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-circle"></i> 
+    Note
+  </summary>
+  <div class="box-content">
+<p>Contrairement aux nombres, avec les chaînes de caractères les symboles <code>=</code> (égal) et <code>!=</code> (différent) sont utilisés comme opérateur d&rsquo;égalité et d&rsquo;inégalité.</p>
+  </div>
+</details>
+<h3 id="tests-sur-les-nombres">Tests sur les nombres</h3>
+<p>Les options disponibles sont :</p>
 <ul>
-<li><code>-eq</code> : Égal</li>
+<li><code>-eq</code> : Égalité</li>
 <li><code>-ne</code> : Différent</li>
 <li><code>-lt</code> : Inférieur</li>
 <li><code>-gt</code> : Supérieur</li>
 <li><code>-le</code> : Inférieur ou égal</li>
 <li><code>-ge</code> : Supérieur ou égal</li>
 </ul>
-<p>Exemple :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>a<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
+<p><strong>Exemple :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>a<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>
 </span></span><span style="display:flex;"><span>b<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
-</span></span><span style="display:flex;"><span>test <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74">&#34;</span> -ne <span style="color:#e6db74">&#34;</span>$b<span style="color:#e6db74">&#34;</span>; echo $?
-</span></span><span style="display:flex;"><span>test <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74">&#34;</span> -eq <span style="color:#e6db74">&#34;</span>$b<span style="color:#e6db74">&#34;</span>; echo $?</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>test <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74">&#34;</span> -ne <span style="color:#e6db74">&#34;</span>$b<span style="color:#e6db74">&#34;</span>; echo $? <span style="color:#75715e"># Affiche 0 (vrai)</span>
+</span></span><span style="display:flex;"><span>test <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74">&#34;</span> -eq <span style="color:#e6db74">&#34;</span>$b<span style="color:#e6db74">&#34;</span>; echo $? <span style="color:#75715e"># Affiche 1 (faux)</span></span></span></code></pre></div>
 <h3 id="tests-sur-les-fichiers">Tests sur les fichiers</h3>
-<p>Syntaxe : <code>test option fichier</code></p>
+<p>La syntaxe est test option <code>nom_fichier</code></p>
+<p>Les options:</p>
 <ul>
-<li><code>-e</code> : Existence du fichier</li>
-<li><code>-s</code> : Fichier non vide</li>
-<li><code>-f</code> : Fichier normal</li>
+<li><code>-e</code> : Existe</li>
+<li><code>-s</code> : Non vide</li>
+<li><code>-f</code> : Fichier standard</li>
 <li><code>-d</code> : Répertoire</li>
 <li><code>-r</code> : Lecture autorisée</li>
 <li><code>-w</code> : Écriture autorisée</li>
 <li><code>-x</code> : Exécution autorisée</li>
 </ul>
-<h2 id="structure-conditionnelle-if--then--else--fi">Structure conditionnelle <em>if &hellip; then &hellip; else &hellip; fi</em></h2>
-<p>Syntaxe :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> condition <span style="color:#f92672">]</span>
+<h2 id="structure-conditionnelle-ifthenelse">Structure conditionnelle if&hellip;then&hellip;else</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> condition <span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>  commandes_si_vrai
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Commandes à exécuter si la condition est vraie</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>  commandes_si_faux
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Commandes à exécuter si la condition est fausse</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span></span></span></code></pre></div>
-<p>Exemple :</p>
+<h3 id="exemple-1-nombre-de-paramètres">Exemple 1: Nombre de paramètres</h3>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -ne <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Il y a des paramètres en ligne de commande&#34;</span>
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Nombre de paramètres : </span>$#<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Paramètres : 1=</span>$1<span style="color:#e6db74"> 2=</span>$2<span style="color:#e6db74"> 3=</span>$3<span style="color:#e6db74"> 4=</span>$4<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Liste : </span>$*<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;il y paramètres en ligne de commande&#34;</span>;
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Nombre de paramètres:</span>$#<span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Paramètres: 1=</span>$1<span style="color:#e6db74"> 2=</span>$2<span style="color:#e6db74"> 3=</span>$3<span style="color:#e6db74"> 4=</span>$4<span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Liste : </span>$*<span style="color:#e6db74">&#34;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Pas de paramètres&#34;</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Pas de paramètres &#34;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span></span></span></code></pre></div>
-<p>Autre exemple :</p>
+<p><strong>Exécution du script</strong> : sans paramètres</p>
+<p><a href="#R-image-0aa45dc8c00555c38013a68c93f2b92e" class="lightbox-link"><img alt="Exemple 1 if" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple1_if.png?width=45vw" style=" height: auto; width: 45vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-0aa45dc8c00555c38013a68c93f2b92e"><img alt="Exemple 1 if" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple1_if.png?width=45vw"></a></p>
+<h3 id="exemple-2-avec-comparaisons">Exemple 2: avec comparaisons</h3>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $1 -gt $2 <span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Le premier paramètre est supérieur au deuxième&#34;</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Le premier paramètre est supérieur au deuxième paramètre&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> <span style="color:#f92672">[</span> $1 -lt $2 <span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Le premier paramètre est inférieur au deuxième&#34;</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Le premier paramètre est inférieur au deuxième paramètre&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Les deux nombres sont égaux&#34;</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Les deux sont égaux&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span></span></span></code></pre></div>
-<h3 id="tester-lexistence-dun-fichier">Tester l&rsquo;existence d&rsquo;un fichier</h3>
+<p><strong>Exécution du script</strong> : en passant les paramètres</p>
+<p><a href="#R-image-5356d47667a417bc0645e6cecea88ba2" class="lightbox-link"><img alt="Exemple 2 if" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple2_if.png?width=45vw" style=" height: auto; width: 45vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5356d47667a417bc0645e6cecea88ba2"><img alt="Exemple 2 if" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple2_if.png?width=45vw"></a></p>
+<h3 id="exemple-3-tester-si-un-fichier-existe">Exemple 3: Tester si un fichier existe</h3>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -e <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -e $1 <span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Le fichier existe&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Le fichier n&#39;existe pas&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span></span></span></code></pre></div>
-<h2 id="lire-une-entrée-clavier">Lire une entrée clavier</h2>
-<p>Pour stocker une entrée utilisateur dans une variable :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>read nombre</span></span></code></pre></div>
-<p>Modification du script précédent pour lire les nombres au clavier :</p>
+<p><strong>Exécution du script</strong> : avec le fichier /etc/passwd en paramètre</p>
+<p><a href="#R-image-b97102da7742c5bc859538dbbc16a7b8" class="lightbox-link"><img alt="Exemple 3 if" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple3_if.png?width=45vw" style=" height: auto; width: 45vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b97102da7742c5bc859538dbbc16a7b8"><img alt="Exemple 3 if" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple3_if.png?width=45vw"></a></p>
+<h2 id="lire-des-entrées-clavier-commande-read">Lire des entrées clavier (commande <em>read</em>)</h2>
+<h3 id="exemple-4-attendre-la-saisie-au-clavier-de-lutilisateur">Exemple 4: Attendre la saisie au clavier de l&rsquo;utilisateur</h3>
+<p>Pour lire une information saisie au clavier par l&rsquo;utilisateur on utilise la commande <code>read</code>:</p>
+<p><a href="#R-image-b038f0b62b7b2311dad7ae121e8b5481" class="lightbox-link"><img alt="Exemple 4 read" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple4_read.png?width=45vw" style=" height: auto; width: 45vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b038f0b62b7b2311dad7ae121e8b5481"><img alt="Exemple 4 read" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple4_read.png?width=45vw"></a></p>
+<h3 id="exemple-5-demander-à-lutilisateur-de-saisir-2-nombres-au-clavier">Exemple 5: Demander à l&rsquo;utilisateur de saisir 2 nombres au clavier</h3>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Entrez un nombre&#34;</span>
@@ -283,15 +346,18 @@ Opérations arithmétiques disponibles : Addition : &#43; Soustraction : - Multi
 </span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;Entrez un autre nombre&#34;</span>
 </span></span><span style="display:flex;"><span>read nb2
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$nb1<span style="color:#e6db74">&#34;</span> -gt <span style="color:#e6db74">&#34;</span>$nb2<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $nb1 -gt $nb2 <span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Le premier nombre est supérieur au deuxième&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$nb1<span style="color:#e6db74">&#34;</span> -lt <span style="color:#e6db74">&#34;</span>$nb2<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Le premier nombre est supérieur au deuxième nombre&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> <span style="color:#f92672">[</span> $nb1 -lt $nb2 <span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Le premier nombre est inférieur au deuxième&#34;</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Le premier nombre est inférieur au deuxième nombre&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Les deux nombres sont égaux&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span></span></span></code></pre></div>
+<p><strong>Exécution du script</strong> :</p>
+<p><a href="#R-image-d504fe0fbc98649d523e6400aaf58893" class="lightbox-link"><img alt="Exemple 5 read" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple5_read.png?width=40vw" style=" height: auto; width: 40vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d504fe0fbc98649d523e6400aaf58893"><img alt="Exemple 5 read" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple5_read.png?width=40vw"></a></p>
 
   <footer class="footline">
   </footer>
@@ -308,7 +374,7 @@ Opérations arithmétiques disponibles : Addition : &#43; Soustraction : - Multi
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1743004097";
+          window.index_js_url="/searchindex.en.js?1743212981";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -321,12 +387,12 @@ Opérations arithmétiques disponibles : Addition : &#43; Soustraction : - Multi
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1743004097" defer></script>
-        <script src="/js/lunr/lunr.min.js?1743004097" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1743004097" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1743004097" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1743004097" defer></script>
-        <script src="/js/search.js?1743004097" defer></script>
+        <script src="/js/auto-complete.js?1743212981" defer></script>
+        <script src="/js/lunr/lunr.min.js?1743212981" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1743212981" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1743212981" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1743212981" defer></script>
+        <script src="/js/search.js?1743212981" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -405,8 +471,8 @@ Opérations arithmétiques disponibles : Addition : &#43; Soustraction : - Multi
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1743004097" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1743004097" defer></script>
-    <script src="/js/theme.js?1743004097" defer></script>
+    <script src="/js/clipboard.min.js?1743212981" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1743212981" defer></script>
+    <script src="/js/theme.js?1743212981" defer></script>
   </body>
 </html>

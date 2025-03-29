@@ -3,7 +3,7 @@
   <channel>
     <title>Variables, paramètres et if_then_else_fi :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine9/cours/index.html</link>
-    <description>Effectuer des opérations mathématiques En Bash, les variables stockent des chaînes de caractères par défaut, ce qui empêche la manipulation directe des nombres. Pour effectuer des calculs, nous utilisons la commande let.&#xA;Opérations arithmétiques disponibles : Addition : + Soustraction : - Multiplication : * Division entière : / Puissance : ** Modulo (reste de la division entière) : % Exemples : #!/bin/bash a=5 b=2 let &#34;c = a + b&#34;&#xD;Autres exemples :</description>
+    <description>Les opérations mathématiques en Bash Bash, le shell de commande sous Linux, ne traite pas les nombres de manière native. Toutes les variables sont considérées comme des chaînes de caractères. Pour effectuer des opérations mathématiques, on utilise des commandes spécifiques comme let.&#xA;La commande let permet d’exécuter des opérations arithmétiques simples.&#xA;Exemple :&#xA;$ a=5 $ b=2 $ let &#34;c = a + b&#34; $ echo $c 7&#xD;Opérations et opérateurs disponibles Addition : + Soustraction : - Multiplication : * Division entière : / (les décimales sont ignorées) Puissance : ** Modulo : % (renvoie le reste de la division) Exemples :</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine9/cours/index.xml" rel="self" type="application/rss+xml" />
