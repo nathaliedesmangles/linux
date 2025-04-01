@@ -289,6 +289,12 @@ L'option `-y` permet de valider automatiquement l'installation, sans avoir à ta
 
 ### Utiliser le shell *dnf*
 
+{{% notice style="note" title="DNF version 5" %}}
+**Remarque :** Pour pouvoir exécuter la commande `shell`:
+1. Tous les packages locaux doivent être utilisés dans la première sous-commande de la transaction shell (par exemple, `install /tmp/nodejs-1-1.x86_64.rpm /tmp/acpi-1-1.noarch.rpm`), **sinon une erreur se produira**.  
+2. Toute opération de désactivation, d’activation ou de réinitialisation de module (par exemple, `module enable nodejs`) doit également être effectuée avant toute autre sous-commande de la transaction shell.
+{{% /notice %}}
+
 Le shell `dnf` permet d'automatiser des installations. 
 
 | Action | Commande | Description | Exemple |

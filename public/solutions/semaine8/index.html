@@ -34,14 +34,14 @@ Voici comment identifier et installer les paquets demandés à l’aide de dnf :
 Paquet 01 : Utilitaire ifconfig Recherche du paquet
 $ dnf provides */ifconfigInstallation
 $ sudo dnf install -y net-toolsPaquet 02 : kmouth Recherche du nom du paquet">
-    <meta itemprop="wordCount" content="827">
+    <meta itemprop="wordCount" content="870">
     <title>Atelier 8 :: 420-ZG4-MO LINUX</title>
     <link href="/solutions/semaine8/index.xml" rel="alternate" type="application/rss+xml" title="Atelier 8 :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1743212981" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743212981" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1743212981" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743212981" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1743212981" rel="stylesheet">
-    <link href="/css/theme.min.css?1743212981" rel="stylesheet">
-    <link href="/css/format-html.min.css?1743212981" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1743472148" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743472148" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1743472148" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743472148" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1743472148" rel="stylesheet">
+    <link href="/css/theme.min.css?1743472148" rel="stylesheet">
+    <link href="/css/format-html.min.css?1743472148" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -269,13 +269,18 @@ $ sudo dnf install -y net-toolsPaquet 02 : kmouth Recherche du nom du paquet">
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>crontab -e</span></span></code></pre></div>
 <p><strong>Dans la crontab, indiquer le <b><span style="color:red;">chemin absolu<span></b> vers le script à exécuter chaque minute :</strong></p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>*/1 * * * * bash  /home/ndesmangles/atelier08.sh</span></span></code></pre></div>
+</li>
+</ol>
+<p>ou</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>* * * * * bash  /home/ndesmangles/atelier08.sh</span></span></code></pre></div>
 <p><strong>Explication</strong> :</p>
 <ul>
 <li><code>*/1 * * * *</code> → Exécute le script <strong>chaque minute</strong>.</li>
+<li><code>* * * * *</code> → Exécute aussi le script <strong>chaque minute</strong>.</li>
 <li><code>date &quot;+\%Y-\%m-\%d \%H:\%M:\%S&quot;</code> → Capture la date et l&rsquo;heure actuelles.</li>
 <li>bash <code>/home/ndesmangles/atelier08.sh</code> → exécution du script (<strong>chemin absolu</strong> vers le script)</li>
 </ul>
-</li>
+<ol start="3">
 <li>
 <p><strong>Vérifier que le fichier se met à jour</strong></p>
 <p><strong>Utilisez la commande suivante pour observer en temps réel l’évolution du fichier</strong> :</p>
@@ -296,13 +301,18 @@ $ sudo dnf install -y net-toolsPaquet 02 : kmouth Recherche du nom du paquet">
 <li>
 <p><strong>Écrire la tâche cron</strong></p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>*/1 * * * * date <span style="color:#e6db74">&#34;+\%Y-\%m-\%d \%H:\%M:\%S&#34;</span> &gt;&gt; /home/ndesmangles/heures.txt</span></span></code></pre></div>
+</li>
+</ol>
+<p>ou</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>* * * * * date <span style="color:#e6db74">&#34;+\%Y-\%m-\%d \%H:\%M:\%S&#34;</span> &gt;&gt; /home/ndesmangles/heures.txt</span></span></code></pre></div>
 <p><strong>Explication</strong> :</p>
 <ul>
 <li><code>*/1 * * * *</code> → Exécute la commande <strong>chaque minute</strong>.</li>
+<li><code>* * * * *</code> → Exécute aussi la commande <strong>chaque minute</strong>.</li>
 <li><code>date &quot;+\%Y-\%m-\%d \%H:\%M:\%S&quot;</code> → Capture la date et l&rsquo;heure actuelles.</li>
 <li><code>&gt;&gt; /home/ndesmangles/heures.txt</code> → Ajoute le résultat au fichier sans l&rsquo;écraser.</li>
 </ul>
-</li>
+<ol start="3">
 <li>
 <p><strong>Vérifier que le fichier se met à jour</strong></p>
 <p><strong>Utilisez la commande suivante pour observer en temps réel l’évolution du fichier</strong> :</p>
@@ -343,7 +353,7 @@ Vous pouvez aussi <strong>supprimer définitivement la tâche</strong> avec :</p
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1743212981";
+          window.index_js_url="/searchindex.en.js?1743472148";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -356,12 +366,12 @@ Vous pouvez aussi <strong>supprimer définitivement la tâche</strong> avec :</p
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1743212981" defer></script>
-        <script src="/js/lunr/lunr.min.js?1743212981" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1743212981" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1743212981" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1743212981" defer></script>
-        <script src="/js/search.js?1743212981" defer></script>
+        <script src="/js/auto-complete.js?1743472148" defer></script>
+        <script src="/js/lunr/lunr.min.js?1743472148" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1743472148" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1743472148" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1743472148" defer></script>
+        <script src="/js/search.js?1743472148" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -448,8 +458,8 @@ Vous pouvez aussi <strong>supprimer définitivement la tâche</strong> avec :</p
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1743212981" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1743212981" defer></script>
-    <script src="/js/theme.js?1743212981" defer></script>
+    <script src="/js/clipboard.min.js?1743472148" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1743472148" defer></script>
+    <script src="/js/theme.js?1743472148" defer></script>
   </body>
 </html>

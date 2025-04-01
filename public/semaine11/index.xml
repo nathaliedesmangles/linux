@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Titre :: 420-ZG4-MO LINUX</title>
+    <title>Les droits d&#39;accès :: 420-ZG4-MO LINUX</title>
     <link>http://localhost:1313/semaine11/index.html</link>
-    <description>Plan de la leçon Théorie : Lundi 14 avril&#xA;s Atelier : Vendredi 18 avril.</description>
+    <description>Plan de la leçon Théorie : Lundi 14 avril&#xA;Les permissions sur les fichiers Modification des permissions (2 méthodes) Symbolique Octale Modification de l’utilisateur propriétaire d’un fichier ou répertoire Modification du groupe propriétaire d’un fichier ou répertoire Le droit d’exécution Atelier : Vendredi 18 avril.&#xA;Gestion des droits d’accès à un fichier ou répertoire</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/semaine11/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ATELIER #10b: Titre</title>
+      <title>Les droits d&#39;accès</title>
+      <link>http://localhost:1313/semaine11/cours/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/semaine11/cours/index.html</guid>
+      <description>Introduction Linux étant un système multi-utilisateurs, il peut être nécessaire de donner des droits différents sur les fichiers pour les protéger:&#xA;Confidentialité&#xA;Protection contre les erreurs&#xA;…&#xA;Sur Linux, il existe deux types de droits: les droits standards et les ACL. Nous verrons uniquement les droits standards qui sont les plus utilisés.&#xA;De plus, c’est avec les droits que l’on peut rendre un fichier exécutable.&#xA;Description La commande suivante permet d’afficher les permissions sur les fichiers:</description>
+    </item>
+    <item>
+      <title>ATELIER #10b: Gestion des droits d’accès aux fichiers</title>
       <link>http://localhost:1313/semaine11/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/semaine11/atelier/index.html</guid>
-      <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .&#xA;Atelier Exercice 1 : Titre</description>
+      <description>Objectif de l’atelier Cet exercice vise à vous familiariser avec les commandes pour la configuration des droits d’accès aux fichiers.&#xA;Atelier Prérequis&#xD;L’atelier #10a doit être fait pour pouvoir faire celui-ci.&#xA;Remise Vous devez faire une/des captures d’écran pour chaque commande que vous tapez pour répondre à la question. Lorsqu’une question est posée, écrivez la réponse dans le Terminal Ou dans un fichier texte. Exercice : Gestion des droits d’accès aux fichiers Connexion avec l’utilisateur didi :</description>
     </item>
   </channel>
 </rss>

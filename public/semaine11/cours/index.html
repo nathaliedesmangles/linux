@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Introduction Linux étant un système multi-utilisateurs, il peut être nécessaire de donner des droits différents sur les fichiers pour les protéger:
+Confidentialité
+Protection contre les erreurs
+…
+Sur Linux, il existe deux types de droits: les droits standards et les ACL. Nous verrons uniquement les droits standards qui sont les plus utilisés.
+De plus, c’est avec les droits que l’on peut rendre un fichier exécutable.
+Description La commande suivante permet d’afficher les permissions sur les fichiers:">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Les droits d&#39;accès :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Introduction Linux étant un système multi-utilisateurs, il peut être nécessaire de donner des droits différents sur les fichiers pour les protéger:
+Confidentialité
+Protection contre les erreurs
+…
+Sur Linux, il existe deux types de droits: les droits standards et les ACL. Nous verrons uniquement les droits standards qui sont les plus utilisés.
+De plus, c’est avec les droits que l’on peut rendre un fichier exécutable.
+Description La commande suivante permet d’afficher les permissions sur les fichiers:">
+    <meta property="og:url" content="http://localhost:1313/semaine11/cours/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Les droits d&#39;accès :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Introduction Linux étant un système multi-utilisateurs, il peut être nécessaire de donner des droits différents sur les fichiers pour les protéger:
+Confidentialité
+Protection contre les erreurs
+…
+Sur Linux, il existe deux types de droits: les droits standards et les ACL. Nous verrons uniquement les droits standards qui sont les plus utilisés.
+De plus, c’est avec les droits que l’on peut rendre un fichier exécutable.
+Description La commande suivante permet d’afficher les permissions sur les fichiers:">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Les droits d&#39;accès :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Introduction Linux étant un système multi-utilisateurs, il peut être nécessaire de donner des droits différents sur les fichiers pour les protéger:
+Confidentialité
+Protection contre les erreurs
+…
+Sur Linux, il existe deux types de droits: les droits standards et les ACL. Nous verrons uniquement les droits standards qui sont les plus utilisés.
+De plus, c’est avec les droits que l’on peut rendre un fichier exécutable.
+Description La commande suivante permet d’afficher les permissions sur les fichiers:">
+    <meta itemprop="wordCount" content="1297">
+    <title>Les droits d&#39;accès :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine11/cours/index.xml" rel="alternate" type="application/rss+xml" title="Les droits d&#39;accès :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1743472090" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743472090" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1743472090" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743472090" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1743472090" rel="stylesheet">
+    <link href="/css/theme.css?1743472090" rel="stylesheet">
+    <link href="/css/format-html.css?1743472090" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.min = ``;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine11/cours/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#modification-des-permissions">Modification des permissions</a>
+      <ul>
+        <li><a href="#la-méthode-symbolique">La méthode symbolique</a></li>
+        <li><a href="#la-méthode-octale">La méthode octale</a></li>
+      </ul>
+    </li>
+    <li><a href="#modification-de-lutilisteur-propriétaire">Modification de l&rsquo;utilisteur propriétaire</a></li>
+    <li><a href="#modification-du-groupe-propriétaire">Modification du groupe propriétaire</a></li>
+    <li><a href="#le-droit-dexécution">Le droit d&rsquo;exécution</a></li>
+    <li><a href="#exercices">Exercices</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine11/index.html"><span itemprop="name">Les droits d&#39;accès</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Les droits d&#39;accès</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine11/index.html" title="Les droits d&#39;accès (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine11/atelier/index.html" title="ATELIER #10b: Gestion des droits d’accès aux fichiers (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine11" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="les-droits-daccès">Les droits d&#39;accès</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>Linux étant un système multi-utilisateurs, il peut être nécessaire de donner des droits différents sur les fichiers pour les protéger:</p>
+<ul>
+<li>
+<p>Confidentialité</p>
+</li>
+<li>
+<p>Protection contre les erreurs</p>
+</li>
+<li>
+<p>&hellip;</p>
+</li>
+</ul>
+<p>Sur Linux, il existe deux types de droits: les droits standards et les ACL. Nous verrons uniquement les droits standards qui sont les plus utilisés.</p>
+<p>De plus, c&rsquo;est avec les droits que l&rsquo;on peut rendre un fichier exécutable.</p>
+<h2 id="description">Description</h2>
+<p>La commande suivante permet d&rsquo;afficher les permissions sur les fichiers:</p>
+<pre>$ ls -l
+total 40
+-rwxr-xr-x.  1 axel axel  1767 10 déc 16:52 1895560_2018-12-08_18h59m02s.py
+drwxr-xr-x.  3 axel axel    18 21 mar 14:22 Bureau
+drwxrwxr-x.  3 axel axel    22  7 mar 17:08 config
+drwxrwxr-x.  2 axel axel  4096 10 avr 13:16 correction
+drwxrwxr-x.  2 axel axel    69  7 fév 17:10 cours
+drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Documents
+-rw-rw-r--.  1 axel axel   343 27 mar 11:14 expr.txt
+drwxrwxr-x.  3 axel axel    93  7 mar 15:22 hugo
+drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Images
+drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Modèles
+drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Musique
+drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Public
+drwxrwxr-x. 13 axel axel  4096 11 avr 18:06 quickstart
+-rw-r--r--.  1 axel axel 11459 31 mar 12:53 README.md
+drwxrwxr-x.  3 axel axel  4096 17 mar 15:24 scripts
+-rwxrw-r--.  1 axel axel    52 25 fév 14:14 script.sh
+drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Téléchargements
+-rw-rw-r--.  1 axel axel     9  3 avr 13:53 total.txt
+drwxr-xr-x.  7 axel axel   162 13 mar 21:27 tp01
+drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Vidéos
+</pre>
+<p><a href="#R-image-39efc2a767cf046720b0968b8aa9e780" class="lightbox-link"><img alt="droits" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../images/droits.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-39efc2a767cf046720b0968b8aa9e780"><img alt="droits" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../images/droits.png"></a></p>
+<p>Les permissions s&rsquo;affichent sous la forme de 3 colonnes de 3 lettres chacune.</p>
+<ul>
+<li>
+<p>La première colonne représente les droits pour le propriétaire du fichier (u pour user).</p>
+</li>
+<li>
+<p>La deuxième colonne représente les droits pour le groupe propriétaire du fichier (g pour groupe).</p>
+</li>
+<li>
+<p>La troisième colonne représente les droits pour tous les autres utilisateurs (o pour other).</p>
+</li>
+</ul>
+<p>Les 3 lettres représentent les droits:</p>
+<ul>
+<li>
+<p><code class="gr">r</code>: pour la lecture (Read)</p>
+</li>
+<li>
+<p><code class="gr">w</code>: pour l&rsquo;écriture (Write)</p>
+</li>
+<li>
+<p><code class="gr">x</code>: pour l&rsquo;exécution (eXecute). Est l&rsquo;exécution pour un fichier, le droit de parcourir pour un répertoire (sans possibilité de voir le contenu si le droit Read n&rsquo;a pas été donné.</p>
+</li>
+</ul>
+<p>Les permissions s&rsquo;appliquent à une personne et un groupe:</p>
+<ul>
+<li>
+<p>La première colonne représente la personne qui est propriétaire du fichier ou du répertoire.</p>
+</li>
+<li>
+<p>La deuxième colonne représente le groupe qui est propriétaire du fichier ou du répertoire.</p>
+</li>
+</ul>
+<h2 id="modification-des-permissions">Modification des permissions</h2>
+<p>Deux personnes peuvent modifier les permissions:</p>
+<ul>
+<li>
+<p>Le propriétaire du fichier ou du répertoire</p>
+</li>
+<li>
+<p>root</p>
+</li>
+</ul>
+<p>La commande pour modifier les droits est <code class="gr">chmod</code>.</p>
+<p>Il existe 2 méthodes pour modifier les droits:</p>
+<ul>
+<li>
+<p>La méthode symbolique</p>
+</li>
+<li>
+<p>La méthode octale</p>
+</li>
+</ul>
+<h3 id="la-méthode-symbolique">La méthode symbolique</h3>
+<p>Elle utilise les symboles des droits:</p>
+<ul>
+<li>
+<p><code class="gr">r</code> : lecture</p>
+</li>
+<li>
+<p><code class="gr">w</code> : écriture</p>
+</li>
+<li>
+<p><code class="gr">x</code> : exécution</p>
+</li>
+</ul>
+<p>Elle utilise les symboles des utilisateurs:</p>
+<ul>
+<li>
+<p><code class="gr">u</code> : l&rsquo;utilisateur propriétaire</p>
+</li>
+<li>
+<p><code class="gr">g</code> : le groupe propriétaire</p>
+</li>
+<li>
+<p><code class="gr">o</code> : les autres</p>
+</li>
+<li>
+<p><code class="gr">a</code> : tous (utilisateur, groupe et autres)</p>
+</li>
+</ul>
+<p>Elle utilise les symboles d&rsquo;ajout, de suppression ou de définition pour spécifier les droits:</p>
+<ul>
+<li>
+<p><code class="gr">+</code> : pour ajouter un ou plusieurs droits à une catégorie</p>
+</li>
+<li>
+<p><code class="gr">-</code> : pour retirer un ou plusieurs droits à une catégorie</p>
+</li>
+<li>
+<p><code class="gr">=</code> : pour définir les droits d&rsquo;une ou plusieurs ctégories.</p>
+</li>
+</ul>
+<p>Voici des exemples:</p>
+<ul>
+<li>Pour donner tous les droits à tous les utilisateurs:</li>
+</ul>
+<pre>$ chmod a+rwx fichier
+$ chmod ugo=rwx fichier</pre>
+<ul>
+<li>Pour enlever le droit d&rsquo;écriture aux autres:</li>
+</ul>
+<pre>$ chmod o-w fichier</pre>
+<ul>
+<li>Pour enlever le droit d&rsquo;écriture aux autres et au groupe:</li>
+</ul>
+<pre>$ chmod go-w fichier</pre>
+<ul>
+<li>Pour affecter les droits à toute l&rsquo;arborescence en dessous:</li>
+</ul>
+<pre>$ chmod -R u-x directory</pre>
+<h3 id="la-méthode-octale">La méthode octale</h3>
+<p>En binaire, les droits sont les suivants:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">r</th>
+          <th style="text-align: center">w</th>
+          <th style="text-align: center">x</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">4</td>
+          <td style="text-align: center">2</td>
+          <td style="text-align: center">1</td>
+      </tr>
+  </tbody>
+</table>
+<p>Pour connaître la valeur des droits que l&rsquo;on souhaite attribuer, il suffit d&rsquo;additionner la valeur des droits individuels.</p>
+<p>Ainsi, si on veut donner les droits de lecture seulement, ce sera 4, écriture seulement ce sera 2 et exécution seulement ce sera 1.</p>
+<p>Si on veut donner les droits de lecture et écriture ce sera 6, lecture et exécutionce sera 5&hellip;</p>
+<p>Avec la méthode octale, il faut obligatoirement définir les droits pour les trois catégories : le propriétaire, le groupe propriétaire et les autres.</p>
+<p>Voici des exemples:</p>
+<ul>
+<li>Pour donner tous les droits à tous les utilisateurs:</li>
+</ul>
+<pre>$ chmod 777 fichier</pre>
+<ul>
+<li>Pour enlever le droit d&rsquo;écriture aux autres:</li>
+</ul>
+<pre>$ chmod 775 fichier</pre>
+<ul>
+<li>Pour enlever le droit d&rsquo;écriture aux autres et au groupe:</li>
+</ul>
+<pre>$ chmod 755 fichier</pre>
+<ul>
+<li>Pour affecter les droits à toute l&rsquo;arborescence en dessous:</li>
+</ul>
+<pre>$ chmod -R 644 directory</pre>
+<h2 id="modification-de-lutilisteur-propriétaire">Modification de l&rsquo;utilisteur propriétaire</h2>
+<p>Il est possible de modifier le propriétaire d&rsquo;un fichier ou d&rsquo;un répertoire.</p>
+<p>Seul root peut effectuer cette action.</p>
+<p>La commande est <code class="gr">chown</code>.</p>
+<pre>$ chown user fichier</pre>
+<p>Pour changer à la fois le groupe propriétaire et l&rsquo;utilisateur:</p>
+<pre>$ chown user:group fichier</pre>
+<p>Pour changer toute l&rsquo;arborescence:</p>
+<pre>$ chown -R user directory</pre>
+<h2 id="modification-du-groupe-propriétaire">Modification du groupe propriétaire</h2>
+<p>De même qu&rsquo;il est possible de changer le propriétaire, il est possible de changer le groupe propriétaire.</p>
+<p>Deux utilisateurs ont le droit de modifier le groupe propriétaire:</p>
+<ul>
+<li>
+<p>root</p>
+</li>
+<li>
+<p>Le propriétaire actuel s&rsquo;il appartient au groupe auquel on va donner le fichier.</p>
+</li>
+</ul>
+<pre>$ chgrp group fichier</pre>
+<p>Pour changer le groupe pour toute une arborescence:</p>
+<pre>$ chgrp -R group directory</pre>
+<p>Il est possible de modifier d&rsquo;un seul coup l&rsquo;utilisteur propriétaire et le groupe propriétaire:</p>
+<pre>$ chmod user:group fichier</pre>
+<h2 id="le-droit-dexécution">Le droit d&rsquo;exécution</h2>
+<p>Pour un répertoire elle donne le droit de parcourir le répertoire mais pas d&rsquo;afficher son contenu.</p>
+<p>Pour un fichier c&rsquo;est elle qui lui permettra de s&rsquo;exécuter (programmes, scripts).</p>
+<p>La permission exécuter sur les fichiers, joue un peu le même rôle l&rsquo;extension .exe sous Windows.</p>
+<p>Un script ou un programme ne pourra pas s&rsquo;exécuter sans la permission d&rsquo;exécution.</p>
+<p>Pour que vos script puissent s&rsquo;exécuter sans les précéder de la commande bash, il faut leur donner la permission d&rsquo;exécution.</p>
+<p>On pourra alors exécuter le script:</p>
+<pre>$ ./script.sh</pre>
+<p>Le <code class="gr">./</code> permet de dire où se trouve le fichier à exécuter.</p>
+<p>Le système cherche les exécutables dans les répertoires contenus dans la variable d&rsquo;environnement <code class="gr">$PATH</code>.</p>
+<p>Si l&rsquo;exécutable n&rsquo;est pas dans un de ces répertoires, il faudra spécifier son chemin (soit absolu, soit relatif).</p>
+<p>Pour voir le contenu de la variable <code class="gr">$PATH</code>:</p>
+<pre>$ echo $PATH</pre>
+<p>Pour la modifier, la variable, deux possibilités:</p>
+<pre>$ export PATH=$PATH:&lt;nouveau chemin&gt;</pre>
+<p>Ou en mettant cette ligne dans <code class="gr">.bashrc</code> ou <code class="gr">.bash_profile</code> pour que ce soit permanent.</p>
+<p>La dernière chose à faire pour pouvoir exécuter un script est de spécifier l&rsquo;interprèteur à utiliser lors de lexécution. Pour ceci, il faudra ajouter la ligne suivante tout en haut du fichier:</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash</span></span></span></code></pre></div>
+
+<hr>
+<h2 id="exercices">Exercices</h2>
+<ol>
+<li>Trouvez les permissions suivantes :</li>
+</ol>
+<ul>
+<li>
+<p>Quelles sont les permissions octales pour -w-r&mdash;&ndash;?</p>
+</li>
+<li>
+<p>Quelles sont les permissions octales pour rw-r&mdash;w-?</p>
+</li>
+<li>
+<p>Quelles sont les permissions symboliques pour 755?</p>
+</li>
+<li>
+<p>Quelles sont les autorisations symboliques pour 426?</p>
+</li>
+<li>
+<p>Quelle est la commande pour ajouter la permission exécution à l&rsquo;utilisateur (mode symbolique)?</p>
+</li>
+<li>
+<p>Quelle est la commande pour supprimer la lecture aux autres sur toute une arborescence?</p>
+</li>
+</ul>
+<ol start="2">
+<li>Tests de permissions :</li>
+</ol>
+<p>Créer une arborescence telle que celle ci-dessous:</p>
+<pre>
+Cours11
+├── fic1.txt
+└── rep1
+    └── fic2.txt
+</pre>
+<p>En faisant varier les droits (pour l&rsquo;utilisateur propriétaire) sur le répertoire rep1 et sur le fichier fic1.txt, essayez les commandes comme touch, cd, ls sur le répertoire rep1 et cat ou ajout de texte sur les fichiers à l&rsquo;intérieur (fic1.txt et fic2.txt).</p>
+<p>Remplissez les tableaux suivant avec les résultats.</p>
+<p><u>Concernant le répertoire rep1 et ses permissions</u></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: center">r</th>
+          <th style="text-align: center">w</th>
+          <th style="text-align: center">x</th>
+          <th style="text-align: center">rw</th>
+          <th style="text-align: center">wx</th>
+          <th style="text-align: center">rx</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Je peux afficher le contenu avec <code class="gr">ls</code></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Je peux créer un fichier avec <code class="gr">touch</code></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Je peux traverser le répertoire avec <code class="gr">cd</code></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+  </tbody>
+</table>
+<p><u>Concernant le fichier fic1.txt ses permisssions</u></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: center">r</th>
+          <th style="text-align: center">w</th>
+          <th style="text-align: center">x</th>
+          <th style="text-align: center">rw</th>
+          <th style="text-align: center">wx</th>
+          <th style="text-align: center">rx</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Je peux afficher le contenu avec <code class="gr">cat</code></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Je peux ajouter du texte</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+  </tbody>
+</table>
+<p><u>Concernant le fichier fic2.txt et les permissions du répertoire rep1</u></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: center">r</th>
+          <th style="text-align: center">w</th>
+          <th style="text-align: center">x</th>
+          <th style="text-align: center">rw</th>
+          <th style="text-align: center">wx</th>
+          <th style="text-align: center">rx</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Je peux voir le fichier</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Je peux afficher le contenu avec <code class="gr">cat</code></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Je peux ajouter du texte</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1743472090";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1743472090" defer></script>
+        <script src="/js/lunr/lunr.min.js?1743472090" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1743472090" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1743472090" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1743472090" defer></script>
+        <script src="/js/search.js?1743472090" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest2/index.html"><a class="padding" href="/revisiontest2/index.html">TEST #2-Quelques notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim, les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>Variables de paramètres de script et structure IF</a><ul id="R-subsections-1f01a70d85857b8ac721c011c139e3af" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine10/index.html"><a class="padding" href="/semaine10/index.html"><b>Semaine 10. </b>Utilisateurs et groupes</a><ul id="R-subsections-f8cbb4e023a0fc71fa255b45db414bcc" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine11/index.html"><a class="padding" href="/semaine11/index.html"><b>Semaine 11. </b>Les droits d&#39;accès</a><ul id="R-subsections-b4d497b6531d9f49241f6ec42b8e80f7" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine11/cours/index.html"><a class="padding" href="/semaine11/cours/index.html">Les droits d&#39;accès</a></li>
+            <li class="" data-nav-id="/semaine11/atelier/index.html"><a class="padding" href="/semaine11/atelier/index.html">ATELIER #10b: Gestion des droits d’accès aux fichiers</a></li></ul></li>
+            <li class="" data-nav-id="/semaine12/index.html"><a class="padding" href="/semaine12/index.html"><b>Semaine 12. </b>Titre</a><ul id="R-subsections-6098c004e594c3cbee6d88e41d11b10b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine13/index.html"><a class="padding" href="/semaine13/index.html"><b>Semaine 13. </b>Titre</a><ul id="R-subsections-123a241fcf7a50602c7d825a9ccf5337" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine11/cours/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1743472090" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1743472090" defer></script>
+    <script src="/js/theme.js?1743472090" defer></script>
+  </body>
+</html>

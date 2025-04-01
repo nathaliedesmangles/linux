@@ -163,9 +163,14 @@ Il y a **deux façons** d'aborder l'exercice:
    ```bash
    */1 * * * * bash  /home/ndesmangles/atelier08.sh
    ```
+ou
+   ```bash
+   * * * * * bash  /home/ndesmangles/atelier08.sh
+   ```
 
    **Explication** :  
    - `*/1 * * * *` → Exécute le script **chaque minute**.  
+   - `* * * * *` → Exécute aussi le script **chaque minute**.
    - `date "+\%Y-\%m-\%d \%H:\%M:\%S"` → Capture la date et l'heure actuelles.  
    - bash `/home/ndesmangles/atelier08.sh` → exécution du script (**chemin absolu** vers le script)
 
@@ -193,9 +198,14 @@ Il y a **deux façons** d'aborder l'exercice:
    ```bash
    */1 * * * * date "+\%Y-\%m-\%d \%H:\%M:\%S" >> /home/ndesmangles/heures.txt
    ```
+ou
+   ```bash
+   * * * * * date "+\%Y-\%m-\%d \%H:\%M:\%S" >> /home/ndesmangles/heures.txt
+   ```
 
    **Explication** :  
    - `*/1 * * * *` → Exécute la commande **chaque minute**.  
+   - `* * * * *` → Exécute aussi la commande **chaque minute**. 
    - `date "+\%Y-\%m-\%d \%H:\%M:\%S"` → Capture la date et l'heure actuelles.  
    - `>> /home/ndesmangles/heures.txt` → Ajoute le résultat au fichier sans l'écraser.  
 

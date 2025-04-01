@@ -15,13 +15,17 @@ Il existe quatre types de comptes sous Linux :
 - **Comptes systèmes et d'application** : Utilisés pour exécuter certaines applications et services (démons) avec des permissions limitées. Cela réduit les risques si une faille de sécurité est exploitée. Leurs ***UID*** se situent **entre 1 et 999**.
 - **Comptes standards** : Destinés aux utilisateurs humains (***UID*** **supérieur à 1000**).
 
+
+{{% notice style="info" title="UID et GID" %}}
+- **UID (*User ID*)** : identifiant unique d'un utilisateur.
+- **GID (*Group ID*)** : identifiant unique d'un groupe.
+{{% /notice %}}
+
 ### Création d'un utilisateur
 
-La commande de création d'un utilisateur est **`useradd`**.
-
-Vous devez disposer des droits d'administrateur pour exécuter cette commande.
-
-Elle prend au moins un paramètre : le login de l'utilisateur à créer.
+- La commande de création d'un utilisateur est **`useradd`**.
+- Vous devez disposer des **droits d'administrateur** pour exécuter cette commande.
+- Elle prend au moins un paramètre : le nom de l'utilisateur à créer.
 
 **Exemple :** création de l'utilisateur `bob` :
 
@@ -32,9 +36,9 @@ $ useradd bob
 #### Opérations effectuées par *useradd*
 
 - **Ajout de l'utilisateur** dans le fichier **`/etc/passwd`**.
-- Attribution d'un UID généré automatiquement et stockage dans **`/etc/passwd`**.
-- **Création d'un groupe** du même nom que l'utilisateur, qui deviendra son groupe principal.
-- **Création du répertoire personnel`/home/user`** avec les permissions adéquates.
+- Attribution d'un ***UID*** généré automatiquement et stockage dans **`/etc/passwd`**.
+- **Création d'un groupe** du même nom que l'utilisateur, qui deviendra son **groupe principal**. Le <span style="color:red;">**groupe principal d’un utilisateur**</span> sera le <span style="color:red;">**groupe propriétaire des fichiers**</span> créés par cet utilisateur.
+- **Création du **répertoire personnel** `/home/user`** avec les permissions adéquates.
 - **Copie du contenu de `/etc/skel`** dans le répertoire personnel de l'utilisateur.
 - **Création d'un dossier de messagerie** dans **`/var/spool/mail`**.
 
@@ -61,10 +65,7 @@ bob:x:1002:1002::/home/bob:/bin/bash
 | **-s shell** | Changer le shell par défaut | `useradd -s /bin/tcsh user6` |
 | **-d répertoire** | Choisir un répertoire personnel | `useradd -d /home/toto user7` |
 
-### Afficher les UID et GID
-
-- **UID (User ID)** : identifiant unique d'un utilisateur.
-- **GID (Group ID)** : identifiant unique d'un groupe.
+### Afficher les *UID* et *GID*
 
 La commande **`id`** permet d'afficher ces informations :
 
@@ -74,15 +75,6 @@ La commande **`id`** permet d'afficher ces informations :
 | `id -g` | Afficher uniquement le GID principal |
 | `id -G` | Afficher tous les groupes de l'utilisateur (par ID) |
 | `id -Gn` | Afficher les groupes avec leurs noms |
-
-### Ajouter un utilisateur à un groupe
-
-| Commande | Description | Exemple |
-|----------|------------|---------|
-| `usermod -aG groupe utilisateur` | Ajouter un utilisateur à un groupe secondaire | `usermod -aG sudo bob` |
-| `groups utilisateur` | Voir les groupes d'un utilisateur | `groups bob` |
-| `id utilisateur` | Afficher les détails de l'utilisateur | `id bob` |
-| `newgrp groupe` | Appliquer immédiatement les changements de groupe | `newgrp sudo` |
 
 ### Changer de mot de passe
 
@@ -111,6 +103,10 @@ La commande **`userdel`** permet de supprimer un utilisateur :
 
 La commande **`usermod`** permet de modifier un utilisateur existant.
 
+{{% notice style="tip" title="Notez que..." %}}
+C’est avec la commande `usermod` que l’on place un utilisateur dans un groupe.
+{{% /notice %}}
+
 | Commande | Description | Exemple |
 |----------|------------|---------|
 | `usermod -d /chemin utilisateur` | Changer le répertoire personnel | `usermod -d /utilisateurs/user1 user1` |
@@ -119,24 +115,31 @@ La commande **`usermod`** permet de modifier un utilisateur existant.
 | `usermod -L utilisateur` | Désactiver un utilisateur | `usermod -L user1` |
 | `usermod -U utilisateur` | Réactiver un utilisateur | `usermod -U user1` |
 
+### Ajouter un utilisateur à un groupe
+
+| Commande | Description | Exemple |
+|----------|------------|---------|
+| `usermod -aG groupe utilisateur` | Ajouter un utilisateur à un groupe secondaire | `usermod -aG sudo bob` |
+| `groups utilisateur` | Voir les groupes d'un utilisateur | `groups bob` |
+| `id utilisateur` | Afficher les détails de l'utilisateur | `id bob` |
+| `newgrp groupe` | Appliquer immédiatement les changements de groupe | `newgrp sudo` |
+
+
 ---
 
 ## Les groupes
 
-Un utilisateur peut appartenir à plusieurs groupes.
-
-Le groupe principal d'un utilisateur est utilisé lorsqu'il crée des fichiers : ce groupe devient propriétaire des fichiers créés.
-
-L'appartenance à d'autres groupes définit les permissions d'accès aux fichiers.
-
-Les groupes sont enregistrés dans **`/etc/group`**.
+- Un utilisateur peut appartenir à plusieurs groupes.
+- Le **groupe principal** d'un utilisateur est utilisé lorsqu'il crée des fichiers : ce groupe devient propriétaire des fichiers créés.
+- L'appartenance à d'autres groupes définit les permissions d'accès aux fichiers.
+- Les groupes sont enregistrés dans **`/etc/group`**.
 
 ### Types de groupes
 
-- **root** (GID 0)
+- **root** (***GID 0***)
 - **Groupes système** (utilisés pour les services)
-- **nobody** (GID 65534)
-- **Groupes standards** (GID > 1000)
+- **nobody** (***GID 65534***)
+- **Groupes standards** (***GID > 1000***)
 
 ### Création et gestion des groupes
 

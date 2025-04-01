@@ -14,7 +14,7 @@ weight = 92
 # Atelier
 
 {{% notice style="warning" title="ATTENTION" %}}
-1. Vous devez utiliser uniquement les commandes vues en classe jusqu’à maintenant. L’utilisation de commandes non couvertes entraînera la note de 0 pour cet exercice.
+1. Vous devez utiliser uniquement les commandes vues en classe jusqu’à maintenant. L’utilisation de commandes **non vues en classe** entraînera la note de 0 pour cet exercice.
 2. Aucun point ne sera accordé sans la remise des scripts (**fichiers .sh**) demandés.
 {{% /notice %}}
 

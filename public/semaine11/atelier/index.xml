@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ATELIER #10b: Titre :: 420-ZG4-MO LINUX</title>
+    <title>ATELIER #10b: Gestion des droits d’accès aux fichiers :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine11/atelier/index.html</link>
-    <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .&#xA;Atelier Exercice 1 : Titre</description>
+    <description>Objectif de l’atelier Cet exercice vise à vous familiariser avec les commandes pour la configuration des droits d’accès aux fichiers.&#xA;Atelier Prérequis&#xD;L’atelier #10a doit être fait pour pouvoir faire celui-ci.&#xA;Remise Vous devez faire une/des captures d’écran pour chaque commande que vous tapez pour répondre à la question. Lorsqu’une question est posée, écrivez la réponse dans le Terminal Ou dans un fichier texte. Exercice : Gestion des droits d’accès aux fichiers Connexion avec l’utilisateur didi :</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine11/atelier/index.xml" rel="self" type="application/rss+xml" />
