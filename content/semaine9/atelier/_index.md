@@ -50,7 +50,7 @@ weight = 92
 #### Remise
 
 - Le script `testFichier.sh`
-- Une capture d’écran montrant son exécution
+- Une **capture d’écran** montrant son exécution.
 
 ---
 

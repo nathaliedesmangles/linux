@@ -10,7 +10,6 @@ draft = true
 
 ### Solution 1: Paramètres entrés sur la ligne de commande
 
-1. **Création du script `param3.sh` :**
 ```bash
 #!/bin/bash
 
@@ -50,7 +49,6 @@ L'expression (10 / 5) * 3 donne : 6
 
 ### Solution 2: Paramètres entrés par l'utilisateur
 
-1. **Création du script `param3.sh` avec saisie interactive :**
 ```bash
 #!/bin/bash
 
@@ -96,7 +94,49 @@ L'expression (10 / 5) * 3 donne : 6
 ```
 ---
 
-## Exercice 2
+## Exercice 2  
+
+```bash
+#!/bin/bash
+
+# Demande à l'utilisateur d'entrer le chemin du fichier
+read -p "Entrez le chemin du fichier à vérifier : " fichier
+
+# Vérification si le fichier existe
+if [ -e "$fichier" ]
+then
+   # Vérification si c'est un fichier standard
+   if [ -f "$fichier" ]
+   then
+       echo "$fichier est un fichier standard."
+   else
+       echo "$fichier n'est pas un fichier standard."
+   fi
+
+   # Vérification des droits d'accès
+   [ -r "$fichier" ] && echo "lecture : oui" || echo "lecture : non"
+   [ -w "$fichier" ] && echo "écriture : oui" || echo "écriture : non"
+   [ -x "$fichier" ] && echo "exécution : oui" || echo "exécution : non"
+else
+    echo "$fichier n'existe pas."
+    exit 1
+fi
+```
+
+### Explications :
+- `-e` vérifie si le fichier existe.
+- `-f` vérifie si c'est un fichier standard.
+- `-r`, `-w`, `-x` vérifient respectivement les droits de lecture, écriture et exécution.
+
+### Exemple d'exécution :
+```bash
+$ bash testFichier.sh
+Entrez le chemin du fichier à vérifier : /etc/passwd
+/etc/passwd est un fichier standard.
+lecture : oui
+écriture : non
+exécution : non
+```
 
 ---
 
@@ -104,7 +144,100 @@ L'expression (10 / 5) * 3 donne : 6
 
 ### Partie 1: calcul.sh
 
+```bash
+#!/bin/bash
+
+# Vérification qu'il y a 3 paramètres 
+if [ $# -ne 3 ]
+then
+    exit 1
+fi
+
+# Vérification de l'opérateur et calcul
+if [ "$1" = "+" ]; then
+    let "resultat = $2 + $3"
+elif [ "$1" = "-" ]; then
+    let "resultat = $2 - $3"
+elif [ "$1" = "^" ]; then
+    let "resultat = $2 ** $3"
+else
+    echo "Opérateur invalide. Utilisez +, - ou ^."
+    exit 1
+fi
+
+# Affichage du résultat
+echo "$2 $1 $3 = $resultat"
+```
+
+### Exemple d'exécution :
+```bash
+$ bash calcul.sh + 4 6
+4 + 6 = 10
+$ bash calcul.sh - 4 6
+4 - 6 = -2
+$ bash calcul.sh ^ 4 6
+4 ** 6 = 4096
+```
+
+
 ### Partie 2: calculV2.sh
 
+```bash
+#!/bin/bash
 
+# Vérification qu'il y a 3 paramètres 
+if [ $# -ne 3 ]
+then
+    # Demande des paramètres à l'utilisateur
+    read -p "Entrez un opérateur (+, -, ^) : " operateur
+    read -p "Entrez le premier nombre : " nombre1
+    read -p "Entrez le deuxième nombre : " nombre2
+
+    # Affichage du résultat
+    echo "$nombre1 $operateur $nombre2 = $resultat"
+
+else
+    # Vérification de l'opérateur et calcul
+    if [ "$1" = "+" ]; then
+       let "resultat = $2 + $3"
+    elif [ "$1" = "-" ]; then
+       let "resultat = $2 - $3"
+    elif [ "$1" = "^" ]; then
+       let "resultat = $2 ** $3"
+    else
+        echo "Opérateur invalide. Utilisez +, - ou ^."
+        exit 1
+    fi
+
+    # Affichage du résultat
+    echo "$2 $1 $3 = $resultat"
+```
+
+### Exemple d'exécution :
+```bash
+$ bash calculV2.sh + 4 6
+4 + 6 = 10
+$ bash calculV2.sh - 4 6
+4 - 6 = -2
+$ bash calculV2.sh ^ 4 6
+4 ^ 6 = 4096
+
+$ bash calculV2.sh
+Entrez un opérateur (+, -, ^) : +
+Entrez le premier nombre : 4
+Entrez le deuxième nombre : 6
+4 + 6 = 10
+
+bash calculV2.sh
+Entrez un opérateur (+, -, ^) : -
+Entrez le premier nombre : 4
+Entrez le deuxième nombre : 6
+4 - 6 = -2
+
+bash calculV2.sh
+Entrez un opérateur (+, -, ^) : ^
+Entrez le premier nombre : 4
+Entrez le deuxième nombre : 6
+4 ** 6 = 4096
+```
 

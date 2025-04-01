@@ -129,6 +129,17 @@ Les options:
 
 ## Structure conditionnelle if...then...else
 
+En Bash, la syntaxe correcte est :
+
+```bash
+if [ condition ]; then
+    # commandes
+fi
+```
+
+Il est aussi possible d’écrire sur deux lignes, dans ce cas on ne met pas le point-virgule (`;`) après la condition.
+Ajout de "then" après les conditions :
+
 ```bash
 if [ condition ]
 then
