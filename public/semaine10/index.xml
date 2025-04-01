@@ -19,7 +19,7 @@
       <link>http://localhost:1313/semaine10/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/semaine10/atelier/index.html</guid>
-      <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .&#xA;Atelier Exercice 1 : Titre</description>
+      <description>Objectif de l’atelier Cet atelier vise à vous familiariser avec les commandes de gestion des utilisateurs et des groupes sous Linux. Atelier Remise Vous devez faire une/des captures d’écran pour chaque commande que vous tapez pour répondre à la question. Lorsqu’une question est posée, écrivez la réponse dans le Terminal Ou dans un fichier texte. Exercice : Création et gestion des utilisateurs Informations sur les utilisateurs :&#xA;Quels sont les deux fichiers qui contiennent les informations sur les utilisateurs, y compris le login, l’UID, le mot de passe crypté et le chemin du répertoire personnel ? Création de groupes :</description>
     </item>
   </channel>
 </rss>

@@ -138,6 +138,19 @@ else
 fi
 ```
 
+{{% notice style="note" title="Note" %}}
+Les crochets remplacent la commande **`test`**. Vous pouvez utiliser l'un ou l'autre. 
+Voici l'équivalent avec la commande `test` au lieu des crochets:
+```bash
+if test condition
+then
+  # Commandes à exécuter si la condition est vraie
+else
+  # Commandes à exécuter si la condition est fausse
+fi
+```
+{{% /notice %}}
+
 ### Exemple 1: Nombre de paramètres
 
 ```bash
@@ -173,6 +186,10 @@ else
   echo "Les deux sont égaux"
 fi
 ```
+
+{{% notice style="note" title="Note" %}}
+En bash, vous pouvez avoir autant de `elif` que vous voulez, tout comme en Java avec le `else if`.
+{{% /notice  %}}
 
 **Exécution du script** : en passant les paramètres 
 
@@ -228,4 +245,32 @@ fi
 **Exécution du script** :
 
 ![Exemple 5 read](./exemple5_read.png?width=40vw)
+
+### L'option -p de la commande *read*
+
+L'option **`-p`** de la commande `read` permet **d'afficher un message avant la saisie de l'utilisateur**, pour lui indiquer quoi entrer.  
+
+**Syntaxe générale** :
+```bash
+read -p "Message à afficher : " variable
+```
+
+- **`-p`** : Affiche le message spécifié sans retour à la ligne.  
+- **`variable`** : Stocke la valeur saisie par l'utilisateur.  
+
+
+**Exemple d’utilisation** :
+```bash
+#!/bin/bash
+
+read -p "Entrez votre prénom : " prenom
+echo "Bonjour, $prenom !"
+```
+
+**Résultat en exécutant le script :**
+```bash
+$ bash script.sh
+Entrez votre nom : Nathalie
+Bonjour, Nathalie !
+```
 

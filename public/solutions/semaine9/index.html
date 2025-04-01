@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Solution des exercices Exercices 1 Solution 1: Paramètres entrés sur la ligne de commande Création du script param3.sh : #!/bin/bash # Vérification que trois paramètres sont fournis if [ $# -ne 3 ]; then exit 1 fi # Détermination du plus grand et du plus petit if [ $1 -gt $2 ]; then paramPlusGrand=$1 paramPlusPetit=$2 else paramPlusGrand=$2 paramPlusPetit=$1 fi # Division entière et calcul final resultat=$(( (paramPlusGrand / paramPlusPetit) * $3 )) # Affichage du résultat echo &#34;L&#39;expression ($paramPlusGrand / $paramPlusPetit) * $3 donne : $resultat&#34;Explications : if [ $# -ne 3 ]: Vérifie que trois paramètres sont fournis. paramPlusGrand et paramPlusPetit sont déterminés avec une simple condition. La division entière est effectuée avec /. L’opérateur * réalise la multiplication. Exemple d’exécution : $ bash param3.sh 5 10 3 L&#39;expression (10 / 5) * 3 donne : 6Solution 2: Paramètres entrés par l’utilisateur Création du script param3.sh avec saisie interactive : #!/bin/bash # Saisie des paramètres par l&#39;utilisateur read -p &#34;Entrez le premier nombre : &#34; param1 read -p &#34;Entrez le deuxième nombre : &#34; param2 read -p &#34;Entrez le troisième nombre : &#34; param3 # Détermination du plus grand et du plus petit if [ $param1 -gt $param2 ]; then paramPlusGrand=$param1 paramPlusPetit=$param2 else paramPlusGrand=$param2 paramPlusPetit=$param1 fi # Division entière et calcul final resultat=$(( (paramPlusGrand / paramPlusPetit) * param3 )) # Affichage du résultat echo &#34;L&#39;expression ($paramPlusGrand / $paramPlusPetit) * $param3 donne : $resultat&#34;Explications : read permet la saisie interactive des valeurs. L’option -p de la commande read dans les scripts Bash permet d’afficher un message avant la saisie de l’utilisateur. Elle sert à guider l’utilisateur en lui indiquant quoi entrer. read -p &#34;Message à afficher : &#34; variable-p : Affiche le message spécifié sans retour à la ligne. variable : Stocke la valeur saisie par l’utilisateur. paramPlusGrand et paramPlusPetit sont déterminés avec une condition simple. La division entière est effectuée avec / et l’opérateur * réalise la multiplication. Exemple d’exécution : $ bash param3.sh Entrez le premier nombre : 5 Entrez le deuxième nombre : 10 Entrez le troisième nombre : 3 L&#39;expression (10 / 5) * 3 donne : 6Exercice 2 Exercice 3 Partie 1: calcul.sh Partie 2: calculV2.sh">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Atelier 9 :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Solution des exercices Exercices 1 Solution 1: Paramètres entrés sur la ligne de commande Création du script param3.sh : #!/bin/bash # Vérification que trois paramètres sont fournis if [ $# -ne 3 ]; then exit 1 fi # Détermination du plus grand et du plus petit if [ $1 -gt $2 ]; then paramPlusGrand=$1 paramPlusPetit=$2 else paramPlusGrand=$2 paramPlusPetit=$1 fi # Division entière et calcul final resultat=$(( (paramPlusGrand / paramPlusPetit) * $3 )) # Affichage du résultat echo &#34;L&#39;expression ($paramPlusGrand / $paramPlusPetit) * $3 donne : $resultat&#34;Explications : if [ $# -ne 3 ]: Vérifie que trois paramètres sont fournis. paramPlusGrand et paramPlusPetit sont déterminés avec une simple condition. La division entière est effectuée avec /. L’opérateur * réalise la multiplication. Exemple d’exécution : $ bash param3.sh 5 10 3 L&#39;expression (10 / 5) * 3 donne : 6Solution 2: Paramètres entrés par l’utilisateur Création du script param3.sh avec saisie interactive : #!/bin/bash # Saisie des paramètres par l&#39;utilisateur read -p &#34;Entrez le premier nombre : &#34; param1 read -p &#34;Entrez le deuxième nombre : &#34; param2 read -p &#34;Entrez le troisième nombre : &#34; param3 # Détermination du plus grand et du plus petit if [ $param1 -gt $param2 ]; then paramPlusGrand=$param1 paramPlusPetit=$param2 else paramPlusGrand=$param2 paramPlusPetit=$param1 fi # Division entière et calcul final resultat=$(( (paramPlusGrand / paramPlusPetit) * param3 )) # Affichage du résultat echo &#34;L&#39;expression ($paramPlusGrand / $paramPlusPetit) * $param3 donne : $resultat&#34;Explications : read permet la saisie interactive des valeurs. L’option -p de la commande read dans les scripts Bash permet d’afficher un message avant la saisie de l’utilisateur. Elle sert à guider l’utilisateur en lui indiquant quoi entrer. read -p &#34;Message à afficher : &#34; variable-p : Affiche le message spécifié sans retour à la ligne. variable : Stocke la valeur saisie par l’utilisateur. paramPlusGrand et paramPlusPetit sont déterminés avec une condition simple. La division entière est effectuée avec / et l’opérateur * réalise la multiplication. Exemple d’exécution : $ bash param3.sh Entrez le premier nombre : 5 Entrez le deuxième nombre : 10 Entrez le troisième nombre : 3 L&#39;expression (10 / 5) * 3 donne : 6Exercice 2 Exercice 3 Partie 1: calcul.sh Partie 2: calculV2.sh">
+    <meta property="og:url" content="https://example.org/solutions/semaine9/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Atelier 9 :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Solution des exercices Exercices 1 Solution 1: Paramètres entrés sur la ligne de commande Création du script param3.sh : #!/bin/bash # Vérification que trois paramètres sont fournis if [ $# -ne 3 ]; then exit 1 fi # Détermination du plus grand et du plus petit if [ $1 -gt $2 ]; then paramPlusGrand=$1 paramPlusPetit=$2 else paramPlusGrand=$2 paramPlusPetit=$1 fi # Division entière et calcul final resultat=$(( (paramPlusGrand / paramPlusPetit) * $3 )) # Affichage du résultat echo &#34;L&#39;expression ($paramPlusGrand / $paramPlusPetit) * $3 donne : $resultat&#34;Explications : if [ $# -ne 3 ]: Vérifie que trois paramètres sont fournis. paramPlusGrand et paramPlusPetit sont déterminés avec une simple condition. La division entière est effectuée avec /. L’opérateur * réalise la multiplication. Exemple d’exécution : $ bash param3.sh 5 10 3 L&#39;expression (10 / 5) * 3 donne : 6Solution 2: Paramètres entrés par l’utilisateur Création du script param3.sh avec saisie interactive : #!/bin/bash # Saisie des paramètres par l&#39;utilisateur read -p &#34;Entrez le premier nombre : &#34; param1 read -p &#34;Entrez le deuxième nombre : &#34; param2 read -p &#34;Entrez le troisième nombre : &#34; param3 # Détermination du plus grand et du plus petit if [ $param1 -gt $param2 ]; then paramPlusGrand=$param1 paramPlusPetit=$param2 else paramPlusGrand=$param2 paramPlusPetit=$param1 fi # Division entière et calcul final resultat=$(( (paramPlusGrand / paramPlusPetit) * param3 )) # Affichage du résultat echo &#34;L&#39;expression ($paramPlusGrand / $paramPlusPetit) * $param3 donne : $resultat&#34;Explications : read permet la saisie interactive des valeurs. L’option -p de la commande read dans les scripts Bash permet d’afficher un message avant la saisie de l’utilisateur. Elle sert à guider l’utilisateur en lui indiquant quoi entrer. read -p &#34;Message à afficher : &#34; variable-p : Affiche le message spécifié sans retour à la ligne. variable : Stocke la valeur saisie par l’utilisateur. paramPlusGrand et paramPlusPetit sont déterminés avec une condition simple. La division entière est effectuée avec / et l’opérateur * réalise la multiplication. Exemple d’exécution : $ bash param3.sh Entrez le premier nombre : 5 Entrez le deuxième nombre : 10 Entrez le troisième nombre : 3 L&#39;expression (10 / 5) * 3 donne : 6Exercice 2 Exercice 3 Partie 1: calcul.sh Partie 2: calculV2.sh">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Atelier 9 :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Solution des exercices Exercices 1 Solution 1: Paramètres entrés sur la ligne de commande Création du script param3.sh : #!/bin/bash # Vérification que trois paramètres sont fournis if [ $# -ne 3 ]; then exit 1 fi # Détermination du plus grand et du plus petit if [ $1 -gt $2 ]; then paramPlusGrand=$1 paramPlusPetit=$2 else paramPlusGrand=$2 paramPlusPetit=$1 fi # Division entière et calcul final resultat=$(( (paramPlusGrand / paramPlusPetit) * $3 )) # Affichage du résultat echo &#34;L&#39;expression ($paramPlusGrand / $paramPlusPetit) * $3 donne : $resultat&#34;Explications : if [ $# -ne 3 ]: Vérifie que trois paramètres sont fournis. paramPlusGrand et paramPlusPetit sont déterminés avec une simple condition. La division entière est effectuée avec /. L’opérateur * réalise la multiplication. Exemple d’exécution : $ bash param3.sh 5 10 3 L&#39;expression (10 / 5) * 3 donne : 6Solution 2: Paramètres entrés par l’utilisateur Création du script param3.sh avec saisie interactive : #!/bin/bash # Saisie des paramètres par l&#39;utilisateur read -p &#34;Entrez le premier nombre : &#34; param1 read -p &#34;Entrez le deuxième nombre : &#34; param2 read -p &#34;Entrez le troisième nombre : &#34; param3 # Détermination du plus grand et du plus petit if [ $param1 -gt $param2 ]; then paramPlusGrand=$param1 paramPlusPetit=$param2 else paramPlusGrand=$param2 paramPlusPetit=$param1 fi # Division entière et calcul final resultat=$(( (paramPlusGrand / paramPlusPetit) * param3 )) # Affichage du résultat echo &#34;L&#39;expression ($paramPlusGrand / $paramPlusPetit) * $param3 donne : $resultat&#34;Explications : read permet la saisie interactive des valeurs. L’option -p de la commande read dans les scripts Bash permet d’afficher un message avant la saisie de l’utilisateur. Elle sert à guider l’utilisateur en lui indiquant quoi entrer. read -p &#34;Message à afficher : &#34; variable-p : Affiche le message spécifié sans retour à la ligne. variable : Stocke la valeur saisie par l’utilisateur. paramPlusGrand et paramPlusPetit sont déterminés avec une condition simple. La division entière est effectuée avec / et l’opérateur * réalise la multiplication. Exemple d’exécution : $ bash param3.sh Entrez le premier nombre : 5 Entrez le deuxième nombre : 10 Entrez le troisième nombre : 3 L&#39;expression (10 / 5) * 3 donne : 6Exercice 2 Exercice 3 Partie 1: calcul.sh Partie 2: calculV2.sh">
+    <meta itemprop="wordCount" content="366">
+    <title>Atelier 9 :: 420-ZG4-MO LINUX</title>
+    <link href="/solutions/semaine9/index.xml" rel="alternate" type="application/rss+xml" title="Atelier 9 :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1743534024" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743534024" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1743534024" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743534024" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1743534024" rel="stylesheet">
+    <link href="/css/theme.min.css?1743534024" rel="stylesheet">
+    <link href="/css/format-html.min.css?1743534024" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/solutions/semaine9/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#exercices-1">Exercices 1</a>
+      <ul>
+        <li><a href="#solution-1-paramètres-entrés-sur-la-ligne-de-commande">Solution 1: Paramètres entrés sur la ligne de commande</a></li>
+        <li><a href="#solution-2-paramètres-entrés-par-lutilisateur">Solution 2: Paramètres entrés par l&rsquo;utilisateur</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-2">Exercice 2</a></li>
+    <li><a href="#exercice-3">Exercice 3</a>
+      <ul>
+        <li><a href="#partie-1-calculsh">Partie 1: calcul.sh</a></li>
+        <li><a href="#partie-2-calculv2sh">Partie 2: calculV2.sh</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/solutions/index.html"><span itemprop="name">Solutions: ateliers et tests</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Atelier 9</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine8/index.html" title="Atelier 8 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/test1/index.html" title="Test 1 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable solutions" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="atelier-9">Atelier 9</h1>
+
+<h1 id="solution-des-exercices">Solution des exercices</h1>
+<h2 id="exercices-1">Exercices 1</h2>
+<h3 id="solution-1-paramètres-entrés-sur-la-ligne-de-commande">Solution 1: Paramètres entrés sur la ligne de commande</h3>
+<ol>
+<li><strong>Création du script <code>param3.sh</code> :</strong></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Vérification que trois paramètres sont fournis</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $# -ne <span style="color:#ae81ff">3</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Détermination du plus grand et du plus petit</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $1 -gt $2 <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    paramPlusGrand<span style="color:#f92672">=</span>$1
+</span></span><span style="display:flex;"><span>    paramPlusPetit<span style="color:#f92672">=</span>$2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    paramPlusGrand<span style="color:#f92672">=</span>$2
+</span></span><span style="display:flex;"><span>    paramPlusPetit<span style="color:#f92672">=</span>$1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Division entière et calcul final</span>
+</span></span><span style="display:flex;"><span>resultat<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span> <span style="color:#f92672">(</span>paramPlusGrand <span style="color:#f92672">/</span> paramPlusPetit<span style="color:#f92672">)</span> <span style="color:#f92672">*</span> $3 <span style="color:#66d9ef">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Affichage du résultat</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;L&#39;expression (</span>$paramPlusGrand<span style="color:#e6db74"> / </span>$paramPlusPetit<span style="color:#e6db74">) * </span>$3<span style="color:#e6db74"> donne : </span>$resultat<span style="color:#e6db74">&#34;</span></span></span></code></pre></div>
+<h4 id="explications-">Explications :</h4>
+<ul>
+<li><code>if [ $# -ne 3 ]</code>: Vérifie que trois paramètres sont fournis.</li>
+<li><code>paramPlusGrand</code> et <code>paramPlusPetit</code> sont déterminés avec une simple condition.</li>
+<li>La division entière est effectuée avec <code>/</code>.</li>
+<li>L&rsquo;opérateur <code>*</code> réalise la multiplication.</li>
+</ul>
+<h4 id="exemple-dexécution-">Exemple d&rsquo;exécution :</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ bash param3.sh <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>L<span style="color:#960050;background-color:#1e0010">&#39;</span>expression <span style="color:#f92672">(</span><span style="color:#ae81ff">10</span> / 5<span style="color:#f92672">)</span> * <span style="color:#ae81ff">3</span> donne : <span style="color:#ae81ff">6</span></span></span></code></pre></div>
+<h3 id="solution-2-paramètres-entrés-par-lutilisateur">Solution 2: Paramètres entrés par l&rsquo;utilisateur</h3>
+<ol>
+<li><strong>Création du script <code>param3.sh</code> avec saisie interactive :</strong></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Saisie des paramètres par l&#39;utilisateur</span>
+</span></span><span style="display:flex;"><span>read -p <span style="color:#e6db74">&#34;Entrez le premier nombre : &#34;</span> param1
+</span></span><span style="display:flex;"><span>read -p <span style="color:#e6db74">&#34;Entrez le deuxième nombre : &#34;</span> param2
+</span></span><span style="display:flex;"><span>read -p <span style="color:#e6db74">&#34;Entrez le troisième nombre : &#34;</span> param3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Détermination du plus grand et du plus petit</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $param1 -gt $param2 <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    paramPlusGrand<span style="color:#f92672">=</span>$param1
+</span></span><span style="display:flex;"><span>    paramPlusPetit<span style="color:#f92672">=</span>$param2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    paramPlusGrand<span style="color:#f92672">=</span>$param2
+</span></span><span style="display:flex;"><span>    paramPlusPetit<span style="color:#f92672">=</span>$param1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Division entière et calcul final</span>
+</span></span><span style="display:flex;"><span>resultat<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span> <span style="color:#f92672">(</span>paramPlusGrand <span style="color:#f92672">/</span> paramPlusPetit<span style="color:#f92672">)</span> <span style="color:#f92672">*</span> param3 <span style="color:#66d9ef">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Affichage du résultat</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;L&#39;expression (</span>$paramPlusGrand<span style="color:#e6db74"> / </span>$paramPlusPetit<span style="color:#e6db74">) * </span>$param3<span style="color:#e6db74"> donne : </span>$resultat<span style="color:#e6db74">&#34;</span></span></span></code></pre></div>
+<h4 id="explications--1">Explications :</h4>
+<ul>
+<li><code>read</code> permet la saisie interactive des valeurs.
+L&rsquo;option <strong><code>-p</code></strong> de la commande <code>read</code> dans les scripts Bash permet <strong>d&rsquo;afficher un message avant la saisie de l&rsquo;utilisateur</strong>. Elle sert à guider l&rsquo;utilisateur en lui indiquant quoi entrer.
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>read -p <span style="color:#e6db74">&#34;Message à afficher : &#34;</span> variable</span></span></code></pre></div>
+<ul>
+<li><strong><code>-p</code></strong> : Affiche le message spécifié sans retour à la ligne.</li>
+<li><strong><code>variable</code></strong> : Stocke la valeur saisie par l&rsquo;utilisateur.</li>
+</ul>
+</li>
+<li><code>paramPlusGrand</code> et <code>paramPlusPetit</code> sont déterminés avec une condition simple.</li>
+<li>La division entière est effectuée avec <code>/</code> et l&rsquo;opérateur <code>*</code> réalise la multiplication.</li>
+</ul>
+<h4 id="exemple-dexécution--1">Exemple d&rsquo;exécution :</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ bash param3.sh
+</span></span><span style="display:flex;"><span>Entrez le premier nombre : <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>Entrez le deuxième nombre : <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>Entrez le troisième nombre : <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>L<span style="color:#960050;background-color:#1e0010">&#39;</span>expression <span style="color:#f92672">(</span><span style="color:#ae81ff">10</span> / 5<span style="color:#f92672">)</span> * <span style="color:#ae81ff">3</span> donne : <span style="color:#ae81ff">6</span></span></span></code></pre></div>
+<hr>
+<h2 id="exercice-2">Exercice 2</h2>
+<hr>
+<h2 id="exercice-3">Exercice 3</h2>
+<h3 id="partie-1-calculsh">Partie 1: calcul.sh</h3>
+<h3 id="partie-2-calculv2sh">Partie 2: calculV2.sh</h3>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1743534024";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1743534024" defer></script>
+        <script src="/js/lunr/lunr.min.js?1743534024" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1743534024" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1743534024" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1743534024" defer></script>
+        <script src="/js/search.js?1743534024" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest2/index.html"><a class="padding" href="/revisiontest2/index.html">TEST #2-Quelques notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim, les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>Variables de paramètres de script et structure IF</a><ul id="R-subsections-1f01a70d85857b8ac721c011c139e3af" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu">
+            <li class="" data-nav-id="/solutions/semaine1/index.html"><a class="padding" href="/solutions/semaine1/index.html">Atelier 1</a></li>
+            <li class="" data-nav-id="/solutions/semaine2/index.html"><a class="padding" href="/solutions/semaine2/index.html">Atelier 2</a></li>
+            <li class="" data-nav-id="/solutions/semaine3/index.html"><a class="padding" href="/solutions/semaine3/index.html">Atelier 3</a></li>
+            <li class="" data-nav-id="/solutions/semaine4/index.html"><a class="padding" href="/solutions/semaine4/index.html">Atelier 4</a></li>
+            <li class="" data-nav-id="/solutions/semaine5/index.html"><a class="padding" href="/solutions/semaine5/index.html">Atelier 5</a></li>
+            <li class="" data-nav-id="/solutions/semaine6/index.html"><a class="padding" href="/solutions/semaine6/index.html">Atelier 6</a></li>
+            <li class="" data-nav-id="/solutions/semaine7/index.html"><a class="padding" href="/solutions/semaine7/index.html">Atelier 7</a></li>
+            <li class="" data-nav-id="/solutions/semaine8/index.html"><a class="padding" href="/solutions/semaine8/index.html">Atelier 8</a></li>
+            <li class="active " data-nav-id="/solutions/semaine9/index.html"><a class="padding" href="/solutions/semaine9/index.html">Atelier 9</a></li>
+            <li class="" data-nav-id="/solutions/test1/index.html"><a class="padding" href="/solutions/test1/index.html">Test 1</a></li>
+            <li class="" data-nav-id="/solutions/test2/index.html"><a class="padding" href="/solutions/test2/index.html">Test 2</a></li></ul></li>
+            <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/solutions/semaine9/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1743534024" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1743534024" defer></script>
+    <script src="/js/theme.js?1743534024" defer></script>
+  </body>
+</html>
