@@ -3,7 +3,6 @@ chapter = true
 pre = "<b>Semaine 10. </b>"
 title = "Utilisateurs et groupes"
 weight = 100
-draft = true
 +++
 
 ## Plan de la leçon
