@@ -1,7 +1,6 @@
 +++
 title = "ATELIER #10a: Utilisateurs et groupes"
 weight = 102
-draft = true
 +++
 
 ## Objectif de l'atelier

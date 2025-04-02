@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ATELIER #10a: Utilisateurs et groupes :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/semaine10/atelier/index.html</link>
+    <link>https://example.org/semaine10/atelier/index.html</link>
     <description>Objectif de l’atelier Cet atelier vise à vous familiariser avec les commandes de gestion des utilisateurs et des groupes sous Linux. Atelier Remise Vous devez faire des captures d’écran pour les commandes que vous tapez pour répondre à la question. Attention&#xD;Montrez votre rigueur/professionnalisme et nommez vos captures d’écran de façon à savoir à quelle question elle se rapporte. Un non respect entrainera la note de 0 pour la question.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/semaine10/atelier/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/semaine10/atelier/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
