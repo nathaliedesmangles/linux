@@ -13,8 +13,11 @@ draft = true
 
 ## Remise
 
-- Vous devez faire une/des captures d’écran pour chaque commande que vous tapez pour répondre à la question. 
-- Lorsqu'une question est posée, écrivez la réponse dans le Terminal Ou dans un fichier texte.
+- Vous devez faire des **captures d’écran** pour les commandes que vous tapez pour répondre à la question. 
+{{% notice style="red" title="Attention" %}}
+Montrez votre **rigueur/professionnalisme** et nommez vos captures d'écran de façon à savoir à quelle question elle se rapporte. Un non respect entrainera la **note de 0** pour la question.
+{{% /notice %}}
+- Lorsqu'une question est posée, écrivez la réponse dans le **Terminal** ou dans un **fichier texte**, en indiquant **clairement** le numéro de la question.
 
 ## Exercice : Création et gestion des utilisateurs
 
@@ -31,10 +34,10 @@ draft = true
      - Ajoutez un commentaire pour **didi** indiquant "Développeur" et pour **fifi** "Financier".
 
 4. **Changement de mot de passe :**
-   - Définissez un mot de passe pour **fifi** et **didi**.
+   - Définissez un mot de passe pour **fifi** et **didi**. Par exemple `pwdfifi` et `pwddidi` respectivement.
 
 5. **Modification du shell :**
-   - Affichez la liste des shells disponibles sur votre système.
+   - Affichez la liste des shells disponibles sur votre système (Hint: [Voir cours semaine #2](https://linuxh25.netlify.app/semaine2/cours/#comment-afficher-la-liste-des-shells-disponibles-le-système-).
    - Modifiez le shell par défaut de **didi** avec un autre shell de votre choix.
 
 6. **Affichage des informations utilisateurs :**

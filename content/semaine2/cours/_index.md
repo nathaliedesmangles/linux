@@ -163,6 +163,18 @@ Pour exécuter une commande avec des privilèges de **super-utilisateur (`root`)
 [ndesmangles@localhost ~]$ sudo ls /root
 ```
 
+#### Comment afficher la liste des shells disponibles le système ?
+
+L'information se trouve dans le fichier `/etc/shells`.
+
+```bash
+$ cat /etc/shells
+/bin/sh
+/bin/bash
+/usr/bin/sh
+/usr/bin/bash
+```
+
 ## Commandes de base en *Bash*
 
 Bash propose une variété de commandes puissantes pour interagir avec le système. Ces commandes de base sont essentielles pour naviguer, gérer des fichiers, et interagir avec votre système sous Bash.
