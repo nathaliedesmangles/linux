@@ -26,14 +26,14 @@ Les permissions standards et Les ACL (Access Control Lists). Nous étudierons un
     <meta itemprop="description" content="Linux est un système multi-utilisateurs où chaque fichier et dossier possède des permissions de sécurité. Ces permissions protègent les fichiers contre les accès non autorisés et les erreurs. Elles permettent notamment :
 La confidentialité des données. La protection contre les modifications accidentelles. Le contrôle de l’exécution des fichiers Sur Linux, il existe deux types de permissions :
 Les permissions standards et Les ACL (Access Control Lists). Nous étudierons uniquement les permissions standards, les plus utilisées.">
-    <meta itemprop="wordCount" content="1308">
+    <meta itemprop="wordCount" content="1329">
     <title>Les droits d&#39;accès :: 420-ZG4-MO LINUX</title>
     <link href="/semaine11/cours/index.xml" rel="alternate" type="application/rss+xml" title="Les droits d&#39;accès :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1743690728" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743690728" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1743690728" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743690728" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1743690728" rel="stylesheet">
-    <link href="/css/theme.min.css?1743690728" rel="stylesheet">
-    <link href="/css/format-html.min.css?1743690728" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1743700635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743700635" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1743700635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743700635" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1743700635" rel="stylesheet">
+    <link href="/css/theme.min.css?1743700635" rel="stylesheet">
+    <link href="/css/format-html.min.css?1743700635" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -356,7 +356,7 @@ On peut ensuite exécuter le script sans utiliser la commande <code>bash</code>.
 <li>Imaginons un script appelé <strong>mon_script.sh</strong> dans un dossier <code>/home/user/scripts</code>.</li>
 <li>Pour simplifier l’exécution du script sans spécifier le chemin complet, on ajoute <code>/home/user/scripts</code> au PATH :</li>
 </ul>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ export PATH<span style="color:#f92672">=</span>$PATH:/home/user/scripts</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ export PATH<span style="color:#f92672">=</span>$PATH:/home/ndesmangles/scripts</span></span></code></pre></div>
 
 <details open class=" box cstyle notices warning">
   <summary class="box-label" tabindex="-1">
@@ -459,7 +459,7 @@ Créez cette structure :</li>
 </span></span><span style="display:flex;"><span>touch Cours11/fic1.txt Cours11/rep1/fic2.txt</span></span></code></pre></div>
   </div>
 </details>
-<p>En modifiant les permissions de <code>rep1</code>, <code>fic1.txt</code> et <code>fic2.txt</code>, testez les commandes <code>touch</code>, <code>cd</code>, <code>ls</code>, <code>cat</code>, etc., puis complétez les tableaux.</p>
+<p>En faisant varier les droits (pour l’<strong>utilisateur propriétaire</strong>) sur le répertoire <strong>rep1</strong> et sur le fichier <strong>fic1.txt</strong>, essayez les commandes comme <code>touch</code>, <code>cd</code>, <code>ls</code> sur le répertoire <strong>rep1</strong> et <code>cat</code> ou ajout de texte sur les fichiers à l’intérieur (<strong>fic1.txt</strong> et <strong>fic2.txt</strong>).</p>
 <h3 id="concernant-le-répertoire-rep1">Concernant le répertoire rep1</h3>
 <table>
   <thead>
@@ -771,7 +771,7 @@ Créez cette structure :</li>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1743690728";
+          window.index_js_url="/searchindex.en.js?1743700635";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -784,12 +784,12 @@ Créez cette structure :</li>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1743690728" defer></script>
-        <script src="/js/lunr/lunr.min.js?1743690728" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1743690728" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1743690728" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1743690728" defer></script>
-        <script src="/js/search.js?1743690728" defer></script>
+        <script src="/js/auto-complete.js?1743700635" defer></script>
+        <script src="/js/lunr/lunr.min.js?1743700635" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1743700635" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1743700635" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1743700635" defer></script>
+        <script src="/js/search.js?1743700635" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -870,8 +870,8 @@ Créez cette structure :</li>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1743690728" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1743690728" defer></script>
-    <script src="/js/theme.js?1743690728" defer></script>
+    <script src="/js/clipboard.min.js?1743700635" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1743700635" defer></script>
+    <script src="/js/theme.js?1743700635" defer></script>
   </body>
 </html>

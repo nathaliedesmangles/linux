@@ -132,7 +132,7 @@ Les options:
 En Bash, la syntaxe correcte est :
 
 ```bash
-if [ condition ]; then
+if [ condition ]; then	# Notez le point-virgule après le crochet
     # commandes
 fi
 ```
@@ -150,7 +150,9 @@ fi
 ```
 
 {{% notice style="note" title="Note" %}}
-Les crochets remplacent la commande **`test`**. Vous pouvez utiliser l'un ou l'autre. 
+- Vous devez **obligatoirement** mettre des espaces **après** le `[` et **avant** le `]`.
+- Les crochets remplacent la commande **`test`**. Vous pouvez utiliser l'un ou l'autre.
+ 
 Voici l'équivalent avec la commande `test` au lieu des crochets:
 ```bash
 if test condition

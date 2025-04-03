@@ -186,7 +186,7 @@ $ export PATH=$PATH:/chemin/vers/repertoire
 - Pour simplifier l’exécution du script sans spécifier le chemin complet, on ajoute `/home/user/scripts` au PATH :
 
 ```bash
-$ export PATH=$PATH:/home/user/scripts
+$ export PATH=$PATH:/home/ndesmangles/scripts
 ```
 
 {{% notice style="warning" title="Important" %}}
@@ -251,7 +251,7 @@ touch Cours11/fic1.txt Cours11/rep1/fic2.txt
 ```
 {{% /notice %}}
 
-En modifiant les permissions de `rep1`, `fic1.txt` et `fic2.txt`, testez les commandes `touch`, `cd`, `ls`, `cat`, etc., puis complétez les tableaux.
+En faisant varier les droits (pour l’**utilisateur propriétaire**) sur le répertoire **rep1** et sur le fichier **fic1.txt**, essayez les commandes comme `touch`, `cd`, `ls` sur le répertoire **rep1** et `cat` ou ajout de texte sur les fichiers à l’intérieur (**fic1.txt** et **fic2.txt**).
 
 ### Concernant le répertoire rep1
 
