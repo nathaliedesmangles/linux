@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Exercice 1 : Manipulation de valeurs numériques Critères d’évaluation Excellent (5) Satisfaisant (3) Insuffisant (0) Test sur le nombre de paramètres Validation correcte avec message d’erreur approprié en cas d’absence. Validation partielle ou imprécise. Pas de vérification effectuée. Détermination du plus grand et du plus petit Détermination précise avec prise en compte des valeurs égales. Comparaison correcte mais simpliste. Comparaison incorrecte ou manquante. Utilisation des variables $1, $2 et $3 (1er cas) — Utilisation de variables pour stocker les entrées (2e cas) Utilisation correcte et efficace des paramètres positionnels. — Utilisation de trois variables locales nommées correctement. Utilisation partielle ou incorrecte. — Utilisation de variables mais sans clarté. Paramètres non utilisés ou mal manipulés. — Variables non utilisées ou mal nommées. Calcul avec let Calcul effectué correctement avec let dans les deux cas. Utilisation correcte mais syntaxe perfectible. Calcul incorrect ou usage de let absent. Respect de l’affichage Affichage conforme au format demandé avec mise en forme soignée. Affichage correct mais imprécis ou incomplet. Affichage incorrect ou absent. Résultat final attendu Résultat précis. Résultat correct mais manque de précision. Résultat incorrect ou non affiché. Total des points : /30">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Grilles de correction :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Exercice 1 : Manipulation de valeurs numériques Critères d’évaluation Excellent (5) Satisfaisant (3) Insuffisant (0) Test sur le nombre de paramètres Validation correcte avec message d’erreur approprié en cas d’absence. Validation partielle ou imprécise. Pas de vérification effectuée. Détermination du plus grand et du plus petit Détermination précise avec prise en compte des valeurs égales. Comparaison correcte mais simpliste. Comparaison incorrecte ou manquante. Utilisation des variables $1, $2 et $3 (1er cas) — Utilisation de variables pour stocker les entrées (2e cas) Utilisation correcte et efficace des paramètres positionnels. — Utilisation de trois variables locales nommées correctement. Utilisation partielle ou incorrecte. — Utilisation de variables mais sans clarté. Paramètres non utilisés ou mal manipulés. — Variables non utilisées ou mal nommées. Calcul avec let Calcul effectué correctement avec let dans les deux cas. Utilisation correcte mais syntaxe perfectible. Calcul incorrect ou usage de let absent. Respect de l’affichage Affichage conforme au format demandé avec mise en forme soignée. Affichage correct mais imprécis ou incomplet. Affichage incorrect ou absent. Résultat final attendu Résultat précis. Résultat correct mais manque de précision. Résultat incorrect ou non affiché. Total des points : /30">
+    <meta property="og:url" content="http://localhost:1313/solutions/semaine9/correction/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Grilles de correction :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Exercice 1 : Manipulation de valeurs numériques Critères d’évaluation Excellent (5) Satisfaisant (3) Insuffisant (0) Test sur le nombre de paramètres Validation correcte avec message d’erreur approprié en cas d’absence. Validation partielle ou imprécise. Pas de vérification effectuée. Détermination du plus grand et du plus petit Détermination précise avec prise en compte des valeurs égales. Comparaison correcte mais simpliste. Comparaison incorrecte ou manquante. Utilisation des variables $1, $2 et $3 (1er cas) — Utilisation de variables pour stocker les entrées (2e cas) Utilisation correcte et efficace des paramètres positionnels. — Utilisation de trois variables locales nommées correctement. Utilisation partielle ou incorrecte. — Utilisation de variables mais sans clarté. Paramètres non utilisés ou mal manipulés. — Variables non utilisées ou mal nommées. Calcul avec let Calcul effectué correctement avec let dans les deux cas. Utilisation correcte mais syntaxe perfectible. Calcul incorrect ou usage de let absent. Respect de l’affichage Affichage conforme au format demandé avec mise en forme soignée. Affichage correct mais imprécis ou incomplet. Affichage incorrect ou absent. Résultat final attendu Résultat précis. Résultat correct mais manque de précision. Résultat incorrect ou non affiché. Total des points : /30">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Grilles de correction :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Exercice 1 : Manipulation de valeurs numériques Critères d’évaluation Excellent (5) Satisfaisant (3) Insuffisant (0) Test sur le nombre de paramètres Validation correcte avec message d’erreur approprié en cas d’absence. Validation partielle ou imprécise. Pas de vérification effectuée. Détermination du plus grand et du plus petit Détermination précise avec prise en compte des valeurs égales. Comparaison correcte mais simpliste. Comparaison incorrecte ou manquante. Utilisation des variables $1, $2 et $3 (1er cas) — Utilisation de variables pour stocker les entrées (2e cas) Utilisation correcte et efficace des paramètres positionnels. — Utilisation de trois variables locales nommées correctement. Utilisation partielle ou incorrecte. — Utilisation de variables mais sans clarté. Paramètres non utilisés ou mal manipulés. — Variables non utilisées ou mal nommées. Calcul avec let Calcul effectué correctement avec let dans les deux cas. Utilisation correcte mais syntaxe perfectible. Calcul incorrect ou usage de let absent. Respect de l’affichage Affichage conforme au format demandé avec mise en forme soignée. Affichage correct mais imprécis ou incomplet. Affichage incorrect ou absent. Résultat final attendu Résultat précis. Résultat correct mais manque de précision. Résultat incorrect ou non affiché. Total des points : /30">
+    <meta itemprop="wordCount" content="623">
+    <title>Grilles de correction :: 420-ZG4-MO LINUX</title>
+    <link href="/solutions/semaine9/correction/index.xml" rel="alternate" type="application/rss+xml" title="Grilles de correction :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1743690701" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743690701" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1743690701" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743690701" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1743690701" rel="stylesheet">
+    <link href="/css/theme.css?1743690701" rel="stylesheet">
+    <link href="/css/format-html.css?1743690701" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.min = ``;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/solutions/semaine9/correction/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#exercice-1--manipulation-de-valeurs-numériques"><strong>Exercice 1</strong> : Manipulation de valeurs numériques</a></li>
+    <li><a href="#exercice-2--tests-sur-les-fichiers"><strong>Exercice 2</strong> : Tests sur les fichiers</a></li>
+    <li><a href="#exercice-3--partie-1-calculsh"><strong>Exercice 3</strong> : Partie 1 (calcul.sh)</a></li>
+    <li><a href="#exercice-3--partie-2-calculv2sh"><strong>Exercice 3</strong> : Partie 2 (calculV2.sh)</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/solutions/index.html"><span itemprop="name">Solutions: ateliers et tests</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/solutions/semaine9/index.html"><span itemprop="name">Atelier 9</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Grilles de correction</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine9/index.html" title="Atelier 9 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/test1/index.html" title="Test 1 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable solutions" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="grilles-de-correction">Grilles de correction</h1>
+
+<h2 id="exercice-1--manipulation-de-valeurs-numériques"><strong>Exercice 1</strong> : Manipulation de valeurs numériques</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Critères d’évaluation</th>
+          <th style="text-align: left">Excellent (5)</th>
+          <th style="text-align: left">Satisfaisant (3)</th>
+          <th style="text-align: left">Insuffisant (0)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Test sur le nombre de paramètres</strong></td>
+          <td style="text-align: left">Validation correcte avec message d’erreur approprié en cas d’absence.</td>
+          <td style="text-align: left">Validation partielle ou imprécise.</td>
+          <td style="text-align: left">Pas de vérification effectuée.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Détermination du plus grand et du plus petit</strong></td>
+          <td style="text-align: left">Détermination précise avec prise en compte des valeurs égales.</td>
+          <td style="text-align: left">Comparaison correcte mais simpliste.</td>
+          <td style="text-align: left">Comparaison incorrecte ou manquante.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Utilisation des variables $1, $2 et $3 (1er cas)</strong> <br> &mdash; <br> <strong>Utilisation de variables pour stocker les entrées (2e cas)</strong></td>
+          <td style="text-align: left">Utilisation correcte et efficace des paramètres positionnels. <br> &mdash; <br> Utilisation de trois variables locales nommées correctement.</td>
+          <td style="text-align: left">Utilisation partielle ou incorrecte. <br> &mdash; <br> Utilisation de variables mais sans clarté.</td>
+          <td style="text-align: left">Paramètres non utilisés ou mal manipulés. <br> &mdash; <br> Variables non utilisées ou mal nommées.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Calcul avec <code>let</code></strong></td>
+          <td style="text-align: left">Calcul effectué correctement avec <code>let</code> dans les deux cas.</td>
+          <td style="text-align: left">Utilisation correcte mais syntaxe perfectible.</td>
+          <td style="text-align: left">Calcul incorrect ou usage de <code>let</code> absent.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Respect de l’affichage</strong></td>
+          <td style="text-align: left">Affichage conforme au format demandé avec mise en forme soignée.</td>
+          <td style="text-align: left">Affichage correct mais imprécis ou incomplet.</td>
+          <td style="text-align: left">Affichage incorrect ou absent.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Résultat final attendu</strong></td>
+          <td style="text-align: left">Résultat précis.</td>
+          <td style="text-align: left">Résultat correct mais manque de précision.</td>
+          <td style="text-align: left">Résultat incorrect ou non affiché.</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Total des points : /30</strong></p>
+<hr>
+<h2 id="exercice-2--tests-sur-les-fichiers"><strong>Exercice 2</strong> : Tests sur les fichiers</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Critères d&rsquo;évaluation</th>
+          <th style="text-align: center">Points attribués</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>1. Vérification du type de fichier</strong></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">- Utilisation de <code>-f</code> pour vérifier si c’est un fichier standard</td>
+          <td style="text-align: center"><strong>2</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">- Message affiché correctement si c&rsquo;est un fichier standard</td>
+          <td style="text-align: center"><strong>1</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">- Message affiché correctement si ce n’est pas un fichier standard</td>
+          <td style="text-align: center"><strong>1</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>2. Vérification des droits d&rsquo;accès</strong></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">- Utilisation de <code>-r</code> pour vérifier les droits de lecture</td>
+          <td style="text-align: center"><strong>2</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">- Message affiché correctement pour la lecture</td>
+          <td style="text-align: center"><strong>1</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">- Utilisation de <code>-w</code> pour vérifier les droits d’écriture</td>
+          <td style="text-align: center"><strong>2</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">- Message affiché correctement pour l’écriture</td>
+          <td style="text-align: center"><strong>1</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">- Utilisation de <code>-x</code> pour vérifier les droits d’exécution</td>
+          <td style="text-align: center"><strong>2</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">- Message affiché correctement pour l’exécution</td>
+          <td style="text-align: center"><strong>1</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>3. Qualité du script</strong></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">- Script fonctionne correctement dans tous les cas (fichier absent, fichier non standard, etc.)</td>
+          <td style="text-align: center"><strong>2</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Total</strong></td>
+          <td style="text-align: center"><strong>15</strong></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="exercice-3--partie-1-calculsh"><strong>Exercice 3</strong> : Partie 1 (calcul.sh)</h2>
+<p>Voici la grille de correction remaniée avec trois niveaux :</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Critères</strong></th>
+          <th style="text-align: left"><strong>Excellent (5 pts)</strong></th>
+          <th style="text-align: left"><strong>Satisfaisant (3 pts)</strong></th>
+          <th style="text-align: left"><strong>Insuffisant (0 pt)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Utilisation des variables de paramètres $1, $2 et $3</strong></td>
+          <td style="text-align: left">Utilisation correcte et complète des variables de paramètres</td>
+          <td style="text-align: left">Utilisation partielle ou comportant des erreurs mineures</td>
+          <td style="text-align: left">Absence d’utilisation ou utilisation incorrecte des variables</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Vérification du nombre de paramètres avec message d&rsquo;erreur et exit 1</strong></td>
+          <td style="text-align: left">Vérification complète avec message d’erreur clair et exit 1</td>
+          <td style="text-align: left">Vérification partielle ou gestion d’erreur incomplète</td>
+          <td style="text-align: left">Aucune vérification des paramètres</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Traitement des opérateurs +, - et ^</strong></td>
+          <td style="text-align: left">Tous les opérateurs gérés correctement avec un comportement attendu</td>
+          <td style="text-align: left">Un opérateur mal géré ou gestion partiellement incorrecte</td>
+          <td style="text-align: left">Plusieurs opérateurs mal gérés ou gestion inexistante</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Affichage du résultat</strong></td>
+          <td style="text-align: left">Affichage précis et conforme au format demandé</td>
+          <td style="text-align: left">Affichage avec un format légèrement incorrect ou incomplet</td>
+          <td style="text-align: left">Aucun affichage ou résultat incorrect</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Total des points : /25</strong></p>
+<h2 id="exercice-3--partie-2-calculv2sh"><strong>Exercice 3</strong> : Partie 2 (calculV2.sh)</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Critères</strong></th>
+          <th style="text-align: left"><strong>Excellent (6 pts)</strong></th>
+          <th style="text-align: left"><strong>Passable (3 pts)</strong></th>
+          <th style="text-align: left"><strong>Insuffisant (0 pt)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Structure générale du script</strong></td>
+          <td style="text-align: left">Le script est bien organisé, clair et respecte les bonnes pratiques de script Bash.</td>
+          <td style="text-align: left">Le script est fonctionnel et bien structuré, avec quelques améliorations possibles.</td>
+          <td style="text-align: left">Le script est désorganisé, difficile à lire ou ne fonctionne pas correctement.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Vérification du nombre de paramètres</strong></td>
+          <td style="text-align: left">La vérification du nombre de paramètres se fait correctement.</td>
+          <td style="text-align: left">La vérification est logique mais mal structurée.</td>
+          <td style="text-align: left">Absence de vérification ou vérification incorrecte.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Saisie des valeurs en cas de paramètres insuffisants</strong></td>
+          <td style="text-align: left">La saisie des valeurs manquantes est demandée avec un message explicite et convivial.</td>
+          <td style="text-align: left">La saisie fonctionne mais le message manque de clarté ou de convivialité.</td>
+          <td style="text-align: left">La saisie ne fonctionne pas ou n’est pas implémentée.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Calcul et affichage du résultat</strong></td>
+          <td style="text-align: left">Le calcul s&rsquo;effectue correctement avec <code>let</code></td>
+          <td style="text-align: left">Le calcul fonctionne mais pas fait avec <code>let</code>.</td>
+          <td style="text-align: left">Le calcul échoue ou donne des résultats incorrects.</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Total des points : /30</strong></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1743690701";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1743690701" defer></script>
+        <script src="/js/lunr/lunr.min.js?1743690701" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1743690701" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1743690701" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1743690701" defer></script>
+        <script src="/js/search.js?1743690701" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest2/index.html"><a class="padding" href="/revisiontest2/index.html">TEST #2-Quelques notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim, les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>Variables de paramètres de script et structure IF</a><ul id="R-subsections-1f01a70d85857b8ac721c011c139e3af" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine10/index.html"><a class="padding" href="/semaine10/index.html"><b>Semaine 10. </b>Utilisateurs et groupes</a><ul id="R-subsections-f8cbb4e023a0fc71fa255b45db414bcc" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine11/index.html"><a class="padding" href="/semaine11/index.html"><b>Semaine 11. </b>Les droits d&#39;accès</a><ul id="R-subsections-b4d497b6531d9f49241f6ec42b8e80f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine12/index.html"><a class="padding" href="/semaine12/index.html"><b>Semaine 12. </b>Titre</a><ul id="R-subsections-6098c004e594c3cbee6d88e41d11b10b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine13/index.html"><a class="padding" href="/semaine13/index.html"><b>Semaine 13. </b>Titre</a><ul id="R-subsections-123a241fcf7a50602c7d825a9ccf5337" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu">
+            <li class="" data-nav-id="/solutions/semaine1/index.html"><a class="padding" href="/solutions/semaine1/index.html">Atelier 1</a></li>
+            <li class="" data-nav-id="/solutions/semaine2/index.html"><a class="padding" href="/solutions/semaine2/index.html">Atelier 2</a></li>
+            <li class="" data-nav-id="/solutions/semaine3/index.html"><a class="padding" href="/solutions/semaine3/index.html">Atelier 3</a></li>
+            <li class="" data-nav-id="/solutions/semaine4/index.html"><a class="padding" href="/solutions/semaine4/index.html">Atelier 4</a></li>
+            <li class="" data-nav-id="/solutions/semaine5/index.html"><a class="padding" href="/solutions/semaine5/index.html">Atelier 5</a></li>
+            <li class="" data-nav-id="/solutions/semaine6/index.html"><a class="padding" href="/solutions/semaine6/index.html">Atelier 6</a></li>
+            <li class="" data-nav-id="/solutions/semaine7/index.html"><a class="padding" href="/solutions/semaine7/index.html">Atelier 7</a></li>
+            <li class="" data-nav-id="/solutions/semaine8/index.html"><a class="padding" href="/solutions/semaine8/index.html">Atelier 8</a></li>
+            <li class="parent alwaysopen " data-nav-id="/solutions/semaine9/index.html"><a class="padding" href="/solutions/semaine9/index.html">Atelier 9</a><ul id="R-subsections-af4a0a74a93c7502e727723640a01582" class="collapsible-menu">
+            <li class="active " data-nav-id="/solutions/semaine9/correction/index.html"><a class="padding" href="/solutions/semaine9/correction/index.html">Grilles de correction</a></li></ul></li>
+            <li class="" data-nav-id="/solutions/test1/index.html"><a class="padding" href="/solutions/test1/index.html">Test 1</a></li>
+            <li class="" data-nav-id="/solutions/test2/index.html"><a class="padding" href="/solutions/test2/index.html">Test 2</a></li>
+            <li class="" data-nav-id="/solutions/test3/index.html"><a class="padding" href="/solutions/test3/index.html">Test 3</a></li>
+            <li class="" data-nav-id="/solutions/test4/index.html"><a class="padding" href="/solutions/test4/index.html">Test 4</a></li></ul></li>
+            <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/solutions/semaine9/correction/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1743690701" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1743690701" defer></script>
+    <script src="/js/theme.js?1743690701" defer></script>
+  </body>
+</html>

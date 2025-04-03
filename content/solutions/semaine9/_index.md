@@ -28,7 +28,7 @@ else
 fi
 
 # Division entière et calcul final
-resultat=$(( (paramPlusGrand / paramPlusPetit) * $3 ))
+let "resultat = (paramPlusGrand / paramPlusPetit) * $3"
 
 # Affichage du résultat
 echo "L'expression ($paramPlusGrand / $paramPlusPetit) * $3 donne : $resultat"
@@ -37,8 +37,9 @@ echo "L'expression ($paramPlusGrand / $paramPlusPetit) * $3 donne : $resultat"
 #### Explications :
 - `if [ $# -ne 3 ]`: Vérifie que trois paramètres sont fournis.
 - `paramPlusGrand` et `paramPlusPetit` sont déterminés avec une simple condition.
-- La division entière est effectuée avec `/`.
-- L'opérateur `*` réalise la multiplication.
+- Le calcul est effectué à l'aide de `let`
+   - La division entière est effectuée avec `/`.
+   - L'opérateur `*` réalise la multiplication.
 
 #### Exemple d'exécution :
 ```bash
@@ -67,7 +68,7 @@ else
 fi
 
 # Division entière et calcul final
-resultat=$(( (paramPlusGrand / paramPlusPetit) * param3 ))
+let "resultat = (paramPlusGrand / paramPlusPetit) * param3"
 
 # Affichage du résultat
 echo "L'expression ($paramPlusGrand / $paramPlusPetit) * $param3 donne : $resultat"
@@ -82,7 +83,8 @@ L'option **`-p`** de la commande `read` dans les scripts Bash permet **d'affiche
    - **`-p`** : Affiche le message spécifié sans retour à la ligne.  
    - **`variable`** : Stocke la valeur saisie par l'utilisateur.  
 - `paramPlusGrand` et `paramPlusPetit` sont déterminés avec une condition simple.
-- La division entière est effectuée avec `/` et l'opérateur `*` réalise la multiplication.
+- Le calcul est effectué à l'aide de `let`
+   - La division entière est effectuée avec `/` et l'opérateur `*` réalise la multiplication.
 
 #### Exemple d'exécution :
 ```bash
@@ -118,7 +120,7 @@ then
    [ -w "$fichier" ] && echo "écriture : oui" || echo "écriture : non"
    [ -x "$fichier" ] && echo "exécution : oui" || echo "exécution : non"
 else
-    echo "$fichier n'existe pas."
+    echo "Le fichier $fichier n'existe pas."
     exit 1
 fi
 ```
@@ -128,7 +130,9 @@ fi
 - `-f` vérifie si c'est un fichier standard.
 - `-r`, `-w`, `-x` vérifient respectivement les droits de lecture, écriture et exécution.
 
-### Exemple d'exécution :
+### Exemples d'exécution :
+
+**#1**
 ```bash
 $ bash testFichier.sh
 Entrez le chemin du fichier à vérifier : /etc/passwd
@@ -136,6 +140,41 @@ Entrez le chemin du fichier à vérifier : /etc/passwd
 lecture : oui
 écriture : non
 exécution : non
+```
+
+**#2**
+```bash
+$ bash testFichier.sh
+Entrez le chemin du fichier à vérifier : /etc
+/etc n'est pas un fichier standard.
+lecture : oui
+écriture : non
+exécution : oui
+```
+
+
+**#3**
+```bash
+$ bash testFichier.sh
+Entrez le chemin du fichier à vérifier : ./test.txt
+./test.txt est un fichier standard.
+lecture : oui
+écriture : oui
+exécution : non
+```
+
+**#4**
+```bash
+$ bash testFichier.sh
+Entrez le chemin du fichier à vérifier : /etc/passssswd
+Le fichier /etc/passssswd n'existe pas.
+```
+
+**#5**
+```bash
+$ bash testFichier.sh
+Entrez le chemin du fichier à vérifier : 
+Le fichier  n'existe pas.
 ```
 
 ---
@@ -238,6 +277,6 @@ bash calculV2.sh
 Entrez un opérateur (+, -, ^) : ^
 Entrez le premier nombre : 4
 Entrez le deuxième nombre : 6
-4 ** 6 = 4096
+4 ^ 6 = 4096
 ```
 

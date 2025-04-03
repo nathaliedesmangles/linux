@@ -1,310 +1,334 @@
 +++
 title = "Les droits d'accès"
 weight = 111
-draft = true
 +++
 
 
-## Introduction
+Linux est un système multi-utilisateurs où **chaque fichier et dossier possède des permissions de sécurité**. Ces permissions protègent les fichiers contre les accès non autorisés et les erreurs. Elles permettent notamment :
 
-Linux étant un système multi-utilisateurs, il peut être nécessaire de donner des droits différents sur les fichiers pour les protéger:
+- La **confidentialité** des données.
+- La protection contre les **modifications accidentelles**.
+- Le contrôle de **l’exécution** des fichiers
 
- - Confidentialité
+Sur Linux, il existe deux types de permissions : 
+1. Les **permissions standards** et 
+2. Les ***ACL*** (*Access Control Lists*). 
 
- - Protection contre les erreurs
+Nous étudierons uniquement les **permissions standards**, les plus utilisées.
 
- - ...
+## Afficher les permissions (commande *ls*)
 
-Sur Linux, il existe deux types de droits: les droits standards et les ACL. Nous verrons uniquement les droits standards qui sont les plus utilisés.
+Pour afficher les permissions d’un fichier ou d’un dossier, utilisez la commande `ls -l` :
 
-De plus, c'est avec les droits que l'on peut rendre un fichier exécutable.
+```bash
+$ ls -l
+-rwxr-xr-x.  1 axel axel  1767 10 déc 16:52 script.sh
+-rw-r--r--.  1 axel axel   343 27 mar 11:14 notes.txt
+```
 
-## Description
+{{% notice style="green" title="Signification de ces neuf colonnes" groupid="notice-toggle" expanded="false" %}}
+- **Colonne 1** : indique le **type de fichier** et les **permissions** de l'utilisateur attribuées au fichier.
+- **Colonne 2** : indique le **nombre de blocs de mémoire** occupés par le fichier.
+- **Colonne 3** : représente le **propriétaire** ou l'utilisateur qui a créé le fichier (ici "axel").
+- **Colonne 4** : représente le **groupe** auquel le propriétaire appartient (ici "axel" encore).
+- **Colonne 5** : représente **la taille** du répertoire ou du fichier, calculée en octets.
+- **Colonne 6** : indique **le mois** de création et de modification.
+- **Colonne 7** : indique **l'année** de création et de modification.
+- **Colonne 8** : indique **l'heure** de création et de modification.
+- **Colonne 9** : représente le **nom du fichier ou du répertoire** donné par l'utilisateur.
+{{% /notice %}}
 
-La commande suivante permet d'afficher les permissions sur les fichiers:
+Les permissions s’affichent sous la forme de **trois groupes de trois caractères** :
+- **1er groupe (u)** : Permissions du **propriétaire** (*user*)
+- **2e groupe (g)** : Permissions du **groupe propriétaire** (*group*)
+- **3e groupe (o)** : Permissions des **autres utilisateurs** (*other*)
 
-<pre>$ ls -l
-total 40
--rwxr-xr-x.  1 axel axel  1767 10 déc 16:52 1895560_2018-12-08_18h59m02s.py
-drwxr-xr-x.  3 axel axel    18 21 mar 14:22 Bureau
-drwxrwxr-x.  3 axel axel    22  7 mar 17:08 config
-drwxrwxr-x.  2 axel axel  4096 10 avr 13:16 correction
-drwxrwxr-x.  2 axel axel    69  7 fév 17:10 cours
-drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Documents
--rw-rw-r--.  1 axel axel   343 27 mar 11:14 expr.txt
-drwxrwxr-x.  3 axel axel    93  7 mar 15:22 hugo
-drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Images
-drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Modèles
-drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Musique
-drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Public
-drwxrwxr-x. 13 axel axel  4096 11 avr 18:06 quickstart
--rw-r--r--.  1 axel axel 11459 31 mar 12:53 README.md
-drwxrwxr-x.  3 axel axel  4096 17 mar 15:24 scripts
--rwxrw-r--.  1 axel axel    52 25 fév 14:14 script.sh
-drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Téléchargements
--rw-rw-r--.  1 axel axel     9  3 avr 13:53 total.txt
-drwxr-xr-x.  7 axel axel   162 13 mar 21:27 tp01
-drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Vidéos
-</pre>
+Chaque groupe contient **trois caractères** :
+- **r** : Lecture (*Read*)
+- **w** : Écriture (*Write*)
+- **x** : Exécution (*eXecute*)
 
-![droits](../images/droits.png)
+**Exemple** :
+- `rwxr-xr-x` signifie que :
+  - Le **propriétaire** peut **lire**, **écrire** et **exécuter** (`rwx`)
+  - Le **groupe** peut **lire** et **exécuter** (`r-x`)
+  - Les **autres** peuvent **lire** et **exécuter** (`r-x`)
 
-Les permissions s'affichent sous la forme de 3 colonnes de 3 lettres chacune.
+## Modifier les permissions (commande *chmod*)
 
- - La première colonne représente les droits pour le propriétaire du fichier (u pour user).
+Seuls le **propriétaire** et ***root*** peuvent modifier les permissions avec la commande `chmod`.
 
- - La deuxième colonne représente les droits pour le groupe propriétaire du fichier (g pour groupe).
+### 1. Méthode symbolique
 
- - La troisième colonne représente les droits pour tous les autres utilisateurs (o pour other).
+Cette méthode utilise les lettres et des symboles :
+- `r`, `w`, `x` : droits de lecture, écriture et exécution
+- `u`, `g`, `o`, `a` : utilisateur, groupe, autres, tous
+- `+`, `-`, `=` : ajouter, retirer, définir
 
-Les 3 lettres représentent les droits:
+**Exemples** :
+```bash
+$ chmod u+x script.sh   # Ajoute le droit d'exécution au propriétaire
+$ chmod o-w notes.txt   # Retire le droit d'écriture aux autres
+$ chmod a+rwx fichier   # Accorde tous les droits à tous les utilisateurs
+```
+
+### 2. Méthode octale
+
+Chaque droit a une valeur numérique :
+- `r = 4`, `w = 2`, `x = 1`
+
+{{% notice style="green" title="Comment obtient-on ces valeurs...?" groupid="notice-toggle" expanded="false" %}}
+Les valeurs numériques associées aux permissions Linux viennent de la représentation **binaire** des droits d'accès.
+Chaque permission (lecture, écriture, exécution) correspond à un **bit** qui peut être activé (1) ou désactivé (0).  
  
- - <code class="gr">r</code>: pour la lecture (Read)
-
- - <code class="gr">w</code>: pour l'écriture (Write)
-
- - <code class="gr">x</code>: pour l'exécution (eXecute). Est l'exécution pour un fichier, le droit de parcourir pour un répertoire (sans possibilité de voir le contenu si le droit Read n'a pas été donné.
-
-Les permissions s'appliquent à une personne et un groupe:
-
- - La première colonne représente la personne qui est propriétaire du fichier ou du répertoire.
-
- - La deuxième colonne représente le groupe qui est propriétaire du fichier ou du répertoire.
-
-## Modification des permissions
-
-Deux personnes peuvent modifier les permissions:
-
- - Le propriétaire du fichier ou du répertoire
-
- - root
-
-La commande pour modifier les droits est <code class="gr">chmod</code>.
-
-Il existe 2 méthodes pour modifier les droits:
-
- - La méthode symbolique
-
- - La méthode octale
-
-### La méthode symbolique
-
-Elle utilise les symboles des droits:
-
- - <code class="gr">r</code> : lecture
-
- - <code class="gr">w</code> : écriture
-
- - <code class="gr">x</code> : exécution
-
-Elle utilise les symboles des utilisateurs:
-
- - <code class="gr">u</code> : l'utilisateur propriétaire
-
- - <code class="gr">g</code> : le groupe propriétaire
-
- - <code class="gr">o</code> : les autres
-
- - <code class="gr">a</code> : tous (utilisateur, groupe et autres)
-
-Elle utilise les symboles d'ajout, de suppression ou de définition pour spécifier les droits:
-
- - <code class="gr">+</code> : pour ajouter un ou plusieurs droits à une catégorie
-
- - <code class="gr">-</code> : pour retirer un ou plusieurs droits à une catégorie
-
- - <code class="gr">=</code> : pour définir les droits d'une ou plusieurs ctégories.
-
-Voici des exemples:
-
-- Pour donner tous les droits à tous les utilisateurs:
-
-<pre>$ chmod a+rwx fichier
-$ chmod ugo=rwx fichier</pre>
-
-- Pour enlever le droit d'écriture aux autres:
-
-<pre>$ chmod o-w fichier</pre>
-
-- Pour enlever le droit d'écriture aux autres et au groupe:
-
-<pre>$ chmod go-w fichier</pre>
-
-- Pour affecter les droits à toute l'arborescence en dessous:
-
-<pre>$ chmod -R u-x directory</pre>
-
-### La méthode octale
-
-En binaire, les droits sont les suivants:
-
-|r|w|x|
-|:---:|:---:|:---:|
-|1|1|1|
-|4|2|1|
-
-Pour connaître la valeur des droits que l'on souhaite attribuer, il suffit d'additionner la valeur des droits individuels.
-
-Ainsi, si on veut donner les droits de lecture seulement, ce sera 4, écriture seulement ce sera 2 et exécution seulement ce sera 1.
-
-Si on veut donner les droits de lecture et écriture ce sera 6, lecture et exécutionce sera 5...
-
-Avec la méthode octale, il faut obligatoirement définir les droits pour les trois catégories : le propriétaire, le groupe propriétaire et les autres.
-
-Voici des exemples:
-
-- Pour donner tous les droits à tous les utilisateurs:
-
-<pre>$ chmod 777 fichier</pre>
-
-- Pour enlever le droit d'écriture aux autres:
-
-<pre>$ chmod 775 fichier</pre>
-
-- Pour enlever le droit d'écriture aux autres et au groupe:
-
-<pre>$ chmod 755 fichier</pre>
-
-- Pour affecter les droits à toute l'arborescence en dessous:
-
-<pre>$ chmod -R 644 directory</pre>
-
-## Modification de l'utilisteur propriétaire
-
-Il est possible de modifier le propriétaire d'un fichier ou d'un répertoire.
-
-Seul root peut effectuer cette action.
-
-La commande est <code class="gr">chown</code>.
-
-<pre>$ chown user fichier</pre>
-
-Pour changer à la fois le groupe propriétaire et l'utilisateur:
-
-<pre>$ chown user:group fichier</pre>
-
-Pour changer toute l'arborescence:
-
-<pre>$ chown -R user directory</pre>
-
-## Modification du groupe propriétaire
-
-De même qu'il est possible de changer le propriétaire, il est possible de changer le groupe propriétaire.
-
-Deux utilisateurs ont le droit de modifier le groupe propriétaire:
-
- - root
-
- - Le propriétaire actuel s'il appartient au groupe auquel on va donner le fichier.
-
-<pre>$ chgrp group fichier</pre>
-
-Pour changer le groupe pour toute une arborescence:
-
-<pre>$ chgrp -R group directory</pre>
-
-Il est possible de modifier d'un seul coup l'utilisteur propriétaire et le groupe propriétaire:
-
-<pre>$ chmod user:group fichier</pre>
-
-## Le droit d'exécution
-
-Pour un répertoire elle donne le droit de parcourir le répertoire mais pas d'afficher son contenu.
-
-Pour un fichier c'est elle qui lui permettra de s'exécuter (programmes, scripts).
-
-La permission exécuter sur les fichiers, joue un peu le même rôle l'extension .exe sous Windows.
-
-Un script ou un programme ne pourra pas s'exécuter sans la permission d'exécution.
-
-Pour que vos script puissent s'exécuter sans les précéder de la commande bash, il faut leur donner la permission d'exécution.
-
-On pourra alors exécuter le script:
-
-<pre>$ ./script.sh</pre>
-
-Le <code class="gr">./</code> permet de dire où se trouve le fichier à exécuter.
-
-Le système cherche les exécutables dans les répertoires contenus dans la variable d'environnement <code class="gr">$PATH</code>.
-
-Si l'exécutable n'est pas dans un de ces répertoires, il faudra spécifier son chemin (soit absolu, soit relatif).
-
-Pour voir le contenu de la variable <code class="gr">$PATH</code>:
-
-<pre>$ echo $PATH</pre>
-
-Pour la modifier, la variable, deux possibilités:
-
-<pre>$ export PATH=$PATH:&lt;nouveau chemin&gt;</pre>
-
-Ou en mettant cette ligne dans <code class="gr">.bashrc</code> ou <code class="gr">.bash_profile</code> pour que ce soit permanent.
-
-La dernière chose à faire pour pouvoir exécuter un script est de spécifier l'interprèteur à utiliser lors de lexécution. Pour ceci, il faudra ajouter la ligne suivante tout en haut du fichier:
-
-{{< highlight bash>}}
+1. En binaire, les droits sont représentés sur **3 bits** :  
+   - Si le bit est à 1, le droit est accordé.  
+   - Si le bit est à 0, le droit est refusé.  
+
+2. Les 3 bits dans l'ordre **r  w  x**:  
+
+| **Permission**  | **Binaire**   | **Valeur décimale** |
+|:---------------:|:-------------:|:-------------------:|
+|                 | **r  w  x**   |                     |
+| **r (Read)**    |   1  0  0     | 4                   |
+| **w (Write)**   |   0  1  0     | 2                   |
+| **x (Execute)** |   0  0  1     | 1                   |  
+
+3. Lorsqu’on combine plusieurs droits, on additionne les valeurs :  
+   - **rw- (lecture + écriture)** = 110 en binaire → **4 + 2 = 6**  
+   - **r-x (lecture + exécution)** = 101 en binaire → **4 + 1 = 5**  
+   - **rwx (lecture + écriture + exécution)** = 111 en binaire → **4 + 2 + 1 = 7**  
+{{% /notice %}}
+
+- Pour chacun des 3 rôles (**propriétaire**, **groupe** et **autres**), on **additionne** les valeurs des droits individuels accordés pour connaître la valeur des **permissions** que l’on souhaite attribuer.
+- On peut ainsi obtenir **un chiffre pour chaque rôle** → **3 chiffres** représentants les permissions**.
+
+**Exemples** :
+```bash
+$ chmod 755 script.sh  # Propriétaire : rwx, Groupe : r-x, Autres : r-x
+$ chmod 644 notes.txt  # Propriétaire : rw-, Groupe : r--, Autres : r--
+```
+
+### Changer le propriétaire (commande *chown*)
+
+Seul **root** peut changer le propriétaire d’un fichier avec `chown` :
+```bash
+$ chown user fichier            # Change le propriétaire
+$ chown user:group fichier      # Change le propriétaire et le groupe
+$ chown -R user directory       # Applique récursivement
+```
+
+### Changer le groupe (commande *chgrp*)
+
+Pour changer uniquement le groupe :
+```bash
+$ chgrp group fichier
+$ chgrp -R group directory
+```
+
+## Le droit d'exécution sous Linux
+
+### **Rappel**: Spécifier l'interpréteur pour un script
+
+Un script commence souvent par la ligne suivante :
+```bash
 #!/bin/bash
-{{< / highlight >}}
+```
+- `#!` indique au système d'utiliser l'interpréteur Bash.
+- Ce mécanisme est appelé le "shebang".
+
+
+### Qu'est-ce que le droit d'exécution ?
+
+Le droit d'exécution permet :
+- **Pour un fichier** : D'exécuter le fichier comme un programme ou un script.
+- **Pour un répertoire** : De **parcourir** le contenu du répertoire, mais **sans pouvoir lister ses fichiers si le droit de lecture n'est pas accordé**.
+
+Sur **Windows**, ce droit d'exécution joue un rôle similaire à l'extension ".exe".
+
+### Pourquoi faut-il octroyer le droit d'exécution (même au propriétaire du fichier) 
+
+Par défaut, quand on crée un fichier avec des commandes comme `touch`, `echo`, ou des **éditeurs de texte** (nano, vim, etc.), le fichier n'obtient généralement pas de droit d'exécution par défaut. Sans ce droit, un script ne pourra pas fonctionner.
+
+### Donner la permission d'exécution (commande *chmod*)
+
+```bash
+$ chmod +x script.sh
+```
+Cette commande donne le droit d'exécution à l'utilisateur **propriétaire**, au **groupe** et aux **autres**.
+On peut ensuite exécuter le script sans utiliser la commande `bash`.
+
+```bash
+$ ./script.sh
+```
+- Le fichier doit être présent dans un dossier contenu dans la variable d’environnement `$PATH` pour être exécuté directement.
+- `./` indique au système que le script se trouve dans le répertoire courant.
+
+## La variable d'environnement $PATH
+
+Le système **cherche les programmes exécutables** dans les répertoires listés dans la **variable d'environnement `$PATH`**.
+
+### Afficher le contenu de $PATH
+
+```bash
+$ echo $PATH
+/home/ndesmangles/.local/bin:/home/ndesmangles/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
+```
+
+### Ajouter un répertoire au $PATH temporairement
+
+```bash
+$ export PATH=$PATH:/chemin/vers/repertoire
+```
+
+**Exemple** :
+- Imaginons un script appelé **mon_script.sh** dans un dossier `/home/user/scripts`.
+- Pour simplifier l’exécution du script sans spécifier le chemin complet, on ajoute `/home/user/scripts` au PATH :
+
+```bash
+$ export PATH=$PATH:/home/user/scripts
+```
+
+{{% notice style="warning" title="Important" %}}
+- Cette modification n’est valable que pour la **session en cours**.
+- Pour qu'elle soit permanent, ajoutez la ligne précédente à votre fichier `.bashrc` ou `.bash_profile`.
+- Ainsi, le script s’exécutera correctement peu importe la méthode d’appel.
+{{% /notice %}}
 
 ---
 
 ## Exercices
 
-1. Trouvez les permissions suivantes :
+1. Trouvez les permissions octales :
+- `-w-r-----` ?
+- `rw-r---w-` ?
+- 755 en mode symbolique ?
+- 426 en mode symbolique ?
 
- - Quelles sont les permissions octales pour -w-r-----?
+{{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
+1. **Permissions octales :**  
+   - `-w-r-----` :  
+     - Propriétaire : **w** → 2  
+     - Groupe : **r** → 4  
+     - Autres : --- → 0  
+     - **Valeur octale : 240**  
+   
+   - `rw-r---w-` :  
+     - Propriétaire : **rw** → 4 + 2 = 6  
+     - Groupe : **r** → 4  
+     - Autres : **w** → 2  
+     - **Valeur octale : 642**  
 
- - Quelles sont les permissions octales pour rw-r---w-?
+2. **Permissions symboliques :**  
+   - `755` en mode symbolique :  
+     - Propriétaire : **rwx** → 4 + 2 + 1 = 7  
+     - Groupe : **r-x** → 4 + 1 = 5  
+     - Autres : **r-x** → 4 + 1 = 5  
+     - **Valeur symbolique : rwxr-xr-x**  
 
- - Quelles sont les permissions symboliques pour 755?
+   - `426` en mode symbolique :  
+     - Propriétaire : **r--** → 4  
+     - Groupe : **-w-** → 2  
+     - Autres : **rw-** → 4 + 2 = 6  
+     - **Valeur symbolique : r-- -w- rw-**  
 
- - Quelles sont les autorisations symboliques pour 426?
-
- - Quelle est la commande pour ajouter la permission exécution à l'utilisateur (mode symbolique)?
-
- - Quelle est la commande pour supprimer la lecture aux autres sur toute une arborescence?
+{{% /notice %}}
 
 2. Tests de permissions :
-
-Créer une arborescence telle que celle ci-dessous:
-
-<pre>
+Créez cette structure :
+```
 Cours11
 ├── fic1.txt
 └── rep1
     └── fic2.txt
-</pre>
+```
 
-En faisant varier les droits (pour l'utilisateur propriétaire) sur le répertoire rep1 et sur le fichier fic1.txt, essayez les commandes comme touch, cd, ls sur le répertoire rep1 et cat ou ajout de texte sur les fichiers à l'intérieur (fic1.txt et fic2.txt).
+{{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
+**Création de la structure de dossiers :**
+```bash
+mkdir -p Cours11/rep1
+touch Cours11/fic1.txt Cours11/rep1/fic2.txt
+```
+{{% /notice %}}
 
-Remplissez les tableaux suivant avec les résultats.
+En modifiant les permissions de `rep1`, `fic1.txt` et `fic2.txt`, testez les commandes `touch`, `cd`, `ls`, `cat`, etc., puis complétez les tableaux.
 
-<u>Concernant le répertoire rep1 et ses permissions</u>
+### Concernant le répertoire rep1
 
-||r|w|x|rw|wx|rx|
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|
-|Je peux afficher le contenu avec <code class="gr">ls</code>| | | | | | |
-|Je peux créer un fichier avec <code class="gr">touch</code>| | | | | | |
-|Je peux traverser le répertoire avec <code class="gr">cd</code>| | | | | | |
+| Action | r | w | x | rw | wx | rx |
+|---------|---|---|---|----|----|----|
+| Afficher le contenu (`ls`) |   |   |   |    |    |    |
+| Créer un fichier (`touch`) |   |   |   |    |    |    |
+| Traverser le répertoire (`cd`) |   |   |   |    |    |    |
 
-<u>Concernant le fichier fic1.txt ses permisssions</u>
+<!--
 
-||r|w|x|rw|wx|rx|
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|
-|Je peux afficher le contenu avec <code class="gr">cat</code>| | | | | | |
-|Je peux ajouter du texte| | | | | | |
+{{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
+**Concernant le répertoire `rep1`**  
 
-<u>Concernant le fichier fic2.txt et les permissions du répertoire rep1</u>
+| **Action**                                | **r** | **w** | **x** | **rw** | **wx** | **rx** |
+|-------------------------------------------|-------|-------|-------|--------|--------|--------|
+| Afficher le contenu (`ls`)                | ✅    | ❌    | ✅    | ✅     | ❌     | ✅     |
+| Créer un fichier (`touch`)                | ❌    | ✅    | ✅    | ✅     | ✅     | ❌     |
+| Traverser le répertoire (`cd`)            | ❌    | ❌    | ✅    | ✅     | ✅     | ✅     |
 
-||r|w|x|rw|wx|rx|
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|
-|Je peux voir le fichier| | | | | | |
-|Je peux afficher le contenu avec <code class="gr">cat</code>| | | | | | |
-|Je peux ajouter du texte| | | | | | |
+**Explications :**  
+- `r` (lecture) permet de lister le contenu du dossier si le droit `x` (exécution) est aussi présent.  
+- `w` (écriture) permet de créer, supprimer ou renommer des fichiers, mais seulement si le droit `x` (exécution) est aussi présent.  
+- `x` (exécution) permet de "traverser" le dossier (utiliser `cd` ou accéder aux fichiers à l'intérieur).  
+{{% /notice %}}
 
+-->
 
+### Concernant le fichier fic1.txt
 
+| Action | r | w | x | rw | wx | rx |
+|---------|---|---|---|----|----|----|
+| Afficher le contenu (`cat`) |   |   |   |    |    |    |
+| Ajouter du texte (`echo "texte" >> fic1.txt`)|   |   |   |    |    |    |
 
+<!--
 
+{{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
+**Concernant le fichier `fic1.txt`**  
+
+| **Action**                                | **r** | **w** | **x** | **rw** | **wx** | **rx** |
+|-------------------------------------------|-------|-------|-------|--------|--------|--------|
+| Afficher le contenu (`cat`)               | ✅    | ❌    | ❌    | ✅     | ❌     | ❌     |
+| Ajouter du texte (`echo "texte" >> fic1.txt`) | ❌    | ✅    | ❌    | ✅     | ✅     | ❌     |
+
+**Explications :**  
+- `r` (lecture) permet d'afficher le contenu.  
+- `w` (écriture) permet de modifier le contenu.  
+- `x` (exécution) sur un fichier texte ne sert généralement à rien, sauf pour les scripts exécutables.  
+{{% /notice %}}
+
+-->
+
+### Concernant le fichier fic2.txt et les permissions de rep1
+
+| **Action**                                | **r** | **w** | **x** | **rw** | **wx** | **rx** |
+|-------------------------------------------|-------|-------|-------|--------|--------|--------|
+| Voir le fichier (`ls rep1`)               |     |     |    |      |      |     |
+| Afficher le contenu (`cat rep1/fic2.txt`) |     |     |     |      |      |      |
+| Ajouter du texte (`echo "texte" >> fic2.txt`) |     |     |     |      |      |      |
+
+<!--
+{{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
+**Concernant le fichier `fic2.txt` et les permissions de `rep1`**  
+
+| **Action**                                | **r** | **w** | **x** | **rw** | **wx** | **rx** |
+|-------------------------------------------|-------|-------|-------|--------|--------|--------|
+| Voir le fichier (`ls rep1`)               | ✅    | ❌    | ✅    | ✅     | ❌     | ✅     |
+| Afficher le contenu (`cat rep1/fic2.txt`) | ✅    | ❌    | ✅    | ✅     | ❌     | ✅     |
+| Ajouter du texte (`echo "texte" >> fic2.txt`) | ❌    | ✅    | ✅    | ✅     | ✅     | ❌     |
+
+**Explications :**  
+- Si le dossier `rep1` n’a pas le droit d’exécution (`x`), il est impossible d'y accéder, même si on a les droits de lecture.  
+- Pour ajouter du texte à `fic2.txt`, il faut que le dossier parent `rep1` ait le droit d'exécution (`x`) et le fichier le droit d'écriture (`w`). 
+{{% /notice %}}
+
+-->
 
 
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Grilles de correction :: 420-ZG4-MO LINUX</title>
+    <link>http://localhost:1313/solutions/semaine9/correction/index.html</link>
+    <description>Exercice 1 : Manipulation de valeurs numériques Critères d’évaluation Excellent (5) Satisfaisant (3) Insuffisant (0) Test sur le nombre de paramètres Validation correcte avec message d’erreur approprié en cas d’absence. Validation partielle ou imprécise. Pas de vérification effectuée. Détermination du plus grand et du plus petit Détermination précise avec prise en compte des valeurs égales. Comparaison correcte mais simpliste. Comparaison incorrecte ou manquante. Utilisation des variables $1, $2 et $3 (1er cas) — Utilisation de variables pour stocker les entrées (2e cas) Utilisation correcte et efficace des paramètres positionnels. — Utilisation de trois variables locales nommées correctement. Utilisation partielle ou incorrecte. — Utilisation de variables mais sans clarté. Paramètres non utilisés ou mal manipulés. — Variables non utilisées ou mal nommées. Calcul avec let Calcul effectué correctement avec let dans les deux cas. Utilisation correcte mais syntaxe perfectible. Calcul incorrect ou usage de let absent. Respect de l’affichage Affichage conforme au format demandé avec mise en forme soignée. Affichage correct mais imprécis ou incomplet. Affichage incorrect ou absent. Résultat final attendu Résultat précis. Résultat correct mais manque de précision. Résultat incorrect ou non affiché. Total des points : /30</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/solutions/semaine9/correction/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

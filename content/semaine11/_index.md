@@ -3,7 +3,6 @@ chapter = true
 pre = "<b>Semaine 11. </b>"
 title = "Les droits d'accès"
 weight = 110
-draft = true
 +++
 
 ## Plan de la leçon
@@ -18,5 +17,5 @@ draft = true
   - Le droit d'exécution
 
 - **Atelier : Vendredi 18 avril**.
-  - Gestion des droits d'accès à un fichier ou répertoire
+  - Gestion des droits d'accès sur un fichier ou répertoire
 

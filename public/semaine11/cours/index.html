@@ -1,61 +1,45 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Introduction Linux étant un système multi-utilisateurs, il peut être nécessaire de donner des droits différents sur les fichiers pour les protéger:
-Confidentialité
-Protection contre les erreurs
-…
-Sur Linux, il existe deux types de droits: les droits standards et les ACL. Nous verrons uniquement les droits standards qui sont les plus utilisés.
-De plus, c’est avec les droits que l’on peut rendre un fichier exécutable.
-Description La commande suivante permet d’afficher les permissions sur les fichiers:">
+    <meta name="description" content="Linux est un système multi-utilisateurs où chaque fichier et dossier possède des permissions de sécurité. Ces permissions protègent les fichiers contre les accès non autorisés et les erreurs. Elles permettent notamment :
+La confidentialité des données. La protection contre les modifications accidentelles. Le contrôle de l’exécution des fichiers Sur Linux, il existe deux types de permissions :
+Les permissions standards et Les ACL (Access Control Lists). Nous étudierons uniquement les permissions standards, les plus utilisées.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Les droits d&#39;accès :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Introduction Linux étant un système multi-utilisateurs, il peut être nécessaire de donner des droits différents sur les fichiers pour les protéger:
-Confidentialité
-Protection contre les erreurs
-…
-Sur Linux, il existe deux types de droits: les droits standards et les ACL. Nous verrons uniquement les droits standards qui sont les plus utilisés.
-De plus, c’est avec les droits que l’on peut rendre un fichier exécutable.
-Description La commande suivante permet d’afficher les permissions sur les fichiers:">
-    <meta property="og:url" content="http://localhost:1313/semaine11/cours/index.html">
+    <meta name="twitter:description" content="Linux est un système multi-utilisateurs où chaque fichier et dossier possède des permissions de sécurité. Ces permissions protègent les fichiers contre les accès non autorisés et les erreurs. Elles permettent notamment :
+La confidentialité des données. La protection contre les modifications accidentelles. Le contrôle de l’exécution des fichiers Sur Linux, il existe deux types de permissions :
+Les permissions standards et Les ACL (Access Control Lists). Nous étudierons uniquement les permissions standards, les plus utilisées.">
+    <meta property="og:url" content="https://example.org/semaine11/cours/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="Les droits d&#39;accès :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Introduction Linux étant un système multi-utilisateurs, il peut être nécessaire de donner des droits différents sur les fichiers pour les protéger:
-Confidentialité
-Protection contre les erreurs
-…
-Sur Linux, il existe deux types de droits: les droits standards et les ACL. Nous verrons uniquement les droits standards qui sont les plus utilisés.
-De plus, c’est avec les droits que l’on peut rendre un fichier exécutable.
-Description La commande suivante permet d’afficher les permissions sur les fichiers:">
+    <meta property="og:description" content="Linux est un système multi-utilisateurs où chaque fichier et dossier possède des permissions de sécurité. Ces permissions protègent les fichiers contre les accès non autorisés et les erreurs. Elles permettent notamment :
+La confidentialité des données. La protection contre les modifications accidentelles. Le contrôle de l’exécution des fichiers Sur Linux, il existe deux types de permissions :
+Les permissions standards et Les ACL (Access Control Lists). Nous étudierons uniquement les permissions standards, les plus utilisées.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="Les droits d&#39;accès :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Introduction Linux étant un système multi-utilisateurs, il peut être nécessaire de donner des droits différents sur les fichiers pour les protéger:
-Confidentialité
-Protection contre les erreurs
-…
-Sur Linux, il existe deux types de droits: les droits standards et les ACL. Nous verrons uniquement les droits standards qui sont les plus utilisés.
-De plus, c’est avec les droits que l’on peut rendre un fichier exécutable.
-Description La commande suivante permet d’afficher les permissions sur les fichiers:">
-    <meta itemprop="wordCount" content="1297">
+    <meta itemprop="description" content="Linux est un système multi-utilisateurs où chaque fichier et dossier possède des permissions de sécurité. Ces permissions protègent les fichiers contre les accès non autorisés et les erreurs. Elles permettent notamment :
+La confidentialité des données. La protection contre les modifications accidentelles. Le contrôle de l’exécution des fichiers Sur Linux, il existe deux types de permissions :
+Les permissions standards et Les ACL (Access Control Lists). Nous étudierons uniquement les permissions standards, les plus utilisées.">
+    <meta itemprop="wordCount" content="1308">
     <title>Les droits d&#39;accès :: 420-ZG4-MO LINUX</title>
     <link href="/semaine11/cours/index.xml" rel="alternate" type="application/rss+xml" title="Les droits d&#39;accès :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1743606338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743606338" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1743606338" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743606338" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1743606338" rel="stylesheet">
-    <link href="/css/theme.css?1743606338" rel="stylesheet">
-    <link href="/css/format-html.css?1743606338" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1743690728" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743690728" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1743690728" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743690728" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1743690728" rel="stylesheet">
+    <link href="/css/theme.min.css?1743690728" rel="stylesheet">
+    <link href="/css/format-html.min.css?1743690728" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..';
-      window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.min = ``;
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       // variant stuff
@@ -112,18 +96,36 @@ Description La commande suivante permet d’afficher les permissions sur les fic
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#description">Description</a></li>
-    <li><a href="#modification-des-permissions">Modification des permissions</a>
+    <li><a href="#afficher-les-permissions-commande-ls">Afficher les permissions (commande <em>ls</em>)</a></li>
+    <li><a href="#modifier-les-permissions-commande-chmod">Modifier les permissions (commande <em>chmod</em>)</a>
       <ul>
-        <li><a href="#la-méthode-symbolique">La méthode symbolique</a></li>
-        <li><a href="#la-méthode-octale">La méthode octale</a></li>
+        <li><a href="#1-méthode-symbolique">1. Méthode symbolique</a></li>
+        <li><a href="#2-méthode-octale">2. Méthode octale</a></li>
+        <li><a href="#changer-le-propriétaire-commande-chown">Changer le propriétaire (commande <em>chown</em>)</a></li>
+        <li><a href="#changer-le-groupe-commande-chgrp">Changer le groupe (commande <em>chgrp</em>)</a></li>
       </ul>
     </li>
-    <li><a href="#modification-de-lutilisteur-propriétaire">Modification de l&rsquo;utilisteur propriétaire</a></li>
-    <li><a href="#modification-du-groupe-propriétaire">Modification du groupe propriétaire</a></li>
-    <li><a href="#le-droit-dexécution">Le droit d&rsquo;exécution</a></li>
-    <li><a href="#exercices">Exercices</a></li>
+    <li><a href="#le-droit-dexécution-sous-linux">Le droit d&rsquo;exécution sous Linux</a>
+      <ul>
+        <li><a href="#rappel-spécifier-linterpréteur-pour-un-script"><strong>Rappel</strong>: Spécifier l&rsquo;interpréteur pour un script</a></li>
+        <li><a href="#quest-ce-que-le-droit-dexécution-">Qu&rsquo;est-ce que le droit d&rsquo;exécution ?</a></li>
+        <li><a href="#pourquoi-faut-il-octroyer-le-droit-dexécution-même-au-propriétaire-du-fichier">Pourquoi faut-il octroyer le droit d&rsquo;exécution (même au propriétaire du fichier)</a></li>
+        <li><a href="#donner-la-permission-dexécution-commande-chmod">Donner la permission d&rsquo;exécution (commande <em>chmod</em>)</a></li>
+      </ul>
+    </li>
+    <li><a href="#la-variable-denvironnement-path">La variable d&rsquo;environnement $PATH</a>
+      <ul>
+        <li><a href="#afficher-le-contenu-de-path">Afficher le contenu de $PATH</a></li>
+        <li><a href="#ajouter-un-répertoire-au-path-temporairement">Ajouter un répertoire au $PATH temporairement</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercices">Exercices</a>
+      <ul>
+        <li><a href="#concernant-le-répertoire-rep1">Concernant le répertoire rep1</a></li>
+        <li><a href="#concernant-le-fichier-fic1txt">Concernant le fichier fic1.txt</a></li>
+        <li><a href="#concernant-le-fichier-fic2txt-et-les-permissions-de-rep1">Concernant le fichier fic2.txt et les permissions de rep1</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
                 </div>
@@ -160,404 +162,599 @@ Description La commande suivante permet d’afficher les permissions sur les fic
 
 <h1 id="les-droits-daccès">Les droits d&#39;accès</h1>
 
-<h2 id="introduction">Introduction</h2>
-<p>Linux étant un système multi-utilisateurs, il peut être nécessaire de donner des droits différents sur les fichiers pour les protéger:</p>
+<p>Linux est un système multi-utilisateurs où <strong>chaque fichier et dossier possède des permissions de sécurité</strong>. Ces permissions protègent les fichiers contre les accès non autorisés et les erreurs. Elles permettent notamment :</p>
 <ul>
-<li>
-<p>Confidentialité</p>
-</li>
-<li>
-<p>Protection contre les erreurs</p>
-</li>
-<li>
-<p>&hellip;</p>
+<li>La <strong>confidentialité</strong> des données.</li>
+<li>La protection contre les <strong>modifications accidentelles</strong>.</li>
+<li>Le contrôle de <strong>l’exécution</strong> des fichiers</li>
+</ul>
+<p>Sur Linux, il existe deux types de permissions :</p>
+<ol>
+<li>Les <strong>permissions standards</strong> et</li>
+<li>Les <em><strong>ACL</strong></em> (<em>Access Control Lists</em>).</li>
+</ol>
+<p>Nous étudierons uniquement les <strong>permissions standards</strong>, les plus utilisées.</p>
+<h2 id="afficher-les-permissions-commande-ls">Afficher les permissions (commande <em>ls</em>)</h2>
+<p>Pour afficher les permissions d’un fichier ou d’un dossier, utilisez la commande <code>ls -l</code> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls -l
+</span></span><span style="display:flex;"><span>-rwxr-xr-x.  <span style="color:#ae81ff">1</span> axel axel  <span style="color:#ae81ff">1767</span> <span style="color:#ae81ff">10</span> déc 16:52 script.sh
+</span></span><span style="display:flex;"><span>-rw-r--r--.  <span style="color:#ae81ff">1</span> axel axel   <span style="color:#ae81ff">343</span> <span style="color:#ae81ff">27</span> mar 11:14 notes.txt</span></span></code></pre></div>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Signification de ces neuf colonnes
+  </summary>
+  <div class="box-content">
+<ul>
+<li><strong>Colonne 1</strong> : indique le <strong>type de fichier</strong> et les <strong>permissions</strong> de l&rsquo;utilisateur attribuées au fichier.</li>
+<li><strong>Colonne 2</strong> : indique le <strong>nombre de blocs de mémoire</strong> occupés par le fichier.</li>
+<li><strong>Colonne 3</strong> : représente le <strong>propriétaire</strong> ou l&rsquo;utilisateur qui a créé le fichier (ici &ldquo;axel&rdquo;).</li>
+<li><strong>Colonne 4</strong> : représente le <strong>groupe</strong> auquel le propriétaire appartient (ici &ldquo;axel&rdquo; encore).</li>
+<li><strong>Colonne 5</strong> : représente <strong>la taille</strong> du répertoire ou du fichier, calculée en octets.</li>
+<li><strong>Colonne 6</strong> : indique <strong>le mois</strong> de création et de modification.</li>
+<li><strong>Colonne 7</strong> : indique <strong>l&rsquo;année</strong> de création et de modification.</li>
+<li><strong>Colonne 8</strong> : indique <strong>l&rsquo;heure</strong> de création et de modification.</li>
+<li><strong>Colonne 9</strong> : représente le <strong>nom du fichier ou du répertoire</strong> donné par l&rsquo;utilisateur.</li>
+</ul>
+  </div>
+</details>
+<p>Les permissions s’affichent sous la forme de <strong>trois groupes de trois caractères</strong> :</p>
+<ul>
+<li><strong>1er groupe (u)</strong> : Permissions du <strong>propriétaire</strong> (<em>user</em>)</li>
+<li><strong>2e groupe (g)</strong> : Permissions du <strong>groupe propriétaire</strong> (<em>group</em>)</li>
+<li><strong>3e groupe (o)</strong> : Permissions des <strong>autres utilisateurs</strong> (<em>other</em>)</li>
+</ul>
+<p>Chaque groupe contient <strong>trois caractères</strong> :</p>
+<ul>
+<li><strong>r</strong> : Lecture (<em>Read</em>)</li>
+<li><strong>w</strong> : Écriture (<em>Write</em>)</li>
+<li><strong>x</strong> : Exécution (<em>eXecute</em>)</li>
+</ul>
+<p><strong>Exemple</strong> :</p>
+<ul>
+<li><code>rwxr-xr-x</code> signifie que :
+<ul>
+<li>Le <strong>propriétaire</strong> peut <strong>lire</strong>, <strong>écrire</strong> et <strong>exécuter</strong> (<code>rwx</code>)</li>
+<li>Le <strong>groupe</strong> peut <strong>lire</strong> et <strong>exécuter</strong> (<code>r-x</code>)</li>
+<li>Les <strong>autres</strong> peuvent <strong>lire</strong> et <strong>exécuter</strong> (<code>r-x</code>)</li>
+</ul>
 </li>
 </ul>
-<p>Sur Linux, il existe deux types de droits: les droits standards et les ACL. Nous verrons uniquement les droits standards qui sont les plus utilisés.</p>
-<p>De plus, c&rsquo;est avec les droits que l&rsquo;on peut rendre un fichier exécutable.</p>
-<h2 id="description">Description</h2>
-<p>La commande suivante permet d&rsquo;afficher les permissions sur les fichiers:</p>
-<pre>$ ls -l
-total 40
--rwxr-xr-x.  1 axel axel  1767 10 déc 16:52 1895560_2018-12-08_18h59m02s.py
-drwxr-xr-x.  3 axel axel    18 21 mar 14:22 Bureau
-drwxrwxr-x.  3 axel axel    22  7 mar 17:08 config
-drwxrwxr-x.  2 axel axel  4096 10 avr 13:16 correction
-drwxrwxr-x.  2 axel axel    69  7 fév 17:10 cours
-drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Documents
--rw-rw-r--.  1 axel axel   343 27 mar 11:14 expr.txt
-drwxrwxr-x.  3 axel axel    93  7 mar 15:22 hugo
-drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Images
-drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Modèles
-drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Musique
-drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Public
-drwxrwxr-x. 13 axel axel  4096 11 avr 18:06 quickstart
--rw-r--r--.  1 axel axel 11459 31 mar 12:53 README.md
-drwxrwxr-x.  3 axel axel  4096 17 mar 15:24 scripts
--rwxrw-r--.  1 axel axel    52 25 fév 14:14 script.sh
-drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Téléchargements
--rw-rw-r--.  1 axel axel     9  3 avr 13:53 total.txt
-drwxr-xr-x.  7 axel axel   162 13 mar 21:27 tp01
-drwxr-xr-x.  2 axel axel     6 18 nov 21:08 Vidéos
-</pre>
-<p><a href="#R-image-dfc334318f3f0158af818b6812a90180" class="lightbox-link"><img alt="droits" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="../images/droits.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-dfc334318f3f0158af818b6812a90180"><img alt="droits" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="../images/droits.png"></a></p>
-<p>Les permissions s&rsquo;affichent sous la forme de 3 colonnes de 3 lettres chacune.</p>
+<h2 id="modifier-les-permissions-commande-chmod">Modifier les permissions (commande <em>chmod</em>)</h2>
+<p>Seuls le <strong>propriétaire</strong> et <em><strong>root</strong></em> peuvent modifier les permissions avec la commande <code>chmod</code>.</p>
+<h3 id="1-méthode-symbolique">1. Méthode symbolique</h3>
+<p>Cette méthode utilise les lettres et des symboles :</p>
 <ul>
-<li>
-<p>La première colonne représente les droits pour le propriétaire du fichier (u pour user).</p>
-</li>
-<li>
-<p>La deuxième colonne représente les droits pour le groupe propriétaire du fichier (g pour groupe).</p>
-</li>
-<li>
-<p>La troisième colonne représente les droits pour tous les autres utilisateurs (o pour other).</p>
-</li>
+<li><code>r</code>, <code>w</code>, <code>x</code> : droits de lecture, écriture et exécution</li>
+<li><code>u</code>, <code>g</code>, <code>o</code>, <code>a</code> : utilisateur, groupe, autres, tous</li>
+<li><code>+</code>, <code>-</code>, <code>=</code> : ajouter, retirer, définir</li>
 </ul>
-<p>Les 3 lettres représentent les droits:</p>
+<p><strong>Exemples</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chmod u+x script.sh   <span style="color:#75715e"># Ajoute le droit d&#39;exécution au propriétaire</span>
+</span></span><span style="display:flex;"><span>$ chmod o-w notes.txt   <span style="color:#75715e"># Retire le droit d&#39;écriture aux autres</span>
+</span></span><span style="display:flex;"><span>$ chmod a+rwx fichier   <span style="color:#75715e"># Accorde tous les droits à tous les utilisateurs</span></span></span></code></pre></div>
+<h3 id="2-méthode-octale">2. Méthode octale</h3>
+<p>Chaque droit a une valeur numérique :</p>
 <ul>
-<li>
-<p><code class="gr">r</code>: pour la lecture (Read)</p>
-</li>
-<li>
-<p><code class="gr">w</code>: pour l&rsquo;écriture (Write)</p>
-</li>
-<li>
-<p><code class="gr">x</code>: pour l&rsquo;exécution (eXecute). Est l&rsquo;exécution pour un fichier, le droit de parcourir pour un répertoire (sans possibilité de voir le contenu si le droit Read n&rsquo;a pas été donné.</p>
-</li>
+<li><code>r = 4</code>, <code>w = 2</code>, <code>x = 1</code></li>
 </ul>
-<p>Les permissions s&rsquo;appliquent à une personne et un groupe:</p>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Comment obtient-on ces valeurs&hellip;?
+  </summary>
+  <div class="box-content">
+<p>Les valeurs numériques associées aux permissions Linux viennent de la représentation <strong>binaire</strong> des droits d&rsquo;accès.
+Chaque permission (lecture, écriture, exécution) correspond à un <strong>bit</strong> qui peut être activé (1) ou désactivé (0).</p>
+<ol>
+<li>
+<p>En binaire, les droits sont représentés sur <strong>3 bits</strong> :</p>
 <ul>
-<li>
-<p>La première colonne représente la personne qui est propriétaire du fichier ou du répertoire.</p>
-</li>
-<li>
-<p>La deuxième colonne représente le groupe qui est propriétaire du fichier ou du répertoire.</p>
-</li>
+<li>Si le bit est à 1, le droit est accordé.</li>
+<li>Si le bit est à 0, le droit est refusé.</li>
 </ul>
-<h2 id="modification-des-permissions">Modification des permissions</h2>
-<p>Deux personnes peuvent modifier les permissions:</p>
-<ul>
-<li>
-<p>Le propriétaire du fichier ou du répertoire</p>
 </li>
 <li>
-<p>root</p>
+<p>Les 3 bits dans l&rsquo;ordre <strong>r  w  x</strong>:</p>
 </li>
-</ul>
-<p>La commande pour modifier les droits est <code class="gr">chmod</code>.</p>
-<p>Il existe 2 méthodes pour modifier les droits:</p>
-<ul>
-<li>
-<p>La méthode symbolique</p>
-</li>
-<li>
-<p>La méthode octale</p>
-</li>
-</ul>
-<h3 id="la-méthode-symbolique">La méthode symbolique</h3>
-<p>Elle utilise les symboles des droits:</p>
-<ul>
-<li>
-<p><code class="gr">r</code> : lecture</p>
-</li>
-<li>
-<p><code class="gr">w</code> : écriture</p>
-</li>
-<li>
-<p><code class="gr">x</code> : exécution</p>
-</li>
-</ul>
-<p>Elle utilise les symboles des utilisateurs:</p>
-<ul>
-<li>
-<p><code class="gr">u</code> : l&rsquo;utilisateur propriétaire</p>
-</li>
-<li>
-<p><code class="gr">g</code> : le groupe propriétaire</p>
-</li>
-<li>
-<p><code class="gr">o</code> : les autres</p>
-</li>
-<li>
-<p><code class="gr">a</code> : tous (utilisateur, groupe et autres)</p>
-</li>
-</ul>
-<p>Elle utilise les symboles d&rsquo;ajout, de suppression ou de définition pour spécifier les droits:</p>
-<ul>
-<li>
-<p><code class="gr">+</code> : pour ajouter un ou plusieurs droits à une catégorie</p>
-</li>
-<li>
-<p><code class="gr">-</code> : pour retirer un ou plusieurs droits à une catégorie</p>
-</li>
-<li>
-<p><code class="gr">=</code> : pour définir les droits d&rsquo;une ou plusieurs ctégories.</p>
-</li>
-</ul>
-<p>Voici des exemples:</p>
-<ul>
-<li>Pour donner tous les droits à tous les utilisateurs:</li>
-</ul>
-<pre>$ chmod a+rwx fichier
-$ chmod ugo=rwx fichier</pre>
-<ul>
-<li>Pour enlever le droit d&rsquo;écriture aux autres:</li>
-</ul>
-<pre>$ chmod o-w fichier</pre>
-<ul>
-<li>Pour enlever le droit d&rsquo;écriture aux autres et au groupe:</li>
-</ul>
-<pre>$ chmod go-w fichier</pre>
-<ul>
-<li>Pour affecter les droits à toute l&rsquo;arborescence en dessous:</li>
-</ul>
-<pre>$ chmod -R u-x directory</pre>
-<h3 id="la-méthode-octale">La méthode octale</h3>
-<p>En binaire, les droits sont les suivants:</p>
+</ol>
 <table>
   <thead>
       <tr>
-          <th style="text-align: center">r</th>
-          <th style="text-align: center">w</th>
-          <th style="text-align: center">x</th>
+          <th style="text-align: center"><strong>Permission</strong></th>
+          <th style="text-align: center"><strong>Binaire</strong></th>
+          <th style="text-align: center"><strong>Valeur décimale</strong></th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: center">1</td>
-          <td style="text-align: center">1</td>
-          <td style="text-align: center">1</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"><strong>r  w  x</strong></td>
+          <td style="text-align: center"></td>
       </tr>
       <tr>
+          <td style="text-align: center"><strong>r (Read)</strong></td>
+          <td style="text-align: center">1  0  0</td>
           <td style="text-align: center">4</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>w (Write)</strong></td>
+          <td style="text-align: center">0  1  0</td>
           <td style="text-align: center">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>x (Execute)</strong></td>
+          <td style="text-align: center">0  0  1</td>
           <td style="text-align: center">1</td>
       </tr>
   </tbody>
 </table>
-<p>Pour connaître la valeur des droits que l&rsquo;on souhaite attribuer, il suffit d&rsquo;additionner la valeur des droits individuels.</p>
-<p>Ainsi, si on veut donner les droits de lecture seulement, ce sera 4, écriture seulement ce sera 2 et exécution seulement ce sera 1.</p>
-<p>Si on veut donner les droits de lecture et écriture ce sera 6, lecture et exécutionce sera 5&hellip;</p>
-<p>Avec la méthode octale, il faut obligatoirement définir les droits pour les trois catégories : le propriétaire, le groupe propriétaire et les autres.</p>
-<p>Voici des exemples:</p>
+<ol start="3">
+<li>Lorsqu’on combine plusieurs droits, on additionne les valeurs :
 <ul>
-<li>Pour donner tous les droits à tous les utilisateurs:</li>
+<li><strong>rw- (lecture + écriture)</strong> = 110 en binaire → <strong>4 + 2 = 6</strong></li>
+<li><strong>r-x (lecture + exécution)</strong> = 101 en binaire → <strong>4 + 1 = 5</strong></li>
+<li><strong>rwx (lecture + écriture + exécution)</strong> = 111 en binaire → <strong>4 + 2 + 1 = 7</strong></li>
 </ul>
-<pre>$ chmod 777 fichier</pre>
-<ul>
-<li>Pour enlever le droit d&rsquo;écriture aux autres:</li>
-</ul>
-<pre>$ chmod 775 fichier</pre>
-<ul>
-<li>Pour enlever le droit d&rsquo;écriture aux autres et au groupe:</li>
-</ul>
-<pre>$ chmod 755 fichier</pre>
-<ul>
-<li>Pour affecter les droits à toute l&rsquo;arborescence en dessous:</li>
-</ul>
-<pre>$ chmod -R 644 directory</pre>
-<h2 id="modification-de-lutilisteur-propriétaire">Modification de l&rsquo;utilisteur propriétaire</h2>
-<p>Il est possible de modifier le propriétaire d&rsquo;un fichier ou d&rsquo;un répertoire.</p>
-<p>Seul root peut effectuer cette action.</p>
-<p>La commande est <code class="gr">chown</code>.</p>
-<pre>$ chown user fichier</pre>
-<p>Pour changer à la fois le groupe propriétaire et l&rsquo;utilisateur:</p>
-<pre>$ chown user:group fichier</pre>
-<p>Pour changer toute l&rsquo;arborescence:</p>
-<pre>$ chown -R user directory</pre>
-<h2 id="modification-du-groupe-propriétaire">Modification du groupe propriétaire</h2>
-<p>De même qu&rsquo;il est possible de changer le propriétaire, il est possible de changer le groupe propriétaire.</p>
-<p>Deux utilisateurs ont le droit de modifier le groupe propriétaire:</p>
-<ul>
-<li>
-<p>root</p>
 </li>
-<li>
-<p>Le propriétaire actuel s&rsquo;il appartient au groupe auquel on va donner le fichier.</p>
-</li>
+</ol>
+  </div>
+</details>
+<ul>
+<li>Pour chacun des 3 rôles (<strong>propriétaire</strong>, <strong>groupe</strong> et <strong>autres</strong>), on <strong>additionne</strong> les valeurs des droits individuels accordés pour connaître la valeur des <strong>permissions</strong> que l’on souhaite attribuer.</li>
+<li>On peut ainsi obtenir <strong>un chiffre pour chaque rôle</strong> → <strong>3 chiffres</strong> représentants les permissions**.</li>
 </ul>
-<pre>$ chgrp group fichier</pre>
-<p>Pour changer le groupe pour toute une arborescence:</p>
-<pre>$ chgrp -R group directory</pre>
-<p>Il est possible de modifier d&rsquo;un seul coup l&rsquo;utilisteur propriétaire et le groupe propriétaire:</p>
-<pre>$ chmod user:group fichier</pre>
-<h2 id="le-droit-dexécution">Le droit d&rsquo;exécution</h2>
-<p>Pour un répertoire elle donne le droit de parcourir le répertoire mais pas d&rsquo;afficher son contenu.</p>
-<p>Pour un fichier c&rsquo;est elle qui lui permettra de s&rsquo;exécuter (programmes, scripts).</p>
-<p>La permission exécuter sur les fichiers, joue un peu le même rôle l&rsquo;extension .exe sous Windows.</p>
-<p>Un script ou un programme ne pourra pas s&rsquo;exécuter sans la permission d&rsquo;exécution.</p>
-<p>Pour que vos script puissent s&rsquo;exécuter sans les précéder de la commande bash, il faut leur donner la permission d&rsquo;exécution.</p>
-<p>On pourra alors exécuter le script:</p>
-<pre>$ ./script.sh</pre>
-<p>Le <code class="gr">./</code> permet de dire où se trouve le fichier à exécuter.</p>
-<p>Le système cherche les exécutables dans les répertoires contenus dans la variable d&rsquo;environnement <code class="gr">$PATH</code>.</p>
-<p>Si l&rsquo;exécutable n&rsquo;est pas dans un de ces répertoires, il faudra spécifier son chemin (soit absolu, soit relatif).</p>
-<p>Pour voir le contenu de la variable <code class="gr">$PATH</code>:</p>
-<pre>$ echo $PATH</pre>
-<p>Pour la modifier, la variable, deux possibilités:</p>
-<pre>$ export PATH=$PATH:&lt;nouveau chemin&gt;</pre>
-<p>Ou en mettant cette ligne dans <code class="gr">.bashrc</code> ou <code class="gr">.bash_profile</code> pour que ce soit permanent.</p>
-<p>La dernière chose à faire pour pouvoir exécuter un script est de spécifier l&rsquo;interprèteur à utiliser lors de lexécution. Pour ceci, il faudra ajouter la ligne suivante tout en haut du fichier:</p>
+<p><strong>Exemples</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chmod <span style="color:#ae81ff">755</span> script.sh  <span style="color:#75715e"># Propriétaire : rwx, Groupe : r-x, Autres : r-x</span>
+</span></span><span style="display:flex;"><span>$ chmod <span style="color:#ae81ff">644</span> notes.txt  <span style="color:#75715e"># Propriétaire : rw-, Groupe : r--, Autres : r--</span></span></span></code></pre></div>
+<h3 id="changer-le-propriétaire-commande-chown">Changer le propriétaire (commande <em>chown</em>)</h3>
+<p>Seul <strong>root</strong> peut changer le propriétaire d’un fichier avec <code>chown</code> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chown user fichier            <span style="color:#75715e"># Change le propriétaire</span>
+</span></span><span style="display:flex;"><span>$ chown user:group fichier      <span style="color:#75715e"># Change le propriétaire et le groupe</span>
+</span></span><span style="display:flex;"><span>$ chown -R user directory       <span style="color:#75715e"># Applique récursivement</span></span></span></code></pre></div>
+<h3 id="changer-le-groupe-commande-chgrp">Changer le groupe (commande <em>chgrp</em>)</h3>
+<p>Pour changer uniquement le groupe :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chgrp group fichier
+</span></span><span style="display:flex;"><span>$ chgrp -R group directory</span></span></code></pre></div>
+<h2 id="le-droit-dexécution-sous-linux">Le droit d&rsquo;exécution sous Linux</h2>
+<h3 id="rappel-spécifier-linterpréteur-pour-un-script"><strong>Rappel</strong>: Spécifier l&rsquo;interpréteur pour un script</h3>
+<p>Un script commence souvent par la ligne suivante :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash</span></span></span></code></pre></div>
+<ul>
+<li><code>#!</code> indique au système d&rsquo;utiliser l&rsquo;interpréteur Bash.</li>
+<li>Ce mécanisme est appelé le &ldquo;shebang&rdquo;.</li>
+</ul>
+<h3 id="quest-ce-que-le-droit-dexécution-">Qu&rsquo;est-ce que le droit d&rsquo;exécution ?</h3>
+<p>Le droit d&rsquo;exécution permet :</p>
+<ul>
+<li><strong>Pour un fichier</strong> : D&rsquo;exécuter le fichier comme un programme ou un script.</li>
+<li><strong>Pour un répertoire</strong> : De <strong>parcourir</strong> le contenu du répertoire, mais <strong>sans pouvoir lister ses fichiers si le droit de lecture n&rsquo;est pas accordé</strong>.</li>
+</ul>
+<p>Sur <strong>Windows</strong>, ce droit d&rsquo;exécution joue un rôle similaire à l&rsquo;extension &ldquo;.exe&rdquo;.</p>
+<h3 id="pourquoi-faut-il-octroyer-le-droit-dexécution-même-au-propriétaire-du-fichier">Pourquoi faut-il octroyer le droit d&rsquo;exécution (même au propriétaire du fichier)</h3>
+<p>Par défaut, quand on crée un fichier avec des commandes comme <code>touch</code>, <code>echo</code>, ou des <strong>éditeurs de texte</strong> (nano, vim, etc.), le fichier n&rsquo;obtient généralement pas de droit d&rsquo;exécution par défaut. Sans ce droit, un script ne pourra pas fonctionner.</p>
+<h3 id="donner-la-permission-dexécution-commande-chmod">Donner la permission d&rsquo;exécution (commande <em>chmod</em>)</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chmod +x script.sh</span></span></code></pre></div>
+<p>Cette commande donne le droit d&rsquo;exécution à l&rsquo;utilisateur <strong>propriétaire</strong>, au <strong>groupe</strong> et aux <strong>autres</strong>.
+On peut ensuite exécuter le script sans utiliser la commande <code>bash</code>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ./script.sh</span></span></code></pre></div>
+<ul>
+<li>Le fichier doit être présent dans un dossier contenu dans la variable d’environnement <code>$PATH</code> pour être exécuté directement.</li>
+<li><code>./</code> indique au système que le script se trouve dans le répertoire courant.</li>
+</ul>
+<h2 id="la-variable-denvironnement-path">La variable d&rsquo;environnement $PATH</h2>
+<p>Le système <strong>cherche les programmes exécutables</strong> dans les répertoires listés dans la <strong>variable d&rsquo;environnement <code>$PATH</code></strong>.</p>
+<h3 id="afficher-le-contenu-de-path">Afficher le contenu de $PATH</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo $PATH
+</span></span><span style="display:flex;"><span>/home/ndesmangles/.local/bin:/home/ndesmangles/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin</span></span></code></pre></div>
+<h3 id="ajouter-un-répertoire-au-path-temporairement">Ajouter un répertoire au $PATH temporairement</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ export PATH<span style="color:#f92672">=</span>$PATH:/chemin/vers/repertoire</span></span></code></pre></div>
+<p><strong>Exemple</strong> :</p>
+<ul>
+<li>Imaginons un script appelé <strong>mon_script.sh</strong> dans un dossier <code>/home/user/scripts</code>.</li>
+<li>Pour simplifier l’exécution du script sans spécifier le chemin complet, on ajoute <code>/home/user/scripts</code> au PATH :</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ export PATH<span style="color:#f92672">=</span>$PATH:/home/user/scripts</span></span></code></pre></div>
 
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Important
+  </summary>
+  <div class="box-content">
+<ul>
+<li>Cette modification n’est valable que pour la <strong>session en cours</strong>.</li>
+<li>Pour qu&rsquo;elle soit permanent, ajoutez la ligne précédente à votre fichier <code>.bashrc</code> ou <code>.bash_profile</code>.</li>
+<li>Ainsi, le script s’exécutera correctement peu importe la méthode d’appel.</li>
+</ul>
+  </div>
+</details>
 <hr>
 <h2 id="exercices">Exercices</h2>
 <ol>
-<li>Trouvez les permissions suivantes :</li>
+<li>Trouvez les permissions octales :</li>
 </ol>
 <ul>
+<li><code>-w-r-----</code> ?</li>
+<li><code>rw-r---w-</code> ?</li>
+<li>755 en mode symbolique ?</li>
+<li>426 en mode symbolique ?</li>
+</ul>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution
+  </summary>
+  <div class="box-content">
+<ol>
 <li>
-<p>Quelles sont les permissions octales pour -w-r&mdash;&ndash;?</p>
+<p><strong>Permissions octales :</strong></p>
+<ul>
+<li>
+<p><code>-w-r-----</code> :</p>
+<ul>
+<li>Propriétaire : <strong>w</strong> → 2</li>
+<li>Groupe : <strong>r</strong> → 4</li>
+<li>Autres : &mdash; → 0</li>
+<li><strong>Valeur octale : 240</strong></li>
+</ul>
 </li>
 <li>
-<p>Quelles sont les permissions octales pour rw-r&mdash;w-?</p>
-</li>
-<li>
-<p>Quelles sont les permissions symboliques pour 755?</p>
-</li>
-<li>
-<p>Quelles sont les autorisations symboliques pour 426?</p>
-</li>
-<li>
-<p>Quelle est la commande pour ajouter la permission exécution à l&rsquo;utilisateur (mode symbolique)?</p>
-</li>
-<li>
-<p>Quelle est la commande pour supprimer la lecture aux autres sur toute une arborescence?</p>
+<p><code>rw-r---w-</code> :</p>
+<ul>
+<li>Propriétaire : <strong>rw</strong> → 4 + 2 = 6</li>
+<li>Groupe : <strong>r</strong> → 4</li>
+<li>Autres : <strong>w</strong> → 2</li>
+<li><strong>Valeur octale : 642</strong></li>
+</ul>
 </li>
 </ul>
-<ol start="2">
-<li>Tests de permissions :</li>
+</li>
+<li>
+<p><strong>Permissions symboliques :</strong></p>
+<ul>
+<li>
+<p><code>755</code> en mode symbolique :</p>
+<ul>
+<li>Propriétaire : <strong>rwx</strong> → 4 + 2 + 1 = 7</li>
+<li>Groupe : <strong>r-x</strong> → 4 + 1 = 5</li>
+<li>Autres : <strong>r-x</strong> → 4 + 1 = 5</li>
+<li><strong>Valeur symbolique : rwxr-xr-x</strong></li>
+</ul>
+</li>
+<li>
+<p><code>426</code> en mode symbolique :</p>
+<ul>
+<li>Propriétaire : <strong>r&ndash;</strong> → 4</li>
+<li>Groupe : <strong>-w-</strong> → 2</li>
+<li>Autres : <strong>rw-</strong> → 4 + 2 = 6</li>
+<li><strong>Valeur symbolique : r&ndash; -w- rw-</strong></li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
-<p>Créer une arborescence telle que celle ci-dessous:</p>
-<pre>
-Cours11
+  </div>
+</details>
+<ol start="2">
+<li>Tests de permissions :
+Créez cette structure :</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0"><code>Cours11
 ├── fic1.txt
 └── rep1
-    └── fic2.txt
-</pre>
-<p>En faisant varier les droits (pour l&rsquo;utilisateur propriétaire) sur le répertoire rep1 et sur le fichier fic1.txt, essayez les commandes comme touch, cd, ls sur le répertoire rep1 et cat ou ajout de texte sur les fichiers à l&rsquo;intérieur (fic1.txt et fic2.txt).</p>
-<p>Remplissez les tableaux suivant avec les résultats.</p>
-<p><u>Concernant le répertoire rep1 et ses permissions</u></p>
+    └── fic2.txt</code></pre></div>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution
+  </summary>
+  <div class="box-content">
+<p><strong>Création de la structure de dossiers :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p Cours11/rep1
+</span></span><span style="display:flex;"><span>touch Cours11/fic1.txt Cours11/rep1/fic2.txt</span></span></code></pre></div>
+  </div>
+</details>
+<p>En modifiant les permissions de <code>rep1</code>, <code>fic1.txt</code> et <code>fic2.txt</code>, testez les commandes <code>touch</code>, <code>cd</code>, <code>ls</code>, <code>cat</code>, etc., puis complétez les tableaux.</p>
+<h3 id="concernant-le-répertoire-rep1">Concernant le répertoire rep1</h3>
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"></th>
-          <th style="text-align: center">r</th>
-          <th style="text-align: center">w</th>
-          <th style="text-align: center">x</th>
-          <th style="text-align: center">rw</th>
-          <th style="text-align: center">wx</th>
-          <th style="text-align: center">rx</th>
+          <th style="text-align: left">Action</th>
+          <th style="text-align: left">r</th>
+          <th style="text-align: left">w</th>
+          <th style="text-align: left">x</th>
+          <th style="text-align: left">rw</th>
+          <th style="text-align: left">wx</th>
+          <th style="text-align: left">rx</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">Je peux afficher le contenu avec <code class="gr">ls</code></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
+          <td style="text-align: left">Afficher le contenu (<code>ls</code>)</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
       </tr>
       <tr>
-          <td style="text-align: left">Je peux créer un fichier avec <code class="gr">touch</code></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
+          <td style="text-align: left">Créer un fichier (<code>touch</code>)</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
       </tr>
       <tr>
-          <td style="text-align: left">Je peux traverser le répertoire avec <code class="gr">cd</code></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
+          <td style="text-align: left">Traverser le répertoire (<code>cd</code>)</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
       </tr>
   </tbody>
 </table>
-<p><u>Concernant le fichier fic1.txt ses permisssions</u></p>
+<!--
+
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution
+  </summary>
+  <div class="box-content">
+<p><strong>Concernant le répertoire <code>rep1</code></strong></p>
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"></th>
-          <th style="text-align: center">r</th>
-          <th style="text-align: center">w</th>
-          <th style="text-align: center">x</th>
-          <th style="text-align: center">rw</th>
-          <th style="text-align: center">wx</th>
-          <th style="text-align: center">rx</th>
+          <th style="text-align: left"><strong>Action</strong></th>
+          <th style="text-align: left"><strong>r</strong></th>
+          <th style="text-align: left"><strong>w</strong></th>
+          <th style="text-align: left"><strong>x</strong></th>
+          <th style="text-align: left"><strong>rw</strong></th>
+          <th style="text-align: left"><strong>wx</strong></th>
+          <th style="text-align: left"><strong>rx</strong></th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">Je peux afficher le contenu avec <code class="gr">cat</code></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
+          <td style="text-align: left">Afficher le contenu (<code>ls</code>)</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">✅</td>
       </tr>
       <tr>
-          <td style="text-align: left">Je peux ajouter du texte</td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
+          <td style="text-align: left">Créer un fichier (<code>touch</code>)</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Traverser le répertoire (<code>cd</code>)</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
       </tr>
   </tbody>
 </table>
-<p><u>Concernant le fichier fic2.txt et les permissions du répertoire rep1</u></p>
+<p><strong>Explications :</strong></p>
+<ul>
+<li><code>r</code> (lecture) permet de lister le contenu du dossier si le droit <code>x</code> (exécution) est aussi présent.</li>
+<li><code>w</code> (écriture) permet de créer, supprimer ou renommer des fichiers, mais seulement si le droit <code>x</code> (exécution) est aussi présent.</li>
+<li><code>x</code> (exécution) permet de &ldquo;traverser&rdquo; le dossier (utiliser <code>cd</code> ou accéder aux fichiers à l&rsquo;intérieur).</li>
+</ul>
+  </div>
+</details>
+
+-->
+<h3 id="concernant-le-fichier-fic1txt">Concernant le fichier fic1.txt</h3>
 <table>
   <thead>
       <tr>
-          <th style="text-align: left"></th>
-          <th style="text-align: center">r</th>
-          <th style="text-align: center">w</th>
-          <th style="text-align: center">x</th>
-          <th style="text-align: center">rw</th>
-          <th style="text-align: center">wx</th>
-          <th style="text-align: center">rx</th>
+          <th style="text-align: left">Action</th>
+          <th style="text-align: left">r</th>
+          <th style="text-align: left">w</th>
+          <th style="text-align: left">x</th>
+          <th style="text-align: left">rw</th>
+          <th style="text-align: left">wx</th>
+          <th style="text-align: left">rx</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">Je peux voir le fichier</td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
+          <td style="text-align: left">Afficher le contenu (<code>cat</code>)</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
       </tr>
       <tr>
-          <td style="text-align: left">Je peux afficher le contenu avec <code class="gr">cat</code></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Je peux ajouter du texte</td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
-          <td style="text-align: center"></td>
+          <td style="text-align: left">Ajouter du texte (<code>echo &quot;texte&quot; &gt;&gt; fic1.txt</code>)</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
       </tr>
   </tbody>
 </table>
+<!--
+
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution
+  </summary>
+  <div class="box-content">
+<p><strong>Concernant le fichier <code>fic1.txt</code></strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Action</strong></th>
+          <th style="text-align: left"><strong>r</strong></th>
+          <th style="text-align: left"><strong>w</strong></th>
+          <th style="text-align: left"><strong>x</strong></th>
+          <th style="text-align: left"><strong>rw</strong></th>
+          <th style="text-align: left"><strong>wx</strong></th>
+          <th style="text-align: left"><strong>rx</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Afficher le contenu (<code>cat</code>)</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">❌</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ajouter du texte (<code>echo &quot;texte&quot; &gt;&gt; fic1.txt</code>)</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Explications :</strong></p>
+<ul>
+<li><code>r</code> (lecture) permet d&rsquo;afficher le contenu.</li>
+<li><code>w</code> (écriture) permet de modifier le contenu.</li>
+<li><code>x</code> (exécution) sur un fichier texte ne sert généralement à rien, sauf pour les scripts exécutables.</li>
+</ul>
+  </div>
+</details>
+
+-->
+<h3 id="concernant-le-fichier-fic2txt-et-les-permissions-de-rep1">Concernant le fichier fic2.txt et les permissions de rep1</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Action</strong></th>
+          <th style="text-align: left"><strong>r</strong></th>
+          <th style="text-align: left"><strong>w</strong></th>
+          <th style="text-align: left"><strong>x</strong></th>
+          <th style="text-align: left"><strong>rw</strong></th>
+          <th style="text-align: left"><strong>wx</strong></th>
+          <th style="text-align: left"><strong>rx</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Voir le fichier (<code>ls rep1</code>)</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Afficher le contenu (<code>cat rep1/fic2.txt</code>)</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ajouter du texte (<code>echo &quot;texte&quot; &gt;&gt; fic2.txt</code>)</td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+          <td style="text-align: left"></td>
+      </tr>
+  </tbody>
+</table>
+<!--
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution
+  </summary>
+  <div class="box-content">
+<p><strong>Concernant le fichier <code>fic2.txt</code> et les permissions de <code>rep1</code></strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Action</strong></th>
+          <th style="text-align: left"><strong>r</strong></th>
+          <th style="text-align: left"><strong>w</strong></th>
+          <th style="text-align: left"><strong>x</strong></th>
+          <th style="text-align: left"><strong>rw</strong></th>
+          <th style="text-align: left"><strong>wx</strong></th>
+          <th style="text-align: left"><strong>rx</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Voir le fichier (<code>ls rep1</code>)</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">✅</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Afficher le contenu (<code>cat rep1/fic2.txt</code>)</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">✅</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ajouter du texte (<code>echo &quot;texte&quot; &gt;&gt; fic2.txt</code>)</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Explications :</strong></p>
+<ul>
+<li>Si le dossier <code>rep1</code> n’a pas le droit d’exécution (<code>x</code>), il est impossible d&rsquo;y accéder, même si on a les droits de lecture.</li>
+<li>Pour ajouter du texte à <code>fic2.txt</code>, il faut que le dossier parent <code>rep1</code> ait le droit d&rsquo;exécution (<code>x</code>) et le fichier le droit d&rsquo;écriture (<code>w</code>).</li>
+</ul>
+  </div>
+</details>
+
+-->
 
   <footer class="footline">
   </footer>
@@ -574,7 +771,7 @@ Cours11
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1743606338";
+          window.index_js_url="/searchindex.en.js?1743690728";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -587,12 +784,12 @@ Cours11
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1743606338" defer></script>
-        <script src="/js/lunr/lunr.min.js?1743606338" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1743606338" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1743606338" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1743606338" defer></script>
-        <script src="/js/search.js?1743606338" defer></script>
+        <script src="/js/auto-complete.js?1743690728" defer></script>
+        <script src="/js/lunr/lunr.min.js?1743690728" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1743690728" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1743690728" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1743690728" defer></script>
+        <script src="/js/search.js?1743690728" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -617,8 +814,6 @@ Cours11
             <li class="parent " data-nav-id="/semaine11/index.html"><a class="padding" href="/semaine11/index.html"><b>Semaine 11. </b>Les droits d&#39;accès</a><ul id="R-subsections-b4d497b6531d9f49241f6ec42b8e80f7" class="collapsible-menu">
             <li class="active " data-nav-id="/semaine11/cours/index.html"><a class="padding" href="/semaine11/cours/index.html">Les droits d&#39;accès</a></li>
             <li class="" data-nav-id="/semaine11/atelier/index.html"><a class="padding" href="/semaine11/atelier/index.html">ATELIER #10b: Gestion des droits d’accès aux fichiers</a></li></ul></li>
-            <li class="" data-nav-id="/semaine12/index.html"><a class="padding" href="/semaine12/index.html"><b>Semaine 12. </b>Titre</a><ul id="R-subsections-6098c004e594c3cbee6d88e41d11b10b" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine13/index.html"><a class="padding" href="/semaine13/index.html"><b>Semaine 13. </b>Titre</a><ul id="R-subsections-123a241fcf7a50602c7d825a9ccf5337" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
@@ -675,8 +870,8 @@ Cours11
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1743606338" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1743606338" defer></script>
-    <script src="/js/theme.js?1743606338" defer></script>
+    <script src="/js/clipboard.min.js?1743690728" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1743690728" defer></script>
+    <script src="/js/theme.js?1743690728" defer></script>
   </body>
 </html>

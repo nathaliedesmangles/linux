@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Les droits d&#39;accès :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/semaine11/cours/index.html</link>
-    <description>Introduction Linux étant un système multi-utilisateurs, il peut être nécessaire de donner des droits différents sur les fichiers pour les protéger:&#xA;Confidentialité&#xA;Protection contre les erreurs&#xA;…&#xA;Sur Linux, il existe deux types de droits: les droits standards et les ACL. Nous verrons uniquement les droits standards qui sont les plus utilisés.&#xA;De plus, c’est avec les droits que l’on peut rendre un fichier exécutable.&#xA;Description La commande suivante permet d’afficher les permissions sur les fichiers:</description>
+    <link>https://example.org/semaine11/cours/index.html</link>
+    <description>Linux est un système multi-utilisateurs où chaque fichier et dossier possède des permissions de sécurité. Ces permissions protègent les fichiers contre les accès non autorisés et les erreurs. Elles permettent notamment :&#xA;La confidentialité des données. La protection contre les modifications accidentelles. Le contrôle de l’exécution des fichiers Sur Linux, il existe deux types de permissions :&#xA;Les permissions standards et Les ACL (Access Control Lists). Nous étudierons uniquement les permissions standards, les plus utilisées.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/semaine11/cours/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/semaine11/cours/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
