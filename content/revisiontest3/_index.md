@@ -12,7 +12,7 @@ D'ici le test #3 (<span style="color:red;">lundi 14 avril</span>), revenez sur c
 # **Informations** 
 
 - **Date**: Lundi 14 avril
-- **Durée**: 1h40
+- **Durée**: 1h40, 20 questions dont 1 script
 - **Format**: Test sur Moodle
 - **Documentation permise**: 2 feuilles recto-verso (manuscrites ou imprimées)
 - **Matière**: Semaine #6 à #9 incluses (#7 uniquement des questions théoriques)
@@ -274,7 +274,7 @@ https?://[a-zA-Z0-9\.-]+\.[a-zA-Z]{2,4}(/\S*)?
 | Installer un groupe | `sudo dnf groupinstall "Nom du groupe"` |
 
 
-### **Shell interactif **dnf***
+### **Shell interactif *dnf***
 
 | Tâche | Commande |
 |-------|----------|
@@ -376,7 +376,7 @@ else
 fi
 ```
 
-## 5. **Lire des Entrées Clavier avec *read***
+## 5. **Lire des entrées clavier avec *read***
 
 - **Commande** : `read variable`
 - **Avec message** (option `-p`) :
@@ -388,9 +388,16 @@ read -p "Entrez votre prénom : " prenom
 ```bash
 echo "Entrez un nombre"
 read nb1
-echo "Entrez un autre nombre"
-read nb2
+read -p "Entrez un autre nombre: " nb2
 ```
+
+**Exemple d’utilisation sur une ligne** :
+```bash
+echo "Entrez trois nombre"
+read nb1 nb2 nb3
+red -p "Entrez 3 mots: " mot1 mot2 mot3
+```
+
 
 ## 6. **Notations et remarques Importantes**
 - Toujours entourer les variables par des guillemets `""` pour éviter les erreurs (espaces, chaîne vide).
