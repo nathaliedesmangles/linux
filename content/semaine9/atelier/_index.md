@@ -90,8 +90,9 @@ Vous devez créer **deux scripts** : `calcul.sh` et `calculV2.sh` qui permettent
 2. Modifiez le code du script `calculV2.sh` pour qu'il:
    - Vérifie le **nombre de paramètres**.
    - Si le nombre de paramètres est **différent de 3**, il doit demander à l’utilisateur de saisir 
-       - l’opérateur et les deux nombres séparés par un espace.
-3. Une fois les 3 valeurs obtenues, le script fait le calcul comme dans `calcul.sh`.
+       - l’opérateur et les deux nombres.
+       - Une fois les 3 données obtenues, le script fait le calcul comme dans `calcul.sh`, mais en utilisant les variables utilisateurs.
+   - Si le nombres de paramètres est **égal à 3**, le script fait le calcul comme dans `calcul.sh`.
 
 
 #### Remise

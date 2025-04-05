@@ -30,14 +30,14 @@ $ a=5 $ b=2 $ let &#34;c = a &#43; b&#34; $ echo $c 7Opérations et opérateurs
 La commande let permet d’exécuter des opérations arithmétiques simples.
 Exemple :
 $ a=5 $ b=2 $ let &#34;c = a &#43; b&#34; $ echo $c 7Opérations et opérateurs disponibles Addition : &#43; Soustraction : - Multiplication : * Division entière : / (les décimales sont ignorées) Puissance : ** Modulo : % (renvoie le reste de la division) Exemples :">
-    <meta itemprop="wordCount" content="974">
+    <meta itemprop="wordCount" content="997">
     <title>Variables, paramètres et if_then_else_fi :: 420-ZG4-MO LINUX</title>
     <link href="/semaine9/cours/index.xml" rel="alternate" type="application/rss+xml" title="Variables, paramètres et if_then_else_fi :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1743700635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743700635" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1743700635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743700635" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1743700635" rel="stylesheet">
-    <link href="/css/theme.min.css?1743700635" rel="stylesheet">
-    <link href="/css/format-html.min.css?1743700635" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1743871345" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743871345" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1743871345" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743871345" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1743871345" rel="stylesheet">
+    <link href="/css/theme.min.css?1743871345" rel="stylesheet">
+    <link href="/css/format-html.min.css?1743871345" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -217,23 +217,33 @@ $ a=5 $ b=2 $ let &#34;c = a &#43; b&#34; $ echo $c 7Opérations et opérateurs
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left"><code>test -z $variable</code></td>
+          <td style="text-align: left"><code>test -z &quot;$variable&quot;</code></td>
           <td style="text-align: left">Vrai si <code>$variable</code> est <strong>vide</strong>.</td>
       </tr>
       <tr>
-          <td style="text-align: left"><code>test -n $variable</code></td>
+          <td style="text-align: left"><code>test -n &quot;$variable&quot;</code></td>
           <td style="text-align: left">Vrai si <code>$variable</code> n&rsquo;est <strong>pas vide</strong>.</td>
       </tr>
       <tr>
-          <td style="text-align: left"><code>test $variable = &quot;chaine&quot;</code></td>
+          <td style="text-align: left"><code>test &quot;$variable&quot; = &quot;chaine&quot;</code></td>
           <td style="text-align: left">Vrai si <code>$variable</code> est <strong>identique à</strong> &ldquo;chaine&rdquo;.</td>
       </tr>
       <tr>
-          <td style="text-align: left"><code>test $variable != &quot;chaine&quot;</code></td>
+          <td style="text-align: left"><code>test &quot;$variable&quot; != &quot;chaine&quot;</code></td>
           <td style="text-align: left">Vrai si <code>$variable</code> est <strong>différent de</strong> &ldquo;chaine&rdquo;.</td>
       </tr>
   </tbody>
 </table>
+
+<details open class=" box cstyle notices note">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-circle"></i> 
+    Note
+  </summary>
+  <div class="box-content">
+<p>Il faut toujours entourer les variables par &quot;&quot; pour éviter les erreurs si la variable contient une chaine vide ou des espaces.</p>
+  </div>
+</details>
 <p><strong>Exemples</strong></p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ test -z <span style="color:#e6db74">&#34;</span>$a<span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>$ echo $?
@@ -331,8 +341,8 @@ Ajout de &ldquo;then&rdquo; après les conditions :</p>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Pas de paramètres &#34;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span></span></span></code></pre></div>
 <p><strong>Exécution du script</strong> : sans paramètres</p>
-<p><a href="#R-image-0c7a72c465552bd851dad6202b52e03c" class="lightbox-link"><img alt="Exemple 1 if" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple1_if.png?width=45vw" style=" height: auto; width: 45vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0c7a72c465552bd851dad6202b52e03c"><img alt="Exemple 1 if" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple1_if.png?width=45vw"></a></p>
+<p><a href="#R-image-826930b5331d1a3ad3525de805afdb54" class="lightbox-link"><img alt="Exemple 1 if" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple1_if.png?width=45vw" style=" height: auto; width: 45vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-826930b5331d1a3ad3525de805afdb54"><img alt="Exemple 1 if" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple1_if.png?width=45vw"></a></p>
 <h3 id="exemple-2-avec-comparaisons">Exemple 2: avec comparaisons</h3>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
@@ -356,8 +366,8 @@ Ajout de &ldquo;then&rdquo; après les conditions :</p>
   </div>
 </details>
 <p><strong>Exécution du script</strong> : en passant les paramètres</p>
-<p><a href="#R-image-dec1152924fb690f03936fb3e2136605" class="lightbox-link"><img alt="Exemple 2 if" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple2_if.png?width=45vw" style=" height: auto; width: 45vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-dec1152924fb690f03936fb3e2136605"><img alt="Exemple 2 if" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple2_if.png?width=45vw"></a></p>
+<p><a href="#R-image-a1624eef76e6e4412c590aef20444945" class="lightbox-link"><img alt="Exemple 2 if" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple2_if.png?width=45vw" style=" height: auto; width: 45vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a1624eef76e6e4412c590aef20444945"><img alt="Exemple 2 if" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple2_if.png?width=45vw"></a></p>
 <h3 id="exemple-3-tester-si-un-fichier-existe">Exemple 3: Tester si un fichier existe</h3>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
@@ -368,13 +378,13 @@ Ajout de &ldquo;then&rdquo; après les conditions :</p>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Le fichier n&#39;existe pas&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span></span></span></code></pre></div>
 <p><strong>Exécution du script</strong> : avec le fichier /etc/passwd en paramètre</p>
-<p><a href="#R-image-7e6c2b08bb89801746ddf0ab128657e7" class="lightbox-link"><img alt="Exemple 3 if" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple3_if.png?width=45vw" style=" height: auto; width: 45vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7e6c2b08bb89801746ddf0ab128657e7"><img alt="Exemple 3 if" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple3_if.png?width=45vw"></a></p>
+<p><a href="#R-image-7be48f43f61a32e531184ba851682c40" class="lightbox-link"><img alt="Exemple 3 if" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple3_if.png?width=45vw" style=" height: auto; width: 45vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7be48f43f61a32e531184ba851682c40"><img alt="Exemple 3 if" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple3_if.png?width=45vw"></a></p>
 <h2 id="lire-des-entrées-clavier-commande-read">Lire des entrées clavier (commande <em>read</em>)</h2>
 <h3 id="exemple-4-attendre-la-saisie-au-clavier-de-lutilisateur">Exemple 4: Attendre la saisie au clavier de l&rsquo;utilisateur</h3>
 <p>Pour lire une information saisie au clavier par l&rsquo;utilisateur on utilise la commande <code>read</code>:</p>
-<p><a href="#R-image-f00ee9f72f7a91e13f5bf9d4d3b590af" class="lightbox-link"><img alt="Exemple 4 read" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple4_read.png?width=45vw" style=" height: auto; width: 45vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f00ee9f72f7a91e13f5bf9d4d3b590af"><img alt="Exemple 4 read" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple4_read.png?width=45vw"></a></p>
+<p><a href="#R-image-b73b1b84a18c5641996c18e360582d80" class="lightbox-link"><img alt="Exemple 4 read" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple4_read.png?width=45vw" style=" height: auto; width: 45vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b73b1b84a18c5641996c18e360582d80"><img alt="Exemple 4 read" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple4_read.png?width=45vw"></a></p>
 <h3 id="exemple-5-demander-à-lutilisateur-de-saisir-2-nombres-au-clavier">Exemple 5: Demander à l&rsquo;utilisateur de saisir 2 nombres au clavier</h3>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
@@ -393,8 +403,8 @@ Ajout de &ldquo;then&rdquo; après les conditions :</p>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Les deux nombres sont égaux&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span></span></span></code></pre></div>
 <p><strong>Exécution du script</strong> :</p>
-<p><a href="#R-image-4e2ce38e20a58ac70ea81c168abefe1d" class="lightbox-link"><img alt="Exemple 5 read" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple5_read.png?width=40vw" style=" height: auto; width: 40vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4e2ce38e20a58ac70ea81c168abefe1d"><img alt="Exemple 5 read" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple5_read.png?width=40vw"></a></p>
+<p><a href="#R-image-12c3f1d11197c5b43379235485d1bd02" class="lightbox-link"><img alt="Exemple 5 read" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine9/cours/exemple5_read.png?width=40vw" style=" height: auto; width: 40vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-12c3f1d11197c5b43379235485d1bd02"><img alt="Exemple 5 read" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine9/cours/exemple5_read.png?width=40vw"></a></p>
 <h3 id="loption--p-de-la-commande-read">L&rsquo;option -p de la commande <em>read</em></h3>
 <p>L&rsquo;option <strong><code>-p</code></strong> de la commande <code>read</code> permet <strong>d&rsquo;afficher un message avant la saisie de l&rsquo;utilisateur</strong>, pour lui indiquer quoi entrer.</p>
 <p><strong>Syntaxe générale</strong> :</p>
@@ -428,7 +438,7 @@ Ajout de &ldquo;then&rdquo; après les conditions :</p>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1743700635";
+          window.index_js_url="/searchindex.en.js?1743871345";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -441,12 +451,12 @@ Ajout de &ldquo;then&rdquo; après les conditions :</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1743700635" defer></script>
-        <script src="/js/lunr/lunr.min.js?1743700635" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1743700635" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1743700635" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1743700635" defer></script>
-        <script src="/js/search.js?1743700635" defer></script>
+        <script src="/js/auto-complete.js?1743871345" defer></script>
+        <script src="/js/lunr/lunr.min.js?1743871345" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1743871345" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1743871345" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1743871345" defer></script>
+        <script src="/js/search.js?1743871345" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -469,6 +479,7 @@ Ajout de &ldquo;then&rdquo; après les conditions :</p>
             <li class="parent " data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>Variables de paramètres de script et structure IF</a><ul id="R-subsections-1f01a70d85857b8ac721c011c139e3af" class="collapsible-menu">
             <li class="active " data-nav-id="/semaine9/cours/index.html"><a class="padding" href="/semaine9/cours/index.html">Variables, paramètres et if_then_else_fi</a></li>
             <li class="" data-nav-id="/semaine9/atelier/index.html"><a class="padding" href="/semaine9/atelier/index.html">ATELIER #9: Tests, paramètres et opérations arithmétiques</a></li></ul></li>
+            <li class="" data-nav-id="/revisiontest3/index.html"><a class="padding" href="/revisiontest3/index.html">TEST #3 - Informations et notions à maitriser</a></li>
             <li class="" data-nav-id="/semaine10/index.html"><a class="padding" href="/semaine10/index.html"><b>Semaine 10. </b>Utilisateurs et groupes</a><ul id="R-subsections-f8cbb4e023a0fc71fa255b45db414bcc" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine11/index.html"><a class="padding" href="/semaine11/index.html"><b>Semaine 11. </b>Les droits d&#39;accès</a><ul id="R-subsections-b4d497b6531d9f49241f6ec42b8e80f7" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
@@ -527,8 +538,8 @@ Ajout de &ldquo;then&rdquo; après les conditions :</p>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1743700635" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1743700635" defer></script>
-    <script src="/js/theme.js?1743700635" defer></script>
+    <script src="/js/clipboard.min.js?1743871345" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1743871345" defer></script>
+    <script src="/js/theme.js?1743871345" defer></script>
   </body>
 </html>

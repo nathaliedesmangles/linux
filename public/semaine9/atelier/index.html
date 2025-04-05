@@ -18,14 +18,14 @@
     <meta property="og:type" content="website">
     <meta itemprop="name" content="ATELIER #9: Tests, paramètres et opérations arithmétiques :: 420-ZG4-MO LINUX">
     <meta itemprop="description" content="Objectifs de l’atelier Créer un script qui récupère des valeurs numériques passées en paramètre et effectue des opérations mathématiques Créer un script pour tester l’existence et les permissions d’un fichier. Créer des scripts permettant d’effectuer des opérations mathématiques à partir des arguments fournis. Atelier ATTENTIONVous devez utiliser uniquement les commandes vues en classe jusqu’à maintenant. L’utilisation de commandes non vues en classe entraînera la note de 0 pour cet exercice. Aucun point ne sera accordé sans la remise des scripts (fichiers .sh) demandés. Exercice 1 : Manipulation de valeurs numériques Créez un script param3.sh qui : Récupère les valeurs de trois paramètres en entrée.">
-    <meta itemprop="wordCount" content="537">
+    <meta itemprop="wordCount" content="556">
     <title>ATELIER #9: Tests, paramètres et opérations arithmétiques :: 420-ZG4-MO LINUX</title>
     <link href="/semaine9/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #9: Tests, paramètres et opérations arithmétiques :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1743700635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743700635" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1743700635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743700635" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1743700635" rel="stylesheet">
-    <link href="/css/theme.min.css?1743700635" rel="stylesheet">
-    <link href="/css/format-html.min.css?1743700635" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1743871345" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743871345" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1743871345" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743871345" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1743871345" rel="stylesheet">
+    <link href="/css/theme.min.css?1743871345" rel="stylesheet">
+    <link href="/css/format-html.min.css?1743871345" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -122,7 +122,7 @@
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine9/cours/index.html" title="Variables, paramètres et if_then_else_fi (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine10/index.html" title="Utilisateurs et groupes (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/revisiontest3/index.html" title="TEST #3 - Informations et notions à maitriser (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -268,12 +268,13 @@
 <li>Vérifie le <strong>nombre de paramètres</strong>.</li>
 <li>Si le nombre de paramètres est <strong>différent de 3</strong>, il doit demander à l’utilisateur de saisir
 <ul>
-<li>l’opérateur et les deux nombres séparés par un espace.</li>
+<li>l’opérateur et les deux nombres.</li>
+<li>Une fois les 3 données obtenues, le script fait le calcul comme dans <code>calcul.sh</code>, mais en utilisant les variables utilisateurs.</li>
 </ul>
 </li>
+<li>Si le nombres de paramètres est <strong>égal à 3</strong>, le script fait le calcul comme dans <code>calcul.sh</code>.</li>
 </ul>
 </li>
-<li>Une fois les 3 valeurs obtenues, le script fait le calcul comme dans <code>calcul.sh</code>.</li>
 </ol>
 <h4 id="remise-3">Remise</h4>
 <ul>
@@ -301,7 +302,7 @@
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1743700635";
+          window.index_js_url="/searchindex.en.js?1743871345";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -314,12 +315,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1743700635" defer></script>
-        <script src="/js/lunr/lunr.min.js?1743700635" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1743700635" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1743700635" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1743700635" defer></script>
-        <script src="/js/search.js?1743700635" defer></script>
+        <script src="/js/auto-complete.js?1743871345" defer></script>
+        <script src="/js/lunr/lunr.min.js?1743871345" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1743871345" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1743871345" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1743871345" defer></script>
+        <script src="/js/search.js?1743871345" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -342,6 +343,7 @@
             <li class="parent " data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>Variables de paramètres de script et structure IF</a><ul id="R-subsections-1f01a70d85857b8ac721c011c139e3af" class="collapsible-menu">
             <li class="" data-nav-id="/semaine9/cours/index.html"><a class="padding" href="/semaine9/cours/index.html">Variables, paramètres et if_then_else_fi</a></li>
             <li class="active " data-nav-id="/semaine9/atelier/index.html"><a class="padding" href="/semaine9/atelier/index.html">ATELIER #9: Tests, paramètres et opérations arithmétiques</a></li></ul></li>
+            <li class="" data-nav-id="/revisiontest3/index.html"><a class="padding" href="/revisiontest3/index.html">TEST #3 - Informations et notions à maitriser</a></li>
             <li class="" data-nav-id="/semaine10/index.html"><a class="padding" href="/semaine10/index.html"><b>Semaine 10. </b>Utilisateurs et groupes</a><ul id="R-subsections-f8cbb4e023a0fc71fa255b45db414bcc" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine11/index.html"><a class="padding" href="/semaine11/index.html"><b>Semaine 11. </b>Les droits d&#39;accès</a><ul id="R-subsections-b4d497b6531d9f49241f6ec42b8e80f7" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
@@ -400,8 +402,8 @@
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1743700635" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1743700635" defer></script>
-    <script src="/js/theme.js?1743700635" defer></script>
+    <script src="/js/clipboard.min.js?1743871345" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1743871345" defer></script>
+    <script src="/js/theme.js?1743871345" defer></script>
   </body>
 </html>

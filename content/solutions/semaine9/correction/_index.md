@@ -1,8 +1,69 @@
 +++
-title = "Grilles de correction"
+title = "Critères de correction"
 weight = 1791
 draft = true
 +++
+
+
+## Exercice 1: param3.sh (/25)
+
+1. **Code du script** : 
+   - Test sur le nombre de paramètres effectué avec la bonne syntaxe
+   - Détermination du plus grand et plus petit nombre entre les deux premiers, fait de façon concise (`if else`)
+   - Utilisation des variables de paramètres `$#`, `$1`, `$2` et `$3`
+      - Si les nombres sont saisis au clavier par l'utilisateur ==> variables utilisateur bien utilisées
+   - Calculs effectués avec `let`
+
+2. **Résultat de l'exécution** : 
+   - Présent
+   - Respect de l'affichage
+   - Résultat final attendu
+
+
+## Exercice 2: testFichier.sh (/25)
+
+1. **Code du script** : 
+   - Vérification du type de fichier (avec `if else`)
+   - Vérification des droits d'accès (avec `if elif`)
+
+2. **Résultat de l'exécution**: 
+   - Présent
+   - Respect de l'affichage
+   - Résultat final attendu
+
+
+## Exercice 3-1: calcul.sh (/25)
+
+1. **Code du script** : 
+   - Test sur le nombre de paramètres effectué avec la bonne syntaxe (`if else`).
+   - Gestion de la sortie (`exit 1`) si nombre de paramètres est différent de 3.
+   - Utilisation des variables de paramètres `$#`, `$1`, `$2` et `$3`
+   - Traitement des différentes opérations (`if elif`)
+   - Calculs effectués avec `let`
+
+2. **Résultat de l'exécution** :
+   - Présent
+   - Présence des 3 opérations (+, - et ^)
+   - Respect de l'affichage
+   - Résultat final attendu
+
+## Exercice 3-2: calculV2.sh (/25)
+
+1. **Code du script** : 
+   - Test sur le nombre de paramètres effectué avec la bonne syntaxe (`if else`).
+   - Gestion dans le `else` si le nombre de paramètres est différent de 3.
+      - **Cas $3 = 3** ==> Utilisation des variables de paramètres `$#`, `$1`, `$2` et `$3`
+      - **Cas $# != 3** ==> Saisie au clavier et stockage dans des variables utilisateur. 
+   - Traitement des différentes opérations (`if elif`)
+   - Calculs effectués avec `let`
+
+2. **Résultat de l'exécution** :
+   - Présent
+   - Présence des 2 cas  possibles (3 paramètres, 0 paramètre)
+   - Respect de l'affichage
+   - Résultat final attendu
+
+<!--
 
 ## **Exercice 1** : Manipulation de valeurs numériques
 
@@ -17,6 +78,7 @@ draft = true
 
 **Total des points : /30** 
 
+<div style="page-break-after: always;"></div>
 ---
 
 ## **Exercice 2** : Tests sur les fichiers 
@@ -38,6 +100,7 @@ draft = true
 | - Script fonctionne correctement dans tous les cas (fichier absent, fichier non standard, etc.) | **2**  |  
 | **Total**                                                 | **15**              |                  
 
+<div style="page-break-after: always;"></div>
 ---
 
 ## **Exercice 3** : Partie 1 (calcul.sh)   
@@ -53,6 +116,7 @@ Voici la grille de correction remaniée avec trois niveaux :
 
 **Total des points : /25** 
 
+<div style="page-break-after: always;"></div>
 
 ## **Exercice 3** : Partie 2 (calculV2.sh)   
 
@@ -63,5 +127,6 @@ Voici la grille de correction remaniée avec trois niveaux :
 | **Saisie des valeurs en cas de paramètres insuffisants** | La saisie des valeurs manquantes est demandée avec un message explicite et convivial. | La saisie fonctionne mais le message manque de clarté ou de convivialité. | La saisie ne fonctionne pas ou n’est pas implémentée. |
 | **Calcul et affichage du résultat** | Le calcul s'effectue correctement avec `let` | Le calcul fonctionne mais pas fait avec `let`. | Le calcul échoue ou donne des résultats incorrects. |
 
-
 **Total des points : /30** 
+
+-->

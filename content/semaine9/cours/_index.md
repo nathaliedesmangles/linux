@@ -68,10 +68,15 @@ La commande `test` permet de vérifier des conditions, et le résultat est stock
 
 | **Commande**                     | **Description**                               |
 |----------------------------------|-----------------------------------------------|
-| `test -z $variable`              | Vrai si `$variable` est **vide**.                 |
-| `test -n $variable`              | Vrai si `$variable` n'est **pas vide**.           |
-| `test $variable = "chaine"`      | Vrai si `$variable` est **identique à** "chaine". |
-| `test $variable != "chaine"`     | Vrai si `$variable` est **différent de** "chaine".|
+| `test -z "$variable"`              | Vrai si `$variable` est **vide**.                 |
+| `test -n "$variable"`              | Vrai si `$variable` n'est **pas vide**.           |
+| `test "$variable" = "chaine"`      | Vrai si `$variable` est **identique à** "chaine". |
+| `test "$variable" != "chaine"`     | Vrai si `$variable` est **différent de** "chaine".|
+
+{{% notice style="note" title="Note" %}}
+ Il faut toujours entourer les variables par "" pour éviter les erreurs si la variable contient une chaine vide ou des espaces.
+{{% /notice %}}
+
 
 **Exemples**
 ```bash
@@ -89,7 +94,6 @@ $ test a != "dcba"
 $ echo $?
 0		# Vrai
 ```
-
 
 {{% notice style="note" title="Note" %}}
 Contrairement aux nombres, avec les chaînes de caractères les symboles `=` (égal) et `!=` (différent) sont utilisés comme opérateur d'égalité et d'inégalité.

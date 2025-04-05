@@ -5,31 +5,31 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Les utilisateurs Types de comptes Il existe quatre types de comptes sous Linux :
-root : Le super-utilisateur qui possède tous les droits (UID 0). nobody : Un compte très restreint utilisé pour les personnes non authentifiées (UID 65534). Comptes systèmes et d’application : Utilisés pour exécuter certaines applications et services (démons) avec des permissions limitées. Cela réduit les risques si une faille de sécurité est exploitée. Leurs UID se situent entre 1 et 999. Comptes standards : Destinés aux utilisateurs humains (UID supérieur à 1000). UID et GIDUID (User ID) : identifiant unique d’un utilisateur. GID (Group ID) : identifiant unique d’un groupe. Création d’un utilisateur (commande useradd) La commande de création d’un utilisateur est useradd. Vous devez disposer des droits d’administrateur pour exécuter cette commande. Elle prend au moins un paramètre : le nom de l’utilisateur à créer. Exemple : création de l’utilisateur bob :">
+    <meta name="description" content="Qu’est-ce qu’un utilisateur qu’est-ce qu’un groupe ? Utilisateur : Une entité (*personne ou processus) ayant un compte sur le système, identifiée par un UID (User ID). Chaque utilisateur possède des permissions et des droits spécifiques.
+Groupe : Un ensemble d’utilisateurs qui partagent les mêmes permissions sur des fichiers, dossiers ou ressources du système. Cela permet d’accorder des droits de manière collective plutôt qu’individuellement. Chaque groupe possède un GUID (Group ID).">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Utilisateurs et groupes :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Les utilisateurs Types de comptes Il existe quatre types de comptes sous Linux :
-root : Le super-utilisateur qui possède tous les droits (UID 0). nobody : Un compte très restreint utilisé pour les personnes non authentifiées (UID 65534). Comptes systèmes et d’application : Utilisés pour exécuter certaines applications et services (démons) avec des permissions limitées. Cela réduit les risques si une faille de sécurité est exploitée. Leurs UID se situent entre 1 et 999. Comptes standards : Destinés aux utilisateurs humains (UID supérieur à 1000). UID et GIDUID (User ID) : identifiant unique d’un utilisateur. GID (Group ID) : identifiant unique d’un groupe. Création d’un utilisateur (commande useradd) La commande de création d’un utilisateur est useradd. Vous devez disposer des droits d’administrateur pour exécuter cette commande. Elle prend au moins un paramètre : le nom de l’utilisateur à créer. Exemple : création de l’utilisateur bob :">
+    <meta name="twitter:description" content="Qu’est-ce qu’un utilisateur qu’est-ce qu’un groupe ? Utilisateur : Une entité (*personne ou processus) ayant un compte sur le système, identifiée par un UID (User ID). Chaque utilisateur possède des permissions et des droits spécifiques.
+Groupe : Un ensemble d’utilisateurs qui partagent les mêmes permissions sur des fichiers, dossiers ou ressources du système. Cela permet d’accorder des droits de manière collective plutôt qu’individuellement. Chaque groupe possède un GUID (Group ID).">
     <meta property="og:url" content="https://example.org/semaine10/cours/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="Utilisateurs et groupes :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Les utilisateurs Types de comptes Il existe quatre types de comptes sous Linux :
-root : Le super-utilisateur qui possède tous les droits (UID 0). nobody : Un compte très restreint utilisé pour les personnes non authentifiées (UID 65534). Comptes systèmes et d’application : Utilisés pour exécuter certaines applications et services (démons) avec des permissions limitées. Cela réduit les risques si une faille de sécurité est exploitée. Leurs UID se situent entre 1 et 999. Comptes standards : Destinés aux utilisateurs humains (UID supérieur à 1000). UID et GIDUID (User ID) : identifiant unique d’un utilisateur. GID (Group ID) : identifiant unique d’un groupe. Création d’un utilisateur (commande useradd) La commande de création d’un utilisateur est useradd. Vous devez disposer des droits d’administrateur pour exécuter cette commande. Elle prend au moins un paramètre : le nom de l’utilisateur à créer. Exemple : création de l’utilisateur bob :">
+    <meta property="og:description" content="Qu’est-ce qu’un utilisateur qu’est-ce qu’un groupe ? Utilisateur : Une entité (*personne ou processus) ayant un compte sur le système, identifiée par un UID (User ID). Chaque utilisateur possède des permissions et des droits spécifiques.
+Groupe : Un ensemble d’utilisateurs qui partagent les mêmes permissions sur des fichiers, dossiers ou ressources du système. Cela permet d’accorder des droits de manière collective plutôt qu’individuellement. Chaque groupe possède un GUID (Group ID).">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="Utilisateurs et groupes :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Les utilisateurs Types de comptes Il existe quatre types de comptes sous Linux :
-root : Le super-utilisateur qui possède tous les droits (UID 0). nobody : Un compte très restreint utilisé pour les personnes non authentifiées (UID 65534). Comptes systèmes et d’application : Utilisés pour exécuter certaines applications et services (démons) avec des permissions limitées. Cela réduit les risques si une faille de sécurité est exploitée. Leurs UID se situent entre 1 et 999. Comptes standards : Destinés aux utilisateurs humains (UID supérieur à 1000). UID et GIDUID (User ID) : identifiant unique d’un utilisateur. GID (Group ID) : identifiant unique d’un groupe. Création d’un utilisateur (commande useradd) La commande de création d’un utilisateur est useradd. Vous devez disposer des droits d’administrateur pour exécuter cette commande. Elle prend au moins un paramètre : le nom de l’utilisateur à créer. Exemple : création de l’utilisateur bob :">
-    <meta itemprop="wordCount" content="1053">
+    <meta itemprop="description" content="Qu’est-ce qu’un utilisateur qu’est-ce qu’un groupe ? Utilisateur : Une entité (*personne ou processus) ayant un compte sur le système, identifiée par un UID (User ID). Chaque utilisateur possède des permissions et des droits spécifiques.
+Groupe : Un ensemble d’utilisateurs qui partagent les mêmes permissions sur des fichiers, dossiers ou ressources du système. Cela permet d’accorder des droits de manière collective plutôt qu’individuellement. Chaque groupe possède un GUID (Group ID).">
+    <meta itemprop="wordCount" content="1139">
     <title>Utilisateurs et groupes :: 420-ZG4-MO LINUX</title>
     <link href="/semaine10/cours/index.xml" rel="alternate" type="application/rss+xml" title="Utilisateurs et groupes :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1743700635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743700635" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1743700635" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743700635" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1743700635" rel="stylesheet">
-    <link href="/css/theme.min.css?1743700635" rel="stylesheet">
-    <link href="/css/format-html.min.css?1743700635" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1743871345" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1743871345" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1743871345" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1743871345" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1743871345" rel="stylesheet">
+    <link href="/css/theme.min.css?1743871345" rel="stylesheet">
+    <link href="/css/format-html.min.css?1743871345" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -92,6 +92,7 @@ root : Le super-utilisateur qui possède tous les droits (UID 0). nobody : Un co
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
+    <li><a href="#quest-ce-quun-utilisateur-quest-ce-quun-groupe-">Qu&rsquo;est-ce qu&rsquo;un utilisateur qu&rsquo;est-ce qu&rsquo;un groupe ?</a></li>
     <li><a href="#les-utilisateurs">Les utilisateurs</a>
       <ul>
         <li><a href="#types-de-comptes">Types de comptes</a></li>
@@ -151,6 +152,24 @@ root : Le super-utilisateur qui possède tous les droits (UID 0). nobody : Un co
 
 <h1 id="utilisateurs-et-groupes">Utilisateurs et groupes</h1>
 
+<h2 id="quest-ce-quun-utilisateur-quest-ce-quun-groupe-">Qu&rsquo;est-ce qu&rsquo;un utilisateur qu&rsquo;est-ce qu&rsquo;un groupe ?</h2>
+<ul>
+<li>
+<p><strong>Utilisateur</strong> : Une entité (*<strong>personne ou processus</strong>) ayant un compte sur le système, identifiée par un <em><strong>UID</strong></em> (<em>User ID</em>). Chaque utilisateur possède des <strong>permissions</strong> et des <strong>droits spécifiques</strong>.</p>
+</li>
+<li>
+<p><strong>Groupe</strong> : Un <strong>ensemble d’utilisateurs qui partagent les mêmes permissions</strong> sur des fichiers, dossiers ou ressources du système. Cela permet d’accorder des droits de manière collective plutôt qu’individuellement. Chaque groupe possède un <em><strong>GUID</strong></em> (<em>Group ID</em>).</p>
+</li>
+</ul>
+<p><strong>Groupe principal</strong></p>
+<ul>
+<li>Chaque utilisateur appartient à <strong>un groupe principal</strong> (défini dans <code>/etc/passwd</code>).</li>
+<li>Par défaut, tous les fichiers créés par un utilisateur appartiennent à ce groupe.</li>
+</ul>
+<p><strong>Groupes secondaires</strong></p>
+<ul>
+<li>Un utilisateur peut appartenir à <strong>plusieurs groupes secondaires</strong>, ce qui lui permet d’hériter d’autres permissions.</li>
+</ul>
 <h2 id="les-utilisateurs">Les utilisateurs</h2>
 <h3 id="types-de-comptes">Types de comptes</h3>
 <p>Il existe quatre types de comptes sous Linux :</p>
@@ -160,19 +179,6 @@ root : Le super-utilisateur qui possède tous les droits (UID 0). nobody : Un co
 <li><strong>Comptes systèmes et d&rsquo;application</strong> : Utilisés pour exécuter certaines applications et services (démons) avec des permissions limitées. Cela réduit les risques si une faille de sécurité est exploitée. Leurs <em><strong>UID</strong></em> se situent <strong>entre 1 et 999</strong>.</li>
 <li><strong>Comptes standards</strong> : Destinés aux utilisateurs humains (<em><strong>UID</strong></em> <strong>supérieur à 1000</strong>).</li>
 </ul>
-
-<details open class=" box cstyle notices info">
-  <summary class="box-label" tabindex="-1">
-    <i class="fa-fw fas fa-info-circle"></i> 
-    UID et GID
-  </summary>
-  <div class="box-content">
-<ul>
-<li><strong>UID (<em>User ID</em>)</strong> : identifiant unique d&rsquo;un utilisateur.</li>
-<li><strong>GID (<em>Group ID</em>)</strong> : identifiant unique d&rsquo;un groupe.</li>
-</ul>
-  </div>
-</details>
 <h3 id="création-dun-utilisateur-commande-useradd">Création d&rsquo;un utilisateur (commande <em>useradd</em>)</h3>
 <ul>
 <li>La commande de création d&rsquo;un utilisateur est <strong><code>useradd</code></strong>.</li>
@@ -346,12 +352,12 @@ Le mot de passe est stocké sous forme chiffrée dans <strong><code>/etc/shadow<
       <tr>
           <td style="text-align: left"><code>usermod -d /nouveau_repertoire_personnel &lt;utilisateur&gt;</code></td>
           <td style="text-align: left">Changer le répertoire personnel</td>
-          <td style="text-align: left"><code>usermod -d /home/user2 user1</code></td>
+          <td style="text-align: left"><code>usermod -d /home/ndesmangles bob</code></td>
       </tr>
       <tr>
           <td style="text-align: left"><code>usermod -s /chemin_shell &lt;utilisateur&gt;</code></td>
           <td style="text-align: left">Modifier le shell par défaut</td>
-          <td style="text-align: left"><code>usermod -s /bin/tcsh user1</code></td>
+          <td style="text-align: left"><code>usermod -s /bin/tcsh bob</code></td>
       </tr>
       <tr>
           <td style="text-align: left"><code>usermod -g nouveauGroupe &lt;utilisateur&gt;</code></td>
@@ -361,12 +367,12 @@ Le mot de passe est stocké sous forme chiffrée dans <strong><code>/etc/shadow<
       <tr>
           <td style="text-align: left"><code>usermod -L &lt;utilisateur&gt;</code></td>
           <td style="text-align: left">Désactiver un utilisateur</td>
-          <td style="text-align: left"><code>usermod -L user1</code></td>
+          <td style="text-align: left"><code>usermod -L bob</code></td>
       </tr>
       <tr>
           <td style="text-align: left"><code>usermod -U &lt;utilisateur&gt;</code></td>
           <td style="text-align: left">Réactiver un utilisateur</td>
-          <td style="text-align: left"><code>usermod -U user1</code></td>
+          <td style="text-align: left"><code>usermod -U bob</code></td>
       </tr>
   </tbody>
 </table>
@@ -418,7 +424,6 @@ Le mot de passe est stocké sous forme chiffrée dans <strong><code>/etc/shadow<
 <hr>
 <h2 id="les-groupes">Les groupes</h2>
 <ul>
-<li>Un utilisateur peut appartenir à <strong>plusieurs groupes</strong>.</li>
 <li>Le <strong>groupe principal</strong> d&rsquo;un utilisateur est utilisé lorsqu&rsquo;il crée des fichiers : <span style="color:red;">ce groupe devient propriétaire des fichiers créés</span> par l&rsquo;utilisateur.</li>
 <li>L&rsquo;appartenance à d&rsquo;autres groupes <strong>définit les permissions</strong> d&rsquo;accès aux fichiers.</li>
 <li>Les groupes sont enregistrés dans <strong><code>/etc/group</code></strong>.</li>
@@ -458,7 +463,7 @@ Le mot de passe est stocké sous forme chiffrée dans <strong><code>/etc/shadow<
       <tr>
           <td style="text-align: left"><code>groupmod -n nouveauNom ancienNom</code></td>
           <td style="text-align: left">Changer le nom d&rsquo;un groupe</td>
-          <td style="text-align: left"><code>groupmod -n newName oldName</code></td>
+          <td style="text-align: left"><code>groupmod -n principal2 principal1</code></td>
       </tr>
       <tr>
           <td style="text-align: left"><code>groupmod -g nouveauGID nomGroupe</code></td>
@@ -559,7 +564,7 @@ Le mot de passe est stocké sous forme chiffrée dans <strong><code>/etc/shadow<
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1743700635";
+          window.index_js_url="/searchindex.en.js?1743871345";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -572,12 +577,12 @@ Le mot de passe est stocké sous forme chiffrée dans <strong><code>/etc/shadow<
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1743700635" defer></script>
-        <script src="/js/lunr/lunr.min.js?1743700635" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1743700635" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1743700635" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1743700635" defer></script>
-        <script src="/js/search.js?1743700635" defer></script>
+        <script src="/js/auto-complete.js?1743871345" defer></script>
+        <script src="/js/lunr/lunr.min.js?1743871345" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1743871345" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1743871345" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1743871345" defer></script>
+        <script src="/js/search.js?1743871345" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -598,6 +603,7 @@ Le mot de passe est stocké sous forme chiffrée dans <strong><code>/etc/shadow<
             <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim, les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>Variables de paramètres de script et structure IF</a><ul id="R-subsections-1f01a70d85857b8ac721c011c139e3af" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest3/index.html"><a class="padding" href="/revisiontest3/index.html">TEST #3 - Informations et notions à maitriser</a></li>
             <li class="parent " data-nav-id="/semaine10/index.html"><a class="padding" href="/semaine10/index.html"><b>Semaine 10. </b>Utilisateurs et groupes</a><ul id="R-subsections-f8cbb4e023a0fc71fa255b45db414bcc" class="collapsible-menu">
             <li class="active " data-nav-id="/semaine10/cours/index.html"><a class="padding" href="/semaine10/cours/index.html">Utilisateurs et groupes</a></li>
             <li class="" data-nav-id="/semaine10/atelier/index.html"><a class="padding" href="/semaine10/atelier/index.html">ATELIER #10a: Utilisateurs et groupes</a></li></ul></li>
@@ -658,8 +664,8 @@ Le mot de passe est stocké sous forme chiffrée dans <strong><code>/etc/shadow<
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1743700635" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1743700635" defer></script>
-    <script src="/js/theme.js?1743700635" defer></script>
+    <script src="/js/clipboard.min.js?1743871345" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1743871345" defer></script>
+    <script src="/js/theme.js?1743871345" defer></script>
   </body>
 </html>

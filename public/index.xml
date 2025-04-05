@@ -78,6 +78,13 @@
       <description>Plan de la leçon Théorie : Lundi 31 mars&#xA;Les opérations mathématiques dans Linux (bash) Les variables de paramètres Les tests sur les fichiers La structure conditionnelle if…then…else…fi Atelier 9: Jeudi 3 avril.&#xA;test sur les valeurs numériques tests sur les fichiers opération arithmétique et test sur les chaines</description>
     </item>
     <item>
+      <title>TEST #3 - Informations et notions à maitriser</title>
+      <link>https://example.org/revisiontest3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/revisiontest3/index.html</guid>
+      <description>Revenez me voir&#xD;D’ici le test #3 (lundi 14 avril), revenez sur cette page fréquemment, pour prendre connaissance des ajouts et/ou modifications.&#xA;Ne vous limitez pas à cette page pour vous préparer au test #3, car certaines notions du cours ne s’y trouvent pas.&#xA;Informations Date: Lundi 14 avril Durée: 1h40 Format: Test sur Moodle Documentation permise: 2 feuilles recto-verso (manuscrites ou imprimées) Matière: Semaine #6 à #9 incluses (#7 uniquement des questions théoriques) Semaine 6: Expressions régulières (regexp) Commandes de base Commande Description cat Affiche le contenu d’un fichier sed Édite un fichier en ligne (remplacements, suppressions…) grep Recherche des lignes contenant un motif egrep Version améliorée de grep, accepte les regex étendues Motifs de base Motif Signification ab Chaîne exacte “ab” . N’importe quel caractère ^ Début d’une ligne $ Fin d’une ligne Quantificateurs Symbole Signification ? 0 ou 1 fois + 1 ou plusieurs fois * 0 ou plusieurs fois {n} Exactement n fois {n,m} De n à m fois {n,} Au moins n fois Ensembles de caractères Syntaxe Signification [abc] Un seul caractère : a, b ou c [^abc] Tout sauf a, b ou c [a-z] Lettre minuscule [A-Z] Lettre majuscule [0-9] Chiffre [a-zA-Z0-9] Alphanumérique ⚠️ Un ensemble correspond à un seul caractère.</description>
+    </item>
+    <item>
       <title>Utilisateurs et groupes</title>
       <link>https://example.org/semaine10/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

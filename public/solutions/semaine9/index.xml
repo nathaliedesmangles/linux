@@ -8,11 +8,11 @@
     <language>en-us</language>
     <atom:link href="http://localhost:1313/solutions/semaine9/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Grilles de correction</title>
+      <title>Critères de correction</title>
       <link>http://localhost:1313/solutions/semaine9/correction/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/solutions/semaine9/correction/index.html</guid>
-      <description>Exercice 1 : Manipulation de valeurs numériques Critères d’évaluation Excellent (5) Satisfaisant (3) Insuffisant (0) Test sur le nombre de paramètres Validation correcte avec message d’erreur approprié en cas d’absence. Validation partielle ou imprécise. Pas de vérification effectuée. Détermination du plus grand et du plus petit Détermination précise avec prise en compte des valeurs égales. Comparaison correcte mais simpliste. Comparaison incorrecte ou manquante. Utilisation des variables $1, $2 et $3 (1er cas) — Utilisation de variables pour stocker les entrées (2e cas) Utilisation correcte et efficace des paramètres positionnels. — Utilisation de trois variables locales nommées correctement. Utilisation partielle ou incorrecte. — Utilisation de variables mais sans clarté. Paramètres non utilisés ou mal manipulés. — Variables non utilisées ou mal nommées. Calcul avec let Calcul effectué correctement avec let dans les deux cas. Utilisation correcte mais syntaxe perfectible. Calcul incorrect ou usage de let absent. Respect de l’affichage Affichage conforme au format demandé avec mise en forme soignée. Affichage correct mais imprécis ou incomplet. Affichage incorrect ou absent. Résultat final attendu Résultat précis. Résultat correct mais manque de précision. Résultat incorrect ou non affiché. Total des points : /30</description>
+      <description>Exercice 1: param3.sh (/25) Code du script :&#xA;Test sur le nombre de paramètres effectué avec la bonne syntaxe Détermination du plus grand et plus petit nombre entre les deux premiers, fait de façon concise (if else) Utilisation des variables de paramètres $#, $1, $2 et $3 Si les nombres sont saisis au clavier par l’utilisateur ==&gt; variables utilisateur bien utilisées Calculs effectués avec let Résultat de l’exécution :&#xA;Présent Respect de l’affichage Résultat final attendu Exercice 2: testFichier.sh (/25) Code du script :</description>
     </item>
   </channel>
 </rss>

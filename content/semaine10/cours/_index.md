@@ -3,6 +3,21 @@ title = "Utilisateurs et groupes"
 weight = 101
 +++
 
+## Qu'est-ce qu'un utilisateur qu'est-ce qu'un groupe ?
+
+- **Utilisateur** : Une entité (***personne ou processus**) ayant un compte sur le système, identifiée par un ***UID*** (*User ID*). Chaque utilisateur possède des **permissions** et des **droits spécifiques**.
+
+- **Groupe** : Un **ensemble d’utilisateurs qui partagent les mêmes permissions** sur des fichiers, dossiers ou ressources du système. Cela permet d’accorder des droits de manière collective plutôt qu’individuellement. Chaque groupe possède un ***GUID*** (*Group ID*).
+
+**Groupe principal**
+
+- Chaque utilisateur appartient à **un groupe principal** (défini dans `/etc/passwd`).
+- Par défaut, tous les fichiers créés par un utilisateur appartiennent à ce groupe.
+
+**Groupes secondaires**
+
+- Un utilisateur peut appartenir à **plusieurs groupes secondaires**, ce qui lui permet d’hériter d’autres permissions.
+
 ## Les utilisateurs
 
 ### Types de comptes
@@ -13,12 +28,6 @@ Il existe quatre types de comptes sous Linux :
 - **nobody** : Un compte très restreint utilisé pour les personnes non authentifiées (***UID 65534***).
 - **Comptes systèmes et d'application** : Utilisés pour exécuter certaines applications et services (démons) avec des permissions limitées. Cela réduit les risques si une faille de sécurité est exploitée. Leurs ***UID*** se situent **entre 1 et 999**.
 - **Comptes standards** : Destinés aux utilisateurs humains (***UID*** **supérieur à 1000**).
-
-
-{{% notice style="info" title="UID et GID" %}}
-- **UID (*User ID*)** : identifiant unique d'un utilisateur.
-- **GID (*Group ID*)** : identifiant unique d'un groupe.
-{{% /notice %}}
 
 ### Création d'un utilisateur (commande *useradd*)
 
@@ -111,11 +120,11 @@ La commande **`usermod`** permet de modifier un utilisateur existant.
 
 | Commande | Description | Exemple |
 |----------|------------|---------|
-| `usermod -d /nouveau_repertoire_personnel <utilisateur>` | Changer le répertoire personnel | `usermod -d /home/user2 user1` |
-| `usermod -s /chemin_shell <utilisateur>` | Modifier le shell par défaut | `usermod -s /bin/tcsh user1` |
+| `usermod -d /nouveau_repertoire_personnel <utilisateur>` | Changer le répertoire personnel | `usermod -d /home/ndesmangles bob` |
+| `usermod -s /chemin_shell <utilisateur>` | Modifier le shell par défaut | `usermod -s /bin/tcsh bob` |
 | `usermod -g nouveauGroupe <utilisateur>` | Modifier le groupe principal | `usermod -g root bob` |
-| `usermod -L <utilisateur>` | Désactiver un utilisateur | `usermod -L user1` |
-| `usermod -U <utilisateur>` | Réactiver un utilisateur | `usermod -U user1` |
+| `usermod -L <utilisateur>` | Désactiver un utilisateur | `usermod -L bob` |
+| `usermod -U <utilisateur>` | Réactiver un utilisateur | `usermod -U bob` |
 
 {{% notice style="note" title="Notez..." %}}
 - Les **chemins absolus** (`/`) pour les options `-d` et `-s` de la commande `usermod`.
@@ -136,7 +145,6 @@ La commande **`usermod`** permet de modifier un utilisateur existant.
 
 ## Les groupes
 
-- Un utilisateur peut appartenir à **plusieurs groupes**.
 - Le **groupe principal** d'un utilisateur est utilisé lorsqu'il crée des fichiers : <span style="color:red;">ce groupe devient propriétaire des fichiers créés</span> par l'utilisateur.
 - L'appartenance à d'autres groupes **définit les permissions** d'accès aux fichiers.
 - Les groupes sont enregistrés dans **`/etc/group`**.
@@ -155,7 +163,7 @@ La commande **`usermod`** permet de modifier un utilisateur existant.
 | `groupadd nomGroupe` | Créer un groupe | `groupadd principal1` |
 | `groupadd -g GID nomGroupe` | Créer un groupe avec un GID spécifique | `groupadd -g 1560 monGroupe` |
 | `groupdel nomGroupe` | Supprimer un groupe | `groupdel principal1` |
-| `groupmod -n nouveauNom ancienNom` | Changer le nom d'un groupe | `groupmod -n newName oldName` |
+| `groupmod -n nouveauNom ancienNom` | Changer le nom d'un groupe | `groupmod -n principal2 principal1` |
 | `groupmod -g nouveauGID nomGroupe` | Changer le GID d'un groupe | `groupmod -g 2000 nomGroupe` |
 
 
