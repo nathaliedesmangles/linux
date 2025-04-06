@@ -16,6 +16,6 @@ weight = 110
   - Modification du groupe propriétaire d'un fichier ou répertoire
   - Le droit d'exécution
 
-- **Atelier : Vendredi 18 avril**.
+- **Atelier : Mardi 22 avril**.
   - Gestion des droits d'accès sur un fichier ou répertoire
 

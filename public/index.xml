@@ -89,14 +89,14 @@
       <link>https://example.org/semaine10/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine10/index.html</guid>
-      <description>Plan de la leçon Théorie : Lundi 7 avril&#xA;Gestion des utilisateurs Gestion des groupes Atelier : Vendredi 11 avril.&#xA;Création et gestion d’utilisateur Création et gestion de groupes</description>
+      <description>Plan de la leçon Théorie : Lundi 7 avril&#xA;Gestion des utilisateurs Gestion des groupes Atelier #10a: Mardi 22 avril.&#xA;Création et gestion d’utilisateur Création et gestion de groupes</description>
     </item>
     <item>
       <title>Les droits d&#39;accès</title>
       <link>https://example.org/semaine11/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine11/index.html</guid>
-      <description>Plan de la leçon Théorie : Lundi 14 avril&#xA;Les permissions sur les fichiers Modification des permissions (2 méthodes) Symbolique Octale Modification de l’utilisateur propriétaire d’un fichier ou répertoire Modification du groupe propriétaire d’un fichier ou répertoire Le droit d’exécution Atelier : Vendredi 18 avril.&#xA;Gestion des droits d’accès sur un fichier ou répertoire</description>
+      <description>Plan de la leçon Théorie : Lundi 14 avril&#xA;Les permissions sur les fichiers Modification des permissions (2 méthodes) Symbolique Octale Modification de l’utilisateur propriétaire d’un fichier ou répertoire Modification du groupe propriétaire d’un fichier ou répertoire Le droit d’exécution Atelier : Mardi 22 avril.&#xA;Gestion des droits d’accès sur un fichier ou répertoire</description>
     </item>
     <item>
       <title>WSL installation et manipulation (Ubuntu, VS Code)</title>

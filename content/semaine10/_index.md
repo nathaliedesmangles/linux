@@ -11,7 +11,7 @@ weight = 100
   - Gestion des utilisateurs
   - Gestion des groupes
 
-- **Atelier : Vendredi 11 avril**.
+- **Atelier #10a: Mardi 22 avril**.
   - Création et gestion d'utilisateur
   - Création et gestion de groupes
 

@@ -399,7 +399,7 @@ red -p "Entrez 3 mots: " mot1 mot2 mot3
 ```
 
 
-## 6. **Notations et remarques Importantes**
+## 6. **Notations et remarques importantes**
 - Toujours entourer les variables par des guillemets `""` pour éviter les erreurs (espaces, chaîne vide).
 - La commande `test` ou les crochets `[]` peuvent être utilisés pour les conditions.
 - La syntaxe de `if` nécessite des espaces après le `[` et avant le `]`.
