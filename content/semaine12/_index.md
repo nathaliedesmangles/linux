@@ -1,15 +1,16 @@
 +++
 chapter = true
 pre = "<b>Semaine 12. </b>"
-title = "Titre"
+title = "Réseau"
 weight = 120
-draft = true
 +++
 
 ## Plan de la leçon
 
-- **Théorie : Lundi 21 avril**
-  - s
+- **Théorie : Mercredi 23 avril**
+  - Les fichiers importants
+  - Les commandes essentielles: `nmcli`, `ip`, `ifconfig`
+  - Le service réseau
 
-- **Atelier : Vendredi 25 avril**.
-  - 
+- **Atelier : Jeudi 24 avril**.
+  - Exercice d'utilisation des commandes essentiellesé

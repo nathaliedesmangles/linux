@@ -5,7 +5,7 @@ weight = 101
 
 ## Qu'est-ce qu'un utilisateur qu'est-ce qu'un groupe ?
 
-- **Utilisateur** : Une entité (***personne ou processus**) ayant un compte sur le système, identifiée par un ***UID*** (*User ID*). Chaque utilisateur possède des **permissions** et des **droits spécifiques**.
+- **Utilisateur** : Une entité (**personne ou processus**) ayant un compte sur le système, identifiée par un ***UID*** (*User ID*). Chaque utilisateur possède des **permissions** et des **droits spécifiques**.
 
 - **Groupe** : Un **ensemble d’utilisateurs qui partagent les mêmes permissions** sur des fichiers, dossiers ou ressources du système. Cela permet d’accorder des droits de manière collective plutôt qu’individuellement. Chaque groupe possède un ***GUID*** (*Group ID*).
 

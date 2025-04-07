@@ -99,6 +99,13 @@
       <description>Plan de la leçon Théorie : Lundi 14 avril&#xA;Les permissions sur les fichiers Modification des permissions (2 méthodes) Symbolique Octale Modification de l’utilisateur propriétaire d’un fichier ou répertoire Modification du groupe propriétaire d’un fichier ou répertoire Le droit d’exécution Atelier : Mardi 22 avril.&#xA;Gestion des droits d’accès sur un fichier ou répertoire</description>
     </item>
     <item>
+      <title>Réseau</title>
+      <link>https://example.org/semaine12/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine12/index.html</guid>
+      <description>Plan de la leçon Théorie : Mercredi 23 avril&#xA;Les fichiers importants Les commandes essentielles: nmcli, ip, ifconfig Le service réseau Atelier : Jeudi 24 avril.&#xA;Exercice d’utilisation des commandes essentiellesé</description>
+    </item>
+    <item>
       <title>WSL installation et manipulation (Ubuntu, VS Code)</title>
       <link>https://example.org/semaine14/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Le réseau sous Linux :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine12/cours/index.html</link>
+    <description>Introduction Configurer un réseau sous Linux se fait à l’aide de commandes et de fichiers texte.&#xA;Dans le cours 7 - vim et fichiers de configuration, nous avons vu comment modifier ces fichiers.&#xA;Dans ce cours-ci, nous allons explorer des commandes réseau essentielles et faire quelques exercices pratiques.&#xA;Rappel : les fichiers texte importants Voici deux fichiers que nous avons déjà vus :&#xA;/etc/hosts : permet une résolution de noms simple (utile si un serveur DNS n’est pas disponible). /etc/resolv.conf : contient la liste des serveurs DNS utilisés par la machine. Les commandes réseau La commande nmcli La commande nmcli sert à gérer les interfaces réseau.</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/semaine12/cours/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

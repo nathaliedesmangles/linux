@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Titre :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/semaine12/index.html</link>
-    <description>Plan de la leçon Théorie : Lundi 21 avril&#xA;s Atelier : Vendredi 25 avril.</description>
+    <title>Réseau :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine12/index.html</link>
+    <description>Plan de la leçon Théorie : Mercredi 23 avril&#xA;Les fichiers importants Les commandes essentielles: nmcli, ip, ifconfig Le service réseau Atelier : Jeudi 24 avril.&#xA;Exercice d’utilisation des commandes essentiellesé</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/semaine12/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/semaine12/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ATELIER #10c: Titre</title>
-      <link>http://localhost:1313/semaine12/atelier/index.html</link>
+      <title>Le réseau sous Linux</title>
+      <link>https://example.org/semaine12/cours/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/semaine12/atelier/index.html</guid>
-      <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .&#xA;Atelier Exercice 1 : Titre</description>
+      <guid>https://example.org/semaine12/cours/index.html</guid>
+      <description>Introduction Configurer un réseau sous Linux se fait à l’aide de commandes et de fichiers texte.&#xA;Dans le cours 7 - vim et fichiers de configuration, nous avons vu comment modifier ces fichiers.&#xA;Dans ce cours-ci, nous allons explorer des commandes réseau essentielles et faire quelques exercices pratiques.&#xA;Rappel : les fichiers texte importants Voici deux fichiers que nous avons déjà vus :&#xA;/etc/hosts : permet une résolution de noms simple (utile si un serveur DNS n’est pas disponible). /etc/resolv.conf : contient la liste des serveurs DNS utilisés par la machine. Les commandes réseau La commande nmcli La commande nmcli sert à gérer les interfaces réseau.</description>
+    </item>
+    <item>
+      <title>ATELIER #10c: Réseau sous Linux</title>
+      <link>https://example.org/semaine12/atelier/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine12/atelier/index.html</guid>
+      <description>Objectif Utiliser les commandes essentielles en réseau sur Linux Remise Vous devez faire une/des captures d’écran pour les commandes que vous tapez et leurs résultats, pour répondre à la question. Placez la capture d’écran sous la question.&#xA;Atelier Exercice Afficher l’adresse IP de l’interface Ethernet de la machine virtuelle&#xA;Ajouter deux autres adresses IP à votre interface Ethernet&#xA;Faites un ping vers les 2 adresses ajoutées et vérifiées que vous avez bien une réponse</description>
     </item>
   </channel>
 </rss>

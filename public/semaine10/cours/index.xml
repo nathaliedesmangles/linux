@@ -3,7 +3,7 @@
   <channel>
     <title>Utilisateurs et groupes :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine10/cours/index.html</link>
-    <description>Qu’est-ce qu’un utilisateur qu’est-ce qu’un groupe ? Utilisateur : Une entité (*personne ou processus) ayant un compte sur le système, identifiée par un UID (User ID). Chaque utilisateur possède des permissions et des droits spécifiques.&#xA;Groupe : Un ensemble d’utilisateurs qui partagent les mêmes permissions sur des fichiers, dossiers ou ressources du système. Cela permet d’accorder des droits de manière collective plutôt qu’individuellement. Chaque groupe possède un GUID (Group ID).</description>
+    <description>Qu’est-ce qu’un utilisateur qu’est-ce qu’un groupe ? Utilisateur : Une entité (personne ou processus) ayant un compte sur le système, identifiée par un UID (User ID). Chaque utilisateur possède des permissions et des droits spécifiques.&#xA;Groupe : Un ensemble d’utilisateurs qui partagent les mêmes permissions sur des fichiers, dossiers ou ressources du système. Cela permet d’accorder des droits de manière collective plutôt qu’individuellement. Chaque groupe possède un GUID (Group ID).</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine10/cours/index.xml" rel="self" type="application/rss+xml" />
