@@ -21,7 +21,7 @@ Montrez votre **rigueur/professionnalisme** et nommez vos captures d'écran de f
 ## Exercice : Création et gestion des utilisateurs
 
 1. **Informations sur les utilisateurs :**
-   - Quels sont les deux fichiers qui contiennent les informations sur les utilisateurs, y compris le login, l’UID, le mot de passe crypté et le chemin du répertoire personnel ?
+   - Quels sont les **deux fichiers** qui contiennent les informations sur les utilisateurs, y compris le login, l’UID, le mot de passe crypté et le chemin du répertoire personnel ?
 
 2. **Création de groupes :**
    - Créez deux groupes nommés **dev** et **finance**.
@@ -33,7 +33,8 @@ Montrez votre **rigueur/professionnalisme** et nommez vos captures d'écran de f
      - Ajoutez un commentaire pour **didi** indiquant "Développeur" et pour **fifi** "Financier".
 
 4. **Changement de mot de passe :**
-   - Définissez un mot de passe pour **fifi** et **didi**. Par exemple `pwdfifi` et `pwddidi` respectivement.
+   - Définissez un mot de passe pour **fifi** et **didi**. Par exemple `psswdfifi` et `psswddidi` respectivement.
+   - **NB**: Linux conseille un **minimum de 8 caractères**, n'incluant pas le nom de l'utilisateur
 
 5. **Modification du shell :**
    - Affichez la liste des shells disponibles sur votre système (Hint: [Voir cours semaine #2](https://linuxh25.netlify.app/semaine2/cours/#comment-afficher-la-liste-des-shells-disponibles-le-système-).

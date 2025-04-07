@@ -59,9 +59,10 @@ $ useradd bob
 
 {{% notice style="note" title="Sachez que" %}}
 Aucun mot de passe n'est créé automatiquement.
+Lorsque vous ajoutez un mot de passe, il sera stocké sous forme chiffrée dans le fichier `/etc/shadow`.
 {{% /notice %}}
 
-Vous pouvez ensuite vérifier l'utilisateur ajouté dans **`/etc/passwd`** :
+Vous pouvez ensuite vérifier l'utilisateur ajouté dans le fichier `/etc/passwd` :
 
 ```sh
 $ tail -1 /etc/passwd
