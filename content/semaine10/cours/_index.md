@@ -153,9 +153,9 @@ La commande **`usermod`** permet de modifier un utilisateur existant.
 ### Types de groupes
 
 - **root** (***GID 0***)
-- **Groupes système** (utilisés pour les services/*deamons*)
+- **Groupes système**: utilisés pour les services/*deamons*(***GID 1 - 999***)
 - **nobody** (***GID 65534***)
-- **Groupes standards** (***GID > 1000***)
+- **Groupes standards** (***GID >= 1000***)
 
 ### Création et gestion des groupes
 
