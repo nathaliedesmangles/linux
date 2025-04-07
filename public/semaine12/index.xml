@@ -3,7 +3,7 @@
   <channel>
     <title>Réseau :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine12/index.html</link>
-    <description>Plan de la leçon Théorie : Mercredi 23 avril&#xA;Les fichiers importants Les commandes essentielles: nmcli, ip, ifconfig Le service réseau Atelier : Jeudi 24 avril.&#xA;Exercice d’utilisation des commandes essentiellesé</description>
+    <description>Plan de la leçon Théorie : Mercredi 23 avril&#xA;Les fichiers importants Les commandes essentielles: nmcli, ip, ifconfig Le service réseau Atelier : Jeudi 24 avril.&#xA;Exercice d’utilisation des commandes essentielles.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine12/index.xml" rel="self" type="application/rss+xml" />

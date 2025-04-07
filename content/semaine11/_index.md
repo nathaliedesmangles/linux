@@ -7,7 +7,7 @@ weight = 110
 
 ## Plan de la leçon
 
-- **Théorie : Lundi 14 avril**
+- **Théorie : Jeudi 10 avril**
   - Les permissions sur les fichiers
   - Modification des permissions (2 méthodes)
 	- Symbolique

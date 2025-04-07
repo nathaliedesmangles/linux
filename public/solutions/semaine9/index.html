@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
@@ -10,7 +10,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Atelier 9 :: 420-ZG4-MO LINUX">
     <meta name="twitter:description" content="Solution des exercices Exercices 1 Solution 1: Paramètres entrés sur la ligne de commande #!/bin/bash # Vérification que trois paramètres sont fournis if [ $# -ne 3 ]; then exit 1 fi # Détermination du plus grand et du plus petit if [ $1 -gt $2 ]; then paramPlusGrand=$1 paramPlusPetit=$2 else paramPlusGrand=$2 paramPlusPetit=$1 fi # Division entière et calcul final let &#34;resultat = (paramPlusGrand / paramPlusPetit) * $3&#34; # Affichage du résultat echo &#34;L&#39;expression ($paramPlusGrand / $paramPlusPetit) * $3 donne : $resultat&#34;Explications : if [ $# -ne 3 ]: Vérifie que trois paramètres sont fournis. paramPlusGrand et paramPlusPetit sont déterminés avec une simple condition. Le calcul est effectué à l’aide de let La division entière est effectuée avec /. L’opérateur * réalise la multiplication. Exemple d’exécution : $ bash param3.sh 5 10 3 L&#39;expression (10 / 5) * 3 donne : 6Solution 2: Paramètres entrés par l’utilisateur #!/bin/bash # Saisie des paramètres par l&#39;utilisateur read -p &#34;Entrez le premier nombre : &#34; param1 read -p &#34;Entrez le deuxième nombre : &#34; param2 read -p &#34;Entrez le troisième nombre : &#34; param3 # Détermination du plus grand et du plus petit if [ $param1 -gt $param2 ]; then paramPlusGrand=$param1 paramPlusPetit=$param2 else paramPlusGrand=$param2 paramPlusPetit=$param1 fi # Division entière et calcul final let &#34;resultat = (paramPlusGrand / paramPlusPetit) * param3&#34; # Affichage du résultat echo &#34;L&#39;expression ($paramPlusGrand / $paramPlusPetit) * $param3 donne : $resultat&#34;Explications : read permet la saisie interactive des valeurs. L’option -p de la commande read dans les scripts Bash permet d’afficher un message avant la saisie de l’utilisateur. Elle sert à guider l’utilisateur en lui indiquant quoi entrer. read -p &#34;Message à afficher : &#34; variable-p : Affiche le message spécifié sans retour à la ligne. variable : Stocke la valeur saisie par l’utilisateur. paramPlusGrand et paramPlusPetit sont déterminés avec une condition simple. Le calcul est effectué à l’aide de let La division entière est effectuée avec / et l’opérateur * réalise la multiplication. Exemple d’exécution : $ bash param3.sh Entrez le premier nombre : 5 Entrez le deuxième nombre : 10 Entrez le troisième nombre : 3 L&#39;expression (10 / 5) * 3 donne : 6Exercice 2 #!/bin/bash # Demande à l&#39;utilisateur d&#39;entrer le chemin du fichier read -p &#34;Entrez le chemin du fichier à vérifier : &#34; fichier # Vérification si le fichier existe if [ -e &#34;$fichier&#34; ] then # Vérification si c&#39;est un fichier standard if [ -f &#34;$fichier&#34; ] then echo &#34;$fichier est un fichier standard.&#34; else echo &#34;$fichier n&#39;est pas un fichier standard.&#34; fi # Vérification des droits d&#39;accès [ -r &#34;$fichier&#34; ] &amp;&amp; echo &#34;lecture : oui&#34; || echo &#34;lecture : non&#34; [ -w &#34;$fichier&#34; ] &amp;&amp; echo &#34;écriture : oui&#34; || echo &#34;écriture : non&#34; [ -x &#34;$fichier&#34; ] &amp;&amp; echo &#34;exécution : oui&#34; || echo &#34;exécution : non&#34; else echo &#34;Le fichier $fichier n&#39;existe pas.&#34; exit 1 fiExplications : -e vérifie si le fichier existe. -f vérifie si c’est un fichier standard. -r, -w, -x vérifient respectivement les droits de lecture, écriture et exécution. Exemples d’exécution : #1">
-    <meta property="og:url" content="http://localhost:1313/solutions/semaine9/index.html">
+    <meta property="og:url" content="https://example.org/solutions/semaine9/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="Atelier 9 :: 420-ZG4-MO LINUX">
     <meta property="og:description" content="Solution des exercices Exercices 1 Solution 1: Paramètres entrés sur la ligne de commande #!/bin/bash # Vérification que trois paramètres sont fournis if [ $# -ne 3 ]; then exit 1 fi # Détermination du plus grand et du plus petit if [ $1 -gt $2 ]; then paramPlusGrand=$1 paramPlusPetit=$2 else paramPlusGrand=$2 paramPlusPetit=$1 fi # Division entière et calcul final let &#34;resultat = (paramPlusGrand / paramPlusPetit) * $3&#34; # Affichage du résultat echo &#34;L&#39;expression ($paramPlusGrand / $paramPlusPetit) * $3 donne : $resultat&#34;Explications : if [ $# -ne 3 ]: Vérifie que trois paramètres sont fournis. paramPlusGrand et paramPlusPetit sont déterminés avec une simple condition. Le calcul est effectué à l’aide de let La division entière est effectuée avec /. L’opérateur * réalise la multiplication. Exemple d’exécution : $ bash param3.sh 5 10 3 L&#39;expression (10 / 5) * 3 donne : 6Solution 2: Paramètres entrés par l’utilisateur #!/bin/bash # Saisie des paramètres par l&#39;utilisateur read -p &#34;Entrez le premier nombre : &#34; param1 read -p &#34;Entrez le deuxième nombre : &#34; param2 read -p &#34;Entrez le troisième nombre : &#34; param3 # Détermination du plus grand et du plus petit if [ $param1 -gt $param2 ]; then paramPlusGrand=$param1 paramPlusPetit=$param2 else paramPlusGrand=$param2 paramPlusPetit=$param1 fi # Division entière et calcul final let &#34;resultat = (paramPlusGrand / paramPlusPetit) * param3&#34; # Affichage du résultat echo &#34;L&#39;expression ($paramPlusGrand / $paramPlusPetit) * $param3 donne : $resultat&#34;Explications : read permet la saisie interactive des valeurs. L’option -p de la commande read dans les scripts Bash permet d’afficher un message avant la saisie de l’utilisateur. Elle sert à guider l’utilisateur en lui indiquant quoi entrer. read -p &#34;Message à afficher : &#34; variable-p : Affiche le message spécifié sans retour à la ligne. variable : Stocke la valeur saisie par l’utilisateur. paramPlusGrand et paramPlusPetit sont déterminés avec une condition simple. Le calcul est effectué à l’aide de let La division entière est effectuée avec / et l’opérateur * réalise la multiplication. Exemple d’exécution : $ bash param3.sh Entrez le premier nombre : 5 Entrez le deuxième nombre : 10 Entrez le troisième nombre : 3 L&#39;expression (10 / 5) * 3 donne : 6Exercice 2 #!/bin/bash # Demande à l&#39;utilisateur d&#39;entrer le chemin du fichier read -p &#34;Entrez le chemin du fichier à vérifier : &#34; fichier # Vérification si le fichier existe if [ -e &#34;$fichier&#34; ] then # Vérification si c&#39;est un fichier standard if [ -f &#34;$fichier&#34; ] then echo &#34;$fichier est un fichier standard.&#34; else echo &#34;$fichier n&#39;est pas un fichier standard.&#34; fi # Vérification des droits d&#39;accès [ -r &#34;$fichier&#34; ] &amp;&amp; echo &#34;lecture : oui&#34; || echo &#34;lecture : non&#34; [ -w &#34;$fichier&#34; ] &amp;&amp; echo &#34;écriture : oui&#34; || echo &#34;écriture : non&#34; [ -x &#34;$fichier&#34; ] &amp;&amp; echo &#34;exécution : oui&#34; || echo &#34;exécution : non&#34; else echo &#34;Le fichier $fichier n&#39;existe pas.&#34; exit 1 fiExplications : -e vérifie si le fichier existe. -f vérifie si c’est un fichier standard. -r, -w, -x vérifient respectivement les droits de lecture, écriture et exécution. Exemples d’exécution : #1">
@@ -21,17 +21,17 @@
     <meta itemprop="wordCount" content="1003">
     <title>Atelier 9 :: 420-ZG4-MO LINUX</title>
     <link href="/solutions/semaine9/index.xml" rel="alternate" type="application/rss+xml" title="Atelier 9 :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1744033608" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744033608" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1744033608" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744033608" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1744033608" rel="stylesheet">
-    <link href="/css/theme.css?1744033608" rel="stylesheet">
-    <link href="/css/format-html.css?1744033608" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1744043087" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744043087" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1744043087" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744043087" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1744043087" rel="stylesheet">
+    <link href="/css/theme.min.css?1744043087" rel="stylesheet">
+    <link href="/css/format-html.min.css?1744043087" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..';
-      window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.min = ``;
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       // variant stuff
@@ -122,7 +122,7 @@
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine8/index.html" title="Atelier 8 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine9/correction/index.html" title="Critères de correction (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/test1/index.html" title="Test 1 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -391,7 +391,7 @@ L&rsquo;option <strong><code>-p</code></strong> de la commande <code>read</code>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1744033608";
+          window.index_js_url="/searchindex.en.js?1744043087";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -404,12 +404,12 @@ L&rsquo;option <strong><code>-p</code></strong> de la commande <code>read</code>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1744033608" defer></script>
-        <script src="/js/lunr/lunr.min.js?1744033608" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1744033608" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1744033608" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1744033608" defer></script>
-        <script src="/js/search.js?1744033608" defer></script>
+        <script src="/js/auto-complete.js?1744043087" defer></script>
+        <script src="/js/lunr/lunr.min.js?1744043087" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1744043087" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1744043087" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1744043087" defer></script>
+        <script src="/js/search.js?1744043087" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -434,7 +434,6 @@ L&rsquo;option <strong><code>-p</code></strong> de la commande <code>read</code>
             <li class="" data-nav-id="/semaine10/index.html"><a class="padding" href="/semaine10/index.html"><b>Semaine 10. </b>Utilisateurs et groupes</a><ul id="R-subsections-f8cbb4e023a0fc71fa255b45db414bcc" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine11/index.html"><a class="padding" href="/semaine11/index.html"><b>Semaine 11. </b>Les droits d&#39;accès</a><ul id="R-subsections-b4d497b6531d9f49241f6ec42b8e80f7" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine12/index.html"><a class="padding" href="/semaine12/index.html"><b>Semaine 12. </b>Réseau</a><ul id="R-subsections-6098c004e594c3cbee6d88e41d11b10b" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/semaine13/index.html"><a class="padding" href="/semaine13/index.html"><b>Semaine 13. </b>Titre</a><ul id="R-subsections-123a241fcf7a50602c7d825a9ccf5337" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu">
             <li class="" data-nav-id="/solutions/semaine1/index.html"><a class="padding" href="/solutions/semaine1/index.html">Atelier 1</a></li>
@@ -445,12 +444,9 @@ L&rsquo;option <strong><code>-p</code></strong> de la commande <code>read</code>
             <li class="" data-nav-id="/solutions/semaine6/index.html"><a class="padding" href="/solutions/semaine6/index.html">Atelier 6</a></li>
             <li class="" data-nav-id="/solutions/semaine7/index.html"><a class="padding" href="/solutions/semaine7/index.html">Atelier 7</a></li>
             <li class="" data-nav-id="/solutions/semaine8/index.html"><a class="padding" href="/solutions/semaine8/index.html">Atelier 8</a></li>
-            <li class="active parent alwaysopen " data-nav-id="/solutions/semaine9/index.html"><a class="padding" href="/solutions/semaine9/index.html">Atelier 9</a><ul id="R-subsections-af4a0a74a93c7502e727723640a01582" class="collapsible-menu">
-            <li class="" data-nav-id="/solutions/semaine9/correction/index.html"><a class="padding" href="/solutions/semaine9/correction/index.html">Critères de correction</a></li></ul></li>
+            <li class="active " data-nav-id="/solutions/semaine9/index.html"><a class="padding" href="/solutions/semaine9/index.html">Atelier 9</a></li>
             <li class="" data-nav-id="/solutions/test1/index.html"><a class="padding" href="/solutions/test1/index.html">Test 1</a></li>
-            <li class="" data-nav-id="/solutions/test2/index.html"><a class="padding" href="/solutions/test2/index.html">Test 2</a></li>
-            <li class="" data-nav-id="/solutions/test3/index.html"><a class="padding" href="/solutions/test3/index.html">Test 3</a></li>
-            <li class="" data-nav-id="/solutions/test4/index.html"><a class="padding" href="/solutions/test4/index.html">Test 4</a></li></ul></li>
+            <li class="" data-nav-id="/solutions/test2/index.html"><a class="padding" href="/solutions/test2/index.html">Test 2</a></li></ul></li>
             <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
           </ul>
         </div>
@@ -505,8 +501,8 @@ L&rsquo;option <strong><code>-p</code></strong> de la commande <code>read</code>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1744033608" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1744033608" defer></script>
-    <script src="/js/theme.js?1744033608" defer></script>
+    <script src="/js/clipboard.min.js?1744043087" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1744043087" defer></script>
+    <script src="/js/theme.js?1744043087" defer></script>
   </body>
 </html>

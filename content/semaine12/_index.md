@@ -13,4 +13,4 @@ weight = 120
   - Le service réseau
 
 - **Atelier : Jeudi 24 avril**.
-  - Exercice d'utilisation des commandes essentiellesé
+  - Exercice d'utilisation des commandes essentielles.

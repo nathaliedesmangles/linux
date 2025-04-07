@@ -34,14 +34,14 @@ Dans le cours 7 - vim et fichiers de configuration, nous avons vu comment modifi
 Dans ce cours-ci, nous allons explorer des commandes réseau essentielles et faire quelques exercices pratiques.
 Rappel : les fichiers texte importants Voici deux fichiers que nous avons déjà vus :
 /etc/hosts : permet une résolution de noms simple (utile si un serveur DNS n’est pas disponible). /etc/resolv.conf : contient la liste des serveurs DNS utilisés par la machine. Les commandes réseau La commande nmcli La commande nmcli sert à gérer les interfaces réseau.">
-    <meta itemprop="wordCount" content="636">
+    <meta itemprop="wordCount" content="1152">
     <title>Le réseau sous Linux :: 420-ZG4-MO LINUX</title>
     <link href="/semaine12/cours/index.xml" rel="alternate" type="application/rss+xml" title="Le réseau sous Linux :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1744033651" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744033651" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1744033651" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744033651" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1744033651" rel="stylesheet">
-    <link href="/css/theme.min.css?1744033651" rel="stylesheet">
-    <link href="/css/format-html.min.css?1744033651" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1744043087" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744043087" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1744043087" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744043087" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1744043087" rel="stylesheet">
+    <link href="/css/theme.min.css?1744043087" rel="stylesheet">
+    <link href="/css/format-html.min.css?1744043087" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -275,10 +275,68 @@ Elle permet de <strong>lire et modifier temporairement</strong> la configuration
 <li>Testez à nouveau la connexion.</li>
 </ol>
 
-<details open class=" box cstyle notices green" name="notice-toggle">
-  <summary class="box-label" tabindex="-1">
-    Solution (à venir)
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution
   </summary>
+  <div class="box-content">
+<h3 id="étape-1--remplir-le-tableau">Étape 1 : Remplir le tableau</h3>
+<p>Utiliser les commandes suivantes pour obtenir les paramètres actuels :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ip a            <span style="color:#75715e"># pour l’adresse IP et le masque</span>
+</span></span><span style="display:flex;"><span>$ ip route        <span style="color:#75715e"># pour la passerelle par défaut</span>
+</span></span><span style="display:flex;"><span>$ cat /etc/resolv.conf  <span style="color:#75715e"># pour les serveurs DNS</span></span></span></code></pre></div>
+<h4 id="exemple-de-réponse-vos-données-peuvent-être-différentes">Exemple de réponse (vos données peuvent être différentes):</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Adresse IP</th>
+          <th style="text-align: center">Masque de sous-réseau</th>
+          <th style="text-align: center">Passerelle par défaut</th>
+          <th style="text-align: center">DNS1</th>
+          <th style="text-align: center">DNS2</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">192.168.230.100</td>
+          <td style="text-align: center">255.255.255.0</td>
+          <td style="text-align: center">192.168.230.2</td>
+          <td style="text-align: center">8.8.8.8</td>
+          <td style="text-align: center">8.8.4.4</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="étape-2--vérifier-si-ladresse-est-dynamique-dhcp-ou-statique">Étape 2 : Vérifier si l’adresse est dynamique (DHCP) ou statique</h3>
+<p>Utiliser cette commande :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli con show ens160 | grep ipv4.method</span></span></code></pre></div>
+<ul>
+<li>Si la méthode est <code>auto</code> → <strong>DHCP</strong></li>
+<li>Si la méthode est <code>manual</code> → <strong>statique</strong></li>
+</ul>
+<h3 id="étape-3--attribuer-une-adresse-ip-statique">Étape 3 : Attribuer une adresse IP statique</h3>
+<p>Modifier la configuration avec <code>nmcli</code> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># nmcli con mod ens160 ipv4.address 192.168.230.100/24</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nmcli con mod ens160 ipv4.gateway 192.168.230.2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nmcli con mod ens160 ipv4.dns 8.8.8.8,8.8.4.4</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nmcli con mod ens160 ipv4.method manual</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nmcli con down ens160</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nmcli con up ens160</span></span></span></code></pre></div>
+<h3 id="étape-4--vérifier-laccès-à-internet">Étape 4 : Vérifier l&rsquo;accès à Internet</h3>
+<p>Tester avec une commande comme :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ping google.com</span></span></code></pre></div>
+<h3 id="étape-5--revenir-à-une-configuration-en-dhcp">Étape 5 : Revenir à une configuration en DHCP</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># nmcli con mod ens160 ipv4.method auto</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nmcli con mod ens160 ipv4.address &#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nmcli con mod ens160 ipv4.gateway &#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nmcli con mod ens160 ipv4.dns &#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nmcli con down ens160</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># nmcli con up ens160</span></span></span></code></pre></div>
+<h3 id="étape-6--vérifier-que-tout-fonctionne">Étape 6 : Vérifier que tout fonctionne</h3>
+<p>Refaire un test :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ping google.com</span></span></code></pre></div>
+<p>Si tout fonctionne, la configuration est correcte.</p>
+  </div>
 </details>
 <h2 id="exercice-2">Exercice 2</h2>
 <ol>
@@ -309,10 +367,57 @@ Est-ce que les adresses IP sont toujours là ?</p>
 </li>
 </ol>
 
-<details open class=" box cstyle notices green" name="notice-toggle">
-  <summary class="box-label" tabindex="-1">
-    Solution (à venir)
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution
   </summary>
+  <div class="box-content">
+<h3 id="étape-1--ajouter-deux-adresses-ip-à-linterface-temporairement">Étape 1 : Ajouter deux adresses IP à l’interface (temporairement)</h3>
+<p>On suppose que l’interface est <code>ens33</code>.<br>
+Adaptez selon le nom de votre interface (<code>ip a</code> pour le voir).</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo ip addr add 192.168.230.101/24 dev ens33
+</span></span><span style="display:flex;"><span>$ sudo ip addr add 192.168.230.102/24 dev ens33</span></span></code></pre></div>
+<p>Vous devriez maintenant avoir <strong>trois adresses IP</strong> sur <code>ens33</code> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ip a show ens33</span></span></code></pre></div>
+<h3 id="étape-2--modifier-le-fichier-etchosts">Étape 2 : Modifier le fichier <code>/etc/hosts</code></h3>
+<p>Ouvrir le fichier avec des droits root :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nano /etc/hosts</span></span></code></pre></div>
+<p>Ajouter ces lignes à la fin du fichier :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>192.168.230.100  machine-principale
+192.168.230.101  alias-un
+192.168.230.102  alias-deux</code></pre></div>
+<p>Enregistrez (Ctrl + O, puis Entrée) et quittez (Ctrl + X).</p>
+<h3 id="étape-3--tester-avec-des-ping">Étape 3 : Tester avec des ping</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ping machine-principale
+</span></span><span style="display:flex;"><span>$ ping alias-un
+</span></span><span style="display:flex;"><span>$ ping alias-deux</span></span></code></pre></div>
+<p>Chaque nom devrait répondre correctement.</p>
+<h3 id="étape-4--redémarrer-le-service-réseau">Étape 4 : Redémarrer le service réseau</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nmcli networking off
+</span></span><span style="display:flex;"><span>$ sudo nmcli networking on</span></span></code></pre></div>
+<h4 id="question--est-ce-que-les-ip-supplémentaires-sont-encore-là-">Question : est-ce que les IP supplémentaires sont encore là ?</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ip a show ens33</span></span></code></pre></div>
+<p><strong>Réponse :</strong> Non, elles ont disparu.</p>
+<ul>
+<li>Les IP ajoutées avec <code>ip addr add</code> sont <strong>temporaires</strong>.</li>
+</ul>
+<h3 id="étape-5--comment-rendre-ces-ip-persistantes-">Étape 5 : Comment rendre ces IP <strong>persistantes</strong> ?</h3>
+<p>Deux façons possibles :</p>
+<h4 id="méthode-1--via-nmcli"><strong>Méthode 1 : via <code>nmcli</code></strong></h4>
+<p>Ajouter plusieurs adresses IP dans la configuration de l’interface :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nmcli con mod ens33 +ipv4.addresses 192.168.230.101/24
+</span></span><span style="display:flex;"><span>$ sudo nmcli con mod ens33 +ipv4.addresses 192.168.230.102/24
+</span></span><span style="display:flex;"><span>$ sudo nmcli con mod ens33 ipv4.method manual
+</span></span><span style="display:flex;"><span>$ sudo nmcli con mod ens33 ipv4.gateway 192.168.230.2
+</span></span><span style="display:flex;"><span>$ sudo nmcli con mod ens33 ipv4.dns 8.8.8.8,8.8.4.4
+</span></span><span style="display:flex;"><span>$ sudo nmcli con down ens33
+</span></span><span style="display:flex;"><span>$ sudo nmcli con up ens33</span></span></code></pre></div>
+<h4 id="méthode-2--en-modifiant-les-fichiers-manuellement"><strong>Méthode 2 : en modifiant les fichiers manuellement</strong></h4>
+<blockquote>
+<p>À faire seulement si vous êtes à l’aise avec les fichiers de configuration réseau, par exemple <code>/etc/sysconfig/network-scripts/ifcfg-ens33</code> (selon la distribution).</p>
+</blockquote>
+  </div>
 </details>
 
   <footer class="footline">
@@ -330,7 +435,7 @@ Est-ce que les adresses IP sont toujours là ?</p>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1744033651";
+          window.index_js_url="/searchindex.en.js?1744043087";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -343,12 +448,12 @@ Est-ce que les adresses IP sont toujours là ?</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1744033651" defer></script>
-        <script src="/js/lunr/lunr.min.js?1744033651" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1744033651" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1744033651" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1744033651" defer></script>
-        <script src="/js/search.js?1744033651" defer></script>
+        <script src="/js/auto-complete.js?1744043087" defer></script>
+        <script src="/js/lunr/lunr.min.js?1744043087" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1744043087" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1744043087" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1744043087" defer></script>
+        <script src="/js/search.js?1744043087" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -431,8 +536,8 @@ Est-ce que les adresses IP sont toujours là ?</p>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1744033651" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1744033651" defer></script>
-    <script src="/js/theme.js?1744033651" defer></script>
+    <script src="/js/clipboard.min.js?1744043087" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1744043087" defer></script>
+    <script src="/js/theme.js?1744043087" defer></script>
   </body>
 </html>

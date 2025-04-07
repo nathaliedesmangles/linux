@@ -3,7 +3,7 @@
   <channel>
     <title>Les droits d&#39;accès :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine11/index.html</link>
-    <description>Plan de la leçon Théorie : Lundi 14 avril&#xA;Les permissions sur les fichiers Modification des permissions (2 méthodes) Symbolique Octale Modification de l’utilisateur propriétaire d’un fichier ou répertoire Modification du groupe propriétaire d’un fichier ou répertoire Le droit d’exécution Atelier : Mardi 22 avril.&#xA;Gestion des droits d’accès sur un fichier ou répertoire</description>
+    <description>Plan de la leçon Théorie : Jeudi 10 avril&#xA;Les permissions sur les fichiers Modification des permissions (2 méthodes) Symbolique Octale Modification de l’utilisateur propriétaire d’un fichier ou répertoire Modification du groupe propriétaire d’un fichier ou répertoire Le droit d’exécution Atelier : Mardi 22 avril.&#xA;Gestion des droits d’accès sur un fichier ou répertoire</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine11/index.xml" rel="self" type="application/rss+xml" />

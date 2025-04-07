@@ -177,7 +177,79 @@ Remplissez le tableau avec les paramètres actuels de votre machine :
 4. Revenez à une configuration en DHCP.
 5. Testez à nouveau la connexion.
 
-{{% notice style="green" title="Solution (à venir)" groupid="notice-toggle" expanded="false" %}}
+{{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
+
+### Étape 1 : Remplir le tableau
+
+Utiliser les commandes suivantes pour obtenir les paramètres actuels :
+
+```bash
+$ ip a            # pour l’adresse IP et le masque
+$ ip route        # pour la passerelle par défaut
+$ cat /etc/resolv.conf  # pour les serveurs DNS
+```
+
+#### Exemple de réponse (vos données peuvent être différentes):
+
+| Adresse IP       | Masque de sous-réseau | Passerelle par défaut | DNS1       | DNS2       |
+|:----------------:|:---------------------:|:----------------------:|:----------:|:----------:|
+| 192.168.230.100  | 255.255.255.0         | 192.168.230.2          | 8.8.8.8    | 8.8.4.4    |
+
+
+### Étape 2 : Vérifier si l’adresse est dynamique (DHCP) ou statique
+
+Utiliser cette commande :
+
+```bash
+$ nmcli con show ens160 | grep ipv4.method
+```
+
+- Si la méthode est `auto` → **DHCP**  
+- Si la méthode est `manual` → **statique**
+
+
+### Étape 3 : Attribuer une adresse IP statique
+
+Modifier la configuration avec `nmcli` :
+
+```bash
+# nmcli con mod ens160 ipv4.address 192.168.230.100/24
+# nmcli con mod ens160 ipv4.gateway 192.168.230.2
+# nmcli con mod ens160 ipv4.dns 8.8.8.8,8.8.4.4
+# nmcli con mod ens160 ipv4.method manual
+# nmcli con down ens160
+# nmcli con up ens160
+```
+
+### Étape 4 : Vérifier l'accès à Internet
+
+Tester avec une commande comme :
+
+```bash
+$ ping google.com
+```
+
+
+### Étape 5 : Revenir à une configuration en DHCP
+
+```bash
+# nmcli con mod ens160 ipv4.method auto
+# nmcli con mod ens160 ipv4.address ""
+# nmcli con mod ens160 ipv4.gateway ""
+# nmcli con mod ens160 ipv4.dns ""
+# nmcli con down ens160
+# nmcli con up ens160
+```
+
+### Étape 6 : Vérifier que tout fonctionne
+
+Refaire un test :
+
+```bash
+$ ping google.com
+```
+
+Si tout fonctionne, la configuration est correcte.
 
 {{% /notice %}}
 
@@ -199,6 +271,90 @@ Remplissez le tableau avec les paramètres actuels de votre machine :
    (Trouvez la réponse en théorie, ou testez si vous le souhaitez.)
 
 
-{{% notice style="green" title="Solution (à venir)" groupid="notice-toggle" expanded="false" %}}
+{{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
+
+### Étape 1 : Ajouter deux adresses IP à l’interface (temporairement)
+
+On suppose que l’interface est `ens33`.  
+Adaptez selon le nom de votre interface (`ip a` pour le voir).
+
+```bash
+$ sudo ip addr add 192.168.230.101/24 dev ens33
+$ sudo ip addr add 192.168.230.102/24 dev ens33
+```
+
+Vous devriez maintenant avoir **trois adresses IP** sur `ens33` :
+
+```bash
+$ ip a show ens33
+```
+
+
+### Étape 2 : Modifier le fichier `/etc/hosts`
+
+Ouvrir le fichier avec des droits root :
+
+```bash
+$ sudo nano /etc/hosts
+```
+
+Ajouter ces lignes à la fin du fichier :
+
+```
+192.168.230.100  machine-principale
+192.168.230.101  alias-un
+192.168.230.102  alias-deux
+```
+
+Enregistrez (Ctrl + O, puis Entrée) et quittez (Ctrl + X).
+
+
+### Étape 3 : Tester avec des ping
+
+```bash
+$ ping machine-principale
+$ ping alias-un
+$ ping alias-deux
+```
+
+Chaque nom devrait répondre correctement.
+
+### Étape 4 : Redémarrer le service réseau
+
+```bash
+$ sudo nmcli networking off
+$ sudo nmcli networking on
+```
+
+#### Question : est-ce que les IP supplémentaires sont encore là ?
+
+```bash
+$ ip a show ens33
+```
+
+**Réponse :** Non, elles ont disparu.  
+- Les IP ajoutées avec `ip addr add` sont **temporaires**.
+
+
+### Étape 5 : Comment rendre ces IP **persistantes** ?
+
+Deux façons possibles :
+
+#### **Méthode 1 : via `nmcli`**
+
+Ajouter plusieurs adresses IP dans la configuration de l’interface :
+
+```bash
+$ sudo nmcli con mod ens33 +ipv4.addresses 192.168.230.101/24
+$ sudo nmcli con mod ens33 +ipv4.addresses 192.168.230.102/24
+$ sudo nmcli con mod ens33 ipv4.method manual
+$ sudo nmcli con mod ens33 ipv4.gateway 192.168.230.2
+$ sudo nmcli con mod ens33 ipv4.dns 8.8.8.8,8.8.4.4
+$ sudo nmcli con down ens33
+$ sudo nmcli con up ens33
+```
+
+#### **Méthode 2 : en modifiant les fichiers manuellement**
+> À faire seulement si vous êtes à l’aise avec les fichiers de configuration réseau, par exemple `/etc/sysconfig/network-scripts/ifcfg-ens33` (selon la distribution).
 
 {{% /notice %}}
