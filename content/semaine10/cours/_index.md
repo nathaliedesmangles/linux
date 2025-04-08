@@ -64,9 +64,14 @@ Lorsque vous ajoutez un mot de passe, il sera stocké sous forme chiffrée dans 
 
 Vous pouvez ensuite vérifier l'utilisateur ajouté dans le fichier `/etc/passwd` :
 
-```sh
+```bash
 $ tail -1 /etc/passwd
 bob:x:1002:1002::/home/bob:/bin/bash
+```
+
+**Explication** 
+```bash
+user:x:uid:gid:commentaire:repertoire personnel:shell par défaut
 ```
 
 #### Options de la commande *useradd*
@@ -87,16 +92,25 @@ La commande **`id`** permet d'afficher ces informations :
 
 | Commande | Description |
 |----------|------------|
-| `id -u` | Afficher uniquement l'UID |
-| `id -g` | Afficher uniquement le GID principal |
-| `id -G` | Afficher tous les groupes de l'utilisateur (par ID) |
-| `id -Gn` | Afficher les groupes avec leurs noms |
+| `id -u <utilisateur>` | Afficher uniquement l'UID. |
+| `id <utilisateur>`    | Afficher les détails de l'utilisateur. |
+| `id -g <utilisateur>` | Afficher uniquement le GID principal. |
+| `id -G <utilisateur>` | Afficher tous les groupes (principal et secondaires) de l'utilisateur (par GID). |
+| `id -Gn <utilisateur>` | Afficher les groupes avec leurs noms. |
+
+{{% notice style="note" title="À savoir" %}}
+Si on ne précise pas l'utilisateur, la commande `id` s'applique à l'utilisateur connecté. Par exemple:
+```bash
+[julien@localhost ~]$ id -g
+```
+affiche le groupe principal de julien
+{{% /notice %}}
 
 ### Changer de mot de passe (commande *passwd*)
 
 Pour modifier son mot de passe, utilisez la commande **`passwd`** :
 
-```sh
+```bash
 $ passwd bob
 ```
 
@@ -132,15 +146,18 @@ La commande **`usermod`** permet de modifier un utilisateur existant.
 - La commande `usermod -d` **ne déplace pas** le contenu de l’ancien répertoire personnel vers le nouveau.
 {{% /notice %}} 
 
-### Ajouter un utilisateur à un groupe et afficher ses informations
+### Ajouter un utilisateur à un groupe
 
 | Commande | Description | Exemple |
 |----------|------------|---------|
-| `usermod -aG <groupe> <utilisateur>` | Ajouter un utilisateur à un groupe secondaire | `usermod -aG sudo bob` |
-| `groups <utilisateur>` | Voir les groupes d'un utilisateur | `groups bob` |
-| `id <utilisateur>` | Afficher les détails de l'utilisateur | `id bob` |
-| `newgrp <groupe>` | Appliquer immédiatement les changements de groupe | `newgrp sudo` |
+| `usermod -aG <groupe> <utilisateur>` | **Ajouter** un utilisateur à un groupe secondaire, tout en **conservant** les groupes secondaires existants. | `usermod -aG sudo bob` |
+| `usermod -G <groupe> <utilisateur>` | Ajouter un utilisateur à un groupe secondaire, mais **supprime** les groupes secondaires existants. | `usermod -G sudo bob` |
+| `groups <utilisateur>` | Voir les groupes d'un utilisateur. | `groups bob` |
+| `newgrp <groupe>` | Appliquer immédiatement les changements de groupe. | `newgrp sudo` |
 
+{{% notice style="info" title="Information" %}}
+- Les groupes peuvent être spécifiés par leur **nom** ou leur ***GID***.
+{{% /notice %}}
 
 ---
 
@@ -161,12 +178,17 @@ La commande **`usermod`** permet de modifier un utilisateur existant.
 
 | Commande | Description | Exemple |
 |----------|------------|---------|
-| `groupadd nomGroupe` | Créer un groupe | `groupadd principal1` |
-| `groupadd -g GID nomGroupe` | Créer un groupe avec un GID spécifique | `groupadd -g 1560 monGroupe` |
-| `groupdel nomGroupe` | Supprimer un groupe | `groupdel principal1` |
-| `groupmod -n nouveauNom ancienNom` | Changer le nom d'un groupe | `groupmod -n principal2 principal1` |
-| `groupmod -g nouveauGID nomGroupe` | Changer le GID d'un groupe | `groupmod -g 2000 nomGroupe` |
+| `groupadd nomGroupe` | Créer un groupe. | `groupadd principal1` |
+| `groupadd -g GID nomGroupe` | Créer un groupe avec un GID spécifique. | `groupadd -g 1560 monGroupe` |
+| `groupdel nomGroupe` | Supprimer un groupe. | `groupdel principal1` |
+| `groupmod -n nouveauNom ancienNom` | Changer le nom d'un groupe. | `groupmod -n principal2 principal1` |
+| `groupmod -g nouveauGID nomGroupe` | Changer le GID d'un groupe. | `groupmod -g 2000 nomGroupe` |
 
+
+## Le groupe *wheel*
+
+- Le groupe ***wheel*** permet à ses membres d'utiliser des commandes avec des **privilèges administratifs** grâce à `sudo`. 
+- L'utilisateur est ajouté à ce groupe par ***root*** s'il souhaite lui donner ces droits 
 
 ---
 
@@ -214,7 +236,7 @@ sudo usermod -aG exercice1 exercice1
 1. Comment ajouter un utilisateur à un groupe ?
 2. Créez un groupe nommé **principal1**.
 3. Placez **exercice1** dans ce groupe comme groupe principal.
-4. Supprimez **principal1**.
+4. Supprimez le groupe **principal1**.
 5. Quel est maintenant le groupe principal de **exercice1** ?
 
 {{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
@@ -228,7 +250,7 @@ $ sudo groupadd principal1
 #3. Placez **exercice1** dans ce groupe comme groupe principal.
 $ sudo usermod -g principal1 exercice1
 
-#4. Supprimer principal1
+#4. Supprimer le groupe principal1
 $ sudo groupdel principal1
 groupdel: cannot remove the primary group of user 'exercice1'
 

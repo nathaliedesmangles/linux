@@ -9,7 +9,7 @@ weight = 121
 Configurer un réseau sous Linux se fait à l’aide de commandes et de fichiers texte.
 
 Dans le cours [7 - vim et fichiers de configuration](https://linuxh25.netlify.app/semaine7/), nous avons vu comment modifier ces fichiers.  
-Dans ce cours-ci, nous allons explorer des **commandes réseau essentielles** et faire quelques **exercices pratiques**.
+Dans ce cours-ci, nous allons explorer des **commandes réseau essentielles**.
 
 
 ## Rappel : les fichiers texte importants

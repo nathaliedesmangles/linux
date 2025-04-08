@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Introduction En Linux, il n’existe qu’un seul système de fichiers :
+/ ← C’est la racine de tout.
+Contrairement à Windows, il n’y a pas plusieurs racines comme C:, D:, etc.
+En Linux, tout est un fichier, même les disques et périphériques.
+Ils se trouvent dans le répertoire :
+/dev
+Les disques y apparaissent comme fichiers de type bloc.
+On ne peut pas utiliser ces fichiers directement. Il faut suivre ces 3 étapes :">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Gestion des disques :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Introduction En Linux, il n’existe qu’un seul système de fichiers :
+/ ← C’est la racine de tout.
+Contrairement à Windows, il n’y a pas plusieurs racines comme C:, D:, etc.
+En Linux, tout est un fichier, même les disques et périphériques.
+Ils se trouvent dans le répertoire :
+/dev
+Les disques y apparaissent comme fichiers de type bloc.
+On ne peut pas utiliser ces fichiers directement. Il faut suivre ces 3 étapes :">
+    <meta property="og:url" content="https://example.org/semaine13/cours/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Gestion des disques :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Introduction En Linux, il n’existe qu’un seul système de fichiers :
+/ ← C’est la racine de tout.
+Contrairement à Windows, il n’y a pas plusieurs racines comme C:, D:, etc.
+En Linux, tout est un fichier, même les disques et périphériques.
+Ils se trouvent dans le répertoire :
+/dev
+Les disques y apparaissent comme fichiers de type bloc.
+On ne peut pas utiliser ces fichiers directement. Il faut suivre ces 3 étapes :">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Gestion des disques :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Introduction En Linux, il n’existe qu’un seul système de fichiers :
+/ ← C’est la racine de tout.
+Contrairement à Windows, il n’y a pas plusieurs racines comme C:, D:, etc.
+En Linux, tout est un fichier, même les disques et périphériques.
+Ils se trouvent dans le répertoire :
+/dev
+Les disques y apparaissent comme fichiers de type bloc.
+On ne peut pas utiliser ces fichiers directement. Il faut suivre ces 3 étapes :">
+    <meta itemprop="wordCount" content="603">
+    <title>Gestion des disques :: 420-ZG4-MO LINUX</title>
+    <link href="/semaine13/cours/index.xml" rel="alternate" type="application/rss+xml" title="Gestion des disques :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1744148521" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744148521" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1744148521" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744148521" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1744148521" rel="stylesheet">
+    <link href="/css/theme.min.css?1744148521" rel="stylesheet">
+    <link href="/css/format-html.min.css?1744148521" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine13/cours/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#ajout-de-disques">Ajout de disques</a>
+      <ul>
+        <li><a href="#nommage-des-disques">Nommage des disques</a></li>
+        <li><a href="#voir-les-disques-disponibles">Voir les disques disponibles</a></li>
+        <li><a href="#dans-une-machine-virtuelle-vmware">Dans une machine virtuelle (VMware)</a></li>
+        <li><a href="#nommage-des-partitions">Nommage des partitions</a></li>
+      </ul>
+    </li>
+    <li><a href="#création-de-partitions">Création de partitions</a>
+      <ul>
+        <li><a href="#voir-les-partitions-existantes">Voir les partitions existantes</a></li>
+        <li><a href="#quelques-infos-utiles">Quelques infos utiles</a></li>
+        <li><a href="#créer-une-partition">Créer une partition</a></li>
+      </ul>
+    </li>
+    <li><a href="#création-du-système-de-fichiers">Création du système de fichiers</a></li>
+    <li><a href="#montage-dune-partition">Montage d’une partition</a>
+      <ul>
+        <li><a href="#rappel-important">Rappel important</a></li>
+        <li><a href="#deux-façons-de-monter-une-partition">Deux façons de monter une partition</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine13/index.html"><span itemprop="name">Gestion des disques</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Gestion des disques</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine13/index.html" title="Gestion des disques (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine13/atelier/index.html" title="ATELIER #10d: Gestion d&#39;un disque (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine13" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="gestion-des-disques">Gestion des disques</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>En Linux, il n’existe <strong>qu’un seul système de fichiers</strong> :<br>
+<strong><code>/</code></strong> ← C’est la racine de tout.</p>
+<p>Contrairement à Windows, il n’y a pas plusieurs racines comme <code>C:</code>, <code>D:</code>, etc.</p>
+<p>En Linux, <strong>tout est un fichier</strong>, même les disques et périphériques.<br>
+Ils se trouvent dans le répertoire :<br>
+<strong><code>/dev</code></strong></p>
+<p>Les disques y apparaissent comme <strong>fichiers de type bloc</strong>.</p>
+<p><strong>On ne peut pas utiliser ces fichiers directement.</strong> Il faut suivre ces 3 étapes :</p>
+<ol>
+<li>Créer une ou plusieurs partitions</li>
+<li>Formater la partition (créer un système de fichiers)</li>
+<li>Monter la partition (lui donner un chemin d’accès)</li>
+</ol>
+<h2 id="ajout-de-disques">Ajout de disques</h2>
+<p>Quand on ajoute un disque (réel ou virtuel), il apparaît dans <strong><code>/dev</code></strong>.</p>
+<h3 id="nommage-des-disques">Nommage des disques</h3>
+<ul>
+<li><strong>SCSI ou SATA</strong> : <code>sd[x]</code></li>
+<li><strong>IDE</strong> : <code>hd[x]</code></li>
+<li><strong>NVMe</strong> : <code>nvme0n[x]</code></li>
+</ul>
+<p>La lettre change selon l’ordre :<br>
+<code>a</code>, puis <code>b</code>, puis <code>c</code>, etc.</p>
+<blockquote>
+<p>Exemple :<br>
+Premier disque SATA → <code>/dev/sda</code><br>
+Deuxième disque SATA → <code>/dev/sdb</code></p>
+</blockquote>
+<p><strong>Un disque seul n’a pas de numéro</strong> à la fin. Les numéros sont pour les partitions.</p>
+<h3 id="voir-les-disques-disponibles">Voir les disques disponibles</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls /dev/sd*
+</span></span><span style="display:flex;"><span>$ ls /dev/hd*</span></span></code></pre></div>
+<h3 id="dans-une-machine-virtuelle-vmware">Dans une machine virtuelle (VMware)</h3>
+<ul>
+<li>Si le pilote est <strong>SCSI</strong> : <code>sd[a-z]</code></li>
+<li>Si le pilote est <strong>IDE</strong> : <code>hd[a-z]</code></li>
+</ul>
+<h3 id="nommage-des-partitions">Nommage des partitions</h3>
+<p>Chaque disque peut avoir plusieurs partitions :</p>
+<ul>
+<li><code>/dev/sda1</code>, <code>/dev/sda2</code>, &hellip;</li>
+<li><code>/dev/hda1</code>, <code>/dev/hda2</code>, &hellip;</li>
+</ul>
+<h2 id="création-de-partitions">Création de partitions</h2>
+<p>Quand un disque est ajouté, il faut le <strong>partitionner</strong>.</p>
+<h3 id="voir-les-partitions-existantes">Voir les partitions existantes</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ fdisk -l</span></span></code></pre></div>
+<p>Exemple de sortie :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Disque /dev/sda : 64.4 Go
+</span></span><span style="display:flex;"><span>/dev/sda1   *    ...   Linux
+</span></span><span style="display:flex;"><span>/dev/sda2        ...   Linux LVM
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Disque /dev/mapper/centos-root : 41.1 Go
+</span></span><span style="display:flex;"><span>Disque /dev/mapper/centos-swap : <span style="color:#ae81ff">2</span> Go
+</span></span><span style="display:flex;"><span>Disque /dev/mapper/centos-home : 20.1 Go</span></span></code></pre></div>
+<h3 id="quelques-infos-utiles">Quelques infos utiles</h3>
+<ul>
+<li>On peut créer <strong>4 partitions principales</strong> maximum.</li>
+<li>Ou 1 partition principale + <strong>1 étendue</strong> (dans laquelle on met plusieurs partitions logiques).</li>
+</ul>
+<h3 id="créer-une-partition">Créer une partition</h3>
+<p>Utilise la commande :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ fdisk /dev/sdb</span></span></code></pre></div>
+<p><strong>NB</strong> : pas de numéro à la fin !</p>
+<h4 id="étapes-typiques-dans-fdisk">Étapes typiques dans <em>fdisk</em></h4>
+<ul>
+<li><code>n</code> → nouvelle partition</li>
+<li><code>p</code> → partition principale</li>
+<li><code>Entrée</code> → accepte le numéro proposé (ou entre-en un)</li>
+<li><code>Entrée</code> → début de la partition (ou indique-le)</li>
+<li><code>Entrée</code> → fin de la partition<br>
+==&gt; Exemple : <code>+3G</code> pour une taille de 3 Go</li>
+<li><code>w</code> → <strong>sauvegarde et quitte</strong></li>
+</ul>
+<p>Les nouvelles partitions seront visibles dans <code>/dev</code> :</p>
+<ul>
+<li><code>/dev/sdb1</code></li>
+<li><code>/dev/sdb2</code></li>
+<li>etc.</li>
+</ul>
+<h2 id="création-du-système-de-fichiers">Création du système de fichiers</h2>
+<p>Une partition vide ne sert à rien.<br>
+Il faut y créer un <strong>système de fichiers</strong>.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkfs -t ext4 /dev/sdb1</span></span></code></pre></div>
+<p>ou</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkfs.ext4 /dev/sdb1</span></span></code></pre></div>
+<p>Les deux font la même chose.</p>
+<p>Types possibles : <code>ext2</code>, <code>ext3</code>, <code>ext4</code>, <code>xfs</code>, <code>fat32</code>, etc.<br>
+(Linux ne gère pas bien <strong>NTFS</strong>.)</p>
+<p>Une fois formatée, la partition est prête…<br>
+… mais il faut encore <strong>la monter</strong> !</p>
+<h2 id="montage-dune-partition">Montage d’une partition</h2>
+<p>Monter une partition = <strong>lui donner un chemin d’accès</strong> dans le système.</p>
+<h3 id="rappel-important">Rappel important</h3>
+<ul>
+<li>On monte une partition dans <strong>un répertoire vide</strong>.</li>
+<li>Si le répertoire contient déjà des fichiers, ils <strong>seront masqués</strong> jusqu’au démontage.</li>
+<li>Chaque partition → <strong>un répertoire différent</strong></li>
+</ul>
+<h3 id="deux-façons-de-monter-une-partition">Deux façons de monter une partition</h3>
+<p><strong>1. Montage manuel (temporaire)</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mount /dev/sdb1 /root/data</span></span></code></pre></div>
+<p>Vérifie le montage :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ df -h</span></span></code></pre></div>
+<p>À partir de maintenant, <strong>tout ce que tu écris dans <code>/root/data</code></strong> sera enregistré sur la partition <code>/dev/sdb1</code>.</p>
+<p>Ce montage <strong>disparaît après redémarrage</strong>.</p>
+<p><strong>2. Montage automatique (permanent)</strong></p>
+<p>Il faut modifier le fichier <strong><code>/etc/fstab</code></strong>.</p>
+<blockquote>
+<p><strong>Attention</strong><br>
+Une erreur dans ce fichier peut empêcher Linux de démarrer !<br>
+En cas de doute, fais une sauvegarde ou utilise <code>mount -a</code> pour tester.</p>
+</blockquote>
+<h4 id="ajouter-une-ligne-dans-etcfstab">Ajouter une ligne dans <em>/etc/fstab</em></h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/dev/sdb1    /root/data    ext4    defaults    <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span></span></span></code></pre></div>
+<p>Teste si tout est correct :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># mount -a</span></span></span></code></pre></div>
+<p><strong>Résumé des étapes à retenir :</strong></p>
+<ol>
+<li>Ajouter le disque</li>
+<li>Créer des partitions avec <code>fdisk</code></li>
+<li>Créer un système de fichiers avec <code>mkfs</code></li>
+<li>Monter la partition avec <code>mount</code></li>
+<li>(Optionnel) Rendre le montage permanent avec <code>/etc/fstab</code></li>
+</ol>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1744148521";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1744148521" defer></script>
+        <script src="/js/lunr/lunr.min.js?1744148521" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1744148521" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1744148521" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1744148521" defer></script>
+        <script src="/js/search.js?1744148521" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest2/index.html"><a class="padding" href="/revisiontest2/index.html">TEST #2-Quelques notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim, les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>Variables de paramètres de script et structure IF</a><ul id="R-subsections-1f01a70d85857b8ac721c011c139e3af" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest3/index.html"><a class="padding" href="/revisiontest3/index.html">TEST #3 - Informations et notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine10/index.html"><a class="padding" href="/semaine10/index.html"><b>Semaine 10. </b>Utilisateurs et groupes</a><ul id="R-subsections-f8cbb4e023a0fc71fa255b45db414bcc" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine11/index.html"><a class="padding" href="/semaine11/index.html"><b>Semaine 11. </b>Les droits d&#39;accès</a><ul id="R-subsections-b4d497b6531d9f49241f6ec42b8e80f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine12/index.html"><a class="padding" href="/semaine12/index.html"><b>Semaine 12. </b>Réseau</a><ul id="R-subsections-6098c004e594c3cbee6d88e41d11b10b" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine13/index.html"><a class="padding" href="/semaine13/index.html"><b>Semaine 13. </b>Gestion des disques</a><ul id="R-subsections-123a241fcf7a50602c7d825a9ccf5337" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine13/cours/index.html"><a class="padding" href="/semaine13/cours/index.html">Gestion des disques</a></li>
+            <li class="" data-nav-id="/semaine13/atelier/index.html"><a class="padding" href="/semaine13/atelier/index.html">ATELIER #10d: Gestion d&#39;un disque</a></li></ul></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine13/cours/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1744148521" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1744148521" defer></script>
+    <script src="/js/theme.js?1744148521" defer></script>
+  </body>
+</html>

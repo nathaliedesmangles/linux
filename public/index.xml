@@ -106,6 +106,13 @@
       <description>Plan de la leçon Théorie : Mercredi 23 avril&#xA;Les fichiers importants Les commandes essentielles: nmcli, ip, ifconfig Le service réseau Atelier : Jeudi 24 avril.&#xA;Exercice d’utilisation des commandes essentielles.</description>
     </item>
     <item>
+      <title>Gestion des disques</title>
+      <link>https://example.org/semaine13/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine13/index.html</guid>
+      <description>Plan de la leçon Théorie : lundi 28 avril&#xA;Ajout de disque (nommage) Création de partitions Création de système de fichiers Montage d’une partition Atelier : jeudi 1er mai.&#xA;Création et gestion d’un disque et sa partition</description>
+    </item>
+    <item>
       <title>WSL installation et manipulation (Ubuntu, VS Code)</title>
       <link>https://example.org/semaine14/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

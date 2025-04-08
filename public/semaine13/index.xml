@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Titre :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/semaine13/index.html</link>
-    <description>Plan de la leçon Théorie : Lundi 28 avril&#xA;s Atelier : Vendredi 2 mai.</description>
+    <title>Gestion des disques :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine13/index.html</link>
+    <description>Plan de la leçon Théorie : lundi 28 avril&#xA;Ajout de disque (nommage) Création de partitions Création de système de fichiers Montage d’une partition Atelier : jeudi 1er mai.&#xA;Création et gestion d’un disque et sa partition</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/semaine13/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/semaine13/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ATELIER #10d: Titre</title>
-      <link>http://localhost:1313/semaine13/atelier/index.html</link>
+      <title>Gestion des disques</title>
+      <link>https://example.org/semaine13/cours/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/semaine13/atelier/index.html</guid>
-      <description>Objectif de l’atelier Cet atelier a pour but de vous familiariser avec .&#xA;Atelier Exercice 1 : Titre</description>
+      <guid>https://example.org/semaine13/cours/index.html</guid>
+      <description>Introduction En Linux, il n’existe qu’un seul système de fichiers :&#xA;/ ← C’est la racine de tout.&#xA;Contrairement à Windows, il n’y a pas plusieurs racines comme C:, D:, etc.&#xA;En Linux, tout est un fichier, même les disques et périphériques.&#xA;Ils se trouvent dans le répertoire :&#xA;/dev&#xA;Les disques y apparaissent comme fichiers de type bloc.&#xA;On ne peut pas utiliser ces fichiers directement. Il faut suivre ces 3 étapes :</description>
+    </item>
+    <item>
+      <title>ATELIER #10d: Gestion d&#39;un disque</title>
+      <link>https://example.org/semaine13/atelier/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine13/atelier/index.html</guid>
+      <description>Objectif de l’atelier Ajout d’un disque Création d’une partition Création d’un système de fichier sur la partition. Création d’un répertoire vide. Atelier Exercice Ajouter un disque virtuel à votre VM d’une taille de 10G.&#xA;Une fois ajouté, tapez ls /dev et identifiez votre disque. Créez une partition primaire dans votre disque.&#xA;Tapez ls /dev et identifiez la partition créée.&#xA;Créez un système de fichier de votre choix sur la partition.</description>
     </item>
   </channel>
 </rss>

@@ -3,7 +3,7 @@
   <channel>
     <title>ATELIER #10c: Réseau sous Linux :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine12/atelier/index.html</link>
-    <description>Objectif Utiliser les commandes essentielles en réseau sur Linux Remise Vous devez faire une/des captures d’écran pour les commandes que vous tapez et leurs résultats, pour répondre à la question. Placez la capture d’écran sous la question.&#xA;Atelier Exercice Afficher l’adresse IP de l’interface Ethernet de la machine virtuelle&#xA;Ajouter deux autres adresses IP à votre interface Ethernet&#xA;Faites un ping vers les 2 adresses ajoutées et vérifiées que vous avez bien une réponse</description>
+    <description>Objectif Utiliser les commandes essentielles en réseau sur Linux Remise Vous devez faire une/des captures d’écran pour les commandes que vous tapez et leurs résultats, pour répondre à la question.&#xA;Atelier Exercice Afficher l’adresse IP de l’interface Ethernet de la machine virtuelle.&#xA;Ajouter deux autres adresses IP à votre interface Ethernet. Les addresses doivent faire partie du même sous réseau.&#xA;Faites un ping vers les 2 adresses ajoutées et vérifiées que vous avez bien une réponse.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine12/atelier/index.xml" rel="self" type="application/rss+xml" />

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Informations Date : jeudi 8 mai Durée : 1h40, 15 questions (à confirmer) Format : Test Moodle Documentation permise : 2 feuilles rect0-verso (manuscrites ou imprimées) À confirmer Semaine #10: Utilisateurs et groupes 1. Utilisateurs Qu’est-ce qu’un utilisateur ? Une entité (personne ou processus) ayant un compte sur le système. Identifié par un UID (User ID). Possède des droits et permissions spécifiques. Types de comptes root (UID 0) : super-utilisateur, tous les droits. nobody (UID 65534) : compte très limité. Systèmes / applications (UID 1-999) : pour les services, avec permissions minimales. Comptes standards (UID ≥ 1000) : pour les utilisateurs humains. Commandes importantes useradd : création d’un utilisateur. passwd : changement de mot de passe. userdel : suppression d’un utilisateur (-r pour supprimer son dossier). usermod : modification d’un utilisateur (groupe, shell, répertoire, etc.). id, groups : voir UID/GID et groupes. Détails techniques Le groupe principal est créé automatiquement et associé aux fichiers créés. Le répertoire personnel est copié depuis /etc/skel. Le mail est stocké dans /var/spool/mail. Le mot de passe est chiffré dans /etc/shadow. 2. Groupes Qu’est-ce qu’un groupe ? Un ensemble d’utilisateurs partageant les mêmes permissions. Identifié par un GID (Group ID). Utilisé pour gérer collectivement les permissions. Types de groupes root (GID 0) nobody (GID 65534) Groupes système (GID 1 - 999) Groupes standards (GID ≥ 1000) Groupe principal vs secondaire Groupe principal : utilisé lors de la création de fichiers (défini dans /etc/passwd). Groupes secondaires : ajoutent des permissions supplémentaires. Commandes importantes groupadd : créer un groupe. groupdel : supprimer un groupe. groupmod : renommer ou modifier un groupe. usermod -g : changer le groupe principal d’un utilisateur. usermod -aG : ajouter à l’utilisateur, un ou plusieurs groupes secondaires. usermod -G : remplacer les groupes secondaires existants par un ou plusieurs autres groupes secondaires. Commandes clés à retenir Tâche Commande Créer un utilisateur useradd nom Modifier un utilisateur usermod (avec options) Supprimer un utilisateur userdel (avec -r pour supprimer le dossier) Créer un groupe groupadd nom Supprimer un groupe groupdel nom Ajouter à un groupe secondaire usermod -aG groupe utilisateur Afficher UID/GID id Afficher les groupes groups utilisateur Points d’attention Le mot de passe n’est pas créé automatiquement lors de la création d’un utilisateur. Impossible de supprimer un groupe s’il est groupe principal d’un utilisateur. usermod -d ne déplace pas automatiquement les fichiers du répertoire personnel. Semaine #11: Droits d’accès Lire les permissions La commande :">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="TEST #4: Résumés :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Informations Date : jeudi 8 mai Durée : 1h40, 15 questions (à confirmer) Format : Test Moodle Documentation permise : 2 feuilles rect0-verso (manuscrites ou imprimées) À confirmer Semaine #10: Utilisateurs et groupes 1. Utilisateurs Qu’est-ce qu’un utilisateur ? Une entité (personne ou processus) ayant un compte sur le système. Identifié par un UID (User ID). Possède des droits et permissions spécifiques. Types de comptes root (UID 0) : super-utilisateur, tous les droits. nobody (UID 65534) : compte très limité. Systèmes / applications (UID 1-999) : pour les services, avec permissions minimales. Comptes standards (UID ≥ 1000) : pour les utilisateurs humains. Commandes importantes useradd : création d’un utilisateur. passwd : changement de mot de passe. userdel : suppression d’un utilisateur (-r pour supprimer son dossier). usermod : modification d’un utilisateur (groupe, shell, répertoire, etc.). id, groups : voir UID/GID et groupes. Détails techniques Le groupe principal est créé automatiquement et associé aux fichiers créés. Le répertoire personnel est copié depuis /etc/skel. Le mail est stocké dans /var/spool/mail. Le mot de passe est chiffré dans /etc/shadow. 2. Groupes Qu’est-ce qu’un groupe ? Un ensemble d’utilisateurs partageant les mêmes permissions. Identifié par un GID (Group ID). Utilisé pour gérer collectivement les permissions. Types de groupes root (GID 0) nobody (GID 65534) Groupes système (GID 1 - 999) Groupes standards (GID ≥ 1000) Groupe principal vs secondaire Groupe principal : utilisé lors de la création de fichiers (défini dans /etc/passwd). Groupes secondaires : ajoutent des permissions supplémentaires. Commandes importantes groupadd : créer un groupe. groupdel : supprimer un groupe. groupmod : renommer ou modifier un groupe. usermod -g : changer le groupe principal d’un utilisateur. usermod -aG : ajouter à l’utilisateur, un ou plusieurs groupes secondaires. usermod -G : remplacer les groupes secondaires existants par un ou plusieurs autres groupes secondaires. Commandes clés à retenir Tâche Commande Créer un utilisateur useradd nom Modifier un utilisateur usermod (avec options) Supprimer un utilisateur userdel (avec -r pour supprimer le dossier) Créer un groupe groupadd nom Supprimer un groupe groupdel nom Ajouter à un groupe secondaire usermod -aG groupe utilisateur Afficher UID/GID id Afficher les groupes groups utilisateur Points d’attention Le mot de passe n’est pas créé automatiquement lors de la création d’un utilisateur. Impossible de supprimer un groupe s’il est groupe principal d’un utilisateur. usermod -d ne déplace pas automatiquement les fichiers du répertoire personnel. Semaine #11: Droits d’accès Lire les permissions La commande :">
+    <meta property="og:url" content="http://localhost:1313/revisiontest4/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="TEST #4: Résumés :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Informations Date : jeudi 8 mai Durée : 1h40, 15 questions (à confirmer) Format : Test Moodle Documentation permise : 2 feuilles rect0-verso (manuscrites ou imprimées) À confirmer Semaine #10: Utilisateurs et groupes 1. Utilisateurs Qu’est-ce qu’un utilisateur ? Une entité (personne ou processus) ayant un compte sur le système. Identifié par un UID (User ID). Possède des droits et permissions spécifiques. Types de comptes root (UID 0) : super-utilisateur, tous les droits. nobody (UID 65534) : compte très limité. Systèmes / applications (UID 1-999) : pour les services, avec permissions minimales. Comptes standards (UID ≥ 1000) : pour les utilisateurs humains. Commandes importantes useradd : création d’un utilisateur. passwd : changement de mot de passe. userdel : suppression d’un utilisateur (-r pour supprimer son dossier). usermod : modification d’un utilisateur (groupe, shell, répertoire, etc.). id, groups : voir UID/GID et groupes. Détails techniques Le groupe principal est créé automatiquement et associé aux fichiers créés. Le répertoire personnel est copié depuis /etc/skel. Le mail est stocké dans /var/spool/mail. Le mot de passe est chiffré dans /etc/shadow. 2. Groupes Qu’est-ce qu’un groupe ? Un ensemble d’utilisateurs partageant les mêmes permissions. Identifié par un GID (Group ID). Utilisé pour gérer collectivement les permissions. Types de groupes root (GID 0) nobody (GID 65534) Groupes système (GID 1 - 999) Groupes standards (GID ≥ 1000) Groupe principal vs secondaire Groupe principal : utilisé lors de la création de fichiers (défini dans /etc/passwd). Groupes secondaires : ajoutent des permissions supplémentaires. Commandes importantes groupadd : créer un groupe. groupdel : supprimer un groupe. groupmod : renommer ou modifier un groupe. usermod -g : changer le groupe principal d’un utilisateur. usermod -aG : ajouter à l’utilisateur, un ou plusieurs groupes secondaires. usermod -G : remplacer les groupes secondaires existants par un ou plusieurs autres groupes secondaires. Commandes clés à retenir Tâche Commande Créer un utilisateur useradd nom Modifier un utilisateur usermod (avec options) Supprimer un utilisateur userdel (avec -r pour supprimer le dossier) Créer un groupe groupadd nom Supprimer un groupe groupdel nom Ajouter à un groupe secondaire usermod -aG groupe utilisateur Afficher UID/GID id Afficher les groupes groups utilisateur Points d’attention Le mot de passe n’est pas créé automatiquement lors de la création d’un utilisateur. Impossible de supprimer un groupe s’il est groupe principal d’un utilisateur. usermod -d ne déplace pas automatiquement les fichiers du répertoire personnel. Semaine #11: Droits d’accès Lire les permissions La commande :">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="TEST #4: Résumés :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Informations Date : jeudi 8 mai Durée : 1h40, 15 questions (à confirmer) Format : Test Moodle Documentation permise : 2 feuilles rect0-verso (manuscrites ou imprimées) À confirmer Semaine #10: Utilisateurs et groupes 1. Utilisateurs Qu’est-ce qu’un utilisateur ? Une entité (personne ou processus) ayant un compte sur le système. Identifié par un UID (User ID). Possède des droits et permissions spécifiques. Types de comptes root (UID 0) : super-utilisateur, tous les droits. nobody (UID 65534) : compte très limité. Systèmes / applications (UID 1-999) : pour les services, avec permissions minimales. Comptes standards (UID ≥ 1000) : pour les utilisateurs humains. Commandes importantes useradd : création d’un utilisateur. passwd : changement de mot de passe. userdel : suppression d’un utilisateur (-r pour supprimer son dossier). usermod : modification d’un utilisateur (groupe, shell, répertoire, etc.). id, groups : voir UID/GID et groupes. Détails techniques Le groupe principal est créé automatiquement et associé aux fichiers créés. Le répertoire personnel est copié depuis /etc/skel. Le mail est stocké dans /var/spool/mail. Le mot de passe est chiffré dans /etc/shadow. 2. Groupes Qu’est-ce qu’un groupe ? Un ensemble d’utilisateurs partageant les mêmes permissions. Identifié par un GID (Group ID). Utilisé pour gérer collectivement les permissions. Types de groupes root (GID 0) nobody (GID 65534) Groupes système (GID 1 - 999) Groupes standards (GID ≥ 1000) Groupe principal vs secondaire Groupe principal : utilisé lors de la création de fichiers (défini dans /etc/passwd). Groupes secondaires : ajoutent des permissions supplémentaires. Commandes importantes groupadd : créer un groupe. groupdel : supprimer un groupe. groupmod : renommer ou modifier un groupe. usermod -g : changer le groupe principal d’un utilisateur. usermod -aG : ajouter à l’utilisateur, un ou plusieurs groupes secondaires. usermod -G : remplacer les groupes secondaires existants par un ou plusieurs autres groupes secondaires. Commandes clés à retenir Tâche Commande Créer un utilisateur useradd nom Modifier un utilisateur usermod (avec options) Supprimer un utilisateur userdel (avec -r pour supprimer le dossier) Créer un groupe groupadd nom Supprimer un groupe groupdel nom Ajouter à un groupe secondaire usermod -aG groupe utilisateur Afficher UID/GID id Afficher les groupes groups utilisateur Points d’attention Le mot de passe n’est pas créé automatiquement lors de la création d’un utilisateur. Impossible de supprimer un groupe s’il est groupe principal d’un utilisateur. usermod -d ne déplace pas automatiquement les fichiers du répertoire personnel. Semaine #11: Droits d’accès Lire les permissions La commande :">
+    <meta itemprop="wordCount" content="1247">
+    <title>TEST #4: Résumés :: 420-ZG4-MO LINUX</title>
+    <link href="/revisiontest4/index.xml" rel="alternate" type="application/rss+xml" title="TEST #4: Résumés :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1744148005" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744148005" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1744148005" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744148005" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1744148005" rel="stylesheet">
+    <link href="/css/theme.css?1744148005" rel="stylesheet">
+    <link href="/css/format-html.css?1744148005" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.min = ``;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/revisiontest4/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-utilisateurs">1. Utilisateurs</a>
+      <ul>
+        <li><a href="#quest-ce-quun-utilisateur-">Qu&rsquo;est-ce qu&rsquo;un utilisateur ?</a></li>
+        <li><a href="#types-de-comptes">Types de comptes</a></li>
+        <li><a href="#commandes-importantes">Commandes importantes</a></li>
+        <li><a href="#détails-techniques">Détails techniques</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-groupes">2. Groupes</a>
+      <ul>
+        <li><a href="#quest-ce-quun-groupe-">Qu&rsquo;est-ce qu’un groupe ?</a></li>
+        <li><a href="#types-de-groupes">Types de groupes</a></li>
+        <li><a href="#groupe-principal-vs-secondaire">Groupe principal vs secondaire</a></li>
+        <li><a href="#commandes-importantes-1">Commandes importantes</a></li>
+      </ul>
+    </li>
+    <li><a href="#commandes-clés-à-retenir">Commandes clés à retenir</a></li>
+    <li><a href="#points-dattention">Points d’attention</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#lire-les-permissions">Lire les permissions</a></li>
+        <li><a href="#modifier-les-permissions-avec-chmod">Modifier les permissions (avec <em>chmod</em>)</a></li>
+        <li><a href="#tableau-des-permissions-linux">Tableau des permissions Linux</a></li>
+        <li><a href="#exemples-de-permissions-octales">Exemples de permissions octales</a></li>
+        <li><a href="#changer-le-propriétaire--avec-chown">Changer le propriétaire  (avec <em>chown</em>)</a></li>
+        <li><a href="#le-droit-dexécution-x">Le droit d’exécution (<em><strong>x</strong></em>)</a></li>
+        <li><a href="#la-variable-path">La variable <em><strong>$PATH</strong></em></a></li>
+        <li><a href="#spécifier-linterpréteur-dun-script">Spécifier l’interpréteur d’un script</a></li>
+      </ul>
+    </li>
+    <li><a href="#à-retenir">À retenir</a>
+      <ul>
+        <li><a href="#commandes-courantes">Commandes courantes</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#commandes-essentielles">Commandes essentielles</a></li>
+    <li><a href="#fichiers-importants">Fichiers importants</a></li>
+    <li><a href="#à-retenir-1">À retenir</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#étapes-essentielles">Étapes essentielles</a></li>
+    <li><a href="#schéma-visuel-simplifié">Schéma visuel simplifié</a></li>
+    <li><a href="#quelques-commandes-utiles-">Quelques commandes utiles :</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">TEST #4: Résumés</span><meta itemprop="position" content="2"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine13/atelier/index.html" title="ATELIER #10d: Gestion d&#39;un disque (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine14/index.html" title="WSL installation et manipulation (Ubuntu, VS Code) (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable revisiontest4" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="test-4-résumés">TEST #4: Résumés</h1>
+
+<h1 id="informations">Informations</h1>
+<ul>
+<li><strong>Date</strong> : jeudi 8 mai</li>
+<li><strong>Durée</strong> : 1h40, 15 questions (à confirmer)</li>
+<li><strong>Format</strong> : Test Moodle</li>
+<li><strong>Documentation permise</strong> : 2 feuilles rect0-verso (manuscrites ou imprimées) <strong>À confirmer</strong></li>
+</ul>
+<hr>
+<h1 id="semaine-10-utilisateurs-et-groupes">Semaine #10: Utilisateurs et groupes</h1>
+<h2 id="1-utilisateurs">1. Utilisateurs</h2>
+<h3 id="quest-ce-quun-utilisateur-">Qu&rsquo;est-ce qu&rsquo;un utilisateur ?</h3>
+<ul>
+<li>Une <strong>entité</strong> (personne ou processus) ayant un compte sur le système.</li>
+<li>Identifié par un <strong>UID (User ID)</strong>.</li>
+<li>Possède des <strong>droits</strong> et <strong>permissions</strong> spécifiques.</li>
+</ul>
+<h3 id="types-de-comptes">Types de comptes</h3>
+<ul>
+<li><strong>root (UID 0)</strong> : super-utilisateur, tous les droits.</li>
+<li><strong>nobody (UID 65534)</strong> : compte très limité.</li>
+<li><strong>Systèmes / applications (UID 1-999)</strong> : pour les services, avec permissions minimales.</li>
+<li><strong>Comptes standards (UID ≥ 1000)</strong> : pour les utilisateurs humains.</li>
+</ul>
+<h3 id="commandes-importantes">Commandes importantes</h3>
+<ul>
+<li><strong><code>useradd</code></strong> : création d’un utilisateur.</li>
+<li><strong><code>passwd</code></strong> : changement de mot de passe.</li>
+<li><strong><code>userdel</code></strong> : suppression d’un utilisateur (<code>-r</code> pour supprimer son dossier).</li>
+<li><strong><code>usermod</code></strong> : modification d’un utilisateur (groupe, shell, répertoire, etc.).</li>
+<li><strong><code>id</code></strong>, <strong><code>groups</code></strong> : voir UID/GID et groupes.</li>
+</ul>
+<h3 id="détails-techniques">Détails techniques</h3>
+<ul>
+<li>Le groupe principal est créé automatiquement et associé aux fichiers créés.</li>
+<li>Le répertoire personnel est copié depuis <strong><code>/etc/skel</code></strong>.</li>
+<li>Le mail est stocké dans <strong><code>/var/spool/mail</code></strong>.</li>
+<li>Le mot de passe est <strong>chiffré</strong> dans <strong><code>/etc/shadow</code></strong>.</li>
+</ul>
+<hr>
+<h2 id="2-groupes">2. Groupes</h2>
+<h3 id="quest-ce-quun-groupe-">Qu&rsquo;est-ce qu’un groupe ?</h3>
+<ul>
+<li>Un <strong>ensemble d’utilisateurs</strong> partageant les mêmes permissions.</li>
+<li>Identifié par un <strong>GID (Group ID)</strong>.</li>
+<li>Utilisé pour <strong>gérer collectivement</strong> les permissions.</li>
+</ul>
+<h3 id="types-de-groupes">Types de groupes</h3>
+<ul>
+<li><strong>root (GID 0)</strong></li>
+<li><strong>nobody (GID 65534)</strong></li>
+<li><strong>Groupes système (GID 1 - 999)</strong></li>
+<li><strong>Groupes standards (GID ≥ 1000)</strong></li>
+</ul>
+<h3 id="groupe-principal-vs-secondaire">Groupe principal vs secondaire</h3>
+<ul>
+<li><strong>Groupe principal</strong> : utilisé lors de la création de fichiers (défini dans <code>/etc/passwd</code>).</li>
+<li><strong>Groupes secondaires</strong> : ajoutent des permissions supplémentaires.</li>
+</ul>
+<h3 id="commandes-importantes-1">Commandes importantes</h3>
+<ul>
+<li><strong><code>groupadd</code></strong> : créer un groupe.</li>
+<li><strong><code>groupdel</code></strong> : supprimer un groupe.</li>
+<li><strong><code>groupmod</code></strong> : renommer ou modifier un groupe.</li>
+<li><strong><code>usermod -g</code></strong> : changer le groupe principal d’un utilisateur.</li>
+<li><strong><code>usermod -aG</code></strong> : ajouter à l&rsquo;utilisateur, un ou plusieurs groupes secondaires.</li>
+<li><strong><code>usermod -G</code></strong> : remplacer les groupes secondaires existants par un ou plusieurs autres groupes secondaires.</li>
+</ul>
+<hr>
+<h2 id="commandes-clés-à-retenir">Commandes clés à retenir</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Tâche</th>
+          <th style="text-align: left">Commande</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Créer un utilisateur</td>
+          <td style="text-align: left"><code>useradd nom</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Modifier un utilisateur</td>
+          <td style="text-align: left"><code>usermod</code> (avec options)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Supprimer un utilisateur</td>
+          <td style="text-align: left"><code>userdel</code> (avec <code>-r</code> pour supprimer le dossier)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Créer un groupe</td>
+          <td style="text-align: left"><code>groupadd nom</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Supprimer un groupe</td>
+          <td style="text-align: left"><code>groupdel nom</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Ajouter à un groupe secondaire</td>
+          <td style="text-align: left"><code>usermod -aG groupe utilisateur</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Afficher UID/GID</td>
+          <td style="text-align: left"><code>id</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Afficher les groupes</td>
+          <td style="text-align: left"><code>groups utilisateur</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="points-dattention">Points d’attention</h2>
+<ul>
+<li><strong>Le mot de passe</strong> n’est pas créé automatiquement lors de la création d&rsquo;un utilisateur.</li>
+<li><strong>Impossible de supprimer un groupe s’il est groupe principal d’un utilisateur.</strong></li>
+<li><strong><code>usermod -d</code></strong> ne déplace pas automatiquement les fichiers du répertoire personnel.</li>
+</ul>
+<h1 id="semaine-11-droits-daccès">Semaine #11: Droits d&rsquo;accès</h1>
+<h3 id="lire-les-permissions">Lire les permissions</h3>
+<p>La commande :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls -l</span></span></code></pre></div>
+<p>affiche les <strong>permissions sous forme symbolique</strong>, ex. : <code>-rwxr-xr--</code></p>
+<p>Structure :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[ type ][ u ][ g ][ o ]
+     -   rwx  r-x  r--</code></pre></div>
+<p>Signification des lettres (<strong>les droits</strong>) :</p>
+<ul>
+<li><code>r</code> : lecture (read)</li>
+<li><code>w</code> : écriture (write)</li>
+<li><code>x</code> : exécution (execute) — aussi &ldquo;traverser&rdquo; un dossier</li>
+</ul>
+<p>Signification des lettres (<strong>les utilisateurs</strong>)</p>
+<ul>
+<li><code>u</code>  : User (propriétaire)</li>
+<li><code>g</code>  : Group (groupe propriétaire)</li>
+<li><code>o</code>   : Other (autres utilisateurs)</li>
+<li><code>a</code>   : All (tous les utilisateurs)</li>
+</ul>
+<h3 id="modifier-les-permissions-avec-chmod">Modifier les permissions (avec <em>chmod</em>)</h3>
+<p>Deux méthodes :</p>
+<h4 id="1-méthode-symbolique">1. Méthode <strong>symbolique</strong></h4>
+<ul>
+<li><code>chmod u+x fichier</code> → ajoute exécution à l&rsquo;utilisateur</li>
+<li><code>chmod go-w fichier</code> → retire écriture au groupe et autres</li>
+<li><code>chmod a=r fichier</code> → définit lecture seule pour tous</li>
+<li><code>chmod -R u-x dir/</code> → applique récursivement</li>
+</ul>
+<h4 id="2-méthode-octale">2. Méthode <strong>octale</strong></h4>
+<p>Basée sur la valeur binaire des permissions :</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Droit</th>
+          <th style="text-align: left">Valeur</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">r</td>
+          <td style="text-align: left">4</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">w</td>
+          <td style="text-align: left">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">x</td>
+          <td style="text-align: left">1</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="tableau-des-permissions-linux">Tableau des permissions Linux</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Catégorie</strong></th>
+          <th style="text-align: left"><strong>Droit</strong></th>
+          <th style="text-align: left"><strong>Symbole</strong></th>
+          <th style="text-align: left">**Valeur (binaire)</th>
+          <th style="text-align: left"><strong>Valeur (octale)</strong></th>
+          <th style="text-align: left"><strong>Effet sur un fichier</strong></th>
+          <th style="text-align: left"><strong>Effet sur un répertoire</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Lecture</td>
+          <td style="text-align: left">read</td>
+          <td style="text-align: left"><code>r</code></td>
+          <td style="text-align: left">1 0 0</td>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">Lire le contenu</td>
+          <td style="text-align: left">Voir la liste des fichiers</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Écriture</td>
+          <td style="text-align: left">write</td>
+          <td style="text-align: left"><code>w</code></td>
+          <td style="text-align: left">0  1 0</td>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Modifier / supprimer</td>
+          <td style="text-align: left">Créer ou supprimer des fichiers</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Exécution</td>
+          <td style="text-align: left">execute</td>
+          <td style="text-align: left"><code>x</code></td>
+          <td style="text-align: left">0 0 1</td>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">Exécuter un script</td>
+          <td style="text-align: left">Accéder (entrer dans le dossier)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="exemples-de-permissions-octales">Exemples de permissions octales</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>Commande</strong></th>
+          <th style="text-align: left"><strong>Symbolique</strong></th>
+          <th style="text-align: left"><strong>Signification</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>chmod 777 fichier</code></td>
+          <td style="text-align: left"><code>rwxrwxrwx</code></td>
+          <td style="text-align: left">Tous les droits pour tous</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>chmod 755 fichier</code></td>
+          <td style="text-align: left"><code>rwxr-xr-x</code></td>
+          <td style="text-align: left">Propriétaire : tout, autres : lecture+exécution</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>chmod 644 fichier</code></td>
+          <td style="text-align: left"><code>rw-r--r--</code></td>
+          <td style="text-align: left">Propriétaire : lecture+écriture, autres : lecture</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>chmod 700 fichier</code></td>
+          <td style="text-align: left"><code>rwx------</code></td>
+          <td style="text-align: left">Seul le propriétaire a tous les droits</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>chmod -R 777 dir/</code></td>
+          <td style="text-align: left"><code>rwxrwxrwx</code></td>
+          <td style="text-align: left">tous les droits, récursivement</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="changer-le-propriétaire--avec-chown">Changer le propriétaire  (avec <em>chown</em>)</h3>
+<p>Seul <code>root</code> peut le faire :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chown user fichier
+</span></span><span style="display:flex;"><span>$ chown user:group fichier
+</span></span><span style="display:flex;"><span>$ chown -R user dir/</span></span></code></pre></div>
+<h4 id="changer-le-groupe--avec-chgrp">Changer le groupe ( avec <em>chgrp</em>)</h4>
+<p>Peut être fait par :</p>
+<ul>
+<li><code>root</code></li>
+<li>ou le propriétaire du fichier (s’il appartient au groupe visé)</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chgrp group fichier
+</span></span><span style="display:flex;"><span>$ chgrp -R group dir/</span></span></code></pre></div>
+<h3 id="le-droit-dexécution-x">Le droit d’exécution (<em><strong>x</strong></em>)</h3>
+<ul>
+<li><strong>Sur un fichier</strong> : permet d’exécuter un script ou programme.</li>
+<li><strong>Sur un dossier</strong> : permet d’y entrer (<code>cd</code>), mais pas de lister son contenu sans <code>r</code>.</li>
+</ul>
+<p>Pour exécuter un script :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chmod +x script.sh
+</span></span><span style="display:flex;"><span>$ ./script.sh</span></span></code></pre></div>
+<p>Le <code>./</code> indique un <strong>chemin relatif</strong> (exécuter un fichier du répertoire courant)</p>
+<h3 id="la-variable-path">La variable <em><strong>$PATH</strong></em></h3>
+<ul>
+<li>Liste des répertoires où le système cherche les commandes</li>
+<li>Voir son contenu :</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo $PATH</span></span></code></pre></div>
+<ul>
+<li>Ajouter un chemin temporairement :</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ export PATH<span style="color:#f92672">=</span>$PATH:/chemin/vers/dossier</span></span></code></pre></div>
+<ul>
+<li>Pour le rendre <strong>permanent</strong> : ajouter la ligne dans le fichier <code>.bashrc</code> ou le fichier <code>.bash_profile</code></li>
+</ul>
+<h3 id="spécifier-linterpréteur-dun-script">Spécifier l’interpréteur d’un script</h3>
+<p>En haut du fichier, on ajoute :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash</span></span></span></code></pre></div>
+<h2 id="à-retenir">À retenir</h2>
+<ul>
+<li><code>r</code>, <code>w</code>, <code>x</code> : lecture, écriture, exécution</li>
+<li><code>chmod</code> : modifier les permissions</li>
+<li><code>chown</code>, <code>chgrp</code> : modifier propriétaire et groupe</li>
+<li><code>./</code> : exécuter un script du répertoire courant</li>
+<li><code>$PATH</code> : répertoires contenant les commandes accessibles globalement</li>
+</ul>
+<h3 id="commandes-courantes">Commandes courantes</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left"><strong>But</strong></th>
+          <th style="text-align: left"><strong>Commande</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Donner tous les droits à tous</td>
+          <td style="text-align: left"><code>chmod a+rwx fichier</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Enlever le droit d’écriture à tous sauf au propriétaire</td>
+          <td style="text-align: left"><code>chmod go-w fichier</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Rendre un script exécutable</td>
+          <td style="text-align: left"><code>chmod +x script.sh</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Changer le propriétaire</td>
+          <td style="text-align: left"><code>chown utilisateur fichier</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Changer le groupe</td>
+          <td style="text-align: left"><code>chgrp groupe fichier</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Changer les deux</td>
+          <td style="text-align: left"><code>chown utilisateur:groupe fichier</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Voir les permissions</td>
+          <td style="text-align: left"><code>ls -l</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h1 id="semaine-12-réseau">Semaine #12: Réseau</h1>
+<h2 id="commandes-essentielles">Commandes essentielles</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Commande</th>
+          <th style="text-align: left">Rôle</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>ip a</code></td>
+          <td style="text-align: left">Affiche les interfaces réseau et leurs adresses IP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ip addr add &lt;IP&gt;</code></td>
+          <td style="text-align: left">Ajoute une adresse IP temporaire à une interface</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ip addr del &lt;IP&gt;</code></td>
+          <td style="text-align: left">Supprime une adresse IP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ip route</code></td>
+          <td style="text-align: left">Affiche la table de routage</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ip route add default via</code></td>
+          <td style="text-align: left">Définit une passerelle par défaut</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>nmcli</code></td>
+          <td style="text-align: left">Gère les connexions réseau (NetworkManager)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>nmcli con show</code></td>
+          <td style="text-align: left">Liste les connexions</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>nmcli con mod</code></td>
+          <td style="text-align: left">Modifie les paramètres d’une connexion</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>nmcli con add</code></td>
+          <td style="text-align: left">Crée une nouvelle connexion</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>nmcli con up/down</code></td>
+          <td style="text-align: left">Active ou désactive une connexion</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ifconfig</code></td>
+          <td style="text-align: left">Ancienne commande pour afficher/configurer les interfaces</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>ping &lt;adresse&gt;</code></td>
+          <td style="text-align: left">Teste la connectivité réseau</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>cat /etc/resolv.conf</code></td>
+          <td style="text-align: left">Montre les serveurs DNS utilisés</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="fichiers-importants">Fichiers importants</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Fichier</th>
+          <th style="text-align: left">Rôle</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>/etc/hosts</code></td>
+          <td style="text-align: left">Associe adresses IP et noms locaux</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>/etc/resolv.conf</code></td>
+          <td style="text-align: left">Contient les serveurs DNS utilisés</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>/etc/sysconfig/network-scripts/ifcfg-*</code></td>
+          <td style="text-align: left">Fichiers de configuration réseau (RedHat, CentOS, etc.)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>/etc/network/interfaces</code></td>
+          <td style="text-align: left">Fichier réseau (Debian/Ubuntu)</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="à-retenir-1">À retenir</h2>
+<ul>
+<li>Les commandes <code>ip</code> modifient <strong>temporairement</strong> la configuration</li>
+<li>Pour une configuration <strong>persistante</strong>, utilisez <code>nmcli</code> ou modifiez les fichiers</li>
+<li>Le fichier <code>/etc/hosts</code> permet d’attribuer des noms locaux (utile pour les pings)</li>
+<li>Le DNS est défini dans <code>/etc/resolv.conf</code></li>
+<li>Toujours <strong>redémarrer le réseau</strong> ou la connexion après une modification</li>
+</ul>
+<hr>
+<h1 id="semaine-13-gestion-des-disques">Semaine #13: Gestion des disques</h1>
+<h2 id="étapes-essentielles">Étapes essentielles</h2>
+<div class="highlight wrap-code"><pre tabindex="0"><code>1. Ajouter le disque (réel ou virtuel)
+2. Créer les partitions → fdisk /dev/sdX
+3. Formater la partition → mkfs -t ext4 /dev/sdX1
+4. Créer un répertoire vide → mkdir /mnt/data
+5. Monter la partition → mount /dev/sdX1 /mnt/data
+6. (Optionnel) Montage permanent → /etc/fstab</code></pre></div>
+<h2 id="schéma-visuel-simplifié">Schéma visuel simplifié</h2>
+<div class="highlight wrap-code"><pre tabindex="0"><code>[ Nouveau disque ]
+        ↓
+/dev/sdb   ← Apparaît comme fichier bloc
+        ↓
+[ Partitionnement ]
+→ /dev/sdb1  /dev/sdb2
+        ↓
+[ Formatage ]
+→ mkfs.ext4 /dev/sdb1
+        ↓
+[ Montage ]
+→ mount /dev/sdb1 /mnt/data
+        ↓
+[ Utilisation ]
+→ Écriture/lecture dans /mnt/data
+        ↓
+(Optionnel)
+→ /etc/fstab → montage automatique au démarrage</code></pre></div>
+<h2 id="quelques-commandes-utiles-">Quelques commandes utiles :</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Objectif</th>
+          <th style="text-align: left">Commande</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Lister les disques</td>
+          <td style="text-align: left"><code>ls /dev/sd*</code> ou <code>fdisk -l</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Créer une partition</td>
+          <td style="text-align: left"><code>fdisk /dev/sdb</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Formater une partition</td>
+          <td style="text-align: left"><code>mkfs.ext4 /dev/sdb1</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Monter une partition</td>
+          <td style="text-align: left"><code>mount /dev/sdb1 /mnt/data</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Voir les montages actifs</td>
+          <td style="text-align: left"><code>df -h</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Tester le fichier fstab</td>
+          <td style="text-align: left"><code>mount -a</code></td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1744148005";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1744148005" defer></script>
+        <script src="/js/lunr/lunr.min.js?1744148005" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1744148005" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1744148005" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1744148005" defer></script>
+        <script src="/js/search.js?1744148005" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest2/index.html"><a class="padding" href="/revisiontest2/index.html">TEST #2-Quelques notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim, les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>Variables de paramètres de script et structure IF</a><ul id="R-subsections-1f01a70d85857b8ac721c011c139e3af" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest3/index.html"><a class="padding" href="/revisiontest3/index.html">TEST #3 - Informations et notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine10/index.html"><a class="padding" href="/semaine10/index.html"><b>Semaine 10. </b>Utilisateurs et groupes</a><ul id="R-subsections-f8cbb4e023a0fc71fa255b45db414bcc" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine11/index.html"><a class="padding" href="/semaine11/index.html"><b>Semaine 11. </b>Les droits d&#39;accès</a><ul id="R-subsections-b4d497b6531d9f49241f6ec42b8e80f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine12/index.html"><a class="padding" href="/semaine12/index.html"><b>Semaine 12. </b>Réseau</a><ul id="R-subsections-6098c004e594c3cbee6d88e41d11b10b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine13/index.html"><a class="padding" href="/semaine13/index.html"><b>Semaine 13. </b>Gestion des disques</a><ul id="R-subsections-123a241fcf7a50602c7d825a9ccf5337" class="collapsible-menu"></ul></li>
+            <li class="active " data-nav-id="/revisiontest4/index.html"><a class="padding" href="/revisiontest4/index.html">TEST #4: Résumés</a></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/revisiontest4/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1744148005" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1744148005" defer></script>
+    <script src="/js/theme.js?1744148005" defer></script>
+  </body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Solution des exercices Exercice 2 — Reproduire une petite infrastructure réseau virtuelle sur une machine Linux. Étapes à réaliser Ajouter les interfaces (sur votre VM)
+→ Vous pouvez le faire dans la configuration de la VM (VMware).
+Déclarer les interfaces dans nmcli :
+$ sudo nmcli con add con-name ens224 type ethernet ifname ens224 $ sudo nmcli con add con-name ens225 type ethernet ifname ens225Attribuer des adresses IP statiques : $ sudo nmcli con mod ens224 ipv4.addresses 192.168.50.10/24 $ sudo nmcli con mod ens224 ipv4.method manual $ sudo nmcli con mod ens225 ipv4.addresses 192.168.60.10/24 $ sudo nmcli con mod ens225 ipv4.method manualRedémarrer les connexions : $ sudo nmcli con up ens224 $ sudo nmcli con up ens225Modifier /etc/hosts : $ sudo nano /etc/hostsAjoutez :">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Atelier #10c: Réseau :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Solution des exercices Exercice 2 — Reproduire une petite infrastructure réseau virtuelle sur une machine Linux. Étapes à réaliser Ajouter les interfaces (sur votre VM)
+→ Vous pouvez le faire dans la configuration de la VM (VMware).
+Déclarer les interfaces dans nmcli :
+$ sudo nmcli con add con-name ens224 type ethernet ifname ens224 $ sudo nmcli con add con-name ens225 type ethernet ifname ens225Attribuer des adresses IP statiques : $ sudo nmcli con mod ens224 ipv4.addresses 192.168.50.10/24 $ sudo nmcli con mod ens224 ipv4.method manual $ sudo nmcli con mod ens225 ipv4.addresses 192.168.60.10/24 $ sudo nmcli con mod ens225 ipv4.method manualRedémarrer les connexions : $ sudo nmcli con up ens224 $ sudo nmcli con up ens225Modifier /etc/hosts : $ sudo nano /etc/hostsAjoutez :">
+    <meta property="og:url" content="http://localhost:1313/solutions/semaine12/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Atelier #10c: Réseau :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Solution des exercices Exercice 2 — Reproduire une petite infrastructure réseau virtuelle sur une machine Linux. Étapes à réaliser Ajouter les interfaces (sur votre VM)
+→ Vous pouvez le faire dans la configuration de la VM (VMware).
+Déclarer les interfaces dans nmcli :
+$ sudo nmcli con add con-name ens224 type ethernet ifname ens224 $ sudo nmcli con add con-name ens225 type ethernet ifname ens225Attribuer des adresses IP statiques : $ sudo nmcli con mod ens224 ipv4.addresses 192.168.50.10/24 $ sudo nmcli con mod ens224 ipv4.method manual $ sudo nmcli con mod ens225 ipv4.addresses 192.168.60.10/24 $ sudo nmcli con mod ens225 ipv4.method manualRedémarrer les connexions : $ sudo nmcli con up ens224 $ sudo nmcli con up ens225Modifier /etc/hosts : $ sudo nano /etc/hostsAjoutez :">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Atelier #10c: Réseau :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Solution des exercices Exercice 2 — Reproduire une petite infrastructure réseau virtuelle sur une machine Linux. Étapes à réaliser Ajouter les interfaces (sur votre VM)
+→ Vous pouvez le faire dans la configuration de la VM (VMware).
+Déclarer les interfaces dans nmcli :
+$ sudo nmcli con add con-name ens224 type ethernet ifname ens224 $ sudo nmcli con add con-name ens225 type ethernet ifname ens225Attribuer des adresses IP statiques : $ sudo nmcli con mod ens224 ipv4.addresses 192.168.50.10/24 $ sudo nmcli con mod ens224 ipv4.method manual $ sudo nmcli con mod ens225 ipv4.addresses 192.168.60.10/24 $ sudo nmcli con mod ens225 ipv4.method manualRedémarrer les connexions : $ sudo nmcli con up ens224 $ sudo nmcli con up ens225Modifier /etc/hosts : $ sudo nano /etc/hostsAjoutez :">
+    <meta itemprop="wordCount" content="389">
+    <title>Atelier #10c: Réseau :: 420-ZG4-MO LINUX</title>
+    <link href="/solutions/semaine12/index.xml" rel="alternate" type="application/rss+xml" title="Atelier #10c: Réseau :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1744148005" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744148005" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1744148005" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744148005" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1744148005" rel="stylesheet">
+    <link href="/css/theme.css?1744148005" rel="stylesheet">
+    <link href="/css/format-html.css?1744148005" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.min = ``;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/solutions/semaine12/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#exercice-2--reproduire-une-petite-infrastructure-réseau-virtuelle-sur-une-machine-linux">Exercice 2 — Reproduire une petite infrastructure réseau virtuelle sur une machine Linux.</a>
+      <ul>
+        <li><a href="#étapes-à-réaliser">Étapes à réaliser</a></li>
+      </ul>
+    </li>
+    <li><a href="#variante-possible">Variante possible</a>
+      <ul>
+        <li><a href="#étape-1--créer-les-fichiers-de-configuration">Étape 1 : Créer les fichiers de configuration</a></li>
+        <li><a href="#étape-2--modifier-etchosts">Étape 2 : Modifier <code>/etc/hosts</code></a></li>
+        <li><a href="#étape-3--redémarrer-le-service-réseau">Étape 3 : Redémarrer le service réseau</a></li>
+        <li><a href="#étape-4--vérification">Étape 4 : Vérification</a></li>
+        <li><a href="#étape-5--revenir-à-dhcp-sur-ens224">Étape 5 : Revenir à DHCP sur <code>ens224</code></a></li>
+        <li><a href="#remarques">Remarques</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/solutions/index.html"><span itemprop="name">Solutions: ateliers et tests</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Atelier #10c: Réseau</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/index.html" title="Solutions: ateliers et tests (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine1/index.html" title="Atelier 1 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable solutions" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="atelier-10c-réseau">Atelier #10c: Réseau</h1>
+
+<h1 id="solution-des-exercices">Solution des exercices</h1>
+<h2 id="exercice-2--reproduire-une-petite-infrastructure-réseau-virtuelle-sur-une-machine-linux">Exercice 2 — Reproduire une petite infrastructure réseau virtuelle sur une machine Linux.</h2>
+<h3 id="étapes-à-réaliser">Étapes à réaliser</h3>
+<ol>
+<li>
+<p><strong>Ajouter les interfaces (sur votre VM)</strong><br>
+→ Vous pouvez le faire dans la configuration de la VM (VMware).</p>
+</li>
+<li>
+<p><strong>Déclarer les interfaces dans <code>nmcli</code></strong> :</p>
+</li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nmcli con add con-name ens224 type ethernet ifname ens224
+</span></span><span style="display:flex;"><span>$ sudo nmcli con add con-name ens225 type ethernet ifname ens225</span></span></code></pre></div>
+<ol start="3">
+<li><strong>Attribuer des adresses IP statiques :</strong></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nmcli con mod ens224 ipv4.addresses 192.168.50.10/24
+</span></span><span style="display:flex;"><span>$ sudo nmcli con mod ens224 ipv4.method manual
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ sudo nmcli con mod ens225 ipv4.addresses 192.168.60.10/24
+</span></span><span style="display:flex;"><span>$ sudo nmcli con mod ens225 ipv4.method manual</span></span></code></pre></div>
+<ol start="4">
+<li><strong>Redémarrer les connexions :</strong></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nmcli con up ens224
+</span></span><span style="display:flex;"><span>$ sudo nmcli con up ens225</span></span></code></pre></div>
+<ol start="5">
+<li><strong>Modifier <code>/etc/hosts</code> :</strong></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nano /etc/hosts</span></span></code></pre></div>
+<p>Ajoutez :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>192.168.50.10   interface-50
+192.168.60.10   interface-60</code></pre></div>
+<ol start="6">
+<li><strong>Tester la communication entre interfaces :</strong></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ping interface-50
+</span></span><span style="display:flex;"><span>$ ping interface-60</span></span></code></pre></div>
+<ol start="7">
+<li><strong>Rendre <code>ens224</code> dynamique (DHCP), mais garder <code>ens225</code> en IP fixe :</strong></li>
+</ol>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nmcli con mod ens224 ipv4.method auto
+</span></span><span style="display:flex;"><span>$ sudo nmcli con mod ens224 ipv4.addresses <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>$ sudo nmcli con up ens224</span></span></code></pre></div>
+<ol start="8">
+<li><strong>Vérifier les IP finales avec <code>ip a</code></strong></li>
+<li><strong>Documenter vos étapes dans un petit fichier <code>rapport.txt</code></strong></li>
+</ol>
+<hr>
+<h2 id="variante-possible">Variante possible</h2>
+<p>Faites la même chose <strong>sans <code>nmcli</code></strong>, en modifiant directement les fichiers de configuration.</p>
+<h3 id="étape-1--créer-les-fichiers-de-configuration">Étape 1 : Créer les fichiers de configuration</h3>
+<p>Les fichiers sont situés dans :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/etc/sysconfig/network-scripts/</span></span></code></pre></div>
+<h4 id="a-configuration-statique-pour-ens224-ip-fixe-au-début">A. Configuration statique pour <code>ens224</code> (IP fixe au début)</h4>
+<p>Créer le fichier :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/sysconfig/network-scripts/ifcfg-ens224</span></span></code></pre></div>
+<p>Contenu :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">DEVICE</span><span style="color:#f92672">=</span><span style="color:#e6db74">ens224</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">BOOTPROTO</span><span style="color:#f92672">=</span><span style="color:#e6db74">none</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ONBOOT</span><span style="color:#f92672">=</span><span style="color:#e6db74">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">IPADDR</span><span style="color:#f92672">=</span><span style="color:#e6db74">192.168.50.10</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NETMASK</span><span style="color:#f92672">=</span><span style="color:#e6db74">255.255.255.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">GATEWAY</span><span style="color:#f92672">=</span><span style="color:#e6db74">192.168.50.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">DNS1</span><span style="color:#f92672">=</span><span style="color:#e6db74">8.8.8.8</span></span></span></code></pre></div>
+<h4 id="b-configuration-statique-pour-ens225">B. Configuration statique pour <code>ens225</code></h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/sysconfig/network-scripts/ifcfg-ens225</span></span></code></pre></div>
+<p>Contenu :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">DEVICE</span><span style="color:#f92672">=</span><span style="color:#e6db74">ens225</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">BOOTPROTO</span><span style="color:#f92672">=</span><span style="color:#e6db74">none</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ONBOOT</span><span style="color:#f92672">=</span><span style="color:#e6db74">yes</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">IPADDR</span><span style="color:#f92672">=</span><span style="color:#e6db74">192.168.60.10</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">NETMASK</span><span style="color:#f92672">=</span><span style="color:#e6db74">255.255.255.0</span></span></span></code></pre></div>
+<h3 id="étape-2--modifier-etchosts">Étape 2 : Modifier <code>/etc/hosts</code></h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/hosts</span></span></code></pre></div>
+<p>Ajoutez :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>192.168.50.10 interface-50
+192.168.60.10 interface-60</code></pre></div>
+<h3 id="étape-3--redémarrer-le-service-réseau">Étape 3 : Redémarrer le service réseau</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart network</span></span></code></pre></div>
+<h3 id="étape-4--vérification">Étape 4 : Vérification</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip a show ens224
+</span></span><span style="display:flex;"><span>ip a show ens225
+</span></span><span style="display:flex;"><span>ping interface-50
+</span></span><span style="display:flex;"><span>ping interface-60</span></span></code></pre></div>
+<h3 id="étape-5--revenir-à-dhcp-sur-ens224">Étape 5 : Revenir à DHCP sur <code>ens224</code></h3>
+<p>Éditez le fichier <code>ifcfg-ens224</code> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/sysconfig/network-scripts/ifcfg-ens224</span></span></code></pre></div>
+<p>Remplacez le contenu par :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">DEVICE</span><span style="color:#f92672">=</span><span style="color:#e6db74">ens224</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">BOOTPROTO</span><span style="color:#f92672">=</span><span style="color:#e6db74">dhcp</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ONBOOT</span><span style="color:#f92672">=</span><span style="color:#e6db74">yes</span></span></span></code></pre></div>
+<p>Puis redémarrez le réseau :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart network</span></span></code></pre></div>
+<h3 id="remarques">Remarques</h3>
+<ul>
+<li>Cette méthode est <strong>persistante</strong> automatiquement, car elle repose sur des fichiers lus au démarrage.</li>
+<li><code>nmcli</code> et les fichiers <code>ifcfg-*</code> utilisent la même base : NetworkManager.</li>
+<li>Sur certaines machines, il peut être nécessaire de désactiver NetworkManager pour que la configuration manuelle fonctionne à 100 %.</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl stop NetworkManager
+</span></span><span style="display:flex;"><span>sudo systemctl disable NetworkManager</span></span></code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1744148005";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1744148005" defer></script>
+        <script src="/js/lunr/lunr.min.js?1744148005" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1744148005" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1744148005" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1744148005" defer></script>
+        <script src="/js/search.js?1744148005" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest2/index.html"><a class="padding" href="/revisiontest2/index.html">TEST #2-Quelques notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim, les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>Variables de paramètres de script et structure IF</a><ul id="R-subsections-1f01a70d85857b8ac721c011c139e3af" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest3/index.html"><a class="padding" href="/revisiontest3/index.html">TEST #3 - Informations et notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine10/index.html"><a class="padding" href="/semaine10/index.html"><b>Semaine 10. </b>Utilisateurs et groupes</a><ul id="R-subsections-f8cbb4e023a0fc71fa255b45db414bcc" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine11/index.html"><a class="padding" href="/semaine11/index.html"><b>Semaine 11. </b>Les droits d&#39;accès</a><ul id="R-subsections-b4d497b6531d9f49241f6ec42b8e80f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine12/index.html"><a class="padding" href="/semaine12/index.html"><b>Semaine 12. </b>Réseau</a><ul id="R-subsections-6098c004e594c3cbee6d88e41d11b10b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine13/index.html"><a class="padding" href="/semaine13/index.html"><b>Semaine 13. </b>Gestion des disques</a><ul id="R-subsections-123a241fcf7a50602c7d825a9ccf5337" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest4/index.html"><a class="padding" href="/revisiontest4/index.html">TEST #4: Résumés</a></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu">
+            <li class="active " data-nav-id="/solutions/semaine12/index.html"><a class="padding" href="/solutions/semaine12/index.html">Atelier #10c: Réseau</a></li>
+            <li class="" data-nav-id="/solutions/semaine1/index.html"><a class="padding" href="/solutions/semaine1/index.html">Atelier 1</a></li>
+            <li class="" data-nav-id="/solutions/semaine2/index.html"><a class="padding" href="/solutions/semaine2/index.html">Atelier 2</a></li>
+            <li class="" data-nav-id="/solutions/semaine3/index.html"><a class="padding" href="/solutions/semaine3/index.html">Atelier 3</a></li>
+            <li class="" data-nav-id="/solutions/semaine4/index.html"><a class="padding" href="/solutions/semaine4/index.html">Atelier 4</a></li>
+            <li class="" data-nav-id="/solutions/semaine5/index.html"><a class="padding" href="/solutions/semaine5/index.html">Atelier 5</a></li>
+            <li class="" data-nav-id="/solutions/semaine6/index.html"><a class="padding" href="/solutions/semaine6/index.html">Atelier 6</a></li>
+            <li class="" data-nav-id="/solutions/semaine7/index.html"><a class="padding" href="/solutions/semaine7/index.html">Atelier 7</a></li>
+            <li class="" data-nav-id="/solutions/semaine8/index.html"><a class="padding" href="/solutions/semaine8/index.html">Atelier 8</a></li>
+            <li class="alwaysopen " data-nav-id="/solutions/semaine9/index.html"><a class="padding" href="/solutions/semaine9/index.html">Atelier 9</a><ul id="R-subsections-af4a0a74a93c7502e727723640a01582" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/solutions/test1/index.html"><a class="padding" href="/solutions/test1/index.html">Test 1</a></li>
+            <li class="" data-nav-id="/solutions/test2/index.html"><a class="padding" href="/solutions/test2/index.html">Test 2</a></li>
+            <li class="" data-nav-id="/solutions/test3/index.html"><a class="padding" href="/solutions/test3/index.html">Test 3</a></li>
+            <li class="" data-nav-id="/solutions/test4/index.html"><a class="padding" href="/solutions/test4/index.html">Test 4</a></li></ul></li>
+            <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/solutions/semaine12/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1744148005" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1744148005" defer></script>
+    <script src="/js/theme.js?1744148005" defer></script>
+  </body>
+</html>

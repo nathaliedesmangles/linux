@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Atelier #10c: Réseau :: 420-ZG4-MO LINUX</title>
+    <link>http://localhost:1313/solutions/semaine12/index.html</link>
+    <description>Solution des exercices Exercice 2 — Reproduire une petite infrastructure réseau virtuelle sur une machine Linux. Étapes à réaliser Ajouter les interfaces (sur votre VM)&#xA;→ Vous pouvez le faire dans la configuration de la VM (VMware).&#xA;Déclarer les interfaces dans nmcli :&#xA;$ sudo nmcli con add con-name ens224 type ethernet ifname ens224 $ sudo nmcli con add con-name ens225 type ethernet ifname ens225&#xD;Attribuer des adresses IP statiques : $ sudo nmcli con mod ens224 ipv4.addresses 192.168.50.10/24 $ sudo nmcli con mod ens224 ipv4.method manual $ sudo nmcli con mod ens225 ipv4.addresses 192.168.60.10/24 $ sudo nmcli con mod ens225 ipv4.method manual&#xD;Redémarrer les connexions : $ sudo nmcli con up ens224 $ sudo nmcli con up ens225&#xD;Modifier /etc/hosts : $ sudo nano /etc/hosts&#xD;Ajoutez :</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/solutions/semaine12/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

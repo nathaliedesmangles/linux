@@ -1,15 +1,17 @@
 +++
 chapter = true
 pre = "<b>Semaine 13. </b>"
-title = "Titre"
+title = "Gestion des disques"
 weight = 130
-draft = true
 +++
 
 ## Plan de la leçon
 
-- **Théorie : Lundi 28 avril**
-  - s
+- **Théorie : lundi 28 avril**
+  - Ajout de disque (nommage)
+  - Création de partitions
+  - Création de système de fichiers
+  - Montage d'une partition
 
-- **Atelier : Vendredi 2 mai**.
-  - 
+- **Atelier : jeudi 1er mai**.
+  - Création et gestion d'un disque et sa partition
