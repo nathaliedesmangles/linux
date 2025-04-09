@@ -101,7 +101,7 @@ Chaque permission (lecture, écriture, exécution) correspond à un **bit** qui 
 {{% /notice %}}
 
 - Pour chacun des 3 rôles (**propriétaire**, **groupe** et **autres**), on **additionne** les valeurs des droits individuels accordés pour connaître la valeur des **permissions** que l’on souhaite attribuer.
-- On peut ainsi obtenir **un chiffre pour chaque rôle** → **3 chiffres** représentants les permissions**.
+- On peut ainsi obtenir **un chiffre pour chaque rôle** → **3 chiffres** représentants les permissions.
 
 **Exemples** :
 ```bash
@@ -115,7 +115,7 @@ Seul **root** peut changer le propriétaire d’un fichier avec `chown` :
 ```bash
 $ chown user fichier            # Change le propriétaire
 $ chown user:group fichier      # Change le propriétaire et le groupe
-$ chown -R user directory       # Applique récursivement
+$ chown -R user repertoire      # Applique récursivement ((sous-dossiers et fichiers inclus) 
 ```
 
 ### Changer le groupe (commande *chgrp*)
@@ -123,7 +123,7 @@ $ chown -R user directory       # Applique récursivement
 Pour changer uniquement le groupe :
 ```bash
 $ chgrp group fichier
-$ chgrp -R group directory
+$ chgrp -R group repertoire	# Applique récursivement (sous-dossiers et fichiers inclus) 
 ```
 
 ## Le droit d'exécution sous Linux
@@ -141,7 +141,7 @@ Un script commence souvent par la ligne suivante :
 ### Qu'est-ce que le droit d'exécution ?
 
 Le droit d'exécution permet :
-- **Pour un fichier** : D'exécuter le fichier comme un programme ou un script.
+- **Pour un fichier** : D'**exécuter** le fichier comme un programme ou un script.
 - **Pour un répertoire** : De **parcourir** le contenu du répertoire, mais **sans pouvoir lister ses fichiers si le droit de lecture n'est pas accordé**.
 
 Sur **Windows**, ce droit d'exécution joue un rôle similaire à l'extension ".exe".
@@ -153,10 +153,10 @@ Par défaut, quand on crée un fichier avec des commandes comme `touch`, `echo`,
 ### Donner la permission d'exécution (commande *chmod*)
 
 ```bash
-$ chmod +x script.sh
+$ chmod +x script.sh 
 ```
 Cette commande donne le droit d'exécution à l'utilisateur **propriétaire**, au **groupe** et aux **autres**.
-On peut ensuite exécuter le script sans utiliser la commande `bash`.
+On peut ensuite exécuter le script **sans utiliser la commande `bash`**.
 
 ```bash
 $ ./script.sh
@@ -170,10 +170,15 @@ Le système **cherche les programmes exécutables** dans les répertoires listé
 
 ### Afficher le contenu de $PATH
 
+La variable d’environnement ***$PATH*** contient la liste des <u>répertoires dans lesquels le système cherche les **commandes exécutables**</u>.
+
 ```bash
 $ echo $PATH
-/home/ndesmangles/.local/bin:/home/ndesmangles/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
+/home/user/.local/bin:/home/ndesmangles/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
 ```
+
+- Chaque répertoire est séparé par un deux-points `:`.
+- Quand on tape une commande, Linux va la chercher dans l’ordre des répertoires listés dans $PATH.
 
 ### Ajouter un répertoire au $PATH temporairement
 
@@ -186,7 +191,7 @@ $ export PATH=$PATH:/chemin/vers/repertoire
 - Pour simplifier l’exécution du script sans spécifier le chemin complet, on ajoute `/home/user/scripts` au PATH :
 
 ```bash
-$ export PATH=$PATH:/home/ndesmangles/scripts
+$ export PATH=$PATH:/home/user/scripts
 ```
 
 {{% notice style="warning" title="Important" %}}

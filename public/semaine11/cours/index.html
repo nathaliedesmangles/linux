@@ -26,14 +26,14 @@ Les permissions standards et Les ACL (Access Control Lists). Nous étudierons un
     <meta itemprop="description" content="Linux est un système multi-utilisateurs où chaque fichier et dossier possède des permissions de sécurité. Ces permissions protègent les fichiers contre les accès non autorisés et les erreurs. Elles permettent notamment :
 La confidentialité des données. La protection contre les modifications accidentelles. Le contrôle de l’exécution des fichiers Sur Linux, il existe deux types de permissions :
 Les permissions standards et Les ACL (Access Control Lists). Nous étudierons uniquement les permissions standards, les plus utilisées.">
-    <meta itemprop="wordCount" content="1329">
+    <meta itemprop="wordCount" content="1381">
     <title>Les droits d&#39;accès :: 420-ZG4-MO LINUX</title>
     <link href="/semaine11/cours/index.xml" rel="alternate" type="application/rss+xml" title="Les droits d&#39;accès :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1744148521" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744148521" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1744148521" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744148521" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1744148521" rel="stylesheet">
-    <link href="/css/theme.min.css?1744148521" rel="stylesheet">
-    <link href="/css/format-html.min.css?1744148521" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1744235367" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744235367" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1744235367" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744235367" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1744235367" rel="stylesheet">
+    <link href="/css/theme.min.css?1744235367" rel="stylesheet">
+    <link href="/css/format-html.min.css?1744235367" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -304,7 +304,7 @@ Chaque permission (lecture, écriture, exécution) correspond à un <strong>bit<
 </details>
 <ul>
 <li>Pour chacun des 3 rôles (<strong>propriétaire</strong>, <strong>groupe</strong> et <strong>autres</strong>), on <strong>additionne</strong> les valeurs des droits individuels accordés pour connaître la valeur des <strong>permissions</strong> que l’on souhaite attribuer.</li>
-<li>On peut ainsi obtenir <strong>un chiffre pour chaque rôle</strong> → <strong>3 chiffres</strong> représentants les permissions**.</li>
+<li>On peut ainsi obtenir <strong>un chiffre pour chaque rôle</strong> → <strong>3 chiffres</strong> représentants les permissions.</li>
 </ul>
 <p><strong>Exemples</strong> :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chmod <span style="color:#ae81ff">755</span> script.sh  <span style="color:#75715e"># Propriétaire : rwx, Groupe : r-x, Autres : r-x</span>
@@ -313,11 +313,11 @@ Chaque permission (lecture, écriture, exécution) correspond à un <strong>bit<
 <p>Seul <strong>root</strong> peut changer le propriétaire d’un fichier avec <code>chown</code> :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chown user fichier            <span style="color:#75715e"># Change le propriétaire</span>
 </span></span><span style="display:flex;"><span>$ chown user:group fichier      <span style="color:#75715e"># Change le propriétaire et le groupe</span>
-</span></span><span style="display:flex;"><span>$ chown -R user directory       <span style="color:#75715e"># Applique récursivement</span></span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>$ chown -R user repertoire      <span style="color:#75715e"># Applique récursivement ((sous-dossiers et fichiers inclus) </span></span></span></code></pre></div>
 <h3 id="changer-le-groupe-commande-chgrp">Changer le groupe (commande <em>chgrp</em>)</h3>
 <p>Pour changer uniquement le groupe :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chgrp group fichier
-</span></span><span style="display:flex;"><span>$ chgrp -R group directory</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>$ chgrp -R group repertoire	<span style="color:#75715e"># Applique récursivement (sous-dossiers et fichiers inclus) </span></span></span></code></pre></div>
 <h2 id="le-droit-dexécution-sous-linux">Le droit d&rsquo;exécution sous Linux</h2>
 <h3 id="rappel-spécifier-linterpréteur-pour-un-script"><strong>Rappel</strong>: Spécifier l&rsquo;interpréteur pour un script</h3>
 <p>Un script commence souvent par la ligne suivante :</p>
@@ -329,16 +329,16 @@ Chaque permission (lecture, écriture, exécution) correspond à un <strong>bit<
 <h3 id="quest-ce-que-le-droit-dexécution-">Qu&rsquo;est-ce que le droit d&rsquo;exécution ?</h3>
 <p>Le droit d&rsquo;exécution permet :</p>
 <ul>
-<li><strong>Pour un fichier</strong> : D&rsquo;exécuter le fichier comme un programme ou un script.</li>
+<li><strong>Pour un fichier</strong> : D&rsquo;<strong>exécuter</strong> le fichier comme un programme ou un script.</li>
 <li><strong>Pour un répertoire</strong> : De <strong>parcourir</strong> le contenu du répertoire, mais <strong>sans pouvoir lister ses fichiers si le droit de lecture n&rsquo;est pas accordé</strong>.</li>
 </ul>
 <p>Sur <strong>Windows</strong>, ce droit d&rsquo;exécution joue un rôle similaire à l&rsquo;extension &ldquo;.exe&rdquo;.</p>
 <h3 id="pourquoi-faut-il-octroyer-le-droit-dexécution-même-au-propriétaire-du-fichier">Pourquoi faut-il octroyer le droit d&rsquo;exécution (même au propriétaire du fichier)</h3>
 <p>Par défaut, quand on crée un fichier avec des commandes comme <code>touch</code>, <code>echo</code>, ou des <strong>éditeurs de texte</strong> (nano, vim, etc.), le fichier n&rsquo;obtient généralement pas de droit d&rsquo;exécution par défaut. Sans ce droit, un script ne pourra pas fonctionner.</p>
 <h3 id="donner-la-permission-dexécution-commande-chmod">Donner la permission d&rsquo;exécution (commande <em>chmod</em>)</h3>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chmod +x script.sh</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chmod +x script.sh </span></span></code></pre></div>
 <p>Cette commande donne le droit d&rsquo;exécution à l&rsquo;utilisateur <strong>propriétaire</strong>, au <strong>groupe</strong> et aux <strong>autres</strong>.
-On peut ensuite exécuter le script sans utiliser la commande <code>bash</code>.</p>
+On peut ensuite exécuter le script <strong>sans utiliser la commande <code>bash</code></strong>.</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ./script.sh</span></span></code></pre></div>
 <ul>
 <li>Le fichier doit être présent dans un dossier contenu dans la variable d’environnement <code>$PATH</code> pour être exécuté directement.</li>
@@ -347,8 +347,13 @@ On peut ensuite exécuter le script sans utiliser la commande <code>bash</code>.
 <h2 id="la-variable-denvironnement-path">La variable d&rsquo;environnement $PATH</h2>
 <p>Le système <strong>cherche les programmes exécutables</strong> dans les répertoires listés dans la <strong>variable d&rsquo;environnement <code>$PATH</code></strong>.</p>
 <h3 id="afficher-le-contenu-de-path">Afficher le contenu de $PATH</h3>
+<p>La variable d’environnement <em><strong>$PATH</strong></em> contient la liste des <u>répertoires dans lesquels le système cherche les <strong>commandes exécutables</strong></u>.</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo $PATH
-</span></span><span style="display:flex;"><span>/home/ndesmangles/.local/bin:/home/ndesmangles/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>/home/user/.local/bin:/home/ndesmangles/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin</span></span></code></pre></div>
+<ul>
+<li>Chaque répertoire est séparé par un deux-points <code>:</code>.</li>
+<li>Quand on tape une commande, Linux va la chercher dans l’ordre des répertoires listés dans $PATH.</li>
+</ul>
 <h3 id="ajouter-un-répertoire-au-path-temporairement">Ajouter un répertoire au $PATH temporairement</h3>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ export PATH<span style="color:#f92672">=</span>$PATH:/chemin/vers/repertoire</span></span></code></pre></div>
 <p><strong>Exemple</strong> :</p>
@@ -356,7 +361,7 @@ On peut ensuite exécuter le script sans utiliser la commande <code>bash</code>.
 <li>Imaginons un script appelé <strong>mon_script.sh</strong> dans un dossier <code>/home/user/scripts</code>.</li>
 <li>Pour simplifier l’exécution du script sans spécifier le chemin complet, on ajoute <code>/home/user/scripts</code> au PATH :</li>
 </ul>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ export PATH<span style="color:#f92672">=</span>$PATH:/home/ndesmangles/scripts</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ export PATH<span style="color:#f92672">=</span>$PATH:/home/user/scripts</span></span></code></pre></div>
 
 <details open class=" box cstyle notices warning">
   <summary class="box-label" tabindex="-1">
@@ -771,7 +776,7 @@ Créez cette structure :</li>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1744148521";
+          window.index_js_url="/searchindex.en.js?1744235367";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -784,12 +789,12 @@ Créez cette structure :</li>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1744148521" defer></script>
-        <script src="/js/lunr/lunr.min.js?1744148521" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1744148521" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1744148521" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1744148521" defer></script>
-        <script src="/js/search.js?1744148521" defer></script>
+        <script src="/js/auto-complete.js?1744235367" defer></script>
+        <script src="/js/lunr/lunr.min.js?1744235367" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1744235367" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1744235367" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1744235367" defer></script>
+        <script src="/js/search.js?1744235367" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -873,8 +878,8 @@ Créez cette structure :</li>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1744148521" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1744148521" defer></script>
-    <script src="/js/theme.js?1744148521" defer></script>
+    <script src="/js/clipboard.min.js?1744235367" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1744235367" defer></script>
+    <script src="/js/theme.js?1744235367" defer></script>
   </body>
 </html>
