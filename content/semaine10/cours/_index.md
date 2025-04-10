@@ -86,6 +86,14 @@ user:x:uid:gid:commentaire:repertoire personnel:shell par défaut
 | **-s shell** | Changer le shell par défaut | `useradd -s /bin/tcsh user6` |
 | **-d répertoire** | Choisir un répertoire personnel | `useradd -d /home/toto user7` |
 
+{{% notice style="Warning" title="L'ajout d'un commentaire" %}}
+- L'ajout d'un commentaire doit se faire **en même temps** que la création de l'utilisateur
+- L’information est stockée dans le fichier `/etc/passwd` :
+  ```bash
+  $ grep <utilisateur> /etc/passwd
+  ```
+{{% /notice %}}
+
 ### Afficher les *UID* et *GID* (commande *id*)
 
 La commande **`id`** permet d'afficher ces informations :

@@ -27,10 +27,9 @@ Montrez votre **rigueur/professionnalisme** et nommez vos captures d'écran de f
    - Créez deux groupes nommés **dev** et **finance**.
    
 3. **Création de comptes utilisateurs :**
-   - Créez deux utilisateurs : **fifi** et **didi**.
+   - Créez deux utilisateurs : **fifi** et **didi**, en leur ajoutant un commentaire: "Développeur" pour **didi** et "Financier" pour **fifi**.
      - Le groupe principal de **fifi** doit être **finance**.
      - Le groupe principal de **didi** doit être **dev**.
-     - Ajoutez un commentaire pour **didi** indiquant "Développeur" et pour **fifi** "Financier".
 
 4. **Changement de mot de passe :**
    - Définissez un mot de passe pour **fifi** et **didi**. Par exemple `psswdfifi` et `psswddidi` respectivement.
