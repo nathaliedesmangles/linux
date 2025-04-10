@@ -26,17 +26,9 @@ $ ls -l
 -rw-r--r--.  1 axel axel   343 27 mar 11:14 notes.txt
 ```
 
-{{% notice style="green" title="Signification de ces neuf colonnes" groupid="notice-toggle" expanded="false" %}}
-- **Colonne 1** : indique le **type de fichier** et les **permissions** de l'utilisateur attribuées au fichier.
-- **Colonne 2** : indique le **nombre de blocs de mémoire** occupés par le fichier.
-- **Colonne 3** : représente le **propriétaire** ou l'utilisateur qui a créé le fichier (ici "axel").
-- **Colonne 4** : représente le **groupe** auquel le propriétaire appartient (ici "axel" encore).
-- **Colonne 5** : représente **la taille** du répertoire ou du fichier, calculée en octets.
-- **Colonne 6** : indique **le mois** de création et de modification.
-- **Colonne 7** : indique **l'année** de création et de modification.
-- **Colonne 8** : indique **l'heure** de création et de modification.
-- **Colonne 9** : représente le **nom du fichier ou du répertoire** donné par l'utilisateur.
-{{% /notice %}}
+### Description des informations
+
+![Colonnes ls-l](ls-l.png)
 
 Les permissions s’affichent sous la forme de **trois groupes de trois caractères** :
 - **1er groupe (u)** : Permissions du **propriétaire** (*user*)
@@ -72,7 +64,7 @@ $ chmod o-w notes.txt   # Retire le droit d'écriture aux autres
 $ chmod a+rwx fichier   # Accorde tous les droits à tous les utilisateurs
 ```
 
-### 2. Méthode octale
+### 2. Méthode octale (numérique)
 
 Chaque droit a une valeur numérique :
 - `r = 4`, `w = 2`, `x = 1`
@@ -100,8 +92,9 @@ Chaque permission (lecture, écriture, exécution) correspond à un **bit** qui 
    - **rwx (lecture + écriture + exécution)** = 111 en binaire → **4 + 2 + 1 = 7**  
 {{% /notice %}}
 
-- Pour chacun des 3 rôles (**propriétaire**, **groupe** et **autres**), on **additionne** les valeurs des droits individuels accordés pour connaître la valeur des **permissions** que l’on souhaite attribuer.
-- On peut ainsi obtenir **un chiffre pour chaque rôle** → **3 chiffres** représentants les permissions.
+### Description des informations
+
+![chmod](./chmod.jpg)
 
 **Exemples** :
 ```bash
@@ -131,7 +124,7 @@ $ chgrp -R group repertoire	# Applique récursivement (sous-dossiers et fichiers
 ### **Rappel**: Spécifier l'interpréteur pour un script
 
 Un script commence souvent par la ligne suivante :
-```bash
+```
 #!/bin/bash
 ```
 - `#!` indique au système d'utiliser l'interpréteur Bash.
@@ -170,15 +163,15 @@ Le système **cherche les programmes exécutables** dans les répertoires listé
 
 ### Afficher le contenu de $PATH
 
-La variable d’environnement ***$PATH*** contient la liste des <u>répertoires dans lesquels le système cherche les **commandes exécutables**</u>.
+La variable d’environnement **$PATH** contient la liste des <u>répertoires dans lesquels le système cherche les **commandes exécutables**</u>.
 
 ```bash
 $ echo $PATH
 /home/user/.local/bin:/home/ndesmangles/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
 ```
 
-- Chaque répertoire est séparé par un deux-points `:`.
-- Quand on tape une commande, Linux va la chercher dans l’ordre des répertoires listés dans $PATH.
+- Chaque répertoire est séparé par un **deux-points** `:`.
+- Quand on tape une commande, Linux va la chercher dans l’ordre des répertoires listés dans **$PATH**.
 
 ### Ajouter un répertoire au $PATH temporairement
 
@@ -266,7 +259,6 @@ En faisant varier les droits (pour l’**utilisateur propriétaire**) sur le ré
 | Créer un fichier (`touch`) |   |   |   |    |    |    |
 | Traverser le répertoire (`cd`) |   |   |   |    |    |    |
 
-<!--
 
 {{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
 **Concernant le répertoire `rep1`**  
@@ -283,7 +275,6 @@ En faisant varier les droits (pour l’**utilisateur propriétaire**) sur le ré
 - `x` (exécution) permet de "traverser" le dossier (utiliser `cd` ou accéder aux fichiers à l'intérieur).  
 {{% /notice %}}
 
--->
 
 ### Concernant le fichier fic1.txt
 
@@ -292,7 +283,6 @@ En faisant varier les droits (pour l’**utilisateur propriétaire**) sur le ré
 | Afficher le contenu (`cat`) |   |   |   |    |    |    |
 | Ajouter du texte (`echo "texte" >> fic1.txt`)|   |   |   |    |    |    |
 
-<!--
 
 {{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
 **Concernant le fichier `fic1.txt`**  
@@ -308,7 +298,6 @@ En faisant varier les droits (pour l’**utilisateur propriétaire**) sur le ré
 - `x` (exécution) sur un fichier texte ne sert généralement à rien, sauf pour les scripts exécutables.  
 {{% /notice %}}
 
--->
 
 ### Concernant le fichier fic2.txt et les permissions de rep1
 
@@ -318,7 +307,7 @@ En faisant varier les droits (pour l’**utilisateur propriétaire**) sur le ré
 | Afficher le contenu (`cat rep1/fic2.txt`) |     |     |     |      |      |      |
 | Ajouter du texte (`echo "texte" >> fic2.txt`) |     |     |     |      |      |      |
 
-<!--
+
 {{% notice style="green" title="Solution" groupid="notice-toggle" expanded="false" %}}
 **Concernant le fichier `fic2.txt` et les permissions de `rep1`**  
 
@@ -333,7 +322,6 @@ En faisant varier les droits (pour l’**utilisateur propriétaire**) sur le ré
 - Pour ajouter du texte à `fic2.txt`, il faut que le dossier parent `rep1` ait le droit d'exécution (`x`) et le fichier le droit d'écriture (`w`). 
 {{% /notice %}}
 
--->
 
 
 

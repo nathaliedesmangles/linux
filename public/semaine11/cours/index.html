@@ -26,14 +26,14 @@ Les permissions standards et Les ACL (Access Control Lists). Nous étudierons un
     <meta itemprop="description" content="Linux est un système multi-utilisateurs où chaque fichier et dossier possède des permissions de sécurité. Ces permissions protègent les fichiers contre les accès non autorisés et les erreurs. Elles permettent notamment :
 La confidentialité des données. La protection contre les modifications accidentelles. Le contrôle de l’exécution des fichiers Sur Linux, il existe deux types de permissions :
 Les permissions standards et Les ACL (Access Control Lists). Nous étudierons uniquement les permissions standards, les plus utilisées.">
-    <meta itemprop="wordCount" content="1381">
+    <meta itemprop="wordCount" content="1488">
     <title>Les droits d&#39;accès :: 420-ZG4-MO LINUX</title>
     <link href="/semaine11/cours/index.xml" rel="alternate" type="application/rss+xml" title="Les droits d&#39;accès :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1744235367" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744235367" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1744235367" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744235367" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1744235367" rel="stylesheet">
-    <link href="/css/theme.min.css?1744235367" rel="stylesheet">
-    <link href="/css/format-html.min.css?1744235367" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1744294941" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744294941" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1744294941" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744294941" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1744294941" rel="stylesheet">
+    <link href="/css/theme.min.css?1744294941" rel="stylesheet">
+    <link href="/css/format-html.min.css?1744294941" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -96,11 +96,16 @@ Les permissions standards et Les ACL (Access Control Lists). Nous étudierons un
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#afficher-les-permissions-commande-ls">Afficher les permissions (commande <em>ls</em>)</a></li>
+    <li><a href="#afficher-les-permissions-commande-ls">Afficher les permissions (commande <em>ls</em>)</a>
+      <ul>
+        <li><a href="#description-des-informations">Description des informations</a></li>
+      </ul>
+    </li>
     <li><a href="#modifier-les-permissions-commande-chmod">Modifier les permissions (commande <em>chmod</em>)</a>
       <ul>
         <li><a href="#1-méthode-symbolique">1. Méthode symbolique</a></li>
-        <li><a href="#2-méthode-octale">2. Méthode octale</a></li>
+        <li><a href="#2-méthode-octale-numérique">2. Méthode octale (numérique)</a></li>
+        <li><a href="#description-des-informations-1">Description des informations</a></li>
         <li><a href="#changer-le-propriétaire-commande-chown">Changer le propriétaire (commande <em>chown</em>)</a></li>
         <li><a href="#changer-le-groupe-commande-chgrp">Changer le groupe (commande <em>chgrp</em>)</a></li>
       </ul>
@@ -179,26 +184,9 @@ Les permissions standards et Les ACL (Access Control Lists). Nous étudierons un
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls -l
 </span></span><span style="display:flex;"><span>-rwxr-xr-x.  <span style="color:#ae81ff">1</span> axel axel  <span style="color:#ae81ff">1767</span> <span style="color:#ae81ff">10</span> déc 16:52 script.sh
 </span></span><span style="display:flex;"><span>-rw-r--r--.  <span style="color:#ae81ff">1</span> axel axel   <span style="color:#ae81ff">343</span> <span style="color:#ae81ff">27</span> mar 11:14 notes.txt</span></span></code></pre></div>
-
-<details class=" box cstyle notices green expand" name="notice-toggle">
-  <summary class="box-label">
-    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
-    Signification de ces neuf colonnes
-  </summary>
-  <div class="box-content">
-<ul>
-<li><strong>Colonne 1</strong> : indique le <strong>type de fichier</strong> et les <strong>permissions</strong> de l&rsquo;utilisateur attribuées au fichier.</li>
-<li><strong>Colonne 2</strong> : indique le <strong>nombre de blocs de mémoire</strong> occupés par le fichier.</li>
-<li><strong>Colonne 3</strong> : représente le <strong>propriétaire</strong> ou l&rsquo;utilisateur qui a créé le fichier (ici &ldquo;axel&rdquo;).</li>
-<li><strong>Colonne 4</strong> : représente le <strong>groupe</strong> auquel le propriétaire appartient (ici &ldquo;axel&rdquo; encore).</li>
-<li><strong>Colonne 5</strong> : représente <strong>la taille</strong> du répertoire ou du fichier, calculée en octets.</li>
-<li><strong>Colonne 6</strong> : indique <strong>le mois</strong> de création et de modification.</li>
-<li><strong>Colonne 7</strong> : indique <strong>l&rsquo;année</strong> de création et de modification.</li>
-<li><strong>Colonne 8</strong> : indique <strong>l&rsquo;heure</strong> de création et de modification.</li>
-<li><strong>Colonne 9</strong> : représente le <strong>nom du fichier ou du répertoire</strong> donné par l&rsquo;utilisateur.</li>
-</ul>
-  </div>
-</details>
+<h3 id="description-des-informations">Description des informations</h3>
+<p><a href="#R-image-dcd39792526b27537e2dfce51ba98bb7" class="lightbox-link"><img alt="Colonnes ls-l" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine11/cours/ls-l.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-dcd39792526b27537e2dfce51ba98bb7"><img alt="Colonnes ls-l" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine11/cours/ls-l.png"></a></p>
 <p>Les permissions s’affichent sous la forme de <strong>trois groupes de trois caractères</strong> :</p>
 <ul>
 <li><strong>1er groupe (u)</strong> : Permissions du <strong>propriétaire</strong> (<em>user</em>)</li>
@@ -234,7 +222,7 @@ Les permissions standards et Les ACL (Access Control Lists). Nous étudierons un
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chmod u+x script.sh   <span style="color:#75715e"># Ajoute le droit d&#39;exécution au propriétaire</span>
 </span></span><span style="display:flex;"><span>$ chmod o-w notes.txt   <span style="color:#75715e"># Retire le droit d&#39;écriture aux autres</span>
 </span></span><span style="display:flex;"><span>$ chmod a+rwx fichier   <span style="color:#75715e"># Accorde tous les droits à tous les utilisateurs</span></span></span></code></pre></div>
-<h3 id="2-méthode-octale">2. Méthode octale</h3>
+<h3 id="2-méthode-octale-numérique">2. Méthode octale (numérique)</h3>
 <p>Chaque droit a une valeur numérique :</p>
 <ul>
 <li><code>r = 4</code>, <code>w = 2</code>, <code>x = 1</code></li>
@@ -302,10 +290,9 @@ Chaque permission (lecture, écriture, exécution) correspond à un <strong>bit<
 </ol>
   </div>
 </details>
-<ul>
-<li>Pour chacun des 3 rôles (<strong>propriétaire</strong>, <strong>groupe</strong> et <strong>autres</strong>), on <strong>additionne</strong> les valeurs des droits individuels accordés pour connaître la valeur des <strong>permissions</strong> que l’on souhaite attribuer.</li>
-<li>On peut ainsi obtenir <strong>un chiffre pour chaque rôle</strong> → <strong>3 chiffres</strong> représentants les permissions.</li>
-</ul>
+<h3 id="description-des-informations-1">Description des informations</h3>
+<p><a href="#R-image-3b96dd3e221ee07b47186419de9403f6" class="lightbox-link"><img alt="chmod" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine11/cours/chmod.jpg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3b96dd3e221ee07b47186419de9403f6"><img alt="chmod" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine11/cours/chmod.jpg"></a></p>
 <p><strong>Exemples</strong> :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ chmod <span style="color:#ae81ff">755</span> script.sh  <span style="color:#75715e"># Propriétaire : rwx, Groupe : r-x, Autres : r-x</span>
 </span></span><span style="display:flex;"><span>$ chmod <span style="color:#ae81ff">644</span> notes.txt  <span style="color:#75715e"># Propriétaire : rw-, Groupe : r--, Autres : r--</span></span></span></code></pre></div>
@@ -321,7 +308,7 @@ Chaque permission (lecture, écriture, exécution) correspond à un <strong>bit<
 <h2 id="le-droit-dexécution-sous-linux">Le droit d&rsquo;exécution sous Linux</h2>
 <h3 id="rappel-spécifier-linterpréteur-pour-un-script"><strong>Rappel</strong>: Spécifier l&rsquo;interpréteur pour un script</h3>
 <p>Un script commence souvent par la ligne suivante :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash</span></span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0"><code>#!/bin/bash</code></pre></div>
 <ul>
 <li><code>#!</code> indique au système d&rsquo;utiliser l&rsquo;interpréteur Bash.</li>
 <li>Ce mécanisme est appelé le &ldquo;shebang&rdquo;.</li>
@@ -347,12 +334,12 @@ On peut ensuite exécuter le script <strong>sans utiliser la commande <code>bash
 <h2 id="la-variable-denvironnement-path">La variable d&rsquo;environnement $PATH</h2>
 <p>Le système <strong>cherche les programmes exécutables</strong> dans les répertoires listés dans la <strong>variable d&rsquo;environnement <code>$PATH</code></strong>.</p>
 <h3 id="afficher-le-contenu-de-path">Afficher le contenu de $PATH</h3>
-<p>La variable d’environnement <em><strong>$PATH</strong></em> contient la liste des <u>répertoires dans lesquels le système cherche les <strong>commandes exécutables</strong></u>.</p>
+<p>La variable d’environnement <strong>$PATH</strong> contient la liste des <u>répertoires dans lesquels le système cherche les <strong>commandes exécutables</strong></u>.</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo $PATH
 </span></span><span style="display:flex;"><span>/home/user/.local/bin:/home/ndesmangles/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin</span></span></code></pre></div>
 <ul>
-<li>Chaque répertoire est séparé par un deux-points <code>:</code>.</li>
-<li>Quand on tape une commande, Linux va la chercher dans l’ordre des répertoires listés dans $PATH.</li>
+<li>Chaque répertoire est séparé par un <strong>deux-points</strong> <code>:</code>.</li>
+<li>Quand on tape une commande, Linux va la chercher dans l’ordre des répertoires listés dans <strong>$PATH</strong>.</li>
 </ul>
 <h3 id="ajouter-un-répertoire-au-path-temporairement">Ajouter un répertoire au $PATH temporairement</h3>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ export PATH<span style="color:#f92672">=</span>$PATH:/chemin/vers/repertoire</span></span></code></pre></div>
@@ -508,8 +495,6 @@ Créez cette structure :</li>
       </tr>
   </tbody>
 </table>
-<!--
-
 
 <details class=" box cstyle notices green expand" name="notice-toggle">
   <summary class="box-label">
@@ -568,8 +553,6 @@ Créez cette structure :</li>
 </ul>
   </div>
 </details>
-
--->
 <h3 id="concernant-le-fichier-fic1txt">Concernant le fichier fic1.txt</h3>
 <table>
   <thead>
@@ -604,8 +587,6 @@ Créez cette structure :</li>
       </tr>
   </tbody>
 </table>
-<!--
-
 
 <details class=" box cstyle notices green expand" name="notice-toggle">
   <summary class="box-label">
@@ -655,8 +636,6 @@ Créez cette structure :</li>
 </ul>
   </div>
 </details>
-
--->
 <h3 id="concernant-le-fichier-fic2txt-et-les-permissions-de-rep1">Concernant le fichier fic2.txt et les permissions de rep1</h3>
 <table>
   <thead>
@@ -700,7 +679,6 @@ Créez cette structure :</li>
       </tr>
   </tbody>
 </table>
-<!--
 
 <details class=" box cstyle notices green expand" name="notice-toggle">
   <summary class="box-label">
@@ -759,8 +737,6 @@ Créez cette structure :</li>
   </div>
 </details>
 
--->
-
   <footer class="footline">
   </footer>
 </article>
@@ -776,7 +752,7 @@ Créez cette structure :</li>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1744235367";
+          window.index_js_url="/searchindex.en.js?1744294941";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -789,12 +765,12 @@ Créez cette structure :</li>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1744235367" defer></script>
-        <script src="/js/lunr/lunr.min.js?1744235367" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1744235367" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1744235367" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1744235367" defer></script>
-        <script src="/js/search.js?1744235367" defer></script>
+        <script src="/js/auto-complete.js?1744294941" defer></script>
+        <script src="/js/lunr/lunr.min.js?1744294941" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1744294941" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1744294941" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1744294941" defer></script>
+        <script src="/js/search.js?1744294941" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -878,8 +854,8 @@ Créez cette structure :</li>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1744235367" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1744235367" defer></script>
-    <script src="/js/theme.js?1744235367" defer></script>
+    <script src="/js/clipboard.min.js?1744294941" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1744294941" defer></script>
+    <script src="/js/theme.js?1744294941" defer></script>
   </body>
 </html>
