@@ -63,6 +63,9 @@ Lorsque vous ajoutez un mot de passe, il sera stocké sous forme chiffrée dans 
 {{% /notice %}}
 
 Vous pouvez ensuite vérifier l'utilisateur ajouté dans le fichier `/etc/passwd` :
+<!--
+![passwd useradd](passwd_file.png)
+-->
 
 ```bash
 $ tail -1 /etc/passwd
@@ -158,8 +161,8 @@ La commande **`usermod`** permet de modifier un utilisateur existant.
 
 | Commande | Description | Exemple |
 |----------|------------|---------|
-| `usermod -aG <groupe> <utilisateur>` | **Ajouter** un utilisateur à un groupe secondaire, tout en **conservant** les groupes secondaires existants. | `usermod -aG sudo bob` |
-| `usermod -G <groupe> <utilisateur>` | Ajouter un utilisateur à un groupe secondaire, mais **supprime** les groupes secondaires existants. | `usermod -G sudo bob` |
+| `usermod -aG <groupe1, groupe2> <utilisateur>` | **Ajouter** un utilisateur à un groupe secondaire, tout en **conservant** les groupes secondaires existants. | `usermod -aG sudo, wheel bob` |
+| `usermod -G <groupe1, groupe2> <utilisateur>` | Ajouter un utilisateur à un groupe secondaire, mais **supprime** les groupes secondaires existants. | `usermod -G sudo, wheel bob` |
 | `groups <utilisateur>` | Voir les groupes d'un utilisateur. | `groups bob` |
 | `newgrp <groupe>` | Appliquer immédiatement les changements de groupe. | `newgrp sudo` |
 

@@ -79,7 +79,7 @@ Chaque permission (lecture, écriture, exécution) correspond à un **bit** qui 
 
 2. Les 3 bits dans l'ordre **r  w  x**:  
 
-| **Permission**  | **Binaire**   | **Valeur décimale** |
+| Permission  | Binaire   | Valeur décimale |
 |:---------------:|:-------------:|:-------------------:|
 |                 | **r  w  x**   |                     |
 | **r (Read)**    |   1  0  0     | 4                   |
@@ -167,7 +167,7 @@ La variable d’environnement **$PATH** contient la liste des <u>répertoires da
 
 ```bash
 $ echo $PATH
-/home/user/.local/bin:/home/ndesmangles/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
+/home/user/.local/bin:/home/user/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
 ```
 
 - Chaque répertoire est séparé par un **deux-points** `:`.
