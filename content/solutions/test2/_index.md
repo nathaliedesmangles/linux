@@ -1,6 +1,6 @@
 +++
 title = "Test 2"
-weight = 182
+weight = 185
 +++
 
 {{% notice style=info title=Information %}}

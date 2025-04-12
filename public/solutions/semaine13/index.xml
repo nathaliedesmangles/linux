@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Atelier #10d :: 420-ZG4-MO LINUX</title>
+    <link>http://localhost:1313/solutions/semaine13/index.html</link>
+    <description>Solution de l’exercice 1. Ajouter un disque virtuel de 10G Cela se fait via l’interface de VirtualBox ou VMware, selon ce que vous utilisez :&#xA;Éteignez la VM. Dans les paramètres de la VM, ajoutez un nouveau disque virtuel (VHD, VDI, VMDK…) de 10 Go. Redémarrez la VM. Dans le terminal :&#xA;ls /dev&#xD;Le nouveau disque apparaîtra probablement comme /dev/sdb (si votre disque principal est /dev/sda).&#xA;2. Créer une partition primaire sur le disque sudo fdisk /dev/sdb&#xD;Dans le menu fdisk, tapez les commandes suivantes :</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/solutions/semaine13/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

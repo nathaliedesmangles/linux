@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Solution de l’exercice 1. Informations sur les utilisateurs Les deux fichiers contenant les informations sur les utilisateurs sont :
+/etc/passwd : contient les informations générales sur les utilisateurs (login, UID, GID, répertoire personnel, shell, etc.). /etc/shadow : contient les mots de passe cryptés des utilisateurs (accessible uniquement par root). 2. Création de groupes sudo groupadd dev sudo groupadd finance3. Création de comptes utilisateurs sudo useradd -c &#34;Financier&#34; -g finance fifi sudo useradd -c &#34;Développeur&#34; -g dev didiExplication :">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Atelier #10a :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Solution de l’exercice 1. Informations sur les utilisateurs Les deux fichiers contenant les informations sur les utilisateurs sont :
+/etc/passwd : contient les informations générales sur les utilisateurs (login, UID, GID, répertoire personnel, shell, etc.). /etc/shadow : contient les mots de passe cryptés des utilisateurs (accessible uniquement par root). 2. Création de groupes sudo groupadd dev sudo groupadd finance3. Création de comptes utilisateurs sudo useradd -c &#34;Financier&#34; -g finance fifi sudo useradd -c &#34;Développeur&#34; -g dev didiExplication :">
+    <meta property="og:url" content="http://localhost:1313/solutions/semaine10/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Atelier #10a :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Solution de l’exercice 1. Informations sur les utilisateurs Les deux fichiers contenant les informations sur les utilisateurs sont :
+/etc/passwd : contient les informations générales sur les utilisateurs (login, UID, GID, répertoire personnel, shell, etc.). /etc/shadow : contient les mots de passe cryptés des utilisateurs (accessible uniquement par root). 2. Création de groupes sudo groupadd dev sudo groupadd finance3. Création de comptes utilisateurs sudo useradd -c &#34;Financier&#34; -g finance fifi sudo useradd -c &#34;Développeur&#34; -g dev didiExplication :">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Atelier #10a :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Solution de l’exercice 1. Informations sur les utilisateurs Les deux fichiers contenant les informations sur les utilisateurs sont :
+/etc/passwd : contient les informations générales sur les utilisateurs (login, UID, GID, répertoire personnel, shell, etc.). /etc/shadow : contient les mots de passe cryptés des utilisateurs (accessible uniquement par root). 2. Création de groupes sudo groupadd dev sudo groupadd finance3. Création de comptes utilisateurs sudo useradd -c &#34;Financier&#34; -g finance fifi sudo useradd -c &#34;Développeur&#34; -g dev didiExplication :">
+    <meta itemprop="wordCount" content="247">
+    <title>Atelier #10a :: 420-ZG4-MO LINUX</title>
+    <link href="/solutions/semaine10/index.xml" rel="alternate" type="application/rss+xml" title="Atelier #10a :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1744476777" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744476777" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1744476777" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744476777" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1744476777" rel="stylesheet">
+    <link href="/css/theme.css?1744476777" rel="stylesheet">
+    <link href="/css/format-html.css?1744476777" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.min = ``;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/solutions/semaine10/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-informations-sur-les-utilisateurs"><strong>1. Informations sur les utilisateurs</strong></a></li>
+        <li><a href="#2-création-de-groupes"><strong>2. Création de groupes</strong></a></li>
+        <li><a href="#3-création-de-comptes-utilisateurs"><strong>3. Création de comptes utilisateurs</strong></a></li>
+        <li><a href="#4-changement-de-mot-de-passe"><strong>4. Changement de mot de passe</strong></a></li>
+        <li><a href="#5-modification-du-shell"><strong>5. Modification du shell</strong></a></li>
+        <li><a href="#6-affichage-des-informations-utilisateurs"><strong>6. Affichage des informations utilisateurs</strong></a></li>
+        <li><a href="#7-groupes-primaires-et-secondaires"><strong>7. Groupes primaires et secondaires</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/solutions/index.html"><span itemprop="name">Solutions: ateliers et tests</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Atelier #10a</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine9/correction/index.html" title="Critères de correction (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine11/index.html" title="Atelier #10b (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable solutions" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="atelier-10a">Atelier #10a</h1>
+
+<h1 id="solution-de-lexercice">Solution de l&rsquo;exercice</h1>
+<hr>
+<h3 id="1-informations-sur-les-utilisateurs"><strong>1. Informations sur les utilisateurs</strong></h3>
+<p>Les deux fichiers contenant les informations sur les utilisateurs sont :</p>
+<ul>
+<li><code>/etc/passwd</code> : contient les informations générales sur les utilisateurs (login, UID, GID, répertoire personnel, shell, etc.).</li>
+<li><code>/etc/shadow</code> : contient les mots de passe cryptés des utilisateurs (accessible uniquement par root).</li>
+</ul>
+<h3 id="2-création-de-groupes"><strong>2. Création de groupes</strong></h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo groupadd dev
+</span></span><span style="display:flex;"><span>sudo groupadd finance</span></span></code></pre></div>
+<h3 id="3-création-de-comptes-utilisateurs"><strong>3. Création de comptes utilisateurs</strong></h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo useradd -c <span style="color:#e6db74">&#34;Financier&#34;</span> -g finance fifi
+</span></span><span style="display:flex;"><span>sudo useradd -c <span style="color:#e6db74">&#34;Développeur&#34;</span> -g dev didi</span></span></code></pre></div>
+<p>Explication :</p>
+<ul>
+<li><code>-c</code> permet d’ajouter un commentaire.</li>
+<li><code>-g</code> spécifie le groupe principal.</li>
+</ul>
+<h3 id="4-changement-de-mot-de-passe"><strong>4. Changement de mot de passe</strong></h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;fifi:psswdfifi&#34;</span> | sudo chpasswd
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;didi:psswddidi&#34;</span> | sudo chpasswd</span></span></code></pre></div>
+<blockquote>
+<p>⚠️ Astuce : ces mots de passe doivent être <strong>robustes</strong>, donc dans la vraie vie, évitez les mots de passe simples ou contenant le nom d’utilisateur.</p>
+</blockquote>
+<h3 id="5-modification-du-shell"><strong>5. Modification du shell</strong></h3>
+<p><strong>Liste des shells disponibles :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat /etc/shells</span></span></code></pre></div>
+<p><strong>Changer le shell de <code>didi</code> (ex: <code>/bin/bash</code> vers <code>/bin/sh</code>)</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo usermod -s /bin/sh didi</span></span></code></pre></div>
+<h3 id="6-affichage-des-informations-utilisateurs"><strong>6. Affichage des informations utilisateurs</strong></h3>
+<p><strong>À partir du fichier <code>/etc/passwd</code> :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grep fifi /etc/passwd
+</span></span><span style="display:flex;"><span>grep didi /etc/passwd</span></span></code></pre></div>
+<p><strong>Avec la commande <code>id</code> :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>id fifi
+</span></span><span style="display:flex;"><span>id didi</span></span></code></pre></div>
+<h3 id="7-groupes-primaires-et-secondaires"><strong>7. Groupes primaires et secondaires</strong></h3>
+<p>Après avoir utilisé la commande <code>id</code> pour chaque utilisateur, vous verrez une sortie comme :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>id fifi
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># uid=1001(fifi) gid=1002(finance) groups=1002(finance)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>id didi
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># uid=1002(didi) gid=1003(dev) groups=1003(dev)</span></span></span></code></pre></div>
+<blockquote>
+<p>Le <strong>groupe principal</strong> est celui associé à <code>gid=...</code>, les <strong>groupes secondaires</strong> sont listés après groups= (dans cet exemple, ils n’en ont pas, car c&rsquo;est le même <strong>id</strong> que le groupe principal).</p>
+</blockquote>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1744476777";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1744476777" defer></script>
+        <script src="/js/lunr/lunr.min.js?1744476777" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1744476777" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1744476777" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1744476777" defer></script>
+        <script src="/js/search.js?1744476777" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest2/index.html"><a class="padding" href="/revisiontest2/index.html">TEST #2-Quelques notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim, les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>Variables de paramètres de script et structure IF</a><ul id="R-subsections-1f01a70d85857b8ac721c011c139e3af" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest3/index.html"><a class="padding" href="/revisiontest3/index.html">TEST #3 - Informations et notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine10/index.html"><a class="padding" href="/semaine10/index.html"><b>Semaine 10. </b>Utilisateurs et groupes</a><ul id="R-subsections-f8cbb4e023a0fc71fa255b45db414bcc" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine11/index.html"><a class="padding" href="/semaine11/index.html"><b>Semaine 11. </b>Les droits d&#39;accès</a><ul id="R-subsections-b4d497b6531d9f49241f6ec42b8e80f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine12/index.html"><a class="padding" href="/semaine12/index.html"><b>Semaine 12. </b>Réseau</a><ul id="R-subsections-6098c004e594c3cbee6d88e41d11b10b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine13/index.html"><a class="padding" href="/semaine13/index.html"><b>Semaine 13. </b>Gestion des disques</a><ul id="R-subsections-123a241fcf7a50602c7d825a9ccf5337" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest4/index.html"><a class="padding" href="/revisiontest4/index.html">TEST #4: Résumés</a></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu">
+            <li class="" data-nav-id="/solutions/semaine1/index.html"><a class="padding" href="/solutions/semaine1/index.html">Atelier 1</a></li>
+            <li class="" data-nav-id="/solutions/semaine2/index.html"><a class="padding" href="/solutions/semaine2/index.html">Atelier 2</a></li>
+            <li class="" data-nav-id="/solutions/semaine3/index.html"><a class="padding" href="/solutions/semaine3/index.html">Atelier 3</a></li>
+            <li class="" data-nav-id="/solutions/semaine4/index.html"><a class="padding" href="/solutions/semaine4/index.html">Atelier 4</a></li>
+            <li class="" data-nav-id="/solutions/semaine5/index.html"><a class="padding" href="/solutions/semaine5/index.html">Atelier 5</a></li>
+            <li class="" data-nav-id="/solutions/semaine6/index.html"><a class="padding" href="/solutions/semaine6/index.html">Atelier 6</a></li>
+            <li class="" data-nav-id="/solutions/semaine7/index.html"><a class="padding" href="/solutions/semaine7/index.html">Atelier 7</a></li>
+            <li class="" data-nav-id="/solutions/semaine8/index.html"><a class="padding" href="/solutions/semaine8/index.html">Atelier 8</a></li>
+            <li class="alwaysopen " data-nav-id="/solutions/semaine9/index.html"><a class="padding" href="/solutions/semaine9/index.html">Atelier 9</a><ul id="R-subsections-af4a0a74a93c7502e727723640a01582" class="collapsible-menu"></ul></li>
+            <li class="active " data-nav-id="/solutions/semaine10/index.html"><a class="padding" href="/solutions/semaine10/index.html">Atelier #10a</a></li>
+            <li class="" data-nav-id="/solutions/semaine11/index.html"><a class="padding" href="/solutions/semaine11/index.html">Atelier #10b</a></li>
+            <li class="alwaysopen " data-nav-id="/solutions/semaine12/index.html"><a class="padding" href="/solutions/semaine12/index.html">Atelier #10c</a><ul id="R-subsections-6f1cf52b628cdd69b2e02abbb63eb278" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/solutions/semaine13/index.html"><a class="padding" href="/solutions/semaine13/index.html">Atelier #10d</a></li>
+            <li class="" data-nav-id="/solutions/test1/index.html"><a class="padding" href="/solutions/test1/index.html">Test 1</a></li>
+            <li class="" data-nav-id="/solutions/test2/index.html"><a class="padding" href="/solutions/test2/index.html">Test 2</a></li>
+            <li class="" data-nav-id="/solutions/test3/index.html"><a class="padding" href="/solutions/test3/index.html">Test 3</a></li>
+            <li class="" data-nav-id="/solutions/test4/index.html"><a class="padding" href="/solutions/test4/index.html">Test 4</a></li></ul></li>
+            <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/solutions/semaine10/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1744476777" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1744476777" defer></script>
+    <script src="/js/theme.js?1744476777" defer></script>
+  </body>
+</html>

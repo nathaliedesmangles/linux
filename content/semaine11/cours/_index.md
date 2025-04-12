@@ -46,6 +46,12 @@ Chaque groupe contient **trois caractères** :
   - Le **groupe** peut **lire** et **exécuter** (`r-x`)
   - Les **autres** peuvent **lire** et **exécuter** (`r-x`)
 
+{{% notice style="info" title="Commande su" %}}
+- La commande `su` (*substitute user* ou *switch user*) permet d'exécuter des commandes au Terminal, en changeant d'identifiant de groupe et d'utilisateur. 
+- Sans argument, la commande utilise le ***UID 0*** et le ***GID 0***, c'est-à-dire ceux du compte **utilisateur root**.
+{{% /notice %}}
+
+
 ## Modifier les permissions (commande *chmod*)
 
 Seuls le **propriétaire** et ***root*** peuvent modifier les permissions avec la commande `chmod`.
