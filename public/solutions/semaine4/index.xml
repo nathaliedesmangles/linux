@@ -3,7 +3,7 @@
   <channel>
     <title>Atelier 4 :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/solutions/semaine4/index.html</link>
-    <description>Solution des exercices Exercice 1 Ouvrir une session avec l’utilisateur standard et reproduire, dans le répertoire courant, l’arborescence suivante et ce en utilisant un maximum de trois commandes : ├── H2025&#xD;│ ├── Linux&#xD;│ │ ├── Cours&#xD;│ │ └── Ateliers&#xD;│ └── Virtualisation&#xD;│ └── machines&#xD;└── Icones Solution 1 : Une seule commande mkdir -p $ mkdir -p H2025/{Linux/{Cours,Ateliers},Virtualisation/machines} Icones&#xD;Avantages : Très concise, une seule commande.&#xA;Inconvénients : Moins lisible si l’arborescence est complexe.</description>
+    <description>Solution des exercices Exercice 1 Ouvrir une session avec l’utilisateur standard et reproduire, dans le répertoire courant, l’arborescence suivante et ce en utilisant un maximum de trois commandes : ├── H2025&#xD;│ ├── Linux&#xD;│ │ ├── Cours&#xD;│ │ └── Ateliers&#xD;│ └── Virtualisation&#xD;│ └── machines&#xD;└── Icones Solution 1 : Une seule commande mkdir -p $ mkdir -p H2025/{Linux/{Cours,Ateliers},Virtualisation/machines} Icones&#xD;Avantages : Très concise, une seule commande.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/solutions/semaine4/index.xml" rel="self" type="application/rss+xml" />

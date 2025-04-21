@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Hugo 0.126.3">
     <meta name="generator" content="Relearn 7.3.1">
     <meta name="description" content="Planification des tâches avec Cron Le programme cron permet de planifier des tâches automatiquement sur un système Linux. Chaque utilisateur peut définir ses propres tâches planifiées, qui sont stockées par défaut dans :
 /var/spool/cron/Qu’est-ce qu’une crontab ? Qu’est-ce qu’une Crontab ?Une crontab (abréviation de cron table) est un fichier de configuration utilisé par le planificateur de tâches cron sous Unix/Linux. Il permet d’exécuter automatiquement des commandes ou des scripts à des moments spécifiés.">
@@ -25,11 +25,11 @@
     <meta itemprop="wordCount" content="1264">
     <title>CRON et DNF :: 420-ZG4-MO LINUX</title>
     <link href="/semaine8/cours/index.xml" rel="alternate" type="application/rss+xml" title="CRON et DNF :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1744476805" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744476805" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1744476805" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744476805" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1744476805" rel="stylesheet">
-    <link href="/css/theme.min.css?1744476805" rel="stylesheet">
-    <link href="/css/format-html.min.css?1744476805" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1745279086" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745279086" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1745279086" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745279086" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1745279086" rel="stylesheet">
+    <link href="/css/theme.min.css?1745279086" rel="stylesheet">
+    <link href="/css/format-html.min.css?1745279086" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -176,40 +176,40 @@
 </details>
 <h3 id="commandes-principales-de-cron">Commandes principales de <em>cron</em></h3>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Action</th>
-          <th style="text-align: left">Commande</th>
-          <th style="text-align: left">Résultat / Remarque</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>Afficher ou lancer les tâches planifiées de l&rsquo;utilisateur actuel</strong></td>
-          <td style="text-align: left"><code>crontab -l</code></td>
-          <td style="text-align: left">- Affiche la liste des tâches planifiées.<br>- Si aucune tâche n&rsquo;est planifiée, affiche <em><strong>no crontab for user</strong></em>.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Supprimer toutes les tâches planifiées de l&rsquo;utilisateur</strong></td>
-          <td style="text-align: left"><code>crontab -r</code></td>
-          <td style="text-align: left"><strong><span style="color:red;">Action irréversible</span></strong>. Toutes les tâches sont supprimées définitivement.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Gérer la crontab d&rsquo;un autre utilisateur</strong> (nécessite <em>root</em>)</td>
-          <td style="text-align: left"><code>sudo crontab -u &lt;utilisateur&gt; -l</code> <br> <strong>Exemple</strong>: <code>sudo crontab -u ndesmangles -l</code></td>
-          <td style="text-align: left">- <code>-u &lt;utilisateur&gt;</code> : Spécifie l&rsquo;utilisateur ciblé.<br>- <code>-l</code> : Liste les tâches de cet utilisateur.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Charger ou remplacer une tâche planifiée à partir d&rsquo;un fichier</strong></td>
-          <td style="text-align: left"><code>crontab &lt;fichier&gt;</code> <br> <strong>Exemple</strong> : <code>crontab ma_tache.txt</code></td>
-          <td style="text-align: left">- Charge les tâches depuis <code>&lt;fichier&gt;</code>.<br> <strong><span style="color:red;">Chaque nouvelle utilisation écrase les tâches précédentes.</span></strong></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Modifier la crontab existante ou en créer une nouvelle</strong></td>
-          <td style="text-align: left"><code>crontab -e</code></td>
-          <td style="text-align: left">- Ouvre la crontab dans un éditeur de texte (ex: Vim).<br>- Permet d&rsquo;ajouter, modifier ou supprimer des tâches.</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Action</th>
+<th>Commande</th>
+<th>Résultat / Remarque</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Afficher ou lancer les tâches planifiées de l&rsquo;utilisateur actuel</strong></td>
+<td><code>crontab -l</code></td>
+<td>- Affiche la liste des tâches planifiées.<br>- Si aucune tâche n&rsquo;est planifiée, affiche <em><strong>no crontab for user</strong></em>.</td>
+</tr>
+<tr>
+<td><strong>Supprimer toutes les tâches planifiées de l&rsquo;utilisateur</strong></td>
+<td><code>crontab -r</code></td>
+<td><strong><span style="color:red;">Action irréversible</span></strong>. Toutes les tâches sont supprimées définitivement.</td>
+</tr>
+<tr>
+<td><strong>Gérer la crontab d&rsquo;un autre utilisateur</strong> (nécessite <em>root</em>)</td>
+<td><code>sudo crontab -u &lt;utilisateur&gt; -l</code> <br> <strong>Exemple</strong>: <code>sudo crontab -u ndesmangles -l</code></td>
+<td>- <code>-u &lt;utilisateur&gt;</code> : Spécifie l&rsquo;utilisateur ciblé.<br>- <code>-l</code> : Liste les tâches de cet utilisateur.</td>
+</tr>
+<tr>
+<td><strong>Charger ou remplacer une tâche planifiée à partir d&rsquo;un fichier</strong></td>
+<td><code>crontab &lt;fichier&gt;</code> <br> <strong>Exemple</strong> : <code>crontab ma_tache.txt</code></td>
+<td>- Charge les tâches depuis <code>&lt;fichier&gt;</code>.<br> <strong><span style="color:red;">Chaque nouvelle utilisation écrase les tâches précédentes.</span></strong></td>
+</tr>
+<tr>
+<td><strong>Modifier la crontab existante ou en créer une nouvelle</strong></td>
+<td><code>crontab -e</code></td>
+<td>- Ouvre la crontab dans un éditeur de texte (ex: Vim).<br>- Permet d&rsquo;ajouter, modifier ou supprimer des tâches.</td>
+</tr>
+</tbody>
 </table>
 <!--
 
@@ -313,40 +313,40 @@ crontab -e
 </details>
 <h3 id="explication-des-champs-de-planification-le-moment-auquel-la-tâche-doit-sexécuter">Explication des champs de planification (le moment auquel la tâche doit s&rsquo;exécuter)</h3>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: center">No du champ *</th>
-          <th style="text-align: left">Rôle du champ</th>
-          <th style="text-align: center">Valeurs possibles</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: center"><strong>1<sup>er</sup></strong></td>
-          <td style="text-align: left"><strong>Minute</strong></td>
-          <td style="text-align: center">0 à 59</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><strong>2<sup>e</sup></strong></td>
-          <td style="text-align: left"><strong>Heure</strong></td>
-          <td style="text-align: center">0 à 23</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><strong>3<sup>e</sup></strong></td>
-          <td style="text-align: left"><strong>Jour du mois</strong></td>
-          <td style="text-align: center">1 à 31</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><strong>4<sup>e</sup></strong></td>
-          <td style="text-align: left"><strong>Mois de l&rsquo;année</strong></td>
-          <td style="text-align: center">1 à 12</td>
-      </tr>
-      <tr>
-          <td style="text-align: center"><strong>5<sup>e</sup></strong></td>
-          <td style="text-align: left"><strong>Jour de semaine</strong></td>
-          <td style="text-align: center">0 et 7 = dimanche <br> 1 = lundi<br> 2 = mardi, etc.</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th style="text-align:center">No du champ *</th>
+<th>Rôle du champ</th>
+<th style="text-align:center">Valeurs possibles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>1<sup>er</sup></strong></td>
+<td><strong>Minute</strong></td>
+<td style="text-align:center">0 à 59</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>2<sup>e</sup></strong></td>
+<td><strong>Heure</strong></td>
+<td style="text-align:center">0 à 23</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>3<sup>e</sup></strong></td>
+<td><strong>Jour du mois</strong></td>
+<td style="text-align:center">1 à 31</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>4<sup>e</sup></strong></td>
+<td><strong>Mois de l&rsquo;année</strong></td>
+<td style="text-align:center">1 à 12</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>5<sup>e</sup></strong></td>
+<td><strong>Jour de semaine</strong></td>
+<td style="text-align:center">0 et 7 = dimanche <br> 1 = lundi<br> 2 = mardi, etc.</td>
+</tr>
+</tbody>
 </table>
 <h4 id="opérateurs-utiles">Opérateurs utiles</h4>
 <ul>
@@ -388,22 +388,22 @@ crontab -e
 </details>
 <h3 id="affichage-des-dépôts-de-lutilisateur">Affichage des dépôts de l&rsquo;utilisateur</h3>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Action</th>
-          <th style="text-align: left">Commande</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>Afficher les dépôts actifs</strong></td>
-          <td style="text-align: left"><code>dnf repolist</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Afficher tous les dépôts (actifs et inactifs)</strong></td>
-          <td style="text-align: left"><code>dnf repolist all</code></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Action</th>
+<th>Commande</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Afficher les dépôts actifs</strong></td>
+<td><code>dnf repolist</code></td>
+</tr>
+<tr>
+<td><strong>Afficher tous les dépôts (actifs et inactifs)</strong></td>
+<td><code>dnf repolist all</code></td>
+</tr>
+</tbody>
 </table>
 <p>Si un paquet n&rsquo;est pas disponible, il peut être nécessaire d&rsquo;ajouter son dépôt.</p>
 
@@ -447,18 +447,18 @@ Pour installer <em><strong>dnf</strong></em> sur Ubuntu:</p>
 </details>
 <h3 id="installation-dun-paquet">Installation d&rsquo;un paquet</h3>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Action</th>
-          <th style="text-align: left">Commande</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>Installer un paquet</strong></td>
-          <td style="text-align: left"><code>sudo dnf install -y &lt;paquet&gt;</code> <br> <strong>Exemple :</strong> <br> <code>sudo dnf install -y php-jsonlint</code></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Action</th>
+<th>Commande</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Installer un paquet</strong></td>
+<td><code>sudo dnf install -y &lt;paquet&gt;</code> <br> <strong>Exemple :</strong> <br> <code>sudo dnf install -y php-jsonlint</code></td>
+</tr>
+</tbody>
 </table>
 
 <details open class=" box cstyle notices info">
@@ -472,91 +472,91 @@ Pour installer <em><strong>dnf</strong></em> sur Ubuntu:</p>
 </details>
 <h3 id="mettre-à-jour-le-système">Mettre à jour le système</h3>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Action</th>
-          <th style="text-align: left">Commande</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>Mettre à jour tous les paquets installés</strong></td>
-          <td style="text-align: left"><code>sudo dnf update</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Lister les mises à jour disponibles sans les installer</strong></td>
-          <td style="text-align: left"><code>dnf check-update</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Mettre à jour un seul paquet</strong></td>
-          <td style="text-align: left"><code>sudo dnf update httpd</code></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Action</th>
+<th>Commande</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mettre à jour tous les paquets installés</strong></td>
+<td><code>sudo dnf update</code></td>
+</tr>
+<tr>
+<td><strong>Lister les mises à jour disponibles sans les installer</strong></td>
+<td><code>dnf check-update</code></td>
+</tr>
+<tr>
+<td><strong>Mettre à jour un seul paquet</strong></td>
+<td><code>sudo dnf update httpd</code></td>
+</tr>
+</tbody>
 </table>
 <h3 id="recherche-de-paquets">Recherche de paquets</h3>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Action</th>
-          <th style="text-align: left">Commande</th>
-          <th style="text-align: left">Exemple</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>Trouver un paquet par son nom</strong></td>
-          <td style="text-align: left"><code>dnf list &lt;nom_paquet&gt;</code></td>
-          <td style="text-align: left"><code>dnf list httpd</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Rechercher un paquet en fonction de son nom ou description</strong></td>
-          <td style="text-align: left"><code>dnf search &lt;nom_paquet&gt;</code></td>
-          <td style="text-align: left"><code>dnf search httpd</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Obtenir des informations sur un paquet</strong></td>
-          <td style="text-align: left"><code>dnf info &lt;nom_paquet&gt;*</code></td>
-          <td style="text-align: left"><code>dnf info httpd</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Affiche la liste des paquets installés et/ou disponibles dans les dépôts.</strong></td>
-          <td style="text-align: left"><code>dnf list installed</code> <br> <code>dnf list &quot;*&quot;</code></td>
-          <td style="text-align: left"></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Trouver le paquet qui fourni une commande</strong></td>
-          <td style="text-align: left"><code>dnf provides &lt;commande&gt;</code></td>
-          <td style="text-align: left"><code>dnf provides /bin/cat</code></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Action</th>
+<th>Commande</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Trouver un paquet par son nom</strong></td>
+<td><code>dnf list &lt;nom_paquet&gt;</code></td>
+<td><code>dnf list httpd</code></td>
+</tr>
+<tr>
+<td><strong>Rechercher un paquet en fonction de son nom ou description</strong></td>
+<td><code>dnf search &lt;nom_paquet&gt;</code></td>
+<td><code>dnf search httpd</code></td>
+</tr>
+<tr>
+<td><strong>Obtenir des informations sur un paquet</strong></td>
+<td><code>dnf info &lt;nom_paquet&gt;*</code></td>
+<td><code>dnf info httpd</code></td>
+</tr>
+<tr>
+<td><strong>Affiche la liste des paquets installés et/ou disponibles dans les dépôts.</strong></td>
+<td><code>dnf list installed</code> <br> <code>dnf list &quot;*&quot;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Trouver le paquet qui fourni une commande</strong></td>
+<td><code>dnf provides &lt;commande&gt;</code></td>
+<td><code>dnf provides /bin/cat</code></td>
+</tr>
+</tbody>
 </table>
 <h4 id="quand-utiliser-dnf-list-ou-dnf-search">Quand utiliser <em><strong>dnf list</strong></em> ou <em><strong>dnf search</strong></em></h4>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Commande</th>
-          <th style="text-align: left">Fonction</th>
-          <th style="text-align: left">Affichage</th>
-          <th style="text-align: left">Utilisation typique</th>
-          <th style="text-align: left">Exemples</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong><code>dnf list</code></strong></td>
-          <td style="text-align: left">Liste les paquets <strong>installés et/ou disponibles</strong></td>
-          <td style="text-align: left">Nom du paquet, version, dépôt</td>
-          <td style="text-align: left">Vérifier si un paquet est installé ou disponible</td>
-          <td style="text-align: left"><code>dnf list installed</code> <br> <code>dnf list available</code> <br> <code>dnf list --installed nano</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong><code>dnf search</code></strong></td>
-          <td style="text-align: left">Recherche les paquets par mot-clé dans le <strong>nom</strong> et la <strong>description</strong></td>
-          <td style="text-align: left">Liste des paquets correspondants</td>
-          <td style="text-align: left">Trouver un paquet dont on ne connaît pas le nom exact</td>
-          <td style="text-align: left"><code>dnf search text editor</code> <br> <code>dnf search network</code></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Fonction</th>
+<th>Affichage</th>
+<th>Utilisation typique</th>
+<th>Exemples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>dnf list</code></strong></td>
+<td>Liste les paquets <strong>installés et/ou disponibles</strong></td>
+<td>Nom du paquet, version, dépôt</td>
+<td>Vérifier si un paquet est installé ou disponible</td>
+<td><code>dnf list installed</code> <br> <code>dnf list available</code> <br> <code>dnf list --installed nano</code></td>
+</tr>
+<tr>
+<td><strong><code>dnf search</code></strong></td>
+<td>Recherche les paquets par mot-clé dans le <strong>nom</strong> et la <strong>description</strong></td>
+<td>Liste des paquets correspondants</td>
+<td>Trouver un paquet dont on ne connaît pas le nom exact</td>
+<td><code>dnf search text editor</code> <br> <code>dnf search network</code></td>
+</tr>
+</tbody>
 </table>
 <ul>
 <li>Si vous connaissez <strong>le nom exact</strong> du paquet ➝ <code>dnf list</code></li>
@@ -564,41 +564,41 @@ Pour installer <em><strong>dnf</strong></em> sur Ubuntu:</p>
 </ul>
 <h3 id="désinstaller-un-paquet">Désinstaller un paquet</h3>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Action</th>
-          <th style="text-align: left">Commande</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>Désinstaller un paquet</strong></td>
-          <td style="text-align: left"><code>sudo dnf remove &lt;paquet&gt;</code></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Action</th>
+<th>Commande</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Désinstaller un paquet</strong></td>
+<td><code>sudo dnf remove &lt;paquet&gt;</code></td>
+</tr>
+</tbody>
 </table>
 <h3 id="gestion-des-groupes-de-paquets">Gestion des groupes de paquets</h3>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Action</th>
-          <th style="text-align: left">Commande</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>Lister les groupes de paquets disponibles</strong></td>
-          <td style="text-align: left"><code>dnf grouplist</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Afficher des informations sur un groupe</strong></td>
-          <td style="text-align: left"><code>dnf groupinfo &quot;&lt;nom_du_groupe&gt;&quot;</code> <br><strong>Exemple</strong> : <br> <code>dnf groupinfo &quot;Outils internet de la console&quot;</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Installer un groupe de paquets</strong></td>
-          <td style="text-align: left"><code>sudo dnf groupinstall &quot;&lt;nom_du_groupe&gt;&quot;</code> <br><strong>Exemple</strong> : <br> <code>sudo dnf groupinstall &quot;Xfce&quot;</code></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Action</th>
+<th>Commande</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lister les groupes de paquets disponibles</strong></td>
+<td><code>dnf grouplist</code></td>
+</tr>
+<tr>
+<td><strong>Afficher des informations sur un groupe</strong></td>
+<td><code>dnf groupinfo &quot;&lt;nom_du_groupe&gt;&quot;</code> <br><strong>Exemple</strong> : <br> <code>dnf groupinfo &quot;Outils internet de la console&quot;</code></td>
+</tr>
+<tr>
+<td><strong>Installer un groupe de paquets</strong></td>
+<td><code>sudo dnf groupinstall &quot;&lt;nom_du_groupe&gt;&quot;</code> <br><strong>Exemple</strong> : <br> <code>sudo dnf groupinstall &quot;Xfce&quot;</code></td>
+</tr>
+</tbody>
 </table>
 <p><strong>Astuce :</strong> Utilisez <code>dnf grouplist --hidden</code> pour voir aussi les groupes cachés.</p>
 <h3 id="utiliser-le-shell-dnf">Utiliser le shell <em>dnf</em></h3>
@@ -618,40 +618,40 @@ Pour installer <em><strong>dnf</strong></em> sur Ubuntu:</p>
 </details>
 <p>Le shell <code>dnf</code> permet d&rsquo;automatiser des installations.</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Action</th>
-          <th style="text-align: left">Commande</th>
-          <th style="text-align: left">Description</th>
-          <th style="text-align: left">Exemple</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>Lancer le shell</strong></td>
-          <td style="text-align: left"><code>dnf shell</code></td>
-          <td style="text-align: left">Lance un shell interactif pour exécuter des commandes dnf.</td>
-          <td style="text-align: left"><code>dnf shell</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Créer un fichier d&rsquo;installation automatique</strong></td>
-          <td style="text-align: left"><code>bash install &lt;paquet&gt; </code><br><code>bash run</code></td>
-          <td style="text-align: left">Crée un fichier d’installation automatique contenant des commandes dnf à exécuter.</td>
-          <td style="text-align: left"><code>bash install nmap</code><br><code>bash install zsh</code><br><code>bash run</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Exécuter ce fichier avec dnf</strong></td>
-          <td style="text-align: left"><code>dnf shell &lt;fichier&gt;</code></td>
-          <td style="text-align: left">Exécute un fichier d’installation automatique dans le shell dnf.</td>
-          <td style="text-align: left"><code>dnf shell installation.txt</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Exécuter sans confirmation</strong></td>
-          <td style="text-align: left"><code>dnf -y shell &lt;fichier&gt;</code></td>
-          <td style="text-align: left">Exécute un fichier d&rsquo;installation automatique sans demander de confirmation.</td>
-          <td style="text-align: left"><code>dnf -y shell installation.txt</code></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Action</th>
+<th>Commande</th>
+<th>Description</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lancer le shell</strong></td>
+<td><code>dnf shell</code></td>
+<td>Lance un shell interactif pour exécuter des commandes dnf.</td>
+<td><code>dnf shell</code></td>
+</tr>
+<tr>
+<td><strong>Créer un fichier d&rsquo;installation automatique</strong></td>
+<td><code>bash install &lt;paquet&gt; </code><br><code>bash run</code></td>
+<td>Crée un fichier d’installation automatique contenant des commandes dnf à exécuter.</td>
+<td><code>bash install nmap</code><br><code>bash install zsh</code><br><code>bash run</code></td>
+</tr>
+<tr>
+<td><strong>Exécuter ce fichier avec dnf</strong></td>
+<td><code>dnf shell &lt;fichier&gt;</code></td>
+<td>Exécute un fichier d’installation automatique dans le shell dnf.</td>
+<td><code>dnf shell installation.txt</code></td>
+</tr>
+<tr>
+<td><strong>Exécuter sans confirmation</strong></td>
+<td><code>dnf -y shell &lt;fichier&gt;</code></td>
+<td>Exécute un fichier d&rsquo;installation automatique sans demander de confirmation.</td>
+<td><code>dnf -y shell installation.txt</code></td>
+</tr>
+</tbody>
 </table>
 
   <footer class="footline">
@@ -669,7 +669,7 @@ Pour installer <em><strong>dnf</strong></em> sur Ubuntu:</p>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1744476805";
+          window.index_js_url="/searchindex.en.js?1745279086";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -682,12 +682,12 @@ Pour installer <em><strong>dnf</strong></em> sur Ubuntu:</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.min.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1744476805" defer></script>
-        <script src="/js/search.js?1744476805" defer></script>
+        <script src="/js/auto-complete.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.min.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1745279086" defer></script>
+        <script src="/js/search.js?1745279086" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -771,8 +771,8 @@ Pour installer <em><strong>dnf</strong></em> sur Ubuntu:</p>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1744476805" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1744476805" defer></script>
-    <script src="/js/theme.js?1744476805" defer></script>
+    <script src="/js/clipboard.min.js?1745279086" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1745279086" defer></script>
+    <script src="/js/theme.js?1745279086" defer></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
   <channel>
     <title>Activer le glisser déposer entre votre VM et votre SSD ? :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/aidesvm/vmwaretools/index.html</link>
-    <description>Ces étapes vous permettront de , texte et images entre votre machine hôte et la VM en utilisant le glisser déposer. Notez que certaines restrictions peuvent s’appliquer selon la configuration de votre environnement VMware.&#xA;Pour pouvoir transférer des fichiers, dossiers entre votre machine hôte et une machine virtuelle sous VMware, suivez ces étapes :&#xA;Installer VMware Tools :&#xA;Assurez-vous que VMware Tools est installé sur la VM. Cette suite d’utilitaires améliore les performances et offre des fonctionnalités comme le glisser déposer. Pour l’installer : Ouvrez VMware Workstation. Sélectionnez votre VM et cliquez sur Lecteur &gt; Gérer &gt; Installer VMware Tools. Suivez les instructions à l’écran pour finaliser l’installation, puis redémarrez la VM. Activer le glisser déposer :</description>
+    <description>Ces étapes vous permettront de , texte et images entre votre machine hôte et la VM en utilisant le glisser déposer. Notez que certaines restrictions peuvent s’appliquer selon la configuration de votre environnement VMware.&#xA;Pour pouvoir transférer des fichiers, dossiers entre votre machine hôte et une machine virtuelle sous VMware, suivez ces étapes :&#xA;Installer VMware Tools :&#xA;Assurez-vous que VMware Tools est installé sur la VM. Cette suite d’utilitaires améliore les performances et offre des fonctionnalités comme le glisser déposer.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/aidesvm/vmwaretools/index.xml" rel="self" type="application/rss+xml" />

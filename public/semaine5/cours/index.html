@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Hugo 0.126.3">
     <meta name="generator" content="Relearn 7.3.1">
     <meta name="description" content="Les processus Chaque application, chaque commande est un processus.
 Certains processus vont s’exécuter jusqu’à ce que vous les arrêtiez, d’autres vont réaliser une tâche et s’arrêter tout seul.
@@ -37,11 +37,11 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
     <meta itemprop="wordCount" content="1696">
     <title>Les processus de Linux :: 420-ZG4-MO LINUX</title>
     <link href="/semaine5/cours/index.xml" rel="alternate" type="application/rss+xml" title="Les processus de Linux :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1744476805" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744476805" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1744476805" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744476805" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1744476805" rel="stylesheet">
-    <link href="/css/theme.min.css?1744476805" rel="stylesheet">
-    <link href="/css/format-html.min.css?1744476805" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1745279086" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745279086" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1745279086" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745279086" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1745279086" rel="stylesheet">
+    <link href="/css/theme.min.css?1745279086" rel="stylesheet">
+    <link href="/css/format-html.min.css?1745279086" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -193,22 +193,22 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 <p><strong>Exemple:</strong></p>
 </blockquote>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Commande</th>
-          <th style="text-align: left">Comportement</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>ls</code></td>
-          <td style="text-align: left">S&rsquo;exécute et se termine immédiatement.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>firefox</code></td>
-          <td style="text-align: left">Ouvre Firefox et reste en exécution empêchant l&rsquo;utilisation du terminal, jusqu&rsquo;à la fermeture de Firefox.</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Comportement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls</code></td>
+<td>S&rsquo;exécute et se termine immédiatement.</td>
+</tr>
+<tr>
+<td><code>firefox</code></td>
+<td>Ouvre Firefox et reste en exécution empêchant l&rsquo;utilisation du terminal, jusqu&rsquo;à la fermeture de Firefox.</td>
+</tr>
+</tbody>
 </table>
 <p>Quand une commande empêche l&rsquo;utilisation du terminal pendant son exécution, elle s&rsquo;exécute au <strong>premier plan</strong>.</p>
 <p>Pour permettre l&rsquo;utilisation du terminal, il faut lancer l&rsquo;application bloquante en <strong>arrière-plan</strong>.</p>
@@ -243,64 +243,64 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 <h2 id="affichage-et-gestion-des-processus">Affichage et gestion des processus</h2>
 <p>Chaque processus est identifié par :</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Identifiant</th>
-          <th style="text-align: left">Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>pid</code></td>
-          <td style="text-align: left">Identifiant unique du processus.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>ppid</code></td>
-          <td style="text-align: left">Identifiant du processus parent.</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Identifiant</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pid</code></td>
+<td>Identifiant unique du processus.</td>
+</tr>
+<tr>
+<td><code>ppid</code></td>
+<td>Identifiant du processus parent.</td>
+</tr>
+</tbody>
 </table>
 <blockquote>
 <p><strong>Exemple:</strong></p>
 <p>Si vous lancez une commande à partir du terminal, celui-ci est le parent du processus créé.</p>
 </blockquote>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Commande</th>
-          <th style="text-align: left">Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>ps -f</code></td>
-          <td style="text-align: left">Affiche les processus en cours d&rsquo;exécution depuis le terminal.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>ps -ef</code></td>
-          <td style="text-align: left">Affiche les détails de tous les processus du système.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>pstree</code></td>
-          <td style="text-align: left">Affiche l’arborescence des processus.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>top</code></td>
-          <td style="text-align: left">Affiche les processus en temps réel.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>kill pid</code></td>
-          <td style="text-align: left">Termine un processus avec son <code>pid</code>.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>kill -9 pid</code></td>
-          <td style="text-align: left">Termine immédiatement un processus.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>killall nom_processus</code></td>
-          <td style="text-align: left">Termine tous les processus portant un certain nom.</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ps -f</code></td>
+<td>Affiche les processus en cours d&rsquo;exécution depuis le terminal.</td>
+</tr>
+<tr>
+<td><code>ps -ef</code></td>
+<td>Affiche les détails de tous les processus du système.</td>
+</tr>
+<tr>
+<td><code>pstree</code></td>
+<td>Affiche l’arborescence des processus.</td>
+</tr>
+<tr>
+<td><code>top</code></td>
+<td>Affiche les processus en temps réel.</td>
+</tr>
+<tr>
+<td><code>kill pid</code></td>
+<td>Termine un processus avec son <code>pid</code>.</td>
+</tr>
+<tr>
+<td><code>kill -9 pid</code></td>
+<td>Termine immédiatement un processus.</td>
+</tr>
+<tr>
+<td><code>killall nom_processus</code></td>
+<td>Termine tous les processus portant un certain nom.</td>
+</tr>
+</tbody>
 </table>
 <h3 id="exercice-2">Exercice 2</h3>
 <p>Utilisez <code>ps</code> pour :</p>
@@ -322,33 +322,33 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
   </div>
 </details>
 <h2 id="états-des-processus">États des processus</h2>
-<p><a href="#R-image-dd50d40ea46d6b384cee00743f35c684" class="lightbox-link"><img alt="États des processus" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine5/cours/etats.png?width=50vw" style=" height: auto; width: 50vw;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-dd50d40ea46d6b384cee00743f35c684"><img alt="États des processus" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine5/cours/etats.png?width=50vw"></a></p>
+<p><a href="#R-image-35903b1ac326c72273c486df05dcfa28" class="lightbox-link"><img alt="États des processus" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine5/cours/etats.png?width=50vw" style=" height: auto; width: 50vw;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-35903b1ac326c72273c486df05dcfa28"><img alt="États des processus" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine5/cours/etats.png?width=50vw"></a></p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">État</th>
-          <th style="text-align: left">Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>Élu</strong></td>
-          <td style="text-align: left">En cours d&rsquo;exécution sur le processeur.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Prêt</strong></td>
-          <td style="text-align: left">En attente d&rsquo;exécution, sans attente de ressource.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Bloqué</strong></td>
-          <td style="text-align: left">En attente d&rsquo;une ressource autre que le processeur.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Zombie</strong></td>
-          <td style="text-align: left">Terminé mais non encore récupéré par son processus parent.</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>État</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Élu</strong></td>
+<td>En cours d&rsquo;exécution sur le processeur.</td>
+</tr>
+<tr>
+<td><strong>Prêt</strong></td>
+<td>En attente d&rsquo;exécution, sans attente de ressource.</td>
+</tr>
+<tr>
+<td><strong>Bloqué</strong></td>
+<td>En attente d&rsquo;une ressource autre que le processeur.</td>
+</tr>
+<tr>
+<td><strong>Zombie</strong></td>
+<td>Terminé mais non encore récupéré par son processus parent.</td>
+</tr>
+</tbody>
 </table>
 <p>Ces états sont gérés par l’<strong>ordonnanceur</strong>.</p>
 
@@ -393,22 +393,22 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 <h2 id="exécution-persistante-des-processus">Exécution persistante des processus</h2>
 <p>Si un terminal est fermé, ses processus sont arrêtés. Pour éviter cela :</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Commande</th>
-          <th style="text-align: left">Effet</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>disown &lt;pid&gt;</code></td>
-          <td style="text-align: left">Si le processus est en cours, il se détachera de son terminal.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>nohup &lt;commande&gt;</code></td>
-          <td style="text-align: left">Lance une commande en ignorant les signaux de fermeture du terminal.</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>disown &lt;pid&gt;</code></td>
+<td>Si le processus est en cours, il se détachera de son terminal.</td>
+</tr>
+<tr>
+<td><code>nohup &lt;commande&gt;</code></td>
+<td>Lance une commande en ignorant les signaux de fermeture du terminal.</td>
+</tr>
+</tbody>
 </table>
 <h3 id="exercice-4">Exercice 4</h3>
 <ol>
@@ -455,22 +455,22 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 </details>
 <h2 id="codes-de-retour-et-variables-système">Codes de retour et variables système</h2>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Variable</th>
-          <th style="text-align: left">Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>$?</code></td>
-          <td style="text-align: left">Code de retour de la dernière commande (0 = succès, autre = erreur).</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>$!</code></td>
-          <td style="text-align: left"><code>PID</code> de la dernière commande exécutée en arrière-plan.</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$?</code></td>
+<td>Code de retour de la dernière commande (0 = succès, autre = erreur).</td>
+</tr>
+<tr>
+<td><code>$!</code></td>
+<td><code>PID</code> de la dernière commande exécutée en arrière-plan.</td>
+</tr>
+</tbody>
 </table>
 <blockquote>
 <p><strong>Exemple:</strong></p>
@@ -502,45 +502,45 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 <h2 id="opérateurs-de-comparaison-en-bash">Opérateurs de comparaison en Bash</h2>
 <p>Les opérateurs de comparaison permettent de tester des valeurs numériques dans des conditions.</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Opérateur</th>
-          <th style="text-align: left">Signification</th>
-          <th style="text-align: left">Exemple</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>-eq</code></td>
-          <td style="text-align: left">Égalité (<code>equal</code>)</td>
-          <td style="text-align: left"><code>test $var -eq 0</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>-ne</code></td>
-          <td style="text-align: left">Différence (<code>not equal</code>)</td>
-          <td style="text-align: left"><code>test $var -ne 0</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>-lt</code></td>
-          <td style="text-align: left">Strictement inférieur (<code>less than</code>)</td>
-          <td style="text-align: left"><code>test $var -lt 0</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>-gt</code></td>
-          <td style="text-align: left">Strictement supérieur (<code>greater than</code>)</td>
-          <td style="text-align: left"><code>test $var -gt 0</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>-le</code></td>
-          <td style="text-align: left">Inférieur ou égal (<code>less or equal</code>)</td>
-          <td style="text-align: left"><code>test $var -le 0</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>-ge</code></td>
-          <td style="text-align: left">Supérieur ou égal (<code>greater or equal</code>)</td>
-          <td style="text-align: left"><code>test $var -ge 0</code></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Opérateur</th>
+<th>Signification</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-eq</code></td>
+<td>Égalité (<code>equal</code>)</td>
+<td><code>test $var -eq 0</code></td>
+</tr>
+<tr>
+<td><code>-ne</code></td>
+<td>Différence (<code>not equal</code>)</td>
+<td><code>test $var -ne 0</code></td>
+</tr>
+<tr>
+<td><code>-lt</code></td>
+<td>Strictement inférieur (<code>less than</code>)</td>
+<td><code>test $var -lt 0</code></td>
+</tr>
+<tr>
+<td><code>-gt</code></td>
+<td>Strictement supérieur (<code>greater than</code>)</td>
+<td><code>test $var -gt 0</code></td>
+</tr>
+<tr>
+<td><code>-le</code></td>
+<td>Inférieur ou égal (<code>less or equal</code>)</td>
+<td><code>test $var -le 0</code></td>
+</tr>
+<tr>
+<td><code>-ge</code></td>
+<td>Supérieur ou égal (<code>greater or equal</code>)</td>
+<td><code>test $var -ge 0</code></td>
+</tr>
+</tbody>
 </table>
 <h2 id="attente-de-la-fin-dexécution-dune-commande">Attente de la fin d&rsquo;exécution d&rsquo;une commande</h2>
 <p>Il est possible d&rsquo;attendre qu&rsquo;une commande en arrière-plan se termine avant de poursuivre l&rsquo;exécution d&rsquo;autres commandes.</p>
@@ -559,35 +559,35 @@ Pour permettre l’utilisation du terminal, il faut lancer l’application bloqu
 <h2 id="combinaison-et-synchronisation-des-commandes">Combinaison et synchronisation des commandes</h2>
 <h3 id="opérateurs-logiques">Opérateurs logiques</h3>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Opérateur</th>
-          <th style="text-align: left">Exemple</th>
-          <th style="text-align: left">Fonctionnement</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>;</code></td>
-          <td style="text-align: left"><code>$ commande1 ; commande2</code></td>
-          <td style="text-align: left"><code>commande2</code> s’exécute une fois que <code>commande1</code> se termine, indépendamment du succès ou de l&rsquo;échec.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>&amp;</code></td>
-          <td style="text-align: left"><code>$ commande1 &amp; commande2 &amp;</code></td>
-          <td style="text-align: left">Les commandes s&rsquo;exécutent en parallèle, simultanément.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>&amp;&amp;</code></td>
-          <td style="text-align: left"><code>$ commande1 &amp;&amp; commande2</code></td>
-          <td style="text-align: left"><code>commande2</code> s’exécute si <code>commande1</code> réussit.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>||</code></td>
-          <td style="text-align: left"><code>$ commande1 || commande2</code></td>
-          <td style="text-align: left"><code>commande2</code> s’exécute si <code>commande1</code> échoue.</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Opérateur</th>
+<th>Exemple</th>
+<th>Fonctionnement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>;</code></td>
+<td><code>$ commande1 ; commande2</code></td>
+<td><code>commande2</code> s’exécute une fois que <code>commande1</code> se termine, indépendamment du succès ou de l&rsquo;échec.</td>
+</tr>
+<tr>
+<td><code>&amp;</code></td>
+<td><code>$ commande1 &amp; commande2 &amp;</code></td>
+<td>Les commandes s&rsquo;exécutent en parallèle, simultanément.</td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td><code>$ commande1 &amp;&amp; commande2</code></td>
+<td><code>commande2</code> s’exécute si <code>commande1</code> réussit.</td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td><code>$ commande1 || commande2</code></td>
+<td><code>commande2</code> s’exécute si <code>commande1</code> échoue.</td>
+</tr>
+</tbody>
 </table>
 <blockquote>
 <p><strong>Exemples :</strong></p>
@@ -766,7 +766,7 @@ Elle n&rsquo;est pas obligatoire, mais <strong>pour ce cours</strong>, cette lig
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1744476805";
+          window.index_js_url="/searchindex.en.js?1745279086";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -779,12 +779,12 @@ Elle n&rsquo;est pas obligatoire, mais <strong>pour ce cours</strong>, cette lig
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.min.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1744476805" defer></script>
-        <script src="/js/search.js?1744476805" defer></script>
+        <script src="/js/auto-complete.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.min.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1745279086" defer></script>
+        <script src="/js/search.js?1745279086" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -868,8 +868,8 @@ Elle n&rsquo;est pas obligatoire, mais <strong>pour ce cours</strong>, cette lig
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1744476805" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1744476805" defer></script>
-    <script src="/js/theme.js?1744476805" defer></script>
+    <script src="/js/clipboard.min.js?1745279086" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1745279086" defer></script>
+    <script src="/js/theme.js?1745279086" defer></script>
   </body>
 </html>

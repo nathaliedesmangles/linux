@@ -3,7 +3,7 @@
   <channel>
     <title>ATELIER: WSL, Ubuntu et des commandes Linux simples :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine14/atelier/index.html</link>
-    <description>Objectifs de l’atelier Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux.</description>
+    <description>Objectifs de l’atelier Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux.&#xA;Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les fonctionnalités Windows Dans la liste, cocher Sous-Système Windows pour Linux Redémarrer Une fois redémarré, vous pouvez installer la distribution Ubuntu depuis le Microsoft Store.&#xA;Partie 2: Installation d’Ubuntu WSL prend en charge une variété de distributions Linux, y compris la dernière version LTS d’Ubuntu.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine14/atelier/index.xml" rel="self" type="application/rss+xml" />

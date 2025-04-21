@@ -11,155 +11,256 @@ Configurer un réseau sous Linux se fait à l’aide de commandes et de fichiers
 Dans le cours [7 - vim et fichiers de configuration](https://linuxh25.netlify.app/semaine7/), nous avons vu comment modifier ces fichiers.  
 Dans ce cours-ci, nous allons explorer des **commandes réseau essentielles**.
 
-
-## Rappel : les fichiers texte importants
+## Rappel : les fichiers texte importants niveau réseau
 
 Voici deux fichiers que nous avons déjà vus :
 
 - **`/etc/hosts`** : permet une **résolution de noms simple** (utile si un serveur DNS n’est pas disponible).
 - **`/etc/resolv.conf`** : contient la **liste des serveurs DNS** utilisés par la machine.
 
+## Les commandes réseau: ***nmcli*** et ***ip***
 
-## Les commandes réseau
+- Le nom `nmcli` est pour ***NetworkManager Command Line Interface***.
+- `nmcli` est un outil en ligne de commande pour interagir avec NetworkManager. Il permet de **configurer des connexions réseau** sans passer par des fichiers manuels.
 
-### La commande *nmcli*
-
-La commande `nmcli` sert à **gérer les interfaces réseau**.
-
-#### Lister les connexions réseau
-```bash
-# nmcli dev
-```
-
-#### Afficher la configuration IP
-```bash
-# ip a
-# nmcli con show ens160
-```
-
-#### Configurer une adresse IP statique
-```bash
-# nmcli con mod ens160 ipv4.address 192.168.230.10/24
-# nmcli con mod ens160 ipv4.gateway 192.168.230.2
-# nmcli con mod ens160 ipv4.dns 8.8.8.8,8.8.4.4
-# nmcli con mod ens160 ipv4.method manual
-# nmcli con down ens160
-# nmcli con up ens160
-```
-
-#### Revenir à une adresse IP dynamique (DHCP)
-```bash
-# nmcli con mod ens160 ipv4.method auto
-# nmcli con mod ens160 ipv4.dns ""
-# nmcli con mod ens160 ipv4.gateway "" ipv4.addresses ""
-# nmcli con down ens160
-# nmcli con up ens160
-```
-
-#### Ajouter une nouvelle interface réseau
-```bash
-# nmcli con add con-name ens224 type ethernet ifname ens224
-```
-Ensuite, vous pouvez lui attribuer une IP fixe ou utiliser le DHCP.
-
-
-### La commande *ip*
-
-La commande `ip` remplace `ifconfig`, qui est maintenant obsolète.  
-Elle permet de **lire et modifier temporairement** la configuration IP d’une interface.
+- La commande `ip` remplace `ifconfig`, qui est maintenant **obsolète**.  
+- La commande `ip` permet de **lire et modifier temporairement** la configuration IP d’une interface.
 
 {{% notice style="warning" title="Attention" %}}
-Les changements faits avec `ip` **ne sont pas permanents**. Ils seront perdus après un redémarrage.
+Les changements faits avec `ip` **ne sont pas permanents**. Ils seront perdus après un redémarrage du système.
 {{% /notice %}}
 
-#### Afficher les interfaces réseau
+## Différence entre interface et connexion
+
+C'est important de ne pas confondre **interface réseau** (ex. ens160) et la **connexion** (ex. statique ou dynamique) créée avec nmcli.
+  - Interface = matériel (ex. `ens160`)
+  - Connexion = configuration liée (ex. `statique` ou `dynamique`)
+
+Avant de configurer un réseau, c'est recommandé de connaitre les interfaces disponibles sur le système.
+
+## Vérifier les interfaces disponibles
+
 ```bash
-$ ip address
+$ nmcli device status
 # ou plus court :
-$ ip a
+$ nmcli dev
 ```
 
-#### Afficher une seule interface
+![Vérifier interfaces disponibles](./nmcli_verifier_interfaces_dispos.png)
+
+Ou
+
 ```bash
-$ ip a show <interface>
+$ ip link show
 ```
+![Vérifier interfaces disponibles](./ip_verifier_interfaces_dispos.png)
 
-#### Redémarrer une interface réseau
+## Créer une connexion Ethernet statique (fixe)
+
+- Cela consiste à donner une **adresse IP fixe**, une **passerelle**, **des DNS** à l'interface, puis redémarrer la connexion pour appliquer le tout.   
+
+**Exemple** : configurer l’interface `ens160` avec une adresse IP statique.
+
 ```bash
-$ ifdown <interface>
-$ ifup <interface>
+# Ajouter une nouvelle connexion réseau Ethernet <nom_connexion>, liée à l’interface réseau physique <interface>.
+$ nmcli con add con-name <nom_connexion> type ethernet ifname <interface>
+
+# Donner une adresse IP à l’interface
+$ nmcli con mod <nom_connexion> ipv4.addresses 192.168.230.132/24
+
+# Définir la passerelle (gateway)
+$ nmcli con mod <nom_connexion> ipv4.gateway 192.168.230.2
+
+# Configurer les serveurs DNS pour résoudre les noms de domaine
+$ nmcli con mod <nom_connexion> ipv4.dns 8.8.8.8
+
+# Préciser que la configuration est manuelle
+$ nmcli con mod <nom_connexion> ipv4.method manual
+
+# Redémarrer la connexion
+$ nmcli con up <nom_connexion>
 ```
 
-#### Ajouter plusieurs adresses IP sur une même interface (même sous-réseau obligatoire)
+{{% notice style="primary" title="À savoir" %}}
+- L’adresse IP 192.168.230.132 avec un masque /24 équivaut à un masque de 255.255.255.0.
+  - Le /24 indique que les 24 premiers bits de l'adresse servent à identifier le réseau.
+- La passerelle est l’adresse du routeur à utiliser pour sortir du réseau.
+- Par soucis de simplicité, on nomme la connexion avec le nom de l'interface.
+  - Dans l'exemple, cela veut dire qu'on remplacerai **<nom_connexion>** par `ens160`.
+{{% /notice %}}
+
+## Gérer les connexions
+
+   ##### Lister les connexions enregistrées
+   ```bash
+   $ nmcli con show
+   ```
+
+   ##### Lister les connexions actives
+   ```bash
+   $ nmcli con show --active
+   ```
+
+   ##### Détails d’une connexion
+   ```bash
+   $ nmcli con show <nom_connexion>
+   ```
+
+   ##### Activer une connexion spécifique
+   ```bash
+   $ nmcli con up <nom_connexion>
+   ```
+
+   ##### Désactiver une connexion
+   ```bash
+   $ nmcli con down <nom_connexion>
+   ```
+
+   ##### Supprimer une connexion
+   ```bash
+   $ nmcli con delete <nom_connexion>
+   ```
+
+## Créer une connexion Ethernet dynamique (via *DHCP*)
+
+Cela consiste à effacer les réglages manuels (IP, DNS, passerelle), puis redémarrer la connexion.
+
 ```bash
-$ ip addr add 192.168.230.132/24 dev ens33
+# Configurer l'interface pour obtenir automatiquement une adresse IP
+$ nmcli con mod <interface> ipv4.method auto
+
+# Effacer les DNS manuels
+$ nmcli con mod <interface> ipv4.dns ""
+
+# Supprimer toute adresse IP fixe et passerelle manuelle
+$ nmcli con mod <interface> ipv4.gateway "" ipv4.addresses ""
+
+# Désactiver temporairement la connexion
+$ nmcli con down <nom_connexion>
+
+# Réactiver la connexion, avec la nouvelle configuration.
+$ nmcli con up <nom_connexion>
 ```
 
-#### Supprimer une adresse IP
-```bash
-$ ip addr del 192.168.230.132/24 dev ens33
-```
+{{% notice style="primary" title="À savoir" %}}
+Parfois il faut répéter la commande précédente (`nmcli con up`) pour s'assurer que la connexion remonte bien.
+{{% /notice %}}
 
-#### Ajouter une passerelle par défaut
-```bash
-$ ip route add default via 192.168.230.2
-```
+## Activer/Désactiver le réseau
 
-#### Voir la table de routage
-```bash
-$ ip route
-```
+   ##### Activer le réseau géré par *NetworkManager*
+   ```bash
+   $ nmcli networking on
+   ```
 
-### La commande *ifconfig*
+   ##### Désactiver tout le réseau
+   ```bash
+   $ nmcli networking off
+   ```
 
-La commande `ifconfig` est plus ancienne et tend à disparaître, mais reste parfois utile.
+## La commande ***ip***
 
-#### Afficher les interfaces réseau
+   ##### Afficher la configuration IP réseau
+   ```bash
+   $ ip address
+   # ou plus court :
+   $ ip a   # a pour adresse
+   ```
+
+   ##### Afficher la configuration ip d'une seule interface
+   ```bash
+   $ ip a show <interface>
+   ```
+
+   ##### Ajouter plusieurs adresses IP sur une même interface (**même sous-réseau obligatoire**)
+
+   {{% notice style="warning" title="Attention" icon="bug" %}}
+   L'interface doit exister et avoir une connexion active au réseau avant d'y ajouter une adresse IP.
+   {{% /notice %}}
+
+   ```bash
+   $ sudo ip addr add 192.168.230.132/24 dev ens33
+   ```
+
+   ##### Supprimer une adresse IP
+   ```bash
+   $ sudo ip addr del 192.168.230.132/24 dev ens33
+   ```
+
+   ##### Ajouter une passerelle par défaut
+   ```bash
+   $ sudo ip route add default via 192.168.230.2
+  ```
+
+   ##### Voir la table de routage
+   ```bash
+   $ ip route
+   ```
+
+## Commandes obsolètes ou anciennes
+
+### La commande ***ifconfig***
+
+{{% notice style="grey" title="Commande ***ifconfig***" groupid="notice-toggle" expanded="false" %}}
+- La commande `ifconfig` est plus ancienne et tend à disparaître, mais reste parfois utile.
+- C'est un utilitaire de configuration de réseau.
+
+**Afficher la liste des interfaces réseau et de la configuration**
 ```bash
 $ ifconfig
 ```
 
-#### Voir une interface en particulier
+**Voir une interface en particulier**
 ```bash
 $ ifconfig <interface>
 ```
 
-#### Activer/désactiver une interface
+**Activer/désactiver une interface**
 ```bash
 $ ifconfig <interface> up
 $ ifconfig <interface> down
 ```
 
-#### Attribuer une adresse IP (temporairement)
+**Attribuer une adresse IP (temporairement)**
 ```bash
 $ ifconfig ens33 10.0.2.34 netmask 255.255.224.0
 ```
 
-#### Ajouter une adresse IP secondaire (alias)
+**Ajouter une adresse IP secondaire (alias)**
 ```bash
 $ ifconfig ens33:1 10.0.2.56 netmask 255.255.255.0
 ```
 
 > L’interface alias (`ens33:1`) utilise la même carte réseau (donc la même adresse MAC) et doit être dans le **même sous-réseau**.
 
-#### Désactiver un alias
+## Désactiver un alias
 ```bash
 $ ifconfig ens33:1 down
 ```
+{{% /notice %}}
 
-## Le service réseau
 
-Sous Linux, il faut parfois **redémarrer le service réseau** pour que les changements soient pris en compte.
+### Les commandes ***ifdown*** et ***ifup***
 
-#### Désactiver le service
+- si votre machine Linux ne connait pas ces commandes, vous devez les installer à l'aide de la commande `dnf`.
+
+![Installation du paquet](./installation_NM-initscript-updown.png)
+
+{{% notice style="grey" title="Commandes ***ifdown*** et ***ifup***" groupid="notice-toggle" expanded="false" %}}
+
+
+## Redémarrer (désactivation et réactivation) une interface réseau
+
+**1. Désactivation: perte de connexion réseau**
 ```bash
-$ nmcli networking off
+$ ifdown ens160
 ```
 
-#### Réactiver le service
+**2. Réactivation: retour de l'accès réseau**
 ```bash
-$ nmcli networking on
+$ ifup ens160
 ```
+{{% /notice %}}
 
 ---
 
@@ -195,7 +296,6 @@ $ cat /etc/resolv.conf  # pour les serveurs DNS
 |:----------------:|:---------------------:|:----------------------:|:----------:|:----------:|
 | 192.168.230.100  | 255.255.255.0         | 192.168.230.2          | 8.8.8.8    | 8.8.4.4    |
 
-
 ### Étape 2 : Vérifier si l’adresse est dynamique (DHCP) ou statique
 
 Utiliser cette commande :
@@ -213,12 +313,12 @@ $ nmcli con show ens160 | grep ipv4.method
 Modifier la configuration avec `nmcli` :
 
 ```bash
-# nmcli con mod ens160 ipv4.address 192.168.230.100/24
-# nmcli con mod ens160 ipv4.gateway 192.168.230.2
-# nmcli con mod ens160 ipv4.dns 8.8.8.8,8.8.4.4
-# nmcli con mod ens160 ipv4.method manual
-# nmcli con down ens160
-# nmcli con up ens160
+$ nmcli con mod ens160 ipv4.address 192.168.230.100/24
+$ nmcli con mod ens160 ipv4.gateway 192.168.230.2
+$ nmcli con mod ens160 ipv4.dns 8.8.8.8,8.8.4.4
+$ nmcli con mod ens160 ipv4.method manual
+$ nmcli con down ens160
+$ nmcli con up ens160
 ```
 
 ### Étape 4 : Vérifier l'accès à Internet
@@ -229,16 +329,15 @@ Tester avec une commande comme :
 $ ping google.com
 ```
 
-
 ### Étape 5 : Revenir à une configuration en DHCP
 
 ```bash
-# nmcli con mod ens160 ipv4.method auto
-# nmcli con mod ens160 ipv4.address ""
-# nmcli con mod ens160 ipv4.gateway ""
-# nmcli con mod ens160 ipv4.dns ""
-# nmcli con down ens160
-# nmcli con up ens160
+$ nmcli con mod ens160 ipv4.method auto
+$ nmcli con mod ens160 ipv4.address ""
+$ nmcli con mod ens160 ipv4.gateway ""
+$ nmcli con mod ens160 ipv4.dns ""
+$ nmcli con down ens160
+$ nmcli con up ens160
 ```
 
 ### Étape 6 : Vérifier que tout fonctionne
@@ -290,7 +389,7 @@ $ ip a show ens33
 ```
 
 
-### Étape 2 : Modifier le fichier `/etc/hosts`
+### Étape 2 : Modifier le fichier */etc/hosts*
 
 Ouvrir le fichier avec des droits root :
 
@@ -340,7 +439,7 @@ $ ip a show ens33
 
 Deux façons possibles :
 
-#### **Méthode 1 : via `nmcli`**
+#### **Méthode 1 : via *nmcli***
 
 Ajouter plusieurs adresses IP dans la configuration de l’interface :
 
@@ -358,3 +457,43 @@ $ sudo nmcli con up ens33
 > À faire seulement si vous êtes à l’aise avec les fichiers de configuration réseau, par exemple `/etc/sysconfig/network-scripts/ifcfg-ens33` (selon la distribution).
 
 {{% /notice %}}
+
+---
+## Erreurs courantes
+
+### 1. Erreur : *`Cannot find device "ens33"`*
+- **Cause :** Interface réseau inexistante.
+- **Solution :**
+    - Vérifier l'existence de l'inerface
+    - La créer le cas échéant avec `nmcli con add`
+  ```bash
+  $ nmcli device status
+  ```
+
+### 2. Erreur : *`Nexthop has invalid gateway`*
+- **Cause :** Mauvaise passerelle ou interface inactive.
+- **Solution :**
+  - Vérifier que l’IP est dans le bon sous-réseau.
+  - Activer l’interface :
+    ```bash
+    $ sudo ip link set <nom_interface> up
+    ```
+
+### 3. Interface invalide dans *nmcli con add*
+- **Cause :** Mauvais nom d’interface.
+- **Solution**
+  ```bash
+  $ nmcli device status
+  ```
+
+### 4. IP ajoutée à une interface inactive
+- **Solution**
+  ```bash
+  sudo ip link set <interface> up
+  ```
+
+
+## Bonnes pratiques
+
+- Toujours vérifier le vrai nom de l’interface réseau avant de créer une configuration..
+- Supprimer les connexions en double ou inutiles.

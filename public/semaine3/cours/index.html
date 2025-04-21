@@ -3,33 +3,33 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Hugo 0.126.3">
     <meta name="generator" content="Relearn 7.3.1">
     <meta name="description" content="Le processus de démarrage Le processus de démarrage d’un système Linux suit plusieurs étapes essentielles, impliquant différents composants du système :
-Étape Description 1. Activation du BIOS/UEFI Au démarrage, le BIOS (Basic Input Output System) ou l’UEFI (Unified Extensible Firmware Interface) s’active. Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT). 2. Chargement du chargeur d’amorçage Le MBR (Master Boot Record) définit le chargeur de démarrage, comme GRUB (GRand Unified Bootloader). GRUB affiche un menu permettant de choisir le système à démarrer. 3. Chargement du noyau Linux (Kernel) Après sélection de Linux, GRUB charge le noyau, qui initialise les pilotes, périphériques et la gestion de la mémoire. Il charge aussi un disque temporaire (initrd ou initramfs) contenant les modules nécessaires au démarrage. 4. Lancement du processus d’initialisation (init ou systemd) Le noyau lance le premier processus du système : init ou systemd (selon la distribution Linux). Ce processus démarre les services et scripts de configuration (réseau, interface graphique, gestion des utilisateurs, etc.). 5. Affichage de l’écran de connexion Une fois les services chargés, l’écran de connexion s’affiche, demandant un nom d’utilisateur et un mot de passe. 6. Utilisation du système Après authentification, vous pouvez utiliser Linux, lancer des applications et exécuter des commandes. Vous pouvez aussi arrêter ou redémarrer votre système avec shutdown, reboot ou halt. Les niveaux d’exécution (Runlevels) et cibles (Targets) Autrefois, Linux utilisait des niveaux d’exécution (runlevels), qui définissaient les services actifs selon le mode de fonctionnement. Avec systemd, ces niveaux sont remplacés par des cibles (targets). Cependant, la compatibilité avec les anciens niveaux est conservée.">
+Étape Description 1. Activation du BIOS/UEFI Au démarrage, le BIOS (Basic Input Output System) ou l’UEFI (Unified Extensible Firmware Interface) s’active. Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT). 2. Chargement du chargeur d’amorçage Le MBR (Master Boot Record) définit le chargeur de démarrage, comme GRUB (GRand Unified Bootloader).">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX">
     <meta name="twitter:description" content="Le processus de démarrage Le processus de démarrage d’un système Linux suit plusieurs étapes essentielles, impliquant différents composants du système :
-Étape Description 1. Activation du BIOS/UEFI Au démarrage, le BIOS (Basic Input Output System) ou l’UEFI (Unified Extensible Firmware Interface) s’active. Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT). 2. Chargement du chargeur d’amorçage Le MBR (Master Boot Record) définit le chargeur de démarrage, comme GRUB (GRand Unified Bootloader). GRUB affiche un menu permettant de choisir le système à démarrer. 3. Chargement du noyau Linux (Kernel) Après sélection de Linux, GRUB charge le noyau, qui initialise les pilotes, périphériques et la gestion de la mémoire. Il charge aussi un disque temporaire (initrd ou initramfs) contenant les modules nécessaires au démarrage. 4. Lancement du processus d’initialisation (init ou systemd) Le noyau lance le premier processus du système : init ou systemd (selon la distribution Linux). Ce processus démarre les services et scripts de configuration (réseau, interface graphique, gestion des utilisateurs, etc.). 5. Affichage de l’écran de connexion Une fois les services chargés, l’écran de connexion s’affiche, demandant un nom d’utilisateur et un mot de passe. 6. Utilisation du système Après authentification, vous pouvez utiliser Linux, lancer des applications et exécuter des commandes. Vous pouvez aussi arrêter ou redémarrer votre système avec shutdown, reboot ou halt. Les niveaux d’exécution (Runlevels) et cibles (Targets) Autrefois, Linux utilisait des niveaux d’exécution (runlevels), qui définissaient les services actifs selon le mode de fonctionnement. Avec systemd, ces niveaux sont remplacés par des cibles (targets). Cependant, la compatibilité avec les anciens niveaux est conservée.">
+Étape Description 1. Activation du BIOS/UEFI Au démarrage, le BIOS (Basic Input Output System) ou l’UEFI (Unified Extensible Firmware Interface) s’active. Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT). 2. Chargement du chargeur d’amorçage Le MBR (Master Boot Record) définit le chargeur de démarrage, comme GRUB (GRand Unified Bootloader).">
     <meta property="og:url" content="https://example.org/semaine3/cours/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX">
     <meta property="og:description" content="Le processus de démarrage Le processus de démarrage d’un système Linux suit plusieurs étapes essentielles, impliquant différents composants du système :
-Étape Description 1. Activation du BIOS/UEFI Au démarrage, le BIOS (Basic Input Output System) ou l’UEFI (Unified Extensible Firmware Interface) s’active. Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT). 2. Chargement du chargeur d’amorçage Le MBR (Master Boot Record) définit le chargeur de démarrage, comme GRUB (GRand Unified Bootloader). GRUB affiche un menu permettant de choisir le système à démarrer. 3. Chargement du noyau Linux (Kernel) Après sélection de Linux, GRUB charge le noyau, qui initialise les pilotes, périphériques et la gestion de la mémoire. Il charge aussi un disque temporaire (initrd ou initramfs) contenant les modules nécessaires au démarrage. 4. Lancement du processus d’initialisation (init ou systemd) Le noyau lance le premier processus du système : init ou systemd (selon la distribution Linux). Ce processus démarre les services et scripts de configuration (réseau, interface graphique, gestion des utilisateurs, etc.). 5. Affichage de l’écran de connexion Une fois les services chargés, l’écran de connexion s’affiche, demandant un nom d’utilisateur et un mot de passe. 6. Utilisation du système Après authentification, vous pouvez utiliser Linux, lancer des applications et exécuter des commandes. Vous pouvez aussi arrêter ou redémarrer votre système avec shutdown, reboot ou halt. Les niveaux d’exécution (Runlevels) et cibles (Targets) Autrefois, Linux utilisait des niveaux d’exécution (runlevels), qui définissaient les services actifs selon le mode de fonctionnement. Avec systemd, ces niveaux sont remplacés par des cibles (targets). Cependant, la compatibilité avec les anciens niveaux est conservée.">
+Étape Description 1. Activation du BIOS/UEFI Au démarrage, le BIOS (Basic Input Output System) ou l’UEFI (Unified Extensible Firmware Interface) s’active. Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT). 2. Chargement du chargeur d’amorçage Le MBR (Master Boot Record) définit le chargeur de démarrage, comme GRUB (GRand Unified Bootloader).">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX">
     <meta itemprop="description" content="Le processus de démarrage Le processus de démarrage d’un système Linux suit plusieurs étapes essentielles, impliquant différents composants du système :
-Étape Description 1. Activation du BIOS/UEFI Au démarrage, le BIOS (Basic Input Output System) ou l’UEFI (Unified Extensible Firmware Interface) s’active. Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT). 2. Chargement du chargeur d’amorçage Le MBR (Master Boot Record) définit le chargeur de démarrage, comme GRUB (GRand Unified Bootloader). GRUB affiche un menu permettant de choisir le système à démarrer. 3. Chargement du noyau Linux (Kernel) Après sélection de Linux, GRUB charge le noyau, qui initialise les pilotes, périphériques et la gestion de la mémoire. Il charge aussi un disque temporaire (initrd ou initramfs) contenant les modules nécessaires au démarrage. 4. Lancement du processus d’initialisation (init ou systemd) Le noyau lance le premier processus du système : init ou systemd (selon la distribution Linux). Ce processus démarre les services et scripts de configuration (réseau, interface graphique, gestion des utilisateurs, etc.). 5. Affichage de l’écran de connexion Une fois les services chargés, l’écran de connexion s’affiche, demandant un nom d’utilisateur et un mot de passe. 6. Utilisation du système Après authentification, vous pouvez utiliser Linux, lancer des applications et exécuter des commandes. Vous pouvez aussi arrêter ou redémarrer votre système avec shutdown, reboot ou halt. Les niveaux d’exécution (Runlevels) et cibles (Targets) Autrefois, Linux utilisait des niveaux d’exécution (runlevels), qui définissaient les services actifs selon le mode de fonctionnement. Avec systemd, ces niveaux sont remplacés par des cibles (targets). Cependant, la compatibilité avec les anciens niveaux est conservée.">
+Étape Description 1. Activation du BIOS/UEFI Au démarrage, le BIOS (Basic Input Output System) ou l’UEFI (Unified Extensible Firmware Interface) s’active. Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT). 2. Chargement du chargeur d’amorçage Le MBR (Master Boot Record) définit le chargeur de démarrage, comme GRUB (GRand Unified Bootloader).">
     <meta itemprop="wordCount" content="2756">
     <title>Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX</title>
     <link href="/semaine3/cours/index.xml" rel="alternate" type="application/rss+xml" title="Processus de démarrage, cibles, variables et boucle For :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1744476805" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744476805" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1744476805" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744476805" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1744476805" rel="stylesheet">
-    <link href="/css/theme.min.css?1744476805" rel="stylesheet">
-    <link href="/css/format-html.min.css?1744476805" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1745279086" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745279086" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1745279086" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745279086" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1745279086" rel="stylesheet">
+    <link href="/css/theme.min.css?1745279086" rel="stylesheet">
+    <link href="/css/format-html.min.css?1745279086" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -157,7 +157,7 @@
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine3/index.html" title="Processus de démarrage, variables et FOR (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine3/atelier/index.html" title="ATELIER #3: Cibles et variables utilisateurs et for (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/index.html" title="Commandes utiles, redirection, chainage et filtrage de commandes et While (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -181,41 +181,41 @@
 
 <h2 id="le-processus-de-démarrage">Le processus de démarrage</h2>
 <p>Le processus de démarrage d&rsquo;un système Linux suit plusieurs étapes essentielles, impliquant différents composants du système :</p>
-<p><a href="#R-image-788a4e9b45bfa71d2815743258df6c74" class="lightbox-link"><img alt="Schema séquence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-788a4e9b45bfa71d2815743258df6c74"><img alt="Schema séquence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg"></a></p>
+<p><a href="#R-image-c6fe102cf1ebe81ecc63c0e3ad9688ba" class="lightbox-link"><img alt="Schema séquence" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c6fe102cf1ebe81ecc63c0e3ad9688ba"><img alt="Schema séquence" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine3/cours/boot_process.jpeg"></a></p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Étape</th>
-          <th style="text-align: left">Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>1. Activation du BIOS/UEFI</strong></td>
-          <td style="text-align: left">Au démarrage, le <strong>BIOS</strong> (<em>Basic Input Output System</em>) ou l&rsquo;<strong>UEFI</strong> (<em>Unified Extensible Firmware Interface</em>) s&rsquo;active. Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT).</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>2. Chargement du chargeur d&rsquo;amorçage</strong></td>
-          <td style="text-align: left">Le <strong>MBR</strong> (<em>Master Boot Record</em>) définit le chargeur de démarrage, comme <strong>GRUB</strong> (<em>GRand Unified Bootloader</em>). <strong>GRUB</strong> affiche un menu permettant de choisir le système à démarrer.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>3. Chargement du noyau Linux (<em>Kernel</em>)</strong></td>
-          <td style="text-align: left">Après sélection de Linux, <strong>GRUB</strong> charge le noyau, qui initialise les pilotes, périphériques et la gestion de la mémoire. Il charge aussi un disque temporaire (<code>initrd</code> ou <code>initramfs</code>) contenant les modules nécessaires au démarrage.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>4. Lancement du processus d&rsquo;initialisation (<code>init</code> ou <code>systemd</code>)</strong></td>
-          <td style="text-align: left">Le noyau lance le premier processus du système : <code>init</code> ou <code>systemd</code> (selon la distribution Linux). Ce processus démarre les services et scripts de configuration (réseau, interface graphique, gestion des utilisateurs, etc.).</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>5. Affichage de l&rsquo;écran de connexion</strong></td>
-          <td style="text-align: left">Une fois les services chargés, l&rsquo;écran de connexion s&rsquo;affiche, demandant un nom d&rsquo;utilisateur et un mot de passe.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>6. Utilisation du système</strong></td>
-          <td style="text-align: left">Après authentification, vous pouvez utiliser Linux, lancer des applications et exécuter des commandes. Vous pouvez aussi arrêter ou redémarrer votre système avec <code>shutdown</code>, <code>reboot</code> ou <code>halt</code>.</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Étape</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Activation du BIOS/UEFI</strong></td>
+<td>Au démarrage, le <strong>BIOS</strong> (<em>Basic Input Output System</em>) ou l&rsquo;<strong>UEFI</strong> (<em>Unified Extensible Firmware Interface</em>) s&rsquo;active. Il vérifie le matériel et cherche le secteur de démarrage sur le disque (MBR ou GPT).</td>
+</tr>
+<tr>
+<td><strong>2. Chargement du chargeur d&rsquo;amorçage</strong></td>
+<td>Le <strong>MBR</strong> (<em>Master Boot Record</em>) définit le chargeur de démarrage, comme <strong>GRUB</strong> (<em>GRand Unified Bootloader</em>). <strong>GRUB</strong> affiche un menu permettant de choisir le système à démarrer.</td>
+</tr>
+<tr>
+<td><strong>3. Chargement du noyau Linux (<em>Kernel</em>)</strong></td>
+<td>Après sélection de Linux, <strong>GRUB</strong> charge le noyau, qui initialise les pilotes, périphériques et la gestion de la mémoire. Il charge aussi un disque temporaire (<code>initrd</code> ou <code>initramfs</code>) contenant les modules nécessaires au démarrage.</td>
+</tr>
+<tr>
+<td><strong>4. Lancement du processus d&rsquo;initialisation (<code>init</code> ou <code>systemd</code>)</strong></td>
+<td>Le noyau lance le premier processus du système : <code>init</code> ou <code>systemd</code> (selon la distribution Linux). Ce processus démarre les services et scripts de configuration (réseau, interface graphique, gestion des utilisateurs, etc.).</td>
+</tr>
+<tr>
+<td><strong>5. Affichage de l&rsquo;écran de connexion</strong></td>
+<td>Une fois les services chargés, l&rsquo;écran de connexion s&rsquo;affiche, demandant un nom d&rsquo;utilisateur et un mot de passe.</td>
+</tr>
+<tr>
+<td><strong>6. Utilisation du système</strong></td>
+<td>Après authentification, vous pouvez utiliser Linux, lancer des applications et exécuter des commandes. Vous pouvez aussi arrêter ou redémarrer votre système avec <code>shutdown</code>, <code>reboot</code> ou <code>halt</code>.</td>
+</tr>
+</tbody>
 </table>
 <hr>
 <h2 id="les-niveaux-dexécution-runlevels-et-cibles-targets">Les niveaux d&rsquo;exécution (<em>Runlevels</em>) et cibles (<em>Targets</em>)</h2>
@@ -226,46 +226,46 @@ Avec <code>systemd</code>, ces niveaux sont remplacés par des <strong>cibles</s
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ systemctl isolate &lt;nom_niveau&gt;</span></span></code></pre></div>
 <h3 id="correspondance-entre-les-niveaux-dexécution-et-les-cibles-systemd">Correspondance entre les niveaux d&rsquo;exécution et les cibles <em>systemd</em></h3>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Niveau d&rsquo;exécution</th>
-          <th style="text-align: left">Cible <em>systemd</em></th>
-          <th style="text-align: left">Description</th>
-          <th style="text-align: left">Commande associée</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">0</td>
-          <td style="text-align: left">poweroff</td>
-          <td style="text-align: left">Arrêt du système</td>
-          <td style="text-align: left"><code>$ systemctl isolate poweroff</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">1</td>
-          <td style="text-align: left">rescue</td>
-          <td style="text-align: left">Mode utilisateur unique (maintenance)</td>
-          <td style="text-align: left"><code>$ systemctl isolate rescue</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">3</td>
-          <td style="text-align: left">multi-user</td>
-          <td style="text-align: left">Mode multi-utilisateur (ligne de commande)</td>
-          <td style="text-align: left"><code>$ systemctl isolate multi-user</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">5</td>
-          <td style="text-align: left">graphical</td>
-          <td style="text-align: left">Mode graphique complet</td>
-          <td style="text-align: left"><code>$ systemctl isolate graphical</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">6</td>
-          <td style="text-align: left">reboot</td>
-          <td style="text-align: left">Redémarrage du système</td>
-          <td style="text-align: left"><code>$ systemctl isolate reboot</code></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Niveau d&rsquo;exécution</th>
+<th>Cible <em>systemd</em></th>
+<th>Description</th>
+<th>Commande associée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>poweroff</td>
+<td>Arrêt du système</td>
+<td><code>$ systemctl isolate poweroff</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>rescue</td>
+<td>Mode utilisateur unique (maintenance)</td>
+<td><code>$ systemctl isolate rescue</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>multi-user</td>
+<td>Mode multi-utilisateur (ligne de commande)</td>
+<td><code>$ systemctl isolate multi-user</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>graphical</td>
+<td>Mode graphique complet</td>
+<td><code>$ systemctl isolate graphical</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>reboot</td>
+<td>Redémarrage du système</td>
+<td><code>$ systemctl isolate reboot</code></td>
+</tr>
+</tbody>
 </table>
 <h3 id="afficher-et-modifier-le-niveau-dexécution">Afficher et modifier le niveau d&rsquo;exécution</h3>
 <p>Pour afficher le niveau d&rsquo;exécution actuel utiliser la commande <strong><code>who -r</code></strong> :</p>
@@ -284,35 +284,35 @@ Avec <code>systemd</code>, ces niveaux sont remplacés par des <strong>cibles</s
   </div>
 </details>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Commande</th>
-          <th style="text-align: left">Description</th>
-          <th style="text-align: left">Exemple</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>systemctl get-default</code></td>
-          <td style="text-align: left">Affiche le niveau d&rsquo;exécution par défaut.</td>
-          <td style="text-align: left"><code>$ systemctl get-default</code> <br> graphical.target</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>systemctl set-default &lt;nom_niveau&gt;</code></td>
-          <td style="text-align: left">Modifie le niveau d&rsquo;exécution par défaut.</td>
-          <td style="text-align: left"><code>$ systemctl set-default multi-user</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>systemctl default</code></td>
-          <td style="text-align: left">Revient au niveau d&rsquo;exécution par défaut.</td>
-          <td style="text-align: left"><code>$ systemctl default</code></td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>systemctl isolate default</code></td>
-          <td style="text-align: left">Bascule immédiatement vers le niveau d&rsquo;exécution par défaut.</td>
-          <td style="text-align: left"><code>$ systemctl isolate default</code></td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>systemctl get-default</code></td>
+<td>Affiche le niveau d&rsquo;exécution par défaut.</td>
+<td><code>$ systemctl get-default</code> <br> graphical.target</td>
+</tr>
+<tr>
+<td><code>systemctl set-default &lt;nom_niveau&gt;</code></td>
+<td>Modifie le niveau d&rsquo;exécution par défaut.</td>
+<td><code>$ systemctl set-default multi-user</code></td>
+</tr>
+<tr>
+<td><code>systemctl default</code></td>
+<td>Revient au niveau d&rsquo;exécution par défaut.</td>
+<td><code>$ systemctl default</code></td>
+</tr>
+<tr>
+<td><code>systemctl isolate default</code></td>
+<td>Bascule immédiatement vers le niveau d&rsquo;exécution par défaut.</td>
+<td><code>$ systemctl isolate default</code></td>
+</tr>
+</tbody>
 </table>
 
 <details open class=" box cstyle notices info">
@@ -420,22 +420,22 @@ Les noms sont sensibles à la casse: <code>VAR1</code> ≠ <code>var1</code></p>
 L&rsquo;expansion des caractères génériques permet de manipuler facilement plusieurs fichiers sans avoir à taper leurs noms en entier.</p>
 <h3 id="les-principaux-caractères-génériques">Les principaux caractères génériques</h3>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Caractère</th>
-          <th style="text-align: left">Signification</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>*</code></td>
-          <td style="text-align: left">Remplace n&rsquo;importe quelle chaîne de caractères de n&rsquo;importe quelle longueur</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>?</code></td>
-          <td style="text-align: left">Remplace un seul caractère</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Caractère</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*</code></td>
+<td>Remplace n&rsquo;importe quelle chaîne de caractères de n&rsquo;importe quelle longueur</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>Remplace un seul caractère</td>
+</tr>
+</tbody>
 </table>
 <p>Le shell effectue une <strong>expansion des noms de fichiers</strong> en remplaçant les caractères génériques avant d&rsquo;exécuter la commande.</p>
 <p><strong>Exemple 1</strong> : Lister tous les fichiers <strong>.txt</strong></p>
@@ -558,30 +558,30 @@ boite2/
 <h3 id="recherche-par-nom">Recherche par nom</h3>
 <p>L&rsquo;option <code>-name</code> est la plus courante pour rechercher des fichiers par leur nom.</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Commande</th>
-          <th style="text-align: left">Description</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>$ find / -name services</code></td>
-          <td style="text-align: left">Recherche un fichier nommé <code>services</code> dans tout le système (à partir de la racine).</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>$ find . -name &quot;*.txt&quot;</code></td>
-          <td style="text-align: left">Recherche tous les fichiers se terminant par <code>.txt</code> dans le répertoire courant.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>$ find . -name &quot;p*&quot;</code></td>
-          <td style="text-align: left">Recherche tous les fichiers commençant par <code>p</code> dans le répertoire courant et ses sous-répertoires.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>$ find /var/log -name &quot;???n&quot;</code></td>
-          <td style="text-align: left">Recherche tous les fichiers de 4 caractères se terminant par <code>n</code> dans <code>/var/log</code>.</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$ find / -name services</code></td>
+<td>Recherche un fichier nommé <code>services</code> dans tout le système (à partir de la racine).</td>
+</tr>
+<tr>
+<td><code>$ find . -name &quot;*.txt&quot;</code></td>
+<td>Recherche tous les fichiers se terminant par <code>.txt</code> dans le répertoire courant.</td>
+</tr>
+<tr>
+<td><code>$ find . -name &quot;p*&quot;</code></td>
+<td>Recherche tous les fichiers commençant par <code>p</code> dans le répertoire courant et ses sous-répertoires.</td>
+</tr>
+<tr>
+<td><code>$ find /var/log -name &quot;???n&quot;</code></td>
+<td>Recherche tous les fichiers de 4 caractères se terminant par <code>n</code> dans <code>/var/log</code>.</td>
+</tr>
+</tbody>
 </table>
 <h3 id="pièges-à-éviter">Pièges à éviter</h3>
 <p>Lors de l&rsquo;utilisation de <code>find</code>, il est crucial de comprendre comment Bash gère l&rsquo;expansion des variables et les guillemets. Voici quelques points importants :</p>
@@ -599,30 +599,30 @@ boite2/
 </details>
 <p>Le tableau suivant illustre les différences de comportement :</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Commande</th>
-          <th style="text-align: left">Résultat</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><code>ls *.txt</code></td>
-          <td style="text-align: left">Affiche tous les fichiers se terminant par <code>.txt</code>. Si aucun fichier <code>.txt</code> n&rsquo;est trouvé, la commande s&rsquo;exécute comme si les guillemets étaient présents.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>ls &quot;*.txt&quot;</code></td>
-          <td style="text-align: left">Affiche le fichier nommé exactement <code>*.txt</code>.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>find . -name *.txt</code></td>
-          <td style="text-align: left">L&rsquo;expansion a lieu avant la recherche. Trois cas sont possibles :<br/>- Aucun fichier <code>.txt</code> : La commande s&rsquo;exécute comme si les guillemets étaient présents.<br/>- Un fichier <code>.txt</code> : Seul ce fichier est recherché.<br/>- Plusieurs fichiers <code>.txt</code> : La commande échoue.</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><code>find . -name &quot;*.txt&quot;</code></td>
-          <td style="text-align: left">Recherche tous les fichiers <code>.txt</code> à partir du répertoire courant.</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th style="text-align:left">Commande</th>
+<th style="text-align:left">Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>ls *.txt</code></td>
+<td style="text-align:left">Affiche tous les fichiers se terminant par <code>.txt</code>. Si aucun fichier <code>.txt</code> n&rsquo;est trouvé, la commande s&rsquo;exécute comme si les guillemets étaient présents.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ls &quot;*.txt&quot;</code></td>
+<td style="text-align:left">Affiche le fichier nommé exactement <code>*.txt</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>find . -name *.txt</code></td>
+<td style="text-align:left">L&rsquo;expansion a lieu avant la recherche. Trois cas sont possibles :<br/>- Aucun fichier <code>.txt</code> : La commande s&rsquo;exécute comme si les guillemets étaient présents.<br/>- Un fichier <code>.txt</code> : Seul ce fichier est recherché.<br/>- Plusieurs fichiers <code>.txt</code> : La commande échoue.</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>find . -name &quot;*.txt&quot;</code></td>
+<td style="text-align:left">Recherche tous les fichiers <code>.txt</code> à partir du répertoire courant.</td>
+</tr>
+</tbody>
 </table>
 <h3 id="exercices">Exercices</h3>
 <ol>
@@ -822,7 +822,7 @@ fichier4.txt	# contient le mot &#39;monde&#39;</code></pre></div>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1744476805";
+          window.index_js_url="/searchindex.en.js?1745279086";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -835,12 +835,12 @@ fichier4.txt	# contient le mot &#39;monde&#39;</code></pre></div>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.min.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1744476805" defer></script>
-        <script src="/js/search.js?1744476805" defer></script>
+        <script src="/js/auto-complete.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.min.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1745279086" defer></script>
+        <script src="/js/search.js?1745279086" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -854,8 +854,7 @@ fichier4.txt	# contient le mot &#39;monde&#39;</code></pre></div>
             <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
             <li class="parent " data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu">
-            <li class="active " data-nav-id="/semaine3/cours/index.html"><a class="padding" href="/semaine3/cours/index.html">Processus de démarrage, cibles, variables et boucle For</a></li>
-            <li class="" data-nav-id="/semaine3/atelier/index.html"><a class="padding" href="/semaine3/atelier/index.html">ATELIER #3: Cibles et variables utilisateurs et for</a></li></ul></li>
+            <li class="active " data-nav-id="/semaine3/cours/index.html"><a class="padding" href="/semaine3/cours/index.html">Processus de démarrage, cibles, variables et boucle For</a></li></ul></li>
             <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/revisiontest2/index.html"><a class="padding" href="/revisiontest2/index.html">TEST #2-Quelques notions à maitriser</a></li>
@@ -924,8 +923,8 @@ fichier4.txt	# contient le mot &#39;monde&#39;</code></pre></div>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1744476805" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1744476805" defer></script>
-    <script src="/js/theme.js?1744476805" defer></script>
+    <script src="/js/clipboard.min.js?1745279086" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1745279086" defer></script>
+    <script src="/js/theme.js?1745279086" defer></script>
   </body>
 </html>

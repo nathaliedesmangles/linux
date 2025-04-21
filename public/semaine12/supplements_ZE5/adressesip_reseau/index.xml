@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>1. Détermination de la partie réseau d’une IPv4 :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/semaine12/supplements_ze5/adressesip_reseau/index.html</link>
+    <link>http://localhost:57982/semaine12/supplements_ze5/adressesip_reseau/index.html</link>
     <description>AND (ET) logique et masque de sous-réseau Pour identifier l’adresse réseau d’un hôte IPv4, l’adresse IPv4 est soumise bit par bit à l’opération AND (ET) de manière logique avec le masque de sous-réseau. Lorsque cette opération AND est appliquée entre l’adresse et le masque de sous-réseau, le résultat obtenu est l’adresse réseau.&#xA;Rappel des opérations logiques AND : 1 AND 1 = 1 0 AND 1 = 0 1 AND 0 = 0 0 AND 0 = 0 Exemple : 192.168.10.10/24 La longueur du préfixe /24 permet de trouver le masque de sous-réseau.&#xA;Le préfixe indique que le masque contient 24 bits à 1, soit :</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/semaine12/supplements_ze5/adressesip_reseau/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:57982/semaine12/supplements_ze5/adressesip_reseau/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

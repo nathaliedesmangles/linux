@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Explications provenant du cours ZE5 :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/semaine12/supplements_ze5/index.html</link>
+    <link>http://localhost:57982/semaine12/supplements_ze5/index.html</link>
     <description>Détermination de la partie réseau d’une IPv4 Détermination de la plage adresses hôtes et de diffusion Détermination des adresses mono- multi- ou diffusion Détermination des adresses publiques et privées Détermination du type adresses reseau hôte multidiffusion ou diffusion</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/semaine12/supplements_ze5/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:57982/semaine12/supplements_ze5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1. Détermination de la partie réseau d’une IPv4</title>
-      <link>http://localhost:1313/semaine12/supplements_ze5/adressesip_reseau/index.html</link>
+      <link>http://localhost:57982/semaine12/supplements_ze5/adressesip_reseau/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/semaine12/supplements_ze5/adressesip_reseau/index.html</guid>
+      <guid>http://localhost:57982/semaine12/supplements_ze5/adressesip_reseau/index.html</guid>
       <description>AND (ET) logique et masque de sous-réseau Pour identifier l’adresse réseau d’un hôte IPv4, l’adresse IPv4 est soumise bit par bit à l’opération AND (ET) de manière logique avec le masque de sous-réseau. Lorsque cette opération AND est appliquée entre l’adresse et le masque de sous-réseau, le résultat obtenu est l’adresse réseau.&#xA;Rappel des opérations logiques AND : 1 AND 1 = 1 0 AND 1 = 0 1 AND 0 = 0 0 AND 0 = 0 Exemple : 192.168.10.10/24 La longueur du préfixe /24 permet de trouver le masque de sous-réseau.&#xA;Le préfixe indique que le masque contient 24 bits à 1, soit :</description>
     </item>
     <item>
       <title>2. Détermination de la plage d’adresses hôtes et de diffusion d’un réseau</title>
-      <link>http://localhost:1313/semaine12/supplements_ze5/adresseshote_diffusion/index.html</link>
+      <link>http://localhost:57982/semaine12/supplements_ze5/adresseshote_diffusion/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/semaine12/supplements_ze5/adresseshote_diffusion/index.html</guid>
+      <guid>http://localhost:57982/semaine12/supplements_ze5/adresseshote_diffusion/index.html</guid>
       <description>Les adresses hôtes sont des adresses qui peuvent être affectées à un périphérique tel qu’un ordinateur hôte, un ordinateur portable, un téléphone intelligent, une imprimante, un routeur, etc.&#xA;La partie hôte de l’adresse correspond aux bits à 0 dans le masque de sous-réseau.&#xA;Les adresses hôtes peuvent avoir n’importe quelle combinaison de bits dans la partie hôte de l’adresse IPv4.&#xA;Il existe deux cas particuliers :&#xA;Si tous les bits sont à 0, il s’agit de l’adresse réseau. Si tous les bits sont à 1 (255), il s’agit de l’adresse de diffusion (broadcast), qui permet d’atteindre tous les périphériques du réseau IPv4. Calcul du nombre d’hôtes Pour déterminer le nombre d’hôtes possibles dans un réseau, on utilise la formule :</description>
     </item>
     <item>
       <title>4. Détermination des adresses IPv4 publiques et privées</title>
-      <link>http://localhost:1313/semaine12/supplements_ze5/adressesmonomultidiff/index.html</link>
+      <link>http://localhost:57982/semaine12/supplements_ze5/adressesmonomultidiff/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/semaine12/supplements_ze5/adressesmonomultidiff/index.html</guid>
+      <guid>http://localhost:57982/semaine12/supplements_ze5/adressesmonomultidiff/index.html</guid>
       <description>Tout comme il existe différentes façons de transmettre un paquet IPv4, il existe également différents types d’adresses IPv4.&#xA;Certaines adresses IPv4 ne peuvent pas être utilisées pour aller sur Internet, tandis que d’autres sont spécifiquement allouées pour le routage vers Internet.&#xA;Adresses IPv4 publiques Les adresses publiques sont acheminées de manière globale entre les routeurs des fournisseurs d’accès à Internet (FAI).&#xA;Adresses IPv4 privées Toutes les adresses IPv4 disponibles ne peuvent pas être utilisées sur Internet.&#xA;Certains blocs d’adresses, appelés adresses privées, sont utilisés par la plupart des entreprises pour attribuer des adresses IPv4 aux hôtes internes.</description>
     </item>
     <item>
       <title>5. Détermination du type adresses reseau hôte multidiffusion ou diffusion</title>
-      <link>http://localhost:1313/semaine12/supplements_ze5/adresseshotemultidiff/index.html</link>
+      <link>http://localhost:57982/semaine12/supplements_ze5/adresseshotemultidiff/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/semaine12/supplements_ze5/adresseshotemultidiff/index.html</guid>
+      <guid>http://localhost:57982/semaine12/supplements_ze5/adresseshotemultidiff/index.html</guid>
       <description>Il existe différentes façons d’envoyer un paquet à partir d’un périphérique source, et ces différentes transmissions affectent les adresses IPv4 de destination. Une adresse IP source ne peut être qu’une adresse monodiffusion, car le paquet ne peut provenir que d’une seule source. Adresse de diffusion (broadcast) Un paquet de diffusion a une adresse IP de destination avec tous les bits à 1 dans la partie hôte. Adresse de monodiffusion (unicast) La transmission monodiffusion fait référence à un périphérique qui envoie un message à un autre périphérique dans les communications un-à-un. Un paquet monodiffusion a une adresse IP de destination qui est une adresse monodiffusion qui va à un seul destinataire. Adresse de multidiffusion (multicast) La transmission multidiffusion réduit le volume du trafic en permettant à un hôte d’envoyer un seul paquet à un groupe d’hôtes. Étapes pour identifier le type d’une adresse IPv4 Calculez l’adresse réseau: L’adresse réseau est obtenue en appliquant une opération AND bit à bit entre l’adresse IP et le masque de sous-réseau. Identifiez le type d’adresse: a. Si l’adresse IP est dans la plage de la classe D (224.0.0.0 à 239.255.255.255), il s’agit d’une adresse de multidiffusion. b. Si l’adresse IP est égale à l’adresse réseau ou à l’adresse de diffusion du réseau, il s’agit d’une adresse de réseau ou de diffusion, respectivement. c. Sinon, il s’agit d’une adresse d’hôte.</description>
     </item>
   </channel>

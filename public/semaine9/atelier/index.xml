@@ -3,7 +3,7 @@
   <channel>
     <title>ATELIER #9: Tests, paramètres et opérations arithmétiques :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine9/atelier/index.html</link>
-    <description>Objectifs de l’atelier Créer un script qui récupère des valeurs numériques passées en paramètre et effectue des opérations mathématiques Créer un script pour tester l’existence et les permissions d’un fichier. Créer des scripts permettant d’effectuer des opérations mathématiques à partir des arguments fournis. Atelier ATTENTION&#xD;Vous devez utiliser uniquement les commandes vues en classe jusqu’à maintenant. L’utilisation de commandes non vues en classe entraînera la note de 0 pour cet exercice. Aucun point ne sera accordé sans la remise des scripts (fichiers .sh) demandés. Exercice 1 : Manipulation de valeurs numériques Créez un script param3.sh qui : Récupère les valeurs de trois paramètres en entrée.</description>
+    <description>Objectifs de l’atelier Créer un script qui récupère des valeurs numériques passées en paramètre et effectue des opérations mathématiques Créer un script pour tester l’existence et les permissions d’un fichier. Créer des scripts permettant d’effectuer des opérations mathématiques à partir des arguments fournis. Atelier ATTENTION&#xD;Vous devez utiliser uniquement les commandes vues en classe jusqu’à maintenant. L’utilisation de commandes non vues en classe entraînera la note de 0 pour cet exercice.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine9/atelier/index.xml" rel="self" type="application/rss+xml" />

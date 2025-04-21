@@ -3,37 +3,37 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Hugo 0.126.3">
     <meta name="generator" content="Relearn 7.3.1">
     <meta name="description" content="Objectifs de l’atelier Dans cet atelier, vous allez créer deux versions d’un script Bash :
 Une version séquentielle, où les commandes s’exécutent les unes après les autres. nombre_de_fichiers_seq.sh : Affiche le nombre de fichiers par type. Une version asynchrone, où plusieurs commandes s’exécutent simultanément en arrière-plan. nombre_de_fichiers_conc.sh : Réécriture du script précédent avec des commandes asynchrones (&amp;). Remise Vous devez remettre sur Moodle :
-Vos deux fichiers .sh Deux captures d’écran illustrant le fonctionnement des scripts : Capture Contenu 01_nombre_de_fichiers_seq.png Exécution du script nombre_de_fichiers_seq.sh et résultats 02_nombre_de_fichiers_conc.png Exécution du script nombre_de_fichiers_conc.sh et son résultat Quelques rappels utilesStocker une valeur dans une variable nb=$(ls | wc -l)Cette commande stocke le nombre de fichiers du répertoire courant dans la variable nb.">
+Vos deux fichiers .sh Deux captures d’écran illustrant le fonctionnement des scripts : Capture Contenu 01_nombre_de_fichiers_seq.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="ATELIER #5: Gestion des processus Linux :: 420-ZG4-MO LINUX">
     <meta name="twitter:description" content="Objectifs de l’atelier Dans cet atelier, vous allez créer deux versions d’un script Bash :
 Une version séquentielle, où les commandes s’exécutent les unes après les autres. nombre_de_fichiers_seq.sh : Affiche le nombre de fichiers par type. Une version asynchrone, où plusieurs commandes s’exécutent simultanément en arrière-plan. nombre_de_fichiers_conc.sh : Réécriture du script précédent avec des commandes asynchrones (&amp;). Remise Vous devez remettre sur Moodle :
-Vos deux fichiers .sh Deux captures d’écran illustrant le fonctionnement des scripts : Capture Contenu 01_nombre_de_fichiers_seq.png Exécution du script nombre_de_fichiers_seq.sh et résultats 02_nombre_de_fichiers_conc.png Exécution du script nombre_de_fichiers_conc.sh et son résultat Quelques rappels utilesStocker une valeur dans une variable nb=$(ls | wc -l)Cette commande stocke le nombre de fichiers du répertoire courant dans la variable nb.">
+Vos deux fichiers .sh Deux captures d’écran illustrant le fonctionnement des scripts : Capture Contenu 01_nombre_de_fichiers_seq.">
     <meta property="og:url" content="https://example.org/semaine5/atelier/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="ATELIER #5: Gestion des processus Linux :: 420-ZG4-MO LINUX">
     <meta property="og:description" content="Objectifs de l’atelier Dans cet atelier, vous allez créer deux versions d’un script Bash :
 Une version séquentielle, où les commandes s’exécutent les unes après les autres. nombre_de_fichiers_seq.sh : Affiche le nombre de fichiers par type. Une version asynchrone, où plusieurs commandes s’exécutent simultanément en arrière-plan. nombre_de_fichiers_conc.sh : Réécriture du script précédent avec des commandes asynchrones (&amp;). Remise Vous devez remettre sur Moodle :
-Vos deux fichiers .sh Deux captures d’écran illustrant le fonctionnement des scripts : Capture Contenu 01_nombre_de_fichiers_seq.png Exécution du script nombre_de_fichiers_seq.sh et résultats 02_nombre_de_fichiers_conc.png Exécution du script nombre_de_fichiers_conc.sh et son résultat Quelques rappels utilesStocker une valeur dans une variable nb=$(ls | wc -l)Cette commande stocke le nombre de fichiers du répertoire courant dans la variable nb.">
+Vos deux fichiers .sh Deux captures d’écran illustrant le fonctionnement des scripts : Capture Contenu 01_nombre_de_fichiers_seq.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="ATELIER #5: Gestion des processus Linux :: 420-ZG4-MO LINUX">
     <meta itemprop="description" content="Objectifs de l’atelier Dans cet atelier, vous allez créer deux versions d’un script Bash :
 Une version séquentielle, où les commandes s’exécutent les unes après les autres. nombre_de_fichiers_seq.sh : Affiche le nombre de fichiers par type. Une version asynchrone, où plusieurs commandes s’exécutent simultanément en arrière-plan. nombre_de_fichiers_conc.sh : Réécriture du script précédent avec des commandes asynchrones (&amp;). Remise Vous devez remettre sur Moodle :
-Vos deux fichiers .sh Deux captures d’écran illustrant le fonctionnement des scripts : Capture Contenu 01_nombre_de_fichiers_seq.png Exécution du script nombre_de_fichiers_seq.sh et résultats 02_nombre_de_fichiers_conc.png Exécution du script nombre_de_fichiers_conc.sh et son résultat Quelques rappels utilesStocker une valeur dans une variable nb=$(ls | wc -l)Cette commande stocke le nombre de fichiers du répertoire courant dans la variable nb.">
+Vos deux fichiers .sh Deux captures d’écran illustrant le fonctionnement des scripts : Capture Contenu 01_nombre_de_fichiers_seq.">
     <meta itemprop="wordCount" content="470">
     <title>ATELIER #5: Gestion des processus Linux :: 420-ZG4-MO LINUX</title>
     <link href="/semaine5/atelier/index.xml" rel="alternate" type="application/rss+xml" title="ATELIER #5: Gestion des processus Linux :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1744476805" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744476805" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1744476805" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744476805" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1744476805" rel="stylesheet">
-    <link href="/css/theme.min.css?1744476805" rel="stylesheet">
-    <link href="/css/format-html.min.css?1744476805" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1745279086" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745279086" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1745279086" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745279086" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1745279086" rel="stylesheet">
+    <link href="/css/theme.min.css?1745279086" rel="stylesheet">
+    <link href="/css/format-html.min.css?1745279086" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -161,22 +161,22 @@ Vos deux fichiers .sh Deux captures d’écran illustrant le fonctionnement des 
 <li>Deux captures d’écran illustrant le fonctionnement des scripts :</li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Capture</th>
-          <th style="text-align: left">Contenu</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>01_nombre_de_fichiers_seq.png</strong></td>
-          <td style="text-align: left">Exécution du script <code>nombre_de_fichiers_seq.sh</code> et résultats</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>02_nombre_de_fichiers_conc.png</strong></td>
-          <td style="text-align: left">Exécution du script <code>nombre_de_fichiers_conc.sh</code> et son résultat</td>
-      </tr>
-  </tbody>
+<thead>
+<tr>
+<th>Capture</th>
+<th>Contenu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>01_nombre_de_fichiers_seq.png</strong></td>
+<td>Exécution du script <code>nombre_de_fichiers_seq.sh</code> et résultats</td>
+</tr>
+<tr>
+<td><strong>02_nombre_de_fichiers_conc.png</strong></td>
+<td>Exécution du script <code>nombre_de_fichiers_conc.sh</code> et son résultat</td>
+</tr>
+</tbody>
 </table>
 <hr>
 
@@ -260,7 +260,7 @@ L’ordre des lignes peut être différent en raison de l’exécution parallèl
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1744476805";
+          window.index_js_url="/searchindex.en.js?1745279086";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -273,12 +273,12 @@ L’ordre des lignes peut être différent en raison de l’exécution parallèl
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.min.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1744476805" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1744476805" defer></script>
-        <script src="/js/search.js?1744476805" defer></script>
+        <script src="/js/auto-complete.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.min.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1745279086" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1745279086" defer></script>
+        <script src="/js/search.js?1745279086" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -362,8 +362,8 @@ L’ordre des lignes peut être différent en raison de l’exécution parallèl
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1744476805" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1744476805" defer></script>
-    <script src="/js/theme.js?1744476805" defer></script>
+    <script src="/js/clipboard.min.js?1745279086" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1745279086" defer></script>
+    <script src="/js/theme.js?1745279086" defer></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=57982&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.135.0">
@@ -10,7 +10,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="TEST #4: Résumés :: 420-ZG4-MO LINUX">
     <meta name="twitter:description" content="Informations Date : jeudi 8 mai Durée : 1h40, 15 questions (à confirmer) Format : Test Moodle Documentation permise : 2 feuilles rect0-verso (manuscrites ou imprimées) À confirmer Semaine #10: Utilisateurs et groupes 1. Utilisateurs Qu’est-ce qu’un utilisateur ? Une entité (personne ou processus) ayant un compte sur le système. Identifié par un UID (User ID). Possède des droits et permissions spécifiques. Types de comptes root (UID 0) : super-utilisateur, tous les droits. nobody (UID 65534) : compte très limité. Systèmes / applications (UID 1-999) : pour les services, avec permissions minimales. Comptes standards (UID ≥ 1000) : pour les utilisateurs humains. Commandes importantes useradd : création d’un utilisateur. passwd : changement de mot de passe. userdel : suppression d’un utilisateur (-r pour supprimer son dossier). usermod : modification d’un utilisateur (groupe, shell, répertoire, etc.). id, groups : voir UID/GID et groupes. Détails techniques Le groupe principal est créé automatiquement et associé aux fichiers créés. Le répertoire personnel est copié depuis /etc/skel. Le mail est stocké dans /var/spool/mail. Le mot de passe est chiffré dans /etc/shadow. 2. Groupes Qu’est-ce qu’un groupe ? Un ensemble d’utilisateurs partageant les mêmes permissions. Identifié par un GID (Group ID). Utilisé pour gérer collectivement les permissions. Types de groupes root (GID 0) nobody (GID 65534) Groupes système (GID 1 - 999) Groupes standards (GID ≥ 1000) Groupe principal vs secondaire Groupe principal : utilisé lors de la création de fichiers (défini dans /etc/passwd). Groupes secondaires : ajoutent des permissions supplémentaires. Commandes importantes groupadd : créer un groupe. groupdel : supprimer un groupe. groupmod : renommer ou modifier un groupe. usermod -g : changer le groupe principal d’un utilisateur. usermod -aG : ajouter à l’utilisateur, un ou plusieurs groupes secondaires. usermod -G : remplacer les groupes secondaires existants par un ou plusieurs autres groupes secondaires. Commandes clés à retenir Tâche Commande Créer un utilisateur useradd nom Modifier un utilisateur usermod (avec options) Supprimer un utilisateur userdel (avec -r pour supprimer le dossier) Créer un groupe groupadd nom Supprimer un groupe groupdel nom Ajouter à un groupe secondaire usermod -aG groupe utilisateur Afficher UID/GID id Afficher les groupes groups utilisateur Points d’attention Le mot de passe n’est pas créé automatiquement lors de la création d’un utilisateur. Impossible de supprimer un groupe s’il est groupe principal d’un utilisateur. usermod -d ne déplace pas automatiquement les fichiers du répertoire personnel. Semaine #11: Droits d’accès Lire les permissions La commande :">
-    <meta property="og:url" content="http://localhost:1313/revisiontest4/index.html">
+    <meta property="og:url" content="http://localhost:57982/revisiontest4/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="TEST #4: Résumés :: 420-ZG4-MO LINUX">
     <meta property="og:description" content="Informations Date : jeudi 8 mai Durée : 1h40, 15 questions (à confirmer) Format : Test Moodle Documentation permise : 2 feuilles rect0-verso (manuscrites ou imprimées) À confirmer Semaine #10: Utilisateurs et groupes 1. Utilisateurs Qu’est-ce qu’un utilisateur ? Une entité (personne ou processus) ayant un compte sur le système. Identifié par un UID (User ID). Possède des droits et permissions spécifiques. Types de comptes root (UID 0) : super-utilisateur, tous les droits. nobody (UID 65534) : compte très limité. Systèmes / applications (UID 1-999) : pour les services, avec permissions minimales. Comptes standards (UID ≥ 1000) : pour les utilisateurs humains. Commandes importantes useradd : création d’un utilisateur. passwd : changement de mot de passe. userdel : suppression d’un utilisateur (-r pour supprimer son dossier). usermod : modification d’un utilisateur (groupe, shell, répertoire, etc.). id, groups : voir UID/GID et groupes. Détails techniques Le groupe principal est créé automatiquement et associé aux fichiers créés. Le répertoire personnel est copié depuis /etc/skel. Le mail est stocké dans /var/spool/mail. Le mot de passe est chiffré dans /etc/shadow. 2. Groupes Qu’est-ce qu’un groupe ? Un ensemble d’utilisateurs partageant les mêmes permissions. Identifié par un GID (Group ID). Utilisé pour gérer collectivement les permissions. Types de groupes root (GID 0) nobody (GID 65534) Groupes système (GID 1 - 999) Groupes standards (GID ≥ 1000) Groupe principal vs secondaire Groupe principal : utilisé lors de la création de fichiers (défini dans /etc/passwd). Groupes secondaires : ajoutent des permissions supplémentaires. Commandes importantes groupadd : créer un groupe. groupdel : supprimer un groupe. groupmod : renommer ou modifier un groupe. usermod -g : changer le groupe principal d’un utilisateur. usermod -aG : ajouter à l’utilisateur, un ou plusieurs groupes secondaires. usermod -G : remplacer les groupes secondaires existants par un ou plusieurs autres groupes secondaires. Commandes clés à retenir Tâche Commande Créer un utilisateur useradd nom Modifier un utilisateur usermod (avec options) Supprimer un utilisateur userdel (avec -r pour supprimer le dossier) Créer un groupe groupadd nom Supprimer un groupe groupdel nom Ajouter à un groupe secondaire usermod -aG groupe utilisateur Afficher UID/GID id Afficher les groupes groups utilisateur Points d’attention Le mot de passe n’est pas créé automatiquement lors de la création d’un utilisateur. Impossible de supprimer un groupe s’il est groupe principal d’un utilisateur. usermod -d ne déplace pas automatiquement les fichiers du répertoire personnel. Semaine #11: Droits d’accès Lire les permissions La commande :">
@@ -21,16 +21,16 @@
     <meta itemprop="wordCount" content="1247">
     <title>TEST #4: Résumés :: 420-ZG4-MO LINUX</title>
     <link href="/revisiontest4/index.xml" rel="alternate" type="application/rss+xml" title="TEST #4: Résumés :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1744476738" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744476738" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1744476738" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744476738" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1744476738" rel="stylesheet">
-    <link href="/css/theme.css?1744476738" rel="stylesheet">
-    <link href="/css/format-html.css?1744476738" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1744597269" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744597269" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1744597269" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744597269" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1744597269" rel="stylesheet">
+    <link href="/css/theme.css?1744597269" rel="stylesheet">
+    <link href="/css/format-html.css?1744597269" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..';
       window.relearn.relBaseUri='..';
-      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.absBaseUri='http:\/\/localhost:57982';
       window.relearn.min = ``;
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
@@ -688,7 +688,7 @@
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1744476738";
+          window.index_js_url="/searchindex.en.js?1744597269";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -701,12 +701,12 @@
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1744476738" defer></script>
-        <script src="/js/lunr/lunr.min.js?1744476738" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1744476738" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1744476738" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1744476738" defer></script>
-        <script src="/js/search.js?1744476738" defer></script>
+        <script src="/js/auto-complete.js?1744597269" defer></script>
+        <script src="/js/lunr/lunr.min.js?1744597269" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1744597269" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1744597269" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1744597269" defer></script>
+        <script src="/js/search.js?1744597269" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -789,8 +789,8 @@
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1744476738" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1744476738" defer></script>
-    <script src="/js/theme.js?1744476738" defer></script>
+    <script src="/js/clipboard.min.js?1744597269" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1744597269" defer></script>
+    <script src="/js/theme.js?1744597269" defer></script>
   </body>
 </html>

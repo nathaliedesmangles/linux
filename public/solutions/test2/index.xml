@@ -3,7 +3,7 @@
   <channel>
     <title>Test 2 :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/solutions/test2/index.html</link>
-    <description>Information&#xD;L’ordre des questions et des choix de réponses peut varier selon votre groupe.&#xA;Question 1. Quelle option de la commande tree permet d’afficher uniquement les répertoires ? -d ✅ Bonne réponse -L -r -f Question 2. Que signifie l’option -i avec la commande sed ? Modifier un fichier sans créer de fichier temporaire ✅ Bonne réponse Afficher le contenu du fichier Rechercher du texte Extraire des colonnes Question 3. Quelle commande permet de forcer l’arrêt d’un processus en utilisant son PID ? kill &lt;pid&gt; killall -9 kill bill kill -9 &lt;pid&gt; ✅ Bonne réponse Question 4. Quelle commande permet d’afficher le PID du dernier processus lancé en arrière-plan ? $! ✅ Bonne réponse $$ $? Question 5. Quelle commande permet d’afficher tous les processus en cours d’exécution sur le système ? ps -ef ✅ Bonne réponse ps -f pid ppid Question 6. Quelle commande permet d’extraire la 3ᵉ colonne d’un fichier en utilisant la virgule comme séparateur ? Réponse :</description>
+    <description>Information&#xD;L’ordre des questions et des choix de réponses peut varier selon votre groupe.&#xA;Question 1. Quelle option de la commande tree permet d’afficher uniquement les répertoires ? -d ✅ Bonne réponse -L -r -f Question 2. Que signifie l’option -i avec la commande sed ? Modifier un fichier sans créer de fichier temporaire ✅ Bonne réponse Afficher le contenu du fichier Rechercher du texte Extraire des colonnes Question 3.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/solutions/test2/index.xml" rel="self" type="application/rss+xml" />

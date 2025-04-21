@@ -3,7 +3,7 @@
   <channel>
     <title>Les expressions régulières :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine6/index.html</link>
-    <description>Plan de la leçon Théorie : lundi 17 mars Rôles des expressions régulières. Quelques motifs de base. La commande egrep. L’opérateur logique OU. Les ensembles de caractères. Les intervalles. Les quantificateurs. Les groupes. L’échappement de caractères spéciaux. Test #2 : jeudi 20 mars Durée: 1h45 Format: Test Moodle (total de 14 questions) Questions à choix multiples Questions à réponses courtes Questions à coder (2 scripts) Matière: Semaine 4 et semaine 5 Documentation permise: 1 feuille de note 8.5x11 recto-verso (manuscrite ou imprimée). Atelier #6: Remise mardi 25 mars 23h59. Utilisation d’expressions régulières.</description>
+    <description>Plan de la leçon Théorie : lundi 17 mars Rôles des expressions régulières. Quelques motifs de base. La commande egrep. L’opérateur logique OU. Les ensembles de caractères. Les intervalles. Les quantificateurs. Les groupes. L’échappement de caractères spéciaux. Test #2 : jeudi 20 mars Durée: 1h45 Format: Test Moodle (total de 14 questions) Questions à choix multiples Questions à réponses courtes Questions à coder (2 scripts) Matière: Semaine 4 et semaine 5 Documentation permise: 1 feuille de note 8.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine6/index.xml" rel="self" type="application/rss+xml" />
@@ -12,14 +12,14 @@
       <link>https://example.org/semaine6/cours/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine6/cours/index.html</guid>
-      <description>Introduction aux expressions régulières Dans l’univers Linux, la manipulation des fichiers texte est une tâche essentielle. Parmi les outils utilisés pour ce faire, on trouve notamment :&#xA;cat : pour afficher le contenu des fichiers, sed : pour les transformations textuelles, grep : pour rechercher et filtrer des lignes. Avec grep, vous pouvez filtrer un texte pour ne conserver que les lignes contenant un mot ou une expression donnée, ou bien les exclure. Mais comment faire si vous souhaitez rechercher des motifs plus complexes, comme des adresses e-mail ou des numéros de téléphone ? C’est ici qu’interviennent les expressions régulières, un outil puissant pour décrire des motifs précis et identifier des textes ayant une structure particulière.</description>
+      <description>Introduction aux expressions régulières Dans l’univers Linux, la manipulation des fichiers texte est une tâche essentielle. Parmi les outils utilisés pour ce faire, on trouve notamment :&#xA;cat : pour afficher le contenu des fichiers, sed : pour les transformations textuelles, grep : pour rechercher et filtrer des lignes. Avec grep, vous pouvez filtrer un texte pour ne conserver que les lignes contenant un mot ou une expression donnée, ou bien les exclure.</description>
     </item>
     <item>
       <title>ATELIER #6: Les expressions régulières</title>
       <link>https://example.org/semaine6/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine6/atelier/index.html</guid>
-      <description>Objectif de l’atelier Maîtriser les bases des expressions régulières. Renforcer la capacité à manipuler des fichiers texte. Renforcer la précision dans la recherche et le filtrage de données. Atelier Important&#xD;Utiliser le fichier expr.txt se trouvant sur Moodle. Faites un copier-coller du contenu du fichier expr.txt dans un nouveau fichier texte. Utiliser uniquement les commandes, les symboles et la matière vue dans le cours (semaines 1 à 6) RegExp: Tableaux récapitulatifs Dans le fichier expr.txt, à l’aide d’expressions régulières:</description>
+      <description>Objectif de l’atelier Maîtriser les bases des expressions régulières. Renforcer la capacité à manipuler des fichiers texte. Renforcer la précision dans la recherche et le filtrage de données. Atelier Important&#xD;Utiliser le fichier expr.txt se trouvant sur Moodle. Faites un copier-coller du contenu du fichier expr.txt dans un nouveau fichier texte. Utiliser uniquement les commandes, les symboles et la matière vue dans le cours (semaines 1 à 6) RegExp: Tableaux récapitulatifs Dans le fichier expr.</description>
     </item>
   </channel>
 </rss>

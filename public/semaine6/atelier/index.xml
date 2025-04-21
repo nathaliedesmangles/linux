@@ -3,7 +3,7 @@
   <channel>
     <title>ATELIER #6: Les expressions régulières :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine6/atelier/index.html</link>
-    <description>Objectif de l’atelier Maîtriser les bases des expressions régulières. Renforcer la capacité à manipuler des fichiers texte. Renforcer la précision dans la recherche et le filtrage de données. Atelier Important&#xD;Utiliser le fichier expr.txt se trouvant sur Moodle. Faites un copier-coller du contenu du fichier expr.txt dans un nouveau fichier texte. Utiliser uniquement les commandes, les symboles et la matière vue dans le cours (semaines 1 à 6) RegExp: Tableaux récapitulatifs Dans le fichier expr.txt, à l’aide d’expressions régulières:</description>
+    <description>Objectif de l’atelier Maîtriser les bases des expressions régulières. Renforcer la capacité à manipuler des fichiers texte. Renforcer la précision dans la recherche et le filtrage de données. Atelier Important&#xD;Utiliser le fichier expr.txt se trouvant sur Moodle. Faites un copier-coller du contenu du fichier expr.txt dans un nouveau fichier texte. Utiliser uniquement les commandes, les symboles et la matière vue dans le cours (semaines 1 à 6) RegExp: Tableaux récapitulatifs Dans le fichier expr.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine6/atelier/index.xml" rel="self" type="application/rss+xml" />

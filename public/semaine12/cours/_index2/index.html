@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Introduction Configurer un réseau sous Linux se fait à l’aide de commandes et de fichiers texte.
+Dans le cours 7 - vim et fichiers de configuration, nous avons vu comment modifier ces fichiers.
+Dans ce cours-ci, nous allons explorer des commandes réseau essentielles.
+Rappel : les fichiers texte importants niveau réseau Voici deux fichiers que nous avons déjà vus :
+/etc/hosts : permet une résolution de noms simple (utile si un serveur DNS n’est pas disponible).">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Le réseau sous Linux :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Introduction Configurer un réseau sous Linux se fait à l’aide de commandes et de fichiers texte.
+Dans le cours 7 - vim et fichiers de configuration, nous avons vu comment modifier ces fichiers.
+Dans ce cours-ci, nous allons explorer des commandes réseau essentielles.
+Rappel : les fichiers texte importants niveau réseau Voici deux fichiers que nous avons déjà vus :
+/etc/hosts : permet une résolution de noms simple (utile si un serveur DNS n’est pas disponible).">
+    <meta property="og:url" content="http://localhost:1313/semaine12/cours/_index2/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="Le réseau sous Linux :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Introduction Configurer un réseau sous Linux se fait à l’aide de commandes et de fichiers texte.
+Dans le cours 7 - vim et fichiers de configuration, nous avons vu comment modifier ces fichiers.
+Dans ce cours-ci, nous allons explorer des commandes réseau essentielles.
+Rappel : les fichiers texte importants niveau réseau Voici deux fichiers que nous avons déjà vus :
+/etc/hosts : permet une résolution de noms simple (utile si un serveur DNS n’est pas disponible).">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Réseau">
+    <meta itemprop="name" content="Le réseau sous Linux :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Introduction Configurer un réseau sous Linux se fait à l’aide de commandes et de fichiers texte.
+Dans le cours 7 - vim et fichiers de configuration, nous avons vu comment modifier ces fichiers.
+Dans ce cours-ci, nous allons explorer des commandes réseau essentielles.
+Rappel : les fichiers texte importants niveau réseau Voici deux fichiers que nous avons déjà vus :
+/etc/hosts : permet une résolution de noms simple (utile si un serveur DNS n’est pas disponible).">
+    <meta itemprop="wordCount" content="1676">
+    <title>Le réseau sous Linux :: 420-ZG4-MO LINUX</title>
+    <link href="/css/fontawesome-all.min.css?1745278783" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745278783" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1745278783" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745278783" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1745278783" rel="stylesheet">
+    <link href="/css/theme.css?1745278783" rel="stylesheet">
+    <link href="/css/format-html.css?1745278783" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.min = ``;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/semaine12/cours/_index2/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#rappel--les-fichiers-texte-importants-niveau-réseau">Rappel : les fichiers texte importants niveau réseau</a></li>
+    <li><a href="#les-commandes-réseau-nmcli-et-ip">Les commandes réseau: <em><strong>nmcli</strong></em> et <em><strong>ip</strong></em></a></li>
+    <li><a href="#différence-entre-interface-et-connexion">Différence entre interface et connexion</a></li>
+    <li><a href="#vérifier-les-interfaces-disponibles">Vérifier les interfaces disponibles</a></li>
+    <li><a href="#créer-une-connexion-ethernet-statique-fixe">Créer une connexion Ethernet statique (fixe)</a></li>
+    <li><a href="#gérer-les-connexions">Gérer les connexions</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#créer-une-connexion-ethernet-dynamique-via-dhcp">Créer une connexion Ethernet dynamique (via <em>DHCP</em>)</a></li>
+    <li><a href="#activerdésactiver-le-réseau">Activer/Désactiver le réseau</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#la-commande-ip">La commande <em><strong>ip</strong></em></a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#commandes-obsolètes-ou-anciennes">Commandes obsolètes ou anciennes</a>
+      <ul>
+        <li><a href="#la-commande-ifconfig">La commande <em><strong>ifconfig</strong></em></a></li>
+        <li><a href="#les-commandes-ifdown-et-ifup">Les commandes <em><strong>ifdown</strong></em> et <em><strong>ifup</strong></em></a></li>
+      </ul>
+    </li>
+    <li><a href="#exercice-1">Exercice 1</a></li>
+    <li><a href="#exercice-2">Exercice 2</a></li>
+    <li><a href="#erreurs-courantes">Erreurs courantes</a>
+      <ul>
+        <li><a href="#1-erreur--cannot-find-device-ens33">1. Erreur : <em><code>Cannot find device &quot;ens33&quot;</code></em></a></li>
+        <li><a href="#2-erreur--nexthop-has-invalid-gateway">2. Erreur : <em><code>Nexthop has invalid gateway</code></em></a></li>
+        <li><a href="#3-interface-invalide-dans-nmcli-con-add">3. Interface invalide dans <em>nmcli con add</em></a></li>
+        <li><a href="#4-ip-ajoutée-à-une-interface-inactive">4. IP ajoutée à une interface inactive</a></li>
+      </ul>
+    </li>
+    <li><a href="#bonnes-pratiques">Bonnes pratiques</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine12/index.html"><span itemprop="name">Réseau</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine12/cours/index.html"><span itemprop="name">Le réseau sous Linux</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Le réseau sous Linux</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine12/cours/index.html" title="Le réseau sous Linux (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine12/atelier/index.html" title="ATELIER #10c: Réseau sous Linux (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable semaine12" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="le-réseau-sous-linux">Le réseau sous Linux</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>Configurer un réseau sous Linux se fait à l’aide de commandes et de fichiers texte.</p>
+<p>Dans le cours <a href="https://linuxh25.netlify.app/semaine7/" rel="external" target="_blank">7 - vim et fichiers de configuration</a>, nous avons vu comment modifier ces fichiers.<br>
+Dans ce cours-ci, nous allons explorer des <strong>commandes réseau essentielles</strong>.</p>
+<h2 id="rappel--les-fichiers-texte-importants-niveau-réseau">Rappel : les fichiers texte importants niveau réseau</h2>
+<p>Voici deux fichiers que nous avons déjà vus :</p>
+<ul>
+<li><strong><code>/etc/hosts</code></strong> : permet une <strong>résolution de noms simple</strong> (utile si un serveur DNS n’est pas disponible).</li>
+<li><strong><code>/etc/resolv.conf</code></strong> : contient la <strong>liste des serveurs DNS</strong> utilisés par la machine.</li>
+</ul>
+<h2 id="les-commandes-réseau-nmcli-et-ip">Les commandes réseau: <em><strong>nmcli</strong></em> et <em><strong>ip</strong></em></h2>
+<ul>
+<li>
+<p>Le nom <code>nmcli</code> est pour <em><strong>NetworkManager Command Line Interface</strong></em>.</p>
+</li>
+<li>
+<p><code>nmcli</code> est un outil en ligne de commande pour interagir avec NetworkManager. Il permet de <strong>configurer des connexions réseau</strong> sans passer par des fichiers manuels.</p>
+</li>
+<li>
+<p>La commande <code>ip</code> remplace <code>ifconfig</code>, qui est maintenant <strong>obsolète</strong>.</p>
+</li>
+<li>
+<p>La commande <code>ip</code> permet de <strong>lire et modifier temporairement</strong> la configuration IP d’une interface.</p>
+</li>
+</ul>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Attention
+  </summary>
+  <div class="box-content">
+<p>Les changements faits avec <code>ip</code> <strong>ne sont pas permanents</strong>. Ils seront perdus après un redémarrage du système.</p>
+  </div>
+</details>
+<h2 id="différence-entre-interface-et-connexion">Différence entre interface et connexion</h2>
+<p>C&rsquo;est important de ne pas confondre <strong>interface réseau</strong> (ex. ens160) et la <strong>connexion</strong> (ex. statique ou dynamique) créée avec nmcli.</p>
+<ul>
+<li>Interface = matériel (ex. <code>ens160</code>)</li>
+<li>Connexion = configuration liée (ex. <code>statique</code> ou <code>dynamique</code>)</li>
+</ul>
+<p>Avant de configurer un réseau, c&rsquo;est recommandé de connaitre les interfaces disponibles sur le système.</p>
+<h2 id="vérifier-les-interfaces-disponibles">Vérifier les interfaces disponibles</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli device status
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ou plus court :</span>
+</span></span><span style="display:flex;"><span>$ nmcli dev</span></span></code></pre></div>
+<p><a href="#R-image-6c3e27c529ea720069ffd9d311f3af92" class="lightbox-link"><img alt="Vérifier interfaces disponibles" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="./nmcli_verifier_interfaces_dispos.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6c3e27c529ea720069ffd9d311f3af92"><img alt="Vérifier interfaces disponibles" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="./nmcli_verifier_interfaces_dispos.png"></a></p>
+<p>Ou</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ip link show</span></span></code></pre></div>
+<p><a href="#R-image-f4e7b5c36714f151f4d9c15155f877c5" class="lightbox-link"><img alt="Vérifier interfaces disponibles" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="./ip_verifier_interfaces_dispos.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f4e7b5c36714f151f4d9c15155f877c5"><img alt="Vérifier interfaces disponibles" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="./ip_verifier_interfaces_dispos.png"></a></p>
+<h2 id="créer-une-connexion-ethernet-statique-fixe">Créer une connexion Ethernet statique (fixe)</h2>
+<ul>
+<li>Cela consiste à donner une <strong>adresse IP fixe</strong>, une <strong>passerelle</strong>, <strong>des DNS</strong> à l&rsquo;interface, puis redémarrer la connexion pour appliquer le tout.</li>
+</ul>
+<p><strong>Exemple</strong> : configurer l’interface <code>ens160</code> avec une adresse IP statique.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Ajouter une nouvelle connexion réseau Ethernet &lt;nom_connexion&gt;, liée à l’interface réseau physique &lt;interface&gt;.</span>
+</span></span><span style="display:flex;"><span>$ nmcli con add con-name &lt;nom_connexion&gt; type ethernet ifname &lt;interface&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Donner une adresse IP à l’interface</span>
+</span></span><span style="display:flex;"><span>$ nmcli con mod &lt;nom_connexion&gt; ipv4.addresses 192.168.230.132/24
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Définir la passerelle (gateway)</span>
+</span></span><span style="display:flex;"><span>$ nmcli con mod &lt;nom_connexion&gt; ipv4.gateway 192.168.230.2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Configurer les serveurs DNS pour résoudre les noms de domaine</span>
+</span></span><span style="display:flex;"><span>$ nmcli con mod &lt;nom_connexion&gt; ipv4.dns 8.8.8.8
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Préciser que la configuration est manuelle</span>
+</span></span><span style="display:flex;"><span>$ nmcli con mod &lt;nom_connexion&gt; ipv4.method manual
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Redémarrer la connexion</span>
+</span></span><span style="display:flex;"><span>$ nmcli con up &lt;nom_connexion&gt;</span></span></code></pre></div>
+
+<details open class=" box cstyle notices primary">
+  <summary class="box-label" tabindex="-1">
+    À savoir
+  </summary>
+  <div class="box-content">
+<ul>
+<li>L’adresse IP 192.168.230.132 avec un masque /24 équivaut à un masque de 255.255.255.0.
+<ul>
+<li>Le /24 indique que les 24 premiers bits de l&rsquo;adresse servent à identifier le réseau.</li>
+</ul>
+</li>
+<li>La passerelle est l’adresse du routeur à utiliser pour sortir du réseau.</li>
+<li>Par soucis de simplicité, on nomme la connexion avec le nom de l&rsquo;interface.
+<ul>
+<li>Dans l&rsquo;exemple, cela veut dire qu&rsquo;on remplacerai <strong>&lt;nom_connexion&gt;</strong> par <code>ens160</code>.</li>
+</ul>
+</li>
+</ul>
+  </div>
+</details>
+<h2 id="gérer-les-connexions">Gérer les connexions</h2>
+<h5 id="lister-les-connexions-enregistrées">Lister les connexions enregistrées</h5>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli con show</span></span></code></pre></div>
+<h5 id="lister-les-connexions-actives">Lister les connexions actives</h5>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli con show --active</span></span></code></pre></div>
+<h5 id="détails-dune-connexion">Détails d’une connexion</h5>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli con show &lt;nom_connexion&gt;</span></span></code></pre></div>
+<h5 id="activer-une-connexion-spécifique">Activer une connexion spécifique</h5>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli con up &lt;nom_connexion&gt;</span></span></code></pre></div>
+<h5 id="désactiver-une-connexion">Désactiver une connexion</h5>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli con down &lt;nom_connexion&gt;</span></span></code></pre></div>
+<h5 id="supprimer-une-connexion">Supprimer une connexion</h5>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli con delete &lt;nom_connexion&gt;</span></span></code></pre></div>
+<h2 id="créer-une-connexion-ethernet-dynamique-via-dhcp">Créer une connexion Ethernet dynamique (via <em>DHCP</em>)</h2>
+<p>Cela consiste à effacer les réglages manuels (IP, DNS, passerelle), puis redémarrer la connexion.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Configurer l&#39;interface pour obtenir automatiquement une adresse IP</span>
+</span></span><span style="display:flex;"><span>$ nmcli con mod &lt;interface&gt; ipv4.method auto
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Effacer les DNS manuels</span>
+</span></span><span style="display:flex;"><span>$ nmcli con mod &lt;interface&gt; ipv4.dns <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Supprimer toute adresse IP fixe et passerelle manuelle</span>
+</span></span><span style="display:flex;"><span>$ nmcli con mod &lt;interface&gt; ipv4.gateway <span style="color:#e6db74">&#34;&#34;</span> ipv4.addresses <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Désactiver temporairement la connexion</span>
+</span></span><span style="display:flex;"><span>$ nmcli con down &lt;nom_connexion&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Réactiver la connexion, avec la nouvelle configuration.</span>
+</span></span><span style="display:flex;"><span>$ nmcli con up &lt;nom_connexion&gt;</span></span></code></pre></div>
+
+<details open class=" box cstyle notices primary">
+  <summary class="box-label" tabindex="-1">
+    À savoir
+  </summary>
+  <div class="box-content">
+<p>Parfois il faut répéter la commande précédente (<code>nmcli con up</code>) pour s&rsquo;assurer que la connexion remonte bien.</p>
+  </div>
+</details>
+<h2 id="activerdésactiver-le-réseau">Activer/Désactiver le réseau</h2>
+<h5 id="activer-le-réseau-géré-par-networkmanager">Activer le réseau géré par <em>NetworkManager</em></h5>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli networking on</span></span></code></pre></div>
+<h5 id="désactiver-tout-le-réseau">Désactiver tout le réseau</h5>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli networking off</span></span></code></pre></div>
+<h2 id="la-commande-ip">La commande <em><strong>ip</strong></em></h2>
+<h5 id="afficher-la-configuration-ip-réseau">Afficher la configuration IP réseau</h5>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ip address
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ou plus court :</span>
+</span></span><span style="display:flex;"><span>$ ip a   <span style="color:#75715e"># a pour adresse</span></span></span></code></pre></div>
+<h5 id="afficher-la-configuration-ip-dune-seule-interface">Afficher la configuration ip d&rsquo;une seule interface</h5>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ip a show &lt;interface&gt;</span></span></code></pre></div>
+<h5 id="ajouter-plusieurs-adresses-ip-sur-une-même-interface-même-sous-réseau-obligatoire">Ajouter plusieurs adresses IP sur une même interface (<strong>même sous-réseau obligatoire</strong>)</h5>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-bug"></i> 
+    Attention
+  </summary>
+  <div class="box-content">
+<p>L&rsquo;interface doit exister et avoir une connexion active au réseau avant d&rsquo;y ajouter une adresse IP.</p>
+  </div>
+</details>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo ip addr add 192.168.230.132/24 dev ens33</span></span></code></pre></div>
+<h5 id="supprimer-une-adresse-ip">Supprimer une adresse IP</h5>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo ip addr del 192.168.230.132/24 dev ens33</span></span></code></pre></div>
+<h5 id="ajouter-une-passerelle-par-défaut">Ajouter une passerelle par défaut</h5>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo ip route add default via 192.168.230.2</span></span></code></pre></div>
+<h5 id="voir-la-table-de-routage">Voir la table de routage</h5>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ip route</span></span></code></pre></div>
+<h2 id="commandes-obsolètes-ou-anciennes">Commandes obsolètes ou anciennes</h2>
+<h3 id="la-commande-ifconfig">La commande <em><strong>ifconfig</strong></em></h3>
+
+<details class=" box cstyle notices grey expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Commande <em><strong>ifconfig</strong></em>
+  </summary>
+  <div class="box-content">
+<ul>
+<li>La commande <code>ifconfig</code> est plus ancienne et tend à disparaître, mais reste parfois utile.</li>
+<li>C&rsquo;est un utilitaire de configuration de réseau.</li>
+</ul>
+<p><strong>Afficher la liste des interfaces réseau et de la configuration</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ifconfig</span></span></code></pre></div>
+<p><strong>Voir une interface en particulier</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ifconfig &lt;interface&gt;</span></span></code></pre></div>
+<p><strong>Activer/désactiver une interface</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ifconfig &lt;interface&gt; up
+</span></span><span style="display:flex;"><span>$ ifconfig &lt;interface&gt; down</span></span></code></pre></div>
+<p><strong>Attribuer une adresse IP (temporairement)</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ifconfig ens33 10.0.2.34 netmask 255.255.224.0</span></span></code></pre></div>
+<p><strong>Ajouter une adresse IP secondaire (alias)</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ifconfig ens33:1 10.0.2.56 netmask 255.255.255.0</span></span></code></pre></div>
+<blockquote>
+<p>L’interface alias (<code>ens33:1</code>) utilise la même carte réseau (donc la même adresse MAC) et doit être dans le <strong>même sous-réseau</strong>.</p>
+</blockquote>
+<h2 id="désactiver-un-alias">Désactiver un alias</h2>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ifconfig ens33:1 down</span></span></code></pre></div>
+  </div>
+</details>
+<h3 id="les-commandes-ifdown-et-ifup">Les commandes <em><strong>ifdown</strong></em> et <em><strong>ifup</strong></em></h3>
+<ul>
+<li>si votre machine Linux ne connait pas ces commandes, vous devez les installer à l&rsquo;aide de la commande <code>dnf</code>.</li>
+</ul>
+<p><a href="#R-image-fd03b0a4958b75d63fa56d968c369c66" class="lightbox-link"><img alt="Installation du paquet" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="./installation_NM-initscript-updown.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fd03b0a4958b75d63fa56d968c369c66"><img alt="Installation du paquet" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="./installation_NM-initscript-updown.png"></a></p>
+
+<details class=" box cstyle notices grey expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Commandes <em><strong>ifdown</strong></em> et <em><strong>ifup</strong></em>
+  </summary>
+  <div class="box-content">
+<h2 id="redémarrer-désactivation-et-réactivation-une-interface-réseau">Redémarrer (désactivation et réactivation) une interface réseau</h2>
+<p><strong>1. Désactivation: perte de connexion réseau</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ifdown ens160</span></span></code></pre></div>
+<p><strong>2. Réactivation: retour de l&rsquo;accès réseau</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ifup ens160</span></span></code></pre></div>
+  </div>
+</details>
+<hr>
+<h2 id="exercice-1">Exercice 1</h2>
+<p>Remplissez le tableau avec les paramètres actuels de votre machine :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Adresse IP</th>
+<th style="text-align:center">Masque de sous-réseau</th>
+<th style="text-align:center">Passerelle par défaut</th>
+<th style="text-align:center">DNS1</th>
+<th style="text-align:center">DNS2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Votre adresse IP est-elle <strong>statique</strong> ou <strong>dynamique (DHCP)</strong> ?</li>
+<li>Modifiez le bon fichier de configuration pour attribuer une <strong>adresse IP statique</strong>.</li>
+<li>Redémarrez le service réseau et testez l&rsquo;accès à Internet.</li>
+<li>Revenez à une configuration en DHCP.</li>
+<li>Testez à nouveau la connexion.</li>
+</ol>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution
+  </summary>
+  <div class="box-content">
+<h3 id="étape-1--remplir-le-tableau">Étape 1 : Remplir le tableau</h3>
+<p>Utiliser les commandes suivantes pour obtenir les paramètres actuels :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ip a            <span style="color:#75715e"># pour l’adresse IP et le masque</span>
+</span></span><span style="display:flex;"><span>$ ip route        <span style="color:#75715e"># pour la passerelle par défaut</span>
+</span></span><span style="display:flex;"><span>$ cat /etc/resolv.conf  <span style="color:#75715e"># pour les serveurs DNS</span></span></span></code></pre></div>
+<h4 id="exemple-de-réponse-vos-données-peuvent-être-différentes">Exemple de réponse (vos données peuvent être différentes):</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Adresse IP</th>
+<th style="text-align:center">Masque de sous-réseau</th>
+<th style="text-align:center">Passerelle par défaut</th>
+<th style="text-align:center">DNS1</th>
+<th style="text-align:center">DNS2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">192.168.230.100</td>
+<td style="text-align:center">255.255.255.0</td>
+<td style="text-align:center">192.168.230.2</td>
+<td style="text-align:center">8.8.8.8</td>
+<td style="text-align:center">8.8.4.4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="étape-2--vérifier-si-ladresse-est-dynamique-dhcp-ou-statique">Étape 2 : Vérifier si l’adresse est dynamique (DHCP) ou statique</h3>
+<p>Utiliser cette commande :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli con show ens160 | grep ipv4.method</span></span></code></pre></div>
+<ul>
+<li>Si la méthode est <code>auto</code> → <strong>DHCP</strong></li>
+<li>Si la méthode est <code>manual</code> → <strong>statique</strong></li>
+</ul>
+<h3 id="étape-3--attribuer-une-adresse-ip-statique">Étape 3 : Attribuer une adresse IP statique</h3>
+<p>Modifier la configuration avec <code>nmcli</code> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli con mod ens160 ipv4.address 192.168.230.100/24
+</span></span><span style="display:flex;"><span>$ nmcli con mod ens160 ipv4.gateway 192.168.230.2
+</span></span><span style="display:flex;"><span>$ nmcli con mod ens160 ipv4.dns 8.8.8.8,8.8.4.4
+</span></span><span style="display:flex;"><span>$ nmcli con mod ens160 ipv4.method manual
+</span></span><span style="display:flex;"><span>$ nmcli con down ens160
+</span></span><span style="display:flex;"><span>$ nmcli con up ens160</span></span></code></pre></div>
+<h3 id="étape-4--vérifier-laccès-à-internet">Étape 4 : Vérifier l&rsquo;accès à Internet</h3>
+<p>Tester avec une commande comme :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ping google.com</span></span></code></pre></div>
+<h3 id="étape-5--revenir-à-une-configuration-en-dhcp">Étape 5 : Revenir à une configuration en DHCP</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli con mod ens160 ipv4.method auto
+</span></span><span style="display:flex;"><span>$ nmcli con mod ens160 ipv4.address <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>$ nmcli con mod ens160 ipv4.gateway <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>$ nmcli con mod ens160 ipv4.dns <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>$ nmcli con down ens160
+</span></span><span style="display:flex;"><span>$ nmcli con up ens160</span></span></code></pre></div>
+<h3 id="étape-6--vérifier-que-tout-fonctionne">Étape 6 : Vérifier que tout fonctionne</h3>
+<p>Refaire un test :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ping google.com</span></span></code></pre></div>
+<p>Si tout fonctionne, la configuration est correcte.</p>
+  </div>
+</details>
+<h2 id="exercice-2">Exercice 2</h2>
+<ol>
+<li>
+<p>Ajoutez <strong>deux adresses IP supplémentaires</strong> à votre interface avec la commande <code>ip</code>.<br>
+→ Vous devez avoir <strong>trois adresses IP différentes</strong>.</p>
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Attention
+  </summary>
+  <div class="box-content">
+<p>Toutes les adresses doivent être dans le <strong>même réseau</strong>.</p>
+  </div>
+</details>
+</li>
+<li>
+<p>Modifiez le fichier <code>hosts</code> pour associer <strong>un nom différent à chaque adresse</strong> (pour que les trois répondent à un ping).</p>
+</li>
+<li>
+<p>Redémarrez le service réseau.<br>
+Est-ce que les adresses IP sont toujours là ?</p>
+</li>
+<li>
+<p>Comment rendre ces adresses <strong>persistantes</strong> ?<br>
+(Trouvez la réponse en théorie, ou testez si vous le souhaitez.)</p>
+</li>
+</ol>
+
+<details class=" box cstyle notices green expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Solution
+  </summary>
+  <div class="box-content">
+<h3 id="étape-1--ajouter-deux-adresses-ip-à-linterface-temporairement">Étape 1 : Ajouter deux adresses IP à l’interface (temporairement)</h3>
+<p>On suppose que l’interface est <code>ens33</code>.<br>
+Adaptez selon le nom de votre interface (<code>ip a</code> pour le voir).</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo ip addr add 192.168.230.101/24 dev ens33
+</span></span><span style="display:flex;"><span>$ sudo ip addr add 192.168.230.102/24 dev ens33</span></span></code></pre></div>
+<p>Vous devriez maintenant avoir <strong>trois adresses IP</strong> sur <code>ens33</code> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ip a show ens33</span></span></code></pre></div>
+<h3 id="étape-2--modifier-le-fichier-etchosts">Étape 2 : Modifier le fichier <em>/etc/hosts</em></h3>
+<p>Ouvrir le fichier avec des droits root :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nano /etc/hosts</span></span></code></pre></div>
+<p>Ajouter ces lignes à la fin du fichier :</p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>192.168.230.100  machine-principale
+192.168.230.101  alias-un
+192.168.230.102  alias-deux</code></pre></div>
+<p>Enregistrez (Ctrl + O, puis Entrée) et quittez (Ctrl + X).</p>
+<h3 id="étape-3--tester-avec-des-ping">Étape 3 : Tester avec des ping</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ping machine-principale
+</span></span><span style="display:flex;"><span>$ ping alias-un
+</span></span><span style="display:flex;"><span>$ ping alias-deux</span></span></code></pre></div>
+<p>Chaque nom devrait répondre correctement.</p>
+<h3 id="étape-4--redémarrer-le-service-réseau">Étape 4 : Redémarrer le service réseau</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nmcli networking off
+</span></span><span style="display:flex;"><span>$ sudo nmcli networking on</span></span></code></pre></div>
+<h4 id="question--est-ce-que-les-ip-supplémentaires-sont-encore-là-">Question : est-ce que les IP supplémentaires sont encore là ?</h4>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ip a show ens33</span></span></code></pre></div>
+<p><strong>Réponse :</strong> Non, elles ont disparu.</p>
+<ul>
+<li>Les IP ajoutées avec <code>ip addr add</code> sont <strong>temporaires</strong>.</li>
+</ul>
+<h3 id="étape-5--comment-rendre-ces-ip-persistantes-">Étape 5 : Comment rendre ces IP <strong>persistantes</strong> ?</h3>
+<p>Deux façons possibles :</p>
+<h4 id="méthode-1--via-nmcli"><strong>Méthode 1 : via <em>nmcli</em></strong></h4>
+<p>Ajouter plusieurs adresses IP dans la configuration de l’interface :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo nmcli con mod ens33 +ipv4.addresses 192.168.230.101/24
+</span></span><span style="display:flex;"><span>$ sudo nmcli con mod ens33 +ipv4.addresses 192.168.230.102/24
+</span></span><span style="display:flex;"><span>$ sudo nmcli con mod ens33 ipv4.method manual
+</span></span><span style="display:flex;"><span>$ sudo nmcli con mod ens33 ipv4.gateway 192.168.230.2
+</span></span><span style="display:flex;"><span>$ sudo nmcli con mod ens33 ipv4.dns 8.8.8.8,8.8.4.4
+</span></span><span style="display:flex;"><span>$ sudo nmcli con down ens33
+</span></span><span style="display:flex;"><span>$ sudo nmcli con up ens33</span></span></code></pre></div>
+<h4 id="méthode-2--en-modifiant-les-fichiers-manuellement"><strong>Méthode 2 : en modifiant les fichiers manuellement</strong></h4>
+<blockquote>
+<p>À faire seulement si vous êtes à l’aise avec les fichiers de configuration réseau, par exemple <code>/etc/sysconfig/network-scripts/ifcfg-ens33</code> (selon la distribution).</p>
+</blockquote>
+  </div>
+</details>
+<hr>
+<h2 id="erreurs-courantes">Erreurs courantes</h2>
+<h3 id="1-erreur--cannot-find-device-ens33">1. Erreur : <em><code>Cannot find device &quot;ens33&quot;</code></em></h3>
+<ul>
+<li><strong>Cause :</strong> Interface réseau inexistante.</li>
+<li><strong>Solution :</strong>
+<ul>
+<li>Vérifier l&rsquo;existence de l&rsquo;inerface</li>
+<li>La créer le cas échéant avec <code>nmcli con add</code></li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli device status</span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="2-erreur--nexthop-has-invalid-gateway">2. Erreur : <em><code>Nexthop has invalid gateway</code></em></h3>
+<ul>
+<li><strong>Cause :</strong> Mauvaise passerelle ou interface inactive.</li>
+<li><strong>Solution :</strong>
+<ul>
+<li>Vérifier que l’IP est dans le bon sous-réseau.</li>
+<li>Activer l’interface :
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo ip link set &lt;nom_interface&gt; up</span></span></code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-interface-invalide-dans-nmcli-con-add">3. Interface invalide dans <em>nmcli con add</em></h3>
+<ul>
+<li><strong>Cause :</strong> Mauvais nom d’interface.</li>
+<li><strong>Solution</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli device status</span></span></code></pre></div>
+</li>
+</ul>
+<h3 id="4-ip-ajoutée-à-une-interface-inactive">4. IP ajoutée à une interface inactive</h3>
+<ul>
+<li><strong>Solution</strong>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ip link set &lt;interface&gt; up</span></span></code></pre></div>
+</li>
+</ul>
+<h2 id="bonnes-pratiques">Bonnes pratiques</h2>
+<ul>
+<li>Toujours vérifier le vrai nom de l’interface réseau avant de créer une configuration..</li>
+<li>Supprimer les connexions en double ou inutiles.</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1745278783";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1745278783" defer></script>
+        <script src="/js/lunr/lunr.min.js?1745278783" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1745278783" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1745278783" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1745278783" defer></script>
+        <script src="/js/search.js?1745278783" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest2/index.html"><a class="padding" href="/revisiontest2/index.html">TEST #2-Quelques notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim, les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>Variables de paramètres de script et structure IF</a><ul id="R-subsections-1f01a70d85857b8ac721c011c139e3af" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest3/index.html"><a class="padding" href="/revisiontest3/index.html">TEST #3 - Informations et notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine10/index.html"><a class="padding" href="/semaine10/index.html"><b>Semaine 10. </b>Utilisateurs et groupes</a><ul id="R-subsections-f8cbb4e023a0fc71fa255b45db414bcc" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine11/index.html"><a class="padding" href="/semaine11/index.html"><b>Semaine 11. </b>Les droits d&#39;accès</a><ul id="R-subsections-b4d497b6531d9f49241f6ec42b8e80f7" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/semaine12/index.html"><a class="padding" href="/semaine12/index.html"><b>Semaine 12. </b>Réseau</a><ul id="R-subsections-6098c004e594c3cbee6d88e41d11b10b" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/semaine12/cours/index.html"><a class="padding" href="/semaine12/cours/index.html">Le réseau sous Linux</a><ul id="R-subsections-4af3dd0dcba713115d7d4f47a666a7fb" class="collapsible-menu">
+            <li class="active " data-nav-id="/semaine12/cours/_index2/index.html"><a class="padding" href="/semaine12/cours/_index2/index.html">Le réseau sous Linux</a></li></ul></li>
+            <li class="" data-nav-id="/semaine12/atelier/index.html"><a class="padding" href="/semaine12/atelier/index.html">ATELIER #10c: Réseau sous Linux</a></li></ul></li>
+            <li class="" data-nav-id="/semaine13/index.html"><a class="padding" href="/semaine13/index.html"><b>Semaine 13. </b>Gestion des disques</a><ul id="R-subsections-123a241fcf7a50602c7d825a9ccf5337" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/semaine12/cours/_index2/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1745278783" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1745278783" defer></script>
+    <script src="/js/theme.js?1745278783" defer></script>
+  </body>
+</html>
