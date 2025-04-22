@@ -281,8 +281,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "420-ZG4-MO Système d’exploitation Linux",
-    "content": "Plan de la leçon Théorie : Mercredi 23 avril\nLes fichiers importants Les commandes essentielles: nmcli, ip, ifconfig Le service réseau Atelier : Jeudi 24 avril.\nExercice d’utilisation des commandes essentielles.",
-    "description": "Plan de la leçon Théorie : Mercredi 23 avril\nLes fichiers importants Les commandes essentielles: nmcli, ip, ifconfig Le service réseau Atelier : Jeudi 24 avril.\nExercice d’utilisation des commandes essentielles.",
+    "content": "Plan de la leçon Théorie : Mercredi 23 avril\nLes fichiers importants Les commandes essentielles: nmcli et ip Le service réseau Atelier : Jeudi 24 avril.\nExercice d’utilisation des commandes essentielles.",
+    "description": "Plan de la leçon Théorie : Mercredi 23 avril\nLes fichiers importants Les commandes essentielles: nmcli et ip Le service réseau Atelier : Jeudi 24 avril.\nExercice d’utilisation des commandes essentielles.",
     "tags": [],
     "title": "Réseau",
     "uri": "/semaine12/index.html"
