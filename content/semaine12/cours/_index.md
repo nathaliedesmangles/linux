@@ -394,7 +394,7 @@ $ ip a show ens33
 Ouvrir le fichier avec des droits root :
 
 ```bash
-$ sudo nano /etc/hosts
+$ sudo vim /etc/hosts
 ```
 
 Ajouter ces lignes à la fin du fichier :
@@ -405,7 +405,7 @@ Ajouter ces lignes à la fin du fichier :
 192.168.230.102  alias-deux
 ```
 
-Enregistrez (Ctrl + O, puis Entrée) et quittez (Ctrl + X).
+Enregistrez et quittez (`:wq`).
 
 
 ### Étape 3 : Tester avec des ping
