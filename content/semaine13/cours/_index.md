@@ -198,7 +198,7 @@ Teste si tout est correct :
 
 ## Démonter un disque ou une partition avec *umount*
 
-Lorsque tu as terminé d'utiliser un disque ou une partition (clé USB, disque dur externe, etc.), il est important de le **démonter proprement** avant de le retirer physiquement. Cela permet d’éviter la perte de données ou la corruption du système de fichiers.
+Lorsqu'on a terminé d'utiliser un disque ou une partition (clé USB, disque dur externe, etc.), il est important de le **démonter proprement** avant de le retirer physiquement. Cela permet d’éviter la perte de données ou la corruption du système de fichiers.
 
 La commande utilisée pour démonter un périphérique est `umount` (et non "unmount").
 
@@ -206,9 +206,9 @@ La commande utilisée pour démonter un périphérique est `umount` (et non "unm
 sudo umount /dev/sdb1
 ```
 
-### Astuce : démonter par point de montage
+### Démonter par point de montage
 
-Tu peux aussi démonter en indiquant le **point de montage** :
+On peut aussi démonter en indiquant le **point de montage** :
 
 ```bash
 sudo umount /media/usb

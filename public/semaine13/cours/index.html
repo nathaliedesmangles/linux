@@ -46,14 +46,14 @@ Ils se trouvent dans le répertoire :
 /dev
 Les disques y apparaissent comme fichiers de type bloc.
 On ne peut pas utiliser ces fichiers directement. Il faut suivre ces 3 étapes :">
-    <meta itemprop="wordCount" content="693">
+    <meta itemprop="wordCount" content="690">
     <title>Gestion des disques :: 420-ZG4-MO LINUX</title>
     <link href="/semaine13/cours/index.xml" rel="alternate" type="application/rss+xml" title="Gestion des disques :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1745514005" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745514005" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1745514005" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745514005" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1745514005" rel="stylesheet">
-    <link href="/css/theme.min.css?1745514005" rel="stylesheet">
-    <link href="/css/format-html.min.css?1745514005" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1745514777" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745514777" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1745514777" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745514777" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1745514777" rel="stylesheet">
+    <link href="/css/theme.min.css?1745514777" rel="stylesheet">
+    <link href="/css/format-html.min.css?1745514777" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -141,7 +141,7 @@ On ne peut pas utiliser ces fichiers directement. Il faut suivre ces 3 étapes :
     </li>
     <li><a href="#démonter-un-disque-ou-une-partition-avec-umount">Démonter un disque ou une partition avec <em>umount</em></a>
       <ul>
-        <li><a href="#astuce--démonter-par-point-de-montage">Astuce : démonter par point de montage</a></li>
+        <li><a href="#démonter-par-point-de-montage">Démonter par point de montage</a></li>
       </ul>
     </li>
   </ul>
@@ -307,11 +307,11 @@ En cas de doute, fais une sauvegarde ou utilise <code>mount -a</code> pour teste
 <li>(Optionnel) Rendre le montage permanent avec <code>/etc/fstab</code></li>
 </ol>
 <h2 id="démonter-un-disque-ou-une-partition-avec-umount">Démonter un disque ou une partition avec <em>umount</em></h2>
-<p>Lorsque tu as terminé d&rsquo;utiliser un disque ou une partition (clé USB, disque dur externe, etc.), il est important de le <strong>démonter proprement</strong> avant de le retirer physiquement. Cela permet d’éviter la perte de données ou la corruption du système de fichiers.</p>
+<p>Lorsqu&rsquo;on a terminé d&rsquo;utiliser un disque ou une partition (clé USB, disque dur externe, etc.), il est important de le <strong>démonter proprement</strong> avant de le retirer physiquement. Cela permet d’éviter la perte de données ou la corruption du système de fichiers.</p>
 <p>La commande utilisée pour démonter un périphérique est <code>umount</code> (et non &ldquo;unmount&rdquo;).</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo umount /dev/sdb1</span></span></code></pre></div>
-<h3 id="astuce--démonter-par-point-de-montage">Astuce : démonter par point de montage</h3>
-<p>Tu peux aussi démonter en indiquant le <strong>point de montage</strong> :</p>
+<h3 id="démonter-par-point-de-montage">Démonter par point de montage</h3>
+<p>On peut aussi démonter en indiquant le <strong>point de montage</strong> :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo umount /media/usb</span></span></code></pre></div>
 <p>ou</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo umount /mnt/mon_disque</span></span></code></pre></div>
@@ -331,7 +331,7 @@ En cas de doute, fais une sauvegarde ou utilise <code>mount -a</code> pour teste
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1745514005";
+          window.index_js_url="/searchindex.en.js?1745514777";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -344,12 +344,12 @@ En cas de doute, fais une sauvegarde ou utilise <code>mount -a</code> pour teste
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1745514005" defer></script>
-        <script src="/js/lunr/lunr.min.js?1745514005" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1745514005" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1745514005" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1745514005" defer></script>
-        <script src="/js/search.js?1745514005" defer></script>
+        <script src="/js/auto-complete.js?1745514777" defer></script>
+        <script src="/js/lunr/lunr.min.js?1745514777" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1745514777" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1745514777" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1745514777" defer></script>
+        <script src="/js/search.js?1745514777" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -433,8 +433,8 @@ En cas de doute, fais une sauvegarde ou utilise <code>mount -a</code> pour teste
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1745514005" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1745514005" defer></script>
-    <script src="/js/theme.js?1745514005" defer></script>
+    <script src="/js/clipboard.min.js?1745514777" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1745514777" defer></script>
+    <script src="/js/theme.js?1745514777" defer></script>
   </body>
 </html>
