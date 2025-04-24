@@ -170,10 +170,12 @@ Ce montage **disparaît après redémarrage**.
 **2. Montage automatique (permanent)**
 
 Il faut modifier le fichier **`/etc/fstab`**.
+  
+{{% notice style="warning" title="Attention" %}}
+- Une erreur dans ce fichier peut empêcher Linux de démarrer !  
+- En cas de doute, fais une sauvegarde ou utilise `mount -a` pour tester.
+{{% /notice %}}
 
-> **Attention**  
-> Une erreur dans ce fichier peut empêcher Linux de démarrer !  
-> En cas de doute, fais une sauvegarde ou utilise `mount -a` pour tester.
 
 #### Ajouter une ligne dans */etc/fstab*
 
@@ -184,7 +186,7 @@ Il faut modifier le fichier **`/etc/fstab`**.
 Teste si tout est correct :
 
 ```bash
-# mount -a
+$ mount -a
 ```
 
 **Résumé des étapes à retenir :**
@@ -203,7 +205,7 @@ Lorsqu'on a terminé d'utiliser un disque ou une partition (clé USB, disque dur
 La commande utilisée pour démonter un périphérique est `umount` (et non "unmount").
 
 ```bash
-sudo umount /dev/sdb1
+$ sudo umount /dev/sdb1
 ```
 
 ### Démonter par point de montage
@@ -211,12 +213,12 @@ sudo umount /dev/sdb1
 On peut aussi démonter en indiquant le **point de montage** :
 
 ```bash
-sudo umount /media/usb
+$ sudo umount /media/usb
 ```
 
 ou
 
 ```bash
-sudo umount /mnt/mon_disque
+$ sudo umount /mnt/mon_disque
 ```
 
