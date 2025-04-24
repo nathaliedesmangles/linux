@@ -173,13 +173,13 @@ Il faut modifier le fichier **`/etc/fstab`**.
   
 {{% notice style="warning" title="Attention" %}}
 - Une erreur dans ce fichier peut empêcher Linux de démarrer !  
-- En cas de doute, fais une sauvegarde ou utilise `mount -a` pour tester.
+- En cas de doute, faites une sauvegarde ou utilisez `mount -a` pour tester.
 {{% /notice %}}
 
 
 #### Ajouter une ligne dans */etc/fstab*
 
-```bash
+```
 /dev/sdb1    /root/data    ext4    defaults    0 0
 ```
 
