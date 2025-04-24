@@ -195,14 +195,10 @@ Teste si tout est correct :
 4. Monter la partition avec `mount`
 5. (Optionnel) Rendre le montage permanent avec `/etc/fstab`
 
-Voici une section que tu pourrais ajouter à ton document ou ton site (par exemple dans un chapitre sur la gestion des disques sous Linux avec `lamalinux`). Cette section explique comment démonter un disque ou une partition.
 
-
-## Démonter un disque ou une partition
+## Démonter un disque ou une partition avec *umount*
 
 Lorsque tu as terminé d'utiliser un disque ou une partition (clé USB, disque dur externe, etc.), il est important de le **démonter proprement** avant de le retirer physiquement. Cela permet d’éviter la perte de données ou la corruption du système de fichiers.
-
-### Commande de base : `umount`
 
 La commande utilisée pour démonter un périphérique est `umount` (et non "unmount").
 
