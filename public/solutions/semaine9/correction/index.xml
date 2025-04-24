@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Critères de correction :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:57982/solutions/semaine9/correction/index.html</link>
-    <description>Exercice 1: param3.sh (/25) Code du script :&#xA;Test sur le nombre de paramètres effectué avec la bonne syntaxe Détermination du plus grand et plus petit nombre entre les deux premiers, fait de façon concise (if else) Utilisation des variables de paramètres $#, $1, $2 et $3 Si les nombres sont saisis au clavier par l’utilisateur ==&gt; variables utilisateur bien utilisées Calculs effectués avec let Résultat de l’exécution :&#xA;Présent Respect de l’affichage Résultat final attendu Exercice 2: testFichier.sh (/25) Code du script :</description>
+    <link>http://localhost:1313/solutions/semaine9/correction/index.html</link>
+    <description>Exercice 1: param3.sh (/25) Code du script :&#xA;Test sur le nombre de paramètres effectué avec la bonne syntaxe Détermination du plus grand et plus petit nombre entre les deux premiers, fait de façon concise (if else) Utilisation des variables de paramètres $#, $1, $2 et $3 Si les nombres sont saisis au clavier par l’utilisateur ==&gt; variables utilisateur bien utilisées Calculs effectués avec let Résultat de l’exécution :&#xA;Présent Respect de l’affichage Résultat final attendu Exercice 2: testFichier.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:57982/solutions/semaine9/correction/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/solutions/semaine9/correction/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

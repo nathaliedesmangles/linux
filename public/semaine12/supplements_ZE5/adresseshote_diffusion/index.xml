@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2. Détermination de la plage d’adresses hôtes et de diffusion d’un réseau :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:57982/semaine12/supplements_ze5/adresseshote_diffusion/index.html</link>
-    <description>Les adresses hôtes sont des adresses qui peuvent être affectées à un périphérique tel qu’un ordinateur hôte, un ordinateur portable, un téléphone intelligent, une imprimante, un routeur, etc.&#xA;La partie hôte de l’adresse correspond aux bits à 0 dans le masque de sous-réseau.&#xA;Les adresses hôtes peuvent avoir n’importe quelle combinaison de bits dans la partie hôte de l’adresse IPv4.&#xA;Il existe deux cas particuliers :&#xA;Si tous les bits sont à 0, il s’agit de l’adresse réseau. Si tous les bits sont à 1 (255), il s’agit de l’adresse de diffusion (broadcast), qui permet d’atteindre tous les périphériques du réseau IPv4. Calcul du nombre d’hôtes Pour déterminer le nombre d’hôtes possibles dans un réseau, on utilise la formule :</description>
+    <link>http://localhost:1313/semaine12/supplements_ze5/adresseshote_diffusion/index.html</link>
+    <description>Les adresses hôtes sont des adresses qui peuvent être affectées à un périphérique tel qu’un ordinateur hôte, un ordinateur portable, un téléphone intelligent, une imprimante, un routeur, etc.&#xA;La partie hôte de l’adresse correspond aux bits à 0 dans le masque de sous-réseau.&#xA;Les adresses hôtes peuvent avoir n’importe quelle combinaison de bits dans la partie hôte de l’adresse IPv4.&#xA;Il existe deux cas particuliers :&#xA;Si tous les bits sont à 0, il s’agit de l’adresse réseau.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:57982/semaine12/supplements_ze5/adresseshote_diffusion/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/semaine12/supplements_ze5/adresseshote_diffusion/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

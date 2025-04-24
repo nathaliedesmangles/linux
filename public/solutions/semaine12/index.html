@@ -1,52 +1,44 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=57982&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Hugo 0.126.3">
     <meta name="generator" content="Relearn 7.3.1">
-    <meta name="description" content="Solution de l’exercice Les commandes doivent être exécutées avec les privilèges root ou avec sudo.
-1. Afficher l’adresse IP de l’interface Ethernet ip addr showou spécifiquement pour l’interface (souvent eth0 ou enp0s3, à adapter selon ta VM) :
-ip addr show eth0Cherche une ligne comme :
-inet 192.168.1.100/24 brd 192.168.1.255 scope global eth0C’est l’adresse IP principale de l’interface.
-2. Ajouter deux autres adresses IP sur la même interface Ethernet Admettons que ton IP actuelle est 192.168.1.100/24, tu peux ajouter :">
+    <meta name="description" content="Solution de l’exercice On suppose que l’interface Ethernet s’appelle ens160 (vous pouvez vérifier avec ip a si elle s’appelle autrement comme ens33, enp0s3, etc.).
+1. Afficher l’adresse IP de l’interface Ethernet ip addr show ens160Ou pour n’afficher que l’adresse IP :
+ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’interface (même sous-réseau) Si l’adresse actuelle est par exemple 192.168.1.10/24, on peut ajouter 192.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Atelier #10c :: 420-ZG4-MO LINUX">
-    <meta name="twitter:description" content="Solution de l’exercice Les commandes doivent être exécutées avec les privilèges root ou avec sudo.
-1. Afficher l’adresse IP de l’interface Ethernet ip addr showou spécifiquement pour l’interface (souvent eth0 ou enp0s3, à adapter selon ta VM) :
-ip addr show eth0Cherche une ligne comme :
-inet 192.168.1.100/24 brd 192.168.1.255 scope global eth0C’est l’adresse IP principale de l’interface.
-2. Ajouter deux autres adresses IP sur la même interface Ethernet Admettons que ton IP actuelle est 192.168.1.100/24, tu peux ajouter :">
-    <meta property="og:url" content="http://localhost:57982/solutions/semaine12/index.html">
+    <meta name="twitter:description" content="Solution de l’exercice On suppose que l’interface Ethernet s’appelle ens160 (vous pouvez vérifier avec ip a si elle s’appelle autrement comme ens33, enp0s3, etc.).
+1. Afficher l’adresse IP de l’interface Ethernet ip addr show ens160Ou pour n’afficher que l’adresse IP :
+ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’interface (même sous-réseau) Si l’adresse actuelle est par exemple 192.168.1.10/24, on peut ajouter 192.">
+    <meta property="og:url" content="http://localhost:1313/solutions/semaine12/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="Atelier #10c :: 420-ZG4-MO LINUX">
-    <meta property="og:description" content="Solution de l’exercice Les commandes doivent être exécutées avec les privilèges root ou avec sudo.
-1. Afficher l’adresse IP de l’interface Ethernet ip addr showou spécifiquement pour l’interface (souvent eth0 ou enp0s3, à adapter selon ta VM) :
-ip addr show eth0Cherche une ligne comme :
-inet 192.168.1.100/24 brd 192.168.1.255 scope global eth0C’est l’adresse IP principale de l’interface.
-2. Ajouter deux autres adresses IP sur la même interface Ethernet Admettons que ton IP actuelle est 192.168.1.100/24, tu peux ajouter :">
+    <meta property="og:description" content="Solution de l’exercice On suppose que l’interface Ethernet s’appelle ens160 (vous pouvez vérifier avec ip a si elle s’appelle autrement comme ens33, enp0s3, etc.).
+1. Afficher l’adresse IP de l’interface Ethernet ip addr show ens160Ou pour n’afficher que l’adresse IP :
+ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’interface (même sous-réseau) Si l’adresse actuelle est par exemple 192.168.1.10/24, on peut ajouter 192.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="Atelier #10c :: 420-ZG4-MO LINUX">
-    <meta itemprop="description" content="Solution de l’exercice Les commandes doivent être exécutées avec les privilèges root ou avec sudo.
-1. Afficher l’adresse IP de l’interface Ethernet ip addr showou spécifiquement pour l’interface (souvent eth0 ou enp0s3, à adapter selon ta VM) :
-ip addr show eth0Cherche une ligne comme :
-inet 192.168.1.100/24 brd 192.168.1.255 scope global eth0C’est l’adresse IP principale de l’interface.
-2. Ajouter deux autres adresses IP sur la même interface Ethernet Admettons que ton IP actuelle est 192.168.1.100/24, tu peux ajouter :">
-    <meta itemprop="wordCount" content="186">
+    <meta itemprop="description" content="Solution de l’exercice On suppose que l’interface Ethernet s’appelle ens160 (vous pouvez vérifier avec ip a si elle s’appelle autrement comme ens33, enp0s3, etc.).
+1. Afficher l’adresse IP de l’interface Ethernet ip addr show ens160Ou pour n’afficher que l’adresse IP :
+ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’interface (même sous-réseau) Si l’adresse actuelle est par exemple 192.168.1.10/24, on peut ajouter 192.">
+    <meta itemprop="wordCount" content="296">
     <title>Atelier #10c :: 420-ZG4-MO LINUX</title>
     <link href="/solutions/semaine12/index.xml" rel="alternate" type="application/rss+xml" title="Atelier #10c :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1744597269" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744597269" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1744597269" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744597269" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1744597269" rel="stylesheet">
-    <link href="/css/theme.css?1744597269" rel="stylesheet">
-    <link href="/css/format-html.css?1744597269" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1745511633" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745511633" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1745511633" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745511633" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1745511633" rel="stylesheet">
+    <link href="/css/theme.css?1745511633" rel="stylesheet">
+    <link href="/css/format-html.css?1745511633" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..';
-      window.relearn.absBaseUri='http:\/\/localhost:57982';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.min = ``;
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
@@ -106,11 +98,11 @@ inet 192.168.1.100/24 brd 192.168.1.255 scope global eth0C’est l’adresse IP
   <ul>
     <li>
       <ul>
-        <li><a href="#1-afficher-ladresse-ip-de-linterface-ethernet">1. <strong>Afficher l’adresse IP de l’interface Ethernet</strong></a></li>
-        <li><a href="#2-ajouter-deux-autres-adresses-ip-sur-la-même-interface-ethernet">2. <strong>Ajouter deux autres adresses IP sur la même interface Ethernet</strong></a></li>
-        <li><a href="#3-tester-les-deux-adresses-ip-ajoutées">3. <strong>Tester les deux adresses IP ajoutées</strong></a></li>
-        <li><a href="#4-supprimer-les-deux-adresses-ip">4. <strong>Supprimer les deux adresses IP</strong></a></li>
-        <li><a href="#5-refaire-un-ping-vers-les-deux-adresses-supprimées">5. <strong>Refaire un ping vers les deux adresses supprimées</strong></a></li>
+        <li><a href="#1-afficher-ladresse-ip-de-linterface-ethernet">1. Afficher l’adresse IP de l’interface Ethernet</a></li>
+        <li><a href="#2-ajouter-deux-autres-adresses-ip-à-linterface-même-sous-réseau">2. Ajouter deux autres adresses IP à l’interface (même sous-réseau)</a></li>
+        <li><a href="#3-vérifier-la-réponse-avec-ping">3. Vérifier la réponse avec <em>ping</em></a></li>
+        <li><a href="#4-supprimer-les-adresses-ip-ajoutées">4. Supprimer les adresses IP ajoutées</a></li>
+        <li><a href="#5-faire-un-ping-vers-les-adresses-supprimées">5. Faire un ping vers les adresses supprimées</a></li>
       </ul>
     </li>
   </ul>
@@ -150,34 +142,57 @@ inet 192.168.1.100/24 brd 192.168.1.255 scope global eth0C’est l’adresse IP
 <h1 id="atelier-10c">Atelier #10c</h1>
 
 <h1 id="solution-de-lexercice">Solution de l&rsquo;exercice</h1>
-<p>Les commandes doivent être exécutées avec les privilèges root ou avec <code>sudo</code>.</p>
-<h3 id="1-afficher-ladresse-ip-de-linterface-ethernet">1. <strong>Afficher l’adresse IP de l’interface Ethernet</strong></h3>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip addr show</span></span></code></pre></div>
-<p>ou spécifiquement pour l’interface (souvent <code>eth0</code> ou <code>enp0s3</code>, à adapter selon ta VM) :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip addr show eth0</span></span></code></pre></div>
-<p>Cherche une ligne comme :</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>inet 192.168.1.100/24 brd 192.168.1.255 scope global eth0</code></pre></div>
-<p>C’est l’adresse IP principale de l’interface.</p>
-<h3 id="2-ajouter-deux-autres-adresses-ip-sur-la-même-interface-ethernet">2. <strong>Ajouter deux autres adresses IP sur la même interface Ethernet</strong></h3>
-<p>Admettons que ton IP actuelle est <code>192.168.1.100/24</code>, tu peux ajouter :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ip addr add 192.168.1.101/24 dev eth0
-</span></span><span style="display:flex;"><span>sudo ip addr add 192.168.1.102/24 dev eth0</span></span></code></pre></div>
-<h3 id="3-tester-les-deux-adresses-ip-ajoutées">3. <strong>Tester les deux adresses IP ajoutées</strong></h3>
-<p>Fais un ping vers chaque adresse :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping -c <span style="color:#ae81ff">3</span> 192.168.1.101
-</span></span><span style="display:flex;"><span>ping -c <span style="color:#ae81ff">3</span> 192.168.1.102</span></span></code></pre></div>
-<p>Tu devrais obtenir une réponse comme :</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>64 bytes from 192.168.1.101: icmp_seq=1 ttl=64 time=0.045 ms</code></pre></div>
-<h3 id="4-supprimer-les-deux-adresses-ip">4. <strong>Supprimer les deux adresses IP</strong></h3>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ip addr del 192.168.1.101/24 dev eth0
-</span></span><span style="display:flex;"><span>sudo ip addr del 192.168.1.102/24 dev eth0</span></span></code></pre></div>
-<h3 id="5-refaire-un-ping-vers-les-deux-adresses-supprimées">5. <strong>Refaire un ping vers les deux adresses supprimées</strong></h3>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping -c <span style="color:#ae81ff">3</span> 192.168.1.101
-</span></span><span style="display:flex;"><span>ping -c <span style="color:#ae81ff">3</span> 192.168.1.102</span></span></code></pre></div>
-<p>Tu devrais maintenant avoir un message d’erreur :</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>Destination Host Unreachable</code></pre></div>
-<p>ou</p>
-<div class="highlight wrap-code"><pre tabindex="0"><code>100% packet loss</code></pre></div>
+<p>On suppose que l’interface Ethernet s’appelle <code>ens160</code> (vous pouvez vérifier avec <code>ip a</code> si elle s&rsquo;appelle autrement comme <code>ens33</code>, <code>enp0s3</code>, etc.).</p>
+<hr>
+<h3 id="1-afficher-ladresse-ip-de-linterface-ethernet">1. Afficher l’adresse IP de l’interface Ethernet</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip addr show ens160</span></span></code></pre></div>
+<p>Ou pour n’afficher que l’adresse IP :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip -4 addr show ens160 | grep inet</span></span></code></pre></div>
+<h3 id="2-ajouter-deux-autres-adresses-ip-à-linterface-même-sous-réseau">2. Ajouter deux autres adresses IP à l’interface (même sous-réseau)</h3>
+<p>Si l’adresse actuelle est par exemple <code>192.168.1.10/24</code>, on peut ajouter <code>192.168.1.100</code> et <code>192.168.1.101</code> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ip addr add 192.168.1.100/24 dev ens160
+</span></span><span style="display:flex;"><span>sudo ip addr add 192.168.1.101/24 dev ens160</span></span></code></pre></div>
+<h3 id="3-vérifier-la-réponse-avec-ping">3. Vérifier la réponse avec <em>ping</em></h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping 192.168.1.100
+</span></span><span style="display:flex;"><span>ping 192.168.1.101</span></span></code></pre></div>
+<p>On doit voir des réponses si les adresses sont bien assignées.</p>
+<h3 id="4-supprimer-les-adresses-ip-ajoutées">4. Supprimer les adresses IP ajoutées</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ip addr del 192.168.1.100/24 dev ens160
+</span></span><span style="display:flex;"><span>sudo ip addr del 192.168.1.101/24 dev ens160</span></span></code></pre></div>
+<h3 id="5-faire-un-ping-vers-les-adresses-supprimées">5. Faire un ping vers les adresses supprimées</h3>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping 192.168.1.100
+</span></span><span style="display:flex;"><span>ping 192.168.1.101</span></span></code></pre></div>
+<p>Cette fois, on <strong>ne devrait pas</strong> avoir de réponse (<em><strong>host unreachable</strong></em> ou <em><strong>timeout</strong></em>), puisque les adresses ont été retirées.</p>
+<h4 id="51-options-utiles-avec-ping">5.1 Options utiles avec ping</h4>
+
+<details open class=" box cstyle notices secondary">
+  <summary class="box-label" tabindex="-1">
+    -c et spécifier le nombre de paquets envoyés
+  </summary>
+  <div class="box-content">
+<p>Dans la commande :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping -c <span style="color:#ae81ff">3</span> 192.168.1.100</span></span></code></pre></div>
+<ul>
+<li><code>-c</code> signifie <strong>&ldquo;count&rdquo;</strong> : c’est le nombre de requêtes ICMP que <code>ping</code> va envoyer.</li>
+<li><code>3</code> signifie qu&rsquo;on veut envoyer <strong>3 paquets</strong>.</li>
+</ul>
+<p>Donc : <code>ping -c 3 192.168.1.100</code></p>
+<ul>
+<li>envoie 3 paquets, attend les réponses, puis s&rsquo;arrête automatiquement.</li>
+</ul>
+<p>Exemple de résultat typique :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ping -c <span style="color:#ae81ff">3</span> 192.168.1.100
+</span></span><span style="display:flex;"><span>PING 192.168.1.100 <span style="color:#f92672">(</span>192.168.1.100<span style="color:#f92672">)</span> 56<span style="color:#f92672">(</span>84<span style="color:#f92672">)</span> bytes of data.
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">64</span> bytes from 192.168.1.100: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> time<span style="color:#f92672">=</span>0.123 ms
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">64</span> bytes from 192.168.1.100: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> time<span style="color:#f92672">=</span>0.098 ms
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">64</span> bytes from 192.168.1.100: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">64</span> time<span style="color:#f92672">=</span>0.105 ms
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>--- 192.168.1.100 ping statistics ---
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span> packets transmitted, <span style="color:#ae81ff">3</span> received, 0% packet loss, time 2041ms
+</span></span><span style="display:flex;"><span>rtt min/avg/max/mdev <span style="color:#f92672">=</span> 0.098/0.108/0.123/0.011 ms</span></span></code></pre></div>
+<p>Si on omet l&rsquo;option <code>-c</code> comme dans <code>ping 192.168.1.100</code>, ça continue <strong>jusqu’à ce qu&rsquo;on fasses Ctrl+C</strong> pour l’interrompre.</p>
+  </div>
+</details>
 
   <footer class="footline">
   </footer>
@@ -194,7 +209,7 @@ inet 192.168.1.100/24 brd 192.168.1.255 scope global eth0C’est l’adresse IP
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1744597269";
+          window.index_js_url="/searchindex.en.js?1745511633";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -207,12 +222,12 @@ inet 192.168.1.100/24 brd 192.168.1.255 scope global eth0C’est l’adresse IP
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1744597269" defer></script>
-        <script src="/js/lunr/lunr.min.js?1744597269" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1744597269" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1744597269" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1744597269" defer></script>
-        <script src="/js/search.js?1744597269" defer></script>
+        <script src="/js/auto-complete.js?1745511633" defer></script>
+        <script src="/js/lunr/lunr.min.js?1745511633" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1745511633" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1745511633" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1745511633" defer></script>
+        <script src="/js/search.js?1745511633" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -313,8 +328,8 @@ inet 192.168.1.100/24 brd 192.168.1.255 scope global eth0C’est l’adresse IP
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1744597269" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1744597269" defer></script>
-    <script src="/js/theme.js?1744597269" defer></script>
+    <script src="/js/clipboard.min.js?1745511633" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1745511633" defer></script>
+    <script src="/js/theme.js?1745511633" defer></script>
   </body>
 </html>

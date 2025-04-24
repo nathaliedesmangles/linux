@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Test 1 :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:57982/semaine4/test/index.html</link>
+    <link>http://localhost:1313/semaine4/test/index.html</link>
     <description>Informations générales Il y a un total de 18 questions pour 100 minutes (1h40). 9 questions courtes (commandes à donner) 9 questions longues (explications, différences entre commandes, analyse) Temps pour la relecture: ~ 19 min Recommendation pour la gestion du temps par type de question Questions courtes (commandes à donner) : ~2-3 minutes chacune Questions longues (explication, analyse) : ~5-7 minutes chacune Semaine 2 Navigation et exploration de l’arborescence Linux Exercice 1 : Explorer l’arborescence Linux</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:57982/semaine4/test/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/semaine4/test/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test 1 - groupes</title>
-      <link>http://localhost:57982/semaine4/test/groupes/index.html</link>
+      <link>http://localhost:1313/semaine4/test/groupes/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:57982/semaine4/test/groupes/index.html</guid>
-      <description>Comment rechercher récursivement tous les fichiers contenant le mot “config” dans le répertoire /etc et ses sous-répertoires ? Commande: grep -r &#34;config&#34; /etc Vous êtes dans le répertoire /etc et vous voulez rechercher toutes les occurrences du mot “password” dans tous les fichiers .conf. Quelle commande utiliserez vous ?&#xA;Réponse : grep -r &#34;password&#34; *.conf OK Vous avez plusieurs fichiers de configuration dans le répertoire /etc. Vous voulez afficher toutes les lignes contenant le mot “port” dans tous ces fichiers. Quelle commande utiliserez vous ?</description>
+      <guid>http://localhost:1313/semaine4/test/groupes/index.html</guid>
+      <description>Comment rechercher récursivement tous les fichiers contenant le mot “config” dans le répertoire /etc et ses sous-répertoires ? Commande: grep -r &#34;config&#34; /etc Vous êtes dans le répertoire /etc et vous voulez rechercher toutes les occurrences du mot “password” dans tous les fichiers .conf. Quelle commande utiliserez vous ?&#xA;Réponse : grep -r &#34;password&#34; *.conf OK Vous avez plusieurs fichiers de configuration dans le répertoire /etc. Vous voulez afficher toutes les lignes contenant le mot “port” dans tous ces fichiers.</description>
     </item>
   </channel>
 </rss>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Atelier #10c :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:57982/solutions/semaine12/index.html</link>
-    <description>Solution de l’exercice Les commandes doivent être exécutées avec les privilèges root ou avec sudo.&#xA;1. Afficher l’adresse IP de l’interface Ethernet ip addr show&#xD;ou spécifiquement pour l’interface (souvent eth0 ou enp0s3, à adapter selon ta VM) :&#xA;ip addr show eth0&#xD;Cherche une ligne comme :&#xA;inet 192.168.1.100/24 brd 192.168.1.255 scope global eth0&#xD;C’est l’adresse IP principale de l’interface.&#xA;2. Ajouter deux autres adresses IP sur la même interface Ethernet Admettons que ton IP actuelle est 192.168.1.100/24, tu peux ajouter :</description>
+    <link>http://localhost:1313/solutions/semaine12/index.html</link>
+    <description>Solution de l’exercice On suppose que l’interface Ethernet s’appelle ens160 (vous pouvez vérifier avec ip a si elle s’appelle autrement comme ens33, enp0s3, etc.).&#xA;1. Afficher l’adresse IP de l’interface Ethernet ip addr show ens160&#xD;Ou pour n’afficher que l’adresse IP :&#xA;ip -4 addr show ens160 | grep inet&#xD;2. Ajouter deux autres adresses IP à l’interface (même sous-réseau) Si l’adresse actuelle est par exemple 192.168.1.10/24, on peut ajouter 192.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:57982/solutions/semaine12/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/solutions/semaine12/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Atelier #10c: Réseau</title>
-      <link>http://localhost:57982/solutions/semaine12/_index_old/index.html</link>
+      <link>http://localhost:1313/solutions/semaine12/_index_old/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:57982/solutions/semaine12/_index_old/index.html</guid>
-      <description>Solution des exercices Exercice 2 — Reproduire une petite infrastructure réseau virtuelle sur une machine Linux. Étapes à réaliser Ajouter les interfaces (sur votre VM)&#xA;→ Vous pouvez le faire dans la configuration de la VM (VMware).&#xA;Déclarer les interfaces dans nmcli :&#xA;$ sudo nmcli con add con-name ens224 type ethernet ifname ens224 $ sudo nmcli con add con-name ens225 type ethernet ifname ens225&#xD;Attribuer des adresses IP statiques : $ sudo nmcli con mod ens224 ipv4.addresses 192.168.50.10/24 $ sudo nmcli con mod ens224 ipv4.method manual $ sudo nmcli con mod ens225 ipv4.addresses 192.168.60.10/24 $ sudo nmcli con mod ens225 ipv4.method manual&#xD;Redémarrer les connexions : $ sudo nmcli con up ens224 $ sudo nmcli con up ens225&#xD;Modifier /etc/hosts : $ sudo nano /etc/hosts&#xD;Ajoutez :</description>
+      <guid>http://localhost:1313/solutions/semaine12/_index_old/index.html</guid>
+      <description>Solution des exercices Exercice 2 — Reproduire une petite infrastructure réseau virtuelle sur une machine Linux. Étapes à réaliser Ajouter les interfaces (sur votre VM)&#xA;→ Vous pouvez le faire dans la configuration de la VM (VMware).&#xA;Déclarer les interfaces dans nmcli :&#xA;$ sudo nmcli con add con-name ens224 type ethernet ifname ens224 $ sudo nmcli con add con-name ens225 type ethernet ifname ens225&#xD;Attribuer des adresses IP statiques : $ sudo nmcli con mod ens224 ipv4.</description>
     </item>
   </channel>
 </rss>

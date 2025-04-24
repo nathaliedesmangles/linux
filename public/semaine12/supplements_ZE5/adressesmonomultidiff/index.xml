@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>4. Détermination des adresses IPv4 publiques et privées :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:57982/semaine12/supplements_ze5/adressesmonomultidiff/index.html</link>
-    <description>Tout comme il existe différentes façons de transmettre un paquet IPv4, il existe également différents types d’adresses IPv4.&#xA;Certaines adresses IPv4 ne peuvent pas être utilisées pour aller sur Internet, tandis que d’autres sont spécifiquement allouées pour le routage vers Internet.&#xA;Adresses IPv4 publiques Les adresses publiques sont acheminées de manière globale entre les routeurs des fournisseurs d’accès à Internet (FAI).&#xA;Adresses IPv4 privées Toutes les adresses IPv4 disponibles ne peuvent pas être utilisées sur Internet.&#xA;Certains blocs d’adresses, appelés adresses privées, sont utilisés par la plupart des entreprises pour attribuer des adresses IPv4 aux hôtes internes.</description>
+    <link>http://localhost:1313/semaine12/supplements_ze5/adressesmonomultidiff/index.html</link>
+    <description>Tout comme il existe différentes façons de transmettre un paquet IPv4, il existe également différents types d’adresses IPv4.&#xA;Certaines adresses IPv4 ne peuvent pas être utilisées pour aller sur Internet, tandis que d’autres sont spécifiquement allouées pour le routage vers Internet.&#xA;Adresses IPv4 publiques Les adresses publiques sont acheminées de manière globale entre les routeurs des fournisseurs d’accès à Internet (FAI).&#xA;Adresses IPv4 privées Toutes les adresses IPv4 disponibles ne peuvent pas être utilisées sur Internet.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:57982/semaine12/supplements_ze5/adressesmonomultidiff/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/semaine12/supplements_ze5/adressesmonomultidiff/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

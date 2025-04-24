@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.126.3">
@@ -18,7 +18,7 @@ Dans le cours 7 - vim et fichiers de configuration, nous avons vu comment modifi
 Dans ce cours-ci, nous allons explorer des commandes réseau essentielles.
 Rappel : les fichiers texte importants niveau réseau Voici deux fichiers que nous avons déjà vus :
 /etc/hosts : permet une résolution de noms simple (utile si un serveur DNS n’est pas disponible).">
-    <meta property="og:url" content="https://example.org/semaine12/cours/img/index.html">
+    <meta property="og:url" content="http://localhost:1313/semaine12/cours/img/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="Le réseau sous Linux :: 420-ZG4-MO LINUX">
     <meta property="og:description" content="Introduction Configurer un réseau sous Linux se fait à l’aide de commandes et de fichiers texte.
@@ -37,17 +37,17 @@ Rappel : les fichiers texte importants niveau réseau Voici deux fichiers que no
     <meta itemprop="wordCount" content="1564">
     <title>Le réseau sous Linux :: 420-ZG4-MO LINUX</title>
     <link href="/semaine12/cours/img/index.xml" rel="alternate" type="application/rss+xml" title="Le réseau sous Linux :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1745337327" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745337327" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1745337327" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745337327" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1745337327" rel="stylesheet">
-    <link href="/css/theme.min.css?1745337327" rel="stylesheet">
-    <link href="/css/format-html.min.css?1745337327" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1745511295" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745511295" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1745511295" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745511295" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1745511295" rel="stylesheet">
+    <link href="/css/theme.css?1745511295" rel="stylesheet">
+    <link href="/css/format-html.css?1745511295" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
-      window.relearn.absBaseUri='https:\/\/example.org';
-      window.relearn.min = `.min`;
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.min = ``;
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       // variant stuff
@@ -180,12 +180,12 @@ Dans ce cours-ci, nous allons explorer des <strong>commandes réseau essentielle
 </ul>
 <h4 id="1-lister-les-connexions-réseau">1. <strong>Lister les connexions réseau</strong></h4>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli dev</span></span></code></pre></div>
-<p><a href="#R-image-d0e6709ed83975460efbd0244da7ded2" class="lightbox-link"><img alt="nmcli dev" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/nmcli_dev.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-d0e6709ed83975460efbd0244da7ded2"><img alt="nmcli dev" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/nmcli_dev.png"></a></p>
+<p><a href="#R-image-d7eeae60823cb363ee7b67b9a2f8501f" class="lightbox-link"><img alt="nmcli dev" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/nmcli_dev.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d7eeae60823cb363ee7b67b9a2f8501f"><img alt="nmcli dev" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/nmcli_dev.png"></a></p>
 <h4 id="2-afficher-la-configuration-réseau-de-linterface-ens160">2. <strong>Afficher la configuration réseau de l&rsquo;interface ens160</strong></h4>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli con show ens160</span></span></code></pre></div>
-<p><a href="#R-image-9cc10bd9081405d0d38af1b8e0a8fd3f" class="lightbox-link"><img alt="nmcli dev" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_show_int.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9cc10bd9081405d0d38af1b8e0a8fd3f"><img alt="nmcli dev" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_show_int.png"></a></p>
+<p><a href="#R-image-65c3d2042650dcb00262b2ede5a0e14f" class="lightbox-link"><img alt="nmcli dev" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_show_int.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-65c3d2042650dcb00262b2ede5a0e14f"><img alt="nmcli dev" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_show_int.png"></a></p>
 <h4 id="3-configurer-manuellement-une-adresse-ip-statique">3. <strong>Configurer manuellement une adresse IP statique</strong></h4>
 <p>Cela consiste à donner une <strong>adresse IP fixe</strong>, une <strong>passerelle</strong>, <strong>des DNS</strong> à <code>ens160</code>, puis redémarrer la connexion pour appliquer le tout. Voici les commandes à faire dans l&rsquo;ordre:</p>
 <h5 id="31-donner-une-adresse-ip-à-linterface-ens160">3.1 Donner une adresse IP à l’interface <em><strong>ens160</strong></em></h5>
@@ -203,13 +203,13 @@ Dans ce cours-ci, nous allons explorer des <strong>commandes réseau essentielle
 <h5 id="35-redémarrer-la-connexion">3.5 Redémarrer la connexion</h5>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli con down ens160</span></span></code></pre></div>
 <p>➡️ Désactive temporairement la connexion.</p>
-<p><a href="#R-image-5c43042a92aa436b2aaa5ce290b24072" class="lightbox-link"><img alt="nmcli con down" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_down.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5c43042a92aa436b2aaa5ce290b24072"><img alt="nmcli con down" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_down.png"></a></p>
+<p><a href="#R-image-d355b7582e92c1a01c3b0352cdb62b4b" class="lightbox-link"><img alt="nmcli con down" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_down.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-d355b7582e92c1a01c3b0352cdb62b4b"><img alt="nmcli con down" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_down.png"></a></p>
 <h5 id="36-réactiver-la-connexion">3.6 Réactiver la connexion</h5>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli con up ens160</span></span></code></pre></div>
 <p>➡️ Réactive la connexion avec les <strong>nouveaux paramètres</strong> appliqués.</p>
-<p><a href="#R-image-fd5272225ecfcca156c341977794eac4" class="lightbox-link"><img alt="nmcli con up" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_up.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-fd5272225ecfcca156c341977794eac4"><img alt="nmcli con up" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_up.png"></a></p>
+<p><a href="#R-image-320f38fe7f2d6febc5f864528d998b8c" class="lightbox-link"><img alt="nmcli con up" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_up.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-320f38fe7f2d6febc5f864528d998b8c"><img alt="nmcli con up" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_up.png"></a></p>
 <h4 id="4-revenir-à-une-adresse-ip-dynamique-dhcp">4. <strong>Revenir à une adresse IP dynamique (DHCP)</strong></h4>
 <p>Les commandes suivantes <strong>remettent ens160 en configuration automatique (DHCP)</strong>, effacent les réglages manuels (IP, DNS, passerelle), puis redémarrent la connexion.</p>
 <h5 id="41-configurer-ens160-pour-obtenir-automatiquement-une-adresse-ip-via-dhcp">4.1. Configurer <strong>ens160</strong> pour obtenir automatiquement une adresse IP (via DHCP)</h5>
@@ -242,8 +242,8 @@ Dans ce cours-ci, nous allons explorer des <strong>commandes réseau essentielle
 </ul>
 <p>Voici un exemple de comment ajouter <strong>une nouvelle connexion réseau Ethernet</strong> appelée <strong>ens224</strong>, liée à l&rsquo;interface réseau physique <strong>ens224</strong>.</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nmcli con add con-name ens224 type ethernet ifname ens224</span></span></code></pre></div>
-<p><a href="#R-image-774606d003a1590f933ca54a3116abad" class="lightbox-link"><img alt="nmcli con add" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_add.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-774606d003a1590f933ca54a3116abad"><img alt="nmcli con add" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_add.png"></a></p>
+<p><a href="#R-image-f6ce3640de6497a0e5f97279f891f86d" class="lightbox-link"><img alt="nmcli con add" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_add.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-f6ce3640de6497a0e5f97279f891f86d"><img alt="nmcli con add" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/nmcli_con_add.png"></a></p>
 <p>Ensuite, on peut lui attribuer une IP fixe ou utiliser le DHCP.</p>
 <h4 id="6-le-service-réseau">6. <strong>Le service réseau</strong></h4>
 <p>Sous Linux, il faut parfois <strong>redémarrer le service réseau</strong> pour que les changements soient pris en compte.</p>
@@ -270,13 +270,13 @@ Dans ce cours-ci, nous allons explorer des <strong>commandes réseau essentielle
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ip address
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># ou plus court :</span>
 </span></span><span style="display:flex;"><span>$ ip a   <span style="color:#75715e"># a pour adresse</span></span></span></code></pre></div>
-<p><a href="#R-image-4f07e66c5e1350ffc18e1dd82759518e" class="lightbox-link"><img alt="ip a" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/ip_a.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4f07e66c5e1350ffc18e1dd82759518e"><img alt="ip a" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/ip_a.png"></a></p>
+<p><a href="#R-image-8048ac1494da50d2b59ac327fb23b5cc" class="lightbox-link"><img alt="ip a" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/ip_a.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8048ac1494da50d2b59ac327fb23b5cc"><img alt="ip a" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/ip_a.png"></a></p>
 <h4 id="2-afficher-la-configuration-ip-dune-seule-interface">2. <strong>Afficher la configuration ip d&rsquo;une seule interface</strong></h4>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ip a show &lt;interface&gt;</span></span></code></pre></div>
 <p><strong>Exemple avec l&rsquo;interface ens160</strong></p>
-<p><a href="#R-image-f9e42347710be3d4728aca450dfa38d8" class="lightbox-link"><img alt="ip a show interface" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/ip_a_show.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-f9e42347710be3d4728aca450dfa38d8"><img alt="ip a show interface" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/ip_a_show.png"></a></p>
+<p><a href="#R-image-4d8a95535fbe3e043d0a7fe63f0152ee" class="lightbox-link"><img alt="ip a show interface" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/ip_a_show.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4d8a95535fbe3e043d0a7fe63f0152ee"><img alt="ip a show interface" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/ip_a_show.png"></a></p>
 <!--
 -->
 <h4 id="3-ajouter-plusieurs-adresses-ip-sur-une-même-interface-même-sous-réseau-obligatoire">3. Ajouter plusieurs adresses IP sur une même interface (<strong>même sous-réseau obligatoire</strong>)</h4>
@@ -331,12 +331,12 @@ Dans ce cours-ci, nous allons explorer des <strong>commandes réseau essentielle
 <h2 id="redémarrer-désactivation-et-réactivation-une-interface-réseau">Redémarrer (désactivation et réactivation) une interface réseau</h2>
 <p><strong>1. Désactivation: perte de connexion réseau</strong></p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ifdown ens160</span></span></code></pre></div>
-<p><a href="#R-image-08db717d072efe92755e91a46b636834" class="lightbox-link"><img alt="if down" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/ifdown.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-08db717d072efe92755e91a46b636834"><img alt="if down" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/ifdown.png"></a></p>
+<p><a href="#R-image-92c34434968de8f19490f8b2ea98977b" class="lightbox-link"><img alt="if down" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/ifdown.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-92c34434968de8f19490f8b2ea98977b"><img alt="if down" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/ifdown.png"></a></p>
 <p><strong>2. Réactivation: retour de l&rsquo;accès réseau</strong></p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ifup ens160</span></span></code></pre></div>
-<p><a href="#R-image-b0c6c4491ea65e7627cd79d704d3cab7" class="lightbox-link"><img alt="if up" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/ifup.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b0c6c4491ea65e7627cd79d704d3cab7"><img alt="if up" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/ifup.png"></a></p>
+<p><a href="#R-image-3d510a1690a39d2977effa01a238e9ab" class="lightbox-link"><img alt="if up" class="noborder lazy lightbox noshadow figure-image" loading="lazy" src="/semaine12/cours/img/ifup.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3d510a1690a39d2977effa01a238e9ab"><img alt="if up" class="noborder lazy lightbox noshadow lightbox-image" loading="lazy" src="/semaine12/cours/img/ifup.png"></a></p>
   </div>
 </details>
 <hr>
@@ -530,7 +530,7 @@ Adaptez selon le nom de votre interface (<code>ip a</code> pour le voir).</p>
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1745337327";
+          window.index_js_url="/searchindex.en.js?1745511295";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -543,12 +543,12 @@ Adaptez selon le nom de votre interface (<code>ip a</code> pour le voir).</p>
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1745337327" defer></script>
-        <script src="/js/lunr/lunr.min.js?1745337327" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1745337327" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1745337327" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1745337327" defer></script>
-        <script src="/js/search.js?1745337327" defer></script>
+        <script src="/js/auto-complete.js?1745511295" defer></script>
+        <script src="/js/lunr/lunr.min.js?1745511295" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1745511295" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1745511295" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1745511295" defer></script>
+        <script src="/js/search.js?1745511295" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -575,8 +575,10 @@ Adaptez selon le nom de votre interface (<code>ip a</code> pour le voir).</p>
             <li class="parent " data-nav-id="/semaine12/index.html"><a class="padding" href="/semaine12/index.html"><b>Semaine 12. </b>Réseau</a><ul id="R-subsections-6098c004e594c3cbee6d88e41d11b10b" class="collapsible-menu">
             <li class="parent alwaysopen " data-nav-id="/semaine12/cours/index.html"><a class="padding" href="/semaine12/cours/index.html">Le réseau sous Linux</a><ul id="R-subsections-4af3dd0dcba713115d7d4f47a666a7fb" class="collapsible-menu">
             <li class="active " data-nav-id="/semaine12/cours/img/index.html"><a class="padding" href="/semaine12/cours/img/index.html">Le réseau sous Linux</a></li></ul></li>
-            <li class="" data-nav-id="/semaine12/atelier/index.html"><a class="padding" href="/semaine12/atelier/index.html">ATELIER #10c: Réseau sous Linux</a></li></ul></li>
+            <li class="" data-nav-id="/semaine12/atelier/index.html"><a class="padding" href="/semaine12/atelier/index.html">ATELIER #10c: Réseau sous Linux</a></li>
+            <li class="alwaysopen " data-nav-id="/semaine12/supplements_ze5/index.html"><a class="padding" href="/semaine12/supplements_ze5/index.html">Explications provenant du cours ZE5</a><ul id="R-subsections-46f9f352148613443ad9b0843d2e930d" class="collapsible-menu"></ul></li></ul></li>
             <li class="" data-nav-id="/semaine13/index.html"><a class="padding" href="/semaine13/index.html"><b>Semaine 13. </b>Gestion des disques</a><ul id="R-subsections-123a241fcf7a50602c7d825a9ccf5337" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest4/index.html"><a class="padding" href="/revisiontest4/index.html">TEST #4: Résumés</a></li>
             <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
@@ -633,8 +635,8 @@ Adaptez selon le nom de votre interface (<code>ip a</code> pour le voir).</p>
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1745337327" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1745337327" defer></script>
-    <script src="/js/theme.js?1745337327" defer></script>
+    <script src="/js/clipboard.min.js?1745511295" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1745511295" defer></script>
+    <script src="/js/theme.js?1745511295" defer></script>
   </body>
 </html>

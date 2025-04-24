@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=57982&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content="Hugo 0.135.0">
+    <meta name="generator" content="Hugo 0.126.3">
     <meta name="generator" content="Relearn 7.3.1">
     <meta name="description" content="Qu’est-ce que WSL? Windows Subsystem for Linux (WSL) est une fonctionnalité de Windows qui permet d’exécuter un environnement Linux directement sur un système Windows sans avoir besoin d’une machine virtuelle.
 Grâce à WSL, vous pouvez :
-Choisir et installer des distributions Linux à partir du Microsoft Store. Exécuter des commandes en ligne de commande tels que grep, sed et awk et autres Exécuter des scripts Bash et des logiciels Linux Développement Croisé WSL est particulièrement utile pour les développeurs qui travaillent avec des technologies basées sur Linux ou des projets qui doivent être exécutés ou testés dans un environnement Linux. Ils peuvent développer sur Windows tout en exécutant et en testant leur code dans un environnement Linux. Interopérabilité WSL permet une interaction transparente entre Windows et Linux, où vous pouvez accéder aux fichiers Windows depuis Linux et vice-versa, exécuter des commandes Linux dans PowerShell, et même lancer des applications Windows depuis l’environnement Linux. Pour accéder aux répertoires partagés, Du terminal linux, aller dans le répertoire /mnt. Vous y trouverez des dossiers correspondant à chaque lecteur de votre système Windows. Par exemple, /mnt/c représente le lecteur C: de Windows, /mnt/d le lecteur D:, et ainsi de suite. Depuis l’Explorateur de Fichiers de Windows, vous pouvez taper \wsl$ dans la barre d’adresse de l’Explorateur de Fichiers de Windows. Cela vous donnera accès aux fichiers de votre distribution Linux. Dans l’atelier, nous allons voir comment installer et utiliser WSL avec Ubuntu et Visual Studio Code (VS Code).">
+Choisir et installer des distributions Linux à partir du Microsoft Store. Exécuter des commandes en ligne de commande tels que grep, sed et awk et autres Exécuter des scripts Bash et des logiciels Linux Développement Croisé WSL est particulièrement utile pour les développeurs qui travaillent avec des technologies basées sur Linux ou des projets qui doivent être exécutés ou testés dans un environnement Linux.">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="WSL avec Ubuntu et VS Code :: 420-ZG4-MO LINUX">
     <meta name="twitter:description" content="Qu’est-ce que WSL? Windows Subsystem for Linux (WSL) est une fonctionnalité de Windows qui permet d’exécuter un environnement Linux directement sur un système Windows sans avoir besoin d’une machine virtuelle.
 Grâce à WSL, vous pouvez :
-Choisir et installer des distributions Linux à partir du Microsoft Store. Exécuter des commandes en ligne de commande tels que grep, sed et awk et autres Exécuter des scripts Bash et des logiciels Linux Développement Croisé WSL est particulièrement utile pour les développeurs qui travaillent avec des technologies basées sur Linux ou des projets qui doivent être exécutés ou testés dans un environnement Linux. Ils peuvent développer sur Windows tout en exécutant et en testant leur code dans un environnement Linux. Interopérabilité WSL permet une interaction transparente entre Windows et Linux, où vous pouvez accéder aux fichiers Windows depuis Linux et vice-versa, exécuter des commandes Linux dans PowerShell, et même lancer des applications Windows depuis l’environnement Linux. Pour accéder aux répertoires partagés, Du terminal linux, aller dans le répertoire /mnt. Vous y trouverez des dossiers correspondant à chaque lecteur de votre système Windows. Par exemple, /mnt/c représente le lecteur C: de Windows, /mnt/d le lecteur D:, et ainsi de suite. Depuis l’Explorateur de Fichiers de Windows, vous pouvez taper \wsl$ dans la barre d’adresse de l’Explorateur de Fichiers de Windows. Cela vous donnera accès aux fichiers de votre distribution Linux. Dans l’atelier, nous allons voir comment installer et utiliser WSL avec Ubuntu et Visual Studio Code (VS Code).">
-    <meta property="og:url" content="http://localhost:57982/semaine14/cours/index.html">
+Choisir et installer des distributions Linux à partir du Microsoft Store. Exécuter des commandes en ligne de commande tels que grep, sed et awk et autres Exécuter des scripts Bash et des logiciels Linux Développement Croisé WSL est particulièrement utile pour les développeurs qui travaillent avec des technologies basées sur Linux ou des projets qui doivent être exécutés ou testés dans un environnement Linux.">
+    <meta property="og:url" content="http://localhost:1313/semaine14/cours/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="WSL avec Ubuntu et VS Code :: 420-ZG4-MO LINUX">
     <meta property="og:description" content="Qu’est-ce que WSL? Windows Subsystem for Linux (WSL) est une fonctionnalité de Windows qui permet d’exécuter un environnement Linux directement sur un système Windows sans avoir besoin d’une machine virtuelle.
 Grâce à WSL, vous pouvez :
-Choisir et installer des distributions Linux à partir du Microsoft Store. Exécuter des commandes en ligne de commande tels que grep, sed et awk et autres Exécuter des scripts Bash et des logiciels Linux Développement Croisé WSL est particulièrement utile pour les développeurs qui travaillent avec des technologies basées sur Linux ou des projets qui doivent être exécutés ou testés dans un environnement Linux. Ils peuvent développer sur Windows tout en exécutant et en testant leur code dans un environnement Linux. Interopérabilité WSL permet une interaction transparente entre Windows et Linux, où vous pouvez accéder aux fichiers Windows depuis Linux et vice-versa, exécuter des commandes Linux dans PowerShell, et même lancer des applications Windows depuis l’environnement Linux. Pour accéder aux répertoires partagés, Du terminal linux, aller dans le répertoire /mnt. Vous y trouverez des dossiers correspondant à chaque lecteur de votre système Windows. Par exemple, /mnt/c représente le lecteur C: de Windows, /mnt/d le lecteur D:, et ainsi de suite. Depuis l’Explorateur de Fichiers de Windows, vous pouvez taper \wsl$ dans la barre d’adresse de l’Explorateur de Fichiers de Windows. Cela vous donnera accès aux fichiers de votre distribution Linux. Dans l’atelier, nous allons voir comment installer et utiliser WSL avec Ubuntu et Visual Studio Code (VS Code).">
+Choisir et installer des distributions Linux à partir du Microsoft Store. Exécuter des commandes en ligne de commande tels que grep, sed et awk et autres Exécuter des scripts Bash et des logiciels Linux Développement Croisé WSL est particulièrement utile pour les développeurs qui travaillent avec des technologies basées sur Linux ou des projets qui doivent être exécutés ou testés dans un environnement Linux.">
     <meta property="og:locale" content="en_us">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="WSL avec Ubuntu et VS Code :: 420-ZG4-MO LINUX">
     <meta itemprop="description" content="Qu’est-ce que WSL? Windows Subsystem for Linux (WSL) est une fonctionnalité de Windows qui permet d’exécuter un environnement Linux directement sur un système Windows sans avoir besoin d’une machine virtuelle.
 Grâce à WSL, vous pouvez :
-Choisir et installer des distributions Linux à partir du Microsoft Store. Exécuter des commandes en ligne de commande tels que grep, sed et awk et autres Exécuter des scripts Bash et des logiciels Linux Développement Croisé WSL est particulièrement utile pour les développeurs qui travaillent avec des technologies basées sur Linux ou des projets qui doivent être exécutés ou testés dans un environnement Linux. Ils peuvent développer sur Windows tout en exécutant et en testant leur code dans un environnement Linux. Interopérabilité WSL permet une interaction transparente entre Windows et Linux, où vous pouvez accéder aux fichiers Windows depuis Linux et vice-versa, exécuter des commandes Linux dans PowerShell, et même lancer des applications Windows depuis l’environnement Linux. Pour accéder aux répertoires partagés, Du terminal linux, aller dans le répertoire /mnt. Vous y trouverez des dossiers correspondant à chaque lecteur de votre système Windows. Par exemple, /mnt/c représente le lecteur C: de Windows, /mnt/d le lecteur D:, et ainsi de suite. Depuis l’Explorateur de Fichiers de Windows, vous pouvez taper \wsl$ dans la barre d’adresse de l’Explorateur de Fichiers de Windows. Cela vous donnera accès aux fichiers de votre distribution Linux. Dans l’atelier, nous allons voir comment installer et utiliser WSL avec Ubuntu et Visual Studio Code (VS Code).">
+Choisir et installer des distributions Linux à partir du Microsoft Store. Exécuter des commandes en ligne de commande tels que grep, sed et awk et autres Exécuter des scripts Bash et des logiciels Linux Développement Croisé WSL est particulièrement utile pour les développeurs qui travaillent avec des technologies basées sur Linux ou des projets qui doivent être exécutés ou testés dans un environnement Linux.">
     <meta itemprop="wordCount" content="262">
     <title>WSL avec Ubuntu et VS Code :: 420-ZG4-MO LINUX</title>
     <link href="/semaine14/cours/index.xml" rel="alternate" type="application/rss+xml" title="WSL avec Ubuntu et VS Code :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1744597269" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1744597269" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1744597269" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1744597269" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1744597269" rel="stylesheet">
-    <link href="/css/theme.css?1744597269" rel="stylesheet">
-    <link href="/css/format-html.css?1744597269" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1745511295" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745511295" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1745511295" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745511295" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1745511295" rel="stylesheet">
+    <link href="/css/theme.css?1745511295" rel="stylesheet">
+    <link href="/css/format-html.css?1745511295" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..';
-      window.relearn.absBaseUri='http:\/\/localhost:57982';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.min = ``;
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
@@ -214,7 +214,7 @@ Choisir et installer des distributions Linux à partir du Microsoft Store. Exéc
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1744597269";
+          window.index_js_url="/searchindex.en.js?1745511295";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -227,12 +227,12 @@ Choisir et installer des distributions Linux à partir du Microsoft Store. Exéc
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1744597269" defer></script>
-        <script src="/js/lunr/lunr.min.js?1744597269" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1744597269" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1744597269" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1744597269" defer></script>
-        <script src="/js/search.js?1744597269" defer></script>
+        <script src="/js/auto-complete.js?1745511295" defer></script>
+        <script src="/js/lunr/lunr.min.js?1745511295" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1745511295" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1745511295" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1745511295" defer></script>
+        <script src="/js/search.js?1745511295" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -317,8 +317,8 @@ Choisir et installer des distributions Linux à partir du Microsoft Store. Exéc
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1744597269" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1744597269" defer></script>
-    <script src="/js/theme.js?1744597269" defer></script>
+    <script src="/js/clipboard.min.js?1745511295" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1745511295" defer></script>
+    <script src="/js/theme.js?1745511295" defer></script>
   </body>
 </html>

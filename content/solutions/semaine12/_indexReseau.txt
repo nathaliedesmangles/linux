@@ -1,0 +1,61 @@
++++
+title = "Atelier Réseau"
+weight = 
+draft = true
++++
+
+# Solution de l'exercice
+
+On suppose que l’interface Ethernet s’appelle `ens160` (vous pouvez vérifier avec `ip a` si elle s'appelle autrement comme `ens33`, `enp0s3`, etc.).
+
+---
+
+### 1. Afficher l’adresse IP de l’interface Ethernet
+
+```bash
+ip addr show ens160
+```
+
+Ou pour n’afficher que l’adresse IP :
+
+```bash
+ip -4 addr show ens160 | grep inet
+```
+
+
+### 2. Ajouter deux autres adresses IP à l’interface (même sous-réseau)
+
+Si l’adresse actuelle est par exemple `192.168.1.10/24`, on peut ajouter `192.168.1.100` et `192.168.1.101` :
+
+```bash
+sudo ip addr add 192.168.1.100/24 dev ens160
+sudo ip addr add 192.168.1.101/24 dev ens160
+```
+
+
+### 3. Vérifier la réponse avec `ping`
+
+```bash
+ping 192.168.1.100
+ping 192.168.1.101
+```
+
+On doit voir des réponses si les adresses sont bien assignées.
+
+
+### 4. Supprimer les adresses IP ajoutées
+
+```bash
+sudo ip addr del 192.168.1.100/24 dev ens160
+sudo ip addr del 192.168.1.101/24 dev ens160
+```
+
+
+### 5. Faire un ping vers les adresses supprimées
+
+```bash
+ping 192.168.1.100
+ping 192.168.1.101
+```
+
+Cette fois, on **ne devrait pas** avoir de réponse (host unreachable ou timeout), puisque les adresses ont été retirées.
