@@ -3,7 +3,7 @@
   <channel>
     <title>TEST #4: Résumés :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/revisiontest4/index.html</link>
-    <description>Informations Date : jeudi 8 mai Durée : 1h40, X questions (X à confirmer) Format : Test Moodle Documentation permise : 1 feuille recto-verso (manuscrites ou imprimées) Semaine #10: Utilisateurs et groupes 1. Utilisateurs Qu’est-ce qu’un utilisateur ? Une entité (personne ou processus) ayant un compte sur le système. Identifié par un UID (User ID). Possède des droits et permissions spécifiques. Types de comptes root (UID 0) : super-utilisateur, tous les droits.</description>
+    <description>Informations Date : jeudi 8 mai Durée : 1h40, X questions (X à confirmer) Matière : Atelier #10 (a, b, c et d) Format : Test Moodle Documentation permise : 1 feuille recto-verso (manuscrites ou imprimées) Semaine #10: Utilisateurs et groupes 1. Utilisateurs Qu’est-ce qu’un utilisateur ? Une entité (personne ou processus) ayant un compte sur le système. Identifié par un UID (User ID). Possède des droits et permissions spécifiques. Types de comptes root (UID 0) : super-utilisateur, tous les droits.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/revisiontest4/index.xml" rel="self" type="application/rss+xml" />

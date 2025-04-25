@@ -7,6 +7,7 @@ weight = 133
 
 - **Date** : jeudi 8 mai
 - **Durée** : 1h40, X questions (X à confirmer)
+- **Matière** : Atelier #10 (a, b, c et d)
 - **Format** : Test Moodle
 - **Documentation permise** : 1 feuille recto-verso (manuscrites ou imprimées)
 
@@ -147,7 +148,7 @@ Basée sur la valeur binaire des permissions :
 
 ### Tableau des permissions Linux
 
-| **Catégorie** | **Droit** | **Symbole** |**Valeur (binaire) | **Valeur (octale)** | **Effet sur un fichier** | **Effet sur un répertoire** |
+| Catégorie | Droit | Symbole |Valeur (binaire) | Valeur (octale) | Effet sur un fichier | Effet sur un répertoire |
 |---------------|-----------|-------------|----------------------|---------------|---------------------------|------------------------------|
 | Lecture        | read      | `r`         |  1 0 0   | 4                    | Lire le contenu           | Voir la liste des fichiers   |
 | Écriture       | write     | `w`         |  0  1 0 | 2                    | Modifier / supprimer      | Créer ou supprimer des fichiers |
@@ -156,7 +157,7 @@ Basée sur la valeur binaire des permissions :
 
 ### Exemples de permissions octales
 
-| **Commande**         | **Symbolique**   | **Signification**                          |
+| Commande         | Symbolique   | Signification                          |
 |----------------------|------------------|--------------------------------------------|
 | `chmod 777 fichier`  | `rwxrwxrwx`      | Tous les droits pour tous                 |
 | `chmod 755 fichier`  | `rwxr-xr-x`      | Propriétaire : tout, autres : lecture+exécution |
@@ -229,7 +230,7 @@ En haut du fichier, on ajoute :
 
 ### Commandes courantes
 
-| **But**                              | **Commande**                              |
+| But                                 | Commande                              |
 |-------------------------------------|-------------------------------------------|
 | Donner tous les droits à tous       | `chmod a+rwx fichier`                     |
 | Enlever le droit d’écriture à tous sauf au propriétaire | `chmod go-w fichier`              |
