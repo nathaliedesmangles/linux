@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EXAMEN FINAL :: 420-ZG4-MO LINUX</title>
+    <link>http://localhost:1313/semaine15/atelier/index.html</link>
+    <description>Informations Date : jeudi 15 mai Durée : 1h40, X questions (X à confirmer) Format : Test Moodle Documentation permise : nombre de feuilles illimité (manuscrites ou imprimées)</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/semaine15/atelier/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

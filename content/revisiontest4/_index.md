@@ -1,15 +1,14 @@
 +++
 title = "TEST #4: Résumés"
 weight = 133
-draft = true
 +++
 
 # Informations
 
 - **Date** : jeudi 8 mai
-- **Durée** : 1h40, 15 questions (à confirmer)
+- **Durée** : 1h40, X questions (X à confirmer)
 - **Format** : Test Moodle
-- **Documentation permise** : 2 feuilles rect0-verso (manuscrites ou imprimées) **À confirmer**
+- **Documentation permise** : 1 feuille recto-verso (manuscrites ou imprimées)
 
 ---
 
@@ -34,7 +33,7 @@ draft = true
 
 - **`useradd`** : création d’un utilisateur.
 - **`passwd`** : changement de mot de passe.
-- **`userdel`** : suppression d’un utilisateur (`-r` pour supprimer son dossier).
+- **`userdel`** : suppression d’un utilisateur (`-r` pour supprimer son dossier personnel).
 - **`usermod`** : modification d’un utilisateur (groupe, shell, répertoire, etc.).
 - **`id`**, **`groups`** : voir UID/GID et groupes.
 
@@ -66,6 +65,7 @@ draft = true
 
 - **Groupe principal** : utilisé lors de la création de fichiers (défini dans `/etc/passwd`).
 - **Groupes secondaires** : ajoutent des permissions supplémentaires.
+- Un utilisateur ne peut avoir **qu'un seul groupe principal**, mais il peut avoir **plusieurs groupes secondaires**.
 
 ### Commandes importantes
 
@@ -275,10 +275,10 @@ En haut du fichier, on ajoute :
 ## À retenir
 
 - Les commandes `ip` modifient **temporairement** la configuration
-- Pour une configuration **persistante**, utilisez `nmcli` ou modifiez les fichiers
-- Le fichier `/etc/hosts` permet d’attribuer des noms locaux (utile pour les pings)
-- Le DNS est défini dans `/etc/resolv.conf`
-- Toujours **redémarrer le réseau** ou la connexion après une modification
+- Pour une configuration **persistante**, utilisez `nmcli` ou modifiez les fichiers.
+- Le fichier `/etc/hosts` permet d’attribuer des noms locaux (utile pour les pings).
+- Le DNS est défini dans `/etc/resolv.conf`.
+- Toujours **redémarrer le réseau** ou la connexion après une modification.
 
 ---
 
@@ -294,6 +294,7 @@ En haut du fichier, on ajoute :
 4. Créer un répertoire vide → mkdir /mnt/data
 5. Monter la partition → mount /dev/sdX1 /mnt/data
 6. (Optionnel) Montage permanent → /etc/fstab
+7. Démonter la partition → umount /dev/sdX1 /mnt/data
 ```
 
 ## Schéma visuel simplifié 
@@ -317,6 +318,10 @@ En haut du fichier, on ajoute :
         ↓
 (Optionnel)
 → /etc/fstab → montage automatique au démarrage
+        ↓
+[ Démontage ]
+→ umount /dev/sdb1 /mnt/data
+
 ```
 
 ## Quelques commandes utiles :
@@ -327,6 +332,7 @@ En haut du fichier, on ajoute :
 | Créer une partition       | `fdisk /dev/sdb`                    |
 | Formater une partition    | `mkfs.ext4 /dev/sdb1`               |
 | Monter une partition      | `mount /dev/sdb1 /mnt/data`         |
+| Démonter une partition    | `umount /dev/sdb1 /mnt/data`        |
 | Voir les montages actifs  | `df -h`                             |
 | Tester le fichier fstab   | `mount -a`                          |
 

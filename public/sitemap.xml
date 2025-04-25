@@ -124,10 +124,16 @@
     <loc>https://example.org/semaine13/atelier/index.html</loc>
   </url>
   <url>
+    <loc>https://example.org/revisiontest4/index.html</loc>
+  </url>
+  <url>
     <loc>https://example.org/semaine14/index.html</loc>
   </url>
   <url>
     <loc>https://example.org/semaine14/atelier/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/semaine15/index.html</loc>
   </url>
   <url>
     <loc>https://example.org/aidesvm/vmwaretools/index.html</loc>

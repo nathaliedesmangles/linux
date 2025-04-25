@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TEST #4: Résumés :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/revisiontest4/index.html</link>
-    <description>Informations Date : jeudi 8 mai Durée : 1h40, 15 questions (à confirmer) Format : Test Moodle Documentation permise : 2 feuilles rect0-verso (manuscrites ou imprimées) À confirmer Semaine #10: Utilisateurs et groupes 1. Utilisateurs Qu’est-ce qu’un utilisateur ? Une entité (personne ou processus) ayant un compte sur le système. Identifié par un UID (User ID). Possède des droits et permissions spécifiques. Types de comptes root (UID 0) : super-utilisateur, tous les droits.</description>
+    <link>https://example.org/revisiontest4/index.html</link>
+    <description>Informations Date : jeudi 8 mai Durée : 1h40, X questions (X à confirmer) Format : Test Moodle Documentation permise : 1 feuille recto-verso (manuscrites ou imprimées) Semaine #10: Utilisateurs et groupes 1. Utilisateurs Qu’est-ce qu’un utilisateur ? Une entité (personne ou processus) ayant un compte sur le système. Identifié par un UID (User ID). Possède des droits et permissions spécifiques. Types de comptes root (UID 0) : super-utilisateur, tous les droits.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/revisiontest4/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/revisiontest4/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

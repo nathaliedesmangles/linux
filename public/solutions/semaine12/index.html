@@ -26,14 +26,14 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
     <meta itemprop="description" content="Solution de l’exercice On suppose que l’interface Ethernet s’appelle ens160 (vous pouvez vérifier avec ip a si elle s’appelle autrement comme ens33, enp0s3, etc.).
 1. Afficher l’adresse IP de l’interface Ethernet ip addr show ens160Ou pour n’afficher que l’adresse IP :
 ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’interface (même sous-réseau) Si l’adresse actuelle est par exemple 192.168.1.10/24, on peut ajouter 192.">
-    <meta itemprop="wordCount" content="296">
+    <meta itemprop="wordCount" content="315">
     <title>Atelier #10c :: 420-ZG4-MO LINUX</title>
     <link href="/solutions/semaine12/index.xml" rel="alternate" type="application/rss+xml" title="Atelier #10c :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1745511633" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745511633" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1745511633" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745511633" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1745511633" rel="stylesheet">
-    <link href="/css/theme.css?1745511633" rel="stylesheet">
-    <link href="/css/format-html.css?1745511633" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1745596428" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745596428" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1745596428" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745596428" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1745596428" rel="stylesheet">
+    <link href="/css/theme.css?1745596428" rel="stylesheet">
+    <link href="/css/format-html.css?1745596428" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -162,7 +162,7 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
 <h3 id="5-faire-un-ping-vers-les-adresses-supprimées">5. Faire un ping vers les adresses supprimées</h3>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping 192.168.1.100
 </span></span><span style="display:flex;"><span>ping 192.168.1.101</span></span></code></pre></div>
-<p>Cette fois, on <strong>ne devrait pas</strong> avoir de réponse (<em><strong>host unreachable</strong></em> ou <em><strong>timeout</strong></em>), puisque les adresses ont été retirées.</p>
+<p>Cette fois, on <strong>ne devrait pas</strong> avoir de réponse, mais un message comme <em>hôte de destination injoignable</em> (<em><strong>destination host unreachable</strong></em>), <em>Délai d’attente dépassé</em> (<em><strong>Request timed out</strong></em>) ou <em>0 reçus</em> (<em><strong>100% packet loss</strong></em>), puisque les adresses ont été retirées.</p>
 <h4 id="51-options-utiles-avec-ping">5.1 Options utiles avec ping</h4>
 
 <details open class=" box cstyle notices secondary">
@@ -209,7 +209,7 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1745511633";
+          window.index_js_url="/searchindex.en.js?1745596428";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -222,12 +222,12 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1745511633" defer></script>
-        <script src="/js/lunr/lunr.min.js?1745511633" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1745511633" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1745511633" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1745511633" defer></script>
-        <script src="/js/search.js?1745511633" defer></script>
+        <script src="/js/auto-complete.js?1745596428" defer></script>
+        <script src="/js/lunr/lunr.min.js?1745596428" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1745596428" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1745596428" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1745596428" defer></script>
+        <script src="/js/search.js?1745596428" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -328,8 +328,8 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1745511633" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1745511633" defer></script>
-    <script src="/js/theme.js?1745511633" defer></script>
+    <script src="/js/clipboard.min.js?1745596428" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1745596428" defer></script>
+    <script src="/js/theme.js?1745596428" defer></script>
   </body>
 </html>

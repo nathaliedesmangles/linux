@@ -58,7 +58,7 @@ ping 192.168.1.100
 ping 192.168.1.101
 ```
 
-Cette fois, on **ne devrait pas** avoir de réponse (***host unreachable*** ou ***timeout***), puisque les adresses ont été retirées.
+Cette fois, on **ne devrait pas** avoir de réponse, mais un message comme *hôte de destination injoignable* (***destination host unreachable***), *Délai d’attente dépassé* (***Request timed out***) ou *0 reçus* (***100% packet loss***), puisque les adresses ont été retirées.
 
 #### 5.1 Options utiles avec ping
 

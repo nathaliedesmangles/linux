@@ -113,11 +113,25 @@
       <description>Plan de la leçon Théorie : lundi 28 avril&#xA;Ajout de disque (nommage) Création de partitions Création de système de fichiers Montage d’une partition Atelier : jeudi 1er mai.&#xA;Création et gestion d’un disque et sa partition</description>
     </item>
     <item>
+      <title>TEST #4: Résumés</title>
+      <link>https://example.org/revisiontest4/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/revisiontest4/index.html</guid>
+      <description>Informations Date : jeudi 8 mai Durée : 1h40, X questions (X à confirmer) Format : Test Moodle Documentation permise : 1 feuille recto-verso (manuscrites ou imprimées) Semaine #10: Utilisateurs et groupes 1. Utilisateurs Qu’est-ce qu’un utilisateur ? Une entité (personne ou processus) ayant un compte sur le système. Identifié par un UID (User ID). Possède des droits et permissions spécifiques. Types de comptes root (UID 0) : super-utilisateur, tous les droits.</description>
+    </item>
+    <item>
       <title>WSL installation et manipulation (Ubuntu, VS Code)</title>
       <link>https://example.org/semaine14/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine14/index.html</guid>
       <description>Plan de la leçon Théorie/Test :&#xA;Validation de l’atelier #10 Atelier :&#xA;Installation de WSL et Ubuntu et VS Code</description>
+    </item>
+    <item>
+      <title>Révision et Examen final</title>
+      <link>https://example.org/semaine15/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine15/index.html</guid>
+      <description>Lundi 12 mai –&gt; Révision Vous devrez effectuer un test formatif sur Moodle. Pour le test formatif, le nombre de tentatives est illimité. Vous aurez un feedback (points et bonnes réponses) après avoir soumis le test. Jeudi 15 mai –&gt; EXAMEN FINAL Informations Date : jeudi 15 mai Durée : 1h40, X questions (X à confirmer) Format : Test Moodle Documentation permise : nombre de feuilles illimité (manuscrites ou imprimées)</description>
     </item>
     <item>
       <title>Solutions: ateliers et tests</title>

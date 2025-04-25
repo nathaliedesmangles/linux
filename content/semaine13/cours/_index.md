@@ -183,7 +183,7 @@ Il faut modifier le fichier **`/etc/fstab`**.
 /dev/sdb1    /root/data    ext4    defaults    0 0
 ```
 
-Teste si tout est correct :
+Tester si tout est correct :
 
 ```bash
 $ mount -a
