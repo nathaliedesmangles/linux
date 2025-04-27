@@ -3,12 +3,14 @@ title = "Gestion des disques"
 weight = 131
 +++
 
-## Introduction
+## Rappels
 
 En Linux, il n’existe **qu’un seul système de fichiers** :  
 **`/`** ← C’est la racine de tout.
 
 Contrairement à Windows, il n’y a pas plusieurs racines comme `C:`, `D:`, etc.
+
+## Introduction
 
 En Linux, **tout est un fichier**, même les disques et périphériques.  
 Ils se trouvent dans le répertoire :  
@@ -87,7 +89,7 @@ Disque /dev/mapper/centos-home : 20.1 Go
 ### Quelques infos utiles
 
 - On peut créer **4 partitions principales** maximum.
-- Ou 1 partition principale + **1 étendue** (dans laquelle on met plusieurs partitions logiques).
+- Ou **1 partition principale** + **1 étendue** (dans laquelle on met plusieurs partitions logiques).
 
 ### Créer une partition
 
@@ -143,7 +145,7 @@ Une fois formatée, la partition est prête…
 
 Monter une partition = **lui donner un chemin d’accès** dans le système.
 
-### Rappel important
+### Rappels importants
 
 - On monte une partition dans **un répertoire vide**.
 - Si le répertoire contient déjà des fichiers, ils **seront masqués** jusqu’au démontage.
@@ -189,14 +191,24 @@ Tester si tout est correct :
 $ mount -a
 ```
 
-**Résumé des étapes à retenir :**
+La commande `mount -a` sert à monter automatiquement **tous les systèmes de fichiers** qui sont listés dans le fichier `/etc/fstab`, à condition qu’ils soient configurés pour être montés automatiquement.
 
-1. Ajouter le disque
-2. Créer des partitions avec `fdisk`
-3. Créer un système de fichiers avec `mkfs`
-4. Monter la partition avec `mount`
-5. (Optionnel) Rendre le montage permanent avec `/etc/fstab`
+- `mount` est la commande pour monter des systèmes de fichiers (disques, partitions, etc.).
+- `-a` (abréviation de `--all`) indique à mount de lire `/etc/fstab` et de monter tout ce qui y est défini, sauf les entrées marquées avec l’option `noauto`.
 
+
+Exemple du fichier `/etc/fstab` :
+```php-template
+# <file system>  <mount point>  <type>  <options>       <dump>  <pass>
+UUID=1234abcd-56ef-78gh-90ij-123456klmnop /mnt/backup   ext4    defaults        0       2
+/dev/sdb1        /mnt/usb       vfat    defaults,noauto 0       0
+```
+
+**Explication** :
+
+- La première ligne dit que la partition avec l'UUID donné sera montée automatiquement sur `/mnt/backup` au format `ext4`.
+
+- La deuxième ligne concerne une clé USB sur /dev/sdb1, qui sera montée sur `/mnt/usb` au format vfat, mais **avec l'option** `noauto` → elle ne sera pas montée automatiquement avec `mount -a`.
 
 ## Démonter un disque ou une partition avec *umount*
 

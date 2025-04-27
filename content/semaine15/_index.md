@@ -16,6 +16,7 @@ weight = 150
 ### Informations
 
 - **Date** : jeudi 15 mai
+- **Matière** : Toute depuis le début de la session
 - **Durée** : 1h40, X questions (X à confirmer)
 - **Format** : Test Moodle
 - **Documentation permise** : nombre de feuilles illimité (manuscrites ou imprimées)

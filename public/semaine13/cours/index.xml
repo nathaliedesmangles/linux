@@ -3,7 +3,7 @@
   <channel>
     <title>Gestion des disques :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine13/cours/index.html</link>
-    <description>Introduction En Linux, il n’existe qu’un seul système de fichiers :&#xA;/ ← C’est la racine de tout.&#xA;Contrairement à Windows, il n’y a pas plusieurs racines comme C:, D:, etc.&#xA;En Linux, tout est un fichier, même les disques et périphériques.&#xA;Ils se trouvent dans le répertoire :&#xA;/dev&#xA;Les disques y apparaissent comme fichiers de type bloc.&#xA;On ne peut pas utiliser ces fichiers directement. Il faut suivre ces 3 étapes :</description>
+    <description>Rappels En Linux, il n’existe qu’un seul système de fichiers :&#xA;/ ← C’est la racine de tout.&#xA;Contrairement à Windows, il n’y a pas plusieurs racines comme C:, D:, etc.&#xA;Introduction En Linux, tout est un fichier, même les disques et périphériques.&#xA;Ils se trouvent dans le répertoire :&#xA;/dev&#xA;Les disques y apparaissent comme fichiers de type bloc.&#xA;On ne peut pas utiliser ces fichiers directement. Il faut suivre ces 3 étapes :</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine13/cours/index.xml" rel="self" type="application/rss+xml" />
