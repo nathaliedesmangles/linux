@@ -42,14 +42,14 @@ Introduction En Linux, tout est un fichier, même les disques et périphériques
 Ils se trouvent dans le répertoire : /dev
 Les disques y apparaissent comme fichiers de type bloc.
 On ne peut pas utiliser ces fichiers directement. Il faut suivre ces 3 étapes :">
-    <meta itemprop="wordCount" content="843">
+    <meta itemprop="wordCount" content="863">
     <title>Gestion des disques :: 420-ZG4-MO LINUX</title>
     <link href="/semaine13/cours/index.xml" rel="alternate" type="application/rss+xml" title="Gestion des disques :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1745805552" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745805552" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1745805552" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745805552" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1745805552" rel="stylesheet">
-    <link href="/css/theme.min.css?1745805552" rel="stylesheet">
-    <link href="/css/format-html.min.css?1745805552" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1745858750" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745858750" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1745858750" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745858750" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1745858750" rel="stylesheet">
+    <link href="/css/theme.min.css?1745858750" rel="stylesheet">
+    <link href="/css/format-html.min.css?1745858750" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -265,6 +265,9 @@ Premier disque NVMe → <code>/dev/nvme0n1</code></p>
 <p>Une partition vide ne sert à rien.<br>
 Il faut y créer un <strong>système de fichiers</strong>.</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo mkfs -t ext4 /dev/sdb1</span></span></code></pre></div>
+<blockquote>
+<p><code>-t</code> ext4: spécifie le type de système de fichiers à créer (la valeur par défaut est ext2 si non spécifié).</p>
+</blockquote>
 <p>ou</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo mkfs.ext4 /dev/sdb1</span></span></code></pre></div>
 <p>Les deux font la même chose.</p>
@@ -349,7 +352,7 @@ UUID=1234abcd-56ef-78gh-90ij-123456klmnop /mnt/backup   ext4    defaults        
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1745805552";
+          window.index_js_url="/searchindex.en.js?1745858750";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -362,12 +365,12 @@ UUID=1234abcd-56ef-78gh-90ij-123456klmnop /mnt/backup   ext4    defaults        
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1745805552" defer></script>
-        <script src="/js/lunr/lunr.min.js?1745805552" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1745805552" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1745805552" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1745805552" defer></script>
-        <script src="/js/search.js?1745805552" defer></script>
+        <script src="/js/auto-complete.js?1745858750" defer></script>
+        <script src="/js/lunr/lunr.min.js?1745858750" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1745858750" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1745858750" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1745858750" defer></script>
+        <script src="/js/search.js?1745858750" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -454,8 +457,8 @@ UUID=1234abcd-56ef-78gh-90ij-123456klmnop /mnt/backup   ext4    defaults        
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1745805552" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1745805552" defer></script>
-    <script src="/js/theme.js?1745805552" defer></script>
+    <script src="/js/clipboard.min.js?1745858750" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1745858750" defer></script>
+    <script src="/js/theme.js?1745858750" defer></script>
   </body>
 </html>

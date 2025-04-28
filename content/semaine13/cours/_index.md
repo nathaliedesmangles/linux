@@ -124,6 +124,7 @@ Il faut y créer un **système de fichiers**.
 ```bash
 $ sudo mkfs -t ext4 /dev/sdb1
 ```
+> `-t` ext4: spécifie le type de système de fichiers à créer (la valeur par défaut est ext2 si non spécifié).
 
 ou
 
