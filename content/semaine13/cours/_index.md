@@ -13,8 +13,7 @@ Contrairement à Windows, il n’y a pas plusieurs racines comme `C:`, `D:`, etc
 ## Introduction
 
 En Linux, **tout est un fichier**, même les disques et périphériques.  
-Ils se trouvent dans le répertoire :  
-**`/dev`**
+Ils se trouvent dans le répertoire : `/dev`
 
 Les disques y apparaissent comme **fichiers de type bloc**.
 
@@ -24,10 +23,15 @@ Les disques y apparaissent comme **fichiers de type bloc**.
 2. Formater la partition (créer un système de fichiers)
 3. Monter la partition (lui donner un chemin d’accès)
 
+---
 
-## Ajout de disques
+## Voir les disques disponibles
 
-Quand on ajoute un disque (réel ou virtuel), il apparaît dans **`/dev`**.
+```bash
+$ ls /dev
+$ ls /dev/sd*
+$ ls /dev/hd*
+```
 
 ### Nommage des disques
 
@@ -37,24 +41,14 @@ Quand on ajoute un disque (réel ou virtuel), il apparaît dans **`/dev`**.
 
 La lettre change selon l’ordre :  
 `a`, puis `b`, puis `c`, etc.
+`1`, puis `2`, puis `3`, etc. pour les NVMe
 
 > Exemple :  
 > Premier disque SATA → `/dev/sda`  
 > Deuxième disque SATA → `/dev/sdb`
+> Premier disque NVMe → `/dev/nvme0n1`
 
-**Un disque seul n’a pas de numéro** à la fin. Les numéros sont pour les partitions.
-
-### Voir les disques disponibles
-
-```bash
-$ ls /dev/sd*
-$ ls /dev/hd*
-```
-
-### Dans une machine virtuelle (VMware)
-
-- Si le pilote est **SCSI** : `sd[a-z]`
-- Si le pilote est **IDE** : `hd[a-z]`
+Mise à part les disques NVMe, **Un disque seul n’a pas de numéro** à la fin. Les numéros sont pour les partitions.
 
 ### Nommage des partitions
 
@@ -62,28 +56,32 @@ Chaque disque peut avoir plusieurs partitions :
 
 - `/dev/sda1`, `/dev/sda2`, ...
 - `/dev/hda1`, `/dev/hda2`, ...
+- `/dev/nvme0n1p1`, `/dev/nvme0n1p2`, ...
 
+## Ajout de disques
+
+- Quand on ajoute un disque (réel ou virtuel), il apparaît dans `/dev`.
+- Quand un disque est ajouté, il faut le **partitionner**
 
 ## Création de partitions
-
-Quand un disque est ajouté, il faut le **partitionner**.
 
 ### Voir les partitions existantes
 
 ```bash
-$ fdisk -l
+$ sudo fdisk -l
 ```
 
 Exemple de sortie :
 
 ```bash
-Disque /dev/sda : 64.4 Go
-/dev/sda1   *    ...   Linux
-/dev/sda2        ...   Linux LVM
+Disque /dev/nvme0n1 : 20 GiB, 21474836480 octets, 41943040 secteurs
 
-Disque /dev/mapper/centos-root : 41.1 Go
-Disque /dev/mapper/centos-swap : 2 Go
-Disque /dev/mapper/centos-home : 20.1 Go
+Périphérique   Amorçage   Début      Fin Secteurs Taille Id Type
+/dev/nvme0n1p1 *           2048  2099199  2097152     1G 83 Linu
+/dev/nvme0n1p2          2099200 41943039 39843840    19G 8e LVM 
+
+Disque /dev/mapper/almalinux-root : 17 GiB, 18249416704 octets, 
+Disque /dev/mapper/almalinux-swap : 2 GiB, 2147483648 octets, 
 ```
 
 ### Quelques infos utiles
@@ -96,12 +94,12 @@ Disque /dev/mapper/centos-home : 20.1 Go
 Utilise la commande :
 
 ```bash
-$ fdisk /dev/sdb
+$ sudo fdisk /dev/sdb  # + n, p + Entrée
 ```
 
 **NB** : pas de numéro à la fin !
 
-#### Étapes typiques dans *fdisk*
+**Étapes typiques dans *fdisk***
 
 - `n` → nouvelle partition
 - `p` → partition principale
@@ -115,6 +113,7 @@ Les nouvelles partitions seront visibles dans `/dev` :
 
 - `/dev/sdb1`
 - `/dev/sdb2`
+- `/dev/nvme0n1p1`
 - etc.
 
 
@@ -123,13 +122,13 @@ Les nouvelles partitions seront visibles dans `/dev` :
 Une partition vide ne sert à rien.  
 Il faut y créer un **système de fichiers**.
 ```bash
-$ mkfs -t ext4 /dev/sdb1
+$ sudo mkfs -t ext4 /dev/sdb1
 ```
 
 ou
 
 ```bash
-$ mkfs.ext4 /dev/sdb1
+$ sudo mkfs.ext4 /dev/sdb1
 ```
 
 Les deux font la même chose.
@@ -156,7 +155,7 @@ Monter une partition = **lui donner un chemin d’accès** dans le système.
 **1. Montage manuel (temporaire)**
 
 ```bash
-$ mount /dev/sdb1 /root/data
+$ sudo mount /dev/sdb1 /root/data
 ```
 
 Vérifie le montage :

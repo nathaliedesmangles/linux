@@ -110,7 +110,7 @@
       <link>https://example.org/semaine13/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine13/index.html</guid>
-      <description>Plan de la leçon Théorie : lundi 28 avril&#xA;Ajout de disque (nommage) Création de partitions Création de système de fichiers Montage d’une partition Atelier : jeudi 1er mai.&#xA;Création et gestion d’un disque et sa partition</description>
+      <description>Plan de la leçon Théorie : lundi 28 avril&#xA;Ajout de disque (nommage) Création de partitions Création de système de fichiers Montage et démontage d’une partition Atelier : jeudi 1er mai.&#xA;Création et gestion d’un disque et sa partition</description>
     </item>
     <item>
       <title>TEST #4: Résumés</title>

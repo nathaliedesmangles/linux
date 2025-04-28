@@ -11,7 +11,7 @@ weight = 130
   - Ajout de disque (nommage)
   - Création de partitions
   - Création de système de fichiers
-  - Montage d'une partition
+  - Montage et démontage d'une partition
 
 - **Atelier : jeudi 1er mai**.
   - Création et gestion d'un disque et sa partition

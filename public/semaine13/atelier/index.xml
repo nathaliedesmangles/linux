@@ -3,7 +3,7 @@
   <channel>
     <title>ATELIER #10d: Gestion d&#39;un disque :: 420-ZG4-MO LINUX</title>
     <link>https://example.org/semaine13/atelier/index.html</link>
-    <description>Objectif de l’atelier Ajout d’un disque Création d’une partition Création d’un système de fichier sur la partition. Création d’un répertoire vide. Atelier Exercice Ajouter un disque virtuel à votre VM d’une taille de 10G.&#xA;Une fois ajouté, tapez ls /dev et identifiez votre disque. Créez une partition primaire dans votre disque.&#xA;Tapez ls /dev et identifiez la partition créée.&#xA;Créez un système de fichier de votre choix sur la partition.</description>
+    <description>Objectif de l’atelier Ajout d’un disque Création d’une partition Création d’un système de fichier sur la partition. Création d’un répertoire vide. Démontage d’une partition. Atelier Exercice Ajouter un disque virtuel à votre VM d’une taille de 10G.&#xA;Une fois ajouté, tapez ls /dev et identifiez votre disque. Créer une partition primaire dans votre disque.&#xA;Taper ls /dev et identifiez la partition créée.&#xA;Créer un système de fichier de votre choix sur la partition.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://example.org/semaine13/atelier/index.xml" rel="self" type="application/rss+xml" />

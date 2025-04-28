@@ -9,6 +9,7 @@ weight = 132
  - Création d'une partition
  - Création d'un système de fichier sur la partition.
  - Création d'un répertoire vide.
+ - Démontage d'une partition.
 
 ---
 
@@ -21,13 +22,13 @@ weight = 132
 
    - Une fois ajouté, tapez `ls /dev` et identifiez votre disque.
 
-2. Créez une partition primaire dans votre disque.
+2. Créer une partition primaire dans votre disque.
 
-3. Tapez ls /dev et identifiez la partition créée.
+3. Taper `ls /dev` et identifiez la partition créée.
 
-4. Créez un système de fichier de votre choix sur la partition.
+4. Créer un système de fichier de votre choix sur la partition.
 
-5. Créez un répertoire vide de votre choix. Montez votre partition dans ce répertoire.
+5. Créer un répertoire vide de votre choix. Montez votre partition dans ce répertoire.
 
 6. Démonter votre partition.
 
