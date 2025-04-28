@@ -25,88 +25,92 @@ Les disques y apparaissent comme **fichiers de type bloc**.
 
 ---
 
+## Les disques sur VMWare
+
+- Avec VMWare, la règle d’assignation des noms de disques dans les VMs est la suivante:
+
+	- Un disque sera nommé sd[a-z] sauf si le pilote utilisé est SCSI.
+	- Un disque sera nommé nvme0n[1-..] si le le pilote est NVME
+
+- Les partitions sont ensuite numérotées pour chaque disque:
+
+	- sda1, sda2,…
+	- nvme0n1p1, nvme0n1p2,…
+
+
 ## Voir les disques disponibles
 
 ```bash
 $ ls /dev
+ou
 $ ls /dev/sd*
-$ ls /dev/hd*
+ou
+$ ls /dev/nmv0*
+ou
 ```
-
-### Nommage des disques
-
-- **SCSI ou SATA** : `sd[x]`  
-- **IDE** : `hd[x]`  
-- **NVMe** : `nvme0n[x]`
-
-La lettre change selon l’ordre :  
-`a`, puis `b`, puis `c`, etc.
-`1`, puis `2`, puis `3`, etc. pour les NVMe
-
-> Exemple :  
-> Premier disque SATA → `/dev/sda`  
-> Deuxième disque SATA → `/dev/sdb`
-> Premier disque NVMe → `/dev/nvme0n1`
-
-Mise à part les disques NVMe, **Un disque seul n’a pas de numéro** à la fin. Les numéros sont pour les partitions.
-
-### Nommage des partitions
-
-Chaque disque peut avoir plusieurs partitions :
-
-- `/dev/sda1`, `/dev/sda2`, ...
-- `/dev/hda1`, `/dev/hda2`, ...
-- `/dev/nvme0n1p1`, `/dev/nvme0n1p2`, ...
 
 ## Ajout de disques
 
 - Quand on ajoute un disque (réel ou virtuel), il apparaît dans `/dev`.
-- Quand un disque est ajouté, il faut le **partitionner**
+- Une fois le disque ajouté, il faut le partitionner
 
-## Création de partitions
+## Voir les partitions et disques existants
 
-### Voir les partitions existantes
+- La commande `fdisk` permet de manipuler et afficher les partitions.
+`fdisk -l` permet d’afficher toutes les partitions de tous les disques présents.
 
 ```bash
 $ sudo fdisk -l
 ```
 
-Exemple de sortie :
-
 ```bash
 Disque /dev/nvme0n1 : 20 GiB, 21474836480 octets, 41943040 secteurs
+Modèle de disque : VMware Virtual NVMe Disk
+Unités : secteur de 1 × 512 = 512 octets
+Taille de secteur (logique / physique) : 512 octets / 512 octets
+taille d'E/S (minimale / optimale) : 512 octets / 512 octets
+Type d'étiquette de disque : dos
+Identifiant de disque : 0xf1def729
 
 Périphérique   Amorçage   Début      Fin Secteurs Taille Id Type
-/dev/nvme0n1p1 *           2048  2099199  2097152     1G 83 Linu
-/dev/nvme0n1p2          2099200 41943039 39843840    19G 8e LVM 
+/dev/nvme0n1p1 *           2048  2099199  2097152     1G 83 Linux
+/dev/nvme0n1p2          2099200 41943039 39843840    19G 8e LVM Linux
 
-Disque /dev/mapper/almalinux-root : 17 GiB, 18249416704 octets, 
-Disque /dev/mapper/almalinux-swap : 2 GiB, 2147483648 octets, 
+Disque /dev/mapper/almalinux-root : 17 GiB, 18249416704 octets, 35643392 secteurs
+Unités : secteur de 1 × 512 = 512 octets
+Taille de secteur (logique / physique) : 512 octets / 512 octets
+taille d'E/S (minimale / optimale) : 512 octets / 512 octets
+
+Disque /dev/mapper/almalinux-swap : 2 GiB, 2147483648 octets, 4194304 secteurs
+Unités : secteur de 1 × 512 = 512 octets
+Taille de secteur (logique / physique) : 512 octets / 512 octets
+taille d'E/S (minimale / optimale) : 512 octets / 512 octets
 ```
 
-### Quelques infos utiles
-
+{{% notice style="orange" title="Note" %}}
 - On peut créer **4 partitions principales** maximum.
 - Ou **1 partition principale** + **1 étendue** (dans laquelle on met plusieurs partitions logiques).
+{{% /notice %}}
 
-### Créer une partition
 
-Utilise la commande :
+
+## Créer une partition
+
+- La création de partition se fait grâce à `fdisk`.
+- Pour créer des partitions, on utilise le disque, pas les partitions :
 
 ```bash
-$ sudo fdisk /dev/sdb  # + n, p + Entrée
+$ sudo fdisk /dev/sdb  
 ```
 
-**NB** : pas de numéro à la fin !
-
-**Étapes typiques dans *fdisk***
+Ensuite plusieurs options sont disponibles mais la création standard se fait avec les commandes suivantes:
 
 - `n` → nouvelle partition
 - `p` → partition principale
 - `Entrée` → accepte le numéro proposé (ou entre-en un)
 - `Entrée` → début de la partition (ou indique-le)
 - `Entrée` → fin de la partition  
-   ==> Exemple : `+3G` pour une taille de 3 Go
+	- `Entrée` Numéro du bloc de fin (peut être accepté ou spécifier). Pour spécifier une taille de partition: +3G par exemple. Le + est nécessaire ainsi que l’unité.
 - `w` → **sauvegarde et quitte**
 
 Les nouvelles partitions seront visibles dans `/dev` :
@@ -132,10 +136,8 @@ ou
 $ sudo mkfs.ext4 /dev/sdb1
 ```
 
-Les deux font la même chose.
-
-Types possibles : `ext2`, `ext3`, `ext4`, `xfs`, `fat32`, etc.  
-(Linux ne gère pas bien **NTFS**.)
+- Chaque partition du disque peut avoir un système de fichier différent: FAT, FAT32, EXT2, EXT3, EXT4, BTRFS, XFS…   
+- Linux ne gère pas bien **NTFS**.
 
 Une fois formatée, la partition est prête…  
 … mais il faut encore **la monter** !

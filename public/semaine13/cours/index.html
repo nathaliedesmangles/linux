@@ -42,14 +42,14 @@ Introduction En Linux, tout est un fichier, même les disques et périphériques
 Ils se trouvent dans le répertoire : /dev
 Les disques y apparaissent comme fichiers de type bloc.
 On ne peut pas utiliser ces fichiers directement. Il faut suivre ces 3 étapes :">
-    <meta itemprop="wordCount" content="863">
+    <meta itemprop="wordCount" content="998">
     <title>Gestion des disques :: 420-ZG4-MO LINUX</title>
     <link href="/semaine13/cours/index.xml" rel="alternate" type="application/rss+xml" title="Gestion des disques :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1745858750" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745858750" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1745858750" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745858750" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1745858750" rel="stylesheet">
-    <link href="/css/theme.min.css?1745858750" rel="stylesheet">
-    <link href="/css/format-html.min.css?1745858750" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1745867962" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1745867962" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1745867962" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1745867962" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1745867962" rel="stylesheet">
+    <link href="/css/theme.min.css?1745867962" rel="stylesheet">
+    <link href="/css/format-html.min.css?1745867962" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -114,20 +114,11 @@ On ne peut pas utiliser ces fichiers directement. Il faut suivre ces 3 étapes :
   <ul>
     <li><a href="#rappels">Rappels</a></li>
     <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#voir-les-disques-disponibles">Voir les disques disponibles</a>
-      <ul>
-        <li><a href="#nommage-des-disques">Nommage des disques</a></li>
-        <li><a href="#nommage-des-partitions">Nommage des partitions</a></li>
-      </ul>
-    </li>
+    <li><a href="#les-disques-sur-vmware">Les disques sur VMWare</a></li>
+    <li><a href="#voir-les-disques-disponibles">Voir les disques disponibles</a></li>
     <li><a href="#ajout-de-disques">Ajout de disques</a></li>
-    <li><a href="#création-de-partitions">Création de partitions</a>
-      <ul>
-        <li><a href="#voir-les-partitions-existantes">Voir les partitions existantes</a></li>
-        <li><a href="#quelques-infos-utiles">Quelques infos utiles</a></li>
-        <li><a href="#créer-une-partition">Créer une partition</a></li>
-      </ul>
-    </li>
+    <li><a href="#voir-les-partitions-et-disques-existants">Voir les partitions et disques existants</a></li>
+    <li><a href="#créer-une-partition">Créer une partition</a></li>
     <li><a href="#création-du-système-de-fichiers">Création du système de fichiers</a></li>
     <li><a href="#montage-dune-partition">Montage d’une partition</a>
       <ul>
@@ -191,67 +182,91 @@ Ils se trouvent dans le répertoire : <code>/dev</code></p>
 <li>Monter la partition (lui donner un chemin d’accès)</li>
 </ol>
 <hr>
+<h2 id="les-disques-sur-vmware">Les disques sur VMWare</h2>
+<ul>
+<li>
+<p>Avec VMWare, la règle d’assignation des noms de disques dans les VMs est la suivante:</p>
+<ul>
+<li>Un disque sera nommé sd[a-z] sauf si le pilote utilisé est SCSI.</li>
+<li>Un disque sera nommé nvme0n[1-..] si le le pilote est NVME</li>
+</ul>
+</li>
+<li>
+<p>Les partitions sont ensuite numérotées pour chaque disque:</p>
+<ul>
+<li>sda1, sda2,…</li>
+<li>nvme0n1p1, nvme0n1p2,…</li>
+</ul>
+</li>
+</ul>
 <h2 id="voir-les-disques-disponibles">Voir les disques disponibles</h2>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ls /dev
+</span></span><span style="display:flex;"><span>ou
 </span></span><span style="display:flex;"><span>$ ls /dev/sd*
-</span></span><span style="display:flex;"><span>$ ls /dev/hd*</span></span></code></pre></div>
-<h3 id="nommage-des-disques">Nommage des disques</h3>
-<ul>
-<li><strong>SCSI ou SATA</strong> : <code>sd[x]</code></li>
-<li><strong>IDE</strong> : <code>hd[x]</code></li>
-<li><strong>NVMe</strong> : <code>nvme0n[x]</code></li>
-</ul>
-<p>La lettre change selon l’ordre :<br>
-<code>a</code>, puis <code>b</code>, puis <code>c</code>, etc.
-<code>1</code>, puis <code>2</code>, puis <code>3</code>, etc. pour les NVMe</p>
-<blockquote>
-<p>Exemple :<br>
-Premier disque SATA → <code>/dev/sda</code><br>
-Deuxième disque SATA → <code>/dev/sdb</code>
-Premier disque NVMe → <code>/dev/nvme0n1</code></p>
-</blockquote>
-<p>Mise à part les disques NVMe, <strong>Un disque seul n’a pas de numéro</strong> à la fin. Les numéros sont pour les partitions.</p>
-<h3 id="nommage-des-partitions">Nommage des partitions</h3>
-<p>Chaque disque peut avoir plusieurs partitions :</p>
-<ul>
-<li><code>/dev/sda1</code>, <code>/dev/sda2</code>, &hellip;</li>
-<li><code>/dev/hda1</code>, <code>/dev/hda2</code>, &hellip;</li>
-<li><code>/dev/nvme0n1p1</code>, <code>/dev/nvme0n1p2</code>, &hellip;</li>
-</ul>
+</span></span><span style="display:flex;"><span>ou
+</span></span><span style="display:flex;"><span>$ ls /dev/nmv0*
+</span></span><span style="display:flex;"><span>ou</span></span></code></pre></div>
 <h2 id="ajout-de-disques">Ajout de disques</h2>
 <ul>
 <li>Quand on ajoute un disque (réel ou virtuel), il apparaît dans <code>/dev</code>.</li>
-<li>Quand un disque est ajouté, il faut le <strong>partitionner</strong></li>
+<li>Une fois le disque ajouté, il faut le partitionner</li>
 </ul>
-<h2 id="création-de-partitions">Création de partitions</h2>
-<h3 id="voir-les-partitions-existantes">Voir les partitions existantes</h3>
+<h2 id="voir-les-partitions-et-disques-existants">Voir les partitions et disques existants</h2>
+<ul>
+<li>La commande <code>fdisk</code> permet de manipuler et afficher les partitions.
+<code>fdisk -l</code> permet d’afficher toutes les partitions de tous les disques présents.</li>
+</ul>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo fdisk -l</span></span></code></pre></div>
-<p>Exemple de sortie :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Disque /dev/nvme0n1 : <span style="color:#ae81ff">20</span> GiB, 21474836480 octets, 41943040 secteurs
+</span></span><span style="display:flex;"><span>Modèle de disque : VMware Virtual NVMe Disk
+</span></span><span style="display:flex;"><span>Unités : secteur de <span style="color:#ae81ff">1</span> × 512 <span style="color:#f92672">=</span> 512 octets
+</span></span><span style="display:flex;"><span>Taille de secteur <span style="color:#f92672">(</span>logique / physique<span style="color:#f92672">)</span> : 512 octets / 512 octets
+</span></span><span style="display:flex;"><span>taille d<span style="color:#e6db74">&#39;E/S (minimale / optimale) : 512 octets / 512 octets
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Type d&#39;</span>étiquette de disque : dos
+</span></span><span style="display:flex;"><span>Identifiant de disque : 0xf1def729
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>Périphérique   Amorçage   Début      Fin Secteurs Taille Id Type
-</span></span><span style="display:flex;"><span>/dev/nvme0n1p1 *           <span style="color:#ae81ff">2048</span>  <span style="color:#ae81ff">2099199</span>  <span style="color:#ae81ff">2097152</span>     1G <span style="color:#ae81ff">83</span> Linu
-</span></span><span style="display:flex;"><span>/dev/nvme0n1p2          <span style="color:#ae81ff">2099200</span> <span style="color:#ae81ff">41943039</span> <span style="color:#ae81ff">39843840</span>    19G 8e LVM 
+</span></span><span style="display:flex;"><span>/dev/nvme0n1p1 *           <span style="color:#ae81ff">2048</span>  <span style="color:#ae81ff">2099199</span>  <span style="color:#ae81ff">2097152</span>     1G <span style="color:#ae81ff">83</span> Linux
+</span></span><span style="display:flex;"><span>/dev/nvme0n1p2          <span style="color:#ae81ff">2099200</span> <span style="color:#ae81ff">41943039</span> <span style="color:#ae81ff">39843840</span>    19G 8e LVM Linux
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Disque /dev/mapper/almalinux-root : <span style="color:#ae81ff">17</span> GiB, 18249416704 octets, 
-</span></span><span style="display:flex;"><span>Disque /dev/mapper/almalinux-swap : <span style="color:#ae81ff">2</span> GiB, 2147483648 octets, </span></span></code></pre></div>
-<h3 id="quelques-infos-utiles">Quelques infos utiles</h3>
+</span></span><span style="display:flex;"><span>Disque /dev/mapper/almalinux-root : <span style="color:#ae81ff">17</span> GiB, 18249416704 octets, 35643392 secteurs
+</span></span><span style="display:flex;"><span>Unités : secteur de <span style="color:#ae81ff">1</span> × 512 <span style="color:#f92672">=</span> 512 octets
+</span></span><span style="display:flex;"><span>Taille de secteur <span style="color:#f92672">(</span>logique / physique<span style="color:#f92672">)</span> : 512 octets / 512 octets
+</span></span><span style="display:flex;"><span>taille d<span style="color:#e6db74">&#39;E/S (minimale / optimale) : 512 octets / 512 octets
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Disque /dev/mapper/almalinux-swap : 2 GiB, 2147483648 octets, 4194304 secteurs
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Unités : secteur de 1 × 512 = 512 octets
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Taille de secteur (logique / physique) : 512 octets / 512 octets
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">taille d&#39;</span>E/S <span style="color:#f92672">(</span>minimale / optimale<span style="color:#f92672">)</span> : 512 octets / 512 octets</span></span></code></pre></div>
+
+<details open class=" box cstyle notices orange">
+  <summary class="box-label" tabindex="-1">
+    Note
+  </summary>
+  <div class="box-content">
 <ul>
 <li>On peut créer <strong>4 partitions principales</strong> maximum.</li>
 <li>Ou <strong>1 partition principale</strong> + <strong>1 étendue</strong> (dans laquelle on met plusieurs partitions logiques).</li>
 </ul>
-<h3 id="créer-une-partition">Créer une partition</h3>
-<p>Utilise la commande :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo fdisk /dev/sdb  <span style="color:#75715e"># + n, p + Entrée</span></span></span></code></pre></div>
-<p><strong>NB</strong> : pas de numéro à la fin !</p>
-<p><strong>Étapes typiques dans <em>fdisk</em></strong></p>
+  </div>
+</details>
+<h2 id="créer-une-partition">Créer une partition</h2>
+<ul>
+<li>La création de partition se fait grâce à <code>fdisk</code>.</li>
+<li>Pour créer des partitions, on utilise le disque, pas les partitions :</li>
+</ul>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo fdisk /dev/sdb  </span></span></code></pre></div>
+<p>Ensuite plusieurs options sont disponibles mais la création standard se fait avec les commandes suivantes:</p>
 <ul>
 <li><code>n</code> → nouvelle partition</li>
 <li><code>p</code> → partition principale</li>
 <li><code>Entrée</code> → accepte le numéro proposé (ou entre-en un)</li>
 <li><code>Entrée</code> → début de la partition (ou indique-le)</li>
-<li><code>Entrée</code> → fin de la partition<br>
-==&gt; Exemple : <code>+3G</code> pour une taille de 3 Go</li>
+<li><code>Entrée</code> → fin de la partition
+<ul>
+<li><code>Entrée</code> Numéro du bloc de fin (peut être accepté ou spécifier). Pour spécifier une taille de partition: +3G par exemple. Le + est nécessaire ainsi que l’unité.</li>
+</ul>
+</li>
 <li><code>w</code> → <strong>sauvegarde et quitte</strong></li>
 </ul>
 <p>Les nouvelles partitions seront visibles dans <code>/dev</code> :</p>
@@ -270,9 +285,10 @@ Il faut y créer un <strong>système de fichiers</strong>.</p>
 </blockquote>
 <p>ou</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo mkfs.ext4 /dev/sdb1</span></span></code></pre></div>
-<p>Les deux font la même chose.</p>
-<p>Types possibles : <code>ext2</code>, <code>ext3</code>, <code>ext4</code>, <code>xfs</code>, <code>fat32</code>, etc.<br>
-(Linux ne gère pas bien <strong>NTFS</strong>.)</p>
+<ul>
+<li>Chaque partition du disque peut avoir un système de fichier différent: FAT, FAT32, EXT2, EXT3, EXT4, BTRFS, XFS…</li>
+<li>Linux ne gère pas bien <strong>NTFS</strong>.</li>
+</ul>
 <p>Une fois formatée, la partition est prête…<br>
 … mais il faut encore <strong>la monter</strong> !</p>
 <h2 id="montage-dune-partition">Montage d’une partition</h2>
@@ -352,7 +368,7 @@ UUID=1234abcd-56ef-78gh-90ij-123456klmnop /mnt/backup   ext4    defaults        
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1745858750";
+          window.index_js_url="/searchindex.en.js?1745867962";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -365,12 +381,12 @@ UUID=1234abcd-56ef-78gh-90ij-123456klmnop /mnt/backup   ext4    defaults        
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1745858750" defer></script>
-        <script src="/js/lunr/lunr.min.js?1745858750" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1745858750" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1745858750" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1745858750" defer></script>
-        <script src="/js/search.js?1745858750" defer></script>
+        <script src="/js/auto-complete.js?1745867962" defer></script>
+        <script src="/js/lunr/lunr.min.js?1745867962" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1745867962" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1745867962" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1745867962" defer></script>
+        <script src="/js/search.js?1745867962" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -457,8 +473,8 @@ UUID=1234abcd-56ef-78gh-90ij-123456klmnop /mnt/backup   ext4    defaults        
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1745858750" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1745858750" defer></script>
-    <script src="/js/theme.js?1745858750" defer></script>
+    <script src="/js/clipboard.min.js?1745867962" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1745867962" defer></script>
+    <script src="/js/theme.js?1745867962" defer></script>
   </body>
 </html>
