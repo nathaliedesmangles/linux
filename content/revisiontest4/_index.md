@@ -9,7 +9,7 @@ weight = 133
 - **Durée** : 1h40, X questions (X à confirmer)
 - **Matière** : Atelier #10 (a, b, c et d)
 - **Format** : Test Moodle
-- **Documentation permise** : 1 feuille recto-verso (manuscrites ou imprimées)
+- **Documentation permise** : 1 feuille recto-verso (manuscrite ou imprimée)
 
 ---
 

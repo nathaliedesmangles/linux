@@ -8,11 +8,11 @@
     <language>en-us</language>
     <atom:link href="https://example.org/semaine14/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ATELIER: WSL, Ubuntu et des commandes Linux simples</title>
+      <title>ATELIER: WSL, Ubuntu et système de fichiers</title>
       <link>https://example.org/semaine14/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://example.org/semaine14/atelier/index.html</guid>
-      <description>Objectifs de l’atelier Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux.&#xA;Atelier Partie 1: Installations WSL (Windows Subsystem for Linux) Rechercher les fonctionnalités Windows Dans la liste, cocher Sous-Système Windows pour Linux Redémarrer Une fois redémarré, vous pouvez installer la distribution Ubuntu depuis le Microsoft Store.&#xA;Partie 2: Installation d’Ubuntu WSL prend en charge une variété de distributions Linux, y compris la dernière version LTS d’Ubuntu.</description>
+      <description>Exercice 0 - Installation de WSL Attention&#xD;Votre Windows doit être à jour&#xA;Dans Windows, démarrer paramètres windows update. et cliquer sur Vérifier les mises à jour. Au besoin, mettre à jour votre windows. Étape 1 : Installer WSL et Ubuntu pour Windows Chercher les fonctionnalités Windows Ouvrir Activer ou désactiver des fonctionnalités Windows Dans la liste, cocher Sous-Système Windows pour Linux Redémarrer Ouvrir le Microsoft Store Chercher la dernière version de Ubuntu 24.</description>
     </item>
   </channel>
 </rss>

@@ -1,139 +1,127 @@
 +++
-title = "ATELIER: WSL, Ubuntu et des commandes Linux simples"
+title = "ATELIER: WSL, Ubuntu et système de fichiers"
 weight = 142
 +++
 
-## Objectifs de l'atelier
 
-Cet atelier a pour but de vous familiariser avec la ligne de commandes en utilisant Ubuntu comme distribution Linux. 
+## Exercice 0 - Installation de WSL
 
-<!--
-
-## Format de la remise
-
-{{% notice style=warning title=Attention %}}
-Pour chacune des étapes des **parties 2 et 3** vous devrez prendre une **capture d'écran de vos commandes et résultats**. **ATTENTION**: On doit pouvoir voir votre nom d'utilisateur. Ne travaillez donc **pas** avec l'utilisateur `root`.
+{{% notice style="warning" title="Attention" %}}
+Votre Windows doit être à jour
 {{% /notice %}}
 
--->
+- Dans Windows, démarrer paramètres windows update. et cliquer sur ***Vérifier les mises à jour***.
+- Au besoin, mettre à jour votre windows.
 
-# Atelier
+### Étape 1 : Installer WSL et Ubuntu pour Windows
 
-## Partie 1: Installations WSL (*Windows Subsystem for Linux*)
+1. Chercher les fonctionnalités Windows
 
-1. Rechercher les fonctionnalités Windows
+![HTTP](./recherche-fonctionnalites.png?width=30vw)
 
-![Recherche fonctionnalités](recherche-fonctionnalites.png?width=25vw)
+2. Ouvrir **Activer ou désactiver des fonctionnalités Windows**
+	- Dans la liste, cocher **Sous-Système Windows pour Linux**
 
-2. Dans la liste, cocher **Sous-Système Windows pour Linux**
-
-![Activer fonctionnalités](activer-fonctionnalite.png?width=25vw)
+![HTTP](activer-fonctionnalite.png?width=35vw)
 
 3. Redémarrer
+4. Ouvrir le <a href="https://apps.microsoft.com">Microsoft Store</a>
+	- Chercher la dernière version de Ubuntu 24.04.1
+	- Cliquer sur **Obtenir** pour Télécharger et Installer
+	- Cliquer sur **Ouvrir**
 
-Une fois redémarré, vous pouvez installer la distribution Ubuntu depuis le Microsoft Store.
+![HTTP](./microsoft_store_ubuntu.png?width=35vw)
 
-## Partie 2: Installation d'Ubuntu
+5. Dans la fenêtre Ubuntu: patienter durant l'installation
 
-WSL prend en charge une variété de distributions Linux, y compris la dernière version LTS d'Ubuntu. 
+![HTTP](./wsl_patienter.png?height=160)
 
-Il existe plusieurs façons d'installer des distributions sur WSL, nous nous concentrons ici sur la méthode via l'application dans Microsoft Store et les commandes WSL exécutées dans le terminal. Le résultat est le même quelle que soit la méthode.
+6. Dans fenêtre Ubuntu: créer votre usager
+	- Entrer le nom d'usager de votre choix
+	- Entrer le mot de passe de votre choix
+	- Confirmer votre mot de passe
 
-**Application dans Microsoft Store**
+![HTTP](./wsl_usager.png?width=65vw)
 
-1. Ouvrir Microsoft Store et trouver la dernière version d'Ubuntu.
+7. Votre Ubuntu sous WSL est installé!
 
-![Résultats de recherche pour Ubuntu 24.04 LTS dans la barre de recherche Windows.](search-ubuntu-windows.png?width=40vw)
+![HTTP](./wsl.png?width=45vw)
 
-2. Cliquez sur **Free/Gratuit**, puis sur **Get/Obtenir**.
+### Étape 2 : Mettre Ubuntu à jour
 
-![Page d'installation pour Ubuntu 24.04 LTS dans le Microsoft Store.](choose-distribution.png?width=40vw)
+Avant de commencer, s'assurer qu'Ubuntu est à jour:
 
-3. Patienter durant l’installation. Ubuntu sera alors installé sur votre machine. 
-
-4. Avant de commencer, s’assurer qu’Ubuntu est à jour:
-```plaintext
+```bash
 $ sudo apt update
+$ sudo apt upgrade
 ```
-<!--
-- Prenez une capture d'écran de la fenêtre de la commande avec le résultat et nommez-la `1.png`.
--->
 
-**NOTE**: La commande `sudo` permet d’exécuter une commande en tant qu’administrateur du système.
-
-Une fois installé, vous pouvez soit lancer l'application directement depuis le Microsoft Store, soit rechercher Ubuntu dans votre barre de recherche Windows.
-
-<!--
-- Prenez une capture d'écran de la fenêtre de terminal Ubuntu et nommez-la `2.png`.
--->
-
-
-## Partie 3: Installation et configuration de Visual Studio Code
-
-### Installation
-
-1. **Installer VS Code :**
-   - Téléchargez et installez Visual Studio Code depuis le site officiel : [code.visualstudio.com](https://code.visualstudio.com).
-
-2. **Installer l'extension WSL :**
-   - Ouvrez VS Code.
-   - Accédez à l'onglet des extensions (icône de carré à gauche ou `Ctrl+Shift+X`).
-   - Recherchez et installez l'extension **Remote - WSL**.
-
-### Configuration de l'environnement
-
-1. **Accéder à WSL depuis VS Code :**
-   - Lancez Ubuntu (WSL) et naviguez jusqu'à votre répertoire de projet ou créez-en un :
-     ```
-     mkdir mon_projet
-     cd mon_projet
-     ```
-   - Tapez `code .` pour ouvrir VS Code directement dans ce répertoire.
-
-2. **Configurer le terminal :**
-   - Dans VS Code, allez dans `Fichier > Préférences > Paramètres`.
-   - Recherchez "terminal.integrated.defaultProfile.windows" et sélectionnez "WSL" comme terminal par défaut.
-
-
-## Partie 4 : Manipulation de l'environnement Ubuntu dans WSL
-
-1. **Installer des outils de développement :**
-   - Utilisez `apt` pour installer des packages :
-     ```
-     sudo apt update
-     sudo apt install build-essential git curl
-     ```
-
-2. **Cloner un projet Git :**
-   - Utilisez la commande suivante pour cloner un projet :
-     ```
-     git clone https://github.com/utilisateur/projet.git
-     ```
-
-3. **Exécuter un projet :**
-   - Par exemple, pour un projet Node.js :
-     ```
-     sudo apt install nodejs npm
-     npm install
-     npm start
-     ```
-
-## Conseils et Astuces
-
-- **Partage de fichiers entre Windows et WSL :** Les fichiers créés sous WSL sont accessibles dans l’explorateur Windows sous : `\\wsl$\Ubuntu\`.
-- **Performances :** Pour des performances optimales, stockez vos fichiers de projet dans le système de fichiers Linux (dans WSL) plutôt que dans le système de fichiers Windows.
-- **Mises à jour :** Pensez à mettre à jour régulièrement WSL et Ubuntu :
-  ```
-  sudo apt update && sudo apt upgrade
-  ```
-
-## Conclusion
-
-Avec WSL, Ubuntu et VS Code, vous disposez d’un environnement puissant pour le développement sous Linux, tout en conservant la commodité de Windows.
+<mark>
+Prendre une copie d'écran ici
+</mark>
 
 ---
-**References**:  
-1. [Site Ubuntu WSL](https://documentation.ubuntu.com/wsl/en/latest/guides/install-ubuntu-wsl2/)
-2. [Vidéo YouTube](https://youtu.be/HrAsmXy1-78?si=VyvuNbkGmthsnLAI)
+
+## Exercice 1 – Démarrer WSL en ligne de commande
+
+**Objectif :** Apprendre à lancer WSL depuis l'invite de commande Windows.
+
+### Étapes :
+1. Ouvrir l'invite de commande (cmd) ou PowerShell.
+2. Taper la commande suivante :
+```bash
+$ wsl
+```
+
+3. Vous devriez maintenant être dans un shell Ubuntu. Vérifiez avec quelques commande linux :
+```bash
+$ ls
+$ whoami
+$ pwd
+```
+
 ---
 
+## Exercice 2 – Explorer votre disque Windows depuis WSL
+
+**Objectif :** Utiliser le terminal Ubuntu (WSL) pour accéder au système de fichiers Windows.
+
+### Étapes :
+1. Ouvrir votre terminal Ubuntu (WSL)
+2. Tapez la commande suivante pour accéder à votre disque Windows :
+   ```bash
+   $ ls /mnt/c
+   ```
+3. Accédez à votre dossier Documents :
+   ```bash
+   $ cd /mnt/c/Users/VOTRE_NOM/Documents
+   ```
+   *(Remplacez `VOTRE_NOM` par votre nom d’utilisateur Windows)*
+4. Créez un fichier texte :
+   ```bash
+   $ echo "Ceci est un test depuis WSL" > test_wsl.txt
+   ```
+5. Ouvrez l’Explorateur de fichiers Windows et vérifiez que le fichier `test_wsl.txt` existe dans vos Documents.
+
+---
+
+## Exercice 3 – Modifier le fichier avec Visual Studio Code
+
+**Objectif :** Utiliser VS Code pour éditer un fichier se trouvant dans le système de fichiers Windows depuis WSL.
+
+### Étapes :
+1. Depuis le terminal Ubuntu, restez dans le dossier :
+   ```bash
+   $ cd /mnt/c/Users/VOTRE_NOM/Documents
+   ```
+2. Lancez Visual Studio Code :
+   ```bash
+   $ code .
+   ```
+3. Dans VS Code, ouvrez le fichier `test_wsl.txt`.
+4. Modifiez son contenu (par exemple : ajoutez une nouvelle ligne), puis **enregistrez**.
+5. Revenez au terminal et tapez :
+   ```bash
+   $ cat test_wsl.txt
+   ```
+   pour vérifier que les changements sont bien enregistrés.
