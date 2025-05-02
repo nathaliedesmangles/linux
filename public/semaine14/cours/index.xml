@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WSL et Ubuntu :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/semaine14/cours/index.html</link>
-    <description>Dans l’atelier, nous allons voir comment installer et utiliser WSL avec Ubuntu et Visual Studio Code (VS Code).&#xA;Prérequis Un PC sous Windows 10 (version 2004 ou ultérieure) ou Windows 11. Accès à une connexion Internet.</description>
+    <title>Introduction à WSL (Windows Subsystem for Linux) :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/semaine14/cours/index.html</link>
+    <description>Qu’est-ce que WSL ? WSL, ou Windows Subsystem for Linux, est une fonctionnalité de Windows qui vous permet d’utiliser un environnement GNU/Linux directement à partir de Windows, sans machine virtuelle. Vous pouvez exécuter des commandes, des outils et des scripts Linux avec des performances proches de celles d’un système natif.&#xA;Pourquoi utiliser WSL ? Voici quelques bonnes raisons d’utiliser WSL dans votre parcours d’informaticien·ne :&#xA;Développement croisé : vous pouvez développer vos projets sous Windows tout en testant votre code dans un environnement Linux.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/semaine14/cours/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Introduction à WSL (Windows Subsystem for Linux)</title>
-      <link>http://localhost:1313/semaine14/cours/_wsl_vs_code/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/semaine14/cours/_wsl_vs_code/index.html</guid>
-      <description>Qu’est-ce que WSL ? WSL, ou Windows Subsystem for Linux, est une fonctionnalité de Windows qui vous permet d’utiliser un environnement GNU/Linux directement à partir de Windows, sans machine virtuelle. Vous pouvez exécuter des commandes, des outils et des scripts Linux avec des performances proches de celles d’un système natif.&#xA;Pourquoi utiliser WSL ? Voici quelques bonnes raisons d’utiliser WSL dans votre parcours d’informaticien·ne :&#xA;Développement croisé : vous pouvez développer vos projets sous Windows tout en testant votre code dans un environnement Linux.</description>
-    </item>
+    <atom:link href="https://example.org/semaine14/cours/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

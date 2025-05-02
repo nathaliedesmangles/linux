@@ -8,6 +8,13 @@
     <language>en-us</language>
     <atom:link href="https://example.org/semaine14/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Introduction à WSL (Windows Subsystem for Linux)</title>
+      <link>https://example.org/semaine14/cours/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/semaine14/cours/index.html</guid>
+      <description>Qu’est-ce que WSL ? WSL, ou Windows Subsystem for Linux, est une fonctionnalité de Windows qui vous permet d’utiliser un environnement GNU/Linux directement à partir de Windows, sans machine virtuelle. Vous pouvez exécuter des commandes, des outils et des scripts Linux avec des performances proches de celles d’un système natif.&#xA;Pourquoi utiliser WSL ? Voici quelques bonnes raisons d’utiliser WSL dans votre parcours d’informaticien·ne :&#xA;Développement croisé : vous pouvez développer vos projets sous Windows tout en testant votre code dans un environnement Linux.</description>
+    </item>
+    <item>
       <title>ATELIER: WSL, Ubuntu et système de fichiers</title>
       <link>https://example.org/semaine14/atelier/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
