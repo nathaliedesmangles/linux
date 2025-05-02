@@ -1,0 +1,19 @@
+Assurez-vous d'être sur WSL 2
+> Si ce n'est pas le cas:
+
+
+Essayez-le dans votre terminal WSL. Vous devriez voir vos fichiers Windows.
+> Ajouter ls
+
+$ sudo apt install nodejs npm
+> nodejs et npm pas installés
+>> faire 2 installations séparées
+
+$ npm init -y
+/usr/bin/node: 1: Syntax error: "(" unexpected
+
+
+
+
+
+

@@ -19,3 +19,6 @@ weight = 140
   - **Exercice 1** : Démarrer WSL en ligne de commande 
   - **Exercice 2** : Explorer votre disque Windows depuis WSL
   - **Exercice 3** : Modifier le fichier avec Visual Studio Code 
+
+- **Test #4 (15%): Jeudi 8 mai**
+  - Validation de l'atelier #10 (a,b,c et d)
