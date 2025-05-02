@@ -125,3 +125,10 @@ $ pwd
    $ cat test_wsl.txt
    ```
    pour vérifier que les changements sont bien enregistrés.
+
+
+---
+**References**:  
+1. [Site Ubuntu WSL](https://documentation.ubuntu.com/wsl/en/latest/guides/install-ubuntu-wsl2/)
+2. [Vidéo YouTube](https://youtu.be/HrAsmXy1-78?si=VyvuNbkGmthsnLAI)
+---

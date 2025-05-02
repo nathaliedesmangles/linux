@@ -27,8 +27,9 @@ Voici un tableau comparatif pour bien comprendre les deux versions :
 | Traduit les appels Linux vers Windows | Utilise un véritable noyau Linux dans une VM légère |
 | Meilleur pour accéder aux fichiers Windows rapidement | Meilleure compatibilité avec les outils et paquets Linux |
 
-> **À retenir** : pour le développement Web ou logiciel, on recommande **WSL 2**.
-
+{{% notice style="accent" title="À retenir" %}}
+Pour le développement Web ou logiciel, on recommande **WSL 2**.
+{{% /notice %}}
 
 ## Commandes utiles
 
@@ -38,7 +39,7 @@ Voici une commande de base à connaître :
 |----------|-------------|
 | `wsl` | Lance votre distribution Linux par défaut dans le répertoire courant de Windows (si possible) |
 
-> 💡 **À faire en classe** : Ouvrez votre terminal PowerShell et tapez `wsl`. Notez ce qui se passe.
+> **À faire en classe** : Ouvrez votre terminal PowerShell et tapez `wsl`. Notez ce qui se passe.
 
 
 ## Accès aux fichiers
@@ -49,7 +50,8 @@ Les disques Windows sont accessibles via le dossier `/mnt`.
 
 Exemple :  
 ```bash
-cd /mnt/c/Users/VotreNom/Documents
+$ cd /mnt/c/Users/VotreNom/Documents
+$ ls
 ```
 
 > Essayez-le dans votre terminal WSL. Vous devriez voir vos fichiers Windows.
@@ -79,8 +81,9 @@ $ npm init -y
 
 > **Objectif** : Installer Node.js et créer un projet vide.
 
-**Rappel** :  
+{{% notice style="secondary" title="Rappel" %}}
 Sous Ubuntu, la commande `apt` est utilisée pour installer des logiciels. Sur d'autres distributions comme Fedora, on utiliserait plutôt `dnf`.
+{{% /notice %}} 
 
 
 ## Éditez votre projet avec Visual Studio Code
@@ -88,7 +91,7 @@ Sous Ubuntu, la commande `apt` est utilisée pour installer des logiciels. Sur d
 Dans le terminal WSL, à l’intérieur du dossier `projet-node`, tapez :
 
 ```bash
-code .
+$ code .
 ```
 
 Cela ouvrira le projet dans VS Code.
@@ -106,7 +109,7 @@ http.createServer((req, res) => {
 Lancez votre serveur :
 
 ```bash
-node app.js
+$ node app.js
 ```
 
 Ouvrez ensuite un navigateur sous Windows et entrez cette adresse :
@@ -116,7 +119,6 @@ http://localhost:3000
 ```
 
 > Vous venez de lancer un serveur Node.js dans un environnement Linux, tout en restant sur Windows !
-
 
 ## Conclusion
 

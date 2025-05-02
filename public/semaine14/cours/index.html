@@ -26,14 +26,14 @@ Développement croisé : vous pouvez développer vos projets sous Windows tout e
     <meta itemprop="description" content="Qu’est-ce que WSL ? WSL, ou Windows Subsystem for Linux, est une fonctionnalité de Windows qui vous permet d’utiliser un environnement GNU/Linux directement à partir de Windows, sans machine virtuelle. Vous pouvez exécuter des commandes, des outils et des scripts Linux avec des performances proches de celles d’un système natif.
 Pourquoi utiliser WSL ? Voici quelques bonnes raisons d’utiliser WSL dans votre parcours d’informaticien·ne :
 Développement croisé : vous pouvez développer vos projets sous Windows tout en testant votre code dans un environnement Linux.">
-    <meta itemprop="wordCount" content="491">
+    <meta itemprop="wordCount" content="493">
     <title>Introduction à WSL (Windows Subsystem for Linux) :: 420-ZG4-MO LINUX</title>
     <link href="/semaine14/cours/index.xml" rel="alternate" type="application/rss+xml" title="Introduction à WSL (Windows Subsystem for Linux) :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1746202431" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1746202431" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1746202431" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1746202431" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1746202431" rel="stylesheet">
-    <link href="/css/theme.min.css?1746202431" rel="stylesheet">
-    <link href="/css/format-html.min.css?1746202431" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1746207115" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1746207115" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1746207115" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1746207115" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1746207115" rel="stylesheet">
+    <link href="/css/theme.min.css?1746207115" rel="stylesheet">
+    <link href="/css/format-html.min.css?1746207115" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -117,11 +117,11 @@ Développement croisé : vous pouvez développer vos projets sous Windows tout e
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
-            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine14/index.html"><span itemprop="name">WSL installation et manipulation (Ubuntu, VS Code)</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/semaine14/index.html"><span itemprop="name">WSL, Ubuntu et VS Code</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li
             itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">Introduction à WSL (Windows Subsystem for Linux)</span><meta itemprop="position" content="3"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine14/index.html" title="WSL installation et manipulation (Ubuntu, VS Code) (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine14/index.html" title="WSL, Ubuntu et VS Code (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
             <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine14/atelier/index.html" title="ATELIER: WSL, Ubuntu et système de fichiers (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
@@ -175,9 +175,15 @@ Développement croisé : vous pouvez développer vos projets sous Windows tout e
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p><strong>À retenir</strong> : pour le développement Web ou logiciel, on recommande <strong>WSL 2</strong>.</p>
-</blockquote>
+
+<details open class=" box cstyle notices accent">
+  <summary class="box-label" tabindex="-1">
+    À retenir
+  </summary>
+  <div class="box-content">
+<p>Pour le développement Web ou logiciel, on recommande <strong>WSL 2</strong>.</p>
+  </div>
+</details>
 <h2 id="commandes-utiles">Commandes utiles</h2>
 <p>Voici une commande de base à connaître :</p>
 <table>
@@ -195,13 +201,14 @@ Développement croisé : vous pouvez développer vos projets sous Windows tout e
 </tbody>
 </table>
 <blockquote>
-<p>💡 <strong>À faire en classe</strong> : Ouvrez votre terminal PowerShell et tapez <code>wsl</code>. Notez ce qui se passe.</p>
+<p><strong>À faire en classe</strong> : Ouvrez votre terminal PowerShell et tapez <code>wsl</code>. Notez ce qui se passe.</p>
 </blockquote>
 <h2 id="accès-aux-fichiers">Accès aux fichiers</h2>
 <h3 id="1-depuis-linux-vers-les-fichiers-windows-">1. <strong>Depuis Linux vers les fichiers Windows :</strong></h3>
 <p>Les disques Windows sont accessibles via le dossier <code>/mnt</code>.</p>
 <p>Exemple :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /mnt/c/Users/VotreNom/Documents</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd /mnt/c/Users/VotreNom/Documents
+</span></span><span style="display:flex;"><span>$ ls</span></span></code></pre></div>
 <blockquote>
 <p>Essayez-le dans votre terminal WSL. Vous devriez voir vos fichiers Windows.</p>
 </blockquote>
@@ -219,11 +226,18 @@ Développement croisé : vous pouvez développer vos projets sous Windows tout e
 <blockquote>
 <p><strong>Objectif</strong> : Installer Node.js et créer un projet vide.</p>
 </blockquote>
-<p><strong>Rappel</strong> :<br>
-Sous Ubuntu, la commande <code>apt</code> est utilisée pour installer des logiciels. Sur d&rsquo;autres distributions comme Fedora, on utiliserait plutôt <code>dnf</code>.</p>
+
+<details open class=" box cstyle notices secondary">
+  <summary class="box-label" tabindex="-1">
+    Rappel
+  </summary>
+  <div class="box-content">
+<p>Sous Ubuntu, la commande <code>apt</code> est utilisée pour installer des logiciels. Sur d&rsquo;autres distributions comme Fedora, on utiliserait plutôt <code>dnf</code>.</p>
+  </div>
+</details>
 <h2 id="éditez-votre-projet-avec-visual-studio-code">Éditez votre projet avec Visual Studio Code</h2>
 <p>Dans le terminal WSL, à l’intérieur du dossier <code>projet-node</code>, tapez :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>code .</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ code .</span></span></code></pre></div>
 <p>Cela ouvrira le projet dans VS Code.</p>
 <p>Créez ensuite un fichier nommé <code>app.js</code> avec le contenu suivant :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// app.js
@@ -232,7 +246,7 @@ Sous Ubuntu, la commande <code>apt</code> est utilisée pour installer des logic
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>(<span style="color:#e6db74">&#34;Bonjour du serveur Node.js dans WSL!&#34;</span>);
 </span></span><span style="display:flex;"><span>}).<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">3000</span>);</span></span></code></pre></div>
 <p>Lancez votre serveur :</p>
-<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>node app.js</span></span></code></pre></div>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ node app.js</span></span></code></pre></div>
 <p>Ouvrez ensuite un navigateur sous Windows et entrez cette adresse :</p>
 <div class="highlight wrap-code"><pre tabindex="0"><code>http://localhost:3000</code></pre></div>
 <blockquote>
@@ -260,7 +274,7 @@ Sous Ubuntu, la commande <code>apt</code> est utilisée pour installer des logic
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1746202431";
+          window.index_js_url="/searchindex.en.js?1746207115";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -273,12 +287,12 @@ Sous Ubuntu, la commande <code>apt</code> est utilisée pour installer des logic
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1746202431" defer></script>
-        <script src="/js/lunr/lunr.min.js?1746202431" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1746202431" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1746202431" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1746202431" defer></script>
-        <script src="/js/search.js?1746202431" defer></script>
+        <script src="/js/auto-complete.js?1746207115" defer></script>
+        <script src="/js/lunr/lunr.min.js?1746207115" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1746207115" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1746207115" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1746207115" defer></script>
+        <script src="/js/search.js?1746207115" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -305,7 +319,7 @@ Sous Ubuntu, la commande <code>apt</code> est utilisée pour installer des logic
             <li class="" data-nav-id="/semaine12/index.html"><a class="padding" href="/semaine12/index.html"><b>Semaine 12. </b>Réseau</a><ul id="R-subsections-6098c004e594c3cbee6d88e41d11b10b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine13/index.html"><a class="padding" href="/semaine13/index.html"><b>Semaine 13. </b>Gestion des disques</a><ul id="R-subsections-123a241fcf7a50602c7d825a9ccf5337" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/revisiontest4/index.html"><a class="padding" href="/revisiontest4/index.html">TEST #4: Résumés</a></li>
-            <li class="parent " data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL installation et manipulation (Ubuntu, VS Code)</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu">
+            <li class="parent " data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL, Ubuntu et VS Code</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu">
             <li class="active " data-nav-id="/semaine14/cours/index.html"><a class="padding" href="/semaine14/cours/index.html">Introduction à WSL (Windows Subsystem for Linux)</a></li>
             <li class="" data-nav-id="/semaine14/atelier/index.html"><a class="padding" href="/semaine14/atelier/index.html">ATELIER: WSL, Ubuntu et système de fichiers</a></li></ul></li>
             <li class="" data-nav-id="/semaine15/index.html"><a class="padding" href="/semaine15/index.html"><b>Semaine 15. </b>Révision et Examen final</a></li>
@@ -364,8 +378,8 @@ Sous Ubuntu, la commande <code>apt</code> est utilisée pour installer des logic
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1746202431" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1746202431" defer></script>
-    <script src="/js/theme.js?1746202431" defer></script>
+    <script src="/js/clipboard.min.js?1746207115" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1746207115" defer></script>
+    <script src="/js/theme.js?1746207115" defer></script>
   </body>
 </html>
