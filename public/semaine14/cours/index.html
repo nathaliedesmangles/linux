@@ -26,14 +26,14 @@ Développement croisé : vous pouvez développer vos projets sous Windows tout e
     <meta itemprop="description" content="Qu’est-ce que WSL ? WSL, ou Windows Subsystem for Linux, est une fonctionnalité de Windows qui vous permet d’utiliser un environnement GNU/Linux directement à partir de Windows, sans machine virtuelle. Vous pouvez exécuter des commandes, des outils et des scripts Linux avec des performances proches de celles d’un système natif.
 Pourquoi utiliser WSL ? Voici quelques bonnes raisons d’utiliser WSL dans votre parcours d’informaticien·ne :
 Développement croisé : vous pouvez développer vos projets sous Windows tout en testant votre code dans un environnement Linux.">
-    <meta itemprop="wordCount" content="493">
+    <meta itemprop="wordCount" content="559">
     <title>Introduction à WSL (Windows Subsystem for Linux) :: 420-ZG4-MO LINUX</title>
     <link href="/semaine14/cours/index.xml" rel="alternate" type="application/rss+xml" title="Introduction à WSL (Windows Subsystem for Linux) :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1746207226" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1746207226" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1746207226" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1746207226" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1746207226" rel="stylesheet">
-    <link href="/css/theme.min.css?1746207226" rel="stylesheet">
-    <link href="/css/format-html.min.css?1746207226" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1746211385" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1746211385" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1746211385" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1746211385" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1746211385" rel="stylesheet">
+    <link href="/css/theme.min.css?1746211385" rel="stylesheet">
+    <link href="/css/format-html.min.css?1746211385" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
@@ -181,7 +181,25 @@ Développement croisé : vous pouvez développer vos projets sous Windows tout e
     À retenir
   </summary>
   <div class="box-content">
-<p>Pour le développement Web ou logiciel, on recommande <strong>WSL 2</strong>.</p>
+<ul>
+<li>Pour le développement Web ou logiciel, on recommande <strong>WSL 2</strong>.</li>
+<li>Les commandes ci-dessous se font dans <em><strong>PowerShell</strong></em>.</li>
+</ul>
+<p><strong>Pour connaitre la version installée :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$ wsl -l -v
+</span></span><span style="display:flex;"><span>NAME            STATE           VERSION
+</span></span><span style="display:flex;"><span>* Ubuntu-<span style="color:#ae81ff">24.04</span>    Stopped         <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  Ubuntu          Running         <span style="color:#ae81ff">1</span></span></span></code></pre></div>
+<p><strong>Vous pouvez la mettre à jour avec :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$ wsl --update</span></span></code></pre></div>
+<p><strong>WSL n&rsquo;est pas déjà installé, vous pouvez le faire avec :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>$ wsl --install</span></span></code></pre></div>
+<p>Cette commande :</p>
+<ul>
+<li>Active les fonctionnalités requises</li>
+<li>Installe WSL 2</li>
+<li>Installe Ubuntu par défaut</li>
+</ul>
   </div>
 </details>
 <h2 id="commandes-utiles">Commandes utiles</h2>
@@ -274,7 +292,7 @@ Développement croisé : vous pouvez développer vos projets sous Windows tout e
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1746207226";
+          window.index_js_url="/searchindex.en.js?1746211385";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -287,12 +305,12 @@ Développement croisé : vous pouvez développer vos projets sous Windows tout e
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1746207226" defer></script>
-        <script src="/js/lunr/lunr.min.js?1746207226" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1746207226" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1746207226" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1746207226" defer></script>
-        <script src="/js/search.js?1746207226" defer></script>
+        <script src="/js/auto-complete.js?1746211385" defer></script>
+        <script src="/js/lunr/lunr.min.js?1746211385" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1746211385" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1746211385" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1746211385" defer></script>
+        <script src="/js/search.js?1746211385" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -378,8 +396,8 @@ Développement croisé : vous pouvez développer vos projets sous Windows tout e
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1746207226" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1746207226" defer></script>
-    <script src="/js/theme.js?1746207226" defer></script>
+    <script src="/js/clipboard.min.js?1746211385" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1746211385" defer></script>
+    <script src="/js/theme.js?1746211385" defer></script>
   </body>
 </html>

@@ -14,7 +14,7 @@ weight = 140
   - Création d'un projet nodeJS dans WSL et VS Code
 
 
-- **Atelier :**
+- **Atelier (pas noté):**
   - **Exercice 0** : Installation de WSL et Ubuntu 
   - **Exercice 1** : Démarrer WSL en ligne de commande 
   - **Exercice 2** : Explorer votre disque Windows depuis WSL

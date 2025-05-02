@@ -28,7 +28,28 @@ Voici un tableau comparatif pour bien comprendre les deux versions :
 | Meilleur pour accéder aux fichiers Windows rapidement | Meilleure compatibilité avec les outils et paquets Linux |
 
 {{% notice style="accent" title="À retenir" %}}
-Pour le développement Web ou logiciel, on recommande **WSL 2**.
+- Pour le développement Web ou logiciel, on recommande **WSL 2**.
+- Les commandes ci-dessous se font dans ***PowerShell***.
+
+**Pour connaitre la version installée :**
+```powershell
+$ wsl -l -v
+NAME            STATE           VERSION
+* Ubuntu-24.04    Stopped         1
+  Ubuntu          Running         1
+```
+**Vous pouvez la mettre à jour avec :**
+```powershell
+$ wsl --update
+```
+**WSL n'est pas déjà installé, vous pouvez le faire avec :**
+```powershell
+$ wsl --install
+```
+Cette commande :
+ - Active les fonctionnalités requises
+ - Installe WSL 2
+ - Installe Ubuntu par défaut
 {{% /notice %}}
 
 ## Commandes utiles
