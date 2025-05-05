@@ -60,8 +60,11 @@ Voici une commande de base à connaître :
 |----------|-------------|
 | `wsl` | Lance votre distribution Linux par défaut dans le répertoire courant de Windows (si possible) |
 
-> **À faire en classe** : Ouvrez votre terminal PowerShell et tapez `wsl`. Notez ce qui se passe.
 
+Ouvrir votre terminal PowerShell et tapez `wsl`. Notez ce qui se passe.
+```PowerShell
+wsl
+````
 
 ## Accès aux fichiers
 
