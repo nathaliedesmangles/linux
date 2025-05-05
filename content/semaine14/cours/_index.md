@@ -81,7 +81,7 @@ $ ls
 > Essayez-le dans votre terminal WSL. Vous devriez voir vos fichiers Windows.
 
 
-### 2. **Depuis Windows vers les fichiers Linux :**
+### 2. Depuis Windows vers les fichiers Linux
 
 Dans l’explorateur de fichiers Windows, entrez l’adresse suivante dans la barre d’adresse :
 
@@ -190,7 +190,7 @@ Si tu veux supprimer **WSL** entièrement, suivre ces étapes :
 
 ### 2. Désinstaller Node.js et npm dans WSL (Ubuntu)
 
-Dans le **terminal WSL** (***Bash***, pas ***PowerShell***):
+Dans le **terminal WSL** :
 
 ```bash
 sudo apt remove nodejs npm
