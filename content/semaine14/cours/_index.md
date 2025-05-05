@@ -65,7 +65,7 @@ Voici une commande de base à connaître :
 
 ## Accès aux fichiers
 
-### 1. **Depuis Linux vers les fichiers Windows :**
+### 1. Depuis Linux vers les fichiers Windows
 
 Les disques Windows sont accessibles via le dossier `/mnt`.
 
@@ -147,3 +147,73 @@ WSL vous permet de combiner :
 
 - la **puissance de Linux** pour les outils de développement;
 - et la **simplicité de Windows** pour l’édition de code et la gestion de fichiers.
+
+## Désinstaller WSL, nodejs et npm
+
+
+### 1. Désinstaller WSL (Windows Subsystem for Linux)
+
+#### a) Désinstaller une distribution Linux (ex. : Ubuntu-24.04)
+
+Dans PowerShell (en tant qu’administrateur si possible), tape :
+
+```powershell
+wsl --unregister Ubuntu-24.04 
+Annulation de l’inscription.
+L’opération a réussi.
+```
+
+> Remplace `Ubuntu-24.04` par le nom exact de la distribution (vérifie avec `wsl --list`).
+
+```powershell
+wsl --list
+Il n’existe aucune distribution avec le nom fourni.
+Code d’erreur : Wsl/EnumerateDistros/Service/ReadDistroConfig/WSL_E_DISTRO_NOT_FOUND
+```
+
+#### b) Désinstaller WSL complètement
+
+Si tu veux supprimer **WSL** entièrement, suivre ces étapes :
+
+**Désinstaller les distributions via les applications installées** :
+
+   * Aller dans *Paramètres > Applications > Applications installées*.
+   * Désinstalle toutes les distributions Linux.
+
+![Désinstaller WSL](./desinstaller_WSL.png)
+
+3. Redémarre l’ordinateur
+
+
+### 2. Désinstaller Node.js et npm dans WSL (Ubuntu)
+
+Dans le **terminal WSL** (***Bash***, pas ***PowerShell***):
+
+```bash
+sudo apt remove nodejs npm
+sudo apt autoremove
+```
+
+> Ces commandes suppriment Node.js, npm et les dépendances inutilisées.
+
+
+### Vérification
+
+Après la désinstallation, tu peux vérifier :
+
+* En PowerShell :
+
+  ```powershell
+  wsl --list
+  ```
+
+* En WSL :
+
+  ```bash
+  node -v
+  npm -v
+  ```
+
+Ces commandes ne devraient plus fonctionner si tout est désinstallé.
+
+

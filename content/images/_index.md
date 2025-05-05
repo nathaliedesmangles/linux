@@ -30,7 +30,7 @@ drwxr-xr-- 2 seb seb 4096 juil. 10 17:56 bidule
 ```
 
 ```bash
-id user11
+$ id -Gn user11
 uid=1011(user11) gid=1012(reseau) groups=1012(reseau)
 ```
 
@@ -38,5 +38,10 @@ Après voir fait ces deux commandes, quel sera le résultat ?
 ```bash
 sudo ip addr del 192.168.100.20/24 dev ens33
 ping 192.168.100.20/24
+```
+
+```bash
+$ ls -l fichier
+-rwxr-xr-- 1 alice admin 5 28 avr 07:01 fichier
 ```
 

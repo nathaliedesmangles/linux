@@ -3,7 +3,7 @@
   <channel>
     <title>images test4 :: 420-ZG4-MO LINUX</title>
     <link>http://localhost:1313/images/index.html</link>
-    <description>Images /dev/nvme0n1 /dev/nvme0n1p1 /dev/nvme0n1p2 /dev/nvme0n1p3 /dev/sde /dev/sda /dev/sda1 /dev/sdb /dev/sdb1 /dev/tty /dev/null /dev/random&#xD;$ ls -l drwxr-xr-- 2 seb seb 4096 juil. 10 17:56 bidule -rwxrw---x 1 seb profs 0 juil. 10 17:56 machin.sh -rwxr-x--- 1 bob profs 3 juil. 10 17:57 truc&#xD;id user11 uid=1011(user11) gid=1012(reseau) groups=1012(reseau)&#xD;Après voir fait ces deux commandes, quel sera le résultat ?&#xA;sudo ip addr del 192.168.100.20/24 dev ens33 ping 192.168.100.20/24</description>
+    <description>Images /dev/nvme0n1 /dev/nvme0n1p1 /dev/nvme0n1p2 /dev/nvme0n1p3 /dev/sde /dev/sda /dev/sda1 /dev/sdb /dev/sdb1 /dev/tty /dev/null /dev/random&#xD;$ ls -l drwxr-xr-- 2 seb seb 4096 juil. 10 17:56 bidule -rwxrw---x 1 seb profs 0 juil. 10 17:56 machin.sh -rwxr-x--- 1 bob profs 3 juil. 10 17:57 truc&#xD;$ id -Gn user11 uid=1011(user11) gid=1012(reseau) groups=1012(reseau)&#xD;Après voir fait ces deux commandes, quel sera le résultat ?&#xA;sudo ip addr del 192.168.100.20/24 dev ens33 ping 192.168.100.20/24&#xD;$ ls -l fichier -rwxr-xr-- 1 alice admin 5 28 avr 07:01 fichier</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/images/index.xml" rel="self" type="application/rss+xml" />
