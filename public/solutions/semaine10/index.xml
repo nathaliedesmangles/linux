@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Atelier #10a :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/solutions/semaine10/index.html</link>
+    <link>https://example.org/solutions/semaine10/index.html</link>
     <description>Solution de l’exercice 1. Informations sur les utilisateurs Les deux fichiers contenant les informations sur les utilisateurs sont :&#xA;/etc/passwd : contient les informations générales sur les utilisateurs (login, UID, GID, répertoire personnel, shell, etc.). /etc/shadow : contient les mots de passe cryptés des utilisateurs (accessible uniquement par root). 2. Création de groupes sudo groupadd dev sudo groupadd finance&#xD;3. Création de comptes utilisateurs sudo useradd -c &#34;Financier&#34; -g finance fifi sudo useradd -c &#34;Développeur&#34; -g dev didi&#xD;Explication :</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/solutions/semaine10/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/solutions/semaine10/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

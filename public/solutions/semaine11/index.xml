@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Atelier #10b :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/solutions/semaine11/index.html</link>
+    <link>https://example.org/solutions/semaine11/index.html</link>
     <description>Solution de l’exercice 1. Connexion avec l’utilisateur didi 💡 Pourquoi ?&#xA;On veut que toutes les actions suivantes soient faites par l’utilisateur didi.&#xA;su - didi&#xD;su signifie “switch user” – on change d’utilisateur pour didi.&#xA;2. Gestion des permissions de fichier a. Création du fichier fichierCommun.txt touch fichierCommun.txt&#xD;On crée un fichier vide nommé fichierCommun.txt.&#xA;b. Ajouter fifi au groupe propriétaire du fichier Vérifier le groupe actuel du fichier : ls -l fichierCommun.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/solutions/semaine11/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://example.org/solutions/semaine11/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,14 +1,13 @@
 +++
 title = "Atelier #10d"
 weight = 183
-draft = true
 +++
 
 # Solution de l'exercice
 
 ---
 
-## **1. Ajouter un disque virtuel de 10G**
+## 1. Ajouter un disque virtuel de 10G
 Cela se fait via l’interface de VMware :
 
 - Éteignez la VM.
@@ -24,7 +23,7 @@ $ ls /dev
 Le nouveau disque apparaîtra probablement comme `/dev/sdb` (si votre disque principal est `/dev/sda`).
 
 
-## **2. Créer une partition primaire sur le disque**
+## 2. Créer une partition primaire sur le disque
 
 ```bash
 $ sudo fdisk /dev/sdb
@@ -39,7 +38,7 @@ Dans le menu `fdisk`, tapez les commandes suivantes :
 - `w` → écrire la table de partition et quitter
 
 
-## **3. Vérifier la nouvelle partition**
+## 3. Vérifier la nouvelle partition
 
 ```bash
 $ ls /dev
@@ -48,7 +47,7 @@ $ ls /dev
 Vous verrez maintenant une nouvelle entrée, comme `/dev/sdb1`.
 
 
-## **4. Créer un système de fichiers**
+## 4. Créer un système de fichiers
 
 On va utiliser `ext4`, par exemple :
 
@@ -57,7 +56,7 @@ $ sudo mkfs.ext4 /dev/sdb1
 ```
 
 
-## **5. Créer un répertoire et monter la partition**
+## 5. Créer un répertoire et monter la partition
 
 Créez un dossier de point de montage :
 
@@ -78,7 +77,7 @@ $ df -h
 ```
 
 
-## **6. Démonter la partition**
+## 6. Démonter la partition
 
 ```bash
 $ sudo umount /mnt/mon_disque

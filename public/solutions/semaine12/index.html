@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.126.3">
@@ -14,7 +14,7 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
     <meta name="twitter:description" content="Solution de l’exercice On suppose que l’interface Ethernet s’appelle ens160 (vous pouvez vérifier avec ip a si elle s’appelle autrement comme ens33, enp0s3, etc.).
 1. Afficher l’adresse IP de l’interface Ethernet ip addr show ens160Ou pour n’afficher que l’adresse IP :
 ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’interface (même sous-réseau) Si l’adresse actuelle est par exemple 192.168.1.10/24, on peut ajouter 192.">
-    <meta property="og:url" content="http://localhost:1313/solutions/semaine12/index.html">
+    <meta property="og:url" content="https://example.org/solutions/semaine12/index.html">
     <meta property="og:site_name" content="420-ZG4-MO LINUX">
     <meta property="og:title" content="Atelier #10c :: 420-ZG4-MO LINUX">
     <meta property="og:description" content="Solution de l’exercice On suppose que l’interface Ethernet s’appelle ens160 (vous pouvez vérifier avec ip a si elle s’appelle autrement comme ens33, enp0s3, etc.).
@@ -29,17 +29,17 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
     <meta itemprop="wordCount" content="315">
     <title>Atelier #10c :: 420-ZG4-MO LINUX</title>
     <link href="/solutions/semaine12/index.xml" rel="alternate" type="application/rss+xml" title="Atelier #10c :: 420-ZG4-MO LINUX">
-    <link href="/css/fontawesome-all.min.css?1746456698" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1746456698" rel="stylesheet"></noscript>
-    <link href="/css/auto-complete.css?1746456698" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1746456698" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar.min.css?1746456698" rel="stylesheet">
-    <link href="/css/theme.css?1746456698" rel="stylesheet">
-    <link href="/css/format-html.css?1746456698" rel="stylesheet" id="R-format-style">
+    <link href="/css/fontawesome-all.min.css?1746991367" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1746991367" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1746991367" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1746991367" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1746991367" rel="stylesheet">
+    <link href="/css/theme.min.css?1746991367" rel="stylesheet">
+    <link href="/css/format-html.min.css?1746991367" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       window.relearn.relBasePath='..\/..';
       window.relearn.relBaseUri='..\/..';
-      window.relearn.absBaseUri='http:\/\/localhost:1313';
-      window.relearn.min = ``;
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       // variant stuff
@@ -96,13 +96,13 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#1-afficher-ladresse-ip-de-linterface-ethernet">1. Afficher l’adresse IP de l’interface Ethernet</a></li>
+    <li><a href="#2-ajouter-deux-autres-adresses-ip-à-linterface-même-sous-réseau">2. Ajouter deux autres adresses IP à l’interface (même sous-réseau)</a></li>
+    <li><a href="#3-vérifier-la-réponse-avec-ping">3. Vérifier la réponse avec <em>ping</em></a></li>
+    <li><a href="#4-supprimer-les-adresses-ip-ajoutées">4. Supprimer les adresses IP ajoutées</a></li>
+    <li><a href="#5-faire-un-ping-vers-les-adresses-supprimées">5. Faire un ping vers les adresses supprimées</a>
       <ul>
-        <li><a href="#1-afficher-ladresse-ip-de-linterface-ethernet">1. Afficher l’adresse IP de l’interface Ethernet</a></li>
-        <li><a href="#2-ajouter-deux-autres-adresses-ip-à-linterface-même-sous-réseau">2. Ajouter deux autres adresses IP à l’interface (même sous-réseau)</a></li>
-        <li><a href="#3-vérifier-la-réponse-avec-ping">3. Vérifier la réponse avec <em>ping</em></a></li>
-        <li><a href="#4-supprimer-les-adresses-ip-ajoutées">4. Supprimer les adresses IP ajoutées</a></li>
-        <li><a href="#5-faire-un-ping-vers-les-adresses-supprimées">5. Faire un ping vers les adresses supprimées</a></li>
+        <li><a href="#51-options-utiles-avec-ping">5.1 Options utiles avec ping</a></li>
       </ul>
     </li>
   </ul>
@@ -119,7 +119,7 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine11/index.html" title="Atelier #10b (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine12/_index_old/index.html" title="Atelier #10c: Réseau (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/solutions/semaine13/index.html" title="Atelier #10d (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -144,26 +144,26 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
 <h1 id="solution-de-lexercice">Solution de l&rsquo;exercice</h1>
 <p>On suppose que l’interface Ethernet s’appelle <code>ens160</code> (vous pouvez vérifier avec <code>ip a</code> si elle s&rsquo;appelle autrement comme <code>ens33</code>, <code>enp0s3</code>, etc.).</p>
 <hr>
-<h3 id="1-afficher-ladresse-ip-de-linterface-ethernet">1. Afficher l’adresse IP de l’interface Ethernet</h3>
+<h2 id="1-afficher-ladresse-ip-de-linterface-ethernet">1. Afficher l’adresse IP de l’interface Ethernet</h2>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip addr show ens160</span></span></code></pre></div>
 <p>Ou pour n’afficher que l’adresse IP :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip -4 addr show ens160 | grep inet</span></span></code></pre></div>
-<h3 id="2-ajouter-deux-autres-adresses-ip-à-linterface-même-sous-réseau">2. Ajouter deux autres adresses IP à l’interface (même sous-réseau)</h3>
+<h2 id="2-ajouter-deux-autres-adresses-ip-à-linterface-même-sous-réseau">2. Ajouter deux autres adresses IP à l’interface (même sous-réseau)</h2>
 <p>Si l’adresse actuelle est par exemple <code>192.168.1.10/24</code>, on peut ajouter <code>192.168.1.100</code> et <code>192.168.1.101</code> :</p>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ip addr add 192.168.1.100/24 dev ens160
 </span></span><span style="display:flex;"><span>sudo ip addr add 192.168.1.101/24 dev ens160</span></span></code></pre></div>
-<h3 id="3-vérifier-la-réponse-avec-ping">3. Vérifier la réponse avec <em>ping</em></h3>
+<h2 id="3-vérifier-la-réponse-avec-ping">3. Vérifier la réponse avec <em>ping</em></h2>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping 192.168.1.100
 </span></span><span style="display:flex;"><span>ping 192.168.1.101</span></span></code></pre></div>
 <p>On doit voir des réponses si les adresses sont bien assignées.</p>
-<h3 id="4-supprimer-les-adresses-ip-ajoutées">4. Supprimer les adresses IP ajoutées</h3>
+<h2 id="4-supprimer-les-adresses-ip-ajoutées">4. Supprimer les adresses IP ajoutées</h2>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ip addr del 192.168.1.100/24 dev ens160
 </span></span><span style="display:flex;"><span>sudo ip addr del 192.168.1.101/24 dev ens160</span></span></code></pre></div>
-<h3 id="5-faire-un-ping-vers-les-adresses-supprimées">5. Faire un ping vers les adresses supprimées</h3>
+<h2 id="5-faire-un-ping-vers-les-adresses-supprimées">5. Faire un ping vers les adresses supprimées</h2>
 <div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping 192.168.1.100
 </span></span><span style="display:flex;"><span>ping 192.168.1.101</span></span></code></pre></div>
 <p>Cette fois, on <strong>ne devrait pas</strong> avoir de réponse, mais un message comme <em>hôte de destination injoignable</em> (<em><strong>destination host unreachable</strong></em>), <em>Délai d’attente dépassé</em> (<em><strong>Request timed out</strong></em>) ou <em>0 reçus</em> (<em><strong>100% packet loss</strong></em>), puisque les adresses ont été retirées.</p>
-<h4 id="51-options-utiles-avec-ping">5.1 Options utiles avec ping</h4>
+<h3 id="51-options-utiles-avec-ping">5.1 Options utiles avec ping</h3>
 
 <details open class=" box cstyle notices secondary">
   <summary class="box-label" tabindex="-1">
@@ -209,7 +209,7 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
           </a>
         </div>
         <script>
-          window.index_js_url="/searchindex.en.js?1746456698";
+          window.index_js_url="/searchindex.en.js?1746991367";
         </script>
         <search><form action="/search/index.html" method="get">
           <div class="searchbox default-animation">
@@ -222,12 +222,12 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
         <script>
           var contentLangs=['en'];
         </script>
-        <script src="/js/auto-complete.js?1746456698" defer></script>
-        <script src="/js/lunr/lunr.min.js?1746456698" defer></script>
-        <script src="/js/lunr/lunr.stemmer.support.min.js?1746456698" defer></script>
-        <script src="/js/lunr/lunr.multi.min.js?1746456698" defer></script>
-        <script src="/js/lunr/lunr.en.min.js?1746456698" defer></script>
-        <script src="/js/search.js?1746456698" defer></script>
+        <script src="/js/auto-complete.js?1746991367" defer></script>
+        <script src="/js/lunr/lunr.min.js?1746991367" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1746991367" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1746991367" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1746991367" defer></script>
+        <script src="/js/search.js?1746991367" defer></script>
       </div>
       <div id="R-homelinks" class="default-animation homelinks">
         <ul>
@@ -241,6 +241,7 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
             <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest1/index.html"><a class="padding" href="/revisiontest1/index.html">TEST #1-Quelques notions à maitriser</a></li>
             <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
             <li class="" data-nav-id="/revisiontest2/index.html"><a class="padding" href="/revisiontest2/index.html">TEST #2-Quelques notions à maitriser</a></li>
@@ -265,17 +266,13 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
             <li class="" data-nav-id="/solutions/semaine6/index.html"><a class="padding" href="/solutions/semaine6/index.html">Atelier 6</a></li>
             <li class="" data-nav-id="/solutions/semaine7/index.html"><a class="padding" href="/solutions/semaine7/index.html">Atelier 7</a></li>
             <li class="" data-nav-id="/solutions/semaine8/index.html"><a class="padding" href="/solutions/semaine8/index.html">Atelier 8</a></li>
-            <li class="alwaysopen " data-nav-id="/solutions/semaine9/index.html"><a class="padding" href="/solutions/semaine9/index.html">Atelier 9</a><ul id="R-subsections-af4a0a74a93c7502e727723640a01582" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/solutions/semaine9/index.html"><a class="padding" href="/solutions/semaine9/index.html">Atelier 9</a></li>
             <li class="" data-nav-id="/solutions/semaine10/index.html"><a class="padding" href="/solutions/semaine10/index.html">Atelier #10a</a></li>
             <li class="" data-nav-id="/solutions/semaine11/index.html"><a class="padding" href="/solutions/semaine11/index.html">Atelier #10b</a></li>
-            <li class="active parent alwaysopen " data-nav-id="/solutions/semaine12/index.html"><a class="padding" href="/solutions/semaine12/index.html">Atelier #10c</a><ul id="R-subsections-6f1cf52b628cdd69b2e02abbb63eb278" class="collapsible-menu">
-            <li class="" data-nav-id="/solutions/semaine12/_index_old/index.html"><a class="padding" href="/solutions/semaine12/_index_old/index.html">Atelier #10c: Réseau</a></li></ul></li>
+            <li class="active " data-nav-id="/solutions/semaine12/index.html"><a class="padding" href="/solutions/semaine12/index.html">Atelier #10c</a></li>
             <li class="" data-nav-id="/solutions/semaine13/index.html"><a class="padding" href="/solutions/semaine13/index.html">Atelier #10d</a></li>
             <li class="" data-nav-id="/solutions/test1/index.html"><a class="padding" href="/solutions/test1/index.html">Test 1</a></li>
-            <li class="" data-nav-id="/solutions/test2/index.html"><a class="padding" href="/solutions/test2/index.html">Test 2</a></li>
-            <li class="" data-nav-id="/solutions/test3/index.html"><a class="padding" href="/solutions/test3/index.html">Test 3</a></li>
-            <li class="" data-nav-id="/solutions/test4/index.html"><a class="padding" href="/solutions/test4/index.html">Test 4</a></li></ul></li>
-            <li class="" data-nav-id="/images/index.html"><a class="padding" href="/images/index.html">images test4</a></li>
+            <li class="" data-nav-id="/solutions/test2/index.html"><a class="padding" href="/solutions/test2/index.html">Test 2</a></li></ul></li>
             <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
           </ul>
         </div>
@@ -330,8 +327,8 @@ ip -4 addr show ens160 | grep inet2. Ajouter deux autres adresses IP à l’int
         </div>
       </div>
     </aside>
-    <script src="/js/clipboard.min.js?1746456698" defer></script>
-    <script src="/js/perfect-scrollbar.min.js?1746456698" defer></script>
-    <script src="/js/theme.js?1746456698" defer></script>
+    <script src="/js/clipboard.min.js?1746991367" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1746991367" defer></script>
+    <script src="/js/theme.js?1746991367" defer></script>
   </body>
 </html>

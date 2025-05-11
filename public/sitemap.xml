@@ -28,6 +28,9 @@
     <loc>https://example.org/semaine3/cours/index.html</loc>
   </url>
   <url>
+    <loc>https://example.org/revisiontest1/index.html</loc>
+  </url>
+  <url>
     <loc>https://example.org/semaine4/index.html</loc>
   </url>
   <url>
@@ -172,7 +175,19 @@
     <loc>https://example.org/solutions/semaine9/index.html</loc>
   </url>
   <url>
+    <loc>https://example.org/solutions/semaine10/index.html</loc>
+  </url>
+  <url>
     <loc>https://example.org/aidesvm/administrateur/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/solutions/semaine11/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/solutions/semaine12/index.html</loc>
+  </url>
+  <url>
+    <loc>https://example.org/solutions/semaine13/index.html</loc>
   </url>
   <url>
     <loc>https://example.org/solutions/test1/index.html</loc>

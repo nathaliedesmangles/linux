@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TEST #1-Quelques notions à maitriser :: 420-ZG4-MO LINUX</title>
+    <link>https://example.org/revisiontest1/index.html</link>
+    <description>Revenez me voir&#xD;Ne vous limitez pas à cette page pour vous préparer au test #2, car certaines notions du cours ne s’y trouvent pas.&#xA;Semaine 2 Structure hiérarchique de Linux Le système de fichiers Linux est organisé comme un arbre inversé :&#xA;Le sommet est la racine / Tout (fichiers, dossiers, périphériques) est situé en dessous. Exemple :&#xA;/&#xD;├── home&#xD;│ └── utilisateur&#xD;│ └── Documents&#xD;├── bin&#xD;├── etc&#xD;Tout est fichier Sous Linux, tout est vu comme un fichier, même les périphériques :</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://example.org/revisiontest1/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

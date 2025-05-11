@@ -2,17 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Atelier #10c :: 420-ZG4-MO LINUX</title>
-    <link>http://localhost:1313/solutions/semaine12/index.html</link>
+    <link>https://example.org/solutions/semaine12/index.html</link>
     <description>Solution de l’exercice On suppose que l’interface Ethernet s’appelle ens160 (vous pouvez vérifier avec ip a si elle s’appelle autrement comme ens33, enp0s3, etc.).&#xA;1. Afficher l’adresse IP de l’interface Ethernet ip addr show ens160&#xD;Ou pour n’afficher que l’adresse IP :&#xA;ip -4 addr show ens160 | grep inet&#xD;2. Ajouter deux autres adresses IP à l’interface (même sous-réseau) Si l’adresse actuelle est par exemple 192.168.1.10/24, on peut ajouter 192.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/solutions/semaine12/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Atelier #10c: Réseau</title>
-      <link>http://localhost:1313/solutions/semaine12/_index_old/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/solutions/semaine12/_index_old/index.html</guid>
-      <description>Solution des exercices Exercice 2 — Reproduire une petite infrastructure réseau virtuelle sur une machine Linux. Étapes à réaliser Ajouter les interfaces (sur votre VM)&#xA;→ Vous pouvez le faire dans la configuration de la VM (VMware).&#xA;Déclarer les interfaces dans nmcli :&#xA;$ sudo nmcli con add con-name ens224 type ethernet ifname ens224 $ sudo nmcli con add con-name ens225 type ethernet ifname ens225&#xD;Attribuer des adresses IP statiques : $ sudo nmcli con mod ens224 ipv4.</description>
-    </item>
+    <atom:link href="https://example.org/solutions/semaine12/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

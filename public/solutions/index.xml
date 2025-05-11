@@ -71,6 +71,34 @@
       <description>Solution des exercices Exercices 1 Solution 1: Paramètres entrés sur la ligne de commande #!/bin/bash # Vérification que trois paramètres sont fournis if [ $# -ne 3 ]; then exit 1 fi # Détermination du plus grand et du plus petit if [ $1 -gt $2 ]; then paramPlusGrand=$1 paramPlusPetit=$2 else paramPlusGrand=$2 paramPlusPetit=$1 fi # Division entière et calcul final let &#34;resultat = (paramPlusGrand / paramPlusPetit) * $3&#34; # Affichage du résultat echo &#34;L&#39;expression ($paramPlusGrand / $paramPlusPetit) * $3 donne : $resultat&#34;&#xD;Explications : if [ $# -ne 3 ]: Vérifie que trois paramètres sont fournis.</description>
     </item>
     <item>
+      <title>Atelier #10a</title>
+      <link>https://example.org/solutions/semaine10/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/solutions/semaine10/index.html</guid>
+      <description>Solution de l’exercice 1. Informations sur les utilisateurs Les deux fichiers contenant les informations sur les utilisateurs sont :&#xA;/etc/passwd : contient les informations générales sur les utilisateurs (login, UID, GID, répertoire personnel, shell, etc.). /etc/shadow : contient les mots de passe cryptés des utilisateurs (accessible uniquement par root). 2. Création de groupes sudo groupadd dev sudo groupadd finance&#xD;3. Création de comptes utilisateurs sudo useradd -c &#34;Financier&#34; -g finance fifi sudo useradd -c &#34;Développeur&#34; -g dev didi&#xD;Explication :</description>
+    </item>
+    <item>
+      <title>Atelier #10b</title>
+      <link>https://example.org/solutions/semaine11/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/solutions/semaine11/index.html</guid>
+      <description>Solution de l’exercice 1. Connexion avec l’utilisateur didi 💡 Pourquoi ?&#xA;On veut que toutes les actions suivantes soient faites par l’utilisateur didi.&#xA;su - didi&#xD;su signifie “switch user” – on change d’utilisateur pour didi.&#xA;2. Gestion des permissions de fichier a. Création du fichier fichierCommun.txt touch fichierCommun.txt&#xD;On crée un fichier vide nommé fichierCommun.txt.&#xA;b. Ajouter fifi au groupe propriétaire du fichier Vérifier le groupe actuel du fichier : ls -l fichierCommun.</description>
+    </item>
+    <item>
+      <title>Atelier #10c</title>
+      <link>https://example.org/solutions/semaine12/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/solutions/semaine12/index.html</guid>
+      <description>Solution de l’exercice On suppose que l’interface Ethernet s’appelle ens160 (vous pouvez vérifier avec ip a si elle s’appelle autrement comme ens33, enp0s3, etc.).&#xA;1. Afficher l’adresse IP de l’interface Ethernet ip addr show ens160&#xD;Ou pour n’afficher que l’adresse IP :&#xA;ip -4 addr show ens160 | grep inet&#xD;2. Ajouter deux autres adresses IP à l’interface (même sous-réseau) Si l’adresse actuelle est par exemple 192.168.1.10/24, on peut ajouter 192.</description>
+    </item>
+    <item>
+      <title>Atelier #10d</title>
+      <link>https://example.org/solutions/semaine13/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/solutions/semaine13/index.html</guid>
+      <description>Solution de l’exercice 1. Ajouter un disque virtuel de 10G Cela se fait via l’interface de VMware :&#xA;Éteignez la VM. Dans les paramètres de la VM, ajoutez un nouveau disque virtuel (VHD, VDI, VMDK…) de 10 Go. Redémarrez la VM. Dans le terminal :&#xA;$ ls /dev&#xD;Le nouveau disque apparaîtra probablement comme /dev/sdb (si votre disque principal est /dev/sda).&#xA;2. Créer une partition primaire sur le disque $ sudo fdisk /dev/sdb&#xD;Dans le menu fdisk, tapez les commandes suivantes :</description>
+    </item>
+    <item>
       <title>Test 1</title>
       <link>https://example.org/solutions/test1/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

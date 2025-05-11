@@ -1,7 +1,6 @@
 +++
 title = "Atelier #10c"
 weight = 182
-draft = true
 +++
 
 # Solution de l'exercice
@@ -10,7 +9,7 @@ On suppose que l’interface Ethernet s’appelle `ens160` (vous pouvez vérifie
 
 ---
 
-### 1. Afficher l’adresse IP de l’interface Ethernet
+## 1. Afficher l’adresse IP de l’interface Ethernet
 
 ```bash
 ip addr show ens160
@@ -23,7 +22,7 @@ ip -4 addr show ens160 | grep inet
 ```
 
 
-### 2. Ajouter deux autres adresses IP à l’interface (même sous-réseau)
+## 2. Ajouter deux autres adresses IP à l’interface (même sous-réseau)
 
 Si l’adresse actuelle est par exemple `192.168.1.10/24`, on peut ajouter `192.168.1.100` et `192.168.1.101` :
 
@@ -33,7 +32,7 @@ sudo ip addr add 192.168.1.101/24 dev ens160
 ```
 
 
-### 3. Vérifier la réponse avec *ping*
+## 3. Vérifier la réponse avec *ping*
 
 ```bash
 ping 192.168.1.100
@@ -43,7 +42,7 @@ ping 192.168.1.101
 On doit voir des réponses si les adresses sont bien assignées.
 
 
-### 4. Supprimer les adresses IP ajoutées
+## 4. Supprimer les adresses IP ajoutées
 
 ```bash
 sudo ip addr del 192.168.1.100/24 dev ens160
@@ -51,7 +50,7 @@ sudo ip addr del 192.168.1.101/24 dev ens160
 ```
 
 
-### 5. Faire un ping vers les adresses supprimées
+## 5. Faire un ping vers les adresses supprimées
 
 ```bash
 ping 192.168.1.100
@@ -60,7 +59,7 @@ ping 192.168.1.101
 
 Cette fois, on **ne devrait pas** avoir de réponse, mais un message comme *hôte de destination injoignable* (***destination host unreachable***), *Délai d’attente dépassé* (***Request timed out***) ou *0 reçus* (***100% packet loss***), puisque les adresses ont été retirées.
 
-#### 5.1 Options utiles avec ping
+### 5.1 Options utiles avec ping
 
 {{% notice style="secondary" title="-c et spécifier le nombre de paquets envoyés" %}}
 Dans la commande :

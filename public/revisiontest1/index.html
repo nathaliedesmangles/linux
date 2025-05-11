@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.126.3">
+    <meta name="generator" content="Relearn 7.3.1">
+    <meta name="description" content="Revenez me voirNe vous limitez pas à cette page pour vous préparer au test #2, car certaines notions du cours ne s’y trouvent pas.
+Semaine 2 Structure hiérarchique de Linux Le système de fichiers Linux est organisé comme un arbre inversé :
+Le sommet est la racine / Tout (fichiers, dossiers, périphériques) est situé en dessous. Exemple :
+/├── home│ └── utilisateur│ └── Documents├── bin├── etcTout est fichier Sous Linux, tout est vu comme un fichier, même les périphériques :">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="TEST #1-Quelques notions à maitriser :: 420-ZG4-MO LINUX">
+    <meta name="twitter:description" content="Revenez me voirNe vous limitez pas à cette page pour vous préparer au test #2, car certaines notions du cours ne s’y trouvent pas.
+Semaine 2 Structure hiérarchique de Linux Le système de fichiers Linux est organisé comme un arbre inversé :
+Le sommet est la racine / Tout (fichiers, dossiers, périphériques) est situé en dessous. Exemple :
+/├── home│ └── utilisateur│ └── Documents├── bin├── etcTout est fichier Sous Linux, tout est vu comme un fichier, même les périphériques :">
+    <meta property="og:url" content="https://example.org/revisiontest1/index.html">
+    <meta property="og:site_name" content="420-ZG4-MO LINUX">
+    <meta property="og:title" content="TEST #1-Quelques notions à maitriser :: 420-ZG4-MO LINUX">
+    <meta property="og:description" content="Revenez me voirNe vous limitez pas à cette page pour vous préparer au test #2, car certaines notions du cours ne s’y trouvent pas.
+Semaine 2 Structure hiérarchique de Linux Le système de fichiers Linux est organisé comme un arbre inversé :
+Le sommet est la racine / Tout (fichiers, dossiers, périphériques) est situé en dessous. Exemple :
+/├── home│ └── utilisateur│ └── Documents├── bin├── etcTout est fichier Sous Linux, tout est vu comme un fichier, même les périphériques :">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="TEST #1-Quelques notions à maitriser :: 420-ZG4-MO LINUX">
+    <meta itemprop="description" content="Revenez me voirNe vous limitez pas à cette page pour vous préparer au test #2, car certaines notions du cours ne s’y trouvent pas.
+Semaine 2 Structure hiérarchique de Linux Le système de fichiers Linux est organisé comme un arbre inversé :
+Le sommet est la racine / Tout (fichiers, dossiers, périphériques) est situé en dessous. Exemple :
+/├── home│ └── utilisateur│ └── Documents├── bin├── etcTout est fichier Sous Linux, tout est vu comme un fichier, même les périphériques :">
+    <meta itemprop="wordCount" content="707">
+    <title>TEST #1-Quelques notions à maitriser :: 420-ZG4-MO LINUX</title>
+    <link href="/revisiontest1/index.xml" rel="alternate" type="application/rss+xml" title="TEST #1-Quelques notions à maitriser :: 420-ZG4-MO LINUX">
+    <link href="/css/fontawesome-all.min.css?1746991367" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/fontawesome-all.min.css?1746991367" rel="stylesheet"></noscript>
+    <link href="/css/auto-complete.css?1746991367" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/css/auto-complete.css?1746991367" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar.min.css?1746991367" rel="stylesheet">
+    <link href="/css/theme.min.css?1746991367" rel="stylesheet">
+    <link href="/css/format-html.min.css?1746991367" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..';
+      window.relearn.absBaseUri='https:\/\/example.org';
+      window.relearn.min = `.min`;
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        var select = document.querySelector("#R-select-variant");
+        if (select) {
+          select.value = variant;
+        }
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/revisiontest1/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#structure-hiérarchique-de-linux">Structure hiérarchique de Linux</a></li>
+    <li><a href="#tout-est-fichier">Tout est fichier</a></li>
+    <li><a href="#répertoires-principaux">Répertoires principaux</a></li>
+    <li><a href="#chemins-absolus-vs-relatifs">Chemins absolus vs relatifs</a></li>
+    <li><a href="#le-shell-bash">Le Shell (Bash)</a></li>
+    <li><a href="#navigation-avec-bash">Navigation avec Bash</a></li>
+    <li><a href="#créer-supprimer-copier-déplacer">Créer, supprimer, copier, déplacer</a></li>
+    <li><a href="#lire-des-fichiers">Lire des fichiers</a></li>
+    <li><a href="#à-retenir">À retenir</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#le-processus-de-démarrage-linux--étapes-essentielles">Le processus de démarrage Linux : étapes essentielles</a></li>
+    <li><a href="#runlevels-et-targets"><em>Runlevels</em> et <em>Targets</em></a></li>
+    <li><a href="#substitution-de-commande">Substitution de commande</a></li>
+    <li><a href="#variables-et-expansion">Variables et expansion</a></li>
+    <li><a href="#caractères-génériques">Caractères génériques</a></li>
+    <li><a href="#expansion-daccolades">Expansion d’accolades</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><a itemprop="item" href="/index.html"><span itemprop="name">420-ZG4-MO Système d’exploitation Linux</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li
+            itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span itemprop="name">TEST #1-Quelques notions à maitriser</span><meta itemprop="position" content="2"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine3/cours/index.html" title="Processus de démarrage, cibles, variables et boucle For (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/semaine4/index.html" title="Commandes utiles, redirection, chainage et filtrage de commandes et While (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable revisiontest1" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="test-1-quelques-notions-à-maitriser">TEST #1-Quelques notions à maitriser</h1>
+
+
+<details open class=" box cstyle notices warning">
+  <summary class="box-label" tabindex="-1">
+    <i class="fa-fw fas fa-exclamation-triangle"></i> 
+    Revenez me voir
+  </summary>
+  <div class="box-content">
+<p><em><strong>Ne vous limitez pas à cette page pour vous préparer au test #2, car certaines notions du cours ne s&rsquo;y trouvent pas</strong></em>.</p>
+  </div>
+</details>
+<h1 id="semaine-2">Semaine 2</h1>
+<h2 id="structure-hiérarchique-de-linux">Structure hiérarchique de Linux</h2>
+<p>Le système de fichiers Linux est organisé <strong>comme un arbre inversé</strong> :</p>
+<ul>
+<li>Le sommet est la <strong>racine <code>/</code></strong></li>
+<li>Tout (fichiers, dossiers, périphériques) est situé en dessous.</li>
+</ul>
+<p><strong>Exemple :</strong></p>
+<div class="highlight wrap-code"><pre tabindex="0"><code>/
+├── home
+│   └── utilisateur
+│       └── Documents
+├── bin
+├── etc</code></pre></div>
+<h2 id="tout-est-fichier">Tout est fichier</h2>
+<p>Sous Linux, <strong>tout est vu comme un fichier</strong>, même les périphériques :</p>
+<table>
+<thead>
+<tr>
+<th>Élément</th>
+<th>Est un fichier ?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Un fichier texte</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Un dossier</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Une clé USB</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Un disque dur</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h2 id="répertoires-principaux">Répertoires principaux</h2>
+<p>Voici les plus importants, avec des exemples simples :</p>
+<table>
+<thead>
+<tr>
+<th>Répertoire</th>
+<th>Rôle</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td>Racine principale</td>
+<td><code>cd /</code> va au sommet</td>
+</tr>
+<tr>
+<td><code>/home</code></td>
+<td>Dossiers des utilisateurs</td>
+<td><code>cd /home/paul</code></td>
+</tr>
+<tr>
+<td><code>/bin</code></td>
+<td>Commandes de base comme <code>ls</code>, <code>cp</code>, <code>mv</code></td>
+<td><code>ls /bin</code></td>
+</tr>
+<tr>
+<td><code>/etc</code></td>
+<td>Fichiers de configuration système</td>
+<td><code>cat /etc/hosts</code></td>
+</tr>
+<tr>
+<td><code>/dev</code></td>
+<td>Fichiers pour les périphériques</td>
+<td><code>ls /dev/sda</code></td>
+</tr>
+<tr>
+<td><code>/tmp</code></td>
+<td>Fichiers temporaires</td>
+<td><code>touch /tmp/test.txt</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="chemins-absolus-vs-relatifs">Chemins absolus vs relatifs</h2>
+<ul>
+<li>
+<p><strong>Chemin absolu</strong> : Commence par <code>/</code>, donne l’adresse complète.
+→ Ex : <code>/home/paul/fichier.txt</code></p>
+</li>
+<li>
+<p><strong>Chemin relatif</strong> : Dépend d&rsquo;où vous êtes.
+→ Ex : <code>Documents/fichier.txt</code> (si vous êtes déjà dans <code>/home/paul</code>)</p>
+</li>
+</ul>
+<p><strong>Commandes utiles</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pwd     <span style="color:#75715e"># Où suis-je ?</span>
+</span></span><span style="display:flex;"><span>cd ..   <span style="color:#75715e"># Revenir au dossier parent</span>
+</span></span><span style="display:flex;"><span>cd ~    <span style="color:#75715e"># Aller à mon dossier personnel</span></span></span></code></pre></div>
+<h2 id="le-shell-bash">Le Shell (Bash)</h2>
+<p>Le <strong>shell</strong> est l&rsquo;interface texte où vous tapez des commandes.</p>
+<ul>
+<li><code>$</code> : utilisateur standard</li>
+<li><code>#</code> : super-utilisateur (root)</li>
+</ul>
+<p><strong>Structure d’une commande</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>commande <span style="color:#f92672">[</span>options<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>arguments<span style="color:#f92672">]</span></span></span></code></pre></div>
+<p><strong>Exemples</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>whoami             <span style="color:#75715e"># Affiche votre nom d&#39;utilisateur</span>
+</span></span><span style="display:flex;"><span>date -R            <span style="color:#75715e"># Date formatée</span>
+</span></span><span style="display:flex;"><span>sudo ls /root      <span style="color:#75715e"># Affiche le contenu de /root avec droits admin</span></span></span></code></pre></div>
+<p><strong>Astuce</strong> : Si vous vous trompez de commande → faites <code>Ctrl+C</code> pour annuler.</p>
+<hr>
+<h2 id="navigation-avec-bash">Navigation avec Bash</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Action</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pwd</code></td>
+<td>Affiche le répertoire courant</td>
+<td><code>/home/paul</code></td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td>Change de répertoire</td>
+<td><code>cd Documents</code></td>
+</tr>
+<tr>
+<td><code>ls</code></td>
+<td>Liste le contenu d’un dossier</td>
+<td><code>ls -l</code> pour voir les détails</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="créer-supprimer-copier-déplacer">Créer, supprimer, copier, déplacer</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Action</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>touch</code></td>
+<td>Crée un fichier</td>
+<td><code>touch test.txt</code></td>
+</tr>
+<tr>
+<td><code>mkdir</code></td>
+<td>Crée un dossier</td>
+<td><code>mkdir dossier</code></td>
+</tr>
+<tr>
+<td><code>rm</code></td>
+<td>Supprime un fichier</td>
+<td><code>rm test.txt</code></td>
+</tr>
+<tr>
+<td><code>cp</code></td>
+<td>Copie un fichier</td>
+<td><code>cp test.txt copie.txt</code></td>
+</tr>
+<tr>
+<td><code>mv</code></td>
+<td>Déplace ou renomme</td>
+<td><code>mv test.txt nouveau.txt</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="lire-des-fichiers">Lire des fichiers</h2>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Usage</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cat</code></td>
+<td>Affiche tout le contenu</td>
+<td><code>cat notes.txt</code></td>
+</tr>
+<tr>
+<td><code>less</code></td>
+<td>Lecture page par page</td>
+<td><code>less longtexte.txt</code></td>
+</tr>
+<tr>
+<td><code>head</code></td>
+<td>Début du fichier</td>
+<td><code>head fichier.txt</code></td>
+</tr>
+<tr>
+<td><code>tail</code></td>
+<td>Fin du fichier</td>
+<td><code>tail fichier.txt</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="à-retenir">À retenir</h2>
+<ul>
+<li>Linux est structuré proprement sous <code>/</code>.</li>
+<li>Tout est fichier, même le matériel.</li>
+<li>Les chemins et commandes sont puissants mais simples.</li>
+<li>Bash permet d’automatiser et d’exécuter des tâches.</li>
+<li>Apprendre les commandes de base vous rend <strong>autonome</strong> dans Linux.</li>
+</ul>
+<h1 id="semaine-3">Semaine 3</h1>
+<h2 id="le-processus-de-démarrage-linux--étapes-essentielles">Le processus de démarrage Linux : étapes essentielles</h2>
+<ol>
+<li>
+<p><strong>BIOS/UEFI</strong>
+→ Vérifie le matériel et trouve un disque avec un secteur de démarrage.
+<em>Exemple : l’ordinateur s’allume et cherche le disque dur.</em></p>
+</li>
+<li>
+<p><strong>Chargeur d’amorçage (GRUB)</strong>
+→ Permet de choisir quel système démarrer.
+<em>Exemple : menu où vous choisissez &ldquo;Ubuntu&rdquo; ou &ldquo;Windows&rdquo;.</em></p>
+</li>
+<li>
+<p><strong>Noyau Linux</strong>
+→ Lance les pilotes et un mini-système (<code>initramfs</code>).
+<em>Exemple : le noyau sait gérer la souris, clavier, etc.</em></p>
+</li>
+<li>
+<p><strong><code>systemd</code> (ou <code>init</code>)</strong>
+→ Lance les services (réseau, interface graphique&hellip;).
+<em>Exemple : le Wi-Fi est activé automatiquement.</em></p>
+</li>
+<li>
+<p><strong>Écran de connexion</strong>
+→ Vous entrez votre nom d&rsquo;utilisateur et mot de passe.</p>
+</li>
+<li>
+<p><strong>Système prêt à l&rsquo;emploi</strong>
+→ Vous pouvez utiliser le système et exécuter des commandes comme <code>shutdown</code>.</p>
+</li>
+</ol>
+<h2 id="runlevels-et-targets"><em>Runlevels</em> et <em>Targets</em></h2>
+<p>Linux utilise maintenant des <strong>cibles</strong> (<code>targets</code>) pour gérer les modes de fonctionnement.</p>
+<table>
+<thead>
+<tr>
+<th>But</th>
+<th>Commande</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Redémarrer</td>
+<td><code>systemctl isolate reboot</code></td>
+</tr>
+<tr>
+<td>Mode texte (console)</td>
+<td><code>systemctl isolate multi-user</code></td>
+</tr>
+<tr>
+<td>Mode graphique</td>
+<td><code>systemctl isolate graphical</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Défaut au démarrage</strong> :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ systemctl get-default</span></span></code></pre></div>
+<p><strong>Différence</strong> :</p>
+<ul>
+<li><code>set-default</code> : pour le prochain démarrage.</li>
+<li><code>isolate</code> : effet immédiat.</li>
+</ul>
+<h2 id="substitution-de-commande">Substitution de commande</h2>
+<p>Permet d’insérer <strong>le résultat d’une commande</strong> dans une autre :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ touch <span style="color:#66d9ef">$(</span>whoami<span style="color:#66d9ef">)</span>.txt</span></span></code></pre></div>
+<p>👉 Crée un fichier nommé avec votre identifiant (ex: <code>nathalie.txt</code>)</p>
+<h2 id="variables-et-expansion">Variables et expansion</h2>
+<p>Créer une variable :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ nom<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;toto&#34;</span></span></span></code></pre></div>
+<p>Utiliser son contenu :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo $nom
+</span></span><span style="display:flex;"><span>toto</span></span></code></pre></div>
+<p>Stocker une commande :</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ date<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;Nous sommes le </span>$date<span style="color:#e6db74">&#34;</span></span></span></code></pre></div>
+<h2 id="caractères-génériques">Caractères génériques</h2>
+<ul>
+<li><code>*</code> → remplace tout (ex : <code>*.txt</code> pour tous les fichiers texte)</li>
+<li><code>?</code> → remplace un seul caractère (ex : <code>t?ti.txt</code> → <code>titi.txt</code>, <code>toti.txt</code>)</li>
+</ul>
+<h2 id="expansion-daccolades">Expansion d’accolades</h2>
+<p>Crée rapidement plusieurs fichiers ou dossiers.</p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ touch test<span style="color:#f92672">{</span>1..3<span style="color:#f92672">}</span>.txt</span></span></code></pre></div>
+<p>👉 Crée <code>test1.txt</code>, <code>test2.txt</code>, <code>test3.txt</code></p>
+<div class="highlight wrap-code"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir -p boite<span style="color:#f92672">{</span>1,2<span style="color:#f92672">}</span>/fichier<span style="color:#f92672">{</span>a,b,c<span style="color:#f92672">}</span></span></span></code></pre></div>
+<p>👉 Crée deux dossiers (<code>boite1</code>, <code>boite2</code>) contenant chacun trois fichiers.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            420-ZG4-MO LINUX
+          </a>
+        </div>
+        <script>
+          window.index_js_url="/searchindex.en.js?1746991367";
+        </script>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+        <script>
+          var contentLangs=['en'];
+        </script>
+        <script src="/js/auto-complete.js?1746991367" defer></script>
+        <script src="/js/lunr/lunr.min.js?1746991367" defer></script>
+        <script src="/js/lunr/lunr.stemmer.support.min.js?1746991367" defer></script>
+        <script src="/js/lunr/lunr.multi.min.js?1746991367" defer></script>
+        <script src="/js/lunr/lunr.en.min.js?1746991367" defer></script>
+        <script src="/js/search.js?1746991367" defer></script>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <ul>
+          <li><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+        </ul>
+        <hr class="padding">
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div id="R-shortcutmenu-home" class="R-sidebarmenu">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/semaine1/index.html"><a class="padding" href="/semaine1/index.html"><b>Semaine 1. </b>Introduction à Linux</a><ul id="R-subsections-6db614d031e1cac329e6c8b2f083c50f" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine2/index.html"><a class="padding" href="/semaine2/index.html"><b>Semaine 2. </b>Système de fichiers, Shell, commandes de base, Vim</a><ul id="R-subsections-30aa4391f5b81ccda88d9d93cb48f88e" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine3/index.html"><a class="padding" href="/semaine3/index.html"><b>Semaine 3. </b>Processus de démarrage, variables et FOR</a><ul id="R-subsections-20df5992ee4a38745c53049bf1f824d0" class="collapsible-menu"></ul></li>
+            <li class="active " data-nav-id="/revisiontest1/index.html"><a class="padding" href="/revisiontest1/index.html">TEST #1-Quelques notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine4/index.html"><a class="padding" href="/semaine4/index.html"><b>Semaine 4. </b>Commandes utiles, redirection, chainage et filtrage de commandes et While</a><ul id="R-subsections-dd44d3bf9424b06ca777f829797a2e8c" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine5/index.html"><a class="padding" href="/semaine5/index.html"><b>Semaine 5. </b>Les processus Linux</a><ul id="R-subsections-c26f1618e27c79866a5eeda027ce1e7b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest2/index.html"><a class="padding" href="/revisiontest2/index.html">TEST #2-Quelques notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine6/index.html"><a class="padding" href="/semaine6/index.html"><b>Semaine 6. </b>Les expressions régulières</a><ul id="R-subsections-3ce40544eeb139416d42a5fc9c160312" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine7/index.html"><a class="padding" href="/semaine7/index.html"><b>Semaine 7. </b>Vim, les fichiers de configuration</a><ul id="R-subsections-7ea566d41fb51898f9619db44b97f441" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine8/index.html"><a class="padding" href="/semaine8/index.html"><b>Semaine 8. </b>DNF et CRON</a><ul id="R-subsections-7bf4c42fec072f49370d66f846070b45" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine9/index.html"><a class="padding" href="/semaine9/index.html"><b>Semaine 9. </b>Variables de paramètres de script et structure IF</a><ul id="R-subsections-1f01a70d85857b8ac721c011c139e3af" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest3/index.html"><a class="padding" href="/revisiontest3/index.html">TEST #3 - Informations et notions à maitriser</a></li>
+            <li class="" data-nav-id="/semaine10/index.html"><a class="padding" href="/semaine10/index.html"><b>Semaine 10. </b>Utilisateurs et groupes</a><ul id="R-subsections-f8cbb4e023a0fc71fa255b45db414bcc" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine11/index.html"><a class="padding" href="/semaine11/index.html"><b>Semaine 11. </b>Les droits d&#39;accès</a><ul id="R-subsections-b4d497b6531d9f49241f6ec42b8e80f7" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine12/index.html"><a class="padding" href="/semaine12/index.html"><b>Semaine 12. </b>Réseau</a><ul id="R-subsections-6098c004e594c3cbee6d88e41d11b10b" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine13/index.html"><a class="padding" href="/semaine13/index.html"><b>Semaine 13. </b>Gestion des disques</a><ul id="R-subsections-123a241fcf7a50602c7d825a9ccf5337" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/revisiontest4/index.html"><a class="padding" href="/revisiontest4/index.html">TEST #4: Résumés</a></li>
+            <li class="" data-nav-id="/semaine14/index.html"><a class="padding" href="/semaine14/index.html"><b>Semaine 14. </b>WSL, Ubuntu et VS Code</a><ul id="R-subsections-de03bfdebbf64f0926849d30677c8008" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/semaine15/index.html"><a class="padding" href="/semaine15/index.html"><b>Semaine 15. </b>Révision et Examen final</a></li>
+            <li class="" data-nav-id="/solutions/index.html"><a class="padding" href="/solutions/index.html"><b>>></b>Solutions: ateliers et tests</a><ul id="R-subsections-1f39e0195f20d733369e80794849b865" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/aidesvm/index.html"><a class="padding" href="/aidesvm/index.html">AidesVMs</a><ul id="R-subsections-5c036ac60ba86fa71184b2c3c6a2c77d" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+    
+        <div class="padding footermargin footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter"></div>
+        <div id="R-menu-footer">
+          <hr class="padding default-animation footerLangSwitch footerVariantSwitch footerVisitedLinks footerFooter showFooter">
+          <div id="R-prefooter" class="footerLangSwitch footerVariantSwitch footerVisitedLinks">
+            <ul>
+              <li id="R-select-language-container" class="footerLangSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-language"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-language">Language</label>
+                    <select id="R-select-language" onchange="location = this.querySelector( this.value ).dataset.url;">
+                      <option id="R-select-language-en" value="#R-select-language-en" data-url="/revisiontest1/index.html" lang="en-us" selected></option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+              <li id="R-select-variant-container" class="footerVariantSwitch">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-paint-brush"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <label class="a11y-only" for="R-select-variant">Theme</label>
+                    <select id="R-select-variant" onchange="window.relearn.changeVariant( this.value );">
+                      <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    </select>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <script>window.relearn.markVariant();</script>
+              </li>
+              <li class="footerVisitedLinks">
+                <div class="padding menu-control">
+                  <i class="fa-fw fas fa-history"></i>
+                  <span>&nbsp;</span>
+                  <div class="control-style">
+                    <button onclick="clearHistory();">Clear History</button>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="R-footer" class="footerFooter showFooter">
+        <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <script src="/js/clipboard.min.js?1746991367" defer></script>
+    <script src="/js/perfect-scrollbar.min.js?1746991367" defer></script>
+    <script src="/js/theme.js?1746991367" defer></script>
+  </body>
+</html>

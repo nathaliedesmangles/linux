@@ -29,6 +29,13 @@
       <description>Plan de la leçon Théorie :&#xA;La séquence de démarrage de Linux. Les cibles (niveaux d’exécution). Les variables utilisateur. Itération avec la boucle FOR. Atelier :&#xA;Gestion des cibles. Création et utilisation de variables. Utilisation de la boucle FOR.</description>
     </item>
     <item>
+      <title>TEST #1-Quelques notions à maitriser</title>
+      <link>https://example.org/revisiontest1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://example.org/revisiontest1/index.html</guid>
+      <description>Revenez me voir&#xD;Ne vous limitez pas à cette page pour vous préparer au test #2, car certaines notions du cours ne s’y trouvent pas.&#xA;Semaine 2 Structure hiérarchique de Linux Le système de fichiers Linux est organisé comme un arbre inversé :&#xA;Le sommet est la racine / Tout (fichiers, dossiers, périphériques) est situé en dessous. Exemple :&#xA;/&#xD;├── home&#xD;│ └── utilisateur&#xD;│ └── Documents&#xD;├── bin&#xD;├── etc&#xD;Tout est fichier Sous Linux, tout est vu comme un fichier, même les périphériques :</description>
+    </item>
+    <item>
       <title>Commandes utiles, redirection, chainage et filtrage de commandes et While</title>
       <link>https://example.org/semaine4/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
